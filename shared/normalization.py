@@ -13,8 +13,37 @@ logger = logging.getLogger(__name__)
 _DATE_YYYY_MM_DD = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
-def parse_json_from_response(content: str) -> Dict[str, Any]:
-    """Extract JSON from LLM response content."""
+def parse_json_from_response(content: str | list) -> Dict[str, Any]:
+    """Extract JSON from LLM response content.
+    
+    Supports both OpenAI (str) and Gemini (list) response formats.
+    """
+    # Handle Gemini's list response format
+    if isinstance(content, list):
+        if len(content) == 0:
+            logger.warning("응답이 빈 리스트입니다.")
+            return {}
+        
+        # Gemini returns list of content parts: [{"text": "..."}, ...]
+        for part in content:
+            if isinstance(part, dict):
+                # Extract text from content part
+                if "text" in part and isinstance(part["text"], str):
+                    content = part["text"]
+                    break
+            elif isinstance(part, str):
+                content = part
+                break
+        else:
+            # Fallback: convert first element to string
+            logger.warning("Gemini content parts에서 text를 찾지 못함. 첫 요소를 문자열로 변환합니다.")
+            content = str(content[0]) if content else ""
+    
+    # Ensure content is a string
+    if not isinstance(content, str):
+        logger.warning("응답이 문자열이 아닙니다: type=%s", type(content))
+        content = str(content)
+    
     json_match = re.search(r"```json\s*([\s\S]*?)\s*```", content)
     json_str = json_match.group(1) if json_match else content.strip()
     try:

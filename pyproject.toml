@@ -10,6 +10,7 @@ dependencies = [
     "google-generativeai>=0.8.6",
     "langchain>=1.2.6",
     "langchain-community>=0.4.1",
+    "langchain-google-genai>=4.2.0",
     "langchain-openai>=1.1.7",
     "langgraph>=1.0.6",
     "pandas>=3.0.0",

@@ -11,12 +11,12 @@ from typing import Optional
 
 from langchain_openai import ChatOpenAI
 
-from .utils.llm import build_llm
+from shared.utils.llm import build_llm
 
 logger = logging.getLogger(__name__)
 
 # 프로젝트 루트
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 class SlideGenerator:

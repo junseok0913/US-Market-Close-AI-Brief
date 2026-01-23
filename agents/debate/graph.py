@@ -275,6 +275,10 @@ def expert_extract_node(state: ExpertState) -> ExpertState:
 
 
 def build_expert_graph():
+    # Ensure env loaded for parallel execution
+    load_env_from_yaml()
+    load_dotenv(ROOT_DIR / ".env", override=False)
+    
     graph = StateGraph(ExpertState)
     graph.add_node("prepare_messages", expert_prepare_messages_node)
     graph.add_node("agent", expert_agent_node)
