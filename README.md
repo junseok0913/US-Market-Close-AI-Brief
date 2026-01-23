@@ -499,9 +499,23 @@ debate/            # Debate/Types wrapper + ticker_script 파이프라인(티커
 shared/            # tools/fetchers/config/utils (공용)
 config/            # app.yaml (비밀 아닌 런타임 설정)
 podcast/           # 최종 산출물 + DB
+  ├── {date}/
+  │   ├── script.json         # TTS 입력용 스크립트
+  │   ├── {date}.wav          # 최종 병합 오디오
+  │   ├── metadata.json       # 팟캐스트 메타데이터 (JSON)
+  │   ├── metadata.txt        # 팟캐스트 메타데이터 (Spotify 업로드용)
+  │   └── tts/                # 턴별 오디오 파일
+  └── podcast.db              # 에피소드 인덱스
 tts/               # TTS 파이프라인
 Lambda/            # 뉴스 수집 AWS Lambda
 web/               # Next.js 웹 플레이어
+  ├── src/landing/{date}/
+  │   └── slides.ts           # 웹 슬라이드 (자동 생성)
+  └── scripts/                # 빌드/생성 스크립트
+      ├── build-data.ts       # DB → public/ 데이터 변환
+      ├── slide_generator.py  # 슬라이드 생성 모듈
+      ├── generate-slides.py  # 슬라이드 생성 CLI
+      └── generate-podcast-metadata.py  # 메타데이터 생성 CLI
 ```
 
 ## 참고 문서

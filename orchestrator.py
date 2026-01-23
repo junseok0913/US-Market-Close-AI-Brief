@@ -610,6 +610,50 @@ def main() -> None:
 
     print(f"\n=== Saved Final Output ===\n- {podcast_script_path}")
     
+    # 슬라이드 생성 (web frontend용)
+    print(f"\n=== Generating Slides for Web ===")
+    try:
+        # web/scripts를 sys.path에 추가
+        import sys
+        web_scripts_path = ROOT / "web" / "scripts"
+        if str(web_scripts_path) not in sys.path:
+            sys.path.insert(0, str(web_scripts_path))
+        
+        from slide_generator import SlideGenerator
+        
+        generator = SlideGenerator(prefix="SLIDE")
+        slides_path = generator.generate_slides_for_date(date_yyyymmdd)
+        generator.update_landing_index(date_yyyymmdd)
+        
+        print(f"✅ Slides generated: {slides_path}")
+    except Exception as e:
+        print(f"⚠️ Slide generation failed: {e}")
+        print("   (Script is saved, but slides need to be generated manually)")
+        print(f"   Run: python web/scripts/generate-slides.py {date_yyyymmdd}")
+    
+    # 팟캐스트 메타데이터 생성 (Spotify 업로드용)
+    print(f"\n=== Generating Podcast Metadata ===")
+    try:
+        # web/scripts를 sys.path에 추가 (위에서 했으면 스킵)
+        import sys
+        web_scripts_path = ROOT / "web" / "scripts"
+        if str(web_scripts_path) not in sys.path:
+            sys.path.insert(0, str(web_scripts_path))
+        
+        from generate_podcast_metadata import PodcastMetadataGenerator
+        
+        metadata_gen = PodcastMetadataGenerator(prefix="PODCAST_METADATA")
+        metadata_gen.generate_metadata(date_yyyymmdd)
+        
+        print(f"✅ Metadata generated:")
+        print(f"   - {podcast_dir / 'metadata.json'}")
+        print(f"   - {podcast_dir / 'metadata.txt'}")
+        
+    except Exception as e:
+        print(f"⚠️ Metadata generation failed: {e}")
+        print("   (Script is saved, but metadata needs to be generated manually)")
+        print(f"   Run: python web/scripts/generate-podcast-metadata.py {date_yyyymmdd}")
+    
     print("\n=== Orchestrator Result ===")
     print("nutshell:", result.get("nutshell"))
     print("themes:", result.get("themes"))

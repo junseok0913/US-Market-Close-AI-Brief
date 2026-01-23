@@ -54,7 +54,7 @@ env:
 
   # AWS (news/calendar/market context)
   AWS_SDK_LOAD_CONFIG: 1
-  AWS_PROFILE: "Admins"
+  AWS_PROFILE: "Nam"
   AWS_REGION: "ap-northeast-2"
 
   # News sources

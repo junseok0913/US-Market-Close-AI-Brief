@@ -21,7 +21,7 @@ voices:
 timeout_seconds: 120
 
 # 동시 요청 수 (턴 단위로 요청하므로 기본 4)
-max_parallel_requests: 6
+max_parallel_requests: 3
 
 # 배치 쿨다운(초)
 # - 배치(=max_parallel_requests개)가 모두 응답된 뒤 이만큼 대기하고 다음 배치를 시작 (RPM 제한 회피)

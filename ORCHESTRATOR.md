@@ -250,6 +250,28 @@ ChapterRange:
 - `podcast/podcast.db`:
   - `podcast_db.py`를 통해 날짜별 인덱스(예: `nutshell`, `user_tickers`, `script_saved_at`)를 업데이트합니다.
 
+## 후처리 단계 (Post-Processing)
+
+`script.json` 저장 후, orchestrator는 자동으로 다음을 수행합니다:
+
+### 1. 웹 슬라이드 생성
+
+- **출력**: `web/src/landing/{date}/slides.ts`
+- **기능**: LLM이 script.json 분석 → TypeScript 슬라이드 코드 생성
+- **수동 실행**: `python web/scripts/generate-slides.py {date}`
+
+### 2. 팟캐스트 메타데이터 생성
+
+- **출력**: `podcast/{date}/metadata.json`, `metadata.txt`
+- **기능**: Spotify 에피소드용 제목/설명 자동 생성 (SEO 최적화)
+- **수동 실행**: `python web/scripts/generate-podcast-metadata.py {date}`
+
+### 에러 핸들링
+
+- 후처리 실패 시에도 `script.json`은 정상 저장됩니다
+- 실패 시 수동 실행 명령이 콘솔에 출력됩니다
+- 자세한 내용: `WEB.md` 참조
+
 ## 에러 처리 및 재실행 특성
 
 - `cleanup_cache_node()` + `main()`의 `finally`에서 `cleanup_cache_dir()`가 호출되어, 정상/비정상 종료 모두 `cache/{date}`가 정리됩니다.

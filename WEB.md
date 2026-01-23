@@ -125,3 +125,55 @@ web/
 
 - **SUIT Variable**: UI 텍스트
 - **Computer Modern**: 스크립트 본문
+
+## 슬라이드 자동 생성
+
+orchestrator 실행 시, `script.json`을 기반으로 웹 슬라이드가 자동 생성됩니다.
+
+### 생성 흐름
+
+```
+podcast/{date}/script.json
+        ↓ (LLM 분석)
+  python web/scripts/slide_generator.py
+        ↓
+web/src/landing/{date}/slides.ts  (생성)
+web/src/landing/index.ts          (자동 업데이트)
+```
+
+### 수동 생성
+
+orchestrator가 실패하거나, 슬라이드만 재생성하고 싶을 때:
+
+```bash
+python web/scripts/generate-slides.py 20260121
+```
+
+### 슬라이드 타입
+
+`src/types/slide.ts`에 정의된 타입 참고:
+- `title`: 타이틀 슬라이드
+- `market-summary`: 시장 요약 (지수, 상품)
+- `headline`: 주요 뉴스
+- `ticker-intro`: 종목 소개
+- `ticker-analysis`: 종목 분석
+- `closing`: 마무리
+
+### 기능
+
+- **LLM 기반 생성**: GPT가 script.json 분석 후 TypeScript 코드 생성
+- **티커 심볼 변환**: Yahoo Finance → TradingView 자동 변환
+- **후처리**: 티커 변환 누락 시 강제 보정 (2차 안전장치)
+- **index.ts 업데이트**: import 및 slidesMap 자동 추가
+
+### 환경변수
+
+슬라이드 생성 전용 LLM 설정 (선택사항):
+
+```bash
+# .env
+SLIDE_OPENAI_MODEL=gpt-4o         # 슬라이드 전용 모델
+SLIDE_OPENAI_TEMPERATURE=0.3       # 슬라이드 전용 temperature
+```
+
+설정하지 않으면 `OPENAI_MODEL` (기본값: gpt-5.1) 사용
