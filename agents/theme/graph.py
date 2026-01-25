@@ -210,7 +210,15 @@ def prepare_messages_node(state: ThemeWorkerState) -> ThemeWorkerState:
 
 def worker_agent_node(state: ThemeWorkerState) -> ThemeWorkerState:
     llm = _build_llm(profile="worker")
-    llm_with_tools = llm.bind_tools(TOOLS)
+    
+    # VALIDATED 모드: Tool 사용 우선하되 Final Answer도 허용 (무한루프 방지)
+    tool_config = {
+        "function_calling_config": {
+            "mode": "VALIDATED"  # Tool OR Natural language, schema 검증 보장
+        }
+    }
+    
+    llm_with_tools = llm.bind_tools(TOOLS, tool_config=tool_config)
     messages = state.get("messages", [])
     logger.info("ThemeWorker Agent 호출: %d개 메시지", len(messages))
     response = llm_with_tools.invoke(messages)
@@ -221,11 +229,58 @@ def worker_should_continue(state: ThemeWorkerState) -> str:
     messages = state.get("messages", [])
     if not messages:
         return "end"
+    
     last_message = messages[-1]
+    
+    # 마지막 메시지가 Tool Call인지 확인
     if isinstance(last_message, AIMessage) and last_message.tool_calls:
-        logger.info("ThemeWorker Tool 호출 감지: %d개", len(last_message.tool_calls))
+        # Tool call 횟수 계산
+        tool_call_count = sum(
+            1 for msg in messages 
+            if isinstance(msg, AIMessage) and msg.tool_calls
+        )
+        
+        # 20회 이상 사용했으면 강제로 Final Answer 요청
+        if tool_call_count >= 20:
+            logger.info("ThemeWorker: Tool 충분히 사용 (%d회) → Final Answer 강제 요청", tool_call_count)
+            return "force_final_answer"
+        
+        # 20회 미만이면 계속 Tool 사용
+        logger.info("ThemeWorker Tool 호출 감지: %d개 (총 %d회)", len(last_message.tool_calls), tool_call_count)
         return "tools"
+    
+    # 마지막 메시지가 Tool Call이 아니면 (이미 Final Answer를 냈으면) 정상 종료
     return "end"
+
+
+def force_final_answer_node(state: ThemeWorkerState) -> ThemeWorkerState:
+    """Tool 20회 사용 후 강제로 Final Answer를 요청하는 노드"""
+    llm = _build_llm("WORKER")
+    messages = list(state.get("messages", []))
+    
+    # 강제로 Final Answer 요청 메시지 추가
+    force_message = HumanMessage(content="""
+You have used enough tools (20 times). Now you MUST provide your final answer.
+
+출력은 반드시 아래 JSON 스키마만 허용합니다:
+```json
+{
+  "scripts": [
+    {"id": 0, "speaker": "진행자", "text": "...", "sources": [...]},
+    {"id": 1, "speaker": "해설자", "text": "...", "sources": [...]}
+  ]
+}
+```
+
+Please output the final script JSON now. Do NOT call any more tools.""")
+    
+    messages.append(force_message)
+    
+    # LLM 호출 (tool 사용 금지)
+    llm_without_tools = _build_llm("WORKER")
+    response = llm_without_tools.invoke(messages)
+    
+    return {**state, "messages": messages + [response]}
 
 
 def extract_theme_scripts_node(state: ThemeWorkerState) -> ThemeWorkerState:
@@ -236,6 +291,10 @@ def extract_theme_scripts_node(state: ThemeWorkerState) -> ThemeWorkerState:
             raw_content = msg.content
             break
 
+    if not raw_content:
+        logger.error("JSON 응답을 찾을 수 없습니다. 0턴 반환합니다.")
+        return {**state, "scripts": []}
+    
     parsed = parse_json_from_response(raw_content)
     scripts = normalize_script_turns(parsed.get("scripts", []))
     return {**state, "scripts": scripts}
@@ -249,6 +308,7 @@ def build_worker_graph():
     graph.add_node("prepare_messages", prepare_messages_node)
     graph.add_node("agent", worker_agent_node)
     graph.add_node("tools", ToolNode(TOOLS))
+    graph.add_node("force_final_answer", force_final_answer_node)
     graph.add_node("extract_scripts", extract_theme_scripts_node)
 
     graph.add_edge(START, "load_context")
@@ -260,10 +320,12 @@ def build_worker_graph():
         worker_should_continue,
         {
             "tools": "tools",
+            "force_final_answer": "force_final_answer",
             "end": "extract_scripts",
         },
     )
     graph.add_edge("tools", "agent")
+    graph.add_edge("force_final_answer", "extract_scripts")
     graph.add_edge("extract_scripts", END)
     graph.set_entry_point("load_context")
 
@@ -329,7 +391,11 @@ def build_theme_graph():
         ]
 
         logger.info("ThemeWorker 병렬 실행 시작: %d개", len(inputs))
-        results = worker_graph.batch(inputs, return_exceptions=True)  # type: ignore[attr-defined]
+        results = worker_graph.batch(
+            inputs, 
+            config={"recursion_limit": 50},
+            return_exceptions=True
+        )  # type: ignore[attr-defined]
         logger.info("ThemeWorker 병렬 실행 완료")
 
         theme_scripts: List[List[ScriptTurn]] = []

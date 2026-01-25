@@ -27,7 +27,8 @@ python -m tts.src.tts 2025-12-22
 - `podcast/{date}/tts/`
 
 최종 산출물:
-- `podcast/{date}/{date}.wav`
+- `podcast/{date}/{date}.wav` (원본 WAV)
+- `podcast/{date}/{date}.mp3` (배포용 MP3, ffmpeg 변환)
 - `podcast/{date}/tts/timeline.json`
 - `podcast/{date}/{date}.json`
 

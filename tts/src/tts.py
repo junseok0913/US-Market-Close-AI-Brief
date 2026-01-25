@@ -25,6 +25,7 @@ from langsmith.run_helpers import traceable
 from .nodes import (
     build_turn_requests_node,
     compute_timeline_node,
+    convert_to_mp3_node,
     generate_turn_audio_parallel_node,
     load_config_node,
     load_script_node,
@@ -56,6 +57,7 @@ def build_graph():
     graph.add_node("compute_timeline", compute_timeline_node)
     graph.add_node("merge_audio", merge_audio_node)
     graph.add_node("write_outputs", write_outputs_node)
+    graph.add_node("convert_to_mp3", convert_to_mp3_node)
 
     graph.add_edge(START, "load_config")
     graph.add_edge("load_config", "validate_paths")
@@ -66,7 +68,8 @@ def build_graph():
     graph.add_edge("generate_turn_audio_parallel", "compute_timeline")
     graph.add_edge("compute_timeline", "merge_audio")
     graph.add_edge("merge_audio", "write_outputs")
-    graph.add_edge("write_outputs", END)
+    graph.add_edge("write_outputs", "convert_to_mp3")
+    graph.add_edge("convert_to_mp3", END)
 
     graph.set_entry_point("load_config")
     return graph.compile()
@@ -131,7 +134,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             logger.error("TTS 생성 실패: %s", e)
         return 1
 
-    logger.info("Saved: %s", result.get("out_wav"))
+    logger.info("Saved WAV: %s", result.get("out_wav"))
+    if result.get("out_mp3"):
+        logger.info("Saved MP3: %s", result.get("out_mp3"))
     return 0
 
 

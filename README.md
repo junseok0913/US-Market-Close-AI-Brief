@@ -360,7 +360,7 @@ python orchestrator.py 20251222 -t GOOG AAPL
 - 결과: `podcast/20251222/script.json`
 - 참고: orchestrator는 실행 중 `cache/20251222/`를 만들고 종료 시 정리합니다(디버깅용 산출물은 `temp/`와 `podcast/`에 남음).
 
-### 2) TTS 실행 (turn 단위 오디오 생성 + 합본)
+### 2) TTS 실행 (turn 단위 오디오 생성 + 합본 + MP3 변환)
 
 ```bash
 python -m tts.src.tts 20251222
@@ -370,8 +370,24 @@ python -m tts.src.tts 20251222
 - 출력:
   - `podcast/20251222/tts/*.wav` (turn별)
   - `podcast/20251222/tts/timeline.json`
-  - `podcast/20251222/20251222.wav` (합본)
+  - `podcast/20251222/20251222.wav` (합본 WAV, 원본)
+  - `podcast/20251222/20251222.mp3` (합본 MP3, 배포용)
   - `podcast/20251222/20251222.json` (time 주입된 최종 스크립트)
+
+### 2.5) 메타데이터 생성 (Spotify/팟캐스트 플랫폼용)
+
+```bash
+uv run python web/scripts/generate-podcast-metadata.py 20251222
+```
+
+- 입력: `podcast/20251222/script.json`
+- 출력:
+  - `podcast/20251222/metadata.json` (title, description, keywords)
+  - `podcast/20251222/metadata.txt` (복사-붙여넣기용)
+- 특징:
+  - title은 nutshell에서 자동 생성
+  - description은 LLM으로 생성 (YAML 프롬프트 기반)
+  - keywords는 script에서 자동 추출 (티커, 회사명 등)
 
 ### 3) Web 플레이어 실행 (Next.js)
 
@@ -501,7 +517,8 @@ config/            # app.yaml (비밀 아닌 런타임 설정)
 podcast/           # 최종 산출물 + DB
   ├── {date}/
   │   ├── script.json         # TTS 입력용 스크립트
-  │   ├── {date}.wav          # 최종 병합 오디오
+  │   ├── {date}.wav          # 최종 병합 오디오 (WAV)
+  │   ├── {date}.mp3          # 최종 병합 오디오 (MP3, 배포용)
   │   ├── metadata.json       # 팟캐스트 메타데이터 (JSON)
   │   ├── metadata.txt        # 팟캐스트 메타데이터 (Spotify 업로드용)
   │   └── tts/                # 턴별 오디오 파일
@@ -512,6 +529,8 @@ web/               # Next.js 웹 플레이어
   ├── src/landing/{date}/
   │   └── slides.ts           # 웹 슬라이드 (자동 생성)
   └── scripts/                # 빌드/생성 스크립트
+      ├── prompts/
+      │   └── metadata.yaml   # 메타데이터 생성 프롬프트
       ├── build-data.ts       # DB → public/ 데이터 변환
       ├── slide_generator.py  # 슬라이드 생성 모듈
       ├── generate-slides.py  # 슬라이드 생성 CLI

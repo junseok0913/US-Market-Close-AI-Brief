@@ -673,5 +673,64 @@ def write_outputs_node(state: TTSState) -> TTSState:
         user_tickers=user_tickers,
         script_saved_at=utc_iso_from_timestamp(script_path.stat().st_mtime),
     )
-
     return {"date": date, "out_wav": str(out_wav)}
+
+
+def convert_to_mp3_node(state: TTSState) -> TTSState:
+    """WAV를 MP3로 변환하는 노드 (ffmpeg 사용)"""
+    import subprocess
+    
+    out_wav = state.get("out_wav")
+    if not out_wav:
+        logger.warning("out_wav가 없어서 MP3 변환을 스킵합니다")
+        return state
+    
+    wav_path = Path(out_wav)
+    if not wav_path.exists():
+        logger.warning(f"WAV 파일이 없습니다: {wav_path}")
+        return state
+    
+    # MP3 파일 경로 (같은 위치에 .mp3 확장자로)
+    mp3_path = wav_path.with_suffix(".mp3")
+    
+    try:
+        # ffmpeg로 변환 (고품질: 192kbps CBR)
+        cmd = [
+            "ffmpeg",
+            "-y",  # 덮어쓰기
+            "-i", str(wav_path),
+            "-codec:a", "libmp3lame",
+            "-b:a", "192k",  # 192kbps
+            "-ac", "1",  # mono
+            str(mp3_path)
+        ]
+        
+        logger.info(f"MP3 변환 시작: {wav_path.name} → {mp3_path.name}")
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        
+        # 파일 크기 확인
+        wav_size_mb = wav_path.stat().st_size / (1024*1024)
+        mp3_size_mb = mp3_path.stat().st_size / (1024*1024)
+        
+        logger.info(
+            f"MP3 변환 완료: {mp3_path} "
+            f"(WAV {wav_size_mb:.1f}MB → MP3 {mp3_size_mb:.1f}MB, "
+            f"압축률 {mp3_size_mb/wav_size_mb*100:.1f}%)"
+        )
+        
+        return {**state, "out_mp3": str(mp3_path)}
+        
+    except subprocess.CalledProcessError as e:
+        logger.error(f"MP3 변환 실패: {e.stderr}")
+        return state
+    except FileNotFoundError:
+        logger.error(
+            "ffmpeg를 찾을 수 없습니다. 설치가 필요합니다: "
+            "brew install ffmpeg (macOS) 또는 apt install ffmpeg (Ubuntu)"
+        )
+        return state

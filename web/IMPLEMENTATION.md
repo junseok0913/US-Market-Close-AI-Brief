@@ -19,10 +19,14 @@ podcast/
 ├── podcast.db              # 에피소드 목록 (메인 페이지)
 └── {YYYYMMDD}/
     ├── {YYYYMMDD}.json     # 에피소드 상세 (스크립트 + 타임라인)
-    └── {YYYYMMDD}.wav      # 오디오 파일
+    ├── {YYYYMMDD}.wav      # 오디오 파일 (WAV)
+    ├── {YYYYMMDD}.mp3      # 오디오 파일 (MP3, 배포용)
+    ├── metadata.json       # 팟캐스트 메타데이터 (title, description, keywords)
+    └── metadata.txt        # 메타데이터 (Spotify 업로드용)
 ```
 
 > `tts/` 디렉토리는 웹에서 접근 불필요. `{YYYYMMDD}.json`에 모든 타임라인 정보 포함.
+> `metadata.json/txt`는 팟캐스트 플랫폼 업로드용으로 생성됨 (`web/scripts/generate-podcast-metadata.py`).
 
 ### 2. podcast.db 스키마
 

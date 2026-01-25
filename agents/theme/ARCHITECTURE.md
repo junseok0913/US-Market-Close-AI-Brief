@@ -48,6 +48,8 @@ flowchart TD
     WPM --> WA["worker_agent_node"]
     WA -->|"tool_calls"| WT["ToolNode(TOOLS)"]
     WT --> WA
+    WA -->|"force_final"| WF["force_final_answer_node"]
+    WF --> WA
     WA -->|"no tool_calls"| WES["extract_theme_scripts_node"]
     WES --> WE(["END"])
   end
@@ -72,6 +74,7 @@ ThemeWorkerGraph는 “단일 테마”를 입력받아 해당 테마의 심층 
 | `prepare_messages_node` | 프롬프트 렌더링 | `theme_context`, `base_scripts` | `messages=[System, Human]` |
 | `worker_agent_node` | LLM 호출(툴 바인딩) | `messages` | `AIMessage` |
 | `ToolNode(TOOLS)` | 툴콜 실행 | LLM tool calls | tool outputs |
+| `force_final_answer_node` | Tool 호출 한도(20회) 초과 시 강제 종료 유도 | `messages` | `SystemMessage`(강제 종료 지시) |
 | `extract_theme_scripts_node` | JSON 파싱/정규화 | 마지막 `AIMessage.content` | `scripts`(테마 파트) |
 
 ## 병렬 실행/실패 처리 전략

@@ -25,7 +25,7 @@ max_parallel_requests: 3
 
 # 배치 쿨다운(초)
 # - 배치(=max_parallel_requests개)가 모두 응답된 뒤 이만큼 대기하고 다음 배치를 시작 (RPM 제한 회피)
-batch_timeout_seconds: 60
+batch_timeout_seconds: 30
 
 # gap 설정(초)
 # - common_gap_seconds: 같은 챕터 내에서 turn 사이에 넣을 기본 gap

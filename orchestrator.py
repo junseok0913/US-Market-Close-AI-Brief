@@ -634,25 +634,32 @@ def main() -> None:
     # 팟캐스트 메타데이터 생성 (Spotify 업로드용)
     print(f"\n=== Generating Podcast Metadata ===")
     try:
-        # web/scripts를 sys.path에 추가 (위에서 했으면 스킵)
-        import sys
-        web_scripts_path = ROOT / "web" / "scripts"
-        if str(web_scripts_path) not in sys.path:
-            sys.path.insert(0, str(web_scripts_path))
+        # 파일명이 generate-podcast-metadata.py이므로 import 불가 (하이픈 포함)
+        # subprocess로 직접 실행
+        import subprocess
+        script_path = ROOT / "web" / "scripts" / "generate-podcast-metadata.py"
         
-        from generate_podcast_metadata import PodcastMetadataGenerator
+        metadata_result = subprocess.run(  # ← result 대신 metadata_result
+            ["uv", "run", "python", str(script_path), date_yyyymmdd],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=120
+        )
         
-        metadata_gen = PodcastMetadataGenerator(prefix="PODCAST_METADATA")
-        metadata_gen.generate_metadata(date_yyyymmdd)
-        
-        print(f"✅ Metadata generated:")
-        print(f"   - {podcast_dir / 'metadata.json'}")
-        print(f"   - {podcast_dir / 'metadata.txt'}")
+        if metadata_result.returncode == 0:
+            print(f"✅ Metadata generated:")
+            print(f"   - {podcast_dir / 'metadata.json'}")
+            print(f"   - {podcast_dir / 'metadata.txt'}")
+        else:
+            print(f"⚠️ Metadata generation failed (exit code {metadata_result.returncode})")
+            if metadata_result.stderr:
+                print(f"   Error: {metadata_result.stderr[:200]}")
         
     except Exception as e:
         print(f"⚠️ Metadata generation failed: {e}")
         print("   (Script is saved, but metadata needs to be generated manually)")
-        print(f"   Run: python web/scripts/generate-podcast-metadata.py {date_yyyymmdd}")
+        print(f"   Run: uv run python web/scripts/generate-podcast-metadata.py {date_yyyymmdd}")
     
     print("\n=== Orchestrator Result ===")
     print("nutshell:", result.get("nutshell"))

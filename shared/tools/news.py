@@ -132,6 +132,12 @@ def get_news_content(pks: List[str], bucket: Optional[str] = None) -> Dict[str, 
 
     for pk in pks:
         meta = news_index.get(pk)
+        if not meta and not pk.startswith("id#"):
+            meta = news_index.get(f"id#{pk}")
+            if meta:
+                # Correct the PK for subsequent use
+                pk = f"id#{pk}"
+
         if not meta:
             logger.warning("news_list.json에서 %s을 찾을 수 없습니다.", pk)
             continue

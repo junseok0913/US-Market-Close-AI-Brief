@@ -93,3 +93,4 @@ class TTSState(TypedDict, total=False):
     gaps_after_frames: List[int]
     timeline: List[TimelineItem]
     out_wav: str
+    out_mp3: str

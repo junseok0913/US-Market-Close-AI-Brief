@@ -76,7 +76,7 @@ def build_llm(prefix: str, *, logger: Optional[logging.Logger] = None) -> Union[
         }
         if reasoning_effort_norm and reasoning_effort_norm not in {"none", "null", "off", "false"}:
             llm_kwargs["reasoning_effort"] = reasoning_effort_raw
-
+        
         return ChatOpenAI(**llm_kwargs)
     
     else:
