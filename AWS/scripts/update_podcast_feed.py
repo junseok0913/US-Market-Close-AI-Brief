@@ -4,10 +4,16 @@ import email.utils
 import json
 import os
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from xml.sax.saxutils import escape
 from dotenv import load_dotenv
+
+try:
+    from mutagen.mp3 import MP3
+except ImportError:
+    MP3 = None
 
 # .env 파일 로드 (로컬 테스트용)
 # GitHub Actions에서는 Secrets가 환경변수로 주입되므로 이 줄이 있어도 무시되거나 덮어씌워짐
@@ -30,11 +36,19 @@ def generate_rss_xml(base_url, episodes):
     <title>서학개미를 위한 Daily 미국시장 아침 브리핑</title>
     <link>{base_url}</link>
     <language>ko-kr</language>
+    <copyright>© 2026 Stock Daily. All rights reserved.</copyright>
     <itunes:author>Stock Daily</itunes:author>
+    <itunes:owner>
+      <itunes:name>Stock Daily</itunes:name>
+      <itunes:email>ehddus416@gmail.com</itunes:email>
+    </itunes:owner>
     <itunes:image href="{base_url}/artwork.jpg"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
     <itunes:category text="Business">
       <itunes:category text="Investing"/>
     </itunes:category>
+    <itunes:category text="News"/>
     <description>[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.
 
 밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.</description>
@@ -55,6 +69,7 @@ def generate_rss_xml(base_url, episodes):
             pub_date = date_str
 
         audio_url = f"{base_url}/{date_str}/{date_str}.mp3"
+        episode_link = f"{base_url}/{date_str}/"  # Episode webpage URL
         
         # 메타데이터가 있으면 사용, 없으면 기본값
         title = escape(ep.get('title', f"{date_str} 미국 증시 브리핑"))
@@ -67,7 +82,9 @@ def generate_rss_xml(base_url, episodes):
         item = f"""
     <item>
       <title>{title}</title>
+      <link>{episode_link}</link>
       <description>{description}</description>
+      <itunes:author>Stock Daily</itunes:author>
       <enclosure url="{audio_url}" length="{file_size}" type="audio/mpeg"/>
       <guid>{audio_url}</guid>
       <pubDate>{pub_date}</pubDate>
@@ -144,6 +161,22 @@ def main():
                     'date': folder_name,
                     'file_size_bytes': file_size
                 }
+                
+                # MP3 duration 계산 (mutagen 사용)
+                duration_seconds = 0
+                if MP3 is not None:
+                    try:
+                        # MP3 파일을 임시로 다운로드하여 duration 추출
+                        with tempfile.NamedTemporaryFile(suffix='.mp3', delete=True) as tmp_file:
+                            s3.download_fileobj(bucket_name, mp3_key, tmp_file)
+                            tmp_file.flush()
+                            audio = MP3(tmp_file.name)
+                            duration_seconds = int(audio.info.length)
+                            print(f"   🎵 Duration: {duration_seconds}s ({duration_seconds//60}m {duration_seconds%60}s)")
+                    except Exception as e:
+                        print(f"   ⚠️ Could not read duration: {e}")
+                
+                episode_data['duration_seconds'] = duration_seconds
                 
                 # metadata.json이 있으면 내용 읽기
                 try:
