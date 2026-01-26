@@ -1,0 +1,91 @@
+name: Daily Stock Podcast Automation
+
+on:
+  schedule:
+    # 매일 평일(월-금) UTC 21:30 (한국 시간 오전 6:30, 미국 장 마감 후)
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch: # 수동 실행 버튼 (테스트용)
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Set Date Variable
+        id: date
+        run: |
+          # 미국 동부 시간 기준 현재 날짜 (YYYYMMDD) 계산
+          # GitHub Runner는 UTC 기준이므로 -5시간(EST) 적용
+          CURRENT_DATE=$(date -d '-5 hours' +'%Y%m%d')
+          echo "TARGET_DATE=$CURRENT_DATE" >> $GITHUB_ENV
+          echo "Target Date is $CURRENT_DATE"
+
+      - name: Generate Podcast Script (Orchestrator)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 필요한 다른 환경변수가 있다면 추가
+        run: |
+          echo "Generating script for $TARGET_DATE..."
+          # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
+          uv run python orchestrator.py $TARGET_DATE -t TSLA
+
+      - name: Generate Audio (TTS)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "Generating Audio for $TARGET_DATE..."
+          uv run python -m tts.src.tts $TARGET_DATE
+
+      - name: Upload to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-2" # 버킷 리전에 맞춰 수정 필요
+          BUCKET_NAME: "podcast-daily-stock"
+        run: |
+          echo "Uploading results to S3..."
+          # AWS CLI는 GitHub Runner에 기본 설치되어 있음
+          # podcast/{date} 폴더 업로드 (단, tts/ 폴더 안의 파일들은 제외)
+          aws s3 cp podcast/$TARGET_DATE s3://$BUCKET_NAME/$TARGET_DATE --recursive --exclude "tts/*"
+          
+      - name: Update RSS Feed
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-2"
+          BUCKET_NAME: "podcast-daily-stock"
+          # .env 파일과 달리 여기서는 Secrets에서 값을 가져와 환경변수로 주입
+          CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
+        run: |
+          echo "Updating RSS Feed..."
+          uv run python AWS/scripts/update_podcast_feed.py
+
+      - name: Invalidate CloudFront Cache
+        # CLOUDFRONT_DISTRIBUTION_ID가 설정되어 있으면 실행됨
+        continue-on-error: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-2"
+          DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          echo "Invalidating CloudFront Cache for podcast.xml..."
+          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/podcast.xml"
