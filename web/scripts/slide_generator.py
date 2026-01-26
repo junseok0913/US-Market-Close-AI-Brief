@@ -170,6 +170,18 @@ class SlideGenerator:
    - `scripts[].text`에서 핵심 수치와 내용 추출
    - `scripts[].sources`를 활용 (chart → charts, article → bullets)
    - `chapter` 정보로 슬라이드 그룹핑
+   - **[중요] 투자의견(BUY/SELL) 대신 `outlook` 사용**:
+     - `action` 필드는 삭제되었습니다. 절대 사용하지 마세요.
+     - 대신 `outlook` 필드에 해당 종목의 현재 상황을 1-2단어로 요약하세요.
+     - 예: "Earnings Surprise", "High Risk", "Stable Growth", "AI Momentum", "Margin Pressure"
+     - `outlookColor`는 분위기에 맞춰 지정: 'emerald'(호재), 'rose'(악재), 'blue'(중립/안정), 'purple'(혁신/성장), 'amber'(주의)
+
+7. **[법적 필터링] 텍스트 표현 가이드라인 (매우 중요)**:
+   - **타이틀 금지:** "최종 투자 의견", "매수/매도 전략", "강력 추천" 같은 표현 절대 금지.
+     - 대신 "종합 분석 요약", "핵심 관전 포인트", "주요 리스크 및 기회" 등으로 작성하세요.
+   - **단정적 표현 금지:** "명백한", "확실한", "무조건", "과도한" 같은 확정적 형용사 사용 금지.
+     - 대신 "~할 가능성이 있습니다", "~로 관찰됩니다", "~한 우려가 제기됩니다" 등 객관적/관찰자 시점으로 작성하세요.
+   - **Hallucination 주의:** 대본에 없는 내용을 창작하지 마세요.
 
 3. **티커 심볼 변환 (중요!)**:
    TradingView 위젯을 위해 Yahoo Finance 티커를 변환하세요:
@@ -195,6 +207,8 @@ class SlideGenerator:
 - 따옴표는 **작은따옴표(')** 사용
 - 들여쓰기는 **스페이스 2칸**
 - 모든 슬라이드는 위의 타입 정의를 정확히 준수
+- **`action` 필드 절대 사용 금지** -> `outlook` 사용
+- **'최종 투자 의견' 사용 금지** -> '종합 요약' 등 중립적 표현 사용
 
 이제 {date} 날짜의 slides.ts 파일 코드를 생성해주세요:
 """

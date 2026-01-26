@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUp, ArrowDown, Minus } from 'lucide-react';
 import type { TickerAnalysisSlide as TickerAnalysisSlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';
 
@@ -10,13 +9,17 @@ interface Props {
 }
 
 export function TickerAnalysisSlide({ slide }: Props) {
-  const actionStyles = {
-    BUY: { bg: 'bg-emerald-100', text: 'text-emerald-700', border: 'border-emerald-200', Icon: ArrowUp },
-    HOLD: { bg: 'bg-amber-100', text: 'text-amber-700', border: 'border-amber-200', Icon: Minus },
-    SELL: { bg: 'bg-red-100', text: 'text-red-700', border: 'border-red-200', Icon: ArrowDown },
+  const colorMap = {
+    emerald: { bg: 'bg-emerald-100', text: 'text-emerald-700', border: 'border-emerald-200' },
+    rose: { bg: 'bg-rose-100', text: 'text-rose-700', border: 'border-rose-200' },
+    blue: { bg: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-200' },
+    amber: { bg: 'bg-amber-100', text: 'text-amber-700', border: 'border-amber-200' },
+    purple: { bg: 'bg-purple-100', text: 'text-purple-700', border: 'border-purple-200' },
   };
 
-  const action = slide.action ? actionStyles[slide.action] : null;
+  const outlookStyle = slide.outlookColor && colorMap[slide.outlookColor]
+    ? colorMap[slide.outlookColor]
+    : colorMap.purple;
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
@@ -32,10 +35,13 @@ export function TickerAnalysisSlide({ slide }: Props) {
             </span>
             <h2 className="text-2xl font-bold text-gray-900">{slide.title}</h2>
           </div>
-          {action && (
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-xl ${action.bg} border ${action.border}`}>
-              <action.Icon className={`w-5 h-5 ${action.text}`} />
-              <span className={`text-sm font-bold ${action.text}`}>{slide.action}</span>
+
+
+
+
+          {slide.outlook && (
+            <div className={`px-4 py-2 rounded-xl border ${outlookStyle.bg} ${outlookStyle.border}`}>
+              <span className={`text-sm font-bold ${outlookStyle.text}`}>{slide.outlook}</span>
             </div>
           )}
         </motion.div>

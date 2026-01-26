@@ -98,7 +98,8 @@ export interface TickerAnalysisSlide extends BaseSlide {
   title: string;
   points: string[];
   description?: string;
-  action?: 'BUY' | 'HOLD' | 'SELL';
+  outlook?: string;
+  outlookColor?: 'emerald' | 'rose' | 'blue' | 'amber' | 'purple';
 }
 
 
