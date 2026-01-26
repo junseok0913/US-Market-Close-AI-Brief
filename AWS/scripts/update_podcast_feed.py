@@ -51,7 +51,9 @@ def generate_rss_xml(base_url, episodes):
     <itunes:category text="News"/>
     <description>[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.
 
-밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.</description>
+밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.
+
+**투자 유의사항: 본 콘텐츠는 정보 제공 목적이며, 투자 권유가 아닙니다. 모든 투자 결정은 본인의 책임입니다.**</description>
 """
     
     rss_items = ""
