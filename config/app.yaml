@@ -43,7 +43,7 @@ env:
   THEME_REFINER_OPENAI_MAX_RETRIES: 1
 
   # (compat) extra refiner timeout
-  OPENAI_REFINER_TIMEOUT: ""
+  OPENAI_REFINER_TIMEOUT: 300
 
   # ClosingAgent overrides
   CLOSING_OPENAI_MODEL: ""

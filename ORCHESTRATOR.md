@@ -277,3 +277,21 @@ ChapterRange:
 - `cleanup_cache_node()` + `main()`의 `finally`에서 `cleanup_cache_dir()`가 호출되어, 정상/비정상 종료 모두 `cache/{date}`가 정리됩니다.
 - Theme/Ticker/Closing 단독 실행은 `temp/` 중간 산출물에 의존합니다.
   - 파일이 없으면 해당 에이전트 그래프가 `FileNotFoundError`로 실패합니다.
+
+---
+
+## 🆕 Recent Updates (2026-01-26)
+
+### Bug Fixes
+- ✅ **Environment Variable Handling**: Fixed timeout parsing to gracefully handle empty strings (`""`)
+  - `agents/theme/graph.py`: Added fallback logic for `THEME_REFINER_OPENAI_TIMEOUT`
+  - `config/app.yaml`: Set default timeout values to `300` instead of empty strings
+- ✅ **AWS Configuration**: Fixed default AWS profile from `"Admins"` to `"Nam"`
+  - `shared/utils/aws.py`: Updated `get_boto3_session()` default profile
+  - Added debug logging for boto3 session creation
+
+### Known Issues
+- ⚠️ Terminal environment variable `AWS_REGION` may override `.env` settings
+  - **Workaround**: Run `unset AWS_REGION` before executing orchestrator
+  - **Root Cause**: Shell environment variables take precedence over file-based configs
+

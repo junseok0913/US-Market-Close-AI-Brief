@@ -1,42 +1,49 @@
 # AWS Integration
 
-AWS S3 bucket configuration and RSS feed generation for podcast distribution.
+AWS S3 bucket configuration and RSS feed generation for **bilingual podcast** distribution (Korean + English).
 
 ## 📁 Structure
 
 ```
 AWS/
 ├── README.md                      # This file
-├── artwork.jpg                    # Podcast cover image
-├── podcast.xml                    # RSS feed (auto-generated)
-└── scripts/
-    └── update_podcast_feed.py     # RSS generator script
+├── artwork.jpg                    # Podcast cover (Korean)
+├── artwork_en.jpg                 # Podcast cover (English, 1400x1400)
+├── podcast.xml                    # RSS feed (Korean)
+├── podcast_en.xml                 # RSS feed (English)
+├── scripts/
+│   └── update_podcast_feed.py     # Bilingual RSS generator
+└── translation/
+    ├── translate_metadata.py      # Metadata translator (KO→EN)
+    └── prompt/
+        └── metadata_translation.yaml
 ```
 
 ## 🔄 Workflow
 
 ```
-GitHub Actions → Generate Script → Generate Audio → Upload to S3 → Update RSS Feed
-                                                                           ↓
-                                                            update_podcast_feed.py
-                                                                           ↓
-                                                      1. Scan S3 for episodes
-                                                      2. Generate RSS XML
-                                                      3. Upload to S3
+GitHub Actions → Generate Script (KO) → Translate (EN) → TTS (KO) → TTS (EN) 
+                                                              ↓
+                                            Upload to S3 (ko/*, en/*)
+                                                              ↓
+                                          Update RSS Feed (podcast.xml, podcast_en.xml)
 ```
 
-## S3 Bucket Structure
+## S3 Bucket Structure (Bilingual)
 
 ```
 podcast-daily-stock/
 ├── 20260123/
-│   ├── 20260123.mp3
-│   └── metadata.json
-├── 20260124/
-│   ├── 20260124.mp3
-│   └── metadata.json
-├── artwork.jpg
-└── podcast.xml
+│   ├── ko/
+│   │   ├── 20260123.mp3
+│   │   └── metadata.json
+│   └── en/
+│       ├── 20260123.mp3
+│       └── metadata.json
+├── artwork.jpg         # Korean cover
+├── artwork_en.jpg      # English cover (1400x1400 for Spotify)
+├── podcast.xml         # Korean RSS
+└── podcast_en.xml      # English RSS
 ```
 
 ## 🔧 Required GitHub Secrets
@@ -53,34 +60,30 @@ podcast-daily-stock/
 ## What `update_podcast_feed.py` Does
 
 1. **Scans S3** for all episode folders (`YYYYMMDD` format)
-2. **Reads metadata** from `metadata.json` files
+2. **Reads metadata** from language-specific `metadata.json` (ko/ or en/)
 3. **Gets file info** (size, duration) from `.mp3` files
-4. **Generates RSS XML** with podcast standards
-5. **Uploads** `podcast.xml` to S3 root
+4. **Generates RSS XML** for each language
+5. **Uploads** `podcast.xml` and `podcast_en.xml` to S3 root
 
-## 🚀 Usage
-
-**Automatic (GitHub Actions):**
-```yaml
-- name: Update RSS Feed
-  run: uv run python AWS/scripts/update_podcast_feed.py
-```
-
-**Manual (Local):**
+**Usage:**
 ```bash
-uv run python AWS/scripts/update_podcast_feed.py
+# Korean RSS
+uv run python AWS/scripts/update_podcast_feed.py --lang ko
+
+# English RSS
+uv run python AWS/scripts/update_podcast_feed.py --lang en
 ```
 
-## � RSS Feed URL
+## 📻 RSS Feed URLs
 
-**With CloudFront (faster):**
+**Korean:**
 ```
-https://d1234abcd5678.cloudfront.net/podcast.xml
+https://d3kwqqx9p3861y.cloudfront.net/podcast.xml
 ```
 
-**Without CloudFront:**
+**English:**
 ```
-https://podcast-daily-stock.s3.amazonaws.com/podcast.xml
+https://d3kwqqx9p3861y.cloudfront.net/podcast_en.xml
 ```
 
 ## CloudFront Setup (Optional)
@@ -94,4 +97,13 @@ CloudFront = CDN for faster global delivery
 
 ---
 
-**Last Updated**: 2026-01-25
+## 🆕 Recent Updates (2026-01-26)
+
+- ✅ **Bilingual Support**: Added English podcast generation (TTS, metadata, RSS)
+- ✅ **Separate Artwork**: `artwork_en.jpg` (1400x1400 for Spotify compliance)
+- ✅ **Dual RSS Feeds**: `podcast.xml` (Korean), `podcast_en.xml` (English)
+- ✅ **Translation Workflow**: Automated KO→EN metadata translation
+- ✅ **Local Preview**: RSS files saved locally before S3 upload
+
+**Last Updated**: 2026-01-26
+

@@ -42,12 +42,13 @@ class PodcastMetadataGenerator:
         self.llm = build_llm(prefix, logger=logger)
         self.root = ROOT
     
-    def generate_metadata(self, date: str) -> dict:
+    def generate_metadata(self, date: str, lang: str = "ko") -> dict:
         """
         팟캐스트 에피소드 메타데이터 생성
         
         Args:
             date: YYYYMMDD 형식
+            lang: 언어 ("ko" or "en")
             
         Returns:
             {"title": str, "description": str}
@@ -55,30 +56,30 @@ class PodcastMetadataGenerator:
         Raises:
             FileNotFoundError: script.json이 없을 때
         """
-        logger.info(f"팟캐스트 메타데이터 생성 시작: date={date}")
+        logger.info(f"팟캐스트 메타데이터 생성 시작: date={date}, lang={lang}")
         
         # 1. script.json 로드
-        script_data = self._load_script_json(date)
+        script_data = self._load_script_json(date, lang)
         
         # 2. LLM으로 메타데이터 생성
-        metadata = self._generate_with_llm(script_data, date)
+        metadata = self._generate_with_llm(script_data, date, lang)
         
         # 3. 파일 저장
-        self._save_metadata(date, metadata)
+        self._save_metadata(date, metadata, lang)
         
         logger.info(f"✅ 메타데이터 생성 완료")
         return metadata
     
-    def _load_script_json(self, date: str) -> dict:
+    def _load_script_json(self, date: str, lang: str = "ko") -> dict:
         """script.json 로드"""
-        script_path = self.root / "podcast" / date / "script.json"
+        script_path = self.root / "podcast" / date / lang / "script.json"
         
         if not script_path.exists():
             raise FileNotFoundError(f"script.json을 찾을 수 없습니다: {script_path}")
         
         return json.loads(script_path.read_text(encoding='utf-8'))
     
-    def _generate_with_llm(self, script_data: dict, date: str) -> dict:
+    def _generate_with_llm(self, script_data: dict, date: str, lang: str = "ko") -> dict:
         """LLM으로 설명 생성 (제목은 nutshell 사용)"""
         
         # title은 nutshell에서 직접 가져오기
@@ -94,8 +95,11 @@ class PodcastMetadataGenerator:
         except:
             formatted_date = date
         
-        # title = 날짜 + nutshell
-        title = f"{formatted_date} 미국 증시 장마감 | {nutshell}"
+        # title = 날짜 + nutshell (언어별)
+        if lang == "en":
+            title = f"{formatted_date} US Market Close | {nutshell}"
+        else:
+            title = f"{formatted_date} 미국 증시 장마감 | {nutshell}"
         
         # YAML 프롬프트 로드
         prompt_config = self._load_prompt_yaml()
@@ -229,11 +233,11 @@ class PodcastMetadataGenerator:
             logger.warning(f"설명이 {self.DESCRIPTION_MAX_LENGTH}자를 초과합니다 ({len(description)}자). 잘라냅니다.")
             metadata["description"] = description[:self.DESCRIPTION_MAX_LENGTH]
     
-    def _save_metadata(self, date: str, metadata: dict):
+    def _save_metadata(self, date: str, metadata: dict, lang: str = "ko"):
         """메타데이터 파일 저장"""
         
-        # podcast/{date}/metadata.json 저장 (API용)
-        podcast_dir = self.root / "podcast" / date
+        # podcast/{date}/{lang}/metadata.json 저장 (API용)
+        podcast_dir = self.root / "podcast" / date / lang
         podcast_dir.mkdir(parents=True, exist_ok=True)
         
         metadata_path = podcast_dir / "metadata.json"
@@ -244,7 +248,7 @@ class PodcastMetadataGenerator:
         
         logger.info(f"메타데이터 저장: {metadata_path}")
         
-        # podcast/{date}/metadata.txt 저장 (복사-붙여넣기용, 실제 줄바꿈)
+        # podcast/{date}/{lang}/metadata.txt 저장 (복사-붙여넣기용, 실제 줄바꿈)
         txt_path = podcast_dir / "metadata.txt"
         txt_content = f"""제목:
 {metadata['title']}
@@ -288,6 +292,14 @@ def main():
         help="날짜 (YYYYMMDD 형식, 예: 20260121)"
     )
     parser.add_argument(
+        "lang",
+        type=str,
+        nargs="?",
+        default="ko",
+        choices=["ko", "en"],
+        help="언어 (ko=한국어, en=영어, 기본값: ko)"
+    )
+    parser.add_argument(
         "--prefix",
         type=str,
         default="PODCAST_METADATA",
@@ -302,6 +314,7 @@ def main():
     
     # 날짜 검증
     date = args.date.replace("-", "")
+    lang = args.lang
     if len(date) != 8 or not date.isdigit():
         print(f"❌ 잘못된 날짜 형식: {args.date}")
         print("   YYYYMMDD 형식으로 입력하세요 (예: 20260121)")
@@ -313,9 +326,10 @@ def main():
         
         print(f"\n🚀 팟캐스트 메타데이터 생성 시작...")
         print(f"   날짜: {date}")
+        print(f"   언어: {lang}")
         print(f"   환경변수 prefix: {args.prefix}\n")
         
-        metadata = generator.generate_metadata(date)
+        metadata = generator.generate_metadata(date, lang)
         
         print(f"\n✅ 메타데이터 생성 완료!\n")
         print(f"📌 제목 ({len(metadata['title'])}자):")
@@ -325,8 +339,8 @@ def main():
         print(f"🏷️  키워드:")
         print(f"   {metadata.get('keywords', '')}\n")
         print(f"💾 저장 위치:")
-        print(f"   podcast/{date}/metadata.json (JSON)")
-        print(f"   podcast/{date}/metadata.txt (Spotify 업로드용)\n")
+        print(f"   podcast/{date}/{lang}/metadata.json (JSON)")
+        print(f"   podcast/{date}/{lang}/metadata.txt (Spotify 업로드용)\n")
         
     except FileNotFoundError as e:
         print(f"\n❌ 파일을 찾을 수 없습니다:")

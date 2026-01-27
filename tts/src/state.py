@@ -73,6 +73,7 @@ class TTSState(TypedDict, total=False):
     date: str
     script_path: Path
     out_dir: Path
+    lang: str  # "ko" or "en"
 
     # config
     temperature: float

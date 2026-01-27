@@ -447,12 +447,27 @@ def build_theme_graph():
         messages = [SystemMessage(content=system_prompt), HumanMessage(content=human_prompt)]
 
         logger.info("Refiner 호출")
-        timeout = float(
-            os.getenv(
-                "THEME_REFINER_OPENAI_TIMEOUT",
-                os.getenv("OPENAI_REFINER_TIMEOUT", os.getenv("OPENAI_TIMEOUT", "120")),
-            )
+        
+        # Timeout 환경변수 읽기 (빈 문자열 처리)
+        def _get_timeout_env(var_name: str) -> str | None:
+            val = os.getenv(var_name)
+            if val is None:
+                return None
+            val = val.strip()
+            return val if val else None
+        
+        timeout_str = (
+            _get_timeout_env("THEME_REFINER_OPENAI_TIMEOUT")
+            or _get_timeout_env("OPENAI_REFINER_TIMEOUT")
+            or _get_timeout_env("OPENAI_TIMEOUT")
+            or "120"
         )
+        
+        try:
+            timeout = float(timeout_str)
+        except (ValueError, TypeError):
+            logger.warning("잘못된 timeout 값: %r (기본값 120 사용)", timeout_str)
+            timeout = 120.0
 
         max_retries = _get_refiner_max_retries()
         max_attempts = 1 + max_retries

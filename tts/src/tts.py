@@ -96,9 +96,9 @@ def _trace_inputs_pipeline(inputs: dict) -> dict:
     tags=["tts", "gemini"],
     process_inputs=_trace_inputs_pipeline,
 )
-def run_tts(*, date: str, script_path: Path, out_dir: Path) -> Dict[str, Any]:
+def run_tts(*, date: str, script_path: Path, out_dir: Path, lang: str = "ko") -> Dict[str, Any]:
     app = build_graph()
-    return app.invoke({"date": date, "script_path": script_path, "out_dir": out_dir})
+    return app.invoke({"date": date, "script_path": script_path, "out_dir": out_dir, "lang": lang})
 
 
 def main(argv: Optional[List[str]] = None) -> int:
@@ -106,6 +106,13 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     parser = argparse.ArgumentParser(description="Gemini TTS (turn-level, LangGraph)")
     parser.add_argument("date", type=str, help="브리핑 날짜 (YYYYMMDD 또는 YYYY-MM-DD)")
+    parser.add_argument(
+        "--lang",
+        type=str,
+        default="ko",
+        choices=["ko", "en"],
+        help="언어 선택 (ko=한국어, en=영어, 기본값: ko)"
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -122,11 +129,18 @@ def main(argv: Optional[List[str]] = None) -> int:
         logger.error("GEMINI_API_KEY가 설정되지 않았습니다. (.env 또는 환경변수)")
         return 2
 
-    script_path = ROOT_DIR / "podcast" / date_yyyymmdd / "script.json"
-    out_dir = ROOT_DIR / "podcast" / date_yyyymmdd / "tts"
+    lang = args.lang
+    logger.info(f"TTS 언어: {lang} ({'한국어' if lang == 'ko' else '영어'})")
+
+    # 언어별 경로 설정
+    script_path = ROOT_DIR / "podcast" / date_yyyymmdd / lang / "script.json"
+    out_dir = ROOT_DIR / "podcast" / date_yyyymmdd / lang / "tts"
+
+    logger.info(f"입력: {script_path}")
+    logger.info(f"출력: {out_dir}")
 
     try:
-        result = run_tts(date=date_yyyymmdd, script_path=script_path, out_dir=out_dir)
+        result = run_tts(date=date_yyyymmdd, script_path=script_path, out_dir=out_dir, lang=lang)
     except Exception as e:
         if isinstance(e, FileExistsError):
             logger.error("%s", e)

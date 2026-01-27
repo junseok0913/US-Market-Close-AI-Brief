@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Daily US Market Close Briefing</title>
+    <link>https://d3kwqqx9p3861y.cloudfront.net</link>
+    <language>en-us</language>
+    <copyright>© 2026 Stock Daily. All rights reserved.</copyright>
+    <itunes:author>Stock Daily</itunes:author>
+    <itunes:owner>
+      <itunes:name>Stock Daily</itunes:name>
+      <itunes:email>ehddus416@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://d3kwqqx9p3861y.cloudfront.net/artwork_en.jpg"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="Business">
+      <itunes:category text="Investing"/>
+    </itunes:category>
+    <itunes:category text="News"/>
+    <description>[Updated daily at 7 AM KST] AI-powered, fact-checked analysis of US stock market close.
+
+What moved the markets overnight? Using cutting-edge LangGraph technology, we analyze vast news data and market indicators with fact-checking to deliver key insights.
+
+Investment Disclaimer: This content is for informational purposes only and is not investment advice. All investment decisions are your own responsibility.</description>
+
+    <item>
+      <title>2026.1.23 US Market Close | Intel's 17% plunge drags down the Dow, but Nasdaq ends higher</title>
+      <link>https://d3kwqqx9p3861y.cloudfront.net/20260123/</link>
+      <description>On January 23, US markets closed mixed, caught between the shock of Intel's poor earnings report and relief from easing geopolitical risks. The Dow Jones Industrial Average fell, dragged down by Intel's sharp decline, while the tech-heavy Nasdaq Composite gained ground on optimism for upcoming Big Tech earnings.
+
+# Major Indices
+- Dow Jones: -0.58% - The index was weighed down by component stock Intel, which plunged 17% after issuing weak first-quarter guidance.
+- Nasdaq: +0.28% - Closed higher, driven by anticipation for earnings reports from major tech companies like Microsoft next week.
+- S&amp;P 500: +0.03% - Finished nearly flat as Intel's negative news was offset by positive developments, including President Trump's withdrawal of tariff threats.
+
+# Key Issues
+- Intel's Earnings Shock: The stock plunged over 17% after the company provided a Q1 revenue forecast that was significantly below market expectations.
+- Easing Geopolitical Risk: Market sentiment improved after President Trump withdrew threats to impose tariffs on eight European nations.
+- Big Tech Divergence: Performance was mixed within the tech sector. Microsoft surged 3.27% on AI optimism, highlighting a split in investor sentiment.
+- Strong Economic Data: The S&amp;P Global Services PMI came in at 52.5, reinforcing the view of a resilient US economy.
+
+# Key Stocks
+- Intel (INTC): Plunged 17% after releasing Q1 earnings guidance that fell far short of market expectations.
+- Microsoft (MSFT): Surged 3.27%, hitting a new all-time high fueled by excitement around artificial intelligence (AI).
+- AMD: Rose 2.3%, reaching a new high as it benefited from the weakness of its competitor, Intel.
+- Apple (AAPL): Slipped 0.12%, reflecting ongoing concerns about slowing iPhone sales in the Chinese market.
+- Tesla (TSLA): Declined 0.07%, hovering near the flatline amid concerns over intensifying competition in the EV market and profitability issues.
+- TSMC (TSM): Gained 2% after positive news related to its investment in a new fabrication plant in Arizona.</description>
+      <itunes:author>Stock Daily</itunes:author>
+      <enclosure url="https://d3kwqqx9p3861y.cloudfront.net/20260123/en/20260123.mp3" length="24751724" type="audio/mpeg"/>
+      <guid>https://d3kwqqx9p3861y.cloudfront.net/20260123/en/20260123.mp3</guid>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 -0000</pubDate>
+      <itunes:duration>1237</itunes:duration>
+    </item>
+  </channel>
+</rss>

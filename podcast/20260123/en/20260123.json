@@ -1,0 +1,918 @@
+{
+  "date": "20260123",
+  "nutshell": "A mixed session torn between the shock of Intel's earnings and geopolitical relief.",
+  "user_tickers": [
+    "TSM"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 29
+    },
+    {
+      "name": "ticker",
+      "start_id": 30,
+      "end_id": 37
+    },
+    {
+      "name": "closing",
+      "start_id": 38,
+      "end_id": 46
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for January 23rd. It was a tough day to find direction, with the major indices ending mixed.",
+      "sources": [],
+      "time": [
+        0,
+        8651
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today was a mixed session, caught between the shock from Intel's earnings and a sense of geopolitical relief. The Dow Jones Industrial Average fell 0.58% to close at 49,098.71, but the tech-heavy Nasdaq Composite gained 0.28% to finish at 23,501.24. The S&P 500 was nearly unchanged, ending flat at 6,915.61. We saw a clear split in the market, with major negative and positive catalysts hitting at the same time, causing sharp divergences between specific stocks and sectors.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        }
+      ],
+      "time": [
+        9151,
+        45122
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the Dow was down while the Nasdaq was up. What were the specific drivers that pulled the market in opposite directions like that?",
+      "sources": [],
+      "time": [
+        45622,
+        54073
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The biggest factor was corporate earnings. Intel, a Dow component, saw its stock plunge 17% after issuing weak first-quarter guidance, which weighed heavily on the entire index. On the other hand, the Nasdaq gained momentum from growing optimism for other Big Tech earnings reports due next week. Adding to that, news that President Trump was backing off his European tariff threats helped offset some of the Intel shock and prevented a broader market slide.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "c138e10e99280aa5",
+          "title": "Wall Street celebrates the end of Trump’s Greenland tariff threats and expects the Supreme Court will kill even more of them"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        }
+      ],
+      "time": [
+        54573,
+        79664
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, it sounds like one mega-cap's earnings shook the market, while optimism and macro issues on the other side provided a defense. Could you break down the key themes that moved the market today?",
+      "sources": [],
+      "time": [
+        80164,
+        91415
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, that's a good way to put it. Three main currents shaped the market today. First, the impact of Intel's earnings shock on the Dow. Second, the sense of relief from easing geopolitical risks. And finally, the Nasdaq's distinct strength amid anticipation for Big Tech earnings. We'll dive into each of these three themes in more detail shortly.",
+      "sources": [],
+      "time": [
+        91915,
+        112166
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, of those three themes you mentioned, it seems Intel delivered the biggest shock to the system. Let's start there. What were the specifics of Intel's earnings shock that dragged down the Dow?",
+      "sources": [],
+      "time": [
+        113166,
+        125177
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, it was as if a massive hurricane named Intel hit one specific part of the market today. The stock plunged over 17% right after the company released disappointing Q1 guidance, single-handedly dragging down the Dow Jones Industrial Average. But the tech-focused Nasdaq actually finished higher, and the S&P 500 held steady, showing a real divergence. This happened because, on the other side of the market, positive economic data provided a solid backstop. The S&P Global Services PMI released today came in at 52.5, still in strong expansion territory, reaffirming the resilience of the U.S. economy. That helped prevent the Intel shock from turning into a market-wide sell-off. The 10-year Treasury yield also remained stable, which kept investor sentiment from freezing over. On top of that, rising WTI crude oil prices reflected confidence in the economy. So, the market had a complex day, digesting Intel's company-specific bad news alongside positive macro signals.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "event",
+          "id": "398529",
+          "title": "s&p global services pmi flash",
+          "date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "US10Y",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        }
+      ],
+      "time": [
+        125677,
+        182088
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "A drop of over 17% suggests the guidance must have been truly shocking. What were the specific numbers and the story behind them?",
+      "sources": [],
+      "time": [
+        182588,
+        190879
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Yes, the numbers were well below expectations. Intel guided for first-quarter revenue between $11.7 billion and $12.7 billion, which is significantly lower than the Wall Street consensus in the high $13 billion range. Their adjusted earnings per share forecast was less than half of what the market was hoping for. But the real problem is the 'why.' The report confirmed a deepening slowdown in their data center division, where AI chip competition is fierce. On top of that, business units once seen as growth engines, like the Programmable Solutions Group and their self-driving subsidiary Mobileye, also showed weakness. While CEO Pat Gelsinger acknowledged short-term difficulties on the earnings call, the market interpreted this not as a simple cyclical downturn, but as a structural problem—that Intel is falling behind in the technological race of the AI era.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a964b2adf375e70d",
+          "title": "Intel: Q4 Earnings Snapshot"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        191379,
+        241150
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "I'm curious if Intel's weakness spread to the broader semiconductor sector. How did its competitors' stocks perform?",
+      "sources": [],
+      "time": [
+        241650,
+        248981
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "To put it simply, the market drew a clear line, treating Intel's problems as company-specific. In fact, for its competitors, it almost acted as a positive catalyst. For instance, AMD, which has been taking market share from Intel in the data center space, saw its stock rise over 2.3% to hit a new high. Nvidia, the undisputed leader in AI chips, also showed resilience, finishing slightly higher after some volatility during the session. This shows that investors are more focused on the idea that Intel is losing the competitive battle, rather than seeing a drop in demand for the semiconductor industry as a whole. The VanEck Semiconductor ETF, which tracks the entire sector, also supported this view by falling only slightly despite the shock from Intel.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMH",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        }
+      ],
+      "time": [
+        249481,
+        292052
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, we can interpret this as the market isolating Intel's issues and continuing to look forward to next week's Big Tech earnings.",
+      "sources": [],
+      "time": [
+        292552,
+        301362
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's exactly right. The market's focus has already shifted to the upcoming earnings reports from other Big Tech giants like Microsoft, Apple, and Amazon. Optimism about their AI-related investments and future outlook, particularly for the Nasdaq, helped offset the negative news from Intel. Ultimately, today's market was a clash between the shadow of the past—a traditional semiconductor giant's decline—and the blueprint for the future, which is the promise of new tech leaders driven by AI. The solid services PMI data added another layer of confidence in the U.S. economy, giving the market the strength to absorb the shock and wait for the next big event.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "event",
+          "id": "398529",
+          "title": "s&p global services pmi flash",
+          "date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "c138e10e99280aa5",
+          "title": "Wall Street celebrates the end of Trump’s Greenland tariff threats and expects the Supreme Court will kill even more of them"
+        }
+      ],
+      "time": [
+        301862,
+        342873
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "It seems there was another reason the market didn't spiral into a full-blown sell-off despite the major hit from Intel. You mentioned the easing of geopolitical risk earlier—it sounds like that provided a backstop. Can you elaborate on that?",
+      "sources": [],
+      "time": [
+        343373,
+        358544
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today's market was a head-on collision between a powerful positive catalyst—President Trump backing down from tariff threats—and a major negative one, Intel's earnings shock. Thanks to that geopolitical relief, the S&P 500 managed to eke out a 0.03% gain to close slightly higher. But under the surface, Intel's stock plunged over 17%, dragging the Dow Jones Industrial Average down by 0.58%. While European markets, the direct targets of the tariff risk, breathed a sigh of relief, some safe-haven demand lingered, with gold futures rising nearly 1.4% to approach the $5,000 level. Conversely, the U.S. dollar index fell about 0.8%, showing the geopolitical premium was unwinding. Ultimately, if it hadn't been for the news of the tariff threat withdrawal against Europe, the shock from Intel could have easily triggered a market-wide sell-off. It was a very close call.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "c138e10e99280aa5",
+          "title": "Wall Street celebrates the end of Trump’s Greenland tariff threats and expects the Supreme Court will kill even more of them"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        359044,
+        418855
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Greenland and tariffs... that seems like an unusual combination. Why did this particular conflict rattle the markets so much?",
+      "sources": [],
+      "time": [
+        419355,
+        427566
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "This whole situation started when President Trump expressed interest in buying Greenland, was rejected, and then threatened retaliatory 10% tariffs on eight European countries, including the UK, starting February 1st. When that news broke earlier this week, the market reacted immediately to the possibility of an escalating trade war, with the Dow plunging over 870 points in a single day. The VIX, the market's volatility index, also spiked as investor anxiety grew. However, after the President met with the NATO Secretary General, they reached a resolution involving military access rights, and the tariff threat was withdrawn. That became the catalyst for a dramatic rebound in global markets, including European stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "0def300d8cf88446",
+          "title": "Trump touts 'total access' Greenland deal as NATO asks allies to step up"
+        },
+        {
+          "type": "article",
+          "pk": "1c9e106b387b1511",
+          "title": "Trump’s Greenland saga has left lasting uncertainty on Wall Street"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^STOXX50E",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        428066,
+        468077
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So the market cheered after the President solved a problem he created himself. How exactly did that improve investor sentiment?",
+      "sources": [],
+      "time": [
+        468577,
+        477068
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, on Wall Street, this phenomenon has even revived the term 'TACO Trade,' which stands for 'Trump Always Capitulates Eventually.' The strategy of using market dips caused by the President's threats as a buying opportunity has worked once again. In fact, at the peak of this tariff threat, we saw clear risk-off sentiment, with about $17 billion flowing out of the U.S. stock market. But as soon as the threat was removed, risk appetite quickly returned, with the Euro strengthening 0.7% against the dollar. However, the fact that gold prices continue to rise suggests that while investors are relieved by the short-term risk resolution, they haven't shed their fundamental concerns about policy unpredictability.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "3dca54bad129c4a7",
+          "title": "After Trump's Greenland Deal, Wall Street Is Talking Up the 'TACO Trade' Again. What's Next?"
+        },
+        {
+          "type": "article",
+          "pk": "914d67dce2e246c0",
+          "title": "Gold heads for best week since 2008 as Trump’s Greenland threats hit dollar"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        },
+        {
+          "type": "chart",
+          "ticker": "EURUSD=X",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        477568,
+        521259
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Amid this macro-level relief, how should we interpret the economic data that came out today?",
+      "sources": [],
+      "time": [
+        521759,
+        527650
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "The economic data released today was a bit nuanced and didn't fully support the market's sense of relief. The preliminary January Composite PMI from S&P Global came in at 52.8, continuing its expansion, but it was roughly in line with expectations and suggested a slight slowdown in growth compared to last fall. Notably, the report mentioned that many businesses cited tariffs as a primary cause of rising costs, confirming the inflationary pressure that geopolitical conflicts can have on the real economy. The University of Michigan's Consumer Sentiment index also came in higher than expected at 56.4, but it still showed that consumers are feeling the burden of high prices. So, while the sudden geopolitical risk has vanished, a more cautious, wait-and-see attitude about the economy's underlying strength has taken hold.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399035",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-01-23"
+        },
+        {
+          "type": "event",
+          "id": "398030",
+          "title": "s&p global manufacturing pmi flash",
+          "date": "2026-01-23"
+        },
+        {
+          "type": "event",
+          "id": "394900",
+          "title": "michigan consumer sentiment final",
+          "date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "797c298385999b76",
+          "title": "Stock market today: Dow slides, Nasdaq pops after volatile week as Intel plunges after earnings"
+        }
+      ],
+      "time": [
+        528150,
+        576121
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Even with this more cautious macro outlook, the Nasdaq managed to stand out with gains, despite the major shock from Intel. That must mean the optimism for tech is incredibly strong. What's behind that?",
+      "sources": [],
+      "time": [
+        576621,
+        591072
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, today's market was a stark illustration of a rigorous sorting process happening within the tech sector. The reason the Nasdaq rose 0.28% while the Dow fell 0.58% and the S&P 500 stayed flat is precisely this divergence. Intel's stock plummeted over 17% after it slashed its Q1 revenue guidance by $2 billion compared to expectations. But the market didn't see this as a crisis for the entire semiconductor sector; instead, it was viewed as an Intel-specific problem, a result of falling behind in the data center and AI chip race. In fact, investors' attention turned to Microsoft, which reports earnings next week. Driven by AI optimism, Microsoft surged 3.27% today to a new all-time high. This created a positive halo effect for other Big Tech companies and became the core engine lifting the Nasdaq.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        }
+      ],
+      "time": [
+        591572,
+        644343
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So it seems the keyword 'AI' is really separating the winners from the losers. What are the market's specific expectations for Microsoft's earnings?",
+      "sources": [],
+      "time": [
+        644843,
+        654734
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The market is expecting Microsoft to show explosive growth in its cloud business, driven by AI. The key metric will be the growth rate of its Azure cloud service. Wall Street is forecasting that Azure's growth will accelerate this quarter compared to the last, largely because new AI services integrated with OpenAI's technology are expected to significantly boost corporate cloud spending. The initial performance of the Copilot services embedded in Windows and Office will also be a critical point of interest. This optimism has already been priced in, with Microsoft's stock jumping over 3% today alone, setting a very high bar that the company will need to clear in its earnings report next week.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-22",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        655234,
+        696245
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Besides Microsoft, what's the situation for other Big Tech companies like Apple and Tesla, who are also reporting next week?",
+      "sources": [],
+      "time": [
+        696745,
+        704876
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Other Big Tech companies are facing their own unique challenges. For Apple, the biggest concern is the slowdown in iPhone sales in the Chinese market. The stock slipped 0.12% today, partly reflecting those worries. Investors will be watching to see if Apple can offset weak iPhone sales with growth in its services division and positive early reactions to the newly launched Vision Pro. For Tesla, on the other hand, the key issues are intensifying competition in the EV market and profitability concerns due to price cuts. Tesla's stock was flat today, down just 0.07%, as the market waits to hear about its future production guidance and its strategy to defend profit margins. So, even within Big Tech, the market's assessment varies widely depending on their core business—be it AI, smartphones, or electric vehicles.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "Fed Interest Rate Decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        705376,
+        754627
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So next week will be the most critical turning point for this earnings season. Could you give us a final summary of today's market action?",
+      "sources": [],
+      "time": [
+        755127,
+        763578
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, absolutely. Today's market clearly demonstrated that 'not all tech stocks are created equal,' as shown by Intel's fall and Microsoft's rise. Investors are no longer just buying the 'tech' label; they are selectively seeking out companies with clear growth drivers like AI. Next week's earnings reports from Microsoft, Apple, Tesla, and other Big Tech firms will be the ultimate test of whether this market optimism is based in reality or just excessive hype. The results and guidance from these companies will likely determine whether the Nasdaq's outperformance continues or if the entire market is due for another pullback.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        },
+        {
+          "type": "article",
+          "pk": "1bb4634df98fad0a",
+          "title": "Earnings live: Intel stock plunges, with more Big Tech earnings from Apple, Microsoft, and Tesla ahead"
+        }
+      ],
+      "time": [
+        764078,
+        801449
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Alright, now that we've covered the broad market trends, let's look at some individual stocks that made notable moves in this mixed environment. The first one is TSMC. It rallied strongly at the open, gave back some gains, but still finished up over 2 percent. That's quite different from the overall market mood. What was the story there?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "TSM",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        802449,
+        822180
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, TSMC's strength today was the result of positive news about its new plant investment in Arizona, which strongly boosted investor sentiment. The decisive factor was a statement from Taiwan's president, who personally expressed anticipation for further investment in Arizona and emphasized strengthening ties with the U.S. The market interpreted this as a very positive signal, a direct move to tackle TSMC's biggest perceived weakness: its geopolitical risk from being concentrated in Taiwan. Investors bet that this massive investment would elevate TSMC from a mere production base to a core U.S. technology ally, viewing it as a game-changer that secures long-term stability.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#fde8f1b97d1bace1",
+          "title": "Taiwan looks forward to more chip investment in Arizona, president says"
+        }
+      ],
+      "time": [
+        822680,
+        864291
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "Resolving geopolitical risk is clearly a huge positive. But there must be significant concerns about the astronomical investment costs and the difficulties of operating a plant overseas. Isn't there a counter-argument to this?",
+      "sources": [],
+      "time": [
+        864791,
+        879802
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's a very sharp point, and it's exactly where the debate over TSMC is splitting. Behind the market's optimism lies a strong warning that the Arizona investment is a decision that trades an uncertain geopolitical risk for a certain financial burden. Specifically, labor, construction, and regulatory costs in the U.S. are significantly higher than in Taiwan, with estimates suggesting the Arizona plant's operating costs will be at least 30 to 50 percent higher. This is seen as an almost guaranteed hit to profitability that could structurally damage TSMC's strongest competitive advantage: its phenomenal gross profit margin of over 50%. In other words, while the market is cheering the disappearance of risk, it may be ignoring the uncomfortable truth that the company's ability to generate profit could be permanently diminished.",
+      "sources": [],
+      "time": [
+        880302,
+        930113
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "The cost increase is definitely a burden, but some argue that it could open up new high-margin markets like U.S. defense and aerospace. The argument is that a 'security premium' could offset the higher costs.",
+      "sources": [],
+      "time": [
+        930613,
+        944024
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That 'security premium' is the core of this debate. Those who are bullish on growth potential argue that new customers in sectors like defense, which prioritize stable supply chains over price, will be willing to pay a premium. But the other side counters that the size of this market isn't large enough to offset the high-cost structure of the entire Arizona facility. Furthermore, they point out that subsidies from the U.S. CHIPS Act will only cover a portion of the initial investment and won't be a fundamental solution for the high operating costs that will persist for the life of the plant. In conclusion, our analysis team believes that the structural cost increases and the resulting long-term profitability erosion, which we've seen in competitors' cases, are a more realistic threat than the uncertain hope of a 'security premium.'",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#fde8f1b97d1bace1",
+          "title": "Taiwan looks forward to more chip investment in Arizona, president says"
+        }
+      ],
+      "time": [
+        944524,
+        993214
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So you're saying the market is excited about the narrative of geopolitical risk being resolved, but it isn't fully considering the reality of lower profitability that comes as a price. What's the final take?",
+      "sources": [],
+      "time": [
+        993714,
+        1007405
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Yes, that's correct. The current stock price seems to have priced in all the positive scenarios and hopes for the Arizona investment, but it hasn't properly valued the clear risk of a long-term decline in profit margins, suggesting it's in overvalued territory. We believe there's a greater risk that the stock will fall back toward its intrinsic value when the market's excitement cools and the cold, hard numbers start appearing on the financial statements. Therefore, our team is issuing a sell rating on TSMC with a confidence level of 0.8. This is a time to look soberly at the fundamental change of guaranteed cost increases, rather than getting caught up in the market's greedy sentiment.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "TSM",
+          "start_date": "2025-12-24",
+          "end_date": "2026-01-23"
+        }
+      ],
+      "time": [
+        1007905,
+        1049836
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "The market closed mixed today, with the S&P 500 and Nasdaq hitting record highs while the Dow declined. We're seeing a clear split based on individual company earnings. Looking ahead, what should investors be focusing on?",
+      "sources": [],
+      "time": [
+        1050836,
+        1065087
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "Yes, as you said, the market's focus has temporarily shifted from macroeconomic indicators to individual company fundamentals. However, a major event that will shape the market's broader trend is just around the corner: the Federal Open Market Committee, or FOMC, meeting next week on January 28th. The market is already pricing in that rates will be held steady, so the decision itself isn't the main event. All eyes will be on Fed Chair Jerome Powell's press conference. Whether he gives any hints about a potential rate cut in March, which the market is hoping for, will be the most critical variable for the market's short-term direction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        1065587,
+        1100758
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "So all attention will be back on the Fed's every word. Besides the FOMC meeting, are there any other economic indicators we should be watching?",
+      "sources": [],
+      "time": [
+        1101258,
+        1111109
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "Yes, we need to keep a close eye on labor market data, which directly influences the Fed's decisions. The weekly initial jobless claims report, coming out on January 29th, will give us a temperature check on the labor market. If the job market still looks robust, it will strengthen the argument that the Fed doesn't need to rush into rate cuts. On the other hand, if claims come in much higher than expected, it could reignite concerns of an economic slowdown and fuel expectations for an earlier rate cut, potentially increasing market volatility. So that's a number to watch carefully.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "394890",
+          "title": "initial jobless claims",
+          "date": "2026-01-29"
+        }
+      ],
+      "time": [
+        1111609,
+        1142940
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "And what data will the Fed be watching most closely after this meeting?",
+      "sources": [],
+      "time": [
+        1143440,
+        1147971
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "해설자",
+      "text": "Without a doubt, it's inflation data. Specifically, we need to watch the Personal Consumption Expenditures, or PCE, price index, which is the Fed's preferred inflation gauge. The Core PCE Price Index, which will be released next month on February 20th, will be a key piece of data in determining the Fed's monetary policy path. The market wants confirmation that inflation is smoothly heading towards the Fed's 2% target. If this number meets or comes in below expectations, rate cut hopes will solidify. But if it comes in hotter than expected, it could send a significant shock through the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        1148471,
+        1184642
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "진행자",
+      "text": "So, it seems that while we'll have an earnings-driven market for a little while, attention will quickly shift back to the macro data that will confirm the Fed's policy path.",
+      "sources": [],
+      "time": [
+        1185142,
+        1195113
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "해설자",
+      "text": "That's right. The market has already priced in a significant chance of early rate cuts from the Fed. However, the Fed has repeatedly emphasized that its decisions will be data-dependent and cautious. Therefore, rather than just riding the wave of market expectations, investors should be soberly assessing the actual possibility of a policy shift by analyzing the upcoming employment and inflation data. With macroeconomic uncertainty still present, a strategy focused on fundamentally sound companies with strong earnings remains a prudent approach.",
+      "sources": [],
+      "time": [
+        1195613,
+        1229464
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "진행자",
+      "text": "Thank you again for the detailed analysis. That concludes our closing bell briefing for January 23rd. Thank you for listening.",
+      "sources": [],
+      "time": [
+        1229964,
+        1237495
+      ]
+    }
+  ]
+}

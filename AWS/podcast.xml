@@ -19,7 +19,9 @@
     <itunes:category text="News"/>
     <description>[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.
 
-밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.</description>
+밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.
+
+투자 유의사항: 본 콘텐츠는 정보 제공 목적이며, 투자 권유가 아닙니다. 모든 투자 결정은 본인의 책임입니다.</description>
 
     <item>
       <title>2026.1.23 미국 증시 | 인텔 17% 폭락에 다우 0.58% 하락, 나스닥 0.28% 상승</title>
@@ -45,8 +47,8 @@
 - 테슬라(TSLA): 0.07% 하락 - 전기차 시장 경쟁 심화와 수익성 문제 우려로 보합권에 머물렀습니다.
 - TSMC(TSM): 2% 상승 - 애리조나 신규 공장 투자와 관련된 긍정적인 뉴스가 주가를 끌어올렸습니다.</description>
       <itunes:author>Stock Daily</itunes:author>
-      <enclosure url="https://d3kwqqx9p3861y.cloudfront.net/20260123/20260123.mp3" length="25095404" type="audio/mpeg"/>
-      <guid>https://d3kwqqx9p3861y.cloudfront.net/20260123/20260123.mp3</guid>
+      <enclosure url="https://d3kwqqx9p3861y.cloudfront.net/20260123/ko/20260123.mp3" length="25095404" type="audio/mpeg"/>
+      <guid>https://d3kwqqx9p3861y.cloudfront.net/20260123/ko/20260123.mp3</guid>
       <pubDate>Fri, 23 Jan 2026 00:00:00 -0000</pubDate>
       <itunes:duration>1254</itunes:duration>
     </item>

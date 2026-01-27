@@ -11,8 +11,13 @@ from botocore.config import Config
 
 def get_boto3_session(profile_name: Optional[str] = None, region_name: Optional[str] = None) -> boto3.session.Session:
     """Create boto3 session with optional profile/region overrides."""
-    profile = profile_name or os.getenv("AWS_PROFILE") or "Admins"
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    profile = profile_name or os.getenv("AWS_PROFILE") or "Nam"
     region = region_name or os.getenv("AWS_REGION")
+    
+    logger.info(f"Creating boto3 session: profile={profile}, region={region}")
     return boto3.Session(profile_name=profile, region_name=region)
 
 

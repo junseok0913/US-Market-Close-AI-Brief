@@ -1,0 +1,34 @@
+meta:
+  description: "Gemini English TTS config for US Market Close Briefing"
+  last_updated: "2026-01-26"
+
+# Host/Analyst instructions (English broadcast style)
+instructions:
+  speaker1: |
+    Output audio only. Speed=1.10, Volume=1.00, Podcast-style English U.S. stock market close briefing: professional and conversational (like Bloomberg Radio or NPR Marketplace); The Host leads the episode, sets the agenda, transitions between topics, and keeps the flow clear and engaging for investors.
+  speaker2: |
+    Output audio only. Speed=1.10, Volume=1.00, Podcast-style English U.S. stock market close briefing: professional and conversational (like Bloomberg Radio or NPR Marketplace); The Analyst explains market moves, provides data-driven context, highlights key drivers (earnings, macro data, Fed policy), and delivers concise takeaways.
+
+# generationConfig.temperature
+temperature: 0.6
+
+# Voice selection (same as Korean for consistency)
+voices:
+  speaker1: Zephyr   # Host: Same as Korean version
+  speaker2: Charon   # Analyst: Same as Korean version
+
+# Request timeout (seconds)
+timeout_seconds: 120
+
+# Max parallel requests (turn-by-turn generation)
+max_parallel_requests: 3
+
+# Batch cooldown (seconds)
+# Wait this long after each batch completes before starting the next (to avoid rate limits)
+batch_timeout_seconds: 30
+
+# Gap settings (seconds)
+# - common_gap_seconds: Default silence between turns in the same chapter
+# - chapter_gap_seconds: Longer silence at chapter boundaries
+common_gap_seconds: 0.5
+chapter_gap_seconds: 1

@@ -2,13 +2,15 @@
 
 `tts/`는 `podcast/{date}/script.json`을 입력으로 받아 **턴(turn) 단위 음성 합성(TTS)** 을 수행하고, 최종 오디오 파일과 타임라인을 생성합니다. 구현은 LangGraph 기반이며, 합성은 Gemini TTS API를 사용합니다.
 
+**🆕 다국어 지원**: `--lang` 옵션으로 한국어(ko) 및 영어(en) TTS를 별도로 생성할 수 있습니다.
+
 ## 역할 (전체 파이프라인에서)
 
-- Orchestrator가 생성한 `podcast/{YYYYMMDD}/script.json`을 읽어 `scripts[]`를 turn으로 변환
+- Orchestrator가 생성한 `podcast/{YYYYMMDD}/ko/script.json` 및 `en/script.json`을 읽어 `scripts[]`를 turn으로 변환
 - turn별 음성을 병렬 생성(`tts/*.wav`)
 - turn 길이(프레임) 기반으로 타임라인 계산(`tts/timeline.json`)
-- 전체를 이어 붙인 최종 오디오 생성(`podcast/{date}/{date}.wav`)
-- `script.json`에 `time=[start_ms,end_ms]`를 주입한 날짜 파일 생성(`podcast/{date}/{date}.json`)
+- 전체를 이어 붙인 최종 오디오 생성(`podcast/{date}/{lang}/{date}.wav`, `{date}.mp3`)
+- `script.json`에 `time=[start_ms,end_ms]`를 주입한 날짜 파일 생성(`podcast/{date}/{lang}/{date}.json`)
 - `podcast/podcast.db`에 TTS 완료 상태 업데이트
 
 ---
@@ -16,21 +18,29 @@
 ## 실행 방법 (CLI)
 
 ```bash
-python -m tts.src.tts 20251222
-python -m tts.src.tts 2025-12-22
+# 한국어 TTS
+python -m tts.src.tts 20251222 --lang ko
+
+# 영어 TTS
+python -m tts.src.tts 20251222 --lang en
+
+# 날짜 포맷 (YYYY-MM-DD도 지원)
+python -m tts.src.tts 2025-12-22 --lang ko
 ```
 
 입력 파일:
-- `podcast/{date}/script.json`
+- `podcast/{date}/ko/script.json` (Korean)
+- `podcast/{date}/en/script.json` (English)
 
 출력 디렉토리:
-- `podcast/{date}/tts/`
+- `podcast/{date}/ko/tts/` (Korean)
+- `podcast/{date}/en/tts/` (English)
 
 최종 산출물:
-- `podcast/{date}/{date}.wav` (원본 WAV)
-- `podcast/{date}/{date}.mp3` (배포용 MP3, ffmpeg 변환)
-- `podcast/{date}/tts/timeline.json`
-- `podcast/{date}/{date}.json`
+- `podcast/{date}/{lang}/{date}.wav` (원본 WAV)
+- `podcast/{date}/{lang}/{date}.mp3` (배포용 MP3, ffmpeg 변환)
+- `podcast/{date}/{lang}/tts/timeline.json`
+- `podcast/{date}/{lang}/{date}.json`
 
 ---
 
@@ -39,10 +49,11 @@ python -m tts.src.tts 2025-12-22
 - 필수:
   - `GEMINI_API_KEY`: Gemini TTS 호출 API 키
 - 옵션:
-  - `GEMINI_TTS_MODEL`: TTS 모델 경로 오버라이드 (예: `models/gemini-2.5-pro-preview-tts` 또는 `gemini-...` 형태도 허용)
+  - `GEMINI_TTS_MODEL`: TTS 모델 경로 오버라이드 (예: `models/gemini-2.5-flash-preview-tts`)
 
 설정 파일:
-- `tts/config/gemini_tts.yaml`
+- `tts/config/gemini_tts.yaml` (Korean)
+- `tts/config/gemini_tts_en.yaml` (English)
   - `instructions.speaker1/speaker2`: turn 프롬프트 앞에 붙는 지시문(진행자/해설자)
   - `voices.speaker1/speaker2`: 음성 모델 voiceName
   - `temperature`, `timeout_seconds`, `max_parallel_requests`, `batch_timeout_seconds`

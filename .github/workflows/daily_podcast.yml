@@ -47,12 +47,19 @@ jobs:
           # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
           uv run python orchestrator.py $TARGET_DATE -t TSLA
 
-      - name: Generate Audio (TTS)
+      - name: Generate Audio (TTS Korean)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          echo "Generating Audio for $TARGET_DATE..."
-          uv run python -m tts.src.tts $TARGET_DATE
+          echo "Generating Korean Audio for $TARGET_DATE..."
+          uv run python -m tts.src.tts $TARGET_DATE --lang ko
+
+      - name: Generate Audio (TTS English)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "Generating English Audio for $TARGET_DATE..."
+          uv run python -m tts.src.tts $TARGET_DATE --lang en
 
       - name: Upload to S3
         env:
@@ -62,21 +69,33 @@ jobs:
           BUCKET_NAME: "podcast-daily-stock"
         run: |
           echo "Uploading results to S3..."
-          # AWS CLI는 GitHub Runner에 기본 설치되어 있음
-          # podcast/{date} 폴더 업로드 (단, tts/ 폴더 안의 파일들은 제외)
-          aws s3 cp podcast/$TARGET_DATE s3://$BUCKET_NAME/$TARGET_DATE --recursive --exclude "tts/*"
+          # MP3와 metadata만 업로드 (한국어/영어)
+          aws s3 cp podcast/$TARGET_DATE/ko/$TARGET_DATE.mp3 s3://$BUCKET_NAME/$TARGET_DATE/ko/$TARGET_DATE.mp3
+          aws s3 cp podcast/$TARGET_DATE/ko/metadata.json s3://$BUCKET_NAME/$TARGET_DATE/ko/metadata.json
+          aws s3 cp podcast/$TARGET_DATE/en/$TARGET_DATE.mp3 s3://$BUCKET_NAME/$TARGET_DATE/en/$TARGET_DATE.mp3
+          aws s3 cp podcast/$TARGET_DATE/en/metadata.json s3://$BUCKET_NAME/$TARGET_DATE/en/metadata.json
           
-      - name: Update RSS Feed
+      - name: Update RSS Feed (Korean)
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-east-2"
           BUCKET_NAME: "podcast-daily-stock"
-          # .env 파일과 달리 여기서는 Secrets에서 값을 가져와 환경변수로 주입
           CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
         run: |
-          echo "Updating RSS Feed..."
-          uv run python AWS/scripts/update_podcast_feed.py
+          echo "Updating Korean RSS Feed..."
+          uv run python AWS/scripts/update_podcast_feed.py --lang ko
+
+      - name: Update RSS Feed (English)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-2"
+          BUCKET_NAME: "podcast-daily-stock"
+          CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
+        run: |
+          echo "Updating English RSS Feed..."
+          uv run python AWS/scripts/update_podcast_feed.py --lang en
 
       - name: Invalidate CloudFront Cache
         # CLOUDFRONT_DISTRIBUTION_ID가 설정되어 있으면 실행됨
@@ -87,5 +106,6 @@ jobs:
           AWS_REGION: "us-east-2"
           DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-          echo "Invalidating CloudFront Cache for podcast.xml..."
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/podcast.xml"
+          echo "Invalidating CloudFront Cache for RSS feeds..."
+          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/podcast.xml" "/podcast_en.xml"
+

@@ -125,7 +125,17 @@ def _load_gemini_tts_config(path: Path) -> GeminiTTSConfig:
 
 
 def load_config_node(state: TTSState) -> TTSState:
-    cfg = _load_gemini_tts_config(DEFAULT_CONFIG_PATH)
+    # 언어별 config 파일 선택
+    lang = state.get("lang", "ko")
+    
+    if lang == "en":
+        config_path = ROOT_DIR / "tts" / "config" / "gemini_tts_en.yaml"
+    else:
+        config_path = DEFAULT_CONFIG_PATH
+    
+    logger.info(f"Loading TTS config: {config_path} (lang={lang})")
+    
+    cfg = _load_gemini_tts_config(config_path)
     instructions = cfg.get("instructions") or {}
     voices = cfg.get("voices") or {}
     return {
@@ -347,25 +357,65 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
                 "frames": frames,
             }
 
+        # 재시도 설정
+        max_retries = 3
+        base_delay = 2.0  # 초
+        
         t0 = time.monotonic()
         logger.info("Gemini TTS 요청(실행): id=%s, chapter=%s, speaker=%s", tid, chapter, speaker)
-        try:
-            audio_bytes = gemini_generate_tts_traced(
-                chapter=chapter,
-                start_id=tid,
-                end_id=tid,
-                turns=1,
-                prompt=str(r["prompt"]),
-                api_key=api_key,
-                temperature=temperature,
-                voice_name=voice_name,
-                timeout_s=request_timeout_seconds,
-            )
-        except Exception:
-            elapsed_ms = int(round((time.monotonic() - t0) * 1000))
-            logger.error("Gemini TTS 실패: id=%s, chapter=%s", tid, r.get("chapter"))
-            logger.error("Gemini TTS 실패(소요): id=%s, elapsed_ms=%d", tid, elapsed_ms)
-            raise
+        
+        last_exception = None
+        for attempt in range(max_retries):
+            try:
+                audio_bytes = gemini_generate_tts_traced(
+                    chapter=chapter,
+                    start_id=tid,
+                    end_id=tid,
+                    turns=1,
+                    prompt=str(r["prompt"]),
+                    api_key=api_key,
+                    temperature=temperature,
+                    voice_name=voice_name,
+                    timeout_s=request_timeout_seconds,
+                )
+                # 성공하면 바로 break
+                break
+                
+            except Exception as e:
+                last_exception = e
+                elapsed_ms = int(round((time.monotonic() - t0) * 1000))
+                
+                # 재시도 가능한 에러인지 확인
+                error_str = str(e).lower()
+                is_retryable = (
+                    "500" in error_str or 
+                    "503" in error_str or 
+                    "internal" in error_str or
+                    "timeout" in error_str or
+                    "temporarily unavailable" in error_str
+                )
+                
+                if attempt < max_retries - 1 and is_retryable:
+                    # Exponential backoff
+                    delay = base_delay * (2 ** attempt)
+                    logger.warning(
+                        "Gemini TTS 재시도 (attempt %d/%d): id=%s, error=%s, retry_in=%.1fs",
+                        attempt + 1,
+                        max_retries,
+                        tid,
+                        str(e)[:100],
+                        delay
+                    )
+                    time.sleep(delay)
+                else:
+                    # 마지막 시도 또는 재시도 불가능한 에러
+                    logger.error("Gemini TTS 실패: id=%s, chapter=%s", tid, r.get("chapter"))
+                    logger.error("Gemini TTS 실패(소요): id=%s, elapsed_ms=%d", tid, elapsed_ms)
+                    raise
+        
+        # 모든 재시도 실패 시
+        if last_exception:
+            raise last_exception
 
         pcm = _extract_pcm(audio_bytes)
         if len(pcm) % BYTES_PER_FRAME != 0:

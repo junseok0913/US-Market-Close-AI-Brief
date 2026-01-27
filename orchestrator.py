@@ -573,99 +573,182 @@ def main() -> None:
     else:
         print(f"실행 단계: {args.stage} ({stage_names.get(args.stage, 'Unknown')}까지)")
     
-    user_tickers = parse_tickers(args.tickers)
-    app = build_orchestrator(stage=args.stage, agent=args.agent)
-    try:
-        result = app.invoke({
-            "date": date_yyyymmdd,
-            "user_tickers": user_tickers,
-        })
-    finally:
-        cleanup_cache_dir(date_yyyymmdd)
-
-    # 최종 산출물 저장: date/nutshell/user_tickers/chapter/scripts
-    final_payload = {
-        "date": result.get("date", date_yyyymmdd),
-        "nutshell": result.get("nutshell", ""),
-        "user_tickers": result.get("user_tickers", user_tickers),
-        "chapter": result.get("chapter", _init_chapter()),
-        "scripts": result.get("scripts", []),
-    }
-    final_json = json.dumps(final_payload, ensure_ascii=False, indent=2)
-
-    # podcast/{date}/script.json (TTS 파이프라인 입력)
+    # ========================================
+    # 0. 한국어 스크립트 존재 여부 체크 (그래프 실행 전)
+    # ========================================
     podcast_dir = ROOT / "podcast" / date_yyyymmdd
-    podcast_dir.mkdir(parents=True, exist_ok=True)
-    podcast_script_path = podcast_dir / "script.json"
-    podcast_script_path.write_text(final_json, encoding="utf-8")
-
-    # podcast index DB 업데이트
-    upsert_script_row(
-        db_path=get_default_db_path(ROOT),
-        date=date_yyyymmdd,
-        nutshell=str(final_payload.get("nutshell") or ""),
-        user_tickers=final_payload.get("user_tickers") or [],
-        script_saved_at=utc_iso_from_timestamp(podcast_script_path.stat().st_mtime),
-    )
-
-    print(f"\n=== Saved Final Output ===\n- {podcast_script_path}")
+    ko_script_path = podcast_dir / "ko" / "script.json"
     
-    # 슬라이드 생성 (web frontend용)
-    print(f"\n=== Generating Slides for Web ===")
-    try:
-        # web/scripts를 sys.path에 추가
-        import sys
-        web_scripts_path = ROOT / "web" / "scripts"
-        if str(web_scripts_path) not in sys.path:
-            sys.path.insert(0, str(web_scripts_path))
+    if ko_script_path.exists():
+        print(f"\n✅ 한국어 스크립트 이미 존재, 그래프 실행 건너뜀: {ko_script_path}")
+        print(f"   (영어 번역만 진행합니다)\n")
         
-        from slide_generator import SlideGenerator
+        # 기존 파일에서 로드
+        final_payload = json.loads(ko_script_path.read_text(encoding="utf-8"))
+        skip_korean_generation = True
         
-        generator = SlideGenerator(prefix="SLIDE")
-        slides_path = generator.generate_slides_for_date(date_yyyymmdd)
-        generator.update_landing_index(date_yyyymmdd)
+    else:
+        print(f"\n🚀 한국어 스크립트 생성 시작...\n")
         
-        print(f"✅ Slides generated: {slides_path}")
-    except Exception as e:
-        print(f"⚠️ Slide generation failed: {e}")
-        print("   (Script is saved, but slides need to be generated manually)")
-        print(f"   Run: python web/scripts/generate-slides.py {date_yyyymmdd}")
-    
-    # 팟캐스트 메타데이터 생성 (Spotify 업로드용)
-    print(f"\n=== Generating Podcast Metadata ===")
-    try:
-        # 파일명이 generate-podcast-metadata.py이므로 import 불가 (하이픈 포함)
-        # subprocess로 직접 실행
-        import subprocess
-        script_path = ROOT / "web" / "scripts" / "generate-podcast-metadata.py"
+        # 그래프 실행
+        user_tickers = parse_tickers(args.tickers)
+        app = build_orchestrator(stage=args.stage, agent=args.agent)
+        try:
+            result = app.invoke({
+                "date": date_yyyymmdd,
+                "user_tickers": user_tickers,
+            })
+        finally:
+            cleanup_cache_dir(date_yyyymmdd)
+
+        # 최종 산출물 생성
+        final_payload = {
+            "date": result.get("date", date_yyyymmdd),
+            "nutshell": result.get("nutshell", ""),
+            "user_tickers": result.get("user_tickers", user_tickers),
+            "chapter": result.get("chapter", _init_chapter()),
+            "scripts": result.get("scripts", []),
+        }
+        final_json = json.dumps(final_payload, ensure_ascii=False, indent=2)
         
-        metadata_result = subprocess.run(  # ← result 대신 metadata_result
-            ["uv", "run", "python", str(script_path), date_yyyymmdd],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            timeout=120
+        # 한국어 스크립트 저장
+        ko_script_path.parent.mkdir(parents=True, exist_ok=True)
+        ko_script_path.write_text(final_json, encoding="utf-8")
+        print(f"\n✅ 한국어 스크립트 저장: {ko_script_path}")
+        skip_korean_generation = False
+        
+        # DB 업데이트 (한국어만)
+        upsert_script_row(
+            db_path=get_default_db_path(ROOT),
+            date=date_yyyymmdd,
+            nutshell=str(final_payload.get("nutshell") or ""),
+            user_tickers=final_payload.get("user_tickers") or [],
+            script_saved_at=utc_iso_from_timestamp(ko_script_path.stat().st_mtime),
         )
+
+    # ========================================
+    # 2. 영어 번역 (한국어 스크립트 기반)
+    # ========================================
+    en_script_path = podcast_dir / "en" / "script.json"
+    
+    if en_script_path.exists():
+        print(f"✅ 영어 스크립트 이미 존재, 건너뜀: {en_script_path}")
+    else:
+        print(f"\n=== 영어 번역 시작 ===")
+        try:
+            import subprocess
+            translate_script = ROOT / "AWS" / "translation" / "translate.py"
+            
+            translate_result = subprocess.run(
+                ["uv", "run", "python", str(translate_script), date_yyyymmdd],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                timeout=300  # 5분
+            )
+            
+            if translate_result.returncode == 0:
+                print(f"✅ 영어 번역 완료: {en_script_path}")
+            else:
+                print(f"⚠️ 영어 번역 실패 (exit code {translate_result.returncode})")
+                if translate_result.stderr:
+                    print(f"   Error: {translate_result.stderr[:300]}")
+                print(f"   수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
         
-        if metadata_result.returncode == 0:
-            print(f"✅ Metadata generated:")
-            print(f"   - {podcast_dir / 'metadata.json'}")
-            print(f"   - {podcast_dir / 'metadata.txt'}")
-        else:
-            print(f"⚠️ Metadata generation failed (exit code {metadata_result.returncode})")
-            if metadata_result.stderr:
-                print(f"   Error: {metadata_result.stderr[:200]}")
+        except Exception as e:
+            print(f"⚠️ 영어 번역 실패: {e}")
+            print(f"   수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
+    
+    # ========================================
+    # 3. 슬라이드 생성 (한국어만, web frontend용)
+    # ========================================
+    if not skip_korean_generation:
+        print(f"\n=== Generating Slides for Web ===")
+        try:
+            # web/scripts를 sys.path에 추가
+            import sys
+            web_scripts_path = ROOT / "web" / "scripts"
+            if str(web_scripts_path) not in sys.path:
+                sys.path.insert(0, str(web_scripts_path))
+            
+            from slide_generator import SlideGenerator
+            
+            generator = SlideGenerator(prefix="SLIDE")
+            slides_path = generator.generate_slides_for_date(date_yyyymmdd)
+            generator.update_landing_index(date_yyyymmdd)
+            
+            print(f"✅ Slides generated: {slides_path}")
+        except Exception as e:
+            print(f"⚠️ Slide generation failed: {e}")
+            print("   (Script is saved, but slides need to be generated manually)")
+            print(f"   Run: python web/scripts/generate-slides.py {date_yyyymmdd}")
+    else:
+        print(f"\n⏭️  슬라이드 생성 건너뜀 (한국어 스크립트 재사용)")
+    
+    # ========================================
+    # 4. 팟캐스트 메타데이터 생성 (언어별)
+    # ========================================
+    print(f"\n=== Generating Podcast Metadata ===")
+    
+    # 한국어 메타데이터
+    if not skip_korean_generation:
+        try:
+            import subprocess
+            metadata_script = ROOT / "web" / "scripts" / "generate-podcast-metadata.py"
+            
+            ko_metadata_result = subprocess.run(
+                ["uv", "run", "python", str(metadata_script), date_yyyymmdd, "ko"],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                timeout=120
+            )
+            
+            if ko_metadata_result.returncode == 0:
+                print(f"✅ 한국어 메타데이터 생성:")
+                print(f"   - {podcast_dir / 'ko' / 'metadata.json'}")
+                print(f"   - {podcast_dir / 'ko' / 'metadata.txt'}")
+            else:
+                print(f"⚠️ 한국어 메타데이터 생성 실패 (exit code {ko_metadata_result.returncode})")
+            
+        except Exception as e:
+            print(f"⚠️ 한국어 메타데이터 생성 실패: {e}")
+            print(f"   Run: uv run python web/scripts/generate-podcast-metadata.py {date_yyyymmdd} ko")
+    else:
+        print(f"⏭️  한국어 메타데이터 생성 건너뜀")
+    
+    # 영어 메타데이터 (한국어 메타데이터에서 번역)
+    ko_metadata_path = podcast_dir / "ko" / "metadata.json"
+    if ko_metadata_path.exists() and en_script_path.exists():
+        try:
+            import subprocess
+            translate_metadata_script = ROOT / "AWS" / "translation" / "translate_metadata.py"
+            
+            en_metadata_result = subprocess.run(
+                ["uv", "run", "python", str(translate_metadata_script), date_yyyymmdd],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                timeout=120
+            )
+            
+            if en_metadata_result.returncode == 0:
+                print(f"✅ 영어 메타데이터 번역 완료:")
+                print(f"   - {podcast_dir / 'en' / 'metadata.json'}")
+                print(f"   - {podcast_dir / 'en' / 'metadata.txt'}")
+            else:
+                print(f"⚠️ 영어 메타데이터 번역 실패 (exit code {en_metadata_result.returncode})")
+                if en_metadata_result.stderr:
+                    print(f"   Error: {en_metadata_result.stderr[:200]}")
         
-    except Exception as e:
-        print(f"⚠️ Metadata generation failed: {e}")
-        print("   (Script is saved, but metadata needs to be generated manually)")
-        print(f"   Run: uv run python web/scripts/generate-podcast-metadata.py {date_yyyymmdd}")
+        except Exception as e:
+            print(f"⚠️ 영어 메타데이터 번역 실패: {e}")
+            print(f"   Run: uv run python AWS/translation/translate_metadata.py {date_yyyymmdd}")
     
     print("\n=== Orchestrator Result ===")
-    print("nutshell:", result.get("nutshell"))
-    print("themes:", result.get("themes"))
-    print("scripts len:", len(result.get("scripts", [])))
-    print("current_section:", result.get("current_section"))
+    print("nutshell:", final_payload.get("nutshell"))
+    print("user_tickers:", final_payload.get("user_tickers"))
+    print("scripts len:", len(final_payload.get("scripts", [])))
 
 
 if __name__ == "__main__":

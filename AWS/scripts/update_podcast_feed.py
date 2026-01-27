@@ -1,9 +1,17 @@
+#!/usr/bin/env python3
+"""
+RSS Feed Generator for Bilingual Podcast (Korean + English)
 
+Usage:
+    python AWS/scripts/update_podcast_feed.py --lang ko
+    python AWS/scripts/update_podcast_feed.py --lang en
+"""
+
+import argparse
 import boto3
 import email.utils
 import json
 import os
-import sys
 import tempfile
 from datetime import datetime
 from pathlib import Path
@@ -15,9 +23,8 @@ try:
 except ImportError:
     MP3 = None
 
-# .env 파일 로드 (로컬 테스트용)
-# GitHub Actions에서는 Secrets가 환경변수로 주입되므로 이 줄이 있어도 무시되거나 덮어씌워짐
 load_dotenv()
+
 
 def get_s3_client():
     return boto3.client(
@@ -27,61 +34,85 @@ def get_s3_client():
         region_name=os.environ.get('AWS_REGION', 'us-east-2')
     )
 
-def generate_rss_xml(base_url, episodes):
-    # RSS 헤더 (채널 정보)
-    # 실제 운영 시에는 이 부분을 본인 팟캐스트 정보로 수정하세요
-    rss_header = f"""<?xml version="1.0" encoding="UTF-8"?>
+
+def get_channel_info(lang):
+    """언어별 채널 정보 반환"""
+    if lang == "en":
+        return {
+            "title": "Daily US Market Close Briefing",
+            "language": "en-us",
+            "description": "[Updated daily at 7 AM KST] AI-powered, fact-checked analysis of US stock market close.\n\nWhat moved the markets overnight? Using cutting-edge LangGraph technology, we analyze vast news data and market indicators with fact-checking to deliver key insights.\n\nInvestment Disclaimer: This content is for informational purposes only and is not investment advice. All investment decisions are your own responsibility."
+        }
+    else:  # ko
+        return {
+            "title": "서학개미를 위한 Daily 미국시장 아침 브리핑",
+            "language": "ko-kr",
+            "description": "[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.\n\n밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.\n\n투자 유의사항: 본 콘텐츠는 정보 제공 목적이며, 투자 권유가 아닙니다. 모든 투자 결정은 본인의 책임입니다."
+        }
+
+
+def generate_rss_xml(base_url, episodes, lang="ko"):
+    """RSS XML 생성 (언어별)"""
+    
+    channel_info = get_channel_info(lang)
+    
+    # 언어별 아트워크 이미지
+    artwork_filename = "artwork_en.jpg" if lang == "en" else "artwork.jpg"
+    
+    # RSS 헤더
+    rss_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>서학개미를 위한 Daily 미국시장 아침 브리핑</title>
+    <title>{channel_info['title']}</title>
     <link>{base_url}</link>
-    <language>ko-kr</language>
+    <language>{channel_info['language']}</language>
     <copyright>© 2026 Stock Daily. All rights reserved.</copyright>
     <itunes:author>Stock Daily</itunes:author>
     <itunes:owner>
       <itunes:name>Stock Daily</itunes:name>
       <itunes:email>ehddus416@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="{base_url}/artwork.jpg"/>
+    <itunes:image href="{base_url}/{artwork_filename}"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:category text="Business">
       <itunes:category text="Investing"/>
     </itunes:category>
     <itunes:category text="News"/>
-    <description>[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.
-
-밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.
-
-**투자 유의사항: 본 콘텐츠는 정보 제공 목적이며, 투자 권유가 아닙니다. 모든 투자 결정은 본인의 책임입니다.**</description>
+    <description>{channel_info['description']}</description>
 """
     
-    rss_items = ""
-    # 최신 에피소드가 위로 오도록 정렬 (날짜 내림차순)
+    # 에피소드 정렬 (최신순)
     sorted_episodes = sorted(episodes, key=lambda x: x['date'], reverse=True)
-
+    
     for ep in sorted_episodes:
-        date_str = ep['date'] # YYYYMMDD
+        date_str = ep['date']  # YYYYMMDD
         
-        # 날짜 파싱 및 RFC 2822 포맷 변환 (Sat, 24 Jan 2026 05:00:00 +0000)
+        # 날짜 RFC 2822 포맷
         try:
             dt = datetime.strptime(date_str, "%Y%m%d")
             pub_date = email.utils.format_datetime(dt)
         except:
             pub_date = date_str
-
-        audio_url = f"{base_url}/{date_str}/{date_str}.mp3"
-        episode_link = f"{base_url}/{date_str}/"  # Episode webpage URL
         
-        # 메타데이터가 있으면 사용, 없으면 기본값
-        title = escape(ep.get('title', f"{date_str} 미국 증시 브리핑"))
-        description = escape(ep.get('description', "AI가 정리한 오늘의 미국 증시 마감 시황입니다."))
-        duration = ep.get('duration_seconds', 0) # 초 단위 (선택사항)
+        # 언어별 경로
+        audio_url = f"{base_url}/{date_str}/{lang}/{date_str}.mp3"
+        episode_link = f"{base_url}/{date_str}/"
         
-        # 파일 크기 (바이트) - 필수
-        file_size = ep.get('file_size_bytes', 0) 
-
-        item = f"""
+        # 메타데이터
+        if lang == "en":
+            default_title = f"{date_str} US Market Close Briefing"
+            default_desc = "AI-powered summary of today's US market close."
+        else:
+            default_title = f"{date_str} 미국 증시 브리핑"
+            default_desc = "AI가 정리한 오늘의 미국 증시 마감 시황입니다."
+        
+        title = escape(ep.get('title', default_title))
+        description = escape(ep.get('description', default_desc))
+        duration = ep.get('duration_seconds', 0)
+        file_size = ep.get('file_size_bytes', 0)
+        
+        rss_xml += f"""
     <item>
       <title>{title}</title>
       <link>{episode_link}</link>
@@ -92,127 +123,121 @@ def generate_rss_xml(base_url, episodes):
       <pubDate>{pub_date}</pubDate>
       <itunes:duration>{duration}</itunes:duration>
     </item>"""
-        rss_items += item
-
-    rss_footer = """
+    
+    rss_xml += """
   </channel>
 </rss>
 """
-    return rss_header + rss_items + rss_footer
+    
+    return rss_xml
+
 
 def main():
-    bucket_name = os.environ.get('BUCKET_NAME')
-    target_date = sys.argv[1] if len(sys.argv) > 1 else None
-
-    if not bucket_name:
-        print("Error: BUCKET_NAME environment variable is required")
-        sys.exit(1)
-
-    print(f"📡 Updating RSS Feed for bucket: {bucket_name}")
+    parser = argparse.ArgumentParser(description="Generate bilingual RSS podcast feed")
+    parser.add_argument("--lang", choices=["ko", "en"], default="ko", help="Language (ko or en)")
+    args = parser.parse_args()
+    
+    lang = args.lang
+    bucket_name = os.environ.get('BUCKET_NAME', 'podcast-daily-stock')
+    cloudfront_domain = os.environ.get('CLOUDFRONT_DOMAIN', 'your-cloudfront-domain.cloudfront.net')
+    base_url = f"https://{cloudfront_domain}"
+    
+    print(f"🌍 Generating RSS feed for language: {lang}")
+    print(f"📦 Bucket: {bucket_name}")
+    print(f"🔗 Base URL: {base_url}")
+    
     s3 = get_s3_client()
     
-    # 0. 도메인 결정 (CloudFront 우선, 없으면 S3)
-    # .env 파일 혹은 Secret에 CLOUDFRONT_DOMAIN 정의 권장 (예: d1234abcd.cloudfront.net)
-    cf_domain = os.environ.get('CLOUDFRONT_DOMAIN')
-    if cf_domain:
-        # https:// 없이 도메인만 입력된 경우 처리
-        cf_domain = cf_domain.replace("https://", "").replace("http://", "").strip("/")
-        base_url = f"https://{cf_domain}"
-        print(f"🌍 Using CloudFront URL: {base_url}")
-    else:
-        # S3 직접 링크 (비권장, fallback)
-        base_url = f"https://{bucket_name}.s3.amazonaws.com"
-        print(f"⚠️ Using S3 Direct URL (CloudFront recommended): {base_url}")
-
-    # 1. 기존 RSS 파일 가져오기 (혹은 새로 시작하기)
-    # 실제로는 S3를 스캔해서 에피소드 목록을 재구성하는 것이 안전합니다.
-    # 여기서는 S3의 폴더들을 스캔합니다.
-    
-    episodes = []
-    
-    # S3 내의 모든 폴더(오브젝트 접두사) 조회
-    # '2026'으로 시작하는 폴더만 에피소드로 간주
-    paginator = s3.get_paginator('list_objects_v2')
-    
-    # 루트 경로의 폴더들을 찾기 위해 delimiter 사용
-    response_iterator = paginator.paginate(Bucket=bucket_name, Delimiter='/')
-
-    for page in response_iterator:
-        if 'CommonPrefixes' not in page:
-            continue
-            
-        for prefix in page['CommonPrefixes']:
-            folder_name = prefix['Prefix'].strip('/') # 예: '20260123'
-            
-            # 날짜 형식인지 확인 (YYYYMMDD)
-            if not (len(folder_name) == 8 and folder_name.isdigit() and folder_name.startswith('20')):
-                continue
-                
-            print(f"🔍 Found episode folder: {folder_name}")
-            
-            # 해당 폴더 내의 mp3 파일 확인
-            mp3_key = f"{folder_name}/{folder_name}.mp3"
-            metadata_key = f"{folder_name}/metadata.json"
-            
-            try:
-                # MP3 메타데이터(크기 등) 가져오기
-                head = s3.head_object(Bucket=bucket_name, Key=mp3_key)
-                file_size = head['ContentLength']
-                
-                episode_data = {
-                    'date': folder_name,
-                    'file_size_bytes': file_size
-                }
-                
-                # MP3 duration 계산 (mutagen 사용)
-                duration_seconds = 0
-                if MP3 is not None:
-                    try:
-                        # MP3 파일을 임시로 다운로드하여 duration 추출
-                        with tempfile.NamedTemporaryFile(suffix='.mp3', delete=True) as tmp_file:
-                            s3.download_fileobj(bucket_name, mp3_key, tmp_file)
-                            tmp_file.flush()
-                            audio = MP3(tmp_file.name)
-                            duration_seconds = int(audio.info.length)
-                            print(f"   🎵 Duration: {duration_seconds}s ({duration_seconds//60}m {duration_seconds%60}s)")
-                    except Exception as e:
-                        print(f"   ⚠️ Could not read duration: {e}")
-                
-                episode_data['duration_seconds'] = duration_seconds
-                
-                # metadata.json이 있으면 내용 읽기
-                try:
-                    meta_obj = s3.get_object(Bucket=bucket_name, Key=metadata_key)
-                    meta_content = json.loads(meta_obj['Body'].read().decode('utf-8'))
-                    episode_data['title'] = meta_content.get('title')
-                    episode_data['description'] = meta_content.get('description')
-                except:
-                    print(f"   (No metadata.json for {folder_name}, using defaults)")
-                
-                episodes.append(episode_data)
-                
-            except Exception as e:
-                print(f"   ⚠️ Skipping {folder_name}: No mp3 found or error ({e})")
-
-    # 2. RSS XML 생성
-    rss_xml = generate_rss_xml(base_url, episodes)
-    
-    # 3. 로컬에 저장 (디버깅용) - AWS 폴더 내에 저장
-    output_path = Path("AWS/podcast.xml")
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(rss_xml)
+    # S3에서 에피소드 목록 가져오기
+    print(f"\n📥 Fetching episodes from S3...")
+    try:
+        response = s3.list_objects_v2(Bucket=bucket_name, Delimiter='/')
         
-    # 4. S3 업로드
-    # Content-Type을 text/xml로 설정해야 브라우저/팟캐스트 앱이 인식함
-    s3.put_object(
-        Bucket=bucket_name,
-        Key='podcast.xml',
-        Body=rss_xml.encode('utf-8'),
-        ContentType='application/rss+xml'
-        # ACL='public-read' 제거: 최신 S3 버킷 권장 설정(Bucket Policy 사용)을 따름
-    )
+        episodes = []
+        if 'CommonPrefixes' in response:
+            for prefix in response['CommonPrefixes']:
+                date_folder = prefix['Prefix'].strip('/')
+                
+                # YYYYMMDD 형식 검증
+                if len(date_folder) == 8 and date_folder.isdigit():
+                    # 언어별 metadata.json 로드
+                    metadata_key = f"{date_folder}/{lang}/metadata.json"
+                    audio_key = f"{date_folder}/{lang}/{date_folder}.mp3"
+                    
+                    # metadata 가져오기
+                    try:
+                        metadata_obj = s3.get_object(Bucket=bucket_name, Key=metadata_key)
+                        metadata = json.loads(metadata_obj['Body'].read().decode('utf-8'))
+                    except Exception as e:
+                        print(f"⚠️  Metadata not found for {date_folder}/{lang}, using defaults")
+                        metadata = {}
+                    
+                    # MP3 파일 크기 및 duration 가져오기
+                    try:
+                        audio_obj = s3.head_object(Bucket=bucket_name, Key=audio_key)
+                        file_size = audio_obj['ContentLength']
+                        
+                        # Duration 계산 (mutagen 사용)
+                        duration_seconds = 0
+                        if MP3:
+                            try:
+                                with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp:
+                                    s3.download_fileobj(bucket_name, audio_key, tmp)
+                                    tmp_path = tmp.name
+                                
+                                audio = MP3(tmp_path)
+                                duration_seconds = int(audio.info.length)
+                                os.unlink(tmp_path)
+                            except:
+                                pass
+                        
+                        episodes.append({
+                            'date': date_folder,
+                            'title': metadata.get('title', ''),
+                            'description': metadata.get('description', ''),
+                            'file_size_bytes': file_size,
+                            'duration_seconds': duration_seconds
+                        })
+                        
+                        print(f"  ✅ {date_folder}/{lang}")
+                    
+                    except s3.exceptions.NoSuchKey:
+                        print(f"  ⏭️  {date_folder}/{lang} (MP3 not found)")
+        
+        print(f"\n📊 Total episodes: {len(episodes)}")
+        
+        # RSS XML 생성
+        rss_xml = generate_rss_xml(base_url, episodes, lang)
+        
+        # 파일명 결정
+        rss_filename = "podcast_en.xml" if lang == "en" else "podcast.xml"
+        
+        # 로컬에도 저장 (미리보기용)
+        local_path = Path(__file__).parent.parent / rss_filename
+        local_path.write_text(rss_xml, encoding='utf-8')
+        print(f"\n💾 Saved locally: {local_path}")
+        
+        # S3에 업로드
+        print(f"📤 Uploading {rss_filename} to S3...")
+        s3.put_object(
+            Bucket=bucket_name,
+            Key=rss_filename,
+            Body=rss_xml.encode('utf-8'),
+            ContentType='application/xml',
+            CacheControl='max-age=300'  # 5분 캐시
+        )
+        
+        print(f"✅ Successfully uploaded {rss_filename}")
+        print(f"🔗 Feed URL: {base_url}/{rss_filename}")
+        
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
     
-    print(f"✅ Success! RSS feed updated: https://{bucket_name}.s3.amazonaws.com/podcast.xml")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    exit(main())
