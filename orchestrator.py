@@ -580,15 +580,15 @@ def main() -> None:
     ko_script_path = podcast_dir / "ko" / "script.json"
     
     if ko_script_path.exists():
-        print(f"\n✅ 한국어 스크립트 이미 존재, 그래프 실행 건너뜀: {ko_script_path}")
-        print(f"   (영어 번역만 진행합니다)\n")
+        print(f"\n[SKIP] 한국어 스크립트 이미 존재: {ko_script_path}")
+        print(f"       (영어 번역 및 후처리만 진행합니다)\n")
         
         # 기존 파일에서 로드
         final_payload = json.loads(ko_script_path.read_text(encoding="utf-8"))
         skip_korean_generation = True
         
     else:
-        print(f"\n🚀 한국어 스크립트 생성 시작...\n")
+        print(f"\n[INFO] 한국어 스크립트 생성 시작...\n")
         
         # 그래프 실행
         user_tickers = parse_tickers(args.tickers)
@@ -614,7 +614,7 @@ def main() -> None:
         # 한국어 스크립트 저장
         ko_script_path.parent.mkdir(parents=True, exist_ok=True)
         ko_script_path.write_text(final_json, encoding="utf-8")
-        print(f"\n✅ 한국어 스크립트 저장: {ko_script_path}")
+        print(f"\n[OK] 한국어 스크립트 저장: {ko_script_path}")
         skip_korean_generation = False
         
         # DB 업데이트 (한국어만)
@@ -632,7 +632,7 @@ def main() -> None:
     en_script_path = podcast_dir / "en" / "script.json"
     
     if en_script_path.exists():
-        print(f"✅ 영어 스크립트 이미 존재, 건너뜀: {en_script_path}")
+        print(f"[SKIP] 영어 스크립트 이미 존재: {en_script_path}")
     else:
         print(f"\n=== 영어 번역 시작 ===")
         try:
@@ -648,16 +648,16 @@ def main() -> None:
             )
             
             if translate_result.returncode == 0:
-                print(f"✅ 영어 번역 완료: {en_script_path}")
+                print(f"[OK] 영어 번역 완료: {en_script_path}")
             else:
-                print(f"⚠️ 영어 번역 실패 (exit code {translate_result.returncode})")
+                print(f"[FAIL] 영어 번역 실패 (exit code {translate_result.returncode})")
                 if translate_result.stderr:
-                    print(f"   Error: {translate_result.stderr[:300]}")
-                print(f"   수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
+                    print(f"       Error: {translate_result.stderr[:300]}")
+                print(f"       수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
         
         except Exception as e:
-            print(f"⚠️ 영어 번역 실패: {e}")
-            print(f"   수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
+            print(f"[FAIL] 영어 번역 실패: {e}")
+            print(f"       수동 실행: uv run python AWS/translation/translate.py {date_yyyymmdd}")
     
     # ========================================
     # 3. 슬라이드 생성 (한국어만, web frontend용)
@@ -677,13 +677,13 @@ def main() -> None:
             slides_path = generator.generate_slides_for_date(date_yyyymmdd)
             generator.update_landing_index(date_yyyymmdd)
             
-            print(f"✅ Slides generated: {slides_path}")
+            print(f"[OK] Slides generated: {slides_path}")
         except Exception as e:
-            print(f"⚠️ Slide generation failed: {e}")
-            print("   (Script is saved, but slides need to be generated manually)")
-            print(f"   Run: python web/scripts/generate-slides.py {date_yyyymmdd}")
+            print(f"[FAIL] Slide generation failed: {e}")
+            print("       (Script is saved, but slides need to be generated manually)")
+            print(f"       Run: python web/scripts/generate-slides.py {date_yyyymmdd}")
     else:
-        print(f"\n⏭️  슬라이드 생성 건너뜀 (한국어 스크립트 재사용)")
+        print(f"\n[SKIP] 슬라이드 생성 건너뜀 (한국어 스크립트 재사용)")
     
     # ========================================
     # 4. 팟캐스트 메타데이터 생성 (언어별)
@@ -705,17 +705,20 @@ def main() -> None:
             )
             
             if ko_metadata_result.returncode == 0:
-                print(f"✅ 한국어 메타데이터 생성:")
-                print(f"   - {podcast_dir / 'ko' / 'metadata.json'}")
-                print(f"   - {podcast_dir / 'ko' / 'metadata.txt'}")
+                print(f"[OK] 한국어 메타데이터 생성:")
+                print(f"     - {podcast_dir / 'ko' / 'metadata.json'}")
             else:
-                print(f"⚠️ 한국어 메타데이터 생성 실패 (exit code {ko_metadata_result.returncode})")
+                print(f"[FAIL] 한국어 메타데이터 생성 실패 (exit code {ko_metadata_result.returncode})")
+                if ko_metadata_result.stderr:
+                    print(f"       Error: {ko_metadata_result.stderr[:500]}")
+                if ko_metadata_result.stdout:
+                    print(f"       Output: {ko_metadata_result.stdout[:200]}")
             
         except Exception as e:
-            print(f"⚠️ 한국어 메타데이터 생성 실패: {e}")
-            print(f"   Run: uv run python web/scripts/generate-podcast-metadata.py {date_yyyymmdd} ko")
+            print(f"[FAIL] 한국어 메타데이터 생성 실패: {e}")
+            print(f"       Run: uv run python web/scripts/generate-podcast-metadata.py {date_yyyymmdd} ko")
     else:
-        print(f"⏭️  한국어 메타데이터 생성 건너뜀")
+        print(f"[SKIP] 한국어 메타데이터 생성 건너뜀")
     
     # 영어 메타데이터 (한국어 메타데이터에서 번역)
     ko_metadata_path = podcast_dir / "ko" / "metadata.json"
@@ -733,17 +736,16 @@ def main() -> None:
             )
             
             if en_metadata_result.returncode == 0:
-                print(f"✅ 영어 메타데이터 번역 완료:")
-                print(f"   - {podcast_dir / 'en' / 'metadata.json'}")
-                print(f"   - {podcast_dir / 'en' / 'metadata.txt'}")
+                print(f"[OK] 영어 메타데이터 번역 완료:")
+                print(f"     - {podcast_dir / 'en' / 'metadata.json'}")
             else:
-                print(f"⚠️ 영어 메타데이터 번역 실패 (exit code {en_metadata_result.returncode})")
+                print(f"[FAIL] 영어 메타데이터 번역 실패 (exit code {en_metadata_result.returncode})")
                 if en_metadata_result.stderr:
-                    print(f"   Error: {en_metadata_result.stderr[:200]}")
+                    print(f"       Error: {en_metadata_result.stderr[:200]}")
         
         except Exception as e:
-            print(f"⚠️ 영어 메타데이터 번역 실패: {e}")
-            print(f"   Run: uv run python AWS/translation/translate_metadata.py {date_yyyymmdd}")
+            print(f"[FAIL] 영어 메타데이터 번역 실패: {e}")
+            print(f"       Run: uv run python AWS/translation/translate_metadata.py {date_yyyymmdd}")
     
     print("\n=== Orchestrator Result ===")
     print("nutshell:", final_payload.get("nutshell"))

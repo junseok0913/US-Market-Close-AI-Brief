@@ -1,0 +1,22 @@
+Title:
+2026.1.26 US Market Close | A mixed session amid strong economic data and selective tech trading
+
+Description:
+Major indices rose, buoyed by strong economic indicators like durable goods orders, but the overall market finished mixed as a divergence emerged within the tech sector. Investors are now focusing on the timing of the Fed's potential rate cuts and are becoming more selective with AI stocks.
+
+- Dow Jones Industrial Average: +0.64% - Boosted by soft landing hopes following better-than-expected durable goods orders.
+- S&P 500: +0.5% - Positively influenced by the solid economic data.
+- Nasdaq Composite: +0.43% - Joined the upward trend led by large-cap stocks.
+- Russell 2000: -0.35% - Diverged from large-cap stocks, showing a downward trend.
+
+- Strong Economic Data and the Fed's Dilemma: Durable goods orders surged by 5.3%, far exceeding the 1.1% forecast. While this fueled optimism for a soft landing, it also raised concerns that the Fed might delay interest rate cuts.
+- The Great Sort-Out in AI Tech Stocks: As competition in the artificial intelligence sector intensifies, investors are shifting from broad optimism to selectively backing companies that can demonstrate tangible results.
+- Big Tech's In-House AI Chip Race Heats Up: The move by tech giants to reduce reliance on Nvidia and bolster their own ecosystems is gaining momentum, exemplified by Microsoft unveiling its proprietary AI chip, the 'Maia 200'.
+- Focus Shifts to the Upcoming FOMC Meeting: All eyes are on the year's first FOMC meeting and the subsequent press conference with Chair Jerome Powell, as the market searches for hints about the future path of interest rate cuts.
+
+- Intel (INTC): Tumbled over 5.7% as the fallout from last week's disappointing guidance continued.
+- Microsoft (MSFT): Rose about 1% on news of the company unveiling its second-generation, in-house AI chip.
+- Meta (META): Gained more than 1% amid anticipation for its upcoming earnings report, though the company faces litigation risks related to platform addiction.
+
+Keywords:
+AMZN, CL=F, INTC, META, MSFT, NVDA, XLI, XLU, 미국증시, 장마감, 주식,

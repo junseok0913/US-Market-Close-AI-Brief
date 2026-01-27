@@ -214,9 +214,9 @@ class PodcastMetadataGenerator:
             logger.error(f"응답 내용: {llm_response[:500]}")
             raise ValueError(f"LLM 응답을 JSON으로 파싱할 수 없습니다: {e}")
         
-        # 필수 필드 확인
-        if "title" not in metadata or "description" not in metadata:
-            raise ValueError("title 또는 description 필드가 없습니다")
+        # 필수 필드 확인 (description만 필수, title은 외부에서 생성)
+        if "description" not in metadata:
+            raise ValueError("description 필드가 없습니다")
         
         return metadata
     

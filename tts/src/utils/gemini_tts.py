@@ -102,7 +102,30 @@ def gemini_generate_tts(
         logger.error("Gemini TTS HTTPError: %s %s", e.code, e.reason)
         if err_body:
             logger.error("Gemini error body: %s", err_body[:2000])
-        raise
+        if e.code == 429:
+            # Fallback to gemini-2.5-pro-tts
+            logger.warning("Quota exceeded (429). Falling back to models/gemini-2.5-pro-tts...")
+            fallback_model = "models/gemini-2.5-pro-preview-tts"
+            fallback_url = f"{GEMINI_BASE_URL}/{fallback_model}:generateContent"
+            
+            # Retry with fallback model
+            req_fallback = urllib.request.Request(
+                fallback_url,
+                data=body,
+                headers={
+                    "Content-Type": "application/json",
+                    "x-goog-api-key": api_key,
+                },
+                method="POST",
+            )
+            try:
+                with urllib.request.urlopen(req_fallback, timeout=timeout_s) as f_fallback:
+                    raw = f_fallback.read()
+            except urllib.error.HTTPError as e_fallback:
+                logger.error(f"Fallback model also failed: {e_fallback}")
+                raise e_fallback
+        else:
+            raise
     except urllib.error.URLError as e:
         logger.error("Gemini TTS URLError: %s", e)
         raise

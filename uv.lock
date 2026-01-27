@@ -1969,7 +1969,7 @@ requires-dist = [
     { name = "pytz", specifier = ">=2025.2" },
     { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "requests", specifier = ">=2.32.5" },
-    { name = "yfinance", specifier = ">=1.0" },
+    { name = "yfinance", specifier = ">=0.2.52" },
 ]
 
 [[package]]

@@ -117,6 +117,7 @@ def generate_rss_xml(base_url, episodes, lang="ko"):
       <title>{title}</title>
       <link>{episode_link}</link>
       <description>{description}</description>
+      <content:encoded><![CDATA[{description.replace('\n', '<br/>')}]]></content:encoded>
       <itunes:author>Stock Daily</itunes:author>
       <enclosure url="{audio_url}" length="{file_size}" type="audio/mpeg"/>
       <guid>{audio_url}</guid>

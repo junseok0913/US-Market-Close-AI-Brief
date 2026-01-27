@@ -1,0 +1,680 @@
+{
+  "date": "20260126",
+  "nutshell": "A mixed session amid strong economic data and a selective tech market.",
+  "user_tickers": [
+    "META"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 20
+    },
+    {
+      "name": "ticker",
+      "start_id": 21,
+      "end_id": 28
+    },
+    {
+      "name": "closing",
+      "start_id": 29,
+      "end_id": 35
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's your closing bell briefing for January 26th. The major indices finished higher today, but it doesn't feel like that warmth spread across the entire market.",
+      "sources": [],
+      "time": [
+        0,
+        9531
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today can be summed up as a mixed session driven by strong economic data and a more selective approach to tech stocks. The Dow Jones Industrial Average gained 0.64%, and the S&P 500 was up 0.5%. The Nasdaq also rose 0.43% to close out the day. However, the small-cap Russell 2000 index slipped 0.35%, showing a different trend from the large caps. The durable goods orders released today came in much stronger than expected, boosting hopes for a soft landing, which had a positive impact on large-cap stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "event",
+          "id": "389105",
+          "title": "durable goods orders mom",
+          "date": "2026-01-26"
+        }
+      ],
+      "time": [
+        10031,
+        46162
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the economic data was good, but why was the gain in the tech-heavy Nasdaq relatively modest?",
+      "sources": [],
+      "time": [
+        46662,
+        53393
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "While the excitement around AI is still there, investors are starting to be more selective. The fallout from Intel's disappointing forecast last week continued, with its stock dropping over 5% today, creating a split within the semiconductor sector. We also heard news that Microsoft is intensifying the competition among Big Tech by unveiling its own AI chip. With these massive investment costs and fierce competition coming into focus, we're entering a phase where it's no longer enough to just be an 'AI-related stock'—companies now have to prove they can deliver actual results.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "fdef171cf425ae80",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise to kick off key week with Big Tech earnings, Fed decision"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "article",
+          "pk": "eaff42d4ba7de437",
+          "title": "Microsoft takes aim at Google, Amazon, and Nvidia with new AI chip"
+        }
+      ],
+      "time": [
+        53893,
+        88544
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key themes that moved the market today?",
+      "sources": [],
+      "time": [
+        89044,
+        94295
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there were two main currents driving the market today. First, much stronger-than-expected durable goods orders supported investor sentiment, but at the same time, it also raised concerns that the Fed might delay rate cuts. On the other hand, as competition in the AI space heats up, we're seeing a real sorting out of winners and losers within the tech sector. We'll dive into each of these points in more detail shortly.",
+      "sources": [],
+      "time": [
+        94795,
+        119486
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the economic data. It's great to hear the economy is on solid footing, but it's a complicated picture if that also means the Fed might delay rate cuts.",
+      "sources": [],
+      "time": [
+        120486,
+        131177
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Exactly, the core of today's market was this tug-of-war between the data and policy. Durable goods orders, released this morning, jumped 5.3%, blowing past the market forecast of 1.1% and proving the U.S. economy still has a lot of strength. Core capital goods orders, a proxy for business investment, also showed momentum, rising 0.7%, more than double the estimate. In response, the Dow and the S&P 500 reacted positively, gaining 0.6% and 0.5% respectively. But what's interesting was the reaction in the bond market. Typically, strong economic data would push Treasury yields higher by lowering rate cut expectations, but the 10-year Treasury yield actually slipped slightly, finishing around 4.21%. West Texas Intermediate crude oil prices, which reflect economic growth expectations, also fell slightly. It was a day that showed market participants are more focused on the Fed's cautious stance and the upcoming FOMC meeting than just the strong headline numbers.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "389105",
+          "title": "durable goods orders mom",
+          "date": "2026-01-26"
+        },
+        {
+          "type": "article",
+          "pk": "e5c1b02e2d53d82b",
+          "title": "US core capital goods orders beat expectations in November"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        }
+      ],
+      "time": [
+        131677,
+        196408
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So, what are the odds for a March rate cut now? It seems like expectations must have come down quite a bit after this data.",
+      "sources": [],
+      "time": [
+        196908,
+        204879
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "You're right. According to the fed funds futures market, the probability of the Fed holding rates steady at the January meeting in two days is about 97%, so that's pretty much a done deal. The market's focus is now on March, and strong economic data like today's report lends weight to the argument that the Fed doesn't need to rush to cut rates. Former Kansas City Fed President Esther George suggested the Fed will likely signal a policy pause, stating they'll probably 'wait and see for a while.' Some analysts believe the Fed might not start cutting rates until the second half of the year, as the labor market gradually cools and inflation hovers around 3%. As this view—that the Fed will be cautious about early rate cuts—spreads, expectations for a March cut are noticeably diminishing.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "b734933e09aa815b",
+          "title": "Next Fed Meeting: When It Is in January and What To Expect on Interest Rates"
+        },
+        {
+          "type": "article",
+          "pk": "d0bbda3582929730",
+          "title": "Fed expected to keep interest rates on hold this week"
+        },
+        {
+          "type": "article",
+          "pk": "2525a58a41f19e14",
+          "title": "Federal Reserve live coverage: Fed set to hold interest rates steady in first policy meeting of 2026"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        205379,
+        250230
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "With rate cut expectations fading, the internal dynamics of the market must be shifting. Which sectors were in the spotlight today?",
+      "sources": [],
+      "time": [
+        250730,
+        259221
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, with confirmation that the economy's fundamentals are strong, sectors sensitive to the economic cycle are now in a relatively better position. For instance, today's increase in durable goods orders can be seen as a signal of rising factory automation or new equipment investment, which is positive news for the industrials sector. On the other hand, as rate cut hopes weaken, some of the tech stocks that led the market rally have started to take a breather. In particular, dividend-paying sectors like utilities and real estate, which are sensitive to high interest rates, are feeling the pressure from the prospect that rates could stay higher for longer. We're seeing a chain reaction where changes in macroeconomic data are altering the outlook for the Fed's rate path, which in turn is leading to a divergence in sector-specific investment strategies.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "389105",
+          "title": "durable goods orders mom",
+          "date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLI",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLU",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "article",
+          "pk": "e5c1b02e2d53d82b",
+          "title": "US core capital goods orders beat expectations in November"
+        }
+      ],
+      "time": [
+        259721,
+        305092
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So it seems all eyes will be on this week's FOMC meeting. What should we be watching for most closely?",
+      "sources": [],
+      "time": [
+        305592,
+        312682
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "At this meeting, all the attention will be on Fed Chair Jerome Powell's press conference, rather than the rate decision itself. The market is hanging on every word to see how he assesses the recent strong economic data and what hints he might give about the future direction of monetary policy. The biggest question is whether Powell will directly push back against the market's widespread expectations for an early rate cut. If he emphasizes that the fight against inflation isn't over and maintains a cautious tone, market expectations for a rate cut could retreat even further. So, his every statement will be a critical turning point that could set the market's direction for the next few months.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "d0bbda3582929730",
+          "title": "Fed expected to keep interest rates on hold this week"
+        },
+        {
+          "type": "article",
+          "pk": "b734933e09aa815b",
+          "title": "Next Fed Meeting: When It Is in January and What To Expect on Interest Rates"
+        },
+        {
+          "type": "article",
+          "pk": "d8bc6ef4b3626014",
+          "title": "Fed rates decision, Tesla earnings, Bybit roadmap: Crypto Week Ahead"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        313182,
+        349833
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, getting clarity from the Fed is going to be crucial. Meanwhile, you mentioned that in the AI space, another key market driver, we're starting to see a sorting out of the winners and losers. Let's dive into that.",
+      "sources": [],
+      "time": [
+        350333,
+        364264
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "That's right. Within the massive AI wave that drove the tech rally all last year, a process of separating the survivors has begun. Today's market was a microcosm of that. While the S&P 500 and Nasdaq finished slightly higher, a look under the hood reveals a big difference in temperature. Intel, which gave weak guidance last week, fell another 5.7% today, weighing on the entire semiconductor sector. On the other hand, Microsoft challenged Nvidia by unveiling its second-generation in-house AI chip, the Maia 200, and its stock rose nearly 1%. This clear divergence within the same tech sector is proof that investors are moving beyond vague optimism and are now soberly assessing who can generate actual profits amid the massive capital spending race. With Big Tech companies like Microsoft, Meta, and Apple set to report earnings this week, their capital expenditure plans and profitability outlooks will be a crucial test that will determine the future direction of tech stocks as a whole.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "article",
+          "pk": "eaff42d4ba7de437",
+          "title": "Microsoft takes aim at Google, Amazon, and Nvidia with new AI chip"
+        },
+        {
+          "type": "article",
+          "pk": "fdef171cf425ae80",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise to kick off key week with Big Tech earnings, Fed decision"
+        }
+      ],
+      "time": [
+        364764,
+        423055
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Microsoft's in-house chip development is particularly noteworthy. What does this mean for Nvidia, the dominant player in the market?",
+      "sources": [],
+      "time": [
+        423555,
+        432166
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "In the short term, it's unlikely to topple Nvidia's dominance, but it's seen as the opening shot in a long-term competitive battle. Microsoft's Maia 200 chip is a strategic move aimed not just at cutting costs, but at achieving performance optimized for its own cloud service, Azure. This follows the same trend as Amazon's Trainium and Google's TPU, showing that the major cloud companies are getting serious about reducing their dependence on Nvidia and strengthening their own ecosystems. Along with the chip, Microsoft is also offering open-source software tools like Triton, directly challenging Nvidia's biggest competitive advantage: its CUDA software ecosystem. Of course, Nvidia's technology and market leadership are still formidable, but the fact that its biggest customers are now turning into its most powerful potential competitors is a clear threat.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "eaff42d4ba7de437",
+          "title": "Microsoft takes aim at Google, Amazon, and Nvidia with new AI chip"
+        },
+        {
+          "type": "article",
+          "pk": "da2652c5d58a6857",
+          "title": "Microsoft rolls out next generation of its AI chips, takes aim at Nvidia's software"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMZN",
+          "start_date": "2026-01-23",
+          "end_date": "2026-01-26"
+        }
+      ],
+      "time": [
+        432666,
+        482637
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, this AI development race, with its astronomical costs, could actually be a headwind for investors in some ways.",
+      "sources": [],
+      "time": [
+        483137,
+        490708
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Exactly. Concerns about an AI spending glut are raising caution in the market. There's analysis on Wall Street showing that while the price-to-earnings ratio of the Magnificent Seven stocks is around its post-pandemic average, the valuation of the rest of the market is nearing all-time highs. This suggests investors are starting to question whether the massive capital expenditures in tech will translate into justifiable returns. In fact, some are pointing out that the cash burn rate for venture capital-backed AI startups is higher now than at any point in history. Therefore, in this week's Big Tech earnings reports, investors will be scrutinizing not just revenue and profit numbers, but also future capital expenditure guidance to assess the efficiency and monetization strategy of their AI investments.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f84d47051ceb1e86",
+          "title": "Chart of the Day: Tech stock domination gets a reality check"
+        },
+        {
+          "type": "article",
+          "pk": "c4ea8a8e4fcc8e52",
+          "title": "Earnings live: Baker Hughes stock rises as Big Tech earnings come into view"
+        },
+        {
+          "type": "article",
+          "pk": "3746e8579492d5dd",
+          "title": "Stocks Set for Muted Open After Trump’s Tariff Threats, Big Tech Earnings and Fed Meeting in Focus"
+        },
+        {
+          "type": "article",
+          "pk": "a0b52cdcc7e9ac39",
+          "title": "JPMorgan and Goldman See US Earnings Broadening Beyond Big Tech"
+        }
+      ],
+      "time": [
+        491208,
+        537979
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "I see. So you're saying the AI theme is moving from the 'dream' phase to the 'show me the numbers' phase. With Big Tech earnings coming up this week, it would be great to break down some of the key companies to watch from that perspective.",
+      "sources": [],
+      "time": [
+        538479,
+        552530
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "Let's start with Meta. The stock hit a low early in the session but steadily climbed to close up over 1%. Is this optimism ahead of its earnings report?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-26",
+          "end_date": "2026-01-26"
+        }
+      ],
+      "time": [
+        553530,
+        564141
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "Yes, it looks like the market is betting on a positive earnings report. However, there's a significant disconnect between the stock's performance and the reality the company is facing. Meta is currently facing a major lawsuit over allegations that its platform's addictive design has harmed the mental health of teenagers. This isn't just about a potential fine; it's a serious legal risk that raises fundamental questions about the sustainability of Meta's core business model itself. The fact that the stock is rising despite this suggests that investors may be deliberately ignoring this clear headwind and focusing solely on short-term results.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f6ddaca7f8f15a93",
+          "title": "Meta, TikTok, YouTube to stand trial on youth addiction claims"
+        }
+      ],
+      "time": [
+        564641,
+        601292
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "A lawsuit over teen addiction sounds like it could have a huge impact. Why does this go beyond just a monetary fine?",
+      "sources": [],
+      "time": [
+        601792,
+        610003
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "This lawsuit is what's known as a 'bellwether trial,' meaning it's the first of its kind and could set a precedent for countless similar cases to follow. The biggest risk is that if Meta loses, a court could force changes to its core competitive advantage: the algorithm designed to maximize user engagement. This algorithm is the heart of its cash-generation machine, increasing user time on the platform and boosting ad effectiveness. If a key component of that engine has to be legally removed, it could inflict permanent, structural damage on Meta's ability to generate revenue. It's an existential threat.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f6ddaca7f8f15a93",
+          "title": "Meta, TikTok, YouTube to stand trial on youth addiction claims"
+        }
+      ],
+      "time": [
+        610503,
+        644234
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "That's a significant risk. But some might argue that a lawsuit like this could actually be a catalyst for the company to move on from its legacy business model and accelerate its transition to future businesses like AI and the metaverse.",
+      "sources": [],
+      "time": [
+        644734,
+        658585
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "Of course, that growth-oriented perspective exists. The argument is that the legal pressure could force an evolution in its AI technology, leading to a stronger business model that has overcome regulatory risks. There's also the analysis that the metaverse business, led by Reality Labs, is an independent growth engine moving on a separate track from social media regulations. The market's current willingness to ignore the short-term legal noise and push the stock higher is likely fueled by this very optimism about its future growth narrative.",
+      "sources": [],
+      "time": [
+        659085,
+        689576
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "So it sounds like a tense tug-of-war between a clear risk to its current core business and the unrealized potential of its future growth.",
+      "sources": [],
+      "time": [
+        690076,
+        698807
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "That's a perfect way to put it. But the crucial point is that future growth engines like Reality Labs are entirely dependent on the massive cash flow generated by the advertising business. In other words, if the heart of the ad business is damaged, the blood supply to the future limbs of the metaverse will be cut off. The growth story is compelling, but it's still a future possibility. The legal risk, on the other hand, is a present danger aimed directly at the company's core profit model. The current situation, where the market seems to be ignoring this clear risk and focusing only on short-term hopes, suggests that this might be a time for risk management.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f6ddaca7f8f15a93",
+          "title": "Meta, TikTok, YouTube to stand trial on youth addiction claims"
+        }
+      ],
+      "time": [
+        699307,
+        719758
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "The market closed mixed today as it digested the PCE inflation data. Looking ahead to next week, what are the key events that could determine the market's direction?",
+      "sources": [],
+      "time": [
+        720758,
+        731529
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "해설자",
+      "text": "Right, today the Fed's preferred inflation gauge, the PCE price index, came in line with expectations, reaffirming the disinflationary trend, which was a positive. That helped the S&P 500 hit another record high. However, the shock from Intel's earnings weighed on the semiconductor sector, limiting the Nasdaq's gains, while the Dow finished lower, showing clear sector divergence. Next week, all eyes will be on the first FOMC meeting of the year. This meeting will be a critical juncture that could provide concrete hints about the timing of the Fed's rate cuts.",
+      "sources": [],
+      "time": [
+        732029,
+        762320
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "진행자",
+      "text": "As you said, the FOMC meeting next week is the main event. It's almost certain they'll hold rates steady at this January meeting, so what should investors be focusing on?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        762820,
+        773351
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "해설자",
+      "text": "That's right. Almost no expert expects a rate change at this meeting. So, the market's attention will be on the wording of the policy statement and Fed Chair Jerome Powell's press conference. The market will react sensitively to every word from Powell on how the Fed is interpreting the recent strong Q4 GDP growth and today's stable inflation data, and how that might affect the future rate path. The market's short-term direction will likely be determined by whether Powell acknowledges the market's high expectations for a March rate cut or pushes back with a more cautious tone to temper those hopes.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        773851,
+        804342
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "진행자",
+      "text": "Besides the FOMC, are there any other economic indicators or events that investors should keep an eye on?",
+      "sources": [],
+      "time": [
+        804842,
+        811733
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "해설자",
+      "text": "Absolutely. Before the FOMC decision is announced, it's worth watching the CB Consumer Confidence index, which comes out on Tuesday, the 27th. This is a direct measure of U.S. household sentiment and provides important clues about the health of the economy. Also, the results of the 5-year Treasury auction on the 27th and the 7-year auction on the 29th are important. With Treasury yields re-emerging as a key market variable, the demand at these auctions could increase volatility in market rates. This could directly impact investor sentiment for growth stocks, including tech, so it's worth watching them together.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "418450",
+          "title": "cb consumer confidence",
+          "date": "2026-01-27"
+        },
+        {
+          "type": "event",
+          "id": "393692",
+          "title": "5-year note auction",
+          "date": "2026-01-27"
+        },
+        {
+          "type": "event",
+          "id": "393695",
+          "title": "7-year note auction",
+          "date": "2026-01-29"
+        }
+      ],
+      "time": [
+        812233,
+        848044
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "진행자",
+      "text": "Okay, it looks like next week will be a crucial one for getting clarity on the Fed's policy direction. Thanks for your insights today.",
+      "sources": [],
+      "time": [
+        848544,
+        855834
+      ]
+    }
+  ]
+}

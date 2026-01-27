@@ -81,7 +81,7 @@ class SlideGenerator:
     
     def _load_script_json(self, date: str) -> dict:
         """script.json 로드"""
-        script_path = self.root / "podcast" / date / "script.json"
+        script_path = self.root / "podcast" / date / "ko" / "script.json"
         
         if not script_path.exists():
             raise FileNotFoundError(f"script.json을 찾을 수 없습니다: {script_path}")
