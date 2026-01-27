@@ -67,20 +67,29 @@ async function main() {
       continue;
     }
 
+    // Check for 'ko' subdirectory with data (new structure) or fallback to root (old structure)
+    let sourceDir = episodeDir;
+    const koDir = path.join(episodeDir, 'ko');
+    const koJsonPath = path.join(koDir, `${date}.json`);
+
+    if (fs.existsSync(koDir) && fs.existsSync(koJsonPath)) {
+      sourceDir = koDir;
+    }
+
     // Copy JSON file
-    const jsonSrc = path.join(episodeDir, `${date}.json`);
+    const jsonSrc = path.join(sourceDir, `${date}.json`);
     const jsonDest = path.join(DATA_DIR, `${date}.json`);
 
     if (fs.existsSync(jsonSrc)) {
       fs.copyFileSync(jsonSrc, jsonDest);
-      console.log(`Copied: ${date}.json`);
+      console.log(`Copied: ${date}.json from ${sourceDir === koDir ? 'ko/' : ''}${date}.json`);
     } else {
       console.warn(`JSON not found: ${jsonSrc}`);
       continue;
     }
 
     // Copy audio file
-    const audioSrc = path.join(episodeDir, `${date}.wav`);
+    const audioSrc = path.join(sourceDir, `${date}.wav`);
     const audioDest = path.join(AUDIO_DIR, `${date}.wav`);
 
     if (fs.existsSync(audioSrc)) {
@@ -90,10 +99,23 @@ async function main() {
       console.warn(`Audio not found: ${audioSrc}`);
     }
 
+    // Read nutshell from the source JSON file to ensure we get the localized version (e.g. Korean)
+    // instead of potentially stale or English data from the DB
+    let finalNutshell = nutshell;
+    try {
+      const jsonContent = fs.readFileSync(jsonSrc, 'utf-8');
+      const parsedJson = JSON.parse(jsonContent);
+      if (parsedJson.nutshell) {
+        finalNutshell = parsedJson.nutshell;
+      }
+    } catch (e) {
+      console.warn(`Failed to read nutshell from ${jsonSrc}`, e);
+    }
+
     // Add to episodes list
     episodes.push({
       date,
-      nutshell,
+      nutshell: finalNutshell,
       user_tickers: JSON.parse(user_tickers || '[]'),
     });
   }
