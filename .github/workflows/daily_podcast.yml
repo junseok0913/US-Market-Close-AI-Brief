@@ -58,7 +58,7 @@ jobs:
         run: |
           echo "Generating script for $TARGET_DATE..."
           # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
-          uv run python orchestrator.py $TARGET_DATE -t TSLA
+          uv run python orchestrator.py $TARGET_DATE -t META
 
       - name: Upload Script Artifact
         if: success()

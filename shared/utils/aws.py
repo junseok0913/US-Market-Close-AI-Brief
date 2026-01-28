@@ -28,10 +28,8 @@ def get_boto3_session(profile_name: Optional[str] = None, region_name: Optional[
     except Exception as e:
         # If specific profile not found (e.g. in CI/CD without 'Nam' profile), 
         # fallback to default credential chain (Env vars, Instance profile, etc)
-        if "ProfileNotFound" in str(e):
-            logger.warning(f"Profile '{profile}' not found, falling back to default credentials.")
-            return boto3.Session(profile_name=None, region_name=region)
-        raise e
+        logger.warning(f"Failed to create session with profile '{profile}': {e}. Falling back to default credentials.")
+        return boto3.Session(profile_name=None, region_name=region)
 
 
 def get_dynamo_table(table_name: str, profile_name: Optional[str] = None, region_name: Optional[str] = None):
