@@ -52,7 +52,9 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # 필요한 다른 환경변수가 있다면 추가
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-2"
         run: |
           echo "Generating script for $TARGET_DATE..."
           # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
