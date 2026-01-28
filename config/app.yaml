@@ -54,8 +54,8 @@ env:
 
   # AWS (news/calendar/market context)
   AWS_SDK_LOAD_CONFIG: 1
-  AWS_PROFILE: "Nam"
-  AWS_REGION: "ap-northeast-2"
+  # AWS_PROFILE is removed to allow env vars (AWS_ACCESS_KEY_ID) to take precedence in CI/CD
+  AWS_REGION: "us-east-2"
 
   # News sources
   NEWS_TABLE: "kubig-YahoofinanceNews"
