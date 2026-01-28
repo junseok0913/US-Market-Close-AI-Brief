@@ -37,7 +37,15 @@ jobs:
           echo "TARGET_DATE=$CURRENT_DATE" >> $GITHUB_ENV
           echo "Target Date is $CURRENT_DATE"
 
+      - name: Cache Podcast Data
+        id: cache-podcast
+        uses: actions/cache@v4
+        with:
+          path: podcast/${{ env.TARGET_DATE }}
+          key: podcast-data-${{ env.TARGET_DATE }}
+
       - name: Generate Podcast Script (Orchestrator)
+        if: steps.cache-podcast.outputs.cache-hit != 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -47,19 +55,42 @@ jobs:
           # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
           uv run python orchestrator.py $TARGET_DATE -t TSLA
 
+      - name: Upload Script Artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-script-${{ env.TARGET_DATE }}
+          path: podcast/${{ env.TARGET_DATE }}
+
       - name: Generate Audio (TTS Korean)
+        if: steps.cache-podcast.outputs.cache-hit != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           echo "Generating Korean Audio for $TARGET_DATE..."
           uv run python -m tts.src.tts $TARGET_DATE --lang ko
 
+      - name: Upload Korean Audio Artifact
+        if: success() || steps.cache-podcast.outputs.cache-hit == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-audio-ko-${{ env.TARGET_DATE }}
+          path: podcast/${{ env.TARGET_DATE }}
+
       - name: Generate Audio (TTS English)
+        if: steps.cache-podcast.outputs.cache-hit != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           echo "Generating English Audio for $TARGET_DATE..."
           uv run python -m tts.src.tts $TARGET_DATE --lang en
+
+      - name: Upload English Audio Artifact
+        if: success() || steps.cache-podcast.outputs.cache-hit == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-audio-en-${{ env.TARGET_DATE }}
+          path: podcast/${{ env.TARGET_DATE }}
 
       - name: Upload to S3
         env:
@@ -108,4 +139,15 @@ jobs:
         run: |
           echo "Invalidating CloudFront Cache for RSS feeds..."
           aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/podcast.xml" "/podcast_en.xml"
+
+
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git pull --rebase
+          git add podcast/
+          git commit -m "Add podcast data for $TARGET_DATE" || echo "No changes to commit"
+          git push
 
