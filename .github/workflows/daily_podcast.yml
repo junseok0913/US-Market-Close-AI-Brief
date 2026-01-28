@@ -1,9 +1,12 @@
 name: Daily Stock Podcast Automation
 
 on:
-  schedule:
+  push:
+    branches:
+      - youtube # 예: develop 또는 feat/podcast
+  #schedule:
     # 매일 평일(월-금) UTC 21:30 (한국 시간 오전 6:30, 미국 장 마감 후)
-    - cron: '30 21 * * 1-5'
+  #  - cron: '30 21 * * 1-5'
   workflow_dispatch: # 수동 실행 버튼 (테스트용)
 
 permissions:
