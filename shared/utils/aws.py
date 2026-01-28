@@ -23,7 +23,15 @@ def get_boto3_session(profile_name: Optional[str] = None, region_name: Optional[
     region = region_name or os.getenv("AWS_REGION")
     
     logger.info(f"Creating boto3 session: profile={profile}, region={region}")
-    return boto3.Session(profile_name=profile, region_name=region)
+    try:
+        return boto3.Session(profile_name=profile, region_name=region)
+    except Exception as e:
+        # If specific profile not found (e.g. in CI/CD without 'Nam' profile), 
+        # fallback to default credential chain (Env vars, Instance profile, etc)
+        if "ProfileNotFound" in str(e):
+            logger.warning(f"Profile '{profile}' not found, falling back to default credentials.")
+            return boto3.Session(profile_name=None, region_name=region)
+        raise e
 
 
 def get_dynamo_table(table_name: str, profile_name: Optional[str] = None, region_name: Optional[str] = None):
