@@ -14,7 +14,12 @@ def get_boto3_session(profile_name: Optional[str] = None, region_name: Optional[
     import logging
     logger = logging.getLogger(__name__)
     
-    profile = profile_name or os.getenv("AWS_PROFILE") or "Nam"
+    profile = profile_name or os.getenv("AWS_PROFILE")
+    
+    # If explicit credentials are provided via env vars (e.g. CI/CD), ignore default profile "Nam"
+    if not profile and not os.getenv("AWS_ACCESS_KEY_ID"):
+        profile = "Nam"
+        
     region = region_name or os.getenv("AWS_REGION")
     
     logger.info(f"Creating boto3 session: profile={profile}, region={region}")
