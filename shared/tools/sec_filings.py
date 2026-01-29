@@ -434,7 +434,7 @@ def _build_or_load_sec_filing_index(
                 "text_length": len(full_text),
                 "total_pages": total_pages,
                 "index": index_out,
-                "summary_model": used_model,
+                "summary_model": SEC_PAGE_SUMMARY_MODEL,
                 "generated_at": datetime.utcnow().isoformat() + "Z",
             },
         )
