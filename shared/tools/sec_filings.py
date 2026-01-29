@@ -22,10 +22,11 @@ from typing import Any, Dict, List, Optional
 
 import requests
 from langchain_core.tools import tool
-from langchain_openai import ChatOpenAI
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import HumanMessage, SystemMessage
 
 from shared.config import ensure_cache_dir
+from shared.utils.llm import build_llm
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +36,7 @@ SEC_DATA_URL = "https://data.sec.gov"
 DEFAULT_SEC_TIMEOUT_SECS = 30
 DEFAULT_SEC_PAGE_CHARS = 20000
 
-SEC_PAGE_SUMMARY_MODEL = "gpt-5-mini"
+SEC_PAGE_SUMMARY_MODEL = "gemini-2.5-pro"  # Default fallback if not in env
 SEC_PAGE_SUMMARY_MAX_CHARS = 320
 
 
@@ -235,17 +236,10 @@ def _sec_filing_index_cache_path(ticker: str, accession_number: str) -> Path:
     return index_dir / f"{safe_ticker}_{acc_no_dash}.json"
 
 
-def _build_sec_page_summary_llm(*, model: str) -> ChatOpenAI:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise EnvironmentError("OPENAI_API_KEY가 설정되지 않았습니다. SEC page summary 생성에 필요합니다.")
-
-    timeout = float(os.getenv("SEC_PAGE_SUMMARY_TIMEOUT", "120"))
-    max_retries = int(os.getenv("SEC_PAGE_SUMMARY_MAX_RETRIES", "2"))
-    temperature = float(os.getenv("SEC_PAGE_SUMMARY_TEMPERATURE", "0.0"))
-
-    # gpt-5-mini, thinking none (reasoning_effort is omitted)
-    return ChatOpenAI(model=model, temperature=temperature, timeout=timeout, max_retries=max_retries)
+def _build_sec_page_summary_llm() -> BaseChatModel:
+    # Delegate to shared LLM builder. Even if model/parameters are not explicitly 
+    # passed here, build_llm internally checks GEMINI_API_KEY.
+    return build_llm("SEC_PAGE_SUMMARY")
 
 
 def _is_model_not_found(exc: Exception) -> bool:
@@ -254,7 +248,7 @@ def _is_model_not_found(exc: Exception) -> bool:
 
 
 def _summarize_sec_page(
-    llm: ChatOpenAI,
+    llm: BaseChatModel,
     *,
     ticker: str,
     accession_number: str,
@@ -391,18 +385,9 @@ def _build_or_load_sec_filing_index(
     url_hint = f"{base}{primary_document}" if primary_document else f"{base}{acc_no_dash}.txt"
     url_final = url or url_hint
 
-    if not os.getenv("OPENAI_API_KEY"):
-        logger.warning("OPENAI_API_KEY가 없어 SEC filing page index를 생성할 수 없습니다: %s", accession_number)
-        if acquired:
-            lock_path.unlink(missing_ok=True)
-        return [], url_final, False
-
-    requested_model = (os.getenv("SEC_PAGE_SUMMARY_MODEL") or SEC_PAGE_SUMMARY_MODEL).strip() or SEC_PAGE_SUMMARY_MODEL
-    fallback_model = (os.getenv("OPENAI_MODEL") or "gpt-5.1").strip() or "gpt-5.1"
-    used_model = requested_model
-
+    # Use build_llm to ensure Gemini is used if configured
     try:
-        llm = _build_sec_page_summary_llm(model=used_model)
+        llm = _build_sec_page_summary_llm()
     except Exception as exc:
         logger.warning("SEC page summary LLM 초기화 실패: %s", exc)
         if acquired:
@@ -430,32 +415,8 @@ def _build_or_load_sec_filing_index(
                     content=chunk,
                 )
             except Exception as exc:
-                if used_model != fallback_model and _is_model_not_found(exc):
-                    logger.warning(
-                        "SEC page summary 모델 접근 실패: %s (model=%s). fallback=%s로 재시도합니다.",
-                        accession_number,
-                        used_model,
-                        fallback_model,
-                    )
-                    try:
-                        used_model = fallback_model
-                        llm = _build_sec_page_summary_llm(model=used_model)
-                        summary = _summarize_sec_page(
-                            llm,
-                            ticker=ticker,
-                            accession_number=accession_number,
-                            form=form,
-                            filed_date=filed_date,
-                            page=page,
-                            total_pages=total_pages,
-                            content=chunk,
-                        )
-                    except Exception as exc2:
-                        logger.warning("SEC page summary 재시도 실패: %s page=%d (%s)", accession_number, page, exc2)
-                        summary = ""
-                else:
-                    logger.warning("SEC page summary 실패: %s page=%d (%s)", accession_number, page, exc)
-                    summary = ""
+                logger.warning("SEC page summary 실패: %s page=%d (%s)", accession_number, page, exc)
+                summary = ""
         if summary:
             any_summary = True
         index_out.append({"page": str(page), "page_summary": summary})
