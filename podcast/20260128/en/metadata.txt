@@ -1,0 +1,23 @@
+Title:
+2026.1.28 US Market Close | Markets await Big Tech earnings after Fed's hawkish rate hold
+
+Description:
+The US stock market closed mixed as expectations for an early rate cut faded following the Fed's hawkish decision to hold rates steady. However, anticipation for Big Tech earnings provided support, shifting market focus from macroeconomic factors to individual company fundamentals.
+
+- Dow Jones: +0.02% - Edged higher, holding firm despite the Fed's hawkish stance.
+- S&P 500: -0.01% - Slipped into negative territory as rate cut hopes diminished following Chairman Jerome Powell's press conference.
+- Nasdaq: +0.17% - Rose independently on optimism for Big Tech earnings reports due after the closing bell.
+
+- The Fed's Hawkish Rate Hold: While the Fed kept interest rates unchanged, Chairman Jerome Powell pushed back against the possibility of a March rate cut, causing market expectations to recede. Consequently, the 10-year Treasury yield climbed to around 4.25%.
+
+- Awaiting Big Tech Earnings: Market attention shifted from the Fed's monetary policy to the individual earnings of companies like Microsoft and Meta. A key focus is whether investments in artificial intelligence (AI) are translating into tangible profit growth.
+
+- The Rise of a 'Two-Speed Market': A selective market environment has emerged, with capital flowing primarily to companies with proven fundamentals. Excitement over the AI growth narrative in tech stocks is overshadowing concerns about the Fed's tightening policy.
+
+- Meta's Double-Edged Sword: The company reported strong Q4 results with 24% revenue growth. However, it also announced plans to increase capital expenditures to as much as $135 billion by 2026 for 'superintelligence' development, raising concerns about future profitability.
+
+- Microsoft (MSFT): Slipped over 0.6% during the session. The stock awaited its earnings report amid a mix of optimism for over 27% growth in its key cloud service, Azure, and concerns about significant capital expenditures.
+- Meta (META): Edged up about 0.2%, closing slightly higher ahead of its Q4 earnings release, buoyed by hopes of a recovery in the digital advertising market.
+
+Keywords:
+DX-Y.NYB, GC=F, META, MSFT, XLK, 미국증시, 장마감, 주식,

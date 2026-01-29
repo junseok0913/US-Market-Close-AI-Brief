@@ -1,0 +1,753 @@
+{
+  "date": "20260128",
+  "nutshell": "연준의 매파적 동결 속 빅테크 실적 대기 장세",
+  "user_tickers": [
+    "META"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "1월 28일 장마감 브리핑입니다. 오늘은 시장의 가장 큰 관심사였던 연방공개시장위원회 회의가 있었는데요, 시장은 혼조세로 마감했군요.",
+      "sources": [],
+      "time": [
+        0,
+        10851
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 연준의 매파적 동결 속 빅테크 실적 대기 장세로 요약할 수 있겠습니다. 다우존스 산업평균지수는 0.02% 상승하며 강보합 마감했고, S&P 500 지수는 0.01% 소폭 하락했습니다. 반면 기술주 중심의 나스닥 지수는 0.17% 상승하며 다른 지수와는 다른 흐름을 보였습니다. 시장은 예상대로 연준이 금리를 동결할 것으로 보았지만, 오후 2시 발표 이후 이어진 제롬 파월 의장의 기자회견 내용에 더 주목하며 변동성을 키웠습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        11351,
+        43842
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "금리 동결은 예상했던 결과인데, 파월 의장의 발언이 시장의 기대를 다소 꺾은 모양이군요. 어떤 내용이었나요?",
+      "sources": [],
+      "time": [
+        44342,
+        52433
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "맞습니다. 연준은 성명서에서 경제가 견고한 속도로 확장되고 있다고 평가하며 긍정적인 전망을 내놓았지만, 파월 의장은 기자회견에서 다음 금리 인하 시점에 대한 명확한 신호를 주지 않았습니다. 그는 정책이 다소 중립적이거나 제한적일 수 있다고 언급하며, 향후 결정은 들어오는 데이터에 따라 달라질 것이라는 원론적인 입장을 고수했습니다. 이로 인해 빠른 금리 인하를 기대했던 시장 참여자들 사이에서 실망감이 일부 나타나면서 장 후반 상승폭을 반납하거나 하락 전환하는 모습을 보였습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "56b4051ea03bea88",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026 in split decision"
+        }
+      ],
+      "time": [
+        52933,
+        84024
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "그렇군요. 연준이라는 큰 산을 넘자마자 이제는 기업들의 실적 발표가 기다리고 있었죠. 오늘 시장을 움직인 핵심 동력은 무엇이었는지 자세히 짚어주시죠.",
+      "sources": [],
+      "time": [
+        84524,
+        96775
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "네, 오늘은 크게 두 가지 요인이 시장을 이끌었습니다. 첫째는 방금 말씀드린 연준의 매파적 금리 동결과 그에 따른 시장의 관망세였고, 둘째는 장 마감 후 발표될 빅테크 기업들의 실적을 앞두고 기술주를 중심으로 형성된 기대감이었습니다. 저와 함께 하나씩 자세히 살펴보시겠습니다.",
+      "sources": [],
+      "time": [
+        97275,
+        116166
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "네, 그럼 첫 번째 요인인 연준의 결정부터 자세히 짚어주시죠. 시장은 이 매파적인 메시지를 어떻게 소화했나요?",
+      "sources": [],
+      "time": [
+        117166,
+        124817
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "네, 시장은 연준의 발표 직후 극심한 변동성을 보이며 방향성을 탐색하는 모습을 보였습니다. S&P 500 지수는 장중 사상 처음으로 7,000선을 돌파하는 강세를 보이다가도 파월 의장의 기자회견이 진행되면서 상승분을 모두 반납하고 약보합으로 마감했습니다. 10년물 국채금리는 시장의 조기 금리 인하 기대감이 후퇴하면서 4.25퍼센트 수준까지 올랐고, 달러 인덱스 역시 며칠간의 약세에서 벗어나 소폭 반등했습니다. 반면 안전자산 선호 심리와 달러 약세에 대한 헤지 수요가 맞물리면서 금 선물 가격은 온스당 5,300달러를 훌쩍 넘어서며 사상 최고치를 경신하는 기염을 토했습니다. 결국 연준이 금리를 동결할 것이라는 사실 자체보다는, 향후 통화정책 경로에 대한 불확실성이 커졌다는 점이 채권, 외환, 원자재 시장 전반에 걸쳐 투자 심리를 위축시킨 하루였습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "ac73ef613ec9b911",
+          "title": "Gold jumps above $5,400 as Fed keeps rates unchanged, weak dollar 'supercharging' rally"
+        }
+      ],
+      "time": [
+        125317,
+        176808
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "금리 동결은 모두가 예상했던 결과인데도 채권 금리가 올랐다는 건, 그만큼 시장이 파월 의장의 발언을 심각하게 받아들였다는 의미겠군요.",
+      "sources": [],
+      "time": [
+        177308,
+        186279
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "정확합니다. 이번 연방공개시장위원회 결정은 만장일치가 아니었습니다. 크리스토퍼 월러와 스티븐 미란 두 명의 이사가 25베이시스포인트 금리 인하를 주장하며 반대표를 던졌습니다. 하지만 파월 의장은 기자회견에서 경제가 견고한 속도로 확장되고 있다고 평가하며 추가 인하에 대한 기대를 차단했습니다. 그는 향후 결정이 데이터에 달려있다는 원론적인 입장을 고수하며, 시장이 기대했던 3월 금리 인하 가능성에 대해 사실상 선을 그은 셈입니다. 이 발언이 나오자 CME 페드워치 툴에 반영된 3월 인하 확률이 급격히 낮아졌고, 이는 국채 매도세로 이어져 금리 상승을 부추기는 직접적인 원인이 됐습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "c090cf5a36190522",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026"
+        },
+        {
+          "type": "article",
+          "pk": "b824ac6b97a04267",
+          "title": "Fed holds interest rates steady in first meeting of 2026"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        186779,
+        224270
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "단순한 통화정책 발표를 넘어, 연준의 독립성을 둘러싼 정치적 긴장감도 최고조에 달한 상황이었죠. 이 부분도 시장에 영향을 미쳤을까요?",
+      "sources": [],
+      "time": [
+        224770,
+        234461
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "물론입니다. 이번 회의는 트럼프 행정부의 노골적인 금리 인하 압박과 맞물려 그 어느 때보다 연준의 독립성이 시험대에 오른 무대였습니다. 파월 의장은 최근 법무부의 수사와 리사 쿡 이사 해임 시도를 둘러싼 대법원 심리를 두고 연준의 독립성에 대한 위협이라고 공개적으로 비판한 바 있습니다. 그는 기자회견에서도 쿡 이사 사건을 연준 113년 역사상 가장 중요한 법적 사건일 수 있다고 언급하며 정치적 압력에 굴하지 않겠다는 의지를 분명히 했습니다. 이러한 배경은 단기적인 금리 결정뿐만 아니라 중장기적으로 통화정책의 신뢰도와 예측 가능성에 영향을 미치는 요인이기 때문에, 투자자들은 파월 의장의 발언 하나하나에 촉각을 곤두세울 수밖에 없었습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "47f4b31aba838917",
+          "title": "The Fed holds interest rates steady despite pressure from Trump"
+        },
+        {
+          "type": "article",
+          "pk": "e3fd327e8f9e3218",
+          "title": "Emboldened by widespread support, Jerome Powell and the Fed will probably defy Trump once again"
+        },
+        {
+          "type": "article",
+          "pk": "93f4972cdeaeb729",
+          "title": "Fed risks Trump’s ire by holding rates"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        }
+      ],
+      "time": [
+        234961,
+        277292
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "연준이라는 큰 이벤트를 소화한 시장의 관심은 이제 어디로 향하게 될까요?",
+      "sources": [],
+      "time": [
+        277792,
+        283082
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "시장의 시선은 이제 거시 경제에서 개별 기업의 실적으로 빠르게 이동하고 있습니다. 오늘 나스닥 지수가 다른 지수 대비 강세를 보인 것도 장 마감 후 발표될 마이크로소프트, 메타, 테슬라 등 빅테크 기업들의 실적에 대한 기대감이 선반영되었기 때문입니다. 연준이 당분간 관망세로 돌아선 이상, 이제부터는 기업들이 실제 얼마나 견조한 이익을 내고 있는지, 그리고 향후 가이던스를 어떻게 제시하는지가 증시의 새로운 방향키가 될 것입니다. 특히 인공지능 관련 투자가 실질적인 매출과 이익 성장으로 이어지고 있는지가 이번 실적 시즌의 최대 관전 포인트로 분석됩니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "03042ea6ab128a94",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures edge up as Wall Street braces for Fed decision, Big Tech earnings"
+        },
+        {
+          "type": "article",
+          "pk": "d6e0f19705402a9e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq waver as Fed holds rates steady, Big Tech earnings loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        283582,
+        320273
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "결국 연준의 영향력에서 벗어나 개별 기업의 실적이 중요해지는 '선별 장세'가 나타난 거군요. 오늘 나스닥만 홀로 상승한 배경을 좀 더 자세히 분석해주시죠.",
+      "sources": [],
+      "time": [
+        320773,
+        331984
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 연준의 결정 이후 마치 두 개의 다른 시장이 열린 듯한 모습을 보였습니다. 연준이 금리를 동결하고 제롬 파월 의장이 섣부른 금리 인하 기대를 차단하자, 국채 금리가 즉각 반응했습니다. 10년물 국채 금리는 4.25퍼센트까지 오르며 금리에 민감한 대부분의 주식에 부담으로 작용했고, 달러 인덱스 역시 강세로 전환했습니다. 그 결과 S&P 500 지수는 사실상 보합으로 마감했고 다우존스 산업평균지수도 제자리걸음을 했습니다. 하지만 나스닥 지수는 홀로 상승 마감했는데, 이는 시장의 모든 자금과 관심이 장 마감 후 실적을 발표하는 마이크로소프트와 메타로 집중됐기 때문입니다. 실제로 기술주 중심의 XLK ETF는 시장과 달리 0.6퍼센트 넘게 오르며 이런 쏠림 현상을 증명했습니다. 결국 연준이라는 거시 경제의 큰 파도보다 인공지능이라는 강력한 성장 스토리를 가진 빅테크 기업들의 실적 자체에 베팅하는 흐름이 시장을 지배한 하루였습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "article",
+          "pk": "d6e0f19705402a9e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq waver as Fed holds rates steady, Big Tech earnings loom"
+        },
+        {
+          "type": "article",
+          "pk": "56b4051ea03bea88",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026 in split decision"
+        }
+      ],
+      "time": [
+        332484,
+        390855
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "그렇군요. 연준의 긴축적인 스탠스마저 이겨낼 것이라는 기대감이 기술주에 쏠린 거군요. 먼저 마이크로소프트의 실적에 대한 시장의 기대치는 어땠습니까?",
+      "sources": [],
+      "time": [
+        391355,
+        401806
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "마이크로소프트에 대한 기대치는 인공지능의 수익화 능력을 증명하라는 것이었습니다. 시장은 2분기 매출 약 803억 달러, 주당 순이익은 3달러 88센트 수준을 예상했습니다. 하지만 투자자들이 가장 주목한 숫자는 바로 인텔리전트 클라우드 부문의 성장률이었습니다. 이 부문에는 핵심 클라우드 서비스인 애저가 포함되어 있는데, 월가는 여기서 최소 27퍼센트 이상의 성장을 기대했습니다. 인공지능 모델을 훈련하고 운영하는 데 막대한 클라우드 자원이 필요하기 때문에 애저의 성장은 곧 인공지능 모멘텀의 바로미터로 여겨졌습니다. 다만, 이러한 인공지능 인프라를 구축하기 위한 막대한 자본 지출이 단기적으로 수익성을 압박할 수 있다는 우려도 공존하며, 장중 주가는 0.6퍼센트 넘게 하락하며 긴장감 속에 실적 발표를 기다렸습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "8bbcbe2c146ad5dd",
+          "title": "Here's How Much Traders Expect Microsoft Stock to Move After Earnings"
+        },
+        {
+          "type": "article",
+          "pk": "771fd53578972c6f",
+          "title": "Microsoft: Fiscal Q2 Earnings Snapshot"
+        },
+        {
+          "type": "article",
+          "pk": "09c4adcc733357d3",
+          "title": "Microsoft earnings beat expectations, but the stock falls"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        402306,
+        449637
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "인공지능에 대한 기대와 비용에 대한 우려가 공존했군요. 함께 실적을 발표한 메타에 대한 전망은 어땠나요?",
+      "sources": [],
+      "time": [
+        450137,
+        458268
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "메타의 경우, 핵심은 디지털 광고 시장의 회복세였습니다. 월가는 메타의 4분기 매출이 약 586억 달러, 주당 순이익은 8달러 21센트에 이를 것으로 전망했습니다. 이는 경기 둔화 우려에도 불구하고 기업들이 여전히 페이스북과 인스타그램에 광고를 집행하고 있다는 신호로 해석될 수 있기 때문에 시장 전체의 소비 심리를 가늠하는 중요한 지표로 여겨졌습니다. 특히 투자자들은 1분기 매출 가이던스에 주목했습니다. 여기서 강력한 전망을 제시한다면 광고 시장의 회복이 일시적인 현상이 아님을 증명하는 셈이 되기 때문입니다. 장중 주가는 0.2퍼센트가량 소폭 상승하며 마이크로소프트와는 달리 기대감이 조금 더 우세한 분위기에서 장을 마쳤습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "dae3161bbdb81dfa",
+          "title": "Meta Platforms: Q4 Earnings Snapshot"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "101d3989b2adbcba",
+          "title": "Earnings live: IBM stock surges, Whirlpool slides; Meta, Microsoft, Tesla report beats across the board"
+        },
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        458768,
+        500819
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "결국 연준의 시대가 가고, 이제는 철저히 기업 본연의 성장성과 수익성이 시장을 움직이는 동력이 되는군요.",
+      "sources": [],
+      "time": [
+        501319,
+        509010
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "정확합니다. 오늘 시장은 금리 인하라는 유동성의 힘이 아니라, 기업의 이익 성장이라는 펀더멘털의 힘으로 시장이 움직이는 새로운 국면에 진입했음을 상징적으로 보여주었습니다. 연준이 더 이상 시장의 안전판 역할을 해주지 않을 것이라는 신호를 보내면서, 투자자들은 이제 옥석을 가릴 수밖에 없게 된 것입니다. 인공지능이라는 거대한 패러다임 변화 속에서 실제 돈을 버는 능력을 증명하는 기업에게만 자금이 몰리는, 이른바 '이중 속도 시장'이 본격화되고 있다고 분석할 수 있습니다. 따라서 앞으로 발표될 다른 빅테크 기업들의 실적과 가이던스가 이 선별 장세를 더욱 강화할지, 아니면 시장 전체에 새로운 방향을 제시할지 가늠하는 중요한 분기점이 될 전망입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "bc91d1ce6ed09e15",
+          "title": "Stock market today: S&P 500 hits fresh record with Fed decision, Big Tech earnings bonanza on deck"
+        },
+        {
+          "type": "article",
+          "pk": "03042ea6ab128a94",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures edge up as Wall Street braces for Fed decision, Big Tech earnings"
+        },
+        {
+          "type": "article",
+          "pk": "c090cf5a36190522",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        509510,
+        553681
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "네, 그럼 이런 선별 장세 속에서 주목해야 할 기업들을 하나씩 살펴보겠습니다. 앞서 잠시 언급됐던 메타의 경우, 실적 발표를 전후로 시장의 평가가 극명하게 엇갈렸는데요. 핵심 쟁점은 무엇이었나요?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        554681,
+        570412
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "네, 메타는 현재 시장에서 가장 극단적인 두 얼굴을 가진 기업으로 평가받고 있습니다. 한쪽에서는 4분기 매출이 전년 대비 24%나 성장하는 강력한 실적을 보여줬지만, 다른 한쪽에서는 '초지능' 개발을 위해 2026년 자본 지출을 최대 1,350억 달러까지 늘리겠다는 계획을 발표하며 시장을 충격에 빠뜨렸습니다. 결국 오늘 시장의 논쟁은 이 천문학적인 투자를 미래를 위한 담대한 베팅으로 볼 것인지, 아니면 통제 불능의 비용 지출로 볼 것인지에 대한 시각차에서 비롯되었습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#13b0a6c22ccda92b",
+          "title": "Meta (NASDAQ:META) Beats Q4 CY2025 Sales Expectations"
+        },
+        {
+          "type": "article",
+          "pk": "id#180cfef3321b3b76",
+          "title": "Meta expects annual capital expenditures to rise on superintelligence push"
+        }
+      ],
+      "time": [
+        570912,
+        603163
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "1,350억 달러라는 숫자는 정말 엄청나군요. 투자자들 입장에서는 과거 리얼리티 랩스에 막대한 자금을 쏟아부었던 기억이 떠오를 수밖에 없겠는데요.",
+      "sources": [],
+      "time": [
+        603663,
+        614634
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "정확한 지적입니다. 회의적인 시각의 핵심 근거가 바로 경영진의 과거 자본 배분 실패 사례입니다. 회사가 제출한 10-K 연차 보고서에 따르면 리얼리티 랩스 부문은 지난 3년간 누적 470억 달러가 넘는 막대한 영업손실을 기록했습니다. 비판론자들은 이번 '초지능' 투자 역시 명확한 수익 모델 없이 자본을 소모했던 과거의 실패를 그대로 반복하는 것이 아니냐는 깊은 불신을 보내고 있습니다. 특히 회사 스스로도 공시를 통해 AI 투자가 단기적으로 수익성을 저해할 것이라고 경고한 점은 이러한 우려에 힘을 싣고 있는 상황입니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "META",
+          "form": "10-K",
+          "filed_date": "2025-01-30",
+          "accession_number": "0001326801-25-000017"
+        }
+      ],
+      "time": [
+        615134,
+        652145
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "과거의 실패 사례가 발목을 잡고 있는 거군요. 반대로 이 막대한 투자를 긍정적으로 보는 쪽의 논리는 무엇인가요?",
+      "sources": [],
+      "time": [
+        652645,
+        660616
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "성장론자들은 이번 AI 투자가 리얼리티 랩스와는 본질적으로 다르다고 강조합니다. 우선 AI 투자는 즉각적으로 핵심 광고 사업의 효율을 극대화하는 직접적인 시너지를 냅니다. 실제로 4분기의 강력한 매출 성장이 그 증거라는 주장입니다. 더 나아가 이탈리아에서 시작된 왓츠앱 AI 챗봇 유료화 서비스를 매우 중요한 신호로 해석합니다. 이것이 단순한 실험을 넘어, 광고에만 의존하던 수익 구조를 다각화할 새로운 '서비스형 AI'라는 구체적인 수익 모델의 시작점이 될 수 있다는 기대감입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6a75955df0b7e535",
+          "title": "WhatsApp will now charge AI chatbots to operate in Italy"
+        },
+        {
+          "type": "article",
+          "pk": "id#1778088e6e16dc4b",
+          "title": "Meta posts stronger-than-expected Q4 results though costs continue to soar"
+        }
+      ],
+      "time": [
+        661116,
+        693687
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "결국 세계 최고 수준의 광고 사업과 천문학적인 미래 베팅이라는 양면성을 동시에 가진 셈이군요. 투자자 입장에서는 판단이 매우 어렵겠습니다.",
+      "sources": [],
+      "time": [
+        694187,
+        704638
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "맞습니다. 현재 메타는 극단적인 기회와 리스크가 공존하는 상황입니다. 미래 AI 시장을 선점했을 때의 잠재적 보상은 의심할 여지 없이 거대하지만, 과거 리얼리티 랩스에서 보여준 자본 파괴의 역사 또한 명백한 사실이기 때문입니다. 따라서 현시점에서 가장 신중한 접근은 관망하는 자세로 판단됩니다. 경영진이 이번 AI 투자가 과거의 실패와는 다르다는 것을 구체적인 숫자로, 즉 측정 가능한 투자자본수익률 개선이나 의미 있는 신규 매출 발생으로 증명해낼 때까지 지켜볼 필요가 있어 보입니다. 현재 주가는 강력한 핵심 사업의 가치와 미래에 대한 극심한 불확실성을 동시에 반영하고 있는 상태로 분석됩니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "META",
+          "form": "10-K",
+          "filed_date": "2025-01-30",
+          "accession_number": "0001326801-25-000017"
+        },
+        {
+          "type": "article",
+          "pk": "id#180cfef3321b3b76",
+          "title": "Meta expects annual capital expenditures to rise on superintelligence push"
+        }
+      ],
+      "time": [
+        705138,
+        745389
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "네, 오늘 시장을 한마디로 정리해본다면 어떻게 표현할 수 있을까요?",
+      "sources": [],
+      "time": [
+        746389,
+        751160
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "한마디로 숨 고르기 장세라고 할 수 있겠습니다. 주요 지수는 혼조세로 마감하며 뚜렷한 방향성을 보이지 않았습니다. 투자자들은 장 마감 이후 발표될 연방공개시장위원회, FOMC의 금리 결정과 이어질 기자회견을 앞두고 적극적인 움직임을 자제하는 모습을 보였습니다. 시장 전반에 걸쳐 관망 심리가 짙게 깔린 하루였습니다.",
+      "sources": [],
+      "time": [
+        751660,
+        772351
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "말씀하신 것처럼 우리 시간으로 잠시 후에 나올 연준의 금리 결정을 모두가 숨죽여 기다리고 있는 것 같습니다. 이번 FOMC, 어떤 점을 주목해야 할까요?",
+      "sources": [],
+      "time": [
+        772851,
+        783582
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "이번 금리 결정에서 금리가 동결될 것이라는 점은 시장이 이미 예상하고 있습니다. 따라서 투자자들의 관심은 금리 결정 그 자체가 아니라, 함께 발표될 성명서의 내용과 제롬 파월 연준 의장의 발언에 쏠려 있습니다. 특히 향후 금리 인하 시점과 규모에 대한 단서를 찾기 위해 노력할 것입니다. 연준이 인플레이션 둔화세를 긍정적으로 평가하면서도 섣부른 정책 전환에 대해서는 신중한 태도를 보일 가능성이 높기 때문에, 그 미묘한 톤 변화가 시장의 단기 방향성을 결정할 가장 중요한 변수가 될 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        784082,
+        815613
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "금리 결정 자체보다는 앞으로의 정책 방향에 대한 힌트가 더 중요하다는 말씀이시군요. 그렇다면 연준의 발표 이후에 우리가 주목해야 할 경제 지표는 무엇이 있을까요?",
+      "sources": [],
+      "time": [
+        816113,
+        828244
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "네, FOMC 이후 시장의 관심은 곧바로 고용 시장 데이터로 이동할 것입니다. 다음 주 2월 6일에 발표될 비농업 고용지수와 실업률이 바로 그 첫 번째 시험대가 될 전망입니다. 연준은 인플레이션과 함께 고용 시장을 통화 정책의 핵심 판단 기준으로 삼고 있습니다. 만약 고용 시장이 여전히 견조한 것으로 나타난다면 연준의 금리 인하 시점은 더 늦춰질 수 있고, 반대로 고용이 예상보다 빠르게 둔화된다면 금리 인하 기대감이 다시 커질 수 있습니다. 이번 FOMC에서 나온 연준의 입장을 다시 한번 검증하는 중요한 지표가 될 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-06"
+        },
+        {
+          "type": "event",
+          "id": "394999",
+          "title": "unemployment rate",
+          "date": "2026-02-06"
+        }
+      ],
+      "time": [
+        828744,
+        862714
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "결국 연준의 다음 행보를 가늠하기 위해 고용 시장의 온도를 확인해야 한다는 거군요. 마지막으로 투자자들을 위해 한 말씀 부탁드립니다.",
+      "sources": [],
+      "time": [
+        863214,
+        872585
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "시장은 지금 연준의 입만 바라보고 있다고 해도 과언이 아닙니다. 금리 인하라는 방향성에는 공감대가 형성되어 있지만, 그 시기와 속도를 두고 끊임없이 힘겨루기를 하는 양상입니다. 따라서 파월 의장의 발언 하나하나에 시장이 민감하게 반응하며 단기적인 변동성이 커질 수 있습니다. 이럴 때일수록 성급한 판단보다는 차분하게 시장의 반응을 확인하고, 발표되는 경제 지표들을 통해 큰 그림을 그려나가는 지혜가 필요합니다. 펀더멘털에 기반한 신중한 접근이 어느 때보다 중요한 시점입니다.",
+      "sources": [],
+      "time": [
+        873085,
+        902616
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "네, 신중한 접근이 필요한 시점이라는 점, 잘 알겠습니다. 지금까지 1월 28일 장 마감 시황이었습니다. 감사합니다.",
+      "sources": [],
+      "time": [
+        903116,
+        912287
+      ]
+    }
+  ]
+}

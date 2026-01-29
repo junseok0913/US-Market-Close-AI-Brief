@@ -1,0 +1,753 @@
+{
+  "date": "20260128",
+  "nutshell": "Markets await Big Tech earnings amid the Fed's hawkish hold.",
+  "user_tickers": [
+    "META"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell brief for January 28th. Today was the big Federal Open Market Committee meeting that everyone was watching, and it looks like the market finished mixed.",
+      "sources": [],
+      "time": [
+        0,
+        10251
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's session can be summed up as a holding pattern, with the market digesting a hawkish hold from the Fed while waiting for Big Tech earnings. The Dow Jones Industrial Average edged up 0.02%, closing nearly flat, while the S&P 500 slipped a slight 0.01%. In contrast, the tech-heavy Nasdaq Composite gained 0.17%, moving against the grain. While the market had anticipated the Fed would hold rates steady, volatility picked up as investors focused more on the contents of Chair Jerome Powell's press conference following the 2 PM announcement.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        10751,
+        44442
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "The rate hold was expected, but it seems like Chair Powell's comments dampened market expectations a bit. What did he say?",
+      "sources": [],
+      "time": [
+        44942,
+        52593
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. While the Fed's statement offered a positive outlook, assessing that the economy is expanding at a solid pace, Chair Powell didn't give any clear signals about the timing of the next rate cut during his press conference. He mentioned that policy might be somewhat neutral or restrictive and stuck to the standard line that future decisions will depend on incoming data. This led to some disappointment among market participants who were hoping for a swift rate cut, causing the market to give back its gains or turn negative late in the session.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "56b4051ea03bea88",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026 in split decision"
+        }
+      ],
+      "time": [
+        53093,
+        84304
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, after clearing the big hurdle of the Fed, now we're right into corporate earnings. Could you break down the key drivers for the market today?",
+      "sources": [],
+      "time": [
+        84804,
+        94135
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there were two main factors driving the market today. First, as we just discussed, was the Fed's hawkish rate hold and the resulting wait-and-see attitude. And second was the anticipation building around Big Tech earnings, which were due after the bell, creating a positive sentiment particularly in tech stocks. Let's take a closer look at each of these.",
+      "sources": [],
+      "time": [
+        94635,
+        114486
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Okay, let's start with that first factor: the Fed's decision. How did the market digest this hawkish message?",
+      "sources": [],
+      "time": [
+        115486,
+        123057
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Well, the market saw some intense volatility right after the announcement as it tried to find its footing. The S&P 500 actually broke through the 7,000 level for the first time ever intraday, but then gave back all those gains during Powell's press conference to close slightly down. The 10-year Treasury yield climbed to the 4.25% level as hopes for an early rate cut faded, and the Dollar Index also bounced back slightly after several days of weakness. On the other hand, a combination of safe-haven demand and hedging against dollar weakness sent gold futures soaring past $5,300 an ounce, hitting a new all-time high. Ultimately, it wasn't the rate hold itself, but the increased uncertainty about the future path of monetary policy that dampened investor sentiment across the bond, currency, and commodity markets today.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "ac73ef613ec9b911",
+          "title": "Gold jumps above $5,400 as Fed keeps rates unchanged, weak dollar 'supercharging' rally"
+        }
+      ],
+      "time": [
+        123557,
+        170568
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So even though everyone expected the rate hold, the fact that bond yields rose must mean the market took Chair Powell's comments very seriously.",
+      "sources": [],
+      "time": [
+        171068,
+        180199
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's exactly right. This FOMC decision wasn't unanimous. Two members, Christopher Waller and Stephen Miran, dissented, arguing for a 25-basis-point rate cut. But Chair Powell, in his press conference, shut down expectations for further cuts by assessing that the economy is expanding at a solid pace. He stuck to the standard line that future decisions are data-dependent, effectively drawing a line against the market's hopes for a March rate cut. As soon as he said that, the probability of a March cut reflected in the CME FedWatch Tool dropped sharply, which directly triggered a sell-off in Treasuries and pushed yields higher.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "c090cf5a36190522",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026"
+        },
+        {
+          "type": "article",
+          "pk": "b824ac6b97a04267",
+          "title": "Fed holds interest rates steady in first meeting of 2026"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        180699,
+        217310
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "And this was more than just a monetary policy announcement; political tensions around the Fed's independence were also at a peak. Did that play a role in the market's reaction?",
+      "sources": [],
+      "time": [
+        217810,
+        228701
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Absolutely. This meeting was a major test of the Fed's independence, especially with the overt pressure for rate cuts from the Trump administration. Chair Powell had recently publicly criticized the Justice Department's investigation and the Supreme Court hearing regarding the attempted removal of Governor Lisa Cook as a threat to the Fed's independence. He reiterated this in the press conference, calling the Cook case potentially the most significant legal event in the Fed's 113-year history, making it clear he would not bow to political pressure. This backdrop affects not just short-term rate decisions but also the long-term credibility and predictability of monetary policy, which is why investors were hanging on his every word.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "47f4b31aba838917",
+          "title": "The Fed holds interest rates steady despite pressure from Trump"
+        },
+        {
+          "type": "article",
+          "pk": "e3fd327e8f9e3218",
+          "title": "Emboldened by widespread support, Jerome Powell and the Fed will probably defy Trump once again"
+        },
+        {
+          "type": "article",
+          "pk": "93f4972cdeaeb729",
+          "title": "Fed risks Trump’s ire by holding rates"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        }
+      ],
+      "time": [
+        229201,
+        271092
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "Now that the market has digested this major Fed event, where does its attention turn next?",
+      "sources": [],
+      "time": [
+        271592,
+        277722
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "The market's focus is shifting rapidly from the macro picture to individual corporate earnings. The reason the Nasdaq outperformed other indices today was because of the anticipation for results from Big Tech companies like Microsoft, Meta, and Tesla, which were priced in ahead of their release after the close. With the Fed now in a wait-and-see mode, the new drivers for the market will be how strong corporate profits actually are and what kind of forward guidance companies provide. The biggest thing to watch this earnings season is whether AI-related investments are translating into real revenue and profit growth.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "03042ea6ab128a94",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures edge up as Wall Street braces for Fed decision, Big Tech earnings"
+        },
+        {
+          "type": "article",
+          "pk": "d6e0f19705402a9e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq waver as Fed holds rates steady, Big Tech earnings loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        278222,
+        310793
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "So it seems we're entering a 'stock-picker's market' where individual company performance matters more than the Fed's influence. Can you give us a more detailed analysis of why the Nasdaq was the only index to rise today?",
+      "sources": [],
+      "time": [
+        311293,
+        324424
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, it was almost like two different markets were operating today after the Fed's decision. When the Fed held rates and Chair Powell pushed back on early rate cut expectations, Treasury yields reacted immediately. The 10-year yield rose to 4.25%, putting pressure on most rate-sensitive stocks, and the Dollar Index also strengthened. As a result, the S&P 500 finished essentially flat, and the Dow Jones Industrial Average also treaded water. But the Nasdaq finished higher because all the money and attention was focused on Microsoft and Meta, reporting after the bell. In fact, the tech-focused XLK ETF proved this concentration, rising over 0.6% against the broader market. Ultimately, the powerful growth story of AI in Big Tech companies outweighed the macro headwinds from the Fed, dominating the market's narrative for the day.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        },
+        {
+          "type": "article",
+          "pk": "d6e0f19705402a9e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq waver as Fed holds rates steady, Big Tech earnings loom"
+        },
+        {
+          "type": "article",
+          "pk": "56b4051ea03bea88",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026 in split decision"
+        }
+      ],
+      "time": [
+        324924,
+        375815
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Right. So the expectation was that tech could overcome even the Fed's hawkish stance. Let's start with Microsoft. What were the market's expectations for their earnings?",
+      "sources": [],
+      "time": [
+        376315,
+        386326
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "For Microsoft, the expectation was all about proving it can monetize AI. The market was looking for Q2 revenue around $80.3 billion and earnings per share of $3.88. But the number everyone was really watching was the growth rate for the Intelligent Cloud segment. This segment includes their key cloud service, Azure, and Wall Street was expecting at least 27% growth there. Since training and running AI models requires massive cloud resources, Azure's growth is seen as a barometer for AI momentum. However, there were also concerns that the huge capital expenditures needed to build this AI infrastructure could pressure short-term profitability. The stock reflected this tension, falling over 0.6% during the session as it awaited the results.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "8bbcbe2c146ad5dd",
+          "title": "Here's How Much Traders Expect Microsoft Stock to Move After Earnings"
+        },
+        {
+          "type": "article",
+          "pk": "771fd53578972c6f",
+          "title": "Microsoft: Fiscal Q2 Earnings Snapshot"
+        },
+        {
+          "type": "article",
+          "pk": "09c4adcc733357d3",
+          "title": "Microsoft earnings beat expectations, but the stock falls"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        386826,
+        431397
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So there was a mix of hope for AI and concern about costs. What about Meta, which also reported today? What was the outlook there?",
+      "sources": [],
+      "time": [
+        431897,
+        440748
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "With Meta, the key was the recovery in the digital ad market. Wall Street was forecasting Meta's Q4 revenue to be around $58.6 billion with earnings per share of $8.21. This was seen as a crucial indicator of overall consumer sentiment, as it would signal that companies are still spending on ads on Facebook and Instagram despite concerns about an economic slowdown. Investors were particularly focused on the Q1 revenue guidance. A strong forecast here would prove that the ad market recovery is not just a temporary blip. The stock rose slightly by about 0.2% during the day, suggesting a slightly more optimistic mood compared to Microsoft heading into the close.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "dae3161bbdb81dfa",
+          "title": "Meta Platforms: Q4 Earnings Snapshot"
+        },
+        {
+          "type": "article",
+          "pk": "f7fa70c3b9786b84",
+          "title": "Stock market today: S&P 500 slips from record as Fed stands pat, Nasdaq rises before Big Tech earnings flurry"
+        },
+        {
+          "type": "article",
+          "pk": "101d3989b2adbcba",
+          "title": "Earnings live: IBM stock surges, Whirlpool slides; Meta, Microsoft, Tesla report beats across the board"
+        },
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        441248,
+        480539
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So it seems the era of the Fed is fading, and now it's really a company's own growth and profitability that's driving the market.",
+      "sources": [],
+      "time": [
+        481039,
+        488410
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's exactly right. Today's market was a symbolic sign that we're entering a new phase, driven by the fundamentals of corporate profit growth, not by the power of liquidity from rate cuts. With the Fed signaling it will no longer act as a safety net for the market, investors are now forced to separate the wheat from the chaff. You could say we're seeing the start of a 'two-speed market,' where capital flows only to companies that can prove their ability to make money in this massive AI paradigm shift. Therefore, the upcoming earnings and guidance from other Big Tech companies will be a crucial turning point, determining whether this selective trend intensifies or if a new direction for the entire market emerges.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "bc91d1ce6ed09e15",
+          "title": "Stock market today: S&P 500 hits fresh record with Fed decision, Big Tech earnings bonanza on deck"
+        },
+        {
+          "type": "article",
+          "pk": "03042ea6ab128a94",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures edge up as Wall Street braces for Fed decision, Big Tech earnings"
+        },
+        {
+          "type": "article",
+          "pk": "c090cf5a36190522",
+          "title": "Federal Reserve live coverage: Fed holds interest rates steady in first policy meeting of 2026"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        488910,
+        531081
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Okay, so in this stock-picker's market, let's look at some key companies. You mentioned Meta earlier, and it seems market opinions were sharply divided around their earnings. What was the core issue?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-28"
+        }
+      ],
+      "time": [
+        532081,
+        543892
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, Meta is really seen as a company with two extreme faces right now. On one hand, they showed strong results with Q4 revenue up 24% year-over-year. But on the other, they shocked the market by announcing plans to increase 2026 capital expenditures to as much as $135 billion to develop 'superintelligence.' So, the debate in the market today boils down to a difference in perspective: is this astronomical investment a bold bet on the future, or is it uncontrollable spending?",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#13b0a6c22ccda92b",
+          "title": "Meta (NASDAQ:META) Beats Q4 CY2025 Sales Expectations"
+        },
+        {
+          "type": "article",
+          "pk": "id#180cfef3321b3b76",
+          "title": "Meta expects annual capital expenditures to rise on superintelligence push"
+        }
+      ],
+      "time": [
+        544392,
+        574323
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That $135 billion figure is just staggering. For investors, it must bring back memories of the massive spending on Reality Labs.",
+      "sources": [],
+      "time": [
+        574823,
+        583434
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's a sharp point. The core of the skeptical view is management's past failures in capital allocation. According to the company's 10-K annual report, the Reality Labs division has posted cumulative operating losses of over $47 billion in the last three years. Critics are deeply skeptical, wondering if this 'superintelligence' investment is just a repeat of past failures where capital was burned without a clear revenue model. This concern is amplified by the company's own disclosure warning that AI investments will hurt profitability in the short term.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "META",
+          "form": "10-K",
+          "filed_date": "2025-01-30",
+          "accession_number": "0001326801-25-000017"
+        }
+      ],
+      "time": [
+        583934,
+        620625
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So past failures are holding it back. On the flip side, what's the argument for viewing this massive investment positively?",
+      "sources": [],
+      "time": [
+        621125,
+        629616
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The bulls emphasize that this AI investment is fundamentally different from Reality Labs. First, AI investments create immediate, direct synergies by maximizing the efficiency of their core ad business. They argue that the strong Q4 revenue growth is proof of this. Furthermore, they see the monetization of the WhatsApp AI chatbot, which started in Italy, as a very important signal. The hope is that this is more than just an experiment; it could be the starting point for a concrete new revenue model—'AI as a Service'—that diversifies the company away from its reliance on advertising.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6a75955df0b7e535",
+          "title": "WhatsApp will now charge AI chatbots to operate in Italy"
+        },
+        {
+          "type": "article",
+          "pk": "id#1778088e6e16dc4b",
+          "title": "Meta posts stronger-than-expected Q4 results though costs continue to soar"
+        }
+      ],
+      "time": [
+        630116,
+        666207
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So it has this dual nature: a world-class advertising business on one side, and an astronomical bet on the future on the other. That must make it very difficult for investors to assess.",
+      "sources": [],
+      "time": [
+        666707,
+        678118
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's right. Meta currently represents a situation of extreme opportunity and risk. The potential reward if they capture the future AI market is undoubtedly huge, but the history of capital destruction shown with Reality Labs is also an undeniable fact. Therefore, a cautious, wait-and-see approach seems prudent at this point. It may be worth waiting until management can prove with concrete numbers—either through measurable improvements in return on invested capital or meaningful new revenue streams—that this AI investment is different from past failures. The current stock price seems to reflect both the value of its powerful core business and the extreme uncertainty about its future.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "META",
+          "form": "10-K",
+          "filed_date": "2025-01-30",
+          "accession_number": "0001326801-25-000017"
+        },
+        {
+          "type": "article",
+          "pk": "id#180cfef3321b3b76",
+          "title": "Meta expects annual capital expenditures to rise on superintelligence push"
+        }
+      ],
+      "time": [
+        678618,
+        725309
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, so if you had to sum up today's market in a single phrase, what would it be?",
+      "sources": [],
+      "time": [
+        726309,
+        731160
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "In a word, I'd call it a 'wait-and-see' session. The major indices finished mixed without any clear direction. Investors were holding back ahead of the Federal Open Market Committee's rate decision and the subsequent press conference. A sense of caution was palpable across the entire market today.",
+      "sources": [],
+      "time": [
+        731660,
+        749431
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "As you said, everyone is holding their breath for the Fed's decision, which is coming up shortly. What should we be watching for in this FOMC announcement?",
+      "sources": [],
+      "time": [
+        749931,
+        759022
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "The market has already priced in a rate hold for this decision. So investors' attention isn't on the decision itself, but on the language in the accompanying statement and Chair Jerome Powell's comments. They'll be looking for clues about the timing and pace of future rate cuts. The Fed is likely to acknowledge the easing inflation trend but also maintain a cautious stance against a premature policy shift. That subtle change in tone will be the most critical factor in determining the market's short-term direction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        759522,
+        791453
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So you're saying the hints about future policy are more important than the decision itself. In that case, what economic data should we be watching after the Fed's announcement?",
+      "sources": [],
+      "time": [
+        791953,
+        802844
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, after the FOMC, the market's focus will immediately shift to labor market data. The non-farm payrolls and unemployment rate, set to be released next week on February 6th, will be the first major test. Along with inflation, the Fed uses the labor market as a key benchmark for its monetary policy. If the job market remains robust, the timing of the Fed's rate cut could be pushed back further. Conversely, if employment slows faster than expected, expectations for a rate cut could rise again. This data will be a crucial test of the Fed's stance outlined at this FOMC meeting.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-06"
+        },
+        {
+          "type": "event",
+          "id": "394999",
+          "title": "unemployment rate",
+          "date": "2026-02-06"
+        }
+      ],
+      "time": [
+        803344,
+        842874
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So, to gauge the Fed's next move, we need to check the temperature of the labor market. Finally, do you have any closing thoughts for our listeners?",
+      "sources": [],
+      "time": [
+        843374,
+        853985
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "It's no exaggeration to say the market is hanging on the Fed's every word right now. While there's a consensus that rates will eventually be cut, there's a constant tug-of-war over the timing and speed. This means short-term volatility could increase as the market reacts sensitively to every comment from Chair Powell. In times like these, it's wise to avoid hasty decisions and instead calmly observe the market's reaction and piece together the bigger picture from the incoming economic data. A cautious approach based on fundamentals is more important than ever.",
+      "sources": [],
+      "time": [
+        854485,
+        889856
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, a cautious approach is needed. I understand. That was the market close report for January 28th. Thank you.",
+      "sources": [],
+      "time": [
+        890356,
+        898767
+      ]
+    }
+  ]
+}

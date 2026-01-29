@@ -1,0 +1,366 @@
+{
+  "date": "20260128",
+  "audio": {
+    "sample_rate_hz": 24000,
+    "channels": 1,
+    "sample_width_bytes": 2
+  },
+  "gaps": {
+    "common_gap_ms": 500,
+    "chapter_gap_ms": 1000
+  },
+  "turns": [
+    {
+      "id": 0,
+      "chapter": "opening",
+      "speaker": "진행자",
+      "wav": "00.wav",
+      "start_time_ms": 0,
+      "end_time_ms": 10851,
+      "duration_ms": 10851
+    },
+    {
+      "id": 1,
+      "chapter": "opening",
+      "speaker": "해설자",
+      "wav": "01.wav",
+      "start_time_ms": 11351,
+      "end_time_ms": 43842,
+      "duration_ms": 32491
+    },
+    {
+      "id": 2,
+      "chapter": "opening",
+      "speaker": "진행자",
+      "wav": "02.wav",
+      "start_time_ms": 44342,
+      "end_time_ms": 52433,
+      "duration_ms": 8091
+    },
+    {
+      "id": 3,
+      "chapter": "opening",
+      "speaker": "해설자",
+      "wav": "03.wav",
+      "start_time_ms": 52933,
+      "end_time_ms": 84024,
+      "duration_ms": 31091
+    },
+    {
+      "id": 4,
+      "chapter": "opening",
+      "speaker": "진행자",
+      "wav": "04.wav",
+      "start_time_ms": 84524,
+      "end_time_ms": 96775,
+      "duration_ms": 12251
+    },
+    {
+      "id": 5,
+      "chapter": "opening",
+      "speaker": "해설자",
+      "wav": "05.wav",
+      "start_time_ms": 97275,
+      "end_time_ms": 116166,
+      "duration_ms": 18891
+    },
+    {
+      "id": 6,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "06.wav",
+      "start_time_ms": 117166,
+      "end_time_ms": 124817,
+      "duration_ms": 7651
+    },
+    {
+      "id": 7,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "07.wav",
+      "start_time_ms": 125317,
+      "end_time_ms": 176808,
+      "duration_ms": 51491
+    },
+    {
+      "id": 8,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "08.wav",
+      "start_time_ms": 177308,
+      "end_time_ms": 186279,
+      "duration_ms": 8971
+    },
+    {
+      "id": 9,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "09.wav",
+      "start_time_ms": 186779,
+      "end_time_ms": 224270,
+      "duration_ms": 37491
+    },
+    {
+      "id": 10,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "10.wav",
+      "start_time_ms": 224770,
+      "end_time_ms": 234461,
+      "duration_ms": 9691
+    },
+    {
+      "id": 11,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "11.wav",
+      "start_time_ms": 234961,
+      "end_time_ms": 277292,
+      "duration_ms": 42331
+    },
+    {
+      "id": 12,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "12.wav",
+      "start_time_ms": 277792,
+      "end_time_ms": 283082,
+      "duration_ms": 5290
+    },
+    {
+      "id": 13,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "13.wav",
+      "start_time_ms": 283582,
+      "end_time_ms": 320273,
+      "duration_ms": 36691
+    },
+    {
+      "id": 14,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "14.wav",
+      "start_time_ms": 320773,
+      "end_time_ms": 331984,
+      "duration_ms": 11211
+    },
+    {
+      "id": 15,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "15.wav",
+      "start_time_ms": 332484,
+      "end_time_ms": 390855,
+      "duration_ms": 58371
+    },
+    {
+      "id": 16,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "16.wav",
+      "start_time_ms": 391355,
+      "end_time_ms": 401806,
+      "duration_ms": 10451
+    },
+    {
+      "id": 17,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "17.wav",
+      "start_time_ms": 402306,
+      "end_time_ms": 449637,
+      "duration_ms": 47331
+    },
+    {
+      "id": 18,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "18.wav",
+      "start_time_ms": 450137,
+      "end_time_ms": 458268,
+      "duration_ms": 8131
+    },
+    {
+      "id": 19,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "19.wav",
+      "start_time_ms": 458768,
+      "end_time_ms": 500819,
+      "duration_ms": 42051
+    },
+    {
+      "id": 20,
+      "chapter": "theme",
+      "speaker": "진행자",
+      "wav": "20.wav",
+      "start_time_ms": 501319,
+      "end_time_ms": 509010,
+      "duration_ms": 7691
+    },
+    {
+      "id": 21,
+      "chapter": "theme",
+      "speaker": "해설자",
+      "wav": "21.wav",
+      "start_time_ms": 509510,
+      "end_time_ms": 553681,
+      "duration_ms": 44171
+    },
+    {
+      "id": 22,
+      "chapter": "ticker",
+      "speaker": "진행자",
+      "wav": "22.wav",
+      "start_time_ms": 554681,
+      "end_time_ms": 570412,
+      "duration_ms": 15731
+    },
+    {
+      "id": 23,
+      "chapter": "ticker",
+      "speaker": "해설자",
+      "wav": "23.wav",
+      "start_time_ms": 570912,
+      "end_time_ms": 603163,
+      "duration_ms": 32251
+    },
+    {
+      "id": 24,
+      "chapter": "ticker",
+      "speaker": "진행자",
+      "wav": "24.wav",
+      "start_time_ms": 603663,
+      "end_time_ms": 614634,
+      "duration_ms": 10971
+    },
+    {
+      "id": 25,
+      "chapter": "ticker",
+      "speaker": "해설자",
+      "wav": "25.wav",
+      "start_time_ms": 615134,
+      "end_time_ms": 652145,
+      "duration_ms": 37011
+    },
+    {
+      "id": 26,
+      "chapter": "ticker",
+      "speaker": "진행자",
+      "wav": "26.wav",
+      "start_time_ms": 652645,
+      "end_time_ms": 660616,
+      "duration_ms": 7971
+    },
+    {
+      "id": 27,
+      "chapter": "ticker",
+      "speaker": "해설자",
+      "wav": "27.wav",
+      "start_time_ms": 661116,
+      "end_time_ms": 693687,
+      "duration_ms": 32571
+    },
+    {
+      "id": 28,
+      "chapter": "ticker",
+      "speaker": "진행자",
+      "wav": "28.wav",
+      "start_time_ms": 694187,
+      "end_time_ms": 704638,
+      "duration_ms": 10451
+    },
+    {
+      "id": 29,
+      "chapter": "ticker",
+      "speaker": "해설자",
+      "wav": "29.wav",
+      "start_time_ms": 705138,
+      "end_time_ms": 745389,
+      "duration_ms": 40251
+    },
+    {
+      "id": 30,
+      "chapter": "closing",
+      "speaker": "진행자",
+      "wav": "30.wav",
+      "start_time_ms": 746389,
+      "end_time_ms": 751160,
+      "duration_ms": 4771
+    },
+    {
+      "id": 31,
+      "chapter": "closing",
+      "speaker": "해설자",
+      "wav": "31.wav",
+      "start_time_ms": 751660,
+      "end_time_ms": 772351,
+      "duration_ms": 20691
+    },
+    {
+      "id": 32,
+      "chapter": "closing",
+      "speaker": "진행자",
+      "wav": "32.wav",
+      "start_time_ms": 772851,
+      "end_time_ms": 783582,
+      "duration_ms": 10731
+    },
+    {
+      "id": 33,
+      "chapter": "closing",
+      "speaker": "해설자",
+      "wav": "33.wav",
+      "start_time_ms": 784082,
+      "end_time_ms": 815613,
+      "duration_ms": 31531
+    },
+    {
+      "id": 34,
+      "chapter": "closing",
+      "speaker": "진행자",
+      "wav": "34.wav",
+      "start_time_ms": 816113,
+      "end_time_ms": 828244,
+      "duration_ms": 12131
+    },
+    {
+      "id": 35,
+      "chapter": "closing",
+      "speaker": "해설자",
+      "wav": "35.wav",
+      "start_time_ms": 828744,
+      "end_time_ms": 862714,
+      "duration_ms": 33970
+    },
+    {
+      "id": 36,
+      "chapter": "closing",
+      "speaker": "진행자",
+      "wav": "36.wav",
+      "start_time_ms": 863214,
+      "end_time_ms": 872585,
+      "duration_ms": 9371
+    },
+    {
+      "id": 37,
+      "chapter": "closing",
+      "speaker": "해설자",
+      "wav": "37.wav",
+      "start_time_ms": 873085,
+      "end_time_ms": 902616,
+      "duration_ms": 29531
+    },
+    {
+      "id": 38,
+      "chapter": "closing",
+      "speaker": "진행자",
+      "wav": "38.wav",
+      "start_time_ms": 903116,
+      "end_time_ms": 912287,
+      "duration_ms": 9171
+    }
+  ],
+  "final_wav": "../20260128.wav"
+}

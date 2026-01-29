@@ -114,7 +114,23 @@ def _fetch_body_from_s3(pk: str, obj_key: str, bucket: Optional[str] = None) -> 
     if not bucket_name:
         raise EnvironmentError("NEWS_BUCKET(또는 BUCKET_NAME) 환경변수가 필요합니다.")
 
-    s3 = get_s3_client()
+    news_ak = os.getenv("NEWS_AWS_ACCESS_KEY_ID")
+    news_sk = os.getenv("NEWS_AWS_SECRET_ACCESS_KEY")
+    pool_region = os.getenv("AWS_REGION")
+
+    if news_ak and news_sk:
+        import boto3
+        from botocore.config import Config
+        session = boto3.Session(
+            aws_access_key_id=news_ak,
+            aws_secret_access_key=news_sk,
+            region_name=pool_region
+        )
+        s3 = session.client("s3", config=Config(retries={"max_attempts": 3}))
+    else:
+        # CI/CD나 로컬에서 뉴스 전용 프로필/키를 사용할 수 있도록 지원
+        target_profile = os.getenv("NEWS_AWS_PROFILE") or os.getenv("AWS_PROFILE")
+        s3 = get_s3_client(profile_name=target_profile)
     resp = s3.get_object(Bucket=bucket_name, Key=obj_key)
     data = resp["Body"].read()
     try:

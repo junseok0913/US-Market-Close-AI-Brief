@@ -111,7 +111,26 @@ def prefetch_news(
         raise ValueError("cache_dir가 필요합니다.")
     _ensure_dirs(cache_dir)
 
-    table = get_dynamo_table(table_name or os.getenv("NEWS_TABLE", "kubig-YahoofinanceNews"), profile_name, region_name)
+    today_date = today or _get_current_et_date()
+    
+    # Check for direct credentials (CI/CD)
+    news_ak = os.getenv("NEWS_AWS_ACCESS_KEY_ID")
+    news_sk = os.getenv("NEWS_AWS_SECRET_ACCESS_KEY")
+    
+    if news_ak and news_sk:
+        import boto3
+        from botocore.config import Config
+        session = boto3.Session(
+            aws_access_key_id=news_ak,
+            aws_secret_access_key=news_sk,
+            region_name=region_name or os.getenv("AWS_REGION")
+        )
+        dynamodb = session.resource("dynamodb", config=Config(retries={"max_attempts": 3}))
+        table = dynamodb.Table(table_name or os.getenv("NEWS_TABLE", "kubig-YahoofinanceNews"))
+    else:
+        # CI/CD나 로컬에서 뉴스 전용 프로필/키를 사용할 수 있도록 지원
+        target_profile = profile_name or os.getenv("NEWS_AWS_PROFILE")
+        table = get_dynamo_table(table_name or os.getenv("NEWS_TABLE", "kubig-YahoofinanceNews"), target_profile, region_name)
 
     today_date = today or _get_current_et_date()
     start_et, end_et = _time_window_et(today_date)

@@ -66,9 +66,9 @@ echo "========================================================"
 if [ $START_FROM -le 1 ]; then
     echo -e "\n[1/5] Running Orchestrator..."
     if [ -z "$TICKERS" ]; then
-        uv run orchestrator.py $DATE
+        NEWS_AWS_PROFILE=Nam uv run orchestrator.py $DATE
     else
-        uv run orchestrator.py $DATE -t $TICKERS
+        NEWS_AWS_PROFILE=Nam uv run orchestrator.py $DATE -t $TICKERS
     fi
 else
     echo -e "\n[1/5] Orchestrator skipped (Start from $START_FROM)"
