@@ -21,6 +21,11 @@ START_FROM=1
 DATE=""
 TICKERS_ARR=()
 
+
+# AWS 프로필 설정 (기본값: Nam)
+# 이 설정이 있어야 S3 업로드 등 모든 AWS 명령어가 'Nam' 프로필로 실행됩니다.
+export AWS_PROFILE=${AWS_PROFILE:-Nam}
+
 # 인자 파싱 (순서 무관하도록 처리)
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -80,8 +85,12 @@ fi
 if [ $START_FROM -le 2 ]; then
     echo -e "\n[2/6] Generating Korean TTS..."
     uv run python -m tts.src.tts $DATE --lang ko
+    
+    echo -e "\n[2.5/6] Generating Shorts (Korean)..."
+    uv run shorts/generate_shorts.py podcast/$DATE/ko --duration 90
+    uv run shorts/generate_shorts_audio.py $DATE --lang ko
 else
-    echo -e "\n[2/6] Korean TTS skipped (Start from $START_FROM)"
+    echo -e "\n[2/6] Korean TTS & Shorts skipped (Start from $START_FROM)"
 fi
 
 # ------------------------------------------------------------------------------
@@ -100,17 +109,44 @@ fi
 # ------------------------------------------------------------------------------
 if [ $START_FROM -le 4 ]; then
     echo -e "\n[4/6] Uploading to S3 ($BUCKET)..."
-    echo "  ⚠️  AWS CLI configuration required (Profile: ${AWS_PROFILE:-default})"
+    
+    # Load .env file for S3 credentials
+    if [ -f .env ]; then
+        echo "  🔐 Loading S3 credentials from .env..."
+        export $(grep -v '^#' .env | grep -E '^(AWS_ACCESS_KEY_ID|AWS_SECRET_ACCESS_KEY|AWS_REGION)=' | xargs)
+    fi
+    
+    # Unset AWS_PROFILE to use credentials from .env instead of SSO profile
+    # (The Nam profile is for Yahoo Finance news, not S3)
+    unset AWS_PROFILE
+    
+    echo "  ⚠️  Using AWS credentials from .env file"
 
     # 한국어 업로드
     echo "  ⬆️  Uploading Korean files..."
     aws s3 cp podcast/$DATE/ko/$DATE.mp3 s3://$BUCKET/$DATE/ko/$DATE.mp3
     aws s3 cp podcast/$DATE/ko/metadata.json s3://$BUCKET/$DATE/ko/metadata.json
+    
+    # 쇼츠 업로드
+    if [ -f "podcast/$DATE/ko/shorts/shorts$DATE.mp3" ]; then
+        echo "  ⬆️  Uploading Shorts..."
+        aws s3 cp podcast/$DATE/ko/shorts/shorts$DATE.mp3 s3://$BUCKET/$DATE/ko/shorts/shorts$DATE.mp3
+    fi
 
     # 영어 업로드
-    echo "  ⬆️  Uploading English files..."
-    aws s3 cp podcast/$DATE/en/$DATE.mp3 s3://$BUCKET/$DATE/en/$DATE.mp3
-    aws s3 cp podcast/$DATE/en/metadata.json s3://$BUCKET/$DATE/en/metadata.json
+    if [ -f "podcast/$DATE/en/$DATE.mp3" ]; then
+        echo "  ⬆️  Uploading English files..."
+        aws s3 cp podcast/$DATE/en/$DATE.mp3 s3://$BUCKET/$DATE/en/$DATE.mp3
+        
+        if [ -f "podcast/$DATE/en/metadata.json" ]; then
+            aws s3 cp podcast/$DATE/en/metadata.json s3://$BUCKET/$DATE/en/metadata.json
+        fi
+    else
+        echo "  ⏭️  English mp3 not found, skipping English upload for $DATE"
+    fi
+    
+    # Restore AWS_PROFILE for subsequent steps
+    export AWS_PROFILE=Nam
 else
     echo -e "\n[4/6] S3 Upload skipped (Start from $START_FROM)"
 fi
@@ -130,6 +166,37 @@ if [ $START_FROM -le 5 ]; then
 else
     echo -e "\n[5/6] RSS Update skipped (Start from $START_FROM)"
 fi
+
+
+# ------------------------------------------------------------------------------
+# Step 6: Cleanup (Delete TTS folders and WAV files)
+# ------------------------------------------------------------------------------
+echo -e "\n[6/6] Cleaning up intermediate files..."
+
+# Delete Korean TTS folder
+if [ -d "podcast/$DATE/ko/tts" ]; then
+    echo "  🗑️  Deleting Korean TTS folder..."
+    rm -rf "podcast/$DATE/ko/tts"
+fi
+
+# Delete English TTS folder
+if [ -d "podcast/$DATE/en/tts" ]; then
+    echo "  🗑️  Deleting English TTS folder..."
+    rm -rf "podcast/$DATE/en/tts"
+fi
+
+# Delete WAV files (if any exist)
+if ls podcast/$DATE/ko/*.wav 1> /dev/null 2>&1; then
+    echo "  🗑️  Deleting Korean WAV files..."
+    rm -f podcast/$DATE/ko/*.wav
+fi
+
+if ls podcast/$DATE/en/*.wav 1> /dev/null 2>&1; then
+    echo "  🗑️  Deleting English WAV files..."
+    rm -f podcast/$DATE/en/*.wav
+fi
+
+echo "  ✅ Cleanup complete!"
 
 
 # ------------------------------------------------------------------------------

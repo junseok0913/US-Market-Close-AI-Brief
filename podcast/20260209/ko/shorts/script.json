@@ -1,0 +1,84 @@
+{
+  "date": "20260209",
+  "title": "S&P500 사상 첫 6900 돌파, AI 골드러시가 시작됐다",
+  "duration_target": "90초",
+  "hook": "S&P 500이 사상 처음 6900선을 돌파했습니다. AI 골드러시가 시장을 휩쓸었습니다.",
+  "script": "2월 9일 미국 증시는 AI 투자 열풍 속 기술주 랠리가 재점화됐습니다. S&P 500은 0.47% 상승한 6964.82로 사상 첫 6900선을 돌파했고, 나스닥도 0.9% 오르며 신고가를 경신했습니다. 반면 다우지수는 0.04% 상승에 그치며 상승 동력이 AI 관련 기술주에 집중됐음을 보여줬습니다. 이번 랠리의 진원지는 알파벳이었습니다. AI 데이터센터 구축을 위해 발행한 200억 달러 채권에 1000억 달러가 넘는 매수 주문이 몰리며, AI 인프라에 대한 시장의 강력한 확신을 보여줬습니다. 이 흐름 속에서 AI 랠리를 주도하는 마이크로소프트는 3% 넘게, AI 칩 선두주자 엔비디아는 2.5% 상승했습니다. 한편, AI가 기존 사업을 파괴할 것이라는 '사스포칼립스' 우려로 급락했던 소프트웨어 주식들도 강하게 반등했습니다. 관련 ETF인 IGV는 3% 넘게 급등했고, 데이터 분석 기업 삼사라는 7% 넘게 폭등했습니다. AI가 위협이 아닌 기회라는 인식이 확산된 결과입니다. 사상 최고치를 경신한 시장의 다음 관심은 물가 지표로 향합니다. 다음 주 13일 화요일에 발표될 1월 소비자물가지수, CPI 결과가 시장의 단기 방향성을 결정할 가장 중요한 분수령이 될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "article",
+      "pk": "id#025c7b25e0419940",
+      "title": "Alphabet Set to Raise $20 Billion From US Dollar Bond Sale"
+    },
+    {
+      "type": "chart",
+      "ticker": "MSFT",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "chart",
+      "ticker": "NVDA",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "article",
+      "pk": "id#2ed618330e909183",
+      "title": "US software stocks tumble sparks concerns that AI trade is reshaping markets"
+    },
+    {
+      "type": "chart",
+      "ticker": "IGV",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "chart",
+      "ticker": "IOT",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-09"
+    },
+    {
+      "type": "event",
+      "id": "398327",
+      "title": "inflation rate yoy",
+      "date": "2026-02-13"
+    }
+  ],
+  "metadata": {
+    "character_count": 709,
+    "estimated_duration_seconds": 90,
+    "key_points": [
+      "S&P 500, 나스닥 사상 최고치 경신",
+      "알파벳 200억 달러 채권 발행으로 AI 투자 열풍 점화",
+      "AI 위협론 딛고 소프트웨어 주식 급반등",
+      "다음 주 13일 CPI 발표가 시장 분수령"
+    ],
+    "featured_tickers": [
+      "GOOGL",
+      "MSFT",
+      "NVDA",
+      "IGV",
+      "IOT"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+Title:
+2026.2.6 US Market Close | Broad-based rally fueled by strong earnings and consumer sentiment
+
+Description:
+On February 6, the US stock market staged a broad-based rally, driven by strong corporate earnings and better-than-expected consumer sentiment data. While concerns arose from Amazon's massive investment plans, solid underlying market fundamentals prevailed, leading all three major indices to close with strong gains.
+
+- The Dow Jones Industrial Average surged 2.47%, lifted by strong earnings from diverse sectors beyond tech, including industrials and healthcare.
+- The S&P 500 gained 1.97%, with broad market strength overpowering Big Tech concerns to post a widespread rally.
+- The Nasdaq Composite rose 2.18%, as strong earnings from other tech companies like Fortinet and Roblox offset weakness from Amazon.
+
+Key Issues
+- Widespread Corporate Earnings Strength: Companies across various sectors, from tech (Fortinet, Roblox) to industrials (Caterpillar) and healthcare (Eli Lilly), reported earnings that beat expectations, driving the market-wide rally.
+- Improved Consumer Sentiment & Soft Landing Hopes: The University of Michigan's February Consumer Sentiment Index came in at 57.3, significantly higher than the estimate of 53 and the previous month's 56.4. This signaled robust consumer spending, which accounts for two-thirds of the economy, boosting hopes for a soft landing.
+- Amazon's Massive Investment Plan: Amazon announced a $200 billion capital expenditure plan for 2026, causing its stock to fall on concerns about short-term profitability. However, the market largely viewed this as a company-specific issue.
+- The Fed's Cautious Stance: A note of caution emerged as Fed Vice Chair Philip Jefferson suggested a higher bar for rate cuts, indicating that strong economic data could delay the Fed's timeline for easing.
+
+Key Movers
+- Roblox (RBLX): Surged over 9% after reporting earnings that beat expectations.
+- Caterpillar (CAT): Jumped more than 7% on a better-than-expected quarterly earnings report, reflecting optimism about global infrastructure investment.
+- Fortinet (FTNT): Rose nearly 5% after delivering quarterly results and guidance that topped estimates.
+- Eli Lilly (LLY): Gained over 3.6% on the back of solid earnings.
+- Amazon (AMZN): Tumbled more than 5.5% due to short-term profitability concerns following the announcement of its massive $200 billion capital expenditure plan.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,아마존,AMZN,캐터필러,CAT,로블록스,RBLX,실적,소비심리,금리,연준

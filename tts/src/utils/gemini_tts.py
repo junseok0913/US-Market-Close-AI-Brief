@@ -102,7 +102,7 @@ def gemini_generate_tts(
         logger.error("Gemini TTS HTTPError: %s %s", e.code, e.reason)
         if err_body:
             logger.error("Gemini error body: %s", err_body[:2000])
-        if e.code == 429:
+        if e.code in [429, 500, 502, 503]:
             # Fallback to gemini-2.5-pro-tts
             logger.warning("Quota exceeded (429). Falling back to models/gemini-2.5-pro-tts...")
             fallback_model = "models/gemini-2.5-pro-preview-tts"

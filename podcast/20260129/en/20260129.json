@@ -1,0 +1,569 @@
+{
+  "date": "20260129",
+  "nutshell": "A mixed market driven by the diverging fortunes of Big Tech following their earnings reports.",
+  "user_tickers": [
+    "LMT"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 13
+    },
+    {
+      "name": "ticker",
+      "start_id": 14,
+      "end_id": 21
+    },
+    {
+      "name": "closing",
+      "start_id": 22,
+      "end_id": 30
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the market closing brief for January 29th. We saw a split market today, with the Dow Jones Industrial Average inching up while the Nasdaq saw a significant drop.",
+      "sources": [],
+      "time": [
+        0,
+        12291
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's session can really be summed up as a mixed market driven by the diverging fortunes of Big Tech after their earnings reports. The Dow Jones Industrial Average gained 0.1% to close at 49,071.55, but the tech-heavy Nasdaq Composite fell 0.72% to 23,685.12. The S&P 500 also slipped 0.13%. This divergence in the indices was because the earnings results from major tech companies were starkly different. In particular, Microsoft's stock plunging nearly 10% after its report weighed heavily on the overall market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-29",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-29",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-29",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "article",
+          "pk": "id#6d18985783ac685e",
+          "title": "Microsoft stock plunges 10% as earnings drive $357 billion market cap wipeout"
+        }
+      ],
+      "time": [
+        12791,
+        53282
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "Microsoft is a leader in the AI space, so why did its stock fall so sharply after the earnings announcement?",
+      "sources": [],
+      "time": [
+        53782,
+        60673
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "While both revenue and profit beat market expectations, the issue was spending. The spotlight was on the massive capital expenditures, amounting to $37.5 billion per quarter, for AI development and data center expansion. At the same time, growth in its key engine, the cloud service Azure, showed a slight slowdown compared to previous periods. This combination raised concerns among investors about profitability relative to the huge investment costs. Adding to that, Tesla's stock also fell after reporting its first-ever annual revenue decline, which dampened sentiment for tech stocks. In contrast, Meta surged over 10% after delivering better-than-expected ad revenue and a strong future outlook, showing a completely different picture.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#69f2e119b5270027",
+          "title": "Microsoft demand backlog doubles to $625 billion thanks to OpenAI, but hefty spending and slower revenue growth spook investors"
+        },
+        {
+          "type": "article",
+          "pk": "id#ac4bf76a0b595c88",
+          "title": "First ever Tesla revenue decline after Musk backlash"
+        },
+        {
+          "type": "article",
+          "pk": "id#1877d05f1f76c4bc",
+          "title": "Meta Is a Top S&P Gainer Today. Here's Why The Social-Media Stock Is Surging."
+        }
+      ],
+      "time": [
+        61173,
+        107424
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So this divergence within Big Tech seems to be a signal that the market is starting to evaluate these companies more coolly on an individual basis.",
+      "sources": [],
+      "time": [
+        107924,
+        117535
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, that was the biggest takeaway from today's market. Investors are now starting to focus on profitability proven by actual numbers, rather than just vague expectations. And that's why we saw such a sharp split in how companies were valued, even within the same Big Tech group.",
+      "sources": [],
+      "time": [
+        118035,
+        134806
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "So you're saying that proving profitability is the key. From that perspective, Microsoft's drop is even more striking, especially since its earnings were actually good.",
+      "sources": [],
+      "time": [
+        135806,
+        146337
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, today really showed how the market is starting to assess the massive theme of AI with a more critical, company-by-company lens. The Dow Jones Industrial Average showed a defensive posture, rising a slight 0.11 percent, while the tech-focused Nasdaq Composite fell 0.72 percent under the weight of Microsoft's shock. The VIX, the market's fear gauge, jumped over 3 percent, signaling heightened caution. At the heart of this mixed performance were the earnings from Big Tech. Meta was in a league of its own, surging over 10 percent, but Microsoft went the other way, plunging nearly 10 percent and wiping out over $300 billion in market cap in a single day. On top of that, Tesla's drop of over 3 percent further chilled investor sentiment toward tech stocks. This comes just a day after the Fed held rates steady, reaffirming macroeconomic uncertainty. Against that backdrop, investors have shifted their focus from broad optimism to profitability backed by hard numbers.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        },
+        {
+          "type": "article",
+          "pk": "id#6d18985783ac685e",
+          "title": "Microsoft stock plunges 10% as earnings drive $357 billion market cap wipeout"
+        },
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        }
+      ],
+      "time": [
+        146837,
+        201568
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "With Microsoft, it's still a bit hard to grasp why the stock plunged when both revenue and profit beat expectations. What exactly were the market's concerns?",
+      "sources": [],
+      "time": [
+        202068,
+        211639
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The problem was the cost—specifically, the massive scale of investment required to implement AI technology. Microsoft revealed it spent about $37.5 billion on capital expenditures this quarter alone, a figure that surpassed market forecasts. And while its cloud service Azure still showed strong growth at 39 percent, it was a slight deceleration from the 40 percent growth in the previous quarter. This slowdown, combined with the huge spending, complicated the math for investors. The market is no longer satisfied with the mere fact that a company is investing in AI. It's now demanding concrete proof of when, how, and how efficiently that massive investment will translate into profit. Ultimately, the concern that 'the cost of growth is too high' was the key factor that dragged the stock down.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6d18985783ac685e",
+          "title": "Microsoft stock plunges 10% as earnings drive $357 billion market cap wipeout"
+        },
+        {
+          "type": "article",
+          "pk": "id#09c4adcc733357d3",
+          "title": "Microsoft earnings beat expectations, but the stock falls"
+        },
+        {
+          "type": "article",
+          "pk": "id#69f2e119b5270027",
+          "title": "Microsoft demand backlog doubles to $625 billion thanks to OpenAI, but hefty spending and slower revenue growth spook investors"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        }
+      ],
+      "time": [
+        212139,
+        262830
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "On the flip side, Meta also projected massive AI investments, just like Microsoft, yet its stock surged. What was Meta's secret to convincing the market?",
+      "sources": [],
+      "time": [
+        263330,
+        273781
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Meta clearly demonstrated with numbers how its AI investments are directly boosting the profitability of its core business. Not only did its Q4 revenue of $59.9 billion beat expectations, but its revenue forecast for the first quarter also surpassed Wall Street's hopes. This was taken as a strong signal that it's successfully using AI to improve ad efficiency and user engagement on its social media platforms. In other words, investors saw Meta's AI spending not as a future cost, but as a clear tool for maximizing current profits. On top of that, the company's announcement of its first-ever dividend and a large-scale share buyback plan were seen as shareholder-friendly policies, which really ignited investor sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1877d05f1f76c4bc",
+          "title": "Meta Is a Top S&P Gainer Today. Here's Why The Social-Media Stock Is Surging."
+        },
+        {
+          "type": "article",
+          "pk": "id#281e0f032b275f05",
+          "title": "Meta beats earnings as 2026 AI capex tops out at $135 billion"
+        },
+        {
+          "type": "article",
+          "pk": "id#dae3161bbdb81dfa",
+          "title": "Meta Platforms: Q4 Earnings Snapshot"
+        },
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        }
+      ],
+      "time": [
+        274281,
+        317212
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, it's not enough to just have the 'AI' label; the ability to actually monetize it is what matters. From that perspective, how should we interpret Tesla's stock decline?",
+      "sources": [],
+      "time": [
+        317712,
+        329242
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Exactly. And Tesla's case illustrates that point even more starkly. Tesla reported its first-ever annual revenue decline. With growth in its core electric vehicle business slowing, the company is emphasizing future AI-based projects like the Robotaxi and Optimus. But the market's reaction was cold. Unlike Meta, with a shaky core business, investments in future tech that have yet to show tangible results were seen as a high risk. Ultimately, today's market sent a clear message to Big Tech: the true winner in the AI era won't be the company that simply develops the technology, but the one that proves it can use that technology to strengthen its existing business and generate new revenue.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ac4bf76a0b595c88",
+          "title": "First ever Tesla revenue decline after Musk backlash"
+        },
+        {
+          "type": "article",
+          "pk": "id#402c3d5083b26519",
+          "title": "Tesla stock climbs on Q4 earnings beat, Optimus robots on track for end-of-year production"
+        },
+        {
+          "type": "article",
+          "pk": "id#f37f0f240489d172",
+          "title": "Stock market today: S&P 500, Nasdaq fall as Microsoft leads tech lower with Apple earnings on deck"
+        },
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-29"
+        }
+      ],
+      "time": [
+        329742,
+        367433
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, it's very clear how critically the market is judging a company's ability to monetize. Now, let's shift gears and look at some individual companies that made notable moves today. First up is Lockheed Martin. It closed up over 2 percent, but that was well off its highs from earlier in the session.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "LMT",
+          "start_date": "2026-01-29",
+          "end_date": "2026-01-29"
+        }
+      ],
+      "time": [
+        368433,
+        385724
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, Lockheed Martin's trading day really highlighted the gap between market expectations and reality. The stock's surge was driven by a positive future outlook revealed in its Q4 earnings report. In particular, achieving a record order backlog of $193.6 billion, up 10 percent year-over-year, really spurred investor sentiment. This was interpreted as a strong signal of secured revenue visibility for years to come. Adding to that, news that the company plans to quadruple its production of THAAD interceptor missiles gave the stock a strong push in early trading.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#19180a7e03e23920",
+          "title": "Lockheed Martin (NYSE:LMT) Exceeds Q4 CY2025 Expectations"
+        },
+        {
+          "type": "article",
+          "pk": "id#7313188bfb4a65b8",
+          "title": "Lockheed Martin stock surges despite earnings miss"
+        }
+      ],
+      "time": [
+        386224,
+        419755
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "A record backlog and production expansion plans are definitely positive news. But some reports pointed out that its earnings actually missed market estimates. How could the stock jump like that?",
+      "sources": [],
+      "time": [
+        420255,
+        431426
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's the key point in analyzing Lockheed Martin today, and also its biggest risk factor. Its actual Q4 earnings per share did fall short of market expectations. The fact that the stock surged despite this is clear evidence that the market is focusing solely on the promise of future growth rather than the reality of current performance. This could be interpreted as a warning sign that investor sentiment is overheated and that the stock is moving based on a positive narrative rather than fundamentals, potentially entering an irrational state. The current stock price increase seems to be less a reward for solid performance and more a result of excessive optimism about an unconfirmed future.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7313188bfb4a65b8",
+          "title": "Lockheed Martin stock surges despite earnings miss"
+        },
+        {
+          "type": "article",
+          "pk": "id#ca4635bb051154bc",
+          "title": "Lockheed: Q4 Earnings Snapshot"
+        }
+      ],
+      "time": [
+        431926,
+        470377
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So you're saying the current stock price has already priced in all the positive scenarios, like future defense budget increases.",
+      "sources": [],
+      "time": [
+        470877,
+        479208
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's a sharp observation. The current price appears to be assuming that every possible positive scenario for the future will be perfectly realized. At its core, Lockheed Martin's business structure is entirely dependent on the U.S. government's budget and political decisions. Therefore, while the $193.6 billion backlog is a strong safety net, it's also like a giant hostage to the single risk of political whims. If future defense budgets fall short of expectations or some projects get delayed, the justification for the current high valuation could disappear, creating a vulnerability for a sharp correction in the stock price.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "LMT",
+          "start_date": "2025-12-30",
+          "end_date": "2026-01-29"
+        }
+      ],
+      "time": [
+        479708,
+        516159
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "But isn't there also a view that Lockheed Martin should be seen not just as a defense contractor, but as a tech stock leading in areas like hypersonics and the space industry?",
+      "sources": [],
+      "time": [
+        516659,
+        526670
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Of course, areas like hypersonic weapons, space exploration, and AI-based integrated combat systems are important parts of Lockheed Martin's long-term growth potential. That narrative as a tech stock is very compelling. However, the problem is the price one has to pay for that future value today. The fact that the stock surged despite an earnings miss is objective proof that the market is being driven more by emotional expectations than by fundamental analysis. Even if the long-term vision is valid, considering the uncontrollable political risks and the current overheated investor sentiment, it appears difficult to secure a sufficient margin of safety at the current price level.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7313188bfb4a65b8",
+          "title": "Lockheed Martin stock surges despite earnings miss"
+        }
+      ],
+      "time": [
+        527170,
+        555221
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Okay, today was the first trading day after the Fed's interest rate decision. Could you recap the main market trends for us again?",
+      "sources": [],
+      "time": [
+        556221,
+        563552
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, the market seemed somewhat relieved after the Fed held rates steady and signaled a cautious approach to future cuts. Tech stocks, in particular, showed strength, with the Nasdaq leading the market higher. Investors are now shifting their focus from the Fed's words to upcoming economic data to gauge the Fed's next move. In other words, the market's attention has completely shifted from the Fed's mouth to the numbers in economic reports.",
+      "sources": [],
+      "time": [
+        564052,
+        589223
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So, what economic indicators should we be watching going forward?",
+      "sources": [],
+      "time": [
+        589723,
+        594014
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Without a doubt, employment-related data is the most important. The Fed has consistently emphasized a stable job market as a condition for rate cuts. First, next Tuesday's JOLTs report, or Job Openings and Labor Turnover Survey, will give us a sense of how strong labor demand is. Then on Wednesday, we get the ADP employment report, which provides data on private sector hiring. And the one everyone is waiting for, the Non-Farm Payrolls report and the unemployment rate, will be released next Friday. The results of these reports will likely determine the market's short-term direction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397971",
+          "title": "JOLTs Job Openings",
+          "date": "2026-02-03"
+        },
+        {
+          "type": "event",
+          "id": "394964",
+          "title": "ADP Employment Change",
+          "date": "2026-02-04"
+        },
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "Non Farm Payrolls",
+          "date": "2026-02-06"
+        },
+        {
+          "type": "event",
+          "id": "394999",
+          "title": "Unemployment Rate",
+          "date": "2026-02-06"
+        }
+      ],
+      "time": [
+        594514,
+        626365
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Besides the jobs data, is there anything else to keep an eye on?",
+      "sources": [],
+      "time": [
+        626865,
+        630876
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Yes, the ISM Purchasing Managers' Index, or PMI, which reflects business sentiment, is also important. The Manufacturing PMI is scheduled for release next Monday, followed by the Services PMI on Wednesday. These indicators show the activity levels in the manufacturing and service sectors, which are crucial pillars of the U.S. economy, so they provide important clues about the future direction of the economy. The services sector is especially key, as it accounts for over two-thirds of the U.S. economy. A stronger-than-expected Services PMI could ease recession fears but also raise concerns about inflationary pressures.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "394938",
+          "title": "ISM Manufacturing PMI",
+          "date": "2026-02-02"
+        },
+        {
+          "type": "event",
+          "id": "394965",
+          "title": "ISM Services PMI",
+          "date": "2026-02-04"
+        }
+      ],
+      "time": [
+        631376,
+        670107
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Finally, do you have any closing thoughts for our investors?",
+      "sources": [],
+      "time": [
+        670607,
+        674178
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "We've cleared the major hurdle of the Fed's policy announcement, but we're now entering a phase where the market will react sensitively to every piece of data. It's crucial that the job market remains in a 'Goldilocks' state—not too hot, not too cold. Investors would be well-advised to calmly watch how the upcoming employment and economic data shift expectations for Fed rate cuts and then adjust their strategies accordingly. This is a time that calls for reacting to confirmed data rather than making premature predictions.",
+      "sources": [],
+      "time": [
+        674678,
+        707249
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Alright, thank you again for your valuable insights. That concludes our market closing brief for January 29th.",
+      "sources": [],
+      "time": [
+        707749,
+        714720
+      ]
+    }
+  ]
+}

@@ -1,0 +1,732 @@
+{
+  "date": "20260130",
+  "nutshell": "Stocks fall on hawkish Fed chair nomination and Big Tech earnings concerns.",
+  "user_tickers": [
+    "PLTR"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 28
+    },
+    {
+      "name": "ticker",
+      "start_id": 29,
+      "end_id": 36
+    },
+    {
+      "name": "closing",
+      "start_id": 37,
+      "end_id": 45
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the January 30th closing bell briefing. The markets closed lower today across all major indices.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. It was a day of declines, driven by the nomination of a hawkish Fed chair and concerns over Big Tech earnings. The Dow Jones Industrial Average fell 0.36% to close at 48,892, and the S&P 500 slipped 0.43% to 6,939. The tech-heavy Nasdaq Composite was hit hardest, dropping 0.94% to finish at 23,461, showing a significant pullback in investor sentiment. From the start of the session, news of former President Trump's nomination for the next Fed chair created policy uncertainty that pressured the market all day.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "article",
+          "pk": "id#99e6ed46169df1e4",
+          "title": "Trump nominates Warsh as next Fed chair. Why are stocks lower?"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "As you mentioned, the Nasdaq's drop was particularly steep. With Big Tech earnings season wrapping up, is it fair to say there was a lot of disappointment?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. The Big Tech earnings reports throughout this week failed to meet market expectations, really cooling investor sentiment. The shock from Microsoft's nearly 10% plunge yesterday, driven by concerns over massive AI investment costs, carried over into today's session. In Apple's case, while it delivered strong results that beat on both revenue and profit, the company warned that future margins could be squeezed by memory chip supply issues, which limited the stock's upside. With market-leading tech giants raising doubts about their future growth, it weighed on the entire Nasdaq index.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6d18985783ac685e",
+          "title": "Microsoft stock plunges 10% as earnings drive $357 billion market cap wipeout"
+        },
+        {
+          "type": "article",
+          "pk": "id#be5c4accd244ad26",
+          "title": "Apple tops Q1 earnings estimates on record-breaking iPhone sales"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-28",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, it was a combination of a political variable—the Fed chair nomination—and a fundamental one—Big Tech earnings—that shook the market. Could you recap the key drivers for us today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, two main themes dominated the market today. First, the uncertainty in monetary policy brought on by the nomination of Kevin Warsh as the next Fed chair. And second, the growing concerns about a growth slowdown following Big Tech's earnings. We'll take a closer look at each of these topics shortly.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398929",
+          "title": "ppi",
+          "date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's dive into that first theme you mentioned: the news of former President Trump's nomination for the next Fed chair. Tell us about Kevin Warsh, the former Fed governor.",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the news of Kevin Warsh's nomination sent significant ripples across the entire market. His past hawkish stance was immediately priced in, raising the possibility of a shift toward tighter monetary policy. The S&P 500 closed down 0.43%, and the tech-heavy Nasdaq fell 0.94%. But the more dramatic moves were in the bond, currency, and commodity markets. In the bond market, which anticipates Fed tightening, the 10-year Treasury yield rose 1.4 basis points to the 4.24% range, while the Dollar Index surged 0.9% in a single day. This stronger dollar and higher rates dealt a direct blow to non-yielding assets like gold, with gold futures plunging over 7.7%, giving back all of its recent gains. The VIX, the market's fear gauge, also jumped over 3%, reflecting rising investor anxiety.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#969e9634cd3b1d0e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide to cap volatile week and month, metals sink after Trump taps Warsh for Fed"
+        },
+        {
+          "type": "article",
+          "pk": "id#aacd7f9b76085006",
+          "title": "Dollar Rises With US Yields as Trump Set to Choose Warsh for Fed"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So you're saying his past hawkish reputation is translating into immediate fears of tightening. What are the market's specific concerns?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The market is trying to predict the future path of monetary policy based on Warsh's past statements and policy leanings. During the 2008 financial crisis, he was critical of the Fed's quantitative easing policies and consistently warned about inflation risks. The market believes that if he becomes Fed Chair, he could reverse the current accommodative stance, potentially raising rates sooner or accelerating the reduction of the Fed's balance sheet. Economic data released today amplified these concerns. The January Producer Price Index came in hotter than expected, and notably, the Chicago PMI registered 54.0, blowing past the forecast of 45 and signaling stronger-than-expected manufacturing activity. With inflationary pressures still present, the prospect of a hawk leading the Fed dealt a direct blow to rate-sensitive sectors, with tech stocks falling over 2%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#99e6ed46169df1e4",
+          "title": "Trump nominates Warsh as next Fed chair. Why are stocks lower?"
+        },
+        {
+          "type": "article",
+          "pk": "id#8965b1bffd615078",
+          "title": "Trump nominates Kevin Warsh to be next Fed Chair"
+        },
+        {
+          "type": "event",
+          "id": "398929",
+          "title": "ppi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "event",
+          "id": "398591",
+          "title": "chicago pmi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So this could bring the issue of Fed independence back into the spotlight. We're seeing a political variable having a direct impact on the financial markets.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's an excellent point. This nomination goes beyond just concerns about the direction of monetary policy; it raises more fundamental questions about the Fed's independence. Former President Trump has been openly critical of the Fed's interest rate policies since his time in office. The market is wary that this appointment could be an attempt to exert more control over the Fed. Financial markets feel stable when policy is predictable and based on economic data, but increased political influence introduces a cost in the form of uncertainty. In fact, while the Dow Jones Industrial Average fell only 0.36% today, the more rate-sensitive Nasdaq dropped 0.94%, showing that policy uncertainty is a bigger burden for growth stocks. This suggests the potential erosion of Fed independence is increasing the risk premium in the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#2c0d57e95fb2fd4e",
+          "title": "Who is Kevin Warsh? What to know about Trump's next Fed chair nominee"
+        },
+        {
+          "type": "article",
+          "pk": "id#92240afecbdf0726",
+          "title": "Trump taps Kevin Warsh to be the next Fed chair"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "Right, so the political variable of the next Fed chief looks set to be the biggest uncertainty for the market for some time.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "진행자",
+      "text": "And alongside that uncertainty, we have the other major factor that shook the market. The highly anticipated Big Tech earnings season has wrapped up, and it seems to have ended on a disappointing note.",
+      "sources": []
+    },
+    {
+      "id": 14,
+      "speaker": "해설자",
+      "text": "Yes, the tech stocks that had been leading the market actually ended up dragging it down. The Nasdaq fell 0.94% today, a much steeper drop than the Dow or S&P 500, because the grand finale of Big Tech earnings week was a disappointment. On top of that, a hotter-than-expected Producer Price Index, or PPI, reignited inflation fears, pushing the 10-year Treasury yield up to the 4.24% level. The Dollar Index also strengthened, fueling a risk-off sentiment. The overall weakness in the tech sector was confirmed by the Technology Select Sector SPDR Fund, which fell over 0.2%. Ultimately, with concerns rising about massive AI investment costs and future growth, combined with stickier inflation data and policy uncertainty from the Fed nomination, it appears investors decided to take profits in tech.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "event",
+          "id": "398929",
+          "title": "ppi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "article",
+          "pk": "id#a1bad4755fbb84ff",
+          "title": "Stocks Slip as Bond Yields Rise after Warsh Picked for Fed Chair"
+        },
+        {
+          "type": "article",
+          "pk": "id#3c5d4e082e7add5a",
+          "title": "The big lessons from Big Tech's big earnings week"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "진행자",
+      "text": "It seems the shock from Microsoft, in particular, really rippled through the market. Hopes for AI were so high, but when they opened the books, it looks like the cost issue became a major drag.",
+      "sources": []
+    },
+    {
+      "id": 16,
+      "speaker": "해설자",
+      "text": "That's exactly right. Microsoft actually beat on both revenue and profit, but the stock plunged nearly 10% yesterday and continued its weakness today. What the market focused on was the massive capital expenditure, or capex, for building out its AI infrastructure. Quarterly capex reached about $37.5 billion, much higher than expected, raising doubts about whether the growth in its Azure cloud division is fast enough to cover these costs and generate profits. Investors are now demanding more than just announcements about AI investments; they want to see concrete proof of how that investment translates into actual earnings. The call from Wall Street is getting louder: prove that AI can deliver profits.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6d18985783ac685e",
+          "title": "Microsoft stock plunges 10% as earnings drive $357 billion market cap wipeout"
+        },
+        {
+          "type": "article",
+          "pk": "id#e441b6ae0621eafd",
+          "title": "Microsoft's Free Cash Flow Crashes Due to High Capex - But Is MSFT Stock's Dip Overdone?"
+        },
+        {
+          "type": "article",
+          "pk": "id#4d38992ceeb26a30",
+          "title": "Tech Companies Are Still Spending Heavily on AI. Investors Want to See More Than Big Numbers."
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-01-29",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "진행자",
+      "text": "So if Microsoft was about costs, Apple was the opposite. It posted record-breaking earnings, yet the stock's reaction was muted. What held it back?",
+      "sources": []
+    },
+    {
+      "id": 18,
+      "speaker": "해설자",
+      "text": "Apple reported stunning results, with record iPhone sales of $85.3 billion and a surprising 38% year-over-year surge in China revenue, which had been a point of concern. Despite that, the stock was essentially flat, gaining just 0.5% today. This was due to concerns about its future outlook. On the earnings call, Apple hinted that a shortage of memory chips due to data center expansion could put pressure on future margins. In other words, while the current results were excellent, the market reacted sensitively to the signal that future profitability might slow down. Ultimately, it seems the market is waiting for Apple to present a clear strategy for how it will compete in the age of AI.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#be5c4accd244ad26",
+          "title": "Apple tops Q1 earnings estimates on record-breaking iPhone sales"
+        },
+        {
+          "type": "article",
+          "pk": "id#9684d99d8dea747e",
+          "title": "Apple's record earnings show the iPhone still beats AI fears"
+        },
+        {
+          "type": "article",
+          "pk": "id#1ccaafd64570e175",
+          "title": "Apple: Fiscal Q1 Earnings Snapshot"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "진행자",
+      "text": "So, the key takeaway from this Big Tech earnings season seems to be that expectations were just too high, and the market is now demanding to see a concrete path to profitability for AI.",
+      "sources": []
+    },
+    {
+      "id": 20,
+      "speaker": "해설자",
+      "text": "That's right. This week's earnings sent a clear signal that tech investors are no longer willing to invest blindly. In the past, simply announcing aggressive investments in AI was enough to boost a stock. Now, the market is demanding a concrete plan and evidence of when and how those investments will turn into profits. As we saw with Microsoft, massive spending is now starting to be viewed as a liability. This is casting a 'shadow of uncertainty' not just over Microsoft, but over other software companies investing heavily in AI. Even if a company like Apple proves the strength of its existing business, its stock will struggle to rise without providing confidence in its future growth drivers. It's become a very demanding market environment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3c5d4e082e7add5a",
+          "title": "The big lessons from Big Tech's big earnings week"
+        },
+        {
+          "type": "article",
+          "pk": "id#cdd3db722410932a",
+          "title": "Why software stocks are getting crushed as AI casts 'shadow of uncertainty' over sector"
+        },
+        {
+          "type": "article",
+          "pk": "id#f37f0f240489d172",
+          "title": "Stock market today: S&P 500, Nasdaq fall as Microsoft leads tech lower with Apple earnings on deck"
+        },
+        {
+          "type": "chart",
+          "ticker": "GOOGL",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "On top of the disappointment in Big Tech earnings, there was another factor pressuring the market: stronger-than-expected inflation data, which caused rate cut expectations to recede. Let's break that down.",
+      "sources": []
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "Absolutely. Today was a day where rate cut expectations cooled off rapidly across the board. The drop in the S&P 500 and Nasdaq, by 0.43% and 0.94% respectively, was decisively influenced by moves in the bond market. The 10-year U.S. Treasury yield hit a one-week high, climbing to 4.27% at one point, driven by economic data that blew past market expectations. The December Producer Price Index rose at more than double the forecast rate, and the Chicago PMI came in at 54.0, crushing estimates of 44 and showing its strongest expansion in over two years. Faced with a robust economy and persistent price pressures, the Dollar Index surged over 0.9%, leading to a sharp sell-off in commodities like gold. And with the nomination of the hawkish Kevin Warsh for Fed chair, the market began to seriously price in the possibility of a prolonged period of tight monetary policy.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "event",
+          "id": "398929",
+          "title": "ppi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "event",
+          "id": "398591",
+          "title": "chicago pmi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "article",
+          "pk": "id#a1bad4755fbb84ff",
+          "title": "Stocks Slip as Bond Yields Rise after Warsh Picked for Fed Chair"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "So the data came in much hotter than expected. Can you explain the specific signals sent by the Producer Price Index and the Chicago PMI?",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "Yes, both indicators clearly showed that the Fed has no reason to rush into cutting rates. First, the December Producer Price Index rose 0.5% month-over-month, more than double the market's expectation of 0.2%. Core PPI, which excludes volatile food and energy, jumped 0.7%, far exceeding the 0.2% forecast. This means price pressures at the corporate level remain high, raising concerns that this could eventually pass through to consumer prices. Adding to that, the Chicago PMI registered 54.0. Not only is that well above the 50-point line separating contraction from expansion, but it also crushed the forecast of 44, proving the manufacturing sector is much stronger than anticipated. With a solid economy and inflationary pressures confirmed simultaneously, expectations for rate cuts naturally had to be scaled back.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398929",
+          "title": "ppi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "event",
+          "id": "398591",
+          "title": "chicago pmi",
+          "date": "2026-01-30"
+        },
+        {
+          "type": "article",
+          "pk": "id#a1bad4755fbb84ff",
+          "title": "Stocks Slip as Bond Yields Rise after Warsh Picked for Fed Chair"
+        },
+        {
+          "type": "article",
+          "pk": "id#99e6ed46169df1e4",
+          "title": "Trump nominates Warsh as next Fed chair. Why are stocks lower?"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "So the economic data alone was enough to make the market flinch, but the news of the Fed chair nomination on top of that just amplified the uncertainty.",
+      "sources": []
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "Exactly. The nomination of former Fed Governor Kevin Warsh really cemented the market's rate outlook. He is known as a prominent hawk who consistently warned of inflation risks even during the 2008 financial crisis. The market interpreted his nomination as a dual signal: a concern that the Fed's independence could be weakened, and a sign that, given his track record, premature rate cuts are unlikely. This outlook immediately weighed on the rate-sensitive tech sector. The fact that the tech-focused XLK ETF fell over 2%, leading the market down, is a testament to this. Ultimately, Warsh's emergence has introduced the possibility that the future path of monetary policy could be much more hawkish than the market had hoped.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3629c92d252458bd",
+          "title": "Factbox-Five things to know about Kevin Warsh, Trump's 'central casting' Fed chair pick"
+        },
+        {
+          "type": "article",
+          "pk": "id#c7f01bf8dbbc1b67",
+          "title": "Here’s what the appointment of Warsh to the Fed could mean for interest rates this year"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        },
+        {
+          "type": "article",
+          "pk": "id#aacd7f9b76085006",
+          "title": "Dollar Rises With US Yields as Trump Set to Choose Warsh for Fed"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "I see. So, to sum it up, the market today had to abandon its rate cut hopes due to a double whammy of bad news from both the economic and political fronts.",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "Yes, that's a good summary. The optimism for early rate cuts that had been fueling the market since the start of the year faced a major challenge today. The market is now starting to accept that the Fed's fight against inflation may take longer than expected, and that the center of gravity for monetary policy could shift under new Fed leadership. The record-breaking drop in gold and silver prices today symbolically illustrates this dramatic shift in market sentiment. We're now entering a phase where the importance of key upcoming data, like the employment and consumer price reports, will be even greater.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#969e9634cd3b1d0e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide to cap volatile week and month, metals sink after Trump taps Warsh for Fed"
+        },
+        {
+          "type": "article",
+          "pk": "id#9c79cbc0e848df14",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide after Trump picks Warsh for Fed; gold, silver plunge"
+        },
+        {
+          "type": "article",
+          "pk": "id#0db4a9a0b1ab261b",
+          "title": "What Kevin Warsh as new Federal Reserve chair could mean for the economy"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the broad market trends. Now let's look at an individual stock that's getting a lot of attention amid this uncertainty: Palantir. Ahead of its earnings report, the stock fell over 2% today to close around the $146 level, suggesting a good deal of anxiety in the market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "PLTR",
+          "start_date": "2026-01-30",
+          "end_date": "2026-01-30"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "해설자",
+      "text": "That's right. Palantir started the day around the $150 mark but quickly turned lower, with losses accelerating into the close. This reflects a clash between extreme growth expectations and structural risks as investors grow cautious ahead of its earnings report on Monday. The market remembers the experience from last quarter, when the stock fell despite strong results due to high valuation concerns. The fact that the options market is pricing in at least a 9% move in either direction after earnings clearly shows the intense tug-of-war currently surrounding Palantir.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a311fbd307392e0a",
+          "title": "Here's How Much Traders Expect Palantir Stock to Move After Earnings Monday"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "진행자",
+      "text": "As you said, it's a situation where hope and concern coexist. Let's start with the positive side—the growth story.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "해설자",
+      "text": "Palantir's growth has been undeniably explosive. According to its Q3 2025 filing, U.S. commercial revenue surged by a shocking 121% year-over-year, which stunned the market. Overall commercial revenue also grew 73%, proving the company is no longer solely reliant on government contracts. This growth is supported by an expanding customer base, with total customers reaching 911, up 45% in just one year. What's even more noteworthy is the powerful operating leverage. While revenue grew 63%, operating income exploded by 248%, and the operating margin more than doubled from 16% to 33%. This is a strong signal that Palantir's AI Platform (AIP) is successfully gaining traction in the market and transitioning to a highly profitable business model.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PLTR",
+          "form": "10-Q",
+          "filed_date": "2025-11-04",
+          "accession_number": "0001321655-25-000131"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "진행자",
+      "text": "A 121% growth rate in U.S. commercial revenue is a truly stunning number. But despite such strong growth metrics, why has the stock been sluggish? What are the key risks the market is worried about?",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "해설자",
+      "text": "There are two main concerns. First is the high valuation debate—the idea that the current stock price already reflects an assumption that this explosive growth will last forever. The second is a structural risk disclosed in the company's annual report: the 'termination for convenience' clause in its government contracts. As of Q3 2025, 54% of its total revenue still comes from the government sector, and many of these contracts include a provision that allows the government to terminate them at any time for their convenience, without a specific reason. This means the company's core revenue base could be shaken by political variables or budget issues, regardless of its performance. This is an uncontrollable risk that deeply concerns the market. The high customer concentration, with the top three clients accounting for 16% of total revenue, also adds to this anxiety.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PLTR",
+          "form": "10-K",
+          "filed_date": "2025-02-18",
+          "accession_number": "0001321655-25-000022"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "PLTR",
+          "form": "10-Q",
+          "filed_date": "2025-11-04",
+          "accession_number": "0001321655-25-000131"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "진행자",
+      "text": "So it's a clash between the attractive vision of a successful transformation into an AI platform company and the unstable foundation of its government contracts. What should investors be watching for in the upcoming earnings report?",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "해설자",
+      "text": "Yes, Palantir is currently seen as a highly polarized investment, with immense potential and corresponding critical risks. This earnings report will be a crucial turning point that could determine which of these two competing narratives prevails. Investors need to see if the commercial growth can continue to meet high expectations and whether the company can provide any reassurance about the stability of its government contracts. For now, it seems the uncertainty is outweighing the potential reward. Therefore, maintaining a cautious, wait-and-see approach until getting answers to these key questions from the imminent earnings release seems to be the reasonable course of action.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "진행자",
+      "text": "Let's wrap up today's market in a nutshell and then look ahead at the key economic events we should be watching.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "해설자",
+      "text": "Today can be summed up as a mixed session with a strong wait-and-see attitude. Investors were holding their breath ahead of the Fed's FOMC decision and Big Tech earnings. Notably, earnings from Microsoft and Alphabet, released after the bell, came in a bit shy of market expectations, increasing volatility in after-hours trading. Another factor clouding the market's direction was today's data: both the JOLTs job openings report and the Consumer Confidence Index came in stronger than expected, throwing cold water on hopes for an early rate cut.",
+      "sources": []
+    },
+    {
+      "id": 39,
+      "speaker": "진행자",
+      "text": "As you said, all eyes are on the FOMC. What's the most important thing to watch for in this meeting?",
+      "sources": []
+    },
+    {
+      "id": 40,
+      "speaker": "해설자",
+      "text": "Right, the FOMC's rate decision will be announced tomorrow at 2 PM local time. The market is almost certain of a rate hold, so all the attention will be on Jerome Powell's press conference 30 minutes later. With a string of strong economic data recently, the key thing to watch is what he says to push back against the market's premature rate cut expectations. The market will be scrambling to find any hints about the possibility of a rate cut in March.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390597",
+          "title": "fed interest rate decision",
+          "date": "2026-01-28"
+        },
+        {
+          "type": "event",
+          "id": "390598",
+          "title": "fed press conference",
+          "date": "2026-01-28"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "진행자",
+      "text": "Besides the FOMC, are there any other crucial indicators investors must watch?",
+      "sources": []
+    },
+    {
+      "id": 42,
+      "speaker": "해설자",
+      "text": "Absolutely. Before the dust from the FOMC settles, the market will immediately turn its attention to labor market data. I'm talking about the January jobs report, which comes out Friday morning. Non-farm payrolls and the unemployment rate are one of the surest clues to the Fed's future policy path. If the labor market still shows signs of being hot, the timing of the Fed's rate cut could be pushed back even further. On the other hand, if a clear slowdown in hiring emerges, the case for an early rate cut could regain momentum, bringing a sense of relief to the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-06"
+        },
+        {
+          "type": "event",
+          "id": "394999",
+          "title": "unemployment rate",
+          "date": "2026-02-06"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "진행자",
+      "text": "It's going to be a really pivotal week. Any final words of caution for our investors?",
+      "sources": []
+    },
+    {
+      "id": 44,
+      "speaker": "해설자",
+      "text": "This week will be a watershed moment for the market's short-term direction. We have three big waves set to hit one after another: the FOMC's message, Big Tech earnings, and the jobs report. If these three events send conflicting signals, market volatility could become unpredictably high. Therefore, investors should calmly assess the outcomes rather than making hasty directional bets, and carefully plan their strategy. In a period of high uncertainty like this, it's a time to be especially mindful of risk management.",
+      "sources": []
+    },
+    {
+      "id": 45,
+      "speaker": "진행자",
+      "text": "Indeed, a time for a cautious approach. That concludes our January 30th closing bell briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}

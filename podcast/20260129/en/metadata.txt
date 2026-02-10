@@ -1,0 +1,22 @@
+Title:
+2026.1.29 US Market Close | A mixed session driven by diverging Big Tech earnings
+
+Description:
+The US stock market closed mixed as Big Tech companies reported diverging earnings. The Dow Jones saw a slight gain, but the Nasdaq fell, dragged down by a sharp drop in Microsoft's stock. The market is now shifting its focus from the general hype around artificial intelligence (AI) to companies that can demonstrate a clear path to profitability.
+
+- Dow Jones Industrial Average: +0.1% - Showed resilience amid the Big Tech earnings shock.
+- Nasdaq Composite: -0.72% - Weighed down by Microsoft's plunge, which impacted the broader tech sector.
+- S&P 500: -0.13% - Finished lower as major companies reported mixed results.
+
+- Diverging Big Tech Fortunes: Meta surged on strong advertising results, while Microsoft tumbled due to concerns over its massive AI investment costs, highlighting a sharp divide in sentiment within the sector.
+- Scrutiny on AI Profitability: The market is beginning to soberly assess how AI investments translate into actual profits, moving beyond the initial excitement for the technology itself.
+- Tesla's First Revenue Decline: Tesla reported its first-ever annual revenue decrease, fueling concerns about a slowdown in its core business and leading to a drop in its stock price.
+- Focus Shifts to Economic Data: Following the Fed's decision to hold interest rates steady, investor attention has shifted to upcoming economic data, including the JOLTs report, non-farm payrolls, and the ISM Purchasing Managers' Index (PMI).
+
+- Microsoft (MSFT): Plunged nearly 10% - Despite beating revenue expectations, concerns mounted over the company's massive AI investment costs, which are projected to reach $37.5 billion per quarter.
+- Meta (META): Surged over 10% - Fueled by better-than-expected advertising revenue and the announcement of its first-ever dividend, a shareholder-friendly move.
+- Tesla (TSLA): Dropped more than 3% - Declined on concerns about slowing growth after reporting its first annual revenue decrease.
+- Lockheed Martin (LMT): Rose over 2% - The stock gained on optimism about its future outlook, including a record backlog of $193.6 billion, even though its Q4 earnings missed estimates.
+
+Keywords:
+LMT, META, MSFT, TSLA, 미국증시, 장마감, 주식,

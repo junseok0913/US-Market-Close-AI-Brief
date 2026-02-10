@@ -358,7 +358,7 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
             }
 
         # 재시도 설정
-        max_retries = 3
+        max_retries = 5
         base_delay = 2.0  # 초
         
         t0 = time.monotonic()

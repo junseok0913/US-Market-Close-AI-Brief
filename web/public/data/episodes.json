@@ -1,5 +1,33 @@
 [
   {
+    "date": "20260202",
+    "nutshell": "예상 뛰어넘은 제조업 지표에 경기 연착륙 기대감 확산",
+    "user_tickers": [
+      "PLTR"
+    ]
+  },
+  {
+    "date": "20260130",
+    "nutshell": "매파적 연준 총재 지명과 빅테크 실적 우려에 하락",
+    "user_tickers": [
+      "PLTR"
+    ]
+  },
+  {
+    "date": "20260129",
+    "nutshell": "빅테크 실적 발표 이후 엇갈린 희비에 따른 시장 혼조세",
+    "user_tickers": [
+      "LMT"
+    ]
+  },
+  {
+    "date": "20260128",
+    "nutshell": "연준의 매파적 동결 속 빅테크 실적 대기 장세",
+    "user_tickers": [
+      "META"
+    ]
+  },
+  {
     "date": "20260127",
     "nutshell": "빅테크 실적 기대감과 FOMC 경계감 속 지수 혼조",
     "user_tickers": [

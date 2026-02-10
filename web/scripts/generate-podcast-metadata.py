@@ -111,12 +111,14 @@ class PodcastMetadataGenerator:
         # keywords 추출
         keywords = self._extract_keywords(scripts)
         
-        # 프롬프트 조립 (description만 생성)
+        # 프롬프트 조립
         prompt = f"""{prompt_config.get('system', '')}
 
 {prompt_config.get('critical_rules', '')}
 
 {prompt_config.get('description_guide', '')}
+
+{prompt_config.get('keywords_guide', '')}
 
 {prompt_config.get('output_format', '')}
 
@@ -130,11 +132,14 @@ class PodcastMetadataGenerator:
         # JSON 파싱
         llm_output = self._parse_metadata_response(response.content)
         
-        # title은 nutshell 기반으로 교체, description만 LLM 사용
+        # LLM이 생성한 키워드 사용 (프롬프트에서 길이와 형식 제어)
+        final_keywords = llm_output.get("keywords", "").replace(" ", "")  # 공백 제거 안전장치
+
+        # title은 nutshell 기반으로 교체, description과 keyword는 LLM 사용
         metadata = {
             "title": title,
             "description": llm_output.get("description", ""),
-            "keywords": keywords
+            "keywords": final_keywords
         }
         
         # 길이 검증

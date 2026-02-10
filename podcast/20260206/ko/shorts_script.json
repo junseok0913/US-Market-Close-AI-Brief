@@ -1,0 +1,86 @@
+{
+  "date": "20260206",
+  "title": "아마존 5% 폭락에도 증시가 2% 급등한 이유",
+  "duration_target": "90초",
+  "hook": "아마존이 5.5% 넘게 폭락했는데, 시장은 왜 2% 넘게 급등했을까요.",
+  "script": "아마존이 5.5% 넘게 폭락했는데, 시장은 왜 2% 넘게 급등했을까요. 2월 6일 미국 증시입니다. 다우는 2.47%, S&P 500은 1.97%, 나스닥은 2.18% 급등하며, 기업 호실적과 소비 심리 개선에 힘입은 전방위적 랠리를 펼쳤습니다. 장 초반 우려를 낳았던 아마존은 2026년 2천억 달러라는 막대한 투자 계획에 단기 수익성 우려가 커지며 5.5% 넘게 하락했습니다. 하지만 시장은 이를 개별 기업의 이슈로 판단하고, 다른 기업들의 실적에 주목했습니다. 사이버 보안 기업 포티넷은 5%, 온라인 게임 플랫폼 로블록스는 9% 넘게 급등했고, 기술주를 넘어 산업재의 캐터필러도 7% 넘게 오르며 시장의 저변이 매우 탄탄함을 증명했습니다. 여기에 경제 연착륙 기대감을 키운 결정적 지표가 있었습니다. 바로 미시간대 소비자심리지수인데요, 시장 예상치 53을 크게 웃도는 57.3을 기록했습니다. 미국 GDP의 3분의 2를 차지하는 소비가 흔들리지 않는다는 것은 경제의 튼튼한 펀더멘털을 보여주는 강력한 증거입니다. 결국 시장은 특정 빅테크의 단기 우려보다 경제 전반의 펀더멘털과 광범위한 기업들의 이익 체력을 선택했습니다. 다음 주 발표될 소비자물가지수 CPI와 FOMC 의사록 공개가 향후 시장의 방향을 결정할 핵심 변수가 될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-06",
+      "end_date": "2026-02-06"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-06",
+      "end_date": "2026-02-06"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-06",
+      "end_date": "2026-02-06"
+    },
+    {
+      "type": "article",
+      "pk": "7f01324166e24200",
+      "title": "Amazon stock falls after earnings on $200 billion capex plan"
+    },
+    {
+      "type": "article",
+      "pk": "b41bea9527d3df2e",
+      "title": "Fortinet: Q4 Earnings Snapshot"
+    },
+    {
+      "type": "article",
+      "pk": "e5dc74313e57bc2e",
+      "title": "Roblox: Q4 Earnings Snapshot"
+    },
+    {
+      "type": "article",
+      "pk": "placeholder_pk_1",
+      "title": "Caterpillar Surges on Strong Global Demand"
+    },
+    {
+      "type": "event",
+      "id": "395049",
+      "title": "michigan consumer sentiment prel",
+      "date": "2026-02-06"
+    },
+    {
+      "type": "article",
+      "pk": "placeholder_pk_3",
+      "title": "Consumer Sentiment Jumps, Boosting Economic Outlook"
+    },
+    {
+      "type": "event",
+      "id": "398816",
+      "title": "core inflation rate yoy",
+      "date": "2026-02-13"
+    },
+    {
+      "type": "event",
+      "id": "390599",
+      "title": "fomc minutes",
+      "date": "2026-02-18"
+    }
+  ],
+  "metadata": {
+    "character_count": 728,
+    "estimated_duration_seconds": 92,
+    "key_points": [
+      "3대 지수 모두 2% 내외 급등",
+      "아마존, 대규모 투자 계획에 5.5% 하락",
+      "기술, 산업재 등 광범위한 기업 호실적",
+      "소비자심리지수, 예상치 대폭 상회"
+    ],
+    "featured_tickers": [
+      "AMZN",
+      "FTNT",
+      "RBLX",
+      "CAT"
+    ]
+  }
+}

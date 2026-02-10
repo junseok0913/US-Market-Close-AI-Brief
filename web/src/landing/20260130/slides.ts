@@ -1,0 +1,232 @@
+import type { Slide } from '@/types/slide';
+
+export const slides: Slide[] = [
+  {
+    id: 0,
+    type: 'title',
+    turnId: 0,
+    date: '2026-01-30',
+    nutshell: '매파적 연준 총재 지명과 빅테크 실적 우려에 하락',
+    description:
+      '오늘 시장은 트럼프 전 대통령의 매파적 연준 의장 지명 소식과 빅테크 기업들의 실적 발표 이후 확산된 성장성 둔화 우려라는 두 가지 악재가 겹치며 주요 지수 모두 하락 마감했습니다.',
+  },
+  {
+    id: 1,
+    type: 'market-summary',
+    turnId: 1,
+    title: '오늘의 시장 요약',
+    description:
+      '주요 3대 지수 모두 하락했습니다. 특히 기술주 중심의 나스닥은 빅테크 실적에 대한 실망감과 정책 불확실성으로 인해 가장 큰 폭으로 하락했습니다.',
+    indices: [
+      { name: 'S&P 500', value: 6939, change: -30.0, changePercent: -0.43 },
+      { name: 'NASDAQ', value: 23461, change: -222.1, changePercent: -0.94 },
+      { name: 'DOW', value: 48892, change: -176.7, changePercent: -0.36 },
+    ],
+    commodities: [
+      { name: '10년물 국채금리', value: 4.24, change: 0.014, changePercent: 0.33 },
+      { name: '달러 인덱스', value: 105.5, change: 0.94, changePercent: 0.9 },
+      { name: '금 선물', value: 2300, change: -191.9, changePercent: -7.7 },
+    ],
+  },
+  {
+    id: 2,
+    type: 'headline',
+    turnId: 6,
+    icon: 'landmark',
+    title: '차기 연준 의장 지명 파장',
+    subtitle: '매파 ‘케빈 워시’ 지명에 시장 긴장',
+    description:
+      '트럼프 전 대통령이 차기 연준 의장으로 매파 성향의 케빈 워시 전 연준 이사를 지명하면서 시장 전반에 긴축 우려가 확산되었습니다. 이는 주식, 채권, 원자재 시장 전반에 걸쳐 상당한 파장을 일으켰습니다.',
+    bullets: [
+      '10년물 국채금리 4.24%대로 상승',
+      '달러 인덱스 0.9% 급등',
+      '금 선물 가격 7.7% 폭락',
+      '변동성 지수(VIX) 3% 이상 상승',
+    ],
+    theme: 'red',
+  },
+  {
+    id: 3,
+    type: 'stats',
+    turnId: 7,
+    title: '연준 의장 지명에 따른 시장 반응',
+    description: '케빈 워시 지명 소식은 통화정책 긴축 가능성을 가격에 즉각 반영시키며 여러 자산 시장에 걸쳐 변동성을 키웠습니다.',
+    stats: [
+      { label: '10년물 국채금리', value: '4.24%', subtext: '+1.4bp 상승', trend: 'up' },
+      { label: '달러 인덱스', value: '+0.9%', subtext: '하루 만에 급등', trend: 'up' },
+      { label: '금 선물', value: '-7.7%', subtext: '최근 상승분 반납', trend: 'down' },
+      { label: 'VIX 지수', value: '+3%', subtext: '투자자 불안 심리 반영', trend: 'up' },
+    ],
+    theme: 'red',
+    charts: [
+      { ticker: 'TVC:US10Y', title: '미 10년물 국채금리' },
+      { ticker: 'TVC:DXY', title: '달러 인덱스' },
+      { ticker: 'GC=F', title: '금 선물' },
+    ],
+  },
+  {
+    id: 4,
+    type: 'headline',
+    turnId: 9,
+    title: '긴축 우려를 증폭시킨 경제 지표',
+    subtitle: '예상 상회한 PPI와 시카고 PMI',
+    description:
+      '마침 당일 발표된 경제 지표들이 인플레이션 압력이 여전함을 시사하며 매파적 연준 의장 지명에 대한 우려를 더욱 증폭시켰습니다. 이는 특히 금리에 민감한 기술주에 부담으로 작용했습니다.',
+    bullets: [
+      '1월 생산자물가지수(PPI) 예상치 상회',
+      '시카고 구매관리자지수(PMI) 54.0 기록 (예상 45)',
+      '제조업 경기 확장 신호에 긴축 우려 심화',
+      '기술주 섹터(XLK) 2% 이상 하락',
+    ],
+    theme: 'red',
+    charts: [{ ticker: 'XLK', title: '기술주 섹터 ETF' }],
+  },
+  {
+    id: 5,
+    type: 'headline',
+    turnId: 13,
+    icon: 'server',
+    title: '빅테크 실적 주간의 교훈',
+    subtitle: 'AI 투자, ‘수익성 증명’ 요구 거세져',
+    description:
+      '이번 주 빅테크 실적 발표는 시장의 높은 기대치를 충족시키지 못했습니다. 투자자들은 이제 AI에 대한 막연한 기대감을 넘어, 막대한 투자가 어떻게 실질적인 이익으로 연결되는지에 대한 구체적인 증거를 요구하기 시작했습니다.',
+    bullets: [
+      '기대치 하회한 실적에 기술주 중심 하락',
+      'AI 인프라 투자 비용(CAPEX) 부담 부각',
+      '미래 성장성 둔화 우려 확산',
+      '‘묻지마 투자’ 시대의 종언 신호',
+    ],
+    theme: 'blue',
+  },
+  {
+    id: 6,
+    type: 'comparison',
+    turnId: 16,
+    title: '엇갈린 빅테크 실적: MSFT vs AAPL',
+    description:
+      '마이크로소프트와 애플은 각기 다른 이유로 시장의 우려를 샀습니다. 한쪽은 과도한 비용 문제, 다른 한쪽은 미래 성장성에 대한 의구심이 발목을 잡았습니다.',
+    items: [
+      {
+        label: 'Microsoft',
+        value: '비용 부담',
+        description: '매출/이익은 예상을 상회했으나, 375억 달러에 달하는 막대한 AI 투자 비용(CAPEX)이 수익성 우려를 낳으며 주가 하락을 주도했습니다.',
+        highlight: true,
+      },
+      {
+        label: 'Apple',
+        value: '성장 둔화 우려',
+        description: '사상 최대 아이폰 판매 등 호실적에도 불구, 향후 메모리 반도체 수급 문제로 인한 마진 압박 가능성을 시사하며 주가 상승이 제한되었습니다.',
+        highlight: false,
+      },
+    ],
+  },
+  {
+    id: 7,
+    type: 'headline',
+    turnId: 16,
+    title: 'Microsoft (MSFT)',
+    subtitle: 'AI 투자 비용 부담에 주가 급락',
+    description:
+      '마이크로소프트는 예상보다 훨씬 높은 분기별 자본 지출(약 375억 달러)을 발표하며 시장에 충격을 주었습니다. 클라우드 부문의 성장이 이 비용을 감당할 수 있을지에 대한 의구심이 제기되며 주가는 약세를 보였습니다.',
+    theme: 'blue',
+    charts: [{ ticker: 'MSFT', title: 'Microsoft' }],
+  },
+  {
+    id: 8,
+    type: 'headline',
+    turnId: 18,
+    title: 'Apple (AAPL)',
+    subtitle: '호실적에도 미래 우려에 발목',
+    description:
+      '애플은 놀라운 실적을 발표했음에도 주가 반응은 미미했습니다. 향후 데이터센터 증설에 따른 메모리 반도체 수급난이 마진에 압박을 가할 수 있다는 전망이 제기되면서 미래 수익성 둔화 가능성이 부각되었습니다.',
+    theme: 'blue',
+    charts: [{ ticker: 'AAPL', title: 'Apple' }],
+  },
+  {
+    id: 9,
+    type: 'ticker-intro',
+    turnId: 29,
+    ticker: 'PLTR',
+    companyName: 'Palantir Technologies',
+    currentPrice: 146,
+    dayChange: -2.98,
+    dayChangePercent: -2.0,
+    description:
+      '팔란티어는 다음 주 실적 발표를 앞두고 투자자들의 경계심리가 높아지며 2% 넘게 하락했습니다. 폭발적인 성장 기대감과 구조적 리스크가 충돌하며 주가의 변동성이 커지는 모습입니다.',
+  },
+  {
+    id: 10,
+    type: 'ticker-analysis',
+    turnId: 32,
+    ticker: 'PLTR',
+    title: '기회: 폭발적인 상업 부문 성장',
+    points: [
+      '미국 상업 부문 매출 121% 급증 (YoY, 25년 3분기 기준)',
+      '전체 상업 부문 매출 73% 증가하며 정부 의존도 감소',
+      '영업이익 248% 폭증, 이익률 16% → 33%로 두 배 이상 개선',
+      '총 고객 수 45% 증가하며 고객 기반 빠르게 확대',
+    ],
+    description: '팔란티어의 인공지능 플랫폼(AIP)이 시장에 성공적으로 안착하며 수익성 높은 사업 모델로 전환하고 있다는 긍정적인 신호가 관찰됩니다.',
+    outlook: 'Explosive Growth',
+    outlookColor: 'emerald',
+  },
+  {
+    id: 11,
+    type: 'ticker-analysis',
+    turnId: 34,
+    ticker: 'PLTR',
+    title: '리스크: 고평가 및 정부 계약 의존도',
+    points: [
+      '고평가 논란: 높은 성장 기대감이 주가에 이미 반영되었다는 시각 존재',
+      '구조적 리스크: 정부가 특별한 이유 없이 계약을 해지할 수 있는 조항 존재',
+      '여전히 높은 정부 매출 비중 (전체 매출의 54%)',
+      '상위 3개 고객이 매출의 16%를 차지하는 높은 고객 집중도',
+    ],
+    description: '회사의 성과와 무관하게 정치적 변수나 예산 문제로 핵심 수익 기반이 흔들릴 수 있다는 통제 불가능한 리스크가 시장의 우려 요인으로 지적됩니다.',
+    outlook: 'Structural Risks',
+    outlookColor: 'rose',
+  },
+  {
+    id: 12,
+    type: 'ticker-analysis',
+    turnId: 36,
+    ticker: 'PLTR',
+    title: '종합 분석 요약',
+    points: [
+      '상업 부문 성장세가 시장의 높은 기대를 충족시킬 수 있는지가 핵심 관전 포인트입니다.',
+      '정부 부문 계약의 안정성에 대한 우려를 불식시킬 만한 단서가 필요한 상황입니다.',
+      '현재로서는 불확실성이 잠재적 보상보다 더 크게 작용하고 있는 국면으로 보입니다.',
+    ],
+    description: '이번 실적 발표는 팔란티어의 상반된 두 내러티브의 향방을 가를 중요한 분기점이 될 것입니다. 발표 전까지는 신중한 관망 자세가 합리적인 접근 방식으로 판단됩니다.',
+    outlook: 'High Uncertainty',
+    outlookColor: 'amber',
+  },
+  {
+    id: 13,
+    type: 'events',
+    turnId: 40,
+    title: '향후 주요 경제 이벤트',
+    description: '이번 주는 시장의 단기 방향성을 결정할 중요한 경제 이벤트들이 연이어 예정되어 있어 투자자들의 높은 관심이 요구됩니다.',
+    events: [
+      {
+        date: '내일',
+        label: 'FOMC 금리 결정 및 파월 의장 기자회견',
+        description: '3월 금리 인하 가능성에 대한 파월 의장의 발언이 최대 관심사입니다.',
+      },
+      {
+        date: '금요일',
+        label: '1월 고용보고서 발표',
+        description: '비농업 고용 및 실업률 지표는 연준의 향후 통화정책 경로를 가늠할 핵심 단서가 될 것입니다.',
+      },
+    ],
+  },
+  {
+    id: 14,
+    type: 'closing',
+    turnId: 44,
+    headline: '변동성 확대 국면, 신중한 접근 필요',
+    tagline: '세 가지 큰 파도가 시장의 방향성을 결정할 것입니다.',
+    description:
+      'FOMC의 메시지, 빅테크 실적, 그리고 고용보고서라는 세 가지 이벤트가 연이어 시장에 영향을 미칠 예정입니다. 결과에 따라 변동성이 예측하기 어려운 수준으로 커질 수 있으므로, 섣부른 베팅보다는 결과를 확인하며 리스크 관리에 유의해야 할 때입니다.',
+  },
+];

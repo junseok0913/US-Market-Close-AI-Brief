@@ -202,7 +202,8 @@ def main():
                         
                         print(f"  ✅ {date_folder}/{lang}")
                     
-                    except s3.exceptions.NoSuchKey:
+                    except Exception as e:
+                        # Skip if MP3 file doesn't exist (404, NoSuchKey, etc.)
                         print(f"  ⏭️  {date_folder}/{lang} (MP3 not found)")
         
         print(f"\n📊 Total episodes: {len(episodes)}")

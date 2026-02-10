@@ -1,0 +1,24 @@
+Title:
+2026.2.2 US Market Close | Soft landing hopes grow on stronger-than-expected manufacturing data
+
+Description:
+On February 2nd, US markets closed higher across all major indices, fueled by stronger-than-expected manufacturing data that bolstered hopes for a soft landing. Despite the robust economic indicators, the market saw significant divergence, with stock performance varying based on individual company earnings.
+
+Major Indices
+- Dow Jones Industrial Average: +1.05% - Gained as strong manufacturing data fueled soft landing expectations.
+- S&P 500: +0.54% - Investor sentiment improved on a strong January Manufacturing Purchasing Managers' Index (PMI).
+- Nasdaq Composite: +0.56% - Rose as recession fears eased.
+
+Key Issues
+- Strong Manufacturing Data: The January Manufacturing PMI showed its fastest pace of expansion in over three years, easing recession fears and boosting hopes for a soft landing.
+- Stock-Specific Divergence: Despite positive macroeconomic tailwinds, individual stock prices diverged sharply based on corporate earnings and future outlooks.
+- Mixed Reactions to Earnings: Walt Disney's stock fell despite beating earnings estimates, as uncertainty around CEO succession weighed on shares. In contrast, Palantir surged in after-hours trading, demonstrating its explosive growth potential.
+- Lingering Inflation Concerns: The prices paid component of the manufacturing report came in high, raising some concerns about underlying inflationary pressures.
+
+Key Stocks
+- Palantir (PLTR): Surged over 6% in after-hours trading, driven by a significant Q4 earnings beat and explosive growth in its US business.
+- Walt Disney (DIS): Dropped over 7% as future management uncertainty, including CEO succession plans, overshadowed its solid earnings report.
+- NXP Semiconductors (NXPI): Fell around 5% after-hours on concerns of slowing growth in its key automotive semiconductor division.
+
+Keywords:
+미국주식,주식,재테크,시황,팔란티어,PLTR,디즈니,DIS,제조업PMI,실적시즌,연착륙,인플레이션
