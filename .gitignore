@@ -9,3 +9,5 @@ closinglegacy/
 .serena/
 .claude/
 .playwright-mcp/
+.DS_store
+.agent-status

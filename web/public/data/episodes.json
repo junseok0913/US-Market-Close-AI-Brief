@@ -1,5 +1,26 @@
 [
   {
+    "date": "20260213",
+    "nutshell": "예상 웃돈 월간 CPI에 기술주 하락, 중소형주는 강세",
+    "user_tickers": [
+      "MSFT"
+    ]
+  },
+  {
+    "date": "20260212",
+    "nutshell": "AI발 기술주 투매와 CPI 발표 경계감 속 동반 하락",
+    "user_tickers": [
+      "MSTR"
+    ]
+  },
+  {
+    "date": "20260211",
+    "nutshell": "강한 고용지표 압박 속 실적 따라 차별화 장세",
+    "user_tickers": [
+      "ASML"
+    ]
+  },
+  {
     "date": "20260210",
     "nutshell": "소비 둔화 신호 속 엇갈린 실적에 차별화 장세",
     "user_tickers": [
@@ -84,32 +105,11 @@
     ]
   },
   {
-    "date": "20260123",
-    "nutshell": "인텔 실적 충격과 지정학적 안도감이 엇갈린 혼조 장세",
-    "user_tickers": [
-      "TSM"
-    ]
-  },
-  {
-    "date": "20260122",
-    "nutshell": "관세 위협 완화와 견조한 경제 지표가 광범위한 시장 랠리를 이끌었고, 기술주가 상승을 주도했습니다.",
-    "user_tickers": [
-      "INTC"
-    ]
-  },
-  {
     "date": "20260121",
     "nutshell": "그린란드 관세 완화에 위험자산 동반 반등",
     "user_tickers": [
       "GOOG",
       "LMT"
-    ]
-  },
-  {
-    "date": "20251222",
-    "nutshell": "AI와 미디어 빅딜이 이끄는 선별 랠리, 연준 완화 기대와 금 랠리가 배경",
-    "user_tickers": [
-      "LLY"
     ]
   }
 ]

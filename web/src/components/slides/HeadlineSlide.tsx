@@ -34,6 +34,14 @@ const themeStyles = {
     bulletBg: 'bg-amber-50',
     bulletBorder: 'border-amber-100',
   },
+  amber: {
+    bg: 'from-amber-50 to-orange-50',
+    border: 'border-amber-100',
+    accent: 'text-amber-600',
+    iconBg: 'bg-amber-100',
+    bulletBg: 'bg-amber-50',
+    bulletBorder: 'border-amber-100',
+  },
   green: {
     bg: 'from-emerald-50 to-green-50',
     border: 'border-emerald-100',
@@ -60,7 +68,8 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 export function HeadlineSlide({ slide }: Props) {
-  const theme = themeStyles[slide.theme || 'blue'];
+  const defaultTheme = 'blue';
+  const theme = themeStyles[slide.theme || defaultTheme] ?? themeStyles[defaultTheme];
 
   return (
     <div className={`bg-gradient-to-br ${theme.bg} rounded-2xl border ${theme.border} shadow-sm overflow-hidden`}>

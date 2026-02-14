@@ -1,0 +1,878 @@
+{
+  "date": "20260213",
+  "nutshell": "예상 웃돈 월간 CPI에 기술주 하락, 중소형주는 강세",
+  "user_tickers": [
+    "MSFT"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 27
+    },
+    {
+      "name": "ticker",
+      "start_id": 28,
+      "end_id": 35
+    },
+    {
+      "name": "closing",
+      "start_id": 36,
+      "end_id": 44
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "2월 13일 장마감 브리핑입니다. 오늘 시장은 지수별로 등락이 엇갈리는 혼조세로 마감했네요.",
+      "sources": [],
+      "time": [
+        0,
+        7171
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 예상 웃돈 월간 CPI에 기술주 하락, 중소형주는 강세로 요약할 수 있겠습니다. 다우존스 산업평균지수는 0.1% 상승했고, S&P 500 지수도 0.05% 오르며 강보합 마감했습니다. 반면 기술주 중심의 나스닥 지수는 0.22% 하락하며 약세를 보였습니다. 하지만 중소형주를 모아놓은 러셀 2000 지수는 1.18%나 급등하며 뚜렷한 차별화 장세를 보였습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        7671,
+        36842
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "나스닥은 내리고 중소형주는 크게 올랐군요. 이런 차별화의 가장 큰 원인은 무엇이었나요.",
+      "sources": [],
+      "time": [
+        37342,
+        43793
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "바로 오늘 아침에 발표된 1월 소비자물가지수, CPI 데이터 때문이었습니다. 전년 대비 상승률은 2.4%로 둔화세를 이어갔지만, 변동성이 큰 에너지와 식품을 제외한 근원 CPI의 전월 대비 상승률이 0.3%로 시장 예상치인 0.2%를 웃돌았습니다. 이렇게 월간 물가 상승률이 예상보다 높게 나오자, 연준의 금리인하 시점이 늦춰질 수 있다는 우려가 커졌습니다. 이러한 전망은 금리에 민감한 대형 기술주에 부담으로 작용해 나스닥 지수를 끌어내리는 핵심 요인이 되었습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        }
+      ],
+      "time": [
+        44293,
+        76744
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "결국 끈적한 인플레이션이 시장의 발목을 잡은 셈이군요. 그렇다면 오늘 시장에서는 구체적으로 어떤 움직임들이 나타났는지 주요 흐름들을 짚어주시죠.",
+      "sources": [],
+      "time": [
+        77244,
+        88695
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "네, 오늘은 크게 세 가지 흐름이 시장을 주도했습니다. 첫째는 예상보다 높은 월간 물가에 후퇴한 금리인하 기대감, 둘째는 나스닥 약세 속에서 돋보인 중소형주의 강세, 그리고 마지막은 개별 기업들의 실적에 따라 주가가 극명하게 엇갈린 점입니다. 잠시 후 하나씩 자세히 살펴보겠습니다.",
+      "sources": [],
+      "time": [
+        89195,
+        107966
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "네, 말씀해주신 첫 번째 흐름부터 살펴보겠습니다. 예상보다 높은 월간 물가 때문에 금리인하 기대감이 후퇴했다고 하셨는데, 시장이 오늘 발표된 CPI 지표를 구체적으로 어떻게 해석했는지 자세히 들여다보죠.",
+      "sources": [],
+      "time": [
+        108966,
+        122937
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "네, 시장은 오늘 인플레이션의 두 얼굴을 마주했습니다. 겉으로 드러난 헤드라인 연간 소비자물가지수는 2.4퍼센트로 둔화 흐름을 이어가며 긍정적인 모습을 보였습니다. 하지만 시장 참여자들은 그 이면의 세부 내용에 더 주목했습니다. 변동성이 큰 에너지와 식료품을 제외한 근원 소비자물가지수가 전월 대비 0.3퍼센트 상승하며 시장의 예상치를 웃돈 것이 결정적이었습니다. 이 소식에 연준의 금리인하 경로가 더 험난해질 것이라는 우려가 번지면서, 국채 시장이 즉각 반응했습니다. 장 초반 10년물 국채금리가 반등하며 금리에 민감한 기술주 중심의 나스닥 지수를 압박했고, 결국 지수는 0.22퍼센트 하락으로 마감했습니다. 반면 S&P 500 지수는 강보합권에서 머무르며 시장 내에 존재하는 복잡한 시각을 그대로 반영했습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        123437,
+        169848
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "연간 지표는 괜찮았지만 월간 근원 물가가 문제였군요. 시장이 왜 이 월간 지표에 더 민감하게 반응한 건가요.",
+      "sources": [],
+      "time": [
+        170348,
+        178799
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "인플레이션의 내용이 좋지 않았기 때문입니다. 연준이 가장 우려하는 소위 '끈적한' 물가의 압력이 여전하다는 것이 확인된 셈입니다. 세부 항목을 보면 전체 CPI의 약 35퍼센트를 차지하는 주거비가 연간 3.0퍼센트 오르며 여전히 높은 수준을 유지했고, 이 항목이 1월 월간 물가 상승의 대부분을 차지했습니다. 여기에 미용이나 이발 같은 개인 관리 서비스 비용은 연간 5.4퍼센트나 급등하며 서비스 물가의 고착화 현상을 보여주었습니다. 물론 휘발유 가격이 연간 7.5퍼센트 하락하는 등 에너지 비용이 안정되며 전체 물가를 끌어내리는 효과도 있었지만, 연준은 이런 변동성 큰 항목보다 기조적인 서비스 물가 흐름을 훨씬 중요하게 보고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "article",
+          "pk": "id#ab07c1e636c23a15",
+          "title": "Today's CPI report is the best inflation news in months. Here's why."
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        }
+      ],
+      "time": [
+        179299,
+        222150
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "결국 연준이 금리를 내리려면 주거비와 서비스 물가가 확실히 잡혀야 한다는 의미로 들립니다. 이번 지표로 금리인하 시점에 대한 전망은 어떻게 바뀌고 있습니까.",
+      "sources": [],
+      "time": [
+        222650,
+        232661
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "시장의 기대감은 한발 뒤로 물러서는 모습입니다. 오늘 지표 발표 직후, 금리 선물 시장에서는 오는 3월 금리인하 가능성을 거의 배제하기 시작했습니다. 옥스퍼드 이코노믹스와 같은 기관들은 이번 데이터가 연준에게 인내심을 가질 또 다른 이유를 제공했다며, 첫 금리인하 시점을 6월이나 9월로 전망하고 있습니다. 실제로 금리 선물 트레이더들의 다수는 이제 6월에 첫 금리인하가 시작될 것으로 보고 있으며, 연말까지 두 차례 정도의 인하를 가격에 반영하고 있습니다. 바로 이런 금리인하 기대의 후퇴가 미래 이익의 현재가치에 민감한 기술주들의 밸류에이션에 부담을 주면서 나스닥 지수의 하락을 이끈 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ab07c1e636c23a15",
+          "title": "Today's CPI report is the best inflation news in months. Here's why."
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        233161,
+        273892
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "그렇군요. 금리인하 기대감이 후퇴하면서 시장의 셈법이 복잡해지는 양상입니다. 이 인플레이션 지표가 시장에 던지는 의미를 다시 한번 정리해주시죠.",
+      "sources": [],
+      "time": [
+        274392,
+        285882
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "네, 오늘의 CPI 보고서는 인플레이션과의 싸움이 마지막 구간, 즉 라스트 마일에서 상당한 어려움을 겪고 있음을 명확히 보여주었습니다. 전반적인 물가 둔화라는 긍정적 추세는 유효하지만, 주거비를 중심으로 한 서비스 물가의 끈적함이 연준의 조기 정책 전환을 막는 핵심 요인으로 작용하고 있습니다. 따라서 시장은 이제 연준의 다음 행보를 가늠하기 위해 오는 2월 20일에 발표될 개인소비지출, PCE 가격지표에 더욱 모든 신경을 집중할 것으로 보입니다. 그때까지 시장은 오늘처럼 지표 하나하나에 민감하게 반응하며 방향성을 탐색하는 구간을 이어갈 것으로 분석됩니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7ee8feef8d77ab53",
+          "title": "US inflation unexpectedly eased to 2.4 percent, CPI shows"
+        },
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        286382,
+        328473
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "인플레이션 우려가 기술주에는 부담이 됐지만, 다른 한편에서는 중소형주가 강세를 보였다는 점도 짚어주셨습니다. 주요 지수와 중소형주 지수의 흐름이 왜 이렇게 다르게 나타난 건가요?",
+      "sources": [],
+      "time": [
+        328973,
+        342664
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장의 가장 큰 특징은 바로 이 지수별 차별화였습니다. 1월 근원 소비자물가지수가 전월 대비 0.3퍼센트 상승하며 예상치를 웃돌자 국채 금리가 즉각 반응했습니다. 10년물 국채 수익률은 장중 4.1퍼센트대까지 오르며 금리인하 기대감을 후퇴시켰고, 이는 곧바로 금리에 민감한 대형 기술주 중심의 나스닥 지수에 부담으로 작용해 0.22퍼센트 하락 마감했습니다. 반면 다우존스 산업평균지수와 스탠더드 앤드 푸어스 500 지수는 강보합세로 버텼는데, 그 속에서 중소형주 중심의 러셀 2000 지수는 무려 1.18퍼센트나 급등하며 완전히 다른 이야기를 썼습니다. 이는 끈적한 물가 지표가 빅테크의 밸류에이션에는 부담을 주지만, 경기 자체는 견조하다는 신호로 해석되면서 자금이 상대적으로 소외되었던 중소형주로 이동하는 순환매가 나타난 결과로 분석됩니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        }
+      ],
+      "time": [
+        343164,
+        397455
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "금리 부담에 기술주는 쉬어가고, 그 빈자리를 중소형주가 채웠다는 말씀이시군요. 구체적으로 어떤 업종들이 중소형주 강세를 이끌었나요.",
+      "sources": [],
+      "time": [
+        397955,
+        407526
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "네, 러셀 2000 지수의 강세는 특정 테마보다는 전반적인 투자심리 개선에 힘입은 바가 큽니다. 오늘 발표된 소비자물가지수 세부 항목을 보면 주거비 같은 서비스 물가는 여전히 높았지만, 에너지 가격은 전년 대비 7.5퍼센트 하락하는 등 상품 물가는 안정세를 보였습니다. 이는 미국 내수 경제가 급격히 위축될 가능성은 낮다는 신호로 읽혔고, 주로 내수 시장에 의존하는 중소형 기업들에게 긍정적으로 작용했습니다. 특히 금리 인하 기대감이 다소 후퇴했음에도 불구하고, 투자자들은 이를 연준의 긴축 종료 신호로 받아들이며 그동안 대형주 랠리에서 소외됐던 종목들로 눈을 돌렸습니다. 이에 따라 금융, 산업재, 그리고 일부 기술 하드웨어 관련 중소형주들이 동반 상승하는 모습을 보였습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "article",
+          "pk": "id#d8976bae060a4818",
+          "title": "IonQ, Kyndryl, Diebold Nixdorf, Ibotta, and SAIC Stocks Trade Up, What You Need To Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#1f8e047d20cd36eb",
+          "title": "Jacobs Solutions, Planet Labs, NetApp, TaskUs, and Viasat Stocks Trade Up, What You Need To Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#59211f6d8fa05a3b",
+          "title": "Gartner, HP, Globalstar, Amphenol, and Equifax Stocks Trade Up, What You Need To Know"
+        }
+      ],
+      "time": [
+        408026,
+        453037
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "그렇다면 이런 대형주와 중소형주의 차별화 장세가 앞으로도 계속될 수 있을까요.",
+      "sources": [],
+      "time": [
+        453537,
+        459548
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "단정하기는 이릅니다. 오늘 중소형주의 강세는 일종의 '안도 랠리' 성격이 짙기 때문입니다. 시장을 짓누르던 인플레이션 지표 발표라는 불확실성이 해소되자, 그동안 과도하게 하락했던 종목들 위주로 저가 매수세가 유입된 측면이 있습니다. 하지만 근본적으로 연준의 통화정책 경로가 명확해진 것은 아닙니다. 만약 앞으로 발표될 고용이나 소비 지표마저 예상보다 강하게 나온다면, 시장의 금리인하 기대감은 더 크게 위축될 수 있고 이는 결국 자금 조달 비용에 더 민감한 중소형주에게도 부담으로 작용할 수 있습니다. 따라서 오늘의 강세가 추세적인 전환의 시작인지, 아니면 단기적인 순환매에 그칠지는 향후 발표될 경제 지표들을 좀 더 확인해야 판단할 수 있을 것으로 보입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ff67b29a08fb7a00",
+          "title": "5 Things to Know Before the Stock Market Opens"
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        },
+        {
+          "type": "article",
+          "pk": "id#1fb3b1a741635c5c",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures flat as AI fears return ahead of CPI inflation report"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-01-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        460048,
+        504419
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "이렇게 시장 전반의 방향성이 불투명할수록 개별 기업의 실적이 더 중요해지기 마련이죠. 말씀하신 대로 실적에 따라 기업들 주가가 크게 엇갈리는 모습이 나타났는데, 이 부분도 자세히 들여다보겠습니다.",
+      "sources": [],
+      "time": [
+        504919,
+        518290
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 거시 경제 지표의 영향력 아래 개별 기업의 펀더멘털이 얼마나 중요한지를 여실히 보여준 하루였습니다. 오전에 발표된 1월 근원 소비자물가지수가 예상치를 상회하면서 미국 10년물 국채금리는 장중 4.3퍼센트를 넘어서며 급등했고, 이는 달러 인덱스 강세로 이어졌습니다. 이런 긴축 우려는 S&P 500 지수와 다우존스 산업평균지수를 장중 내내 압박하며 보합권에 묶어두는 역할을 했습니다. 특히 금리에 민감한 기술주 중심의 나스닥 지수는 하락 압력을 받은 반면, 경기 방어적 성격이 강한 중소형주 중심의 러셀 2000 지수는 오히려 1퍼센트 넘게 상승하는 뚜렷한 디커플링 현상을 보였습니다. 이처럼 시장 전반의 방향성이 불투명해지자, 투자자들의 시선은 개별 기업이 내놓은 성적표와 미래 전망으로 더욱 집중됐고, 그 결과에 따라 주가가 극단적으로 반응하는 차별화 장세가 펼쳐진 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        }
+      ],
+      "time": [
+        518790,
+        574841
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "그렇군요. 먼저 좋은 실적을 발표해서 시장의 주목을 받은 기업들부터 살펴보죠.",
+      "sources": [],
+      "time": [
+        575341,
+        581752
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "대표적으로 반도체 장비 업체인 어플라이드 머티리얼즈와 전기차 스타트업 리비안을 꼽을 수 있습니다. 어플라이드 머티리얼즈는 시장 예상치를 뛰어넘는 분기 실적과 함께, 인공지능 칩 수요 강세에 힘입어 다음 분기 매출 전망치 역시 월가의 기대를 상회하는 수준으로 제시했습니다. 이 소식에 주가는 오늘 하루에만 13퍼센트 이상 급등했습니다. 리비안 역시 분기 실적이 예상보다 좋았고, 특히 올해 차량 인도량 가이던스를 시장 전망치보다 높게 잡으면서 투자 심리를 자극했습니다. 여기에 기대를 모으는 차세대 R2 모델 출시가 순조롭게 진행되고 있다는 점이 부각되면서 주가는 무려 20퍼센트 넘게 폭등하며 시장의 뜨거운 관심을 받았습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f8dac67c2dc57655",
+          "title": "Applied Materials jumps as AI demand drives chipmaking tool orders"
+        },
+        {
+          "type": "article",
+          "pk": "id#d4afb73e4e35012d",
+          "title": "Rivian Predicts Big Jump in Sales as R2 SUV Set to Launch Soon. Its Stock Surges More Than 20%."
+        },
+        {
+          "type": "chart",
+          "ticker": "AMAT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "RIVN",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#ac8efec940206fbe",
+          "title": "Rivian surges over 20% on delivery guidance, R2 launch in Q2; CEO says 'key inflection' reached"
+        }
+      ],
+      "time": [
+        582252,
+        622943
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "반대로 실망스러운 성적표를 받아든 기업의 상황은 어땠습니까.",
+      "sources": [],
+      "time": [
+        623443,
+        627654
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "소셜미디어 기업 핀터레스트가 가장 아픈 손가락이었습니다. 핀터레스트는 4분기 매출이 시장 예상치를 밑돈 것은 물론, 올해 1분기 성장률 가이던스마저 실망스러운 수준을 제시하며 주가가 12퍼센트 넘게 급락했습니다. 특히 주목할 부분은 실적 발표에서 나온 경영진의 발언입니다. 이들은 잠재적인 관세 정책이 중국계 대형 광고주들의 지출에 미칠 수 있는 불확실성을 언급했습니다. 최근 핀터레스트의 광고 매출 성장은 중국 이커머스 기업들에 상당 부분 의존해왔는데, 향후 무역 정책 변화가 이들의 광고 예산을 위축시킬 수 있다는 새로운 위험 요인이 부상한 것입니다. 이는 단순한 실적 부진을 넘어 지정학적 리스크까지 떠안게 되었다는 분석으로 이어지며 투자 심리를 급격히 냉각시켰습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6cf4ce2dd3817dcb",
+          "title": "Pinterest's Stock Is Getting Hammered. Its Earnings Flashed a Warning Signal About Trump’s Tariffs."
+        },
+        {
+          "type": "article",
+          "pk": "id#7266e924de6a9fe3",
+          "title": "Pinterest plunges as tariffs weigh on large customers' ad spending"
+        },
+        {
+          "type": "chart",
+          "ticker": "PINS",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b63a4d12f4425023",
+          "title": "Pinterest (NYSE:PINS) Reports Sales Below Analyst Estimates In Q4 CY2025 Earnings, Stock Drops 15.9%"
+        }
+      ],
+      "time": [
+        628154,
+        674045
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "결국 불확실한 거시 경제 환경 속에서는 확실한 성장 동력과 안정적인 전망을 보여주는 기업에게만 자금이 쏠리는 현상이 뚜렷해지고 있군요.",
+      "sources": [],
+      "time": [
+        674545,
+        685796
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "정확합니다. 오늘의 시장은 투자자들이 더 이상 막연한 기대감만으로 움직이지 않는다는 것을 명확히 보여주었습니다. 인플레이션이라는 안개가 완전히 걷히지 않은 상황에서는, 기업 스스로가 실적이라는 등불을 밝혀 자신의 가치를 증명해야만 하는, 이른바 '펀더멘털 장세'가 본격화되고 있다고 분석할 수 있겠습니다. 이러한 흐름은 남은 실적 시즌 동안에도 계속해서 시장의 핵심적인 특징으로 자리 잡을 전망입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        686296,
+        711547
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "네, 말씀하신 '펀더멘털 장세'의 대표적인 사례를 살펴보겠습니다. 마이크로소프트의 경우 오늘 주가는 장중 변동성을 보인 끝에 약 0.74% 하락 마감했군요.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        712547,
+        726638
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "네, 맞습니다. 오늘 마이크로소프트의 주가 움직임은 현재 시장이 이 거대 기술 기업을 바라보는 복잡한 시각을 그대로 보여줍니다. 한쪽에서는 인공지능이 이끄는 경이로운 펀더멘털 성장이 있고, 다른 한쪽에서는 미국 연방거래위원회, 즉 FTC가 주도하는 반독점 규제라는 먹구름이 짙어지고 있습니다. 이 두 가지 강력한 힘이 팽팽하게 맞서면서 주가에 불확실성으로 작용하고 있는 상황으로 분석됩니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d6da4f11203b2d06",
+          "title": "US FTC ramps up scrutiny of Microsoft over AI, cloud practices, questions rivals, Bloomberg reports"
+        }
+      ],
+      "time": [
+        727138,
+        756229
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "말씀하신 대로 AI가 이끄는 성장세부터 자세히 짚어주시죠. 구체적으로 어느 정도의 성과를 보여주고 있습니까.",
+      "sources": [],
+      "time": [
+        756729,
+        764420
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "성장세는 의심의 여지가 없이 강력합니다. 회사가 최근 제출한 10-Q 보고서에 따르면, 애저를 포함한 클라우드 서비스 부문 매출은 AI 서비스 수요에 힘입어 전년 대비 무려 39%나 급증했습니다. 또한, 코파일럿 AI 기능을 기존의 막대한 오피스 365 사용자 기반에 통합하는 전략이 본격화되면서 생산성 부문 역시 견고한 성장을 이어가고 있습니다. 이는 마이크로소프트가 단순한 소프트웨어 기업을 넘어 AI 시대의 필수적인 인프라와 플랫폼으로 자리매김하고 있음을 명확히 보여주는 지표이며, 시장이 열광하는 핵심적인 이유이기도 합니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "MSFT",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0001193125-26-027207"
+        }
+      ],
+      "time": [
+        764920,
+        799291
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "그렇군요. 하지만 이런 강력한 성장 동력의 발목을 잡을 수 있는 규제 리스크가 부상하고 있다는 말씀이시군요.",
+      "sources": [],
+      "time": [
+        799791,
+        807402
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "바로 그 점이 현재 마이크로소프트 투자의 핵심 쟁점입니다. 최근 보도에 따르면 FTC는 마이크로소프트의 AI 및 클라우드 사업 관행, 특히 AI 서비스를 기존 오피스 제품군에 통합해 판매하는 이른바 '번들링' 전략을 집중적으로 조사하고 있습니다. 이는 단순한 벌금 문제를 넘어, 최악의 경우 회사의 핵심 성장 전략 자체에 제동이 걸릴 수 있는 중대한 사안입니다. 여기에 더해, 10-Q 보고서에 명시된 미 국세청과의 289억 달러 규모 세금 분쟁 역시 시장이 간과해서는 안 될 잠재적 재무 리스크로 남아있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d6da4f11203b2d06",
+          "title": "US FTC ramps up scrutiny of Microsoft over AI, cloud practices, questions rivals, Bloomberg reports"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "MSFT",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0001193125-26-027207"
+        }
+      ],
+      "time": [
+        807902,
+        843953
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "결국 폭발적인 성장 잠재력과 그 성장의 근간을 흔들 수 있는 규제 리스크가 정면으로 충돌하는 형국이군요. 투자자 입장에서는 판단이 쉽지 않겠습니다.",
+      "sources": [],
+      "time": [
+        844453,
+        855144
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "정확합니다. 기업의 본질적인 가치 창출 능력과 재무 건전성은 의심할 여지 없이 뛰어나지만, 규제라는 안개가 걷히기 전까지는 주가의 상방이 제한될 수 있는 상황입니다. AI가 제공하는 막대한 기회와 규제가 야기하는 심각한 위협이 공존하고 있기 때문입니다. 현재 주가는 이러한 장밋빛 미래와 현실적인 리스크를 모두 반영하며 적정 수준에서 균형을 찾고 있는 것으로 판단됩니다. 따라서 불확실성이 해소되기 전까지는 공격적인 접근보다는 상황의 전개를 지켜보는 신중한 자세가 필요한 시점으로 관찰됩니다.",
+      "sources": [],
+      "time": [
+        855644,
+        888734
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "오늘 시장은 예상보다 뜨거운 소비자물가지수 충격으로 3대 지수 모두 큰 폭으로 하락했습니다. 앞으로의 시장 방향성을 가늠해볼 수 있는 주요 이벤트로는 어떤 것들이 있을까요?",
+      "sources": [],
+      "time": [
+        889734,
+        901465
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "네, 오늘 CPI 쇼크로 인해 연준의 조기 금리 인하 기대감은 사실상 소멸했다고 볼 수 있습니다. 이런 상황에서 투자자들은 향후 발표될 경제 지표들을 통해 연준의 다음 행보를 예측해야 합니다. 우선 다음 주 18일에 공개될 FOMC 의사록을 주목해야 합니다. 이번 CPI 발표 이전에 연준 위원들이 어떤 논의를 했는지 파악하는 것이 중요하며, 이를 통해 금리 인하 조건에 대한 더 구체적인 힌트를 얻을 수 있을 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ],
+      "time": [
+        901965,
+        930296
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "의사록도 중요하지만, 결국 시장의 관심은 다시 물가 관련 지표로 향할 것 같습니다. 다음으로 주목해야 할 지표는 무엇인가요?",
+      "sources": [],
+      "time": [
+        930796,
+        939567
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "맞습니다. 시장의 모든 시선은 다음 주 20일 발표될 개인소비지출, PCE 가격지수로 향할 것입니다. PCE는 연준이 인플레이션을 판단할 때 CPI보다 더 중요하게 여기는 지표이기 때문입니다. 만약 PCE마저 시장 예상치를 상회한다면, 인플레이션 고착화에 대한 우려가 커지며 시장은 추가적인 조정을 받을 수 있습니다. 반대로 PCE가 둔화되는 모습을 보인다면, 이번 CPI 충격을 일부 만회하며 안도 랠리를 펼칠 가능성도 남아있습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        940067,
+        972718
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "같은 날 발표되는 S&P 글로벌 PMI 예비치도 확인해봐야겠군요. 마지막으로 투자자들에게 당부하고 싶은 말씀이 있다면요?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398036",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        973218,
+        981909
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "오늘의 급락은 인플레이션과의 싸움이 아직 끝나지 않았음을 시장에 다시 한번 각인시켰습니다. 금리 인하에 대한 과도한 낙관론을 경계하고, 앞으로 발표될 데이터 하나하나의 의미를 신중하게 분석할 필요가 있습니다. 특히 연준 위원들의 발언 수위가 어떻게 변하는지, 그리고 국채 금리의 움직임에도 주목하며 시장의 컨센서스 변화를 지속적으로 확인할 필요가 있겠습니다. 섣부른 저점 매수보다는 지표를 확인하고 대응하는 신중한 전략이 유효한 시점입니다.",
+      "sources": [],
+      "time": [
+        982409,
+        1012300
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "네, 신중한 접근이 필요하다는 말씀이시군요. 오늘 말씀 감사합니다.",
+      "sources": [],
+      "time": [
+        1012800,
+        1018131
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "해설자",
+      "text": "감사합니다.",
+      "sources": [],
+      "time": [
+        1018631,
+        1019762
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "진행자",
+      "text": "지금까지 2월 13일 장마감 브리핑이었습니다. 감사합니다.",
+      "sources": [],
+      "time": [
+        1020262,
+        1025113
+      ]
+    }
+  ]
+}

@@ -53,7 +53,7 @@ export interface HeadlineSlide extends BaseSlide {
   subtitle: string;
   bullets?: string[];
   description?: string;
-  theme?: 'red' | 'blue' | 'gold' | 'green' | 'purple';
+  theme?: 'red' | 'blue' | 'gold' | 'amber' | 'green' | 'purple';
 }
 
 export interface ComparisonSlide extends BaseSlide {
@@ -79,7 +79,7 @@ export interface StatsSlide extends BaseSlide {
     trend?: 'up' | 'down' | 'neutral';
   }>;
   note?: string;
-  theme?: 'red' | 'blue' | 'gold' | 'green' | 'purple';
+  theme?: 'red' | 'blue' | 'gold' | 'amber' | 'green' | 'purple';
 }
 
 export interface TickerIntroSlide extends BaseSlide {

@@ -96,3 +96,42 @@ turn별 오디오 파일(`tts/*.wav`)을 시간축으로 배치하기 위한 메
 1) Orchestrator 실행 → `podcast/{date}/script.json` 생성
 2) TTS 실행 → `podcast/{date}/tts/*.wav`, `timeline.json`, `{date}.wav`, `{date}.json` 생성
 3) `podcast/podcast.db`에서 해당 날짜 행이 `tts_done=true`로 갱신
+
+<!-- AUTO-GENERATED:START -->
+## Recent Updates (auto)
+
+- Generated (UTC): 2026-02-14 08:53:29Z
+- Compared against: `HEAD`
+- Folder: `podcast`
+
+### Logic Summary
+- Stores date-partitioned artifacts using `YYYYMMDD` directory layout.
+- Maintains local SQLite state (`podcast.db`) for generated episode metadata.
+- Current changes are concentrated in: ARCHITECTURE.md, podcast.db-shm, podcast.db-wal.
+
+### Structure Diagram (auto)
+```mermaid
+flowchart TD
+  ROOT["podcast"]
+  ROOT --> N1["20251222/"]
+  ROOT --> N2["20260121/"]
+  ROOT --> N3["20260122/"]
+  ROOT --> N4["20260123/"]
+  ROOT --> N5["20260126/"]
+  ROOT --> N6["20260127/"]
+  ROOT --> N7["20260128/"]
+  ROOT --> N8["20260129/"]
+  ROOT --> MORE["..."]
+```
+
+### Change Hotspots
+- ARCHITECTURE.md: 1 file(s)
+- podcast.db-shm: 1 file(s)
+- podcast.db-wal: 1 file(s)
+
+### Recent File Samples
+- `ARCHITECTURE.md`
+- `podcast.db-shm`
+- `podcast.db-wal`
+<!-- AUTO-GENERATED:END -->
+

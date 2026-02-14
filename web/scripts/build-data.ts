@@ -36,6 +36,18 @@ async function main() {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.mkdirSync(AUDIO_DIR, { recursive: true });
 
+  // Clean stale audio artifacts (e.g. legacy wav/shorts files)
+  // We only want main episode files named YYYYMMDD.mp3 in web/public/audio.
+  for (const file of fs.readdirSync(AUDIO_DIR)) {
+    const audioPath = path.join(AUDIO_DIR, file);
+    if (!fs.statSync(audioPath).isFile()) continue;
+    const isMainMp3 = /^\d{8}\.mp3$/.test(file);
+    if (!isMainMp3) {
+      fs.unlinkSync(audioPath);
+      console.log(`Removed stale audio file: ${file}`);
+    }
+  }
+
   // Read from podcast.db
   const dbPath = path.join(PODCAST_DIR, 'podcast.db');
   if (!fs.existsSync(dbPath)) {
@@ -88,15 +100,16 @@ async function main() {
       continue;
     }
 
-    // Copy audio file
-    const audioSrc = path.join(sourceDir, `${date}.wav`);
-    const audioDest = path.join(AUDIO_DIR, `${date}.wav`);
+    // Copy main episode audio file (mp3 only)
+    const audioSrc = path.join(sourceDir, `${date}.mp3`);
+    const audioDest = path.join(AUDIO_DIR, `${date}.mp3`);
 
     if (fs.existsSync(audioSrc)) {
       fs.copyFileSync(audioSrc, audioDest);
-      console.log(`Copied: ${date}.wav`);
+      console.log(`Copied: ${date}.mp3`);
     } else {
       console.warn(`Audio not found: ${audioSrc}`);
+      continue;
     }
 
     // Read nutshell from the source JSON file to ensure we get the localized version (e.g. Korean)

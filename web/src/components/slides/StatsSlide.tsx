@@ -22,6 +22,10 @@ const themeStyles = {
     bg: 'from-amber-50 to-yellow-50',
     border: 'border-amber-100',
   },
+  amber: {
+    bg: 'from-amber-50 to-orange-50',
+    border: 'border-amber-100',
+  },
   green: {
     bg: 'from-emerald-50 to-green-50',
     border: 'border-emerald-100',
@@ -33,7 +37,8 @@ const themeStyles = {
 };
 
 export function StatsSlide({ slide }: Props) {
-  const theme = themeStyles[slide.theme || 'blue'];
+  const defaultTheme = 'blue';
+  const theme = themeStyles[slide.theme || defaultTheme] ?? themeStyles[defaultTheme];
 
   const getTrendIcon = (trend?: 'up' | 'down' | 'neutral') => {
     switch (trend) {

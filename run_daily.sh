@@ -85,16 +85,17 @@ fi
 if [ $START_FROM -le 2 ]; then
     echo -e "\n[2/6] Generating Korean TTS..."
     uv run python -m tts.src.tts $DATE --lang ko
+
+    # Copy main MP3 to web public folder for local development
+    # Keep this before shorts so main episode audio is available even if shorts fails.
+    if [ -f "podcast/$DATE/ko/$DATE.mp3" ]; then
+        echo "  📂 Copying main MP3 to web/public/audio..."
+        cp "podcast/$DATE/ko/$DATE.mp3" "web/public/audio/$DATE.mp3"
+    fi
     
     echo -e "\n[2.5/6] Generating Shorts (Korean)..."
     uv run shorts/generate_shorts.py podcast/$DATE/ko --duration 90
     uv run shorts/generate_shorts_audio.py $DATE --lang ko --voice Charon --temperature 0.6
-    
-    # Copy main MP3 to web public folder for local development
-    if [ -f "podcast/$DATE/ko/$DATE.mp3" ]; then
-        echo "  📂 Copying MP3 to web public folder..."
-        cp "podcast/$DATE/ko/$DATE.mp3" "web/public/audio/$DATE.mp3"
-    fi
 else
     echo -e "\n[2/6] Korean TTS & Shorts skipped (Start from $START_FROM)"
 fi

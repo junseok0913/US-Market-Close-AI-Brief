@@ -327,3 +327,45 @@ const showLandingPage = !isPortrait && !isMobile;
 5. [ ] 스크립트 뷰어 (하이라이트 + 자동 스크롤 + 클릭 이동)
 6. [ ] 오디오 플레이어 기능
 7. [ ] 반응형 대응 (모바일 = 스크립트만)
+
+<!-- AUTO-GENERATED:START -->
+## Recent Updates (auto)
+
+- Generated (UTC): 2026-02-14 21:51:16Z
+- Compared against: `HEAD`
+- Folder: `web`
+- Significant changes: 6 file(s)
+
+### Structure Summary
+- `src/`
+- `scripts/`
+- `public/`
+
+### Structure Diagram (auto)
+```mermaid
+flowchart TD
+  ROOT["web"]
+  ROOT --> N1["eslint.config.mjs"]
+  ROOT --> N2["IMPLEMENTATION.md"]
+  ROOT --> N3["next-env.d.ts"]
+  ROOT --> N4["next.config.ts"]
+  ROOT --> N5["package-lock.json"]
+  ROOT --> N6["package.json"]
+  ROOT --> N7["postcss.config.mjs"]
+  ROOT --> N8["public/"]
+  ROOT --> MORE["..."]
+```
+
+### Change Hotspots
+- src: 4 file(s)
+- scripts: 2 file(s)
+
+### Important Diff Summary
+- `scripts/build-data.ts`: +17/-4 (runtime logic)
+- `scripts/slide_generator.py`: +6/-6 (runtime logic)
+- `src/components/TradingViewWidget.tsx`: +16/-2 (runtime logic)
+- `src/components/slides/HeadlineSlide.tsx`: +10/-1 (runtime logic)
+- `src/components/slides/StatsSlide.tsx`: +6/-1 (runtime logic)
+- `src/types/slide.ts`: +2/-2 (runtime logic)
+<!-- AUTO-GENERATED:END -->
+

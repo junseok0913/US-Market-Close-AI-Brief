@@ -188,8 +188,8 @@ class SlideGenerator:
    - `^TNX` → `TVC:US10Y` (미 10년물 국채 금리)
    - `^GSPC` → `SP:SPX` (S&P 500)
    - `^DJI` → `DJ:DJI` (다우존스)
-   - `^IXIC` → `NASDAQ:IXIC` (나스닥)
-   - `^RUT` → `TVC:RUT` (러셀2000)
+   - `^IXIC` → `NASDAQ:QQQ` (나스닥 대체: QQQ ETF)
+   - `^RUT` → `AMEX:IWM` (러셀2000 대체: IWM ETF)
    - `DX-Y.NYB` → `TVC:DXY` (달러 인덱스)
    - `GLD` → `AMEX:GLD` (금 ETF)
    - 기타 일반 주식: 그대로 사용 (예: `AAPL`, `GOOGL`)
@@ -230,16 +230,16 @@ class SlideGenerator:
             "'^TNX'": "'TVC:US10Y'",
             "'^GSPC'": "'SP:SPX'",
             "'^DJI'": "'DJ:DJI'",
-            "'^IXIC'": "'NASDAQ:IXIC'",
-            "'^RUT'": "'TVC:RUT'",
+            "'^IXIC'": "'NASDAQ:QQQ'",
+            "'^RUT'": "'AMEX:IWM'",
             "'DX-Y.NYB'": "'TVC:DXY'",
             "'GLD'": "'AMEX:GLD'",
             # 더블 쿼트 버전도 처리
             '"^TNX"': '"TVC:US10Y"',
             '"^GSPC"': '"SP:SPX"',
             '"^DJI"': '"DJ:DJI"',
-            '"^IXIC"': '"NASDAQ:IXIC"',
-            '"^RUT"': '"TVC:RUT"',
+            '"^IXIC"': '"NASDAQ:QQQ"',
+            '"^RUT"': '"AMEX:IWM"',
             '"DX-Y.NYB"': '"TVC:DXY"',
             '"GLD"': '"AMEX:GLD"',
         }

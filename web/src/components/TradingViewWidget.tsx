@@ -7,8 +7,22 @@ interface TradingViewWidgetProps {
   aspectRatio?: string;
 }
 
+const SYMBOL_FALLBACK_MAP: Record<string, string> = {
+  // These index symbols are frequently blocked in embedded TradingView widgets.
+  '^IXIC': 'NASDAQ:QQQ',
+  'NASDAQ:IXIC': 'NASDAQ:QQQ',
+  '^RUT': 'AMEX:IWM',
+  'TVC:RUT': 'AMEX:IWM',
+};
+
+function normalizeTradingViewSymbol(rawSymbol: string): string {
+  const symbol = (rawSymbol || '').trim();
+  return SYMBOL_FALLBACK_MAP[symbol] || symbol;
+}
+
 function TradingViewWidgetComponent({ symbol, aspectRatio = '16/9' }: TradingViewWidgetProps) {
   const container = useRef<HTMLDivElement>(null);
+  const normalizedSymbol = normalizeTradingViewSymbol(symbol);
 
   useEffect(() => {
     if (!container.current) return;
@@ -23,7 +37,7 @@ function TradingViewWidgetComponent({ symbol, aspectRatio = '16/9' }: TradingVie
     script.async = true;
     script.innerHTML = JSON.stringify({
       autosize: true,
-      symbol: symbol,
+      symbol: normalizedSymbol,
       interval: 'D',
       timezone: 'America/New_York',
       theme: 'light',
@@ -39,7 +53,7 @@ function TradingViewWidgetComponent({ symbol, aspectRatio = '16/9' }: TradingVie
     });
 
     container.current.appendChild(script);
-  }, [symbol]);
+  }, [normalizedSymbol]);
 
   return (
     <div
