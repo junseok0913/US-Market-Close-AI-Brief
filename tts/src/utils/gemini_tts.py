@@ -9,6 +9,7 @@ import base64
 import json
 import logging
 import os
+import socket
 import urllib.error
 import urllib.request
 from hashlib import sha256
@@ -20,6 +21,11 @@ logger = logging.getLogger(__name__)
 
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 DEFAULT_MODEL_PATH = "models/gemini-2.5-pro-preview-tts"
+TRANSIENT_HTTP_CODES = {429, 500, 502, 503, 504}
+KNOWN_FALLBACK_MODELS = (
+    "models/gemini-2.5-pro-preview-tts",
+    "models/gemini-2.5-flash-preview-tts",
+)
 
 
 def get_model_path() -> str:
@@ -34,6 +40,29 @@ def get_model_path() -> str:
     if not raw.startswith("models/"):
         raw = f"models/{raw}"
     return raw
+
+
+def get_fallback_model_paths(primary_model: str) -> list[str]:
+    """Fallback 모델 후보를 반환한다."""
+    fallback_models: list[str] = []
+    env_fallback = (os.getenv("GEMINI_TTS_FALLBACK_MODEL") or "").strip()
+    if env_fallback:
+        if not env_fallback.startswith("models/"):
+            env_fallback = f"models/{env_fallback}"
+        if env_fallback != primary_model:
+            fallback_models.append(env_fallback)
+
+    for model in KNOWN_FALLBACK_MODELS:
+        if model != primary_model and model not in fallback_models:
+            fallback_models.append(model)
+    return fallback_models
+
+
+def _read_http_error_body(e: urllib.error.HTTPError) -> str:
+    try:
+        return e.read().decode("utf-8", errors="replace")
+    except Exception:
+        return ""
 
 
 def _is_wav(data: bytes) -> bool:
@@ -68,7 +97,6 @@ def gemini_generate_tts(
     timeout_s: float = 120.0,
 ) -> bytes:
     model_path = get_model_path()
-    url = f"{GEMINI_BASE_URL}/{model_path}:generateContent"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -80,55 +108,59 @@ def gemini_generate_tts(
         },
     }
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=body,
-        headers={
-            "Content-Type": "application/json",
-            "x-goog-api-key": api_key,
-        },
-        method="POST",
-    )
+    request_headers = {
+        "Content-Type": "application/json",
+        "x-goog-api-key": api_key,
+    }
 
-    try:
-        with urllib.request.urlopen(req, timeout=timeout_s) as f:
-            raw = f.read()
-    except urllib.error.HTTPError as e:
-        err_body = ""
+    model_candidates = [model_path, *get_fallback_model_paths(model_path)]
+    raw: bytes | None = None
+    last_error: Exception | None = None
+
+    for i, candidate_model in enumerate(model_candidates):
+        url = f"{GEMINI_BASE_URL}/{candidate_model}:generateContent"
+        req = urllib.request.Request(
+            url,
+            data=body,
+            headers=request_headers,
+            method="POST",
+        )
+
         try:
-            err_body = e.read().decode("utf-8", errors="replace")
-        except Exception:
-            pass
-        logger.error("Gemini TTS HTTPError: %s %s", e.code, e.reason)
-        if err_body:
-            logger.error("Gemini error body: %s", err_body[:2000])
-        if e.code in [429, 500, 502, 503]:
-            # Fallback to gemini-2.5-pro-tts
-            logger.warning("Quota exceeded (429). Falling back to models/gemini-2.5-pro-tts...")
-            fallback_model = "models/gemini-2.5-pro-preview-tts"
-            fallback_url = f"{GEMINI_BASE_URL}/{fallback_model}:generateContent"
-            
-            # Retry with fallback model
-            req_fallback = urllib.request.Request(
-                fallback_url,
-                data=body,
-                headers={
-                    "Content-Type": "application/json",
-                    "x-goog-api-key": api_key,
-                },
-                method="POST",
-            )
-            try:
-                with urllib.request.urlopen(req_fallback, timeout=timeout_s) as f_fallback:
-                    raw = f_fallback.read()
-            except urllib.error.HTTPError as e_fallback:
-                logger.error(f"Fallback model also failed: {e_fallback}")
-                raise e_fallback
-        else:
+            with urllib.request.urlopen(req, timeout=timeout_s) as f:
+                raw = f.read()
+            if i > 0:
+                logger.info("Gemini TTS succeeded with fallback model: %s", candidate_model)
+            break
+        except urllib.error.HTTPError as e:
+            last_error = e
+            err_body = _read_http_error_body(e)
+            logger.error("Gemini TTS HTTPError on %s: %s %s", candidate_model, e.code, e.reason)
+            if err_body:
+                logger.error("Gemini error body: %s", err_body[:2000])
+
+            has_fallback = i < len(model_candidates) - 1
+            if has_fallback and e.code in TRANSIENT_HTTP_CODES:
+                next_model = model_candidates[i + 1]
+                logger.warning(
+                    "Transient Gemini error (%s). Falling back to %s...",
+                    e.code,
+                    next_model,
+                )
+                continue
             raise
-    except urllib.error.URLError as e:
-        logger.error("Gemini TTS URLError: %s", e)
-        raise
+        except (urllib.error.URLError, TimeoutError, socket.timeout) as e:
+            last_error = e
+            logger.warning("Gemini TTS request failed on %s: %s", candidate_model, e)
+            has_fallback = i < len(model_candidates) - 1
+            if has_fallback:
+                next_model = model_candidates[i + 1]
+                logger.warning("Retrying with fallback model: %s...", next_model)
+                continue
+            raise
+
+    if raw is None:
+        raise RuntimeError("Gemini TTS failed and produced no response body") from last_error
 
     resp = json.loads(raw.decode("utf-8"))
     audio_b64 = extract_inline_audio_b64(resp)

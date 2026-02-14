@@ -71,7 +71,7 @@ export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
     }
   };
 
-  const audioSrc = `/audio/${episode.date}.wav`;
+  const audioSrc = `/audio/${episode.date}.mp3`;
 
   return (
     <div className="h-screen bg-bg-primary flex flex-col overflow-hidden">

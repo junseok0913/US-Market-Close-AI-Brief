@@ -1,0 +1,858 @@
+{
+  "date": "20260213",
+  "nutshell": "Tech stocks fall on hotter-than-expected monthly CPI, while small caps show strength.",
+  "user_tickers": [
+    "MSFT"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 27
+    },
+    {
+      "name": "ticker",
+      "start_id": 28,
+      "end_id": 35
+    },
+    {
+      "name": "closing",
+      "start_id": 36,
+      "end_id": 44
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell report for February 13th. The market ended with a mixed session today, with the major indices showing divergent performance.",
+      "sources": [],
+      "time": [
+        0,
+        10011
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up by tech stocks falling on a hotter-than-expected monthly CPI, while small caps rallied. The Dow Jones Industrial Average gained 0.1%, and the S&P 500 also edged up 0.05% to close slightly higher. In contrast, the tech-heavy Nasdaq Composite fell 0.22%. However, the Russell 2000, which tracks small-cap stocks, surged 1.18%, showing a clear divergence in the market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        10511,
+        39442
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the Nasdaq was down while small caps were up significantly. What was the main reason for this divergence?",
+      "sources": [],
+      "time": [
+        39942,
+        46913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "It was all due to the January Consumer Price Index, or CPI, data released this morning. While the year-over-year inflation rate continued to slow to 2.4%, the month-over-month core CPI, which excludes volatile food and energy prices, came in at 0.3%, higher than the 0.2% market expectation. This hotter-than-expected monthly inflation figure fueled concerns that the Fed might delay its rate cuts. This outlook weighed on rate-sensitive large-cap tech stocks, becoming the key factor that pulled the Nasdaq down.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        }
+      ],
+      "time": [
+        47413,
+        85624
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it seems sticky inflation is holding the market back. Could you walk us through the key market themes we saw today?",
+      "sources": [],
+      "time": [
+        86124,
+        93255
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, three main themes drove the market today. First, rate cut expectations retreated due to the higher-than-expected monthly inflation. Second, the strength of small caps stood out amidst the Nasdaq's weakness. And finally, individual stock prices diverged sharply based on their earnings reports. We'll dive into each of these in more detail shortly.",
+      "sources": [],
+      "time": [
+        93755,
+        114766
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first theme. You mentioned that rate cut hopes faded because of the inflation data. Let's take a closer look at how the market specifically interpreted today's CPI report.",
+      "sources": [],
+      "time": [
+        115766,
+        127697
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the market faced two sides of inflation today. On the surface, the headline annual Consumer Price Index looked positive, continuing its downward trend at 2.4 percent. But market participants focused more on the details beneath the surface. The deciding factor was that core CPI rose 0.3 percent month-over-month, beating expectations. This news sparked concerns that the Fed's path to rate cuts could be bumpier, and the Treasury market reacted immediately. The 10-year Treasury yield rebounded early in the session, putting pressure on the rate-sensitive, tech-heavy Nasdaq, which ultimately closed down 0.22 percent. Meanwhile, the S&P 500 remained nearly flat, reflecting the complex sentiment within the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        128197,
+        170768
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So the annual number was fine, but the monthly core figure was the problem. Why did the market react so sensitively to this monthly data?",
+      "sources": [],
+      "time": [
+        171268,
+        180599
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "It's because the composition of the inflation wasn't good. It confirmed that the pressure from so-called 'sticky' inflation, which the Fed is most concerned about, remains persistent. Looking at the details, shelter costs, which make up about 35 percent of the total CPI, were still high, rising 3.0 percent annually and accounting for most of the monthly increase in January. On top of that, personal care services like haircuts surged 5.4 percent year-over-year, showing just how entrenched services inflation has become. Of course, there were some disinflationary effects, like gasoline prices falling 7.5 percent annually, but the Fed pays much more attention to the underlying trend in services inflation than these volatile items.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "article",
+          "pk": "id#ab07c1e636c23a15",
+          "title": "Today's CPI report is the best inflation news in months. Here's why."
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        }
+      ],
+      "time": [
+        181099,
+        207390
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So it sounds like for the Fed to cut rates, we need to see shelter and services inflation come down decisively. How has this report changed the outlook for the timing of rate cuts?",
+      "sources": [],
+      "time": [
+        207890,
+        219101
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Market expectations have definitely taken a step back. Right after the report was released, the interest rate futures market began to almost completely price out the possibility of a rate cut in March. Institutions like Oxford Economics are saying this data gives the Fed another reason to be patient, and they're now forecasting the first cut in June or even September. In fact, the majority of futures traders are now betting on the first rate cut beginning in June, pricing in about two cuts by the end of the year. It's precisely this pullback in rate cut expectations that's weighing on the valuations of tech stocks, which are sensitive to the present value of future earnings, and that's what led the Nasdaq lower.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ab07c1e636c23a15",
+          "title": "Today's CPI report is the best inflation news in months. Here's why."
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        219601,
+        257612
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "I see. So the market's calculus is getting more complicated as rate cut hopes recede. Could you summarize for us again what this inflation report really means for the market?",
+      "sources": [],
+      "time": [
+        258112,
+        269962
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Certainly. Today's CPI report clearly showed that the fight against inflation is facing significant challenges in the final stretch, the so-called 'last mile.' While the overall trend of disinflation remains intact, the stickiness of services inflation, centered on housing costs, is acting as a key barrier to an early policy pivot by the Fed. Therefore, the market will now turn all its attention to the Personal Consumption Expenditures, or PCE, price index, set to be released on February 20th, to gauge the Fed's next move. Until then, the market is likely to continue navigating this period of direction-seeking, reacting sensitively to every piece of data, much like it did today.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7ee8feef8d77ab53",
+          "title": "US inflation unexpectedly eased to 2.4 percent, CPI shows"
+        },
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        270462,
+        313513
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "While inflation concerns were a drag on tech, you also pointed out that small caps showed strength. Why did we see such different movements between the major indices and the small-cap index?",
+      "sources": [],
+      "time": [
+        314013,
+        325904
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, this divergence between indices was the most prominent feature of today's market. When the January core CPI came in hotter than expected at 0.3 percent month-over-month, Treasury yields reacted instantly. The 10-year Treasury yield climbed to the 4.1 percent range during the session, pushing back rate cut expectations. This directly pressured the rate-sensitive, large-cap tech stocks in the Nasdaq, which closed down 0.22 percent. In contrast, the Dow Jones Industrial Average and the S&P 500 held steady, but the small-cap Russell 2000 index told a completely different story, surging an impressive 1.18 percent. This is being interpreted as a sign that while sticky inflation weighs on Big Tech's valuations, the economy itself remains robust, leading to a rotation of funds into relatively overlooked small-cap stocks.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        }
+      ],
+      "time": [
+        326404,
+        376935
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So tech stocks took a breather due to interest rate pressures, and small caps filled the void. What specific sectors led the small-cap rally?",
+      "sources": [],
+      "time": [
+        377435,
+        386406
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Well, the strength in the Russell 2000 was driven more by a broad improvement in investor sentiment rather than a specific theme. If you look at the details of the CPI report, while services inflation like shelter costs remained high, goods inflation showed stability, with energy prices, for example, falling 7.5 percent year-over-year. This was read as a sign that the domestic U.S. economy is unlikely to contract sharply, which was a positive for small-cap companies that primarily rely on the domestic market. Notably, even though rate cut expectations have pulled back somewhat, investors took this as a signal that the Fed's tightening cycle is over and turned their attention to stocks that had been left out of the large-cap rally. As a result, we saw a broad-based advance in small-cap financials, industrials, and some tech hardware names.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d376fe1d4e8516f8",
+          "title": "January CPI shows inflation slowing — but not housing costs"
+        },
+        {
+          "type": "article",
+          "pk": "id#d8976bae060a4818",
+          "title": "IonQ, Kyndryl, Diebold Nixdorf, Ibotta, and SAIC Stocks Trade Up, What You Need To Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#1f8e047d20cd36eb",
+          "title": "Jacobs Solutions, Planet Labs, NetApp, TaskUs, and Viasat Stocks Trade Up, What You Need To Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#59211f6d8fa05a3b",
+          "title": "Gartner, HP, Globalstar, Amphenol, and Equifax Stocks Trade Up, What You Need To Know"
+        }
+      ],
+      "time": [
+        386906,
+        435397
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, could this divergence between large-cap and small-cap stocks continue going forward?",
+      "sources": [],
+      "time": [
+        435897,
+        441828
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "It's too early to say for sure. Today's strength in small caps has the character of a 'relief rally.' With the uncertainty of the inflation report now behind us, there was an element of bargain hunting in stocks that had been beaten down excessively. However, the fundamental path of the Fed's monetary policy hasn't become any clearer. If upcoming employment or consumption data also comes in stronger than expected, the market's rate cut expectations could shrink further, which would eventually become a burden for small caps as well, since they are more sensitive to financing costs. Therefore, whether today's rally is the start of a trend reversal or just a short-term rotation will depend on further confirmation from upcoming economic data.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ff67b29a08fb7a00",
+          "title": "5 Things to Know Before the Stock Market Opens"
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        },
+        {
+          "type": "article",
+          "pk": "id#1fb3b1a741635c5c",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures flat as AI fears return ahead of CPI inflation report"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-01-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        442328,
+        483299
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "When the market's overall direction is uncertain like this, individual company earnings become even more important. As you mentioned, we saw stock prices diverge sharply based on earnings. Let's take a closer look at that.",
+      "sources": [],
+      "time": [
+        483799,
+        497410
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, today's market was a clear demonstration of how crucial a company's fundamentals are under the influence of macroeconomic data. After the January core CPI came in above expectations this morning, the 10-year Treasury yield surged past 4.3% during the session, which also led to a stronger dollar index. These tightening fears pressured the S&P 500 and the Dow, keeping them pinned near the flatline throughout the day. While the rate-sensitive Nasdaq faced downward pressure, the more defensive small-cap Russell 2000 index showed a clear decoupling, rising over 1 percent. As the market's overall direction became murky, investors' focus shifted sharply to individual companies' report cards and future outlooks. This resulted in a bifurcated market where stocks reacted in extreme ways based on those results.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#f7e8d05d06e97d49",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq rise as CPI inflation cools, but weekly losses loom"
+        }
+      ],
+      "time": [
+        497910,
+        551561
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Right. Let's start with the companies that caught the market's attention with strong earnings.",
+      "sources": [],
+      "time": [
+        552061,
+        557512
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Two standouts were semiconductor equipment maker Applied Materials and EV startup Rivian. Applied Materials not only beat earnings expectations for the quarter but also provided a next-quarter revenue forecast that topped Wall Street's estimates, citing strong demand for AI chips. On that news, the stock surged more than 13 percent today alone. Rivian also reported better-than-expected quarterly results and, importantly, boosted investor sentiment by setting its vehicle delivery guidance for the year higher than market forecasts. The fact that the launch of its highly anticipated next-generation R2 model is proceeding smoothly also added to the excitement, causing the stock to skyrocket over 20 percent, drawing intense market interest.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f8dac67c2dc57655",
+          "title": "Applied Materials jumps as AI demand drives chipmaking tool orders"
+        },
+        {
+          "type": "article",
+          "pk": "id#d4afb73e4e35012d",
+          "title": "Rivian Predicts Big Jump in Sales as R2 SUV Set to Launch Soon. Its Stock Surges More Than 20%."
+        },
+        {
+          "type": "chart",
+          "ticker": "AMAT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "RIVN",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#ac8efec940206fbe",
+          "title": "Rivian surges over 20% on delivery guidance, R2 launch in Q2; CEO says 'key inflection' reached"
+        }
+      ],
+      "time": [
+        558012,
+        600343
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "And on the flip side, what was the situation for companies that delivered disappointing results?",
+      "sources": [],
+      "time": [
+        600843,
+        606654
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Social media company Pinterest was the biggest loser. Pinterest not only missed revenue expectations for the fourth quarter but also provided a disappointing growth forecast for the first quarter of this year, causing its stock to plunge more than 12 percent. What's particularly noteworthy here are the comments from management during the earnings call. They mentioned uncertainty about how potential tariff policies could affect spending from their large Chinese advertisers. Pinterest's recent ad revenue growth has been heavily reliant on Chinese e-commerce companies, so the emergence of a new risk factor—that future trade policy changes could shrink their ad budgets—sent a chill through investor sentiment. This was seen as more than just a simple earnings miss; it was an indication that the company is now shouldering geopolitical risk as well.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6cf4ce2dd3817dcb",
+          "title": "Pinterest's Stock Is Getting Hammered. Its Earnings Flashed a Warning Signal About Trump’s Tariffs."
+        },
+        {
+          "type": "article",
+          "pk": "id#7266e924de6a9fe3",
+          "title": "Pinterest plunges as tariffs weigh on large customers' ad spending"
+        },
+        {
+          "type": "chart",
+          "ticker": "PINS",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#b63a4d12f4425023",
+          "title": "Pinterest (NYSE:PINS) Reports Sales Below Analyst Estimates In Q4 CY2025 Earnings, Stock Drops 15.9%"
+        }
+      ],
+      "time": [
+        607154,
+        654725
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So, in this uncertain macroeconomic environment, it's becoming clear that capital is flowing only to companies that can demonstrate a solid growth engine and a stable outlook.",
+      "sources": [],
+      "time": [
+        655225,
+        665876
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's exactly right. Today's market clearly showed that investors are no longer moving on vague hopes alone. With the fog of inflation not yet fully lifted, we're seeing the start of a 'fundamentals-driven market,' where companies must prove their own worth by lighting the way with their earnings. This trend is expected to remain a key characteristic of the market for the rest of the earnings season.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b9b93e8e7f1747a7",
+          "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        666376,
+        687867
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Right, let's look at a prime example of this 'fundamentals-driven market.' In the case of Microsoft, the stock showed some volatility during the day and ended up closing down about 0.74%.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-02-13",
+          "end_date": "2026-02-13"
+        }
+      ],
+      "time": [
+        688867,
+        701598
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, that's correct. Microsoft's stock movement today perfectly illustrates the market's complex view of this tech giant right now. On one hand, you have phenomenal fundamental growth driven by artificial intelligence. On the other, you have the dark clouds of antitrust regulation gathering, led by the U.S. Federal Trade Commission, or FTC. These two powerful forces are in a tug-of-war, creating uncertainty that is weighing on the stock.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d6da4f11203b2d06",
+          "title": "US FTC ramps up scrutiny of Microsoft over AI, cloud practices, questions rivals, Bloomberg reports"
+        }
+      ],
+      "time": [
+        702098,
+        729149
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "As you said, let's start with the growth driven by AI. Can you give us some specifics on its performance?",
+      "sources": [],
+      "time": [
+        729649,
+        736020
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "The growth is undeniably strong. According to the company's recent 10-Q filing, revenue from its cloud services segment, including Azure, surged an impressive 39% year-over-year, driven by demand for AI services. Furthermore, its strategy of integrating Copilot AI features into its massive Office 365 user base is gaining traction, leading to continued solid growth in the productivity segment. This clearly shows that Microsoft is positioning itself not just as a software company, but as an essential infrastructure and platform provider for the AI era, which is the key reason the market is so enthusiastic.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "MSFT",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0001193125-26-027207"
+        }
+      ],
+      "time": [
+        736520,
+        774051
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. But you're saying that a regulatory risk is emerging that could hobble this powerful growth engine.",
+      "sources": [],
+      "time": [
+        774551,
+        780962
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's the core issue for Microsoft investors right now. According to recent reports, the FTC is closely scrutinizing Microsoft's AI and cloud business practices, particularly its 'bundling' strategy of integrating and selling AI services with its existing Office suite. This is a serious matter that goes beyond a simple fine; in a worst-case scenario, it could put the brakes on the company's core growth strategy itself. On top of that, the $28.9 billion tax dispute with the IRS, mentioned in the 10-Q filing, remains a potential financial risk that the market shouldn't overlook.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d6da4f11203b2d06",
+          "title": "US FTC ramps up scrutiny of Microsoft over AI, cloud practices, questions rivals, Bloomberg reports"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "MSFT",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0001193125-26-027207"
+        }
+      ],
+      "time": [
+        781462,
+        816153
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So it's a head-on collision between explosive growth potential and a regulatory risk that could undermine the very foundation of that growth. It must be a tough call for investors.",
+      "sources": [],
+      "time": [
+        816653,
+        828904
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Precisely. The company's intrinsic value creation and financial health are undoubtedly excellent, but the stock's upside could be limited until the regulatory fog clears. This is because the immense opportunity presented by AI coexists with the serious threat posed by regulation. The current stock price seems to be finding a balance, reflecting both this rosy future and the realistic risks. Therefore, until this uncertainty is resolved, a cautious approach of watching how things unfold seems more appropriate than an aggressive one.",
+      "sources": [],
+      "time": [
+        829404,
+        860774
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Today the market saw all three major indices fall sharply on the shock of a hotter-than-expected CPI report. Looking ahead, what are the key events that could help us gauge the market's direction?",
+      "sources": [],
+      "time": [
+        861774,
+        874065
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Right, with today's CPI shock, expectations for an early rate cut from the Fed have essentially vanished. In this environment, investors will have to rely on upcoming economic data to predict the Fed's next move. First, we should pay close attention to the FOMC minutes, which will be released next week on the 18th. It's important to understand what Fed officials were discussing before this CPI release, as it could provide more specific hints about the conditions for a rate cut.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ],
+      "time": [
+        874565,
+        904136
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "The minutes are important, but it seems the market's focus will inevitably turn back to inflation-related data. What's the next indicator to watch?",
+      "sources": [],
+      "time": [
+        904636,
+        912767
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "Exactly. All eyes will be on the Personal Consumption Expenditures, or PCE, price index, which comes out next week on the 20th. This is because the PCE is the indicator the Fed considers more important than the CPI when judging inflation. If the PCE also comes in above market expectations, concerns about entrenched inflation will grow, and the market could face a further correction. On the other hand, if the PCE shows a slowdown, there's a chance for a relief rally that could offset some of the shock from this week's CPI.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        913267,
+        945478
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "We'll also have to check the S&P Global PMI flash reading, which comes out on the same day. Finally, do you have any closing thoughts for our investors?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398036",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        945978,
+        955069
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "Today's sharp drop served as another reminder to the market that the fight against inflation is not over yet. It's necessary to be wary of excessive optimism about rate cuts and to carefully analyze the meaning of each piece of data as it's released. In particular, it's important to keep an eye on how the tone of Fed officials' comments changes and to monitor movements in Treasury yields to continuously check for shifts in market consensus. This is a time when a cautious strategy of waiting for data confirmation before acting is more effective than rushing to buy the dip.",
+      "sources": [],
+      "time": [
+        955569,
+        989580
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "Right, a cautious approach is needed. Thank you for your insights today.",
+      "sources": [],
+      "time": [
+        990080,
+        995011
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "date": "20260210",
+  "title": "다우 최고치인데 나스닥 하락? 실적보다 무서운 '이것'",
+  "duration_target": "90초",
+  "hook": "다우 지수는 사상 최고치를 경신했는데, 기술주 중심의 나스닥은 왜 0.59%나 하락했을까요.",
+  "script": "다우 지수는 사상 최고치를 경신했는데, 기술주 중심의 나스닥은 왜 0.59%나 하락했을까요. 2월 10일 미국 증시는 소비 둔화 신호와 엇갈린 기업 실적에 그야말로 차별화 장세를 보였습니다. 다우는 0.1% 상승하며 최고치를 이어갔지만, S&P 500은 0.33%, 나스닥은 0.59% 하락했습니다. 예상과 달리 소매 판매가 제자리걸음을 보인 것이 소비 위축 우려를 키웠습니다. 시장의 관심은 과거 실적이 아닌 오직 '미래 전망'에 쏠렸습니다. 코카콜라는 4분기 매출이 예상을 웃돌았지만, 올해 성장률 전망치를 보수적으로 제시하자 주가가 1.49% 하락했습니다. 충격은 장 마감 후 나온 리프트였습니다. 1분기 이익 전망치를 낮추고 2025년 예상치 못한 영업 손실을 발표하자, 시간 외 거래에서 주가가 14% 넘게 폭락했습니다. 이런 불안감은 시장 전반으로 확산됐습니다. 뚜렷한 악재가 없었음에도 엔비디아는 0.79%, 알파벳은 1.77% 하락하며 기술주 전반의 투자 심리가 위축됐습니다. 이제 시장의 모든 시선은 이번 주에 발표될 경제 지표로 향합니다. 특히 금요일에 발표될 1월 소비자물가지수 CPI와 내일 나올 고용보고서가 연준의 다음 행보를 결정할 핵심 데이터가 될 것입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-10",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-10",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-10",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "event",
+      "id": "398584",
+      "title": "retail sales mom",
+      "date": "2026-02-10"
+    },
+    {
+      "type": "article",
+      "pk": "id#c2741953e352e5d0",
+      "title": "Coca-Cola stock sinks on disappointing outlook as Coke Zero, water power surprise sales increase"
+    },
+    {
+      "type": "chart",
+      "ticker": "KO",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "article",
+      "pk": "id#1044cadb4c9081d5",
+      "title": "Lyft's storm-hit outlook, 2025 surprise operating loss send shares tumbling"
+    },
+    {
+      "type": "chart",
+      "ticker": "LYFT",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "chart",
+      "ticker": "NVDA",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "chart",
+      "ticker": "GOOGL",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-10"
+    },
+    {
+      "type": "event",
+      "id": "398190",
+      "title": "core inflation rate mom",
+      "date": "2026-02-13"
+    },
+    {
+      "type": "event",
+      "id": "395001",
+      "title": "non farm payrolls",
+      "date": "2026-02-11"
+    }
+  ],
+  "metadata": {
+    "character_count": 688,
+    "estimated_duration_seconds": 87,
+    "key_points": [
+      "다우 상승, 나스닥 하락 혼조세 마감",
+      "기업들의 부진한 미래 전망(가이던스)이 주가 하락 주도",
+      "코카콜라(-1.49%), 리프트(시간 외 -14%) 실적 발표 후 하락",
+      "주요 경제지표인 CPI와 고용보고서 발표 대기"
+    ],
+    "featured_tickers": [
+      "KO",
+      "LYFT",
+      "NVDA",
+      "GOOGL"
+    ]
+  }
+}

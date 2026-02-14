@@ -1,0 +1,534 @@
+{
+  "date": "20260212",
+  "nutshell": "Markets fall together amid an AI-driven tech sell-off and caution ahead of the CPI release.",
+  "user_tickers": [
+    "MSTR"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 34
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for February 12th. The market couldn't hold onto its early-year momentum today, closing with a significant drop.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today we saw a broad sell-off driven by an AI-related tech rout and anxiety ahead of the CPI release. The Dow Jones Industrial Average fell 1.3% to close at 49,451, and the S&P 500 also dropped over 1.5% to 6,832. The tech-heavy Nasdaq was hit particularly hard, plunging more than 2% to finish at 22,597, showing just how much nervousness is in the market. There were two main currents behind this reversal, which erased all of the morning's gains. First, there's a growing fear that AI could disrupt certain industries. And second, investors are clearly in a wait-and-see mode ahead of tomorrow's key inflation data.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "That's interesting. Until now, AI has been a positive catalyst driving the market higher, but now it's becoming a source of fear.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. The vague optimism that AI would benefit all industries is now shifting to a more realistic concern that it could replace jobs and destroy existing business models. In today's session, these worries hammered stocks in logistics, commercial real estate, and software. For instance, we saw intense selling pressure in sectors where AI could replace human tasks, with logistics broker C.H. Robinson Worldwide seeing its stock plunge. This isn't just a correction in a few tech names; it can be seen as growing pains as the market grapples with new valuation metrics in the face of this massive AI paradigm shift.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "8f64bee67857fed7",
+          "title": "Logistics Stocks Sink as AI Fear Trade Finds Latest Victim"
+        },
+        {
+          "type": "article",
+          "pk": "87bd08692642ecda",
+          "title": "Real Estate Stocks Sink on Worry About AI Risk to Office Demand"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. Could you break down the key drivers for us in more detail?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, we can really break it down into two main themes today. First, how the fear of AI's disruptive innovation led to a tech sell-off. And second, why the market has become so cautious ahead of the crucial CPI release. Let's take a closer look at each.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point: the fear around AI's disruptive innovation. You mentioned that instead of being a growth engine, AI is now seen as an epicenter of fear that could destroy certain industries.",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "That's right. The perception that AI might not be a rising tide that lifts all boats, but rather a storm that could sink some ships, has really taken hold in the market. While the Nasdaq fell over 2% and the S&P 500 slipped more than 1.5%, the VIX—the market's fear gauge—spiked nearly 18%. The entire tech sector led the sell-off, dropping over 2.6%. As risk-off sentiment spread, investors fled to the safety of Treasurys, pushing the 10-year yield down. The Dollar Index also strengthened slightly, reflecting the anxiety. This all happened as uncertainty mounted ahead of tomorrow's CPI data, and it's because we're seeing the first real cracks appear in the AI growth narrative.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a6c1c9185cf35f9f",
+          "title": "Analysis-For stock market, AI turns from lifting all boats to sinking ships"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "Which industries were hit the hardest, specifically?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The impact was most visible in the logistics and software industries first. Companies with business models heavily reliant on human coordination, like freight brokerage, took a direct hit. The catalyst was a small AI logistics firm announcing it had tripled or quadrupled its freight processing volume through its platform without adding staff. On that news, shares of the massive logistics broker C.H. Robinson Worldwide plummeted over 14% in a single day. The software industry is also under sustained pressure, with the S&P 500 Software & Services index down 15% since late January on spreading fears that AI will automate coding and reduce the need for developers.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "8f64bee67857fed7",
+          "title": "Logistics Stocks Sink as AI Fear Trade Finds Latest Victim"
+        },
+        {
+          "type": "article",
+          "pk": "a6c1c9185cf35f9f",
+          "title": "Analysis-For stock market, AI turns from lifting all boats to sinking ships"
+        },
+        {
+          "type": "chart",
+          "ticker": "CHRW",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "article",
+          "pk": "0ff591f6c5014295",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled, AI disruption fears grow"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "Did this fear spread to other sectors beyond logistics and software?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, it did. This so-called 'AI fear trade' even spread to commercial real estate services. Concerns were raised that advances in AI could make remote work more efficient, structurally reducing the demand for office space. Furthermore, analysis suggested that high-fee services like real estate brokerage and asset management could be replaced by AI, causing shares of CBRE Group, the world's largest commercial real estate services firm, to plunge over 8%. This isn't just about one company's problems; it's being interpreted as a warning from the market that AI could shake the very foundations of traditional high-value service industries.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "87bd08692642ecda",
+          "title": "Real Estate Stocks Sink on Worry About AI Risk to Office Demand"
+        },
+        {
+          "type": "article",
+          "pk": "0ff591f6c5014295",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled, AI disruption fears grow"
+        },
+        {
+          "type": "chart",
+          "ticker": "CBRE",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "article",
+          "pk": "a6c1c9185cf35f9f",
+          "title": "Analysis-For stock market, AI turns from lifting all boats to sinking ships"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So how should we interpret this? Is it a temporary overreaction, or the beginning of a structural shift?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "It seems to be part of the growing pains as the market digests this massive technological revolution. Until now, the market was driven by the expectation that companies building AI infrastructure would be the clear beneficiaries. Now, we're entering a phase of sorting the winners from the losers—figuring out how the technology will actually be applied and which industrial landscapes it will reshape. Analysts believe the market is shifting from an indiscriminate rally to a 'stock-picker's market,' where the viability of individual companies is scrutinized. And if tomorrow's CPI data comes in hotter than expected, this re-evaluation process could become even more sober and severe as rate cut hopes recede.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a6c1c9185cf35f9f",
+          "title": "Analysis-For stock market, AI turns from lifting all boats to sinking ships"
+        },
+        {
+          "type": "article",
+          "pk": "8f64bee67857fed7",
+          "title": "Logistics Stocks Sink as AI Fear Trade Finds Latest Victim"
+        },
+        {
+          "type": "article",
+          "pk": "87bd08692642ecda",
+          "title": "Real Estate Stocks Sink on Worry About AI Risk to Office Demand"
+        },
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, and as you just mentioned, caution ahead of tomorrow's Consumer Price Index, or CPI, release was the other major factor in today's decline. Is there a particular reason the market is so sensitive to this specific report?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, it's because this CPI release is essentially the final test for the Fed rate cut expectations that have been building since the start of the year. The market today was the very picture of the calm before the storm. Not only did the S&P 500 and Nasdaq fall nearly 1% and 1.6% respectively, but we also saw a classic risk-off session in the bond market, with the 10-year yield rising again, meaning both stocks and bonds were weak. As the preference for safe-haven assets grew, the Dollar Index strengthened, and the VIX volatility index also surged, clearly reflecting the market's anxiety. The backdrop for all this is the strong January jobs report we recently got. Rate cut expectations already pulled back once after that surprisingly strong employment data. If inflation also comes in hot tomorrow, it will strengthen the argument that the Fed will have to stay restrictive for longer.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        },
+        {
+          "type": "article",
+          "pk": "be0a6f20f2dadda4",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled"
+        },
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So the market's biggest fear is a combination of strong employment followed by confirmation of sticky inflation.",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Exactly. The market is looking for confirmation that the disinflationary trend is continuing. Wall Street experts are noting that while the year-over-year CPI for January will likely continue to slow, there's a chance it could tick up slightly on a month-over-month basis. The key will be the core CPI, which excludes volatile food and energy prices, as that's what the Fed pays more attention to. A recent Goldman Sachs report also pointed out that new price pressures are emerging in specific areas, such as electricity inflation running at more than double the overall rate due to the AI data center construction boom. If factors like these lead to a higher-than-expected number, the market's disappointment will be significant.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "0ff591f6c5014295",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled, AI disruption fears grow"
+        },
+        {
+          "type": "article",
+          "pk": "0b0776279c066f22",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise after jobs surprise with CPI on deck"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "398816",
+          "title": "core inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, what are investors forecasting for the Fed's next moves after tomorrow's report?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Market expectations have already been lowered quite a bit. Bank of America recently put out a report suggesting that the January jobs data alone has made a rate cut under the current Powell-led Fed very difficult. In this environment, if inflation also exceeds expectations, the possibility of a rate cut not just in March but for the entire first half of the year could disappear from the market discussion. The sharp drop in precious metals like gold and silver today, under the dual pressure of a stronger dollar and higher Treasury yields, reflects this outlook. It was a classic day of pre-emptive risk management, with investors reducing their exposure to non-yielding assets in anticipation of delayed rate cuts, while also increasing cash positions to avoid uncertainty.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "be0a6f20f2dadda4",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled"
+        },
+        {
+          "type": "article",
+          "pk": "0b0776279c066f22",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise after jobs surprise with CPI on deck"
+        },
+        {
+          "type": "article",
+          "pk": "0ff591f6c5014295",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled, AI disruption fears grow"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Okay, we've covered the major macro trends. Let's shift to some individual company stories. First up is MicroStrategy. The stock hit a high early in the session but kept sliding, eventually closing down over 3.7%. I'm curious why the stock fell despite what seemed like some positive news.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "MSTR",
+          "start_date": "2026-02-12",
+          "end_date": "2026-02-12"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Right, as you said, there was positive news today that one of MicroStrategy's preferred stocks, STRC, recovered to its $100 par value. This re-opens the door for the company to raise additional capital through at-the-market offerings, which in turn means they could immediately resume buying more Bitcoin. However, instead of seeing this as a growth opportunity, the market seems to have taken it as another confirmation that the company's true identity isn't a software firm, but rather a 'leveraged proxy for Bitcoin.' In other words, the ability to buy more Bitcoin also means taking on more debt and risk. That's likely why we saw selling pressure despite the positive headline.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#54a2aed6d01bc5ae",
+          "title": "Strategy's STRC returns to $100, poised to unlock more bitcoin accumulation"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "So the market is essentially defining the company as an extreme leveraged bet on Bitcoin. What's the core argument for those who view this strategy positively?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "From a positive perspective, MicroStrategy is seen not just as a company that holds Bitcoin, but as the world's first 'Bitcoin development company' that actively uses capital markets to increase its 'Bitcoin per share.' In fact, an analysis of their Q3 2025 report shows that while the share count increased by about 14% in the first nine months of 2025, the company increased its Bitcoin holdings by 43%, successfully boosting its Bitcoin per share by over 25%. This is an ability to generate 'alpha' that a simple spot ETF can't offer. The core argument is that this is an innovative strategy that uses debt as 'rocket fuel' for future growth, aiming for much higher returns than an ETF in a Bitcoin bull market.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "MSTR",
+          "form": "10-Q",
+          "filed_date": "2025-11-03",
+          "accession_number": "0001193125-25-262568"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "MSTR",
+          "form": "10-K",
+          "filed_date": "2025-02-18",
+          "accession_number": "0000950170-25-021814"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That 'rocket fuel' metaphor is striking, but it also implies a lot of risk. What are the specific risks the market is worried about?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The market's biggest concern is the company's massive debt structure, particularly its convertible notes. According to the Q3 2025 filing, the company has issued about $8.2 billion in convertible notes. The problem is that between 2027 and 2028, put options mature on about $7.4 billion of that debt, allowing bondholders to demand early repayment. The current stock price is well below the conversion price for all of these notes. If the price of Bitcoin doesn't skyrocket and dramatically lift the stock price, it's highly likely that bondholders will forgo conversion and demand full cash repayment. This is seen as a ticking time bomb, a so-called 'debt wall,' that could lead to a liquidity crisis forcing the company to sell off a large portion of its Bitcoin holdings.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "MSTR",
+          "form": "10-Q",
+          "filed_date": "2025-11-03",
+          "accession_number": "0001193125-25-262568"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So the company's very existence could be threatened if the price of Bitcoin doesn't rise enough by a certain point.",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Precisely. The growth story is entirely dependent on an uncontrollable variable—a surge in Bitcoin's price—while the debt repayment risk is a contractual reality stated in their filings. From an investor's perspective, there's now a clear alternative: low-cost spot ETFs to invest directly in Bitcoin. In this context, a fundamental question is being raised: is it really necessary to take on the risk premium associated with MicroStrategy's complex financial structure and the inherent bankruptcy risk of its extreme leverage strategy? The market pushing the stock down today, despite positive news, can be interpreted as a sign that this sober reality is spreading among investors.",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, to recap the market, the S&P 500 and Nasdaq renewed their highs, but the Dow slipped slightly, leading to a mixed close. It seems all eyes are now fixed on the important economic data set to be released tomorrow.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, that's right. While the tech-led rally continued, pushing the Nasdaq and S&P 500 to record highs, investors remained cautious ahead of tomorrow night's release of the January Consumer Price Index, or CPI. The market consensus is for a 0.3% month-over-month increase in core CPI, a slight uptick from the previous reading, and a 2.5% year-over-year increase, continuing the slowing trend. This result will be the most critical benchmark for gauging the Fed's rate cut path, so any deviation from expectations could bring significant volatility to the recent market rally.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "398816",
+          "title": "core inflation rate yoy",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Besides the CPI, are there any other key events we should be watching?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Absolutely. Later this week, we'll get Retail Sales and the Producer Price Index, or PPI. Retail sales are a key indicator of consumer health, which accounts for about 70% of the U.S. economy. And the PPI is important because it acts as a leading indicator for the CPI, giving us a preview of future inflation trends. Also, next week on the 18th, the minutes from the January FOMC meeting will be released. This will give us a detailed look at what Fed officials were discussing regarding the timing of rate cuts, which could have a major impact on the market's direction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "It's certainly going to be a week packed with important data releases. Finally, what's one key takeaway for investors to keep in mind?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Even though the market has been hitting new highs and the mood is optimistic, this is a time for a cautious approach. It's important to remember that volatility can increase ahead of major economic data releases. The market could move unexpectedly depending on the results, so it's crucial to stick to your long-term investment principles rather than being swayed by short-term fluctuations. Also, the increasing concentration of the rally in a few large-cap tech stocks is another point to be mindful of.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Alright, thank you for that reminder to stay cautious. That wraps up our closing bell briefing for February 12th.",
+      "sources": []
+    }
+  ]
+}

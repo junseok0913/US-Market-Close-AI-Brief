@@ -1,0 +1,574 @@
+{
+  "date": "20260211",
+  "nutshell": "Market diverges based on earnings amid pressure from strong jobs data.",
+  "user_tickers": [
+    "ASML"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the February 11th market close briefing. It seems like it was a tough day to find direction, with the major indexes ending mixed.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. You could summarize it as a market that diverged based on earnings, all while under pressure from strong jobs data. The S&P 500 fell 0.005%, basically finishing flat, and the Dow Jones Industrial Average also slipped a bit, down 0.13%. On the other hand, the Nasdaq 100 gained 0.29%, showing that divergence even within tech stocks. The non-farm payrolls report came in much hotter than expected, pushing back expectations for a Fed rate cut. That sent the 10-year Treasury yield higher, which weighed on the broader market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^NDX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, with the jobs report holding the market back, it was really corporate earnings that dictated the direction of individual stocks.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. As we get deeper into earnings season, we're seeing a clear split between the winners and losers. For instance, Vertiv, a data center solutions company, surged more than 24% after giving a positive outlook on AI-related demand. On the flip side, rideshare company Lyft plunged nearly 17% after unexpectedly posting an operating loss and offering weak guidance. So what we saw was this tricky market environment where investors had to be selective, with macroeconomic data clashing with individual company fundamentals.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "c603190fba3c8783",
+          "title": "Earnings live: Vertiv stock soars on upbeat outlook, Lyft and Robinhood shares tumble, Mattel plunges"
+        },
+        {
+          "type": "chart",
+          "ticker": "VRT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "LYFT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, could you break down the key drivers that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, today's market action can really be explained along two main axes. One is the impact that the hotter-than-expected jobs report had on the Fed's rate policy, and the other is how stock prices diverged based on corporate earnings, especially centered around AI.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first axis: the jobs report. It was the biggest variable for the market today, so could you walk us through the specific numbers that surprised investors?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, it was a surprise that beat Wall Street's expectations on every front. The January non-farm payrolls showed a gain of 130,000 jobs, nearly double the 70,000 that was forecast. The unemployment rate also edged down to 4.3%, below the expected 4.4%, proving the labor market remains robust. On top of that, average hourly earnings, which are directly linked to inflation, rose 0.4% month-over-month and 3.7% year-over-year, both higher than anticipated. This really put the market on high alert. This strong data instantly cooled expectations for an early Fed rate cut. As a result, the 10-year Treasury yield climbed to around 4.17%, and the Dollar Index also strengthened. Under this rate pressure, the S&P 500 and the Dow finished slightly down, but the Nasdaq managed a small gain, with the market ending the day mixed as it searched for direction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-11"
+        },
+        {
+          "type": "event",
+          "id": "394999",
+          "title": "unemployment rate",
+          "date": "2026-02-11"
+        },
+        {
+          "type": "event",
+          "id": "395003",
+          "title": "average hourly earnings mom",
+          "date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "article",
+          "pk": "fe91f584fef63ff2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end little changed as strong jobs report complicates Fed's rate path"
+        },
+        {
+          "type": "article",
+          "pk": "40adf15deae6be2c",
+          "title": "US economy added 130,000 jobs in January, unemployment falls to 4.3%"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "It's interesting, usually signs of a strong economy are a tailwind for the stock market, but today it seemed to act more like an anchor.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "This is a classic 'good news is bad news' scenario. While strong employment and wage growth are positive signs that increase the odds of a soft landing, they also raise concerns that inflationary pressures won't ease up easily. The market had been pricing in the expectation that the Fed would start cutting rates as early as March to prevent an economic slowdown. But today's report gives the Fed a clear reason not to rush. In fact, according to the CME FedWatch Tool, the probability of a March rate cut plummeted from around 20% just yesterday to under 8% today. The market is now pushing its forecast for the first cut to June or later. This outlook for a delayed policy shift is what pushed Treasury yields up, putting pressure on growth-oriented tech stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "1a6dda2e36b406ad",
+          "title": "Bitcoin Slides as Fed Rate Cut Doubts Follow Strong Jobs Report"
+        },
+        {
+          "type": "article",
+          "pk": "0b50890aedacb028",
+          "title": "Strong jobs report likely to keep Fed on hold for a while"
+        },
+        {
+          "type": "article",
+          "pk": "64d26d0483cafad7",
+          "title": "Stock market today: Dow, S&P 500 waver, Nasdaq slides after January jobs report smashes expectations"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "I see. But I've also heard some analysis suggesting there's more to the report than just the headline numbers.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's right. If you dig into the details of the report, you'll see the job gains were concentrated in just a few sectors. The January increase was mainly in healthcare and social assistance, while some white-collar areas like financial services actually saw job losses. This could be interpreted not as a broad-based economic recovery, but rather as strength in specific areas driving the overall number. More importantly, this release included a significant downward revision to the 2025 annual job growth figures, from a previously reported 584,000 to just 181,000. That's the weakest annual job growth in the last 20 years, excluding recession periods, signaling that the underlying strength of the labor market might not be as robust as we previously thought.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "6d309adc53bdb561",
+          "title": "January jobs report beats expectations, but details tell a different story"
+        },
+        {
+          "type": "article",
+          "pk": "fe91f584fef63ff2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end little changed as strong jobs report complicates Fed's rate path"
+        },
+        {
+          "type": "article",
+          "pk": "86607f7e7ff29ecc",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq waver after January jobs report smashes expectations"
+        },
+        {
+          "type": "article",
+          "pk": "0b50890aedacb028",
+          "title": "Strong jobs report likely to keep Fed on hold for a while"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So how are Fed officials likely interpreting this data?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "We haven't had any official comments from Fed officials since the report came out, but we can get a good sense of their stance from recent remarks. Just yesterday, Cleveland Fed President Beth Hammack mentioned that the Fed could hold rates steady for a considerable period, citing that inflation is still too high. Dallas Fed President Lorie Logan also recently pointed out that the recent easing of financial conditions has actually increased inflation risks. The strong jobs and wage data we saw today will provide powerful support for the arguments of these more cautious Fed members. Ultimately, the market will be watching this Friday's Consumer Price Index, or CPI data, even more closely to gauge the Fed's next move. If that report doesn't show a clear trend of disinflation, expectations for rate cuts will have to be pushed back even further.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "0b50890aedacb028",
+          "title": "Strong jobs report likely to keep Fed on hold for a while"
+        },
+        {
+          "type": "article",
+          "pk": "26adfef095d571cd",
+          "title": "Stock market today: Dow ekes out third straight record, S&P 500, Nasdaq slide with jobs report on deck"
+        },
+        {
+          "type": "article",
+          "pk": "35d030663196d24d",
+          "title": "What To Expect From Friday's Report On Inflation"
+        },
+        {
+          "type": "event",
+          "id": "419056",
+          "title": "fed bowman speech",
+          "date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, so in a situation where macro data is weighing on the whole market, individual company earnings become even more critical. And we saw a sharp divide today based on those results, right? Especially with the strength in AI-related stocks.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, that's exactly right. It was a day where macroeconomic pressures and microeconomic divergence collided head-on. With the strong jobs report holding the market back, investors' focus naturally sharpened on individual company fundamentals—that is, their earnings and future growth prospects. In this environment, while the S&P 500 finished essentially flat, if you look under the hood, the Nasdaq 100, which includes many AI-related tech stocks, actually moved higher. This shows the stark temperature difference between various stocks and sectors.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^NDX",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So it's become less about the overall market and more about picking the right stocks. Let's start with the AI-related names that reported strong earnings.",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Right. The companies that proved the massive AI trend is translating from mere hype into actual profits were cheered by the market. A prime example is the data center infrastructure company Vertiv. Although its Q4 earnings themselves were slightly below estimates, the stock surged over 24% because it issued full-year 2026 guidance that blew past market expectations, citing strong AI demand. The CEO expressed confidence in another year of significant growth, backed by a record order backlog. Similarly, cloud security firm Cloudflare saw its stock rise more than 5% after reporting Q4 results and a full-year outlook that both beat expectations. Wall Street analysts have been raising their price targets on Cloudflare, with the expectation that it will play a key role in managing the explosion of machine-to-machine traffic in the AI era.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "c603190fba3c8783",
+          "title": "Earnings live: Vertiv stock soars on upbeat outlook, Lyft and Robinhood shares tumble, Mattel plunges"
+        },
+        {
+          "type": "chart",
+          "ticker": "VRT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "article",
+          "pk": "1d654f2fdee90343",
+          "title": "Cloudflare earnings beat boosts stock on AI growth story"
+        },
+        {
+          "type": "chart",
+          "ticker": "NET",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So the AI-related companies showed clear growth drivers. On the other hand, what was the situation for companies that delivered disappointing results?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "The market was very unforgiving. Shares of rideshare company Lyft plummeted nearly 17% after it announced an unexpected operating loss for its 2025 fiscal year, a period when Wall Street had been expecting a profit. Its Q1 forecast also fell short of expectations, dealing a major blow to investor confidence in the company's turnaround story. The situation was even worse for toymaker Mattel. It reported an earnings shock, with both revenue and profit for the crucial Q4 holiday season missing estimates. The stock plunged nearly 25% after the company also guided for lower profits in 2026 compared to the previous year. Mattel's CEO blamed weaker-than-expected U.S. sales in December, which raises some concerns about a potential slowdown in consumer spending.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "c603190fba3c8783",
+          "title": "Earnings live: Vertiv stock soars on upbeat outlook, Lyft and Robinhood shares tumble, Mattel plunges"
+        },
+        {
+          "type": "chart",
+          "ticker": "LYFT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "article",
+          "pk": "d1778978a2498336",
+          "title": "This Toy Maker's Stock Plummets 25% After Disappointing Holiday Earnings Report"
+        },
+        {
+          "type": "chart",
+          "ticker": "MAT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, today's market was a clear demonstration of how macroeconomic indicators and individual company earnings interact.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Exactly. The hot jobs report is a factor that weighs on overall market valuations by increasing the likelihood of delayed rate cuts. In this kind of environment, investors are bound to apply a stricter standard. We saw money flowing not just to good companies, but specifically to companies with clear growth drivers that can power through macroeconomic uncertainty. The diverging paths of AI-powered Vertiv and the struggling Lyft symbolically illustrate this dynamic. This trend of stock-specific divergence is likely to continue throughout the rest of this earnings season.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395001",
+          "title": "non farm payrolls",
+          "date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "VRT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "LYFT",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-11"
+        },
+        {
+          "type": "article",
+          "pk": "c603190fba3c8783",
+          "title": "Earnings live: Vertiv stock soars on upbeat outlook, Lyft and Robinhood shares tumble, Mattel plunges"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Right, and as you said, with this divergence becoming so clear, it's worth taking a closer look at some of the companies the market is focused on. Let's start with the undisputed leader in semiconductor equipment, ASML. The stock saw some volatility today, rising to around $1451 early in the session before giving back those gains to close slightly down.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "ASML",
+          "start_date": "2026-02-11",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, there's no dispute that ASML is a company with an irreplaceable technological moat, being the sole supplier of the extreme ultraviolet, or EUV, lithography machines essential for cutting-edge chip production. The debate in the market today wasn't about whether the company is great, but rather a fierce clash over whether the current stock price has already priced in all of that greatness and then some. On one side, you have the view that it should be re-evaluated as a monopolistic platform company guarding the gateway to the AI revolution. On the other, you have warnings that the current price reflects all possible optimism and is at a dangerous level.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "As you mentioned, the excitement around it being a key player in the AI era is significant. Isn't its next-generation High-NA EUV machine seen as a powerful growth driver?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's right. That's the core driver behind the current optimism. There's a huge expectation that as the commercialization of High-NA EUV machines—which cost twice as much as the current models—ramps up, both revenue and profit margins will grow explosively. The logic is that major customers like TSMC, Intel, and Samsung Electronics will have no choice but to adopt these machines quickly to avoid falling behind in the race for sub-2-nanometer processes. The belief that this AI-driven super-cycle will allow ASML to achieve structural growth that transcends the traditional cyclicality of the semiconductor industry is strongly reflected in its current stock price.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "ASML",
+          "start_date": "2026-01-12",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "The growth story seems solid, but what's the reasoning from the other side, the one that sees the current stock price as risky?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "There are three key risks being raised. First is the geopolitical issue. ASML's machines are at the heart of the U.S.-China tech rivalry, which means the company is always exposed to uncontrollable political variables like export controls to China. Second is the inherent cyclicality of the semiconductor industry. While the assumption is that the AI boom will last forever, historically, the chip industry has gone through boom-and-bust cycles, and a reduction in capital spending by its customers would directly hit ASML's results. Finally, there's the point that it's in a state of extreme overvaluation that ignores all these risks. The analysis is that the current stock price has already priced in years of flawless growth without any margin for error, leaving no margin of safety.",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, the warning is that while it's clearly a great company, the price is just too high relative to its value.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Exactly. A comprehensive analysis suggests that the hope surrounding ASML's monopolistic technology and growth potential is clashing with the reality of its high valuation, geopolitical risks, and industry cyclicality. The current stock price seems to perfectly reflect every possible positive future scenario, while completely ignoring any defensive cushion for potential risks. It's worth remembering the case of Cisco during the dot-com bubble—a monopolistic company whose stock plunged when its customers cut back on investment. It's a reminder that even a great company isn't immune to the downturns of an industry cycle, and this seems to be a time to be mindful of that.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "ASML",
+          "start_date": "2026-01-12",
+          "end_date": "2026-02-11"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, so the market seemed to have trouble finding its footing today. Could you summarize the day's trading action for us?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, it was a day marked by a strong wait-and-see sentiment. The major indexes finished mixed, sending a clear signal that investors are holding off on making big moves and are instead waiting for upcoming economic data. With key announcements later this week, profit-taking and dip-buying were in a tight tug-of-war, preventing the market from establishing a clear direction. As uncertainty about the Fed's next move persists, market participants are remaining cautious, hanging on every piece of economic data.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So what's the next major event that investors should be watching?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "In the short term, the most important indicator that will determine the market's direction is the Consumer Price Index, or CPI, which will be released on the morning of Friday the 13th. The market is expecting the year-over-year inflation rate to slow slightly to 2.5% from the previous reading of 2.7%. Core CPI, which excludes volatile food and energy prices, is forecast to rise 0.3% month-over-month, a slight increase from the prior 0.2%. If the actual numbers deviate significantly from these forecasts, it could seriously shake up expectations for the timing of Fed rate cuts. So, this CPI result is poised to bring significant volatility to the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398327",
+          "title": "inflation rate yoy",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "398190",
+          "title": "core inflation rate mom",
+          "date": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides the inflation data, are there any other dates on the calendar we should keep an eye on?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, after the inflation report, market attention will shift to the FOMC minutes, which will be released next week on Wednesday the 18th. The minutes can reveal subtle differences in opinion among Fed officials and the specific details of their internal discussions, which we couldn't get from Chairman Powell's press conference alone. They will be an important clue for understanding the range of opinions on the economic outlook and the future path of interest rates, as well as how confident the committee members are about the disinflationary trend. Depending on the tone of the minutes, the market's expectations for monetary policy could be readjusted once again.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Finally, what's your advice for investors?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market is at an important crossroads right now. The upcoming key economic indicators will influence the Fed's decisions, which in turn will set the market's direction. Therefore, this is a time when it's important to try to read the broader macroeconomic trends rather than reacting to short-term volatility. It's worth keeping in mind that volatility could increase around the release of these key reports. A strategy of calmly responding, perhaps through phased buying, rather than chasing rallies or panic selling, could be a prudent approach.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, thank you for your valuable insights today. That wraps up our market close briefing for February 11th. Thanks for listening.",
+      "sources": []
+    }
+  ]
+}

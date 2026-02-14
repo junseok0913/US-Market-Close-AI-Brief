@@ -1,9 +1,10 @@
 name: Daily Stock Podcast Automation
 
 on:
-  push:
-    branches:
-      - youtube # 예: develop 또는 feat/podcast
+  # Temporarily disabled - only manual runs allowed
+  # push:
+  #   branches:
+  #     - youtube # 예: develop 또는 feat/podcast
   #schedule:
     # 매일 평일(월-금) UTC 21:30 (한국 시간 오전 6:30, 미국 장 마감 후)
   #  - cron: '30 21 * * 1-5'

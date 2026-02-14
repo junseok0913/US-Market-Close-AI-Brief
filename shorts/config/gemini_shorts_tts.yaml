@@ -1,0 +1,9 @@
+meta:
+  description: "Gemini Shorts TTS config"
+  last_updated: "2026-02-13"
+
+prompts:
+  ko: |
+    Output audio only. Speed=1.10, Volume=1.00, YouTube Shorts style Korean U.S. stock market briefing: fast-paced, high energy, engaging, and clear narration. Read the following text completely without omission.
+  en: |
+    Output audio only. Speed=1.10, Volume=1.00, YouTube Shorts style U.S. stock market briefing: fast-paced, high energy, engaging, and clear narration. Read the following text completely without omission.

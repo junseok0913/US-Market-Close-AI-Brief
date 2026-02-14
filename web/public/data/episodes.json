@@ -1,5 +1,47 @@
 [
   {
+    "date": "20260210",
+    "nutshell": "소비 둔화 신호 속 엇갈린 실적에 차별화 장세",
+    "user_tickers": [
+      "CRM"
+    ]
+  },
+  {
+    "date": "20260209",
+    "nutshell": "AI 투자 열풍 속 기술주 랠리 재점화",
+    "user_tickers": [
+      "GS"
+    ]
+  },
+  {
+    "date": "20260206",
+    "nutshell": "기업 호실적과 소비 심리 개선에 힘입은 전방위적 랠리",
+    "user_tickers": [
+      "AMZN"
+    ]
+  },
+  {
+    "date": "20260205",
+    "nutshell": "경기 둔화 우려와 기술주 불안에 따른 시장 전반의 하락",
+    "user_tickers": [
+      "TSLA"
+    ]
+  },
+  {
+    "date": "20260204",
+    "nutshell": "엇갈린 기업 실적에 나스닥 하락, 다우 상승",
+    "user_tickers": [
+      "AMD"
+    ]
+  },
+  {
+    "date": "20260203",
+    "nutshell": "엇갈린 빅테크 실적에 나스닥 하락 반전",
+    "user_tickers": [
+      "NVDA"
+    ]
+  },
+  {
     "date": "20260202",
     "nutshell": "예상 뛰어넘은 제조업 지표에 경기 연착륙 기대감 확산",
     "user_tickers": [

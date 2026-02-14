@@ -1,0 +1,27 @@
+Title:
+2026.2.10 US Market Close | Market diverges on mixed earnings and signs of slowing consumption
+
+Description:
+The US stock market closed mixed on February 10, as signs of a consumer slowdown clashed with divergent corporate earnings forecasts. The session was marked by significant divergence across sectors and individual stocks, with investors focusing more on future guidance than on past results.
+
+Major Indices
+- Dow Jones Industrial Average: Rose 0.1%, hitting a new all-time high, supported by gains in some industrial and healthcare stocks.
+- Nasdaq Composite: Fell 0.59%, weighed down by major tech stocks amid concerns over conservative corporate outlooks.
+- S&P 500: Declined 0.33%, dragged lower by weakness in the tech sector.
+
+Key Issues
+- Consumer Slowdown Concerns: Pre-market retail sales data came in unexpectedly flat, highlighting concerns about weakening consumer sentiment.
+- Disappointing Corporate Guidance: Companies like Coca-Cola and Lyft weighed on the market by issuing conservative annual forecasts, despite reporting solid Q4 earnings.
+- Big Tech Weakness: Major tech stocks, including Nvidia and Alphabet, fell in tandem as broader market caution spread, even without specific negative catalysts.
+- Salesforce Volatility: The stock experienced significant intraday volatility, caught between optimism for its AI initiatives and concerns over increased competition and new business risks.
+- Awaiting Key Economic Data: Investors remained on the sidelines, anticipating the release of this week's Jobs Report and the Consumer Price Index (CPI).
+
+Key Stocks
+- Coca-Cola (KO): Fell 1.49%. Although Q4 earnings beat expectations, the stock declined after the company issued 2026 annual guidance that fell short of market consensus.
+- Lyft (LYFT): Plunged over 14% in after-hours trading. The company provided a weak Q1 profit forecast and announced an unexpected operating loss for 2025, severely chilling investor sentiment.
+- Nvidia (NVDA): Dropped 0.79%, impacted by weakening sentiment across the tech sector due to signs of a consumer slowdown and downbeat forecasts from other companies.
+- Alphabet (GOOGL): Slid 1.77% amid profit-taking and risk-off moves in big tech stocks.
+- Salesforce (CRM): Gained 0.77%. The stock initially surged on AI optimism following a competitor's strong earnings but gave back most of its gains to close slightly higher amid concerns about intensifying competition.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,실적,가이던스,소비둔화,엔비디아,NVDA,알파벳,GOOGL,코카콜라,KO,리프트,LYFT,세일즈포스,CRM,AI

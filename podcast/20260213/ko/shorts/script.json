@@ -1,0 +1,104 @@
+{
+  "date": "20260213",
+  "title": "나스닥 하락, 중소형주 급등? CPI가 가른 증시",
+  "duration_target": "90초",
+  "hook": "나스닥은 하락했는데, 중소형주 지수는 1% 넘게 급등했습니다. 왜 이런 일이 벌어졌을까요.",
+  "script": "나스닥은 하락했는데, 중소형주 지수는 1% 넘게 급등했습니다. 왜 이런 일이 벌어졌을까요. 2월 13일 미국 증시는 혼조세로 마감했습니다. 다우는 0.1%, S&P 500은 0.05% 올랐지만 기술주 중심의 나스닥은 0.22% 하락했습니다. 반면 중소형주 지수인 러셀 2000은 1.18%나 급등했는데요. 시장은 예상보다 높은 월간 CPI에 기술주는 하락하고 중소형주는 강세를 보이는 뚜렷한 차별화 장세를 보였습니다. 원인은 1월 소비자물가지수, CPI였습니다. 연간 상승률은 2.4%로 둔화됐지만, 시장은 전월 대비 0.3% 오른 근원 CPI에 주목했습니다. 예상치 0.2%를 웃돌자 연준의 금리인하 기대감이 후퇴하며 금리에 민감한 기술주를 압박한 겁니다. 하지만 이는 경기가 여전히 견조하다는 신호로도 해석됐습니다. 이에 자금이 대형 기술주에서 소외됐던 중소형주로 이동하는 순환매가 나타나며 러셀 2000 지수가 급등했습니다. 이런 불확실한 장세 속에선 개별 기업의 실적이 중요해졌습니다. AI 칩 수요 덕에 어플라이드 머티리얼즈는 13% 급등했고, 리비안은 긍정적인 전망에 20% 폭등했습니다. 반면 핀터레스트는 부진한 실적으로 12% 넘게 급락했습니다. 인플레이션과의 싸움이 아직 끝나지 않았음을 보여준 하루였습니다. 시장의 모든 시선은 오는 2월 20일 발표될 연준이 더 중요하게 보는 물가 지표, PCE에 집중될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "chart",
+      "ticker": "^RUT",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "event",
+      "id": "398190",
+      "title": "core inflation rate mom",
+      "date": "2026-02-13"
+    },
+    {
+      "type": "event",
+      "id": "398327",
+      "title": "inflation rate yoy",
+      "date": "2026-02-13"
+    },
+    {
+      "type": "article",
+      "pk": "id#b9b93e8e7f1747a7",
+      "title": "Stock market today: S&P 500, Dow, Nasdaq gains fizzle as CPI inflation cools, weekly losses loom"
+    },
+    {
+      "type": "article",
+      "pk": "id#f8dac67c2dc57655",
+      "title": "Applied Materials jumps as AI demand drives chipmaking tool orders"
+    },
+    {
+      "type": "chart",
+      "ticker": "AMAT",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "article",
+      "pk": "id#d4afb73e4e35012d",
+      "title": "Rivian Predicts Big Jump in Sales as R2 SUV Set to Launch Soon. Its Stock Surges More Than 20%."
+    },
+    {
+      "type": "chart",
+      "ticker": "RIVN",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "article",
+      "pk": "id#6cf4ce2dd3817dcb",
+      "title": "Pinterest's Stock Is Getting Hammered. Its Earnings Flashed a Warning Signal About Trump’s Tariffs."
+    },
+    {
+      "type": "chart",
+      "ticker": "PINS",
+      "start_date": "2026-02-13",
+      "end_date": "2026-02-13"
+    },
+    {
+      "type": "event",
+      "id": "399155",
+      "title": "core pce price index mom",
+      "date": "2026-02-20"
+    }
+  ],
+  "metadata": {
+    "character_count": 741,
+    "estimated_duration_seconds": 94,
+    "key_points": [
+      "예상 상회한 월간 CPI로 기술주 하락",
+      "나스닥(-0.22%)과 러셀2000(+1.18%)의 극명한 차별화",
+      "실적에 따라 주가 급등락하는 펀더멘털 장세",
+      "향후 PCE 물가 지표 주목"
+    ],
+    "featured_tickers": [
+      "AMAT",
+      "RIVN",
+      "PINS"
+    ]
+  }
+}

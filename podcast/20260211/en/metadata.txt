@@ -1,0 +1,25 @@
+Title:
+2026.2.11 US Market Close | Market diverges on earnings as strong jobs report weighs
+
+Description:
+On February 11, US markets closed mixed as a stronger-than-expected jobs report pushed back expectations for Fed rate cuts. Amid broad market pressure, it was a day of sharp divergence between stocks with clear growth drivers, like those in Artificial Intelligence (AI), and companies that reported weak earnings.
+
+Major Indices
+- S&P 500: Down 0.005% - Finished virtually flat as pressure from the strong jobs report was offset by individual company earnings.
+- Dow Jones: Down 0.13% - Edged lower amid concerns over delayed Fed rate cuts.
+- Nasdaq 100: Up 0.29% - Closed higher, led by AI-related tech stocks in a market driven by earnings differentiation.
+
+Key Issues
+- Stronger-than-expected jobs report: Nonfarm payrolls in January increased by 130,000, significantly surpassing the forecast of 70,000. The higher-than-anticipated growth in average hourly earnings also dampened hopes for an early rate cut from the Fed.
+- Sharp divergence based on earnings: Amid macroeconomic uncertainty, a stock-picker's market emerged where companies with proven growth, such as AI stocks, surged, while those with disappointing earnings and outlooks plunged.
+- Rate cut expectations recede: Following the strong employment data, the probability of a March rate cut plummeted to below 8%, with the market now pricing in the first cut for June or later. The 10-year US Treasury yield rose to around 4.17%.
+- Focus shifts to upcoming key data: Market attention is now turning to the Consumer Price Index (CPI) report on the 13th and the FOMC minutes release on the 18th, which could lead to increased volatility.
+
+Key Stocks
+- Vertiv (VRT): Surged over 24% after raising its full-year 2026 guidance, citing strong demand from AI.
+- Lyft (LYFT): Plunged nearly 17% after reporting an unexpected operating loss and providing a weak first-quarter forecast.
+- Cloudflare (NET): Rose more than 5% on the back of a fourth-quarter earnings beat and a positive full-year outlook.
+- Mattel (MAT): Tumbled nearly 25% after a significant earnings miss, with holiday shopping season results falling far short of expectations.
+
+Keywords:
+미국주식,주식,재테크,시황,S&P500,나스닥,고용지표,금리,실적,AI,인공지능,버티브,VRT,리프트,LYFT,ASML

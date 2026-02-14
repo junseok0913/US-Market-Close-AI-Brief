@@ -14,15 +14,19 @@ import argparse
 import json
 import logging
 import os
+import random
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Optional
 
 from dotenv import load_dotenv
+import yaml
 
 # Add parent directory to path
 ROOT_DIR = Path(__file__).resolve().parent.parent
+SHORTS_PROMPT_CONFIG_PATH = ROOT_DIR / "shorts" / "config" / "gemini_shorts_tts.yaml"
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.yaml_config import load_env_from_yaml
@@ -35,6 +39,48 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger(__name__)
+
+
+DEFAULT_SHORTS_SYSTEM_INSTRUCTIONS = {
+    "ko": (
+        "Output audio only. Speed=1.10, Volume=1.00, "
+        "YouTube Shorts style Korean U.S. stock market briefing: "
+        "fast-paced, high energy, engaging, and clear narration. "
+        "Read the following text completely without omission."
+    ),
+    "en": (
+        "Output audio only. Speed=1.10, Volume=1.00, "
+        "YouTube Shorts style U.S. stock market briefing: "
+        "fast-paced, high energy, engaging, and clear narration. "
+        "Read the following text completely without omission."
+    ),
+}
+
+
+def load_shorts_system_instruction(lang: str, config_path: Path = SHORTS_PROMPT_CONFIG_PATH) -> str:
+    """Load shorts TTS system instruction from YAML prompts.{lang}."""
+    default_prompt = DEFAULT_SHORTS_SYSTEM_INSTRUCTIONS.get(lang, DEFAULT_SHORTS_SYSTEM_INSTRUCTIONS["en"])
+    if not config_path.exists():
+        logger.warning("Shorts prompt config not found. Using built-in prompt: %s", config_path)
+        return default_prompt
+
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+    if not isinstance(raw, dict):
+        logger.warning("Invalid shorts prompt config. Using built-in prompt: %s", config_path)
+        return default_prompt
+
+    prompts = raw.get("prompts")
+    if not isinstance(prompts, dict):
+        logger.warning("No prompts map in shorts prompt config. Using built-in prompt: %s", config_path)
+        return default_prompt
+
+    selected = prompts.get(lang)
+    if isinstance(selected, str) and selected.strip():
+        logger.info("Loaded shorts prompt config: %s (lang=%s)", config_path, lang)
+        return selected.strip()
+
+    logger.warning("No prompts.%s in shorts prompt config. Using built-in prompt.", lang)
+    return default_prompt
 
 
 def parse_date_arg(date_str: str) -> str:
@@ -110,12 +156,97 @@ def split_text_at_sentence(text: str, target_ratio: float = 0.5) -> tuple[str, s
     return first_part.strip(), second_part.strip()
 
 
+
+
+
+
+def generate_segment_with_retry(
+    text: str,
+    api_key: str,
+    voice_name: str,
+    temperature: float,
+    system_instruction: str,
+    timeout_seconds: float = 300.0,
+    retry_backoff_base_seconds: float = 2.0,
+    retry_backoff_multiplier: float = 2.0,
+    retry_backoff_max_seconds: float = 20.0,
+    retry_jitter_seconds: float = 0.5,
+    min_duration_ratio: float = 0.05,
+    max_retries: int = 3,
+) -> bytes:
+    """
+    Generate audio segment with retry logic for short/incomplete generations.
+    """
+    from tts.src.utils.audio import _extract_pcm, BYTES_PER_FRAME
+    
+    expected_min_seconds = len(text) * min_duration_ratio
+
+    
+    full_prompt = f"{system_instruction}\n\n{text}"
+
+    def _sleep_before_retry(attempt_idx: int, reason: str) -> None:
+        if attempt_idx >= max_retries - 1:
+            return
+        delay = retry_backoff_base_seconds * (retry_backoff_multiplier ** attempt_idx)
+        if retry_backoff_max_seconds > 0:
+            delay = min(delay, retry_backoff_max_seconds)
+        if retry_jitter_seconds > 0:
+            delay += random.uniform(0, retry_jitter_seconds)
+        logger.warning(
+            "    Retry backoff (%s): sleeping %.2fs before attempt %d/%d",
+            reason,
+            delay,
+            attempt_idx + 2,
+            max_retries,
+        )
+        time.sleep(delay)
+
+    for attempt in range(max_retries):
+        try:
+            logger.info(f"    Generating... (attempt {attempt+1}/{max_retries})")
+            
+            # Use full_prompt instead of just text
+            audio_bytes = gemini_generate_tts(
+                prompt=full_prompt,
+                api_key=api_key,
+                temperature=temperature,
+                voice_name=voice_name,
+                timeout_s=timeout_seconds,
+            )
+            
+            pcm = _extract_pcm(audio_bytes)
+            # trim_silence removed as per user request (prompt fixed the issue)
+            
+            duration = len(pcm) / BYTES_PER_FRAME / 24000
+            
+            # Validation: detailed check
+            if duration >= expected_min_seconds:
+                return pcm
+            
+            logger.warning(
+                f"    ⚠️ Generated audio too short: {duration:.2f}s "
+                f"(expected > {expected_min_seconds:.2f}s for {len(text)} chars). "
+                f"Possible model truncation."
+            )
+            _sleep_before_retry(attempt, reason="short_audio")
+
+        except Exception as e:
+            logger.warning(f"    ⚠️ Error during generation: {e}")
+            if attempt == max_retries - 1:
+                raise
+            _sleep_before_retry(attempt, reason="exception")
+
+    logger.error("    ❌ Failed to generate valid audio after retries.")
+    raise RuntimeError("Segment generation failed verification")
+
+
 def generate_audio_with_gemini(
     text: str,
     output_path: Path,
-    voice_name: str = "Aoede",
-    temperature: float = 0.0,
+    voice_name: str,
+    temperature: float,
     api_key: str = None,
+    system_instruction: str = "",
 ) -> None:
     """
     Generate audio using Gemini TTS API, splitting into 2 parts to avoid API errors.
@@ -129,6 +260,11 @@ def generate_audio_with_gemini(
     """
     if not api_key:
         raise ValueError("GEMINI_API_KEY is required")
+    if not system_instruction.strip():
+        raise ValueError("system_instruction is required")
+    
+    # Normalize text to remove potential problematic characters
+    text = text.replace("\r\n", " ").replace("\n", " ").strip()
     
     logger.info(f"Generating audio with Gemini TTS")
     logger.info(f"  Voice: {voice_name}")
@@ -137,52 +273,69 @@ def generate_audio_with_gemini(
     
     # Split text into 2 parts at sentence boundary
     part1, part2 = split_text_at_sentence(text, target_ratio=0.5)
+    
+    # Fallback to single generation if text is short
+    if not part2 or len(part2) < 10:
+        logger.info(f"  Text is short enough, generating in one go ({len(text)} chars)")
+        try:
+            pcm = generate_segment_with_retry(
+                text,
+                api_key,
+                voice_name,
+                temperature,
+                system_instruction=system_instruction,
+            )
+            # Write WAV
+            from tts.src.utils.audio import _write_wav
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            _write_wav(output_path, pcm)
+            return
+        except Exception as e:
+            logger.error(f"Single generation failed: {e}")
+            raise
+
     logger.info(f"  Split into 2 parts: {len(part1)} + {len(part2)} chars")
     
-    # Generate both parts
+    # Generate both parts with retry
     logger.info(f"  Generating part 1/2 ({len(part1)} chars)...")
-    audio_bytes_1 = gemini_generate_tts(
-        prompt=part1,
-        api_key=api_key,
-        temperature=temperature,
-        voice_name=voice_name,
-        timeout_s=300.0,
+    pcm1 = generate_segment_with_retry(
+        part1,
+        api_key,
+        voice_name,
+        temperature,
+        system_instruction=system_instruction,
     )
     
     logger.info(f"  Generating part 2/2 ({len(part2)} chars)...")
-    audio_bytes_2 = gemini_generate_tts(
-        prompt=part2,
-        api_key=api_key,
-        temperature=temperature,
-        voice_name=voice_name,
-        timeout_s=300.0,
+    pcm2 = generate_segment_with_retry(
+        part2,
+        api_key,
+        voice_name,
+        temperature,
+        system_instruction=system_instruction,
     )
     
-    # Import TTS audio utilities to handle PCM properly
-    from tts.src.utils.audio import _extract_pcm, _write_wav, BYTES_PER_FRAME
-    import wave
-    import tempfile
+    from tts.src.utils.audio import _write_wav, BYTES_PER_FRAME
     
     logger.info(f"  Merging audio segments...")
     
-    # Extract PCM from both parts (Gemini returns PCM or WAV)
-    pcm1 = _extract_pcm(audio_bytes_1)
-    pcm2 = _extract_pcm(audio_bytes_2)
-    
-    # Validate PCM sizes
-    if len(pcm1) % BYTES_PER_FRAME != 0:
-        raise ValueError(f"Part 1 PCM size not aligned to frame: {len(pcm1)} bytes")
-    if len(pcm2) % BYTES_PER_FRAME != 0:
-        raise ValueError(f"Part 2 PCM size not aligned to frame: {len(pcm2)} bytes")
+    duration1 = len(pcm1) / BYTES_PER_FRAME / 24000
+    duration2 = len(pcm2) / BYTES_PER_FRAME / 24000
+    logger.info(f"    Part 1: {len(pcm1)} bytes ({duration1:.2f}s)")
+    logger.info(f"    Part 2: {len(pcm2)} bytes ({duration2:.2f}s)")
     
     # Concatenate PCM data
-    combined_pcm = pcm1 + pcm2
+    # Add a small pause between parts
+    silence_padding = int(0.5 * 24000) * BYTES_PER_FRAME # 0.5s pause
+    combined_pcm = pcm1 + (b'\x00' * silence_padding) + pcm2
     
     # Write as WAV file
     output_path.parent.mkdir(parents=True, exist_ok=True)
     _write_wav(output_path, combined_pcm)
     
-    logger.info(f"✓ Saved merged audio to {output_path}")
+    total_duration = len(combined_pcm) / BYTES_PER_FRAME / 24000
+    logger.info(f"✓ Saved merged audio to {output_path} ({total_duration:.2f}s)")
+
 
 
 def convert_to_mp3(wav_path: Path, mp3_path: Path) -> None:
@@ -236,14 +389,14 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument(
         "--voice",
         type=str,
-        default="Aoede",
-        help="Voice name (Aoede, Charon, Fenrir, Kore, Puck, default: Aoede)",
+        default="Charon",
+        help="Voice name (Aoede, Charon, Fenrir, Kore, Puck, default: Charon)",
     )
     parser.add_argument(
         "--temperature",
         type=float,
-        default=0.0,
-        help="Generation temperature (default: 0.0)",
+        default=0.6,
+        help="Generation temperature (default: 0.6)",
     )
     parser.add_argument(
         "--debug",
@@ -275,6 +428,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     
     # Set paths
     lang = args.lang
+    system_instruction = load_shorts_system_instruction(lang=lang)
     
     # New structure: podcast/{date}/{lang}/shorts/
     shorts_dir = ROOT_DIR / "podcast" / date_yyyymmdd / lang / "shorts"
@@ -316,6 +470,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             voice_name=args.voice,
             temperature=args.temperature,
             api_key=api_key,
+            system_instruction=system_instruction,
         )
         
         # Convert to MP3

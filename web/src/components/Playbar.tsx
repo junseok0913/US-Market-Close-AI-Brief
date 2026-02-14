@@ -24,6 +24,13 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
   const [isLooping, setIsLooping] = useState(false);
   const [isSpeedHovered, setIsSpeedHovered] = useState(false);
   const [isSpeedControlOpen, setIsSpeedControlOpen] = useState(false);
+  const [error, setError] = useState(false);
+
+  // Reset error when src changes
+  useEffect(() => {
+    setError(false);
+    setIsPlaying(false);
+  }, [audioSrc]);
 
   // Close speed control when clicking outside
   useEffect(() => {
@@ -57,7 +64,17 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
     }
   };
 
+  const handleError = () => {
+    console.error(`Audio load error for src: ${audioSrc}`);
+    setError(true);
+    setIsPlaying(false);
+  };
+
   const togglePlay = () => {
+    if (error) {
+      alert("오디오 파일을 찾을 수 없습니다. (Audio file not found)");
+      return;
+    }
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
@@ -116,6 +133,7 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
       <audio
         ref={audioRef}
         src={audioSrc}
+        onError={handleError}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
@@ -152,7 +170,7 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
                   className="w-8 h-8 flex items-center justify-center rounded-lg border border-black/10 hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   <svg width="12" height="2" viewBox="0 0 12 2" fill="none">
-                    <path d="M1 1H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M1 1H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </button>
 
@@ -170,7 +188,7 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
                   className="w-8 h-8 flex items-center justify-center rounded-lg border border-black/10 hover:bg-black/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M6 1V11M1 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M6 1V11M1 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </button>
               </div>
@@ -182,8 +200,8 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
                 className="w-full mt-2 py-1.5 text-xs text-black/60 hover:text-black hover:bg-black/5 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-1"
               >
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M1 4.5C1.5 2.5 3.5 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.79 11 1.95 9.5 1.29 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M1 1V4.5H4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 4.5C1.5 2.5 3.5 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.79 11 1.95 9.5 1.29 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M1 1V4.5H4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 1.00x
               </button>
