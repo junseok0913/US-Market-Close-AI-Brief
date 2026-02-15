@@ -25,6 +25,14 @@ Keep this file brief and operational. Prefer commands and checks the agent can r
 - TTS only: `uv run python -m tts.src.tts YYYYMMDD --lang ko|en`
 - Web checks: `cd web && npm run build:data && npm run lint`
 
+## Local Qwen TTS Checklist
+
+- Engine: local `Qwen3-TTS` via `mlx-audio` (`QWEN_TTS_MODEL`, default `mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit`)
+- First run downloads model weights; expect slower startup than subsequent runs.
+- If model download fails with 401/repo error, set `HF_TOKEN` (or `huggingface-cli login`) first.
+- Keep `QWEN_TTS_MAX_PARALLEL=1` on MacBook Air for thermal stability.
+- Use `QWEN_TTS_TIMEOUT_SECONDS=300` as baseline for long scripts.
+
 ## `run_daily.sh` Execution Map
 
 - Step 1: Orchestrator (script/metadata/slides)

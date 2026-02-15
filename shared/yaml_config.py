@@ -26,6 +26,7 @@ _SECRET_KEYS = {
     "OPENAI_API_KEY",
     "GEMINI_API_KEY",
     "LANGSMITH_API_KEY",
+    "HF_TOKEN",
 }
 
 
@@ -121,4 +122,3 @@ def load_env_from_yaml(
 
     log.info("Loaded YAML config: %s (applied=%d, skipped=%d)", config_path, applied, skipped)
     return True
-

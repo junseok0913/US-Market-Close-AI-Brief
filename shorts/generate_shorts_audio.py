@@ -13,7 +13,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import random
 import subprocess
 import sys
@@ -30,7 +29,7 @@ SHORTS_PROMPT_CONFIG_PATH = ROOT_DIR / "shorts" / "config" / "gemini_shorts_tts.
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.yaml_config import load_env_from_yaml
-from tts.src.utils.gemini_tts import gemini_generate_tts
+from tts.src.utils.qwen_tts import qwen_generate_tts
 
 # Configure logging
 logging.basicConfig(
@@ -43,16 +42,21 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_SHORTS_SYSTEM_INSTRUCTIONS = {
     "ko": (
-        "Output audio only. Speed=1.10, Volume=1.00, "
-        "YouTube Shorts style Korean U.S. stock market briefing: "
-        "fast-paced, high energy, engaging, and clear narration. "
-        "Read the following text completely without omission."
+        "Output audio only. Speed=1.03, Volume=1.00. "
+        "Korean financial news anchor style for short briefing. "
+        "Serious, concise, and authoritative. "
+        "Keep emotional expression very low (0-5%). Avoid exaggerated excitement, "
+        "dramatic emphasis, and entertainment tone. Use short punctuation pauses only. "
+        "Do not stretch sentence endings or add trailing tone. "
+        "Deliver facts clearly with calm confidence and complete the text without omission."
     ),
     "en": (
-        "Output audio only. Speed=1.10, Volume=1.00, "
-        "YouTube Shorts style U.S. stock market briefing: "
-        "fast-paced, high energy, engaging, and clear narration. "
-        "Read the following text completely without omission."
+        "Output audio only. Speed=1.02, Volume=1.00. "
+        "U.S. financial news anchor style for short briefing. "
+        "Serious, concise, and authoritative. "
+        "Keep emotional expression very low (0-5%). Avoid exaggerated excitement, "
+        "dramatic emphasis, and entertainment tone. "
+        "Deliver facts clearly with calm confidence and complete the text without omission."
     ),
 }
 
@@ -162,10 +166,10 @@ def split_text_at_sentence(text: str, target_ratio: float = 0.5) -> tuple[str, s
 
 def generate_segment_with_retry(
     text: str,
-    api_key: str,
     voice_name: str,
     temperature: float,
     system_instruction: str,
+    lang: str,
     timeout_seconds: float = 300.0,
     retry_backoff_base_seconds: float = 2.0,
     retry_backoff_multiplier: float = 2.0,
@@ -206,11 +210,11 @@ def generate_segment_with_retry(
             logger.info(f"    Generating... (attempt {attempt+1}/{max_retries})")
             
             # Use full_prompt instead of just text
-            audio_bytes = gemini_generate_tts(
+            audio_bytes = qwen_generate_tts(
                 prompt=full_prompt,
-                api_key=api_key,
                 temperature=temperature,
                 voice_name=voice_name,
+                language=lang,
                 timeout_s=timeout_seconds,
             )
             
@@ -240,33 +244,30 @@ def generate_segment_with_retry(
     raise RuntimeError("Segment generation failed verification")
 
 
-def generate_audio_with_gemini(
+def generate_audio_with_qwen(
     text: str,
     output_path: Path,
     voice_name: str,
     temperature: float,
-    api_key: str = None,
     system_instruction: str = "",
+    lang: str = "ko",
 ) -> None:
     """
-    Generate audio using Gemini TTS API, splitting into 2 parts to avoid API errors.
+    Generate audio using local Qwen TTS, splitting into 2 parts to avoid long-generation failures.
     
     Args:
         text: Text to convert to speech
         output_path: Where to save the audio file
-        voice_name: Voice to use (Aoede, Charon, Fenrir, Kore, Puck)
+        voice_name: Voice/style hint to use
         temperature: Generation temperature (0.0 for most consistent)
-        api_key: Gemini API key
     """
-    if not api_key:
-        raise ValueError("GEMINI_API_KEY is required")
     if not system_instruction.strip():
         raise ValueError("system_instruction is required")
     
     # Normalize text to remove potential problematic characters
     text = text.replace("\r\n", " ").replace("\n", " ").strip()
     
-    logger.info(f"Generating audio with Gemini TTS")
+    logger.info(f"Generating audio with local Qwen TTS")
     logger.info(f"  Voice: {voice_name}")
     logger.info(f"  Text length: {len(text)} characters")
     logger.info(f"  Temperature: {temperature}")
@@ -280,10 +281,10 @@ def generate_audio_with_gemini(
         try:
             pcm = generate_segment_with_retry(
                 text,
-                api_key,
                 voice_name,
                 temperature,
                 system_instruction=system_instruction,
+                lang=lang,
             )
             # Write WAV
             from tts.src.utils.audio import _write_wav
@@ -300,19 +301,19 @@ def generate_audio_with_gemini(
     logger.info(f"  Generating part 1/2 ({len(part1)} chars)...")
     pcm1 = generate_segment_with_retry(
         part1,
-        api_key,
         voice_name,
         temperature,
         system_instruction=system_instruction,
+        lang=lang,
     )
     
     logger.info(f"  Generating part 2/2 ({len(part2)} chars)...")
     pcm2 = generate_segment_with_retry(
         part2,
-        api_key,
         voice_name,
         temperature,
         system_instruction=system_instruction,
+        lang=lang,
     )
     
     from tts.src.utils.audio import _write_wav, BYTES_PER_FRAME
@@ -326,7 +327,7 @@ def generate_audio_with_gemini(
     
     # Concatenate PCM data
     # Add a small pause between parts
-    silence_padding = int(0.5 * 24000) * BYTES_PER_FRAME # 0.5s pause
+    silence_padding = int(0.12 * 24000) * BYTES_PER_FRAME # 0.12s pause
     combined_pcm = pcm1 + (b'\x00' * silence_padding) + pcm2
     
     # Write as WAV file
@@ -389,14 +390,14 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument(
         "--voice",
         type=str,
-        default="Charon",
-        help="Voice name (Aoede, Charon, Fenrir, Kore, Puck, default: Charon)",
+        default="Sohee",
+        help="Voice/style hint (Qwen speakers recommended: Sohee, Ryan, Aiden, Serena, Vivian)",
     )
     parser.add_argument(
         "--temperature",
         type=float,
-        default=0.6,
-        help="Generation temperature (default: 0.6)",
+        default=0.3,
+        help="Generation temperature (default: 0.3)",
     )
     parser.add_argument(
         "--debug",
@@ -419,12 +420,6 @@ def main(argv: Optional[list[str]] = None) -> int:
     # Load environment
     load_env_from_yaml(logger=logger)
     load_dotenv(ROOT_DIR / ".env", override=False)
-    
-    # Get API key
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        logger.error("GEMINI_API_KEY not found in environment")
-        return 2
     
     # Set paths
     lang = args.lang
@@ -464,13 +459,13 @@ def main(argv: Optional[list[str]] = None) -> int:
         logger.info(f"📝 Script: {len(script_text)} characters")
         
         # Generate audio
-        generate_audio_with_gemini(
+        generate_audio_with_qwen(
             text=script_text,
             output_path=output_wav,
             voice_name=args.voice,
             temperature=args.temperature,
-            api_key=api_key,
             system_instruction=system_instruction,
+            lang=lang,
         )
         
         # Convert to MP3

@@ -1,6 +1,6 @@
 # TTS 파이프라인 (`tts/`)
 
-`tts/`는 `podcast/{date}/script.json`을 입력으로 받아 **턴(turn) 단위 음성 합성(TTS)** 을 수행하고, 최종 오디오 파일과 타임라인을 생성합니다. 구현은 LangGraph 기반이며, 합성은 Gemini TTS API를 사용합니다.
+`tts/`는 `podcast/{date}/script.json`을 입력으로 받아 **턴(turn) 단위 음성 합성(TTS)** 을 수행하고, 최종 오디오 파일과 타임라인을 생성합니다. 구현은 LangGraph 기반이며, 합성은 로컬 `Qwen3-TTS`(MLX)로 수행합니다.
 
 **🆕 다국어 지원**: `--lang` 옵션으로 한국어(ko) 및 영어(en) TTS를 별도로 생성할 수 있습니다.
 
@@ -47,15 +47,19 @@ python -m tts.src.tts 2025-12-22 --lang ko
 ## 필수/옵션 환경변수
 
 - 필수:
-  - `GEMINI_API_KEY`: Gemini TTS 호출 API 키
+  - 없음 (로컬 모델 실행)
 - 옵션:
-  - `GEMINI_TTS_MODEL`: TTS 모델 경로 오버라이드 (예: `models/gemini-2.5-flash-preview-tts`)
+  - `QWEN_TTS_MODEL`: 로컬 모델 ID (기본: `mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit`)
+  - `QWEN_TTS_MAX_PARALLEL`: 동시 요청 수 오버라이드 (기본 권장: `1`)
+  - `QWEN_TTS_TIMEOUT_SECONDS`: 생성 타임아웃(초) 오버라이드 (기본: `300`)
+  - `QWEN_TTS_TEMPERATURE`: 생성 temperature 오버라이드
+  - `HF_TOKEN`: Hugging Face 모델 다운로드 인증 토큰(필요한 경우)
 
 설정 파일:
 - `tts/config/gemini_tts.yaml` (Korean)
 - `tts/config/gemini_tts_en.yaml` (English)
   - `instructions.speaker1/speaker2`: turn 프롬프트 앞에 붙는 지시문(진행자/해설자)
-  - `voices.speaker1/speaker2`: 음성 모델 voiceName
+  - `voices.speaker1/speaker2`: Qwen speaker/style hint
   - `temperature`, `timeout_seconds`, `max_parallel_requests`, `batch_timeout_seconds`
   - `common_gap_seconds`, `chapter_gap_seconds`
 
@@ -120,6 +124,10 @@ TTS는 `speaker`가 `"진행자"`면 `speaker1`, `"해설자"`면 `speaker2`로 
 - 각 배치는 ThreadPoolExecutor로 동시 실행합니다.
 - 배치 내에서 timeout이 발생하면 전체 실행이 실패합니다.
 - 중간 실패 후 재실행 시, 이미 생성된 turn WAV는 재사용하여 재합성 비용을 줄입니다.
+
+운영 권장:
+- MacBook Air 환경에서는 `QWEN_TTS_MAX_PARALLEL=1`을 유지해 발열/스로틀링을 줄입니다.
+- 첫 실행은 모델 캐시 다운로드가 포함되어 시간이 오래 걸릴 수 있습니다.
 
 ---
 

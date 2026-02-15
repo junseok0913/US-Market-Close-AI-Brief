@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import argparse
 import logging
-import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -36,7 +35,7 @@ from .nodes import (
 )
 from .state import TTSState
 from .utils.script import parse_date_arg
-from .utils.gemini_tts import get_model_path
+from .utils.qwen_tts import get_model_id
 from .utils.tracing import configure_tracing
 from shared.yaml_config import load_env_from_yaml
 
@@ -85,15 +84,14 @@ def _trace_inputs_pipeline(inputs: dict) -> dict:
         "date": inputs.get("date"),
         "script_path": _p(inputs.get("script_path")),
         "out_dir": _p(inputs.get("out_dir")),
-        "model_path": get_model_path(),
-        "api_key_present": bool(os.getenv("GEMINI_API_KEY")),
+        "model_id": get_model_id(),
     }
 
 
 @traceable(
     run_type="chain",
-    name="gemini_tts.pipeline",
-    tags=["tts", "gemini"],
+    name="tts.pipeline",
+    tags=["tts", "qwen", "local"],
     process_inputs=_trace_inputs_pipeline,
 )
 def run_tts(*, date: str, script_path: Path, out_dir: Path, lang: str = "ko") -> Dict[str, Any]:
@@ -104,7 +102,7 @@ def run_tts(*, date: str, script_path: Path, out_dir: Path, lang: str = "ko") ->
 def main(argv: Optional[List[str]] = None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-    parser = argparse.ArgumentParser(description="Gemini TTS (turn-level, LangGraph)")
+    parser = argparse.ArgumentParser(description="Qwen local TTS (turn-level, LangGraph)")
     parser.add_argument("date", type=str, help="브리핑 날짜 (YYYYMMDD 또는 YYYY-MM-DD)")
     parser.add_argument(
         "--lang",
@@ -124,10 +122,6 @@ def main(argv: Optional[List[str]] = None) -> int:
     load_env_from_yaml(logger=logger)
     load_dotenv(ROOT_DIR / ".env", override=False)
     configure_tracing(logger=logger)
-
-    if not os.environ.get("GEMINI_API_KEY"):
-        logger.error("GEMINI_API_KEY가 설정되지 않았습니다. (.env 또는 환경변수)")
-        return 2
 
     lang = args.lang
     logger.info(f"TTS 언어: {lang} ({'한국어' if lang == 'ko' else '영어'})")

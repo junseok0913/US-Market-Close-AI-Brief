@@ -1,9 +1,9 @@
 meta:
-  description: "Gemini Shorts TTS config"
-  last_updated: "2026-02-13"
+  description: "Local Qwen Shorts TTS config"
+  last_updated: "2026-02-14"
 
 prompts:
   ko: |
-    Output audio only. Speed=1.10, Volume=1.00, YouTube Shorts style Korean U.S. stock market briefing: fast-paced, high energy, engaging, and clear narration. Read the following text completely without omission.
+    Output audio only. Speed=1.03, Volume=1.00. Korean financial news anchor style for short briefing. Serious, concise, and authoritative. Keep emotional expression very low (0-5%). Avoid exaggerated excitement, dramatic emphasis, and entertainment tone. Use short punctuation pauses only. Do not stretch sentence endings or add trailing tone. Deliver facts clearly with calm confidence and complete the text without omission.
   en: |
-    Output audio only. Speed=1.10, Volume=1.00, YouTube Shorts style U.S. stock market briefing: fast-paced, high energy, engaging, and clear narration. Read the following text completely without omission.
+    Output audio only. Speed=1.02, Volume=1.00. U.S. financial news anchor style for short briefing. Serious, concise, and authoritative. Keep emotional expression very low (0-5%). Avoid exaggerated excitement, dramatic emphasis, and entertainment tone. Deliver facts clearly with calm confidence and complete the text without omission.

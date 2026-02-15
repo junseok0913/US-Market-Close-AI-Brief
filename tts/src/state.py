@@ -23,7 +23,7 @@ class ChapterSpec(TypedDict):
     end_id: int
 
 
-class GeminiTTSConfig(TypedDict, total=False):
+class TTSConfig(TypedDict, total=False):
     instructions: Dict[str, str]  # speaker1/speaker2
     temperature: float
     voices: Dict[str, str]  # speaker1/speaker2
@@ -32,6 +32,10 @@ class GeminiTTSConfig(TypedDict, total=False):
     batch_timeout_seconds: float  # cooldown seconds between batches (legacy key name)
     common_gap_seconds: float
     chapter_gap_seconds: float
+
+
+# Backward-compatible alias for existing imports.
+GeminiTTSConfig = TTSConfig
 
 
 class Turn(TypedDict):

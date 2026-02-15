@@ -3,7 +3,7 @@
 `tts.py`에서 그래프를 조립할 때 사용되는 각 단계(node)들의 실제 로직을 담는다.
 - config 로드/검증
 - script.json 로드 및 turn 매핑
-- Gemini TTS 호출(턴 단위) 및 저장
+- Qwen TTS 호출(턴 단위) 및 저장
 - timeline 계산, WAV merge, 산출물 저장
 - Podcast SQLite 인덱스 업데이트
 """
@@ -24,7 +24,7 @@ from langsmith.utils import ContextThreadPoolExecutor
 
 from podcast_db import get_default_db_path, update_tts_row, utc_iso_from_timestamp
 
-from .state import GeminiTTSConfig, TimelineItem, Turn, TurnAudio, TurnRequest, TTSState
+from .state import TTSConfig, TimelineItem, Turn, TurnAudio, TurnRequest, TTSState
 from .utils.audio import (
     BYTES_PER_FRAME,
     CHANNELS,
@@ -35,7 +35,7 @@ from .utils.audio import (
     _write_wav,
 )
 from .utils.script import _extract_chapter_specs, _parse_int, _speaker_to_label
-from .utils.gemini_tts import gemini_generate_tts_traced
+from .utils.qwen_tts import qwen_generate_tts_traced
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ DEFAULT_CONFIG_PATH = ROOT_DIR / "tts" / "config" / "gemini_tts.yaml"
 KNOWN_CHAPTERS: set[str] = {"opening", "theme", "ticker", "closing"}
 
 
-def _load_gemini_tts_config(path: Path) -> GeminiTTSConfig:
+def _load_tts_config(path: Path) -> TTSConfig:
     if not path.exists():
         raise FileNotFoundError(f"TTS config가 없습니다: {path}")
 
@@ -135,20 +135,31 @@ def load_config_node(state: TTSState) -> TTSState:
     
     logger.info(f"Loading TTS config: {config_path} (lang={lang})")
     
-    cfg = _load_gemini_tts_config(config_path)
+    cfg = _load_tts_config(config_path)
     instructions = cfg.get("instructions") or {}
     voices = cfg.get("voices") or {}
+    timeout_override_raw = os.getenv("QWEN_TTS_TIMEOUT_SECONDS")
+    timeout_override = float(timeout_override_raw) if timeout_override_raw else None
+    parallel_override_raw = os.getenv("QWEN_TTS_MAX_PARALLEL")
+    parallel_override = int(parallel_override_raw) if parallel_override_raw else None
+    temperature_override_raw = os.getenv("QWEN_TTS_TEMPERATURE")
+    temperature_override = float(temperature_override_raw) if temperature_override_raw else None
+
+    cfg_temperature = float(cfg.get("temperature") or 1.0)
+    cfg_timeout = float(cfg.get("timeout_seconds") or 240)
+    cfg_parallel = int(cfg.get("max_parallel_requests") or 1)
+
     return {
         **state,
-        "temperature": float(cfg.get("temperature") or 1.0),
+        "temperature": temperature_override if temperature_override is not None else cfg_temperature,
         "speaker1_voice": str(voices.get("speaker1")).strip(),
         "speaker2_voice": str(voices.get("speaker2")).strip(),
         "instructions_by_label": {
             "speaker1": str(instructions.get("speaker1")).strip(),
             "speaker2": str(instructions.get("speaker2")).strip(),
         },
-        "timeout_seconds": float(cfg.get("timeout_seconds") or 240),
-        "max_parallel_requests": int(cfg.get("max_parallel_requests") or 4),
+        "timeout_seconds": timeout_override if timeout_override is not None else cfg_timeout,
+        "max_parallel_requests": parallel_override if parallel_override is not None else cfg_parallel,
         "batch_timeout_seconds": float(cfg.get("batch_timeout_seconds") or 60),
         "common_gap_seconds": float(cfg.get("common_gap_seconds") or 0.25),
         "chapter_gap_seconds": float(cfg.get("chapter_gap_seconds") or 0.25),
@@ -264,16 +275,12 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
     if out_dir is None:
         raise ValueError("out_dir가 state에 없습니다.")
 
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        raise EnvironmentError("GEMINI_API_KEY가 설정되지 않았습니다. (.env 또는 환경변수)")
-
     temperature = float(state.get("temperature") or 1.0)
     speaker1_voice = str(state.get("speaker1_voice") or "").strip()
     speaker2_voice = str(state.get("speaker2_voice") or "").strip()
     timeout_seconds = float(state.get("timeout_seconds") or 240.0)
     batch_cooldown_seconds = float(state.get("batch_timeout_seconds") or 60.0)
-    max_parallel = int(state.get("max_parallel_requests") or 4)
+    max_parallel = int(state.get("max_parallel_requests") or 1)
     if not speaker1_voice or not speaker2_voice:
         raise ValueError("speaker1_voice/speaker2_voice가 비어 있습니다. load_config_node를 확인하세요.")
     if timeout_seconds <= 0:
@@ -283,9 +290,10 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
 
     request_timeout_seconds = timeout_seconds
     batch_wait_timeout_seconds = max(1.0, request_timeout_seconds)
+    lang = str(state.get("lang") or "ko")
 
     logger.info(
-        "Gemini TTS 요청 시작: turns=%d, batch_size=%d, request_timeout_s=%.1f, batch_wait_timeout_s=%.1f, batch_cooldown_s=%.1f",
+        "Qwen TTS 요청 시작: turns=%d, batch_size=%d, request_timeout_s=%.1f, batch_wait_timeout_s=%.1f, batch_cooldown_s=%.1f",
         len(requests),
         max_parallel,
         request_timeout_seconds,
@@ -337,11 +345,11 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
 
         if wav_path.exists():
             t0 = time.monotonic()
-            logger.info("Gemini TTS 스킵(기존 파일): id=%s, chapter=%s, speaker=%s", tid, chapter, speaker)
+            logger.info("Qwen TTS 스킵(기존 파일): id=%s, chapter=%s, speaker=%s", tid, chapter, speaker)
             frames = _read_wav_frames(wav_path)
             elapsed_ms = int(round((time.monotonic() - t0) * 1000))
             logger.info(
-                "Gemini TTS 로드 완료: id=%s, chapter=%s, frames=%d, elapsed_ms=%d, wav=%s",
+                "Qwen TTS 로드 완료: id=%s, chapter=%s, frames=%d, elapsed_ms=%d, wav=%s",
                 tid,
                 chapter,
                 frames,
@@ -362,20 +370,20 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
         base_delay = 2.0  # 초
         
         t0 = time.monotonic()
-        logger.info("Gemini TTS 요청(실행): id=%s, chapter=%s, speaker=%s", tid, chapter, speaker)
+        logger.info("Qwen TTS 요청(실행): id=%s, chapter=%s, speaker=%s", tid, chapter, speaker)
         
         last_exception = None
         for attempt in range(max_retries):
             try:
-                audio_bytes = gemini_generate_tts_traced(
+                audio_bytes = qwen_generate_tts_traced(
                     chapter=chapter,
                     start_id=tid,
                     end_id=tid,
                     turns=1,
                     prompt=str(r["prompt"]),
-                    api_key=api_key,
                     temperature=temperature,
                     voice_name=voice_name,
+                    language=lang,
                     timeout_s=request_timeout_seconds,
                 )
                 # 성공하면 바로 break
@@ -399,7 +407,7 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
                     # Exponential backoff
                     delay = base_delay * (2 ** attempt)
                     logger.warning(
-                        "Gemini TTS 재시도 (attempt %d/%d): id=%s, error=%s, retry_in=%.1fs",
+                        "Qwen TTS 재시도 (attempt %d/%d): id=%s, error=%s, retry_in=%.1fs",
                         attempt + 1,
                         max_retries,
                         tid,
@@ -409,8 +417,8 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
                     time.sleep(delay)
                 else:
                     # 마지막 시도 또는 재시도 불가능한 에러
-                    logger.error("Gemini TTS 실패: id=%s, chapter=%s", tid, r.get("chapter"))
-                    logger.error("Gemini TTS 실패(소요): id=%s, elapsed_ms=%d", tid, elapsed_ms)
+                    logger.error("Qwen TTS 실패: id=%s, chapter=%s", tid, r.get("chapter"))
+                    logger.error("Qwen TTS 실패(소요): id=%s, elapsed_ms=%d", tid, elapsed_ms)
                     raise
         
         # 모든 재시도 실패 시
@@ -426,7 +434,7 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
 
         elapsed_ms = int(round((time.monotonic() - t0) * 1000))
         logger.info(
-            "Gemini TTS 완료: id=%s, chapter=%s, frames=%d, elapsed_ms=%d, saved=%s",
+            "Qwen TTS 완료: id=%s, chapter=%s, frames=%d, elapsed_ms=%d, saved=%s",
             tid,
             chapter,
             frames,
@@ -451,7 +459,7 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
         ids = [int(r["id"]) for r in batch]
         batch_missing_ids = [tid for tid in ids if tid in remaining_missing_ids]
         logger.info(
-            "Gemini TTS 배치 시작: batch=%d/%d, size=%d, ids=%s, missing=%s, wait_timeout_s=%.1f",
+            "Qwen TTS 배치 시작: batch=%d/%d, size=%d, ids=%s, missing=%s, wait_timeout_s=%.1f",
             batch_idx,
             len(batches),
             len(batch),
@@ -473,14 +481,14 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
             if not_done:
                 pending_ids = sorted(int(future_to_req[f]["id"]) for f in not_done)
                 logger.error(
-                    "Gemini TTS 배치 완료 대기 타임아웃: batch=%d/%d, pending_ids=%s, timeout_s=%.1f",
+                    "Qwen TTS 배치 완료 대기 타임아웃: batch=%d/%d, pending_ids=%s, timeout_s=%.1f",
                     batch_idx,
                     len(batches),
                     pending_ids,
                     batch_wait_timeout_seconds,
                 )
                 raise TimeoutError(
-                    f"Gemini TTS batch wait timeout: batch={batch_idx}/{len(batches)} pending={pending_ids}"
+                    f"Qwen TTS batch wait timeout: batch={batch_idx}/{len(batches)} pending={pending_ids}"
                 )
 
             for fut in done:
@@ -488,7 +496,7 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
 
         elapsed_ms = int(round((time.monotonic() - t_batch0) * 1000))
         logger.info(
-            "Gemini TTS 배치 완료: batch=%d/%d, size=%d, elapsed_ms=%d",
+            "Qwen TTS 배치 완료: batch=%d/%d, size=%d, elapsed_ms=%d",
             batch_idx,
             len(batches),
             len(batch),
@@ -499,9 +507,9 @@ def generate_turn_audio_parallel_node(state: TTSState) -> TTSState:
             remaining_missing_ids.difference_update(batch_missing_ids)
 
         if remaining_missing_ids and batch_missing_ids and batch_cooldown_seconds > 0:
-            logger.info("Gemini TTS 배치 쿨다운 시작: sleep_s=%.1f", batch_cooldown_seconds)
+            logger.info("Qwen TTS 배치 쿨다운 시작: sleep_s=%.1f", batch_cooldown_seconds)
             time.sleep(batch_cooldown_seconds)
-            logger.info("Gemini TTS 배치 쿨다운 완료")
+            logger.info("Qwen TTS 배치 쿨다운 완료")
 
     turn_audios.sort(key=lambda a: int(a["id"]))
     return {**state, "turn_audios": turn_audios}

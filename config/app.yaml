@@ -10,9 +10,16 @@ secrets:
   OPENAI_API_KEY: null
   GEMINI_API_KEY: null
   LANGSMITH_API_KEY: null
+  HF_TOKEN: null
 
 env:
-  # Gemini TTS
+  # Qwen local TTS (MLX)
+  QWEN_TTS_MODEL: "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit"
+  QWEN_TTS_MAX_PARALLEL: 1
+  QWEN_TTS_TIMEOUT_SECONDS: 300
+  QWEN_TTS_TEMPERATURE: 0.3
+
+  # Deprecated (kept for backward compatibility; ignored by local Qwen path)
   GEMINI_TTS_MODEL: "models/gemini-2.5-flash-preview-tts"
 
   # OpenAI global defaults
@@ -95,4 +102,3 @@ env:
   TICKER_SCRIPT_WORKER_OPENAI_REASONING_EFFORT: "none"
   TICKER_SCRIPT_REFINER_OPENAI_MODEL: "gpt-5.1"
   TICKER_SCRIPT_REFINER_OPENAI_REASONING_EFFORT: "none"
-

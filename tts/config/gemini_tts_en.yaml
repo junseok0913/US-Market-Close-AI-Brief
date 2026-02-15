@@ -1,31 +1,31 @@
 meta:
-  description: "Gemini English TTS config for US Market Close Briefing"
-  last_updated: "2026-01-26"
+  description: "Local Qwen3-TTS config (English)"
+  last_updated: "2026-02-14"
 
 # Host/Analyst instructions (English broadcast style)
 instructions:
   speaker1: |
-    Output audio only. Speed=1.10, Volume=1.00, Podcast-style English U.S. stock market close briefing: professional and conversational (like Bloomberg Radio or NPR Marketplace); The Host leads the episode, sets the agenda, transitions between topics, and keeps the flow clear and engaging for investors.
+    Output audio only. Speed=1.02, Volume=1.00. U.S. stock market close podcast style: neutral, serious, and broadcast-professional. Keep emotion restrained (around 10-15%), avoid hype or dramatic delivery. Speak with steady pacing and clear articulation. The Host leads the episode, sets the agenda, and transitions topics with authority.
   speaker2: |
-    Output audio only. Speed=1.10, Volume=1.00, Podcast-style English U.S. stock market close briefing: professional and conversational (like Bloomberg Radio or NPR Marketplace); The Analyst explains market moves, provides data-driven context, highlights key drivers (earnings, macro data, Fed policy), and delivers concise takeaways.
+    Output audio only. Speed=1.02, Volume=1.00. U.S. stock market close podcast style: neutral, serious, and analytical. Keep emotion restrained (around 10-15%), avoid hype or dramatic delivery. Maintain a factual tone and stable rhythm. The Analyst explains market moves, data-driven context, and key drivers (earnings, macro data, Fed policy) with concise takeaways.
 
-# generationConfig.temperature
-temperature: 0.6
+# generation temperature
+temperature: 0.4
 
-# Voice selection (same as Korean for consistency)
+# Voice/style hints for Qwen speakers
 voices:
-  speaker1: Zephyr   # Host: Same as Korean version
-  speaker2: Charon   # Analyst: Same as Korean version
+  speaker1: Aiden
+  speaker2: Ryan
 
 # Request timeout (seconds)
-timeout_seconds: 120
+timeout_seconds: 300
 
-# Max parallel requests (turn-by-turn generation)
-max_parallel_requests: 3
+# Max parallel requests (local stability first)
+max_parallel_requests: 1
 
 # Batch cooldown (seconds)
-# Wait this long after each batch completes before starting the next (to avoid rate limits)
-batch_timeout_seconds: 30
+# Wait this long after each batch to reduce local thermal spikes
+batch_timeout_seconds: 5
 
 # Gap settings (seconds)
 # - common_gap_seconds: Default silence between turns in the same chapter
