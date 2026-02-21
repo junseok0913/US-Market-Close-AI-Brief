@@ -1,0 +1,291 @@
+{
+  "date": "20260219",
+  "lang": "ko",
+  "title": "실적은 좋은데 주가는 하락? 월마트와 연준의 경고",
+  "hook": "실적은 좋은데 주가는 왜 떨어졌을까요.",
+  "durationSeconds": 90.0,
+  "audioFile": "shorts20260219.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.07,
+      "eyebrow": "장마감 쇼츠",
+      "headline": "실적은 좋은데 주가는 왜 떨어졌을까요.",
+      "subheadline": "실적은 좋은데 주가는 하락? 월마트와 연준의 경고",
+      "body": "",
+      "bullets": [],
+      "tickers": [
+        "WMT",
+        "HD"
+      ],
+      "highlights": [
+        "90초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 3.07,
+      "endSec": 12.42,
+      "eyebrow": "시장 흐름",
+      "headline": "지수 흐름 한 줄 요약",
+      "subheadline": "다우 -0.54% / S&P 500 -0.28% / 나스닥 -0.31%",
+      "body": "",
+      "bullets": [
+        "다우 -0.54%",
+        "S&P 500 -0.28%"
+      ],
+      "tickers": [],
+      "highlights": [
+        "-0.54%",
+        "-0.28%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 12.42,
+      "endSec": 32.58,
+      "eyebrow": "핵심 1",
+      "headline": "실적보다 가이던스",
+      "subheadline": "월마트, 홈디포 등 기업의 신중한 전망에 3대 지수 하락",
+      "body": "",
+      "bullets": [
+        "월마트, 홈디포 등 기업의 신중한 전망에 3대 지…"
+      ],
+      "tickers": [],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 32.58,
+      "endSec": 37.4,
+      "eyebrow": "핵심 2",
+      "headline": "연준 시그널 충돌",
+      "subheadline": "매파적 FOMC 의사록과 완화적 연은 총재 발언 등 연준의 엇갈린 신호",
+      "body": "",
+      "bullets": [
+        "매파적 FOMC 의사록과 완화적 연은 총재 발언…"
+      ],
+      "tickers": [],
+      "highlights": []
+    },
+    {
+      "id": 4,
+      "phase": "ticker",
+      "theme": "flash",
+      "startSec": 37.4,
+      "endSec": 49.53,
+      "eyebrow": "종목 체크",
+      "headline": "WMT 체크",
+      "subheadline": "월마트는 예상을 웃도는 실적에도 불구하고 향후 매출 성장률이 둔화될 것…",
+      "body": "",
+      "bullets": [],
+      "tickers": [
+        "WMT"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 5,
+      "phase": "signal",
+      "theme": "neutral",
+      "startSec": 49.53,
+      "endSec": 67.21,
+      "eyebrow": "심리 지표",
+      "headline": "심리 온도",
+      "subheadline": "이처럼 하루 사이에 매파적 발언과 완화적 발언이 교차하며 불확실성이 커…",
+      "body": "",
+      "bullets": [],
+      "tickers": [],
+      "highlights": [
+        "+3.00%"
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "watch",
+      "theme": "bull",
+      "startSec": 67.21,
+      "endSec": 75.1,
+      "eyebrow": "다음 일정",
+      "headline": "다음 체크포인트",
+      "subheadline": "PCE 발표 전후 변동성 주의",
+      "body": "",
+      "bullets": [
+        "2026-02-19 신규 실업수당",
+        "2026-02-18 FOMC 의사록"
+      ],
+      "tickers": [
+        "WMT",
+        "HD"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 7,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 75.1,
+      "endSec": 90.0,
+      "eyebrow": "한 줄 결론",
+      "headline": "실적은 좋은데 주가는 하락? 월마트와 연준의 경고",
+      "subheadline": "월마트, 홈디포 등 기업의 신중한 전망에 3대 지수 하락",
+      "body": "",
+      "bullets": [
+        "숫자 먼저",
+        "리스크 우선"
+      ],
+      "tickers": [
+        "WMT",
+        "HD"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.07,
+      "text": "실적은 좋은데 주가는 왜 떨어졌을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 3.07,
+      "endSec": 12.42,
+      "text": "2월 19일 미국 증시는 다우 -0.54%, S&P 500 -0.28%, 나스닥 -0.31%로 일제히 하락했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 12.42,
+      "endSec": 20.16,
+      "text": "견조한 4분기 실적에도 불구하고, 기업들이 내놓은 신중한 미래 전망이 시장의 발목을 잡았습니다."
+    },
+    {
+      "id": 3,
+      "startSec": 20.16,
+      "endSec": 32.58,
+      "text": "대표적으로 월마트는 예상을 웃도는 실적에도 향후 소비 둔화를 우려하는 가이던스를 제시하며 주가가 1.38% 하락했고, 홈디포 역시 1.29% 내렸습니다."
+    },
+    {
+      "id": 4,
+      "startSec": 32.58,
+      "endSec": 37.4,
+      "text": "이들 대형 소매 기업의 경고는 경기 둔화 우려를 키웠습니다."
+    },
+    {
+      "id": 5,
+      "startSec": 37.4,
+      "endSec": 49.53,
+      "text": "하지만 동시에 주간 신규 실업수당 청구건수는 예상보다 적게 나오며 강한 고용 시장을 보여주는 등, 엇갈린 경제 지표가 투자자들을 혼란에 빠뜨렸습니다."
+    },
+    {
+      "id": 6,
+      "startSec": 49.53,
+      "endSec": 53.04,
+      "text": "연준의 엇갈린 신호도 불확실성을 더했습니다."
+    },
+    {
+      "id": 7,
+      "startSec": 53.04,
+      "endSec": 67.21,
+      "text": "전날 FOMC 의사록에서 금리 인상 가능성까지 언급되며 시장에 충격을 줬지만, 오늘은 닐 카시카리 연은 총재가 현재 금리가 중립적 수준에 가깝다는 완화적 발언을 내놓았습니다."
+    },
+    {
+      "id": 8,
+      "startSec": 67.21,
+      "endSec": 75.1,
+      "text": "하루 만에 나온 상반된 신호에 시장의 불안 심리를 나타내는 VIX 지수는 3% 넘게 급등했습니다."
+    },
+    {
+      "id": 9,
+      "startSec": 75.1,
+      "endSec": 85.91,
+      "text": "결국 시장의 모든 관심은 2월 20일 발표될 연준이 가장 중요하게 여기는 물가 지표, 개인소비지출 PCE 가격지수로 향하고 있습니다."
+    },
+    {
+      "id": 10,
+      "startSec": 85.91,
+      "endSec": 90.0,
+      "text": "이 데이터가 향후 시장의 방향을 결정할 전망입니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "article",
+      "label": "Walmart earnings beat estimates, but company offers cautious outlook amid 'somewhat unsta…",
+      "detail": "6a08af2577756cfc"
+    },
+    {
+      "type": "chart",
+      "label": "WMT",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "label": "HD",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "event",
+      "label": "Initial Jobless Claims",
+      "detail": "2026-02-19"
+    },
+    {
+      "type": "event",
+      "label": "FOMC Minutes",
+      "detail": "2026-02-18"
+    },
+    {
+      "type": "article",
+      "label": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates",
+      "detail": "2baf3cc6b1766932"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-02-18"
+    },
+    {
+      "type": "event",
+      "label": "core pce price index mom",
+      "detail": "2026-02-20"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "월마트, 홈디포 등 기업의 신중한 전망에 3대 지수 하락",
+      "매파적 FOMC 의사록과 완화적 연은 총재 발언 등 연준의 엇갈린 신호",
+      "향후 PCE 물가 지표가 시장 방향성을 결정할 핵심 변수"
+    ],
+    "featuredTickers": [
+      "WMT",
+      "HD"
+    ],
+    "sceneCount": 8,
+    "timingMode": "caption-aligned"
+  }
+}

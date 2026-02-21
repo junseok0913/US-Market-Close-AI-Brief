@@ -1,0 +1,21 @@
+Title:
+2026.2.20 US Market Close | Market rallies as Supreme Court ruling on tariffs eases uncertainty
+
+Description:
+On February 20, the US stock market closed with strong gains, driven by a Supreme Court ruling that curbed tariff powers, despite weak economic data. The market initially opened lower following a Q4 GDP growth shock and higher-than-expected inflation figures. However, expectations of reduced tariff uncertainty dramatically revived investor sentiment, pushing the market higher.
+
+- S&P 500: +0.69% - Closed higher on hopes that the Supreme Court's tariff-related decision would resolve uncertainty.
+- Nasdaq Composite: +0.90% - The tech-heavy index also saw strong gains, fueled by anticipation of tariff relief.
+- Dow Jones Industrial Average: +0.47% - Rose in line with the broader recovery in market sentiment.
+
+Key Issues
+- Supreme Court Curbs Tariff Authority: The court ruled it unconstitutional for the executive branch to impose broad tariffs without congressional approval, driving the market upward. This sparked expectations of significantly reduced cost burdens and uncertainty for businesses.
+- Weak Economic Data: Q4 GDP growth came in at just 1.4%, well below the 3.0% forecast. Additionally, the Core Personal Consumption Expenditures (PCE) Price Index, a key inflation gauge for the Fed, rose 0.4%, higher than the expected 0.3%, fueling stagflation concerns.
+- Administration's Immediate Response: Shortly after the ruling, the administration announced a new 10% global tariff, effective for 150 days under the Trade Act of 1974, suggesting that trade policy tensions could continue in a different form.
+- Retail and Consumer Goods Sectors Rally: Companies in the retail and consumer goods sectors, expected to be direct beneficiaries of tariff relief, showed strong performance. Notably, the retail ETF (XRT) posted gains that outpaced the broader market.
+
+Key Stocks
+- BlackRock (BLK): +1.77% - The stock closed higher despite concerns over profitability, as its future growth narrative, highlighted by its core risk management platform 'Aladdin' and its spot Bitcoin ETF, gained traction.
+
+Keywords:
+미국주식,주식,재테크,시황,S&P500,나스닥,관세,대법원,GDP,물가,인플레이션,블랙록,BLK

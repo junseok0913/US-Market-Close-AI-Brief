@@ -1,0 +1,79 @@
+{
+  "date": "20260218",
+  "title": "연준 신중론에도 증시 최고치, AI 주식 희비 엇갈린 이유",
+  "duration_target": "90초",
+  "hook": "연준은 금리 인하에 신중한데, 증시는 왜 사상 최고치를 경신했을까요.",
+  "script": "연준은 금리 인하에 신중한데, 증시는 왜 사상 최고치를 경신했을까요. 2월 18일 미국 증시는 S&P 500이 0.56%, 나스닥이 0.78% 오르며 또다시 사상 최고치를 경신했습니다. 다우 지수도 0.26% 상승했습니다. 시장의 한마디는 '연준의 신중론 속, 기업 실적에 따른 차별화 장세'입니다. 이날 공개된 FOMC 의사록에서 연준은 금리 인하를 서두르지 않겠다는 신중론을 재확인했습니다. 하지만 시장은 이를 불확실성 해소로 받아들였습니다. 이제 투자자들의 관심은 거시 경제가 아닌 개별 기업의 실적으로 완전히 옮겨갔습니다. 특히 AI 테마 안에서 희비가 극명하게 엇갈렸습니다. 아날로그 디바이스는 강력한 AI 칩 수요 덕분에 8% 가까이 급등했지만, 사이버 보안 업체 팔로알토 네트웍스는 연간 이익 전망치를 낮추면서 6.8% 넘게 급락했습니다. AI라는 이름표만으로 주가가 오르던 시대는 끝나고, 실제 수익으로 성장성을 증명하는 기업을 가려내는 '옥석 가리기' 장세가 본격화된 것입니다. 이제 시장의 시선은 이번 주 금요일에 발표될 PCE 물가 지표에 쏠려 있습니다. 연준이 가장 중요하게 보는 지표인 만큼, 그 결과에 따라 시장의 단기 방향성이 결정될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-18",
+      "end_date": "2026-02-18"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-18",
+      "end_date": "2026-02-18"
+    },
+    {
+      "type": "event",
+      "id": "390599",
+      "title": "fomc minutes",
+      "date": "2026-02-18"
+    },
+    {
+      "type": "article",
+      "pk": "f3d8e0cc46d22e96",
+      "title": "Fed minutes: Lower inflation needed before many officials will support rate cuts"
+    },
+    {
+      "type": "article",
+      "pk": "d9811001ca8a6c5d",
+      "title": "Stock market today: Dow, S&P 500, Nasdaq rise as AI worries recede, Fed minutes released"
+    },
+    {
+      "type": "article",
+      "pk": "000e253f13395dcf",
+      "title": "Analog Devices sees strong second-quarter as AI boom fuels chip sales"
+    },
+    {
+      "type": "chart",
+      "ticker": "ADI",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-18"
+    },
+    {
+      "type": "article",
+      "pk": "a5f5beb95603ab19",
+      "title": "Palo Alto Networks cuts annual profit forecast as deal costs bite, shares fall"
+    },
+    {
+      "type": "chart",
+      "ticker": "PANW",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-18"
+    },
+    {
+      "type": "event",
+      "id": "399155",
+      "title": "core pce price index mom",
+      "date": "2026-02-20"
+    }
+  ],
+  "metadata": {
+    "character_count": 693,
+    "estimated_duration_seconds": 88,
+    "key_points": [
+      "연준, FOMC 의사록 통해 금리 인하 신중론 재확인",
+      "S&P 500 및 나스닥, 불확실성 해소로 사상 최고치 경신",
+      "AI 테마 내 실적 기반 차별화 심화 (아날로그 디바이스 급등, 팔로알토 네트웍스 급락)",
+      "향후 시장 방향성은 금요일 발표될 PCE 물가 지표에 주목"
+    ],
+    "featured_tickers": [
+      "ADI",
+      "PANW"
+    ]
+  }
+}

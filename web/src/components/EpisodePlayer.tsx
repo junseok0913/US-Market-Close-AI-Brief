@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Episode, Script } from '@/types/episode';
@@ -23,6 +24,24 @@ interface EpisodePlayerProps {
 export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
   const router = useRouter();
   const [currentTime, setCurrentTime] = useState(0);
+  const syncConfig = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return {
+        leadMs: 0,
+      };
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const leadParam = params.get('leadMs');
+    const captureParam = params.get('capture');
+    const parsedLead = leadParam !== null ? Number.parseInt(leadParam, 10) : Number.NaN;
+    const hasLead = Number.isFinite(parsedLead);
+    const captureMode = captureParam === '1' || captureParam === 'true';
+
+    return {
+      leadMs: hasLead ? parsedLead : captureMode ? 550 : 0,
+    };
+  }, []);
 
   // Find current turn based on audio time
   const getCurrentTurnId = useCallback((timeInSeconds: number): number => {
@@ -36,7 +55,9 @@ export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
     return 0;
   }, [episode.scripts]);
 
-  const currentTurnId = getCurrentTurnId(currentTime);
+  const currentTurnId = getCurrentTurnId(
+    Math.max(0, currentTime + syncConfig.leadMs / 1000),
+  );
 
   const handleTimeUpdate = (time: number) => {
     setCurrentTime(time);
@@ -57,7 +78,7 @@ export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
     }
   };
 
-  const handleBackClick = (e: React.MouseEvent) => {
+  const handleBackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.documentElement.dataset.direction = 'back';
 
@@ -78,7 +99,7 @@ export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
       {/* Header - 80px */}
       <header className="h-[80px] px-10 flex items-center relative shrink-0">
         {/* Back button */}
-        <a
+        <Link
           href="/"
           onClick={handleBackClick}
           className="flex items-center gap-0 cursor-pointer absolute left-10 group"
@@ -91,7 +112,7 @@ export default function EpisodePlayer({ episode }: EpisodePlayerProps) {
             transition={springTransition}
           />
           <span className="font-bold text-[16px] text-black">목록</span>
-        </a>
+        </Link>
 
         {/* Date - centered */}
         <div className="absolute left-1/2 -translate-x-1/2">

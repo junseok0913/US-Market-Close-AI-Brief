@@ -1,0 +1,58 @@
+{
+  "date": "20260220",
+  "lang": "ko",
+  "audioFile": "shorts20260220.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 75.564,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.651,
+      "endSec": 5.651,
+      "speechDurationSec": 5.651,
+      "pauseAfterSec": 0.0,
+      "charCount": 43,
+      "text": "GDP 쇼크와 물가 불안에도 증시가 급등했습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.651,
+      "speechEndSec": 19.102,
+      "endSec": 19.102,
+      "speechDurationSec": 13.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 97,
+      "text": "2월 20일 미국 증시는 대법원의 관세 제동에 불확실성이 걷히며 랠리를 펼쳤습니다. S&P 500은 0.69%, 나스닥은 0.90%, 다우존스는 0.47% 상승 마감했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 19.102,
+      "speechEndSec": 64.233,
+      "endSec": 64.233,
+      "speechDurationSec": 45.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 362,
+      "text": "시작은 최악이었습니다. 4분기 GDP 성장률이 예상치 3.0%를 크게 밑도는 1.4%에 그쳤고, 연준이 주시하는 근원 PCE 물가도 예상보다 높은 0.4%를 기록하며 스태그플레이션 우려를 키웠습니다. 하지만 대법원이 대통령의 광범위한 관세 부과 권한에 제동을 걸면서 분위기는 180도 바뀌었습니다. 이 판결로 기업들은 최대 1750억 달러의 관세를 환급받을 수 있다는 기대감이 퍼졌고, 특히 수입 의존도가 높은 소매업종 ETF, XRT가 강세를 보였습니다. 시장은 당장의 경기 둔화 우려보다 무역 불확실성 해소라는 구조적 호재에 더 크게 반응한 것입니다. 다만 판결 직후 행정부가 다른 법을 근거로 10%의 새 관세를 부과하며 긴장감은 여전합니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 64.233,
+      "speechEndSec": 75.564,
+      "endSec": 75.564,
+      "speechDurationSec": 11.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 94,
+      "text": "다음 주 시장의 관심은 다시 물가로 향합니다. 27일 금요일에 발표될 2월 근원 생산자물가지수, Core PPI가 연준의 다음 행보를 결정할 핵심 지표가 될 전망입니다."
+    }
+  ]
+}

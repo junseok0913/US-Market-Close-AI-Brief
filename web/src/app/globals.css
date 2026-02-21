@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -14,10 +15,6 @@
   --border-default: #000000;
   --border-muted: rgba(0, 0, 0, 0.5);
 
-  /* Player */
-  --seekbar-bg: rgba(0, 0, 0, 0.3);
-  --seekbar-progress: rgba(0, 0, 0, 0.7);
-  --button-play-bg: #000000;
 }
 
 @theme inline {
@@ -59,6 +56,61 @@ body {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.text-gain {
+  color: hsl(145 80% 50%);
+}
+
+.text-loss {
+  color: hsl(0 75% 55%);
+}
+
+.bg-surface-elevated {
+  background-color: hsl(220 18% 12%);
+}
+
+.bg-surface-glass {
+  background-color: hsl(220 18% 10% / 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.glow-primary {
+  box-shadow:
+    0 0 30px hsl(145 80% 50% / 0.15),
+    0 0 60px hsl(145 80% 50% / 0.05);
+}
+
+.glow-text {
+  text-shadow:
+    0 0 20px hsl(145 80% 50% / 0.4),
+    0 0 40px hsl(145 80% 50% / 0.1);
+}
+
+.gradient-main {
+  background: linear-gradient(
+    180deg,
+    hsl(220 20% 4%) 0%,
+    hsl(220 20% 6%) 50%,
+    hsl(220 18% 8%) 100%
+  );
+}
+
+.gradient-accent-line {
+  background: linear-gradient(
+    90deg,
+    hsl(145 80% 50%) 0%,
+    hsl(215 80% 55%) 50%,
+    hsl(35 95% 55%) 100%
+  );
 }
 
 /* View Transitions - Push Animation */

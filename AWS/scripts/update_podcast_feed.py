@@ -109,16 +109,19 @@ def generate_rss_xml(base_url, episodes, lang="ko"):
         
         title = escape(ep.get('title', default_title))
         description = escape(ep.get('description', default_desc))
+        description_html = description.replace('\n', '<br/>')
         duration = ep.get('duration_seconds', 0)
         file_size = ep.get('file_size_bytes', 0)
+        item_image_url = ep.get('image_url', '').strip()
+        item_image_tag = f'\n      <itunes:image href="{item_image_url}"/>' if item_image_url else ''
         
         rss_xml += f"""
     <item>
       <title>{title}</title>
       <link>{episode_link}</link>
       <description>{description}</description>
-      <content:encoded><![CDATA[{description.replace('\n', '<br/>')}]]></content:encoded>
-      <itunes:author>Stock Daily</itunes:author>
+      <content:encoded><![CDATA[{description_html}]]></content:encoded>
+      <itunes:author>Stock Daily</itunes:author>{item_image_tag}
       <enclosure url="{audio_url}" length="{file_size}" type="audio/mpeg"/>
       <guid>{audio_url}</guid>
       <pubDate>{pub_date}</pubDate>
@@ -191,13 +194,22 @@ def main():
                                 os.unlink(tmp_path)
                             except:
                                 pass
+
+                        image_url = ''
+                        thumbnail_key = f"{date_folder}/{lang}/thumbnail.png"
+                        try:
+                            s3.head_object(Bucket=bucket_name, Key=thumbnail_key)
+                            image_url = f"{base_url}/{thumbnail_key}"
+                        except Exception:
+                            image_url = ''
                         
                         episodes.append({
                             'date': date_folder,
                             'title': metadata.get('title', ''),
                             'description': metadata.get('description', ''),
                             'file_size_bytes': file_size,
-                            'duration_seconds': duration_seconds
+                            'duration_seconds': duration_seconds,
+                            'image_url': image_url,
                         })
                         
                         print(f"  ✅ {date_folder}/{lang}")

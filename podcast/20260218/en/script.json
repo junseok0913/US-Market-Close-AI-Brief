@@ -1,0 +1,589 @@
+{
+  "date": "20260218",
+  "nutshell": "Amid Fed caution, the market sees divergence based on corporate earnings.",
+  "user_tickers": [
+    "FIG"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the market closing briefing for February 18th. With the Federal Open Market Committee minutes now public, the market closed higher, once again hitting a new all-time high.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up in one phrase: divergence driven by corporate earnings amid the Fed's cautious stance. The S&P 500 gained 0.56% to close at 6881, while the tech-heavy Nasdaq Composite rose 0.78% to 22753. The Dow Jones Industrial Average also joined the rally, climbing 0.26%. While the market reaffirmed that the Fed is in no hurry to cut rates, the mood seemed to be one of relief, as if uncertainty has been removed. We saw investors' focus shift from macroeconomic indicators to individual company earnings.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "PANW",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It's interesting that the market rallied even with the Fed showing caution. So you're saying the market's moves were really driven by individual company performance?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. The content of the Fed minutes wasn't a major surprise, so it didn't have a huge impact. Instead, the market's attention was squarely on corporate report cards. We saw a split in the AI space, in particular. Analog Devices saw its stock rise on a positive earnings report, fueled by strong demand for its AI chips. On the other hand, cybersecurity firm Palo Alto Networks plunged more than 6% after issuing disappointing full-year guidance. This clearly shows that the market isn't just moving on the AI theme alone; it's selectively rewarding companies that can prove it with actual results.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "e5df4d5506ff8d94",
+          "title": "Earnings live: Palo Alto Networks stock sinks after company cuts full-year-forecast"
+        },
+        {
+          "type": "article",
+          "pk": "4ff4dd2534302626",
+          "title": "Earnings live: Wingstop stock surges on Q4 earnings beat, Garmin spikes, Analog Devices rises"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key factors that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, the two biggest forces at play today were the Fed's cautious monetary policy stance and the stock-specific divergence based on individual earnings. We'll dive into each of these in more detail shortly.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the main event of the day: the Fed's Federal Open Market Committee minutes. You mentioned they weren't much of a surprise, but what were the specific details?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the January FOMC minutes released today were the very definition of caution. The vast majority of Fed officials agreed there's no need to rush into rate cuts until they have greater confidence that inflation is sustainably moving toward their 2% target. The market paused briefly right after the news broke. The 10-year Treasury yield finished slightly higher at 4.08%, and the Dollar Index also strengthened, rising above 97.7. However, the stock market showed resilience, taking this as a removal of uncertainty, with both the S&P 500 and Nasdaq closing higher. This is likely because the minutes weren't any more hawkish than what the market had already priced in following the recent hot jobs and inflation reports. If anything, it just reaffirmed that the Fed's next moves will be strictly data-dependent.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "article",
+          "pk": "f3d8e0cc46d22e96",
+          "title": "Fed minutes: Lower inflation needed before many officials will support rate cuts"
+        },
+        {
+          "type": "article",
+          "pk": "d9811001ca8a6c5d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise as AI worries recede, Fed minutes released"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "It's fascinating that the market rose despite that somewhat hawkish message about being cautious on rate cuts. Were there any disagreements among the officials noted in the minutes?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "There were significant differences of opinion. And that's actually another reason why the market digested these minutes without a shock. If you look closely, several officials mentioned that further rate cuts would be appropriate if inflation slows as expected. On the other hand, some argued for keeping rates on hold for the time being, and a few even took a hardline stance, saying the possibility of another rate hike should be kept open in case inflation reaccelerates. The fact that such a range of views exists within the Fed is interpreted to mean that policy won't swing sharply in one direction. Instead, they'll respond to each new piece of economic data as it comes. Ultimately, the market felt a sense of relief that the Fed will be moving within a predictable range.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f3d8e0cc46d22e96",
+          "title": "Fed minutes: Lower inflation needed before many officials will support rate cuts"
+        },
+        {
+          "type": "article",
+          "pk": "d9811001ca8a6c5d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise as AI worries recede, Fed minutes released"
+        },
+        {
+          "type": "article",
+          "pk": "a5505c54ccb562a1",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise as AI worries recede, with Fed minutes ahead"
+        },
+        {
+          "type": "chart",
+          "ticker": "^FVX",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So, the impact of the macro variable—the Fed's monetary policy—was limited, and the market's focus shifted elsewhere.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Exactly. Once some of the macroeconomic uncertainty cleared, investors started focusing more on the fundamentals of individual companies. Today was a day where, beneath the quiet index moves, there was actually huge volatility in individual stocks. In fact, since the start of the year, more than 20% of the S&P 500's component stocks have either gained or lost over 20%, showing extreme divergence. This is proof that the market is no longer being swept up by broad narratives but is thoroughly sorting the winners from the losers based on actual performance. We've entered a phase where a company's next quarterly earnings report has a bigger impact on its stock price than whether the Fed's rate cut is delayed by a few months.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "343a5e5dd6df8618",
+          "title": "There Are Lots of Big Stock Moves Under the Hood of the S&P 500's Quiet 2026"
+        },
+        {
+          "type": "article",
+          "pk": "e5df4d5506ff8d94",
+          "title": "Earnings live: Palo Alto Networks stock sinks after company cuts full-year-forecast"
+        },
+        {
+          "type": "article",
+          "pk": "4ff4dd2534302626",
+          "title": "Earnings live: Wingstop stock surges on Q4 earnings beat, Garmin spikes, Analog Devices rises"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "And you're saying that Analog Devices and Palo Alto Networks were prime examples of that 'sorting' process you mentioned.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's right. Both companies are tied to the same theme—artificial intelligence—but the market's verdict was starkly different. Analog Devices projected second-quarter results that beat expectations, thanks to demand from AI data centers, sending its stock up nearly 8%. Meanwhile, Palo Alto Networks slashed its full-year profit forecast, citing rising costs from integrating recent acquisitions, and its stock tumbled more than 6%. This is a clear example that investors are now looking beyond the vague promise of AI and are demanding concrete results and efficient cost management that translate into actual profits. Now that the Fed's cautious stance has been confirmed, this kind of performance-based divergence is likely to continue for some time.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "000e253f13395dcf",
+          "title": "Analog Devices sees strong second-quarter as AI boom fuels chip sales"
+        },
+        {
+          "type": "article",
+          "pk": "1feb810e1365f87d",
+          "title": "Analog Devices (NASDAQ:ADI) Posts Better-Than-Expected Sales In Q4, Stock Soars"
+        },
+        {
+          "type": "article",
+          "pk": "a5f5beb95603ab19",
+          "title": "Palo Alto Networks cuts annual profit forecast as deal costs bite, shares fall"
+        },
+        {
+          "type": "article",
+          "pk": "0cc845d7ea0eea8a",
+          "title": "Palo Alto Networks' Deals Are Dragging on Its Profit Outlook. The Stock Is Falling"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "I see. So, this stark contrast even within the AI theme—is it fair to say this is a signal that the market has officially begun sorting the winners from the losers?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today's market was a clear demonstration that a serious sorting process has begun within the massive AI theme. Despite the Fed minutes confirming a cautious approach to rate cuts, the S&P 500 rose 0.56% and the Nasdaq gained 0.78%, both hitting new all-time highs. Even with headwinds from a slight rise in the 10-year Treasury yield and a jump of over 4% in oil prices, the market's focus was on individual company fundamentals. And at the center of it all was AI. The semiconductor sector was strong, rising over 1.2% overall, but cybersecurity leader Palo Alto Networks plunged more than 6.8% after cutting its annual profit forecast. This is powerful evidence that the era of stocks rising just by having an 'AI' label is over. We're now in a cold, hard reality where companies have to prove who is making money from AI, how they're doing it, and how much.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "PANW",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMH",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "What was the reason for such a steep drop from a leader in cybersecurity like Palo Alto Networks? Was it simply bad earnings?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "It wasn't just about bad earnings; it was more a reflection of market concerns about the company's strategic shift. Palo Alto Networks' second-quarter results actually beat estimates, but they lowered their full-year profit guidance. The reason is that short-term costs are rising due to an aggressive strategy of integrating several recently acquired companies and even offering some products for free to attract customers to their consolidated platform. The company says this is an investment for long-term growth, but investors saw the immediate hit to profitability as a major red flag. What's interesting is that Palo Alto's plunge didn't significantly affect other cybersecurity stocks like CrowdStrike or Zscaler, which suggests the market sees this as a company-specific strategic issue, not an industry-wide problem.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a5f5beb95603ab19",
+          "title": "Palo Alto Networks cuts annual profit forecast as deal costs bite, shares fall"
+        },
+        {
+          "type": "article",
+          "pk": "7d9aa41d23ca5586",
+          "title": "Palo Alto shares fall as deal costs pile up amid AI security push"
+        },
+        {
+          "type": "chart",
+          "ticker": "CRWD",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "ZS",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "I see. So on the flip side, what about Analog Devices, which had a strong report? What was it that drove the positive market reaction?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Analog Devices delivered exactly what the market wants to see from the AI theme right now: proof that the AI boom is translating into real revenue and profit. The company not only reported first-quarter earnings that beat expectations but also provided second-quarter guidance that was well above Wall Street's forecasts. They specifically highlighted strong demand from the data center and industrial chip sectors, both essential for building out AI servers. This proved that Analog Devices is a direct beneficiary of the AI infrastructure race. As a result, the stock climbed over 2.6%, putting it on a completely different path from Palo Alto Networks. The market is no longer rewarding vague hopes; it's rewarding companies that can prove it with concrete numbers.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "000e253f13395dcf",
+          "title": "Analog Devices sees strong second-quarter as AI boom fuels chip sales"
+        },
+        {
+          "type": "article",
+          "pk": "1feb810e1365f87d",
+          "title": "Analog Devices (NASDAQ:ADI) Posts Better-Than-Expected Sales In Q4, Stock Soars"
+        },
+        {
+          "type": "article",
+          "pk": "9e46c00b60255ecd",
+          "title": "Analog Devices: Fiscal Q1 Earnings Snapshot"
+        },
+        {
+          "type": "chart",
+          "ticker": "ADI",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, you're saying the gap is widening between companies that are delivering real results from AI and those that aren't. Do you expect this trend to intensify?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, this divergence will only become more pronounced. In the early stages of the AI revolution, we saw a 'buy anything' mentality where a stock would pop just by announcing it was developing or adopting AI. But the market is now entering a more mature phase. Investors are starting to demand concrete results on how AI is cutting costs and creating new revenue streams. This trend is also supported by the fact that the U.S. economy remains robust, with today's January industrial production report showing a 0.7% increase, well above expectations. The underlying perception is that because the economy is strong, companies have enough time and opportunity to prove their worth with results. Therefore, we expect to fully enter an era of 'profitability proof,' where only companies that successfully integrate AI into their business models to demonstrate profitability will be chosen by the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "d9811001ca8a6c5d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise as AI worries recede, Fed minutes released"
+        },
+        {
+          "type": "article",
+          "pk": "0cc845d7ea0eea8a",
+          "title": "Palo Alto Networks' Deals Are Dragging on Its Profit Outlook. The Stock Is Falling"
+        },
+        {
+          "type": "event",
+          "id": "398137",
+          "title": "industrial production mom",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "398285",
+          "title": "housing starts",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Right, you mentioned we're in an era where companies have to prove their profitability. But one company that caught my eye today seemed to buck that trend: Figma. It surged over 4% without any specific news. What was behind that strong move?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "FIG",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, Figma's stock movement today was a classic example of how expectations, rather than fundamentals, can drive the market. The stock climbed steadily from the open, closing up 4.69%. It seems the market is betting on a huge growth story where the company evolves from a design tool into a collaborative operating system powered by AI. However, if you look closely at the financial statements, behind this glamorous story, there are some serious warning signs that investors really need to pay attention to.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "FIG",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So you're saying there's a disconnect between the growth story and the financial statements. What are the specific warning signs investors should be aware of?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The most critical issue is stock-based compensation, or SBC. According to their 10-Q filing from November 2025, revenue for the first nine months of 2025 was about $752 million. But during that same period, the cost of stock compensation paid to employees was a staggering $1.146 billion. That means they paid out 152% of their revenue in the form of stock. This resulted in a GAAP net loss of over $1 billion, and even more seriously, it dilutes the value for existing shareholders. In fact, the number of outstanding shares exploded by 46.5% in just one year, which is clear evidence that the fruits of the company's growth are not flowing back to its existing shareholders.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "FIG",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001628280-25-049683"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Paying out more in stock compensation than you bring in as revenue is definitely concerning. So why is the market so enthusiastic? Do they believe the growth potential from AI can offset all of that?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's precisely where the market's optimism lies. The view is that this massive stock compensation is a strategic investment to secure top talent in the age of AI. The hope is that this will allow them to shift from their current 'per-seat' billing model, which is based on the number of designers, to a new revenue model based on AI feature usage, thereby explosively expanding their market. But this is still just an unproven hypothesis. In its own filings, the company explicitly acknowledges the risk of 'cannibalization'—that AI could actually increase designer efficiency and reduce the number of paid seats, which is their core revenue source. This implies a serious risk that their existing business foundation could crumble before the new revenue model is established.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "FIG",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001628280-25-049683"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So it's a classic conflict between uncertain future hopes and clear present-day risks. How should we interpret a surge like today's, then?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "In conclusion, while Figma has future growth potential, the cost and risk that current shareholders have to bear in exchange seems excessively high. A surge like today's is likely more a reflection of speculative excitement about the grand AI narrative than any real improvement in the company's value. The ongoing issue of shareholder dilution from stock compensation that exceeds revenue is a structural flaw that could severely harm current investors' returns, even if the company succeeds in the future. Therefore, this seems to be a time for a cautious approach based on the clear financial realities and risks at hand, rather than on unverified future expectations.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "FIG",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001628280-25-049683"
+        },
+        {
+          "type": "chart",
+          "ticker": "FIG",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "It seems like the market took a breather today, reaffirming the Fed's stance. Could you summarize today's market action for us?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, that's right. The FOMC minutes released today clearly showed that the Fed is sticking to its cautious stance on rate cuts. Some officials even warned about the risks of easing policy prematurely. This essentially threw cold water on the recent hopes for an early rate cut. In the end, the market couldn't find a clear direction, with the major indices closing mixed and mostly flat. It was a day that leaves the market watching even more closely for the next set of data to gauge the Fed's next move.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So the upcoming economic data will really be steering the market. What indicators should we be watching for tomorrow?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's right. Tomorrow, we'll first get the weekly initial jobless claims, which will give us a read on the health of the labor market. The market is expecting around 225,000 claims, similar to the previous reading. If that number comes in significantly higher, it could be interpreted as a sign that the job market is cooling. We'll also get the Philadelphia Fed Manufacturing Index, which is an important indicator of the state of the manufacturing sector, so that's one to watch as well.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395086",
+          "title": "initial jobless claims",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "event",
+          "id": "399166",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-02-19"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Jobs and manufacturing data are important, but the market's biggest focus is still on inflation, right? Are there any other key inflation reports to watch this week?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, the most important one is the Personal Consumption Expenditures, or PCE, price index, which comes out this Friday. PCE is the Fed's preferred inflation gauge. The market will be laser-focused on the month-over-month increase in the core PCE price index, which excludes volatile food and energy prices. Right now, the market is forecasting a 0.3% rise. If it comes in higher than that, it would fuel concerns that the disinflationary trend is weakening and add weight to the view that the Fed's rate cuts could be delayed even further.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So it sounds like the data coming out in the last two days of the week will determine the market's short-term direction. What's the key takeaway for investors as we wrap up?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market is likely to remain volatile for a while, reacting sensitively to every piece of economic data. Especially with the Fed emphasizing data-driven decisions, it's important to look at the overall trend shown by various indicators rather than overreacting to any single report. It's worth keeping in mind that the path back to the 2% inflation target won't be a straight line. This is a time when it's wise to develop a strategy by calmly observing the market conditions, rather than making hasty judgments.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "That concludes our market closing briefing for February 18th. Thank you.",
+      "sources": []
+    }
+  ]
+}

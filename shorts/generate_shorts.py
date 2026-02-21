@@ -11,6 +11,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Literal
@@ -36,9 +37,207 @@ logger = logging.getLogger(__name__)
 # Constants
 SHORTS_PROMPT_PATH = ROOT_DIR / "shorts" / "prompt" / "shorts_script.yaml"
 DEFAULT_DURATION = 90  # seconds
+MEASURED_CHARS_PER_SEC = 7.88
+SECTION_ORDER = ("hook", "data", "story", "closing")
+SECTION_NAME_ALIASES = {
+    "hook": "hook",
+    "opening": "hook",
+    "open": "hook",
+    "intro": "hook",
+    "data": "data",
+    "market": "data",
+    "stats": "data",
+    "story": "story",
+    "theme": "story",
+    "insight": "story",
+    "closing": "closing",
+    "finale": "closing",
+    "outro": "closing",
+    "watch": "closing",
+}
 
 
 DurationTarget = Literal[60, 90, 120]
+
+
+def compact_text(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def split_sentences(text: str) -> list[str]:
+    normalized = compact_text(text)
+    if not normalized:
+        return []
+    protected = re.sub(r"(?<=\d)\.(?=\d)", "__DOT__", normalized)
+    raw = re.findall(r"[^.!?]+[.!?]?", protected)
+    out = [token.strip().replace("__DOT__", ".") for token in raw if token.strip()]
+    if out:
+        return out
+    return [normalized]
+
+
+def partition_ranges(item_count: int, bucket_count: int) -> list[tuple[int, int]]:
+    if item_count <= 0 or bucket_count <= 0:
+        return []
+    bucket_count = min(item_count, bucket_count)
+    ranges: list[tuple[int, int]] = []
+    start = 0
+    base = item_count // bucket_count
+    extra = item_count % bucket_count
+    for idx in range(bucket_count):
+        size = base + (1 if idx < extra else 0)
+        end = start + size
+        ranges.append((start, end))
+        start = end
+    return ranges
+
+
+def fallback_sections_from_script(script_text: str) -> list[dict[str, str]]:
+    sentences = split_sentences(script_text)
+    if not sentences:
+        return [{"name": name, "text": ""} for name in SECTION_ORDER]
+
+    ranges = partition_ranges(len(sentences), len(SECTION_ORDER))
+    by_name: dict[str, str] = {}
+    for idx, (start, end) in enumerate(ranges):
+        if idx >= len(SECTION_ORDER):
+            break
+        name = SECTION_ORDER[idx]
+        by_name[name] = compact_text(" ".join(sentences[start:end]))
+
+    return [
+        {"name": name, "text": by_name.get(name, "")}
+        for name in SECTION_ORDER
+    ]
+
+
+def normalize_section_name(value: Any) -> str:
+    key = compact_text(value).lower()
+    return SECTION_NAME_ALIASES.get(key, "")
+
+
+def normalize_sections(raw_result: dict[str, Any], script_text: str) -> list[dict[str, str]]:
+    fallback = fallback_sections_from_script(script_text)
+    fallback_by_name = {item["name"]: item["text"] for item in fallback}
+
+    collected: dict[str, str] = {}
+    raw_sections = raw_result.get("sections")
+    if isinstance(raw_sections, list):
+        for item in raw_sections:
+            if not isinstance(item, dict):
+                continue
+            section_name = normalize_section_name(item.get("name"))
+            if not section_name:
+                continue
+            text = compact_text(item.get("text") or item.get("script") or item.get("body"))
+            if not text:
+                continue
+            if section_name not in collected:
+                collected[section_name] = text
+    elif isinstance(raw_sections, dict):
+        for key, value in raw_sections.items():
+            section_name = normalize_section_name(key)
+            if not section_name:
+                continue
+            text = compact_text(value)
+            if text and section_name not in collected:
+                collected[section_name] = text
+
+    # Support legacy key style from LLM responses.
+    for section_name in SECTION_ORDER:
+        if section_name in collected:
+            continue
+        direct = compact_text(raw_result.get(f"{section_name}_text"))
+        if direct:
+            collected[section_name] = direct
+
+    normalized: list[dict[str, str]] = []
+    for section_name in SECTION_ORDER:
+        text = collected.get(section_name) or fallback_by_name.get(section_name, "")
+        normalized.append({"name": section_name, "text": compact_text(text)})
+
+    return normalized
+
+
+def normalize_sources(raw_sources: Any) -> list[dict[str, Any]]:
+    if not isinstance(raw_sources, list):
+        return []
+    return [item for item in raw_sources if isinstance(item, dict)]
+
+
+def unique_tickers_from_sources(sources: list[dict[str, Any]]) -> list[str]:
+    out: list[str] = []
+    seen = set()
+    for source in sources:
+        ticker = source.get("ticker")
+        if not isinstance(ticker, str):
+            continue
+        cleaned = re.sub(r"[^A-Z0-9^.-]", "", ticker.upper())
+        if not cleaned or cleaned in seen:
+            continue
+        seen.add(cleaned)
+        out.append(cleaned)
+    return out
+
+
+def normalize_shorts_result(
+    raw_result: dict[str, Any],
+    *,
+    script_json: dict[str, Any],
+    duration: DurationTarget,
+) -> dict[str, Any]:
+    script_text = compact_text(raw_result.get("script"))
+    sections = normalize_sections(raw_result, script_text)
+    if not script_text:
+        script_text = compact_text(" ".join(item["text"] for item in sections if item["text"]))
+
+    metadata = raw_result.get("metadata") if isinstance(raw_result.get("metadata"), dict) else {}
+    key_points = metadata.get("key_points") if isinstance(metadata.get("key_points"), list) else []
+    key_points = [compact_text(item) for item in key_points if compact_text(item)]
+    if not key_points:
+        key_points = [compact_text(item["text"][:68]) for item in sections if item["text"]][:4]
+
+    sources = normalize_sources(raw_result.get("sources"))
+    featured_tickers = metadata.get("featured_tickers") if isinstance(metadata.get("featured_tickers"), list) else []
+    normalized_tickers = []
+    seen = set()
+    for ticker in featured_tickers:
+        cleaned = re.sub(r"[^A-Z0-9^.-]", "", compact_text(ticker).upper())
+        if not cleaned or cleaned in seen:
+            continue
+        seen.add(cleaned)
+        normalized_tickers.append(cleaned)
+    for ticker in unique_tickers_from_sources(sources):
+        if ticker in seen:
+            continue
+        seen.add(ticker)
+        normalized_tickers.append(ticker)
+
+    estimated_duration = int(round(len(script_text) / MEASURED_CHARS_PER_SEC)) if script_text else int(duration)
+    hook_text = compact_text(raw_result.get("hook")) or sections[0]["text"] or script_text[:90]
+
+    return {
+        "date": compact_text(raw_result.get("date")) or compact_text(script_json.get("date")),
+        "title": compact_text(raw_result.get("title")) or compact_text(script_json.get("nutshell")) or "미국 증시 쇼츠",
+        "duration_target": f"{int(duration)}초",
+        "hook": hook_text,
+        "sections": [
+            {
+                "id": idx,
+                "name": item["name"],
+                "text": item["text"],
+            }
+            for idx, item in enumerate(sections)
+        ],
+        "script": script_text,
+        "sources": sources,
+        "metadata": {
+            "character_count": len(script_text),
+            "estimated_duration_seconds": max(1, estimated_duration),
+            "key_points": key_points[:4],
+            "featured_tickers": normalized_tickers[:6],
+        },
+    }
 
 
 def load_prompt_config(yaml_path: Path) -> dict[str, Any]:
@@ -143,17 +342,24 @@ def generate_shorts_script(
             raise ValueError(f"LLM returned invalid JSON: {e}")
         
         # Validate result
-        required_fields = ["date", "title", "script", "sources", "metadata"]
+        required_fields = ["date", "title"]
         missing = [f for f in required_fields if f not in result]
         if missing:
             raise ValueError(f"Missing required fields in response: {missing}")
+
+        normalized = normalize_shorts_result(
+            result,
+            script_json=script_json,
+            duration=duration,
+        )
         
-        logger.info(f"✓ Generated shorts script: {result['title']}")
-        logger.info(f"  - Characters: {result['metadata']['character_count']}")
-        logger.info(f"  - Estimated duration: {result['metadata']['estimated_duration_seconds']}s")
-        logger.info(f"  - Key points: {len(result['metadata']['key_points'])}")
+        logger.info(f"✓ Generated shorts script: {normalized['title']}")
+        logger.info(f"  - Characters: {normalized['metadata']['character_count']}")
+        logger.info(f"  - Estimated duration: {normalized['metadata']['estimated_duration_seconds']}s")
+        logger.info(f"  - Sections: {len(normalized.get('sections', []))}")
+        logger.info(f"  - Key points: {len(normalized['metadata']['key_points'])}")
         
-        return result
+        return normalized
         
     except Exception as e:
         logger.error(f"Shorts script generation failed: {e}")
@@ -190,7 +396,7 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        help="Output path for shorts script JSON (default: <podcast_dir>/shorts_script.json)",
+        help="Output path for shorts script JSON (default: <podcast_dir>/shorts/script.json)",
     )
     parser.add_argument(
         "--prefix",
@@ -215,8 +421,8 @@ def main():
     # Load YAML config
     load_env_from_yaml(logger=logger)
     
-    # Initialize LLM (Gemini 2.5 Pro)
-    logger.info("Initializing Gemini 2.5 Pro...")
+    # Initialize LLM (Gemini/OpenAI auto-selected by build_llm)
+    logger.info("Initializing shorts LLM client...")
     llm = build_llm(prefix=args.prefix, logger=logger)
     
     # Validate podcast directory

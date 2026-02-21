@@ -34,14 +34,14 @@ export interface MarketSummarySlide extends BaseSlide {
   description?: string;
   indices: Array<{
     name: string;
-    value: number;
-    change: number;
+    value: number | null;
+    change: number | null;
     changePercent: number;
   }>;
   commodities: Array<{
     name: string;
-    value: number;
-    change: number;
+    value: number | null;
+    change: number | null;
     changePercent: number;
   }>;
 }

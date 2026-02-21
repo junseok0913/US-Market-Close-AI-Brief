@@ -8,6 +8,51 @@
 
 ---
 
+## 최근 아키텍처 업데이트 (YouTube + Web, 2026-02)
+
+### 1) YouTube 캡처 경로 안정화
+
+- 엔트리: `../run_youtube.sh`
+- 기본 출력: `podcast/{date}/{lang}/youtube/{date}_{lang}_episode.mp4`
+- 모드:
+  - `timeline`: 슬라이드 타임라인 기반 프레임 렌더 후 MP4 합성 (운영 기본)
+  - `realtime`: 실제 재생 UI 녹화 후 MP4 합성 (검증/디버그)
+
+### 2) 시작 오버레이/초반 프레임 아티팩트 완화
+
+- 대상: `src/components/YouTubeEpisodePlayer.tsx`
+- 목적:
+  - 캡처 시작 직후 `재생 시작` 버튼이 첫 프레임에 노출되는 문제 완화
+  - URL 파라미터(`capture/render/autoplay`) 하이드레이션 이전 프레임에서 오버레이가 뜨지 않게 조정
+  - 슬라이드 생성 후 `title.date`를 에피소드 날짜로 고정해 날짜 불일치 재발 방지
+
+### 3) Live Script 가독성 상향
+
+- 대상: `src/components/YouTubeEpisodePlayer.tsx`
+- 변경 포인트:
+  - 우측 패널 스크립트 행간/폰트 크기 확대
+  - 활성 발화 대비 강화
+
+### 4) Market Summary 원유 값 백필 강화
+
+- 대상: `scripts/slide_generator.py`
+- 추가:
+  - WTI 표기(`WTI`, `WTI 유`, `crude`, `oil`, `원유`) 정규화
+  - 백필 심볼: `CL=F` (보조: `USO`, `BZ=F`, `BNO`)
+  - 품질 검증 필수 항목에 `WTI Crude` 추가 (누락 시 재생성/보정 대상)
+- 결과:
+  - `market-summary` 내 원유 카드가 `—`로 남는 케이스 감소
+  - 누락 시 생성 단계 품질 검증에서 조기 탐지
+
+### 5) 티커 슬라이드 데이터 미해결 폴백 개선
+
+- 대상: `src/components/slides/TickerIntroSlide.tsx`, `src/components/TradingViewWidget.tsx`
+- 목표:
+  - 시세 API 실패 시 `N/A`/`No Data`가 영상에 그대로 남지 않도록 UI 폴백 개선
+  - 절대가격 미해결 시 변동률 기반 메시지로 대체 표시
+
+---
+
 ## 데이터 구조
 
 ### 1. 데이터 소스
@@ -368,4 +413,3 @@ flowchart TD
 - `src/components/slides/StatsSlide.tsx`: +6/-1 (runtime logic)
 - `src/types/slide.ts`: +2/-2 (runtime logic)
 <!-- AUTO-GENERATED:END -->
-

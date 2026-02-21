@@ -30,6 +30,86 @@ http://localhost:3000 에서 확인
 | `npm run build` | 데이터 빌드 + 프로덕션 빌드 |
 | `npm run start` | 프로덕션 서버 실행 |
 
+## YouTube 영상 자동화
+
+Episode 화면(슬라이드 + 스크립트 + 플레이바)을 그대로 녹화해 MP4를 생성하고, 옵션으로 YouTube 업로드까지 수행합니다.
+
+### 실행 명령
+
+```bash
+# 로컬 MP4만 생성
+./run_youtube.sh 20260213 --lang ko
+
+# 생성 + YouTube 업로드
+./run_youtube.sh 20260213 --lang ko --upload --privacy private
+```
+
+### 사전 준비
+
+```bash
+# ffmpeg 설치 확인
+ffmpeg -version
+
+# Playwright가 없다면 설치
+cd web
+npm install --save-dev @playwright/test
+npx playwright install chromium
+```
+
+### 출력 경로
+
+```text
+podcast/{date}/{lang}/youtube/{date}_{lang}_episode.mp4
+```
+
+### 필요한 환경변수
+
+```bash
+YOUTUBE_CLIENT_SECRETS_FILE=/absolute/path/to/client_secret.json  # optional, default: shared/runtime/secrets/youtube/client_secret.json
+YOUTUBE_TOKEN_FILE=/absolute/path/to/token.json          # optional, default: shared/runtime/cache/youtube/token.json
+YOUTUBE_PRIVACY_STATUS=private                            # optional
+YOUTUBE_CATEGORY_ID=25                                    # optional
+YOUTUBE_DEFAULT_TAGS=미국주식,시황,market,stocks          # optional
+```
+
+### 구현 구성
+
+- `run_youtube.sh`: 전체 오케스트레이션 (자산 복사, 웹 서버 실행, 녹화, mp4 mux, 선택 업로드)
+- `web/scripts/record_episode_video.mjs`: Playwright 기반 1920x1080 화면 녹화
+- `shared/ops/scripts/youtube/upload_youtube_video.py`: OAuth 토큰 확보/갱신 + YouTube Data API 업로드
+- `web/src/app/youtube/episode/[date]/page.tsx`: YouTube 녹화 전용 화면 라우트
+
+### 운영 모드 요약
+
+- `--render-mode timeline`: script 타임라인 기준 프레임 렌더 후 MP4 합성 (운영 권장, 재현성 높음)
+- `--render-mode realtime`: 실제 재생 UI를 녹화 후 MP4 합성 (디버깅/체감 확인용)
+
+### 최근 반영 사항 (2026-02)
+
+- 캡처 안정성:
+  - YouTube 플레이어의 시작 오버레이(`재생 시작`)가 캡처 첫 프레임에 찍히지 않도록 초기 렌더 동작 보정
+  - `capture=1` 경로 + start-delay/trim 조합으로 초반 싱크 안정화
+  - title 슬라이드 `date`를 에피소드 날짜로 강제 고정해 전일 날짜 혼입 방지
+- 가독성:
+  - 우측 `Live Script` 카드 글자 크기/행간/대비 상향
+- 시장 데이터 신뢰성:
+  - `market-summary` 백필에 WTI 원유(`CL=F`) 경로 추가
+  - `WTI 유`/`WTI`/`crude`/`oil` 표기를 원유 심볼로 정규화
+  - `CL=F` 응답 누락 시 `USO -> BZ=F -> BNO` 순서로 폴백 백필
+  - 원유 값 누락 시 품질 검증에서 경고/실패로 잡히도록 보강
+- 티커 소개 슬라이드 안전장치:
+  - 실시간 시세 조회 실패 시 `N/A`/`No Data` 문자열 노출을 최소화하고, 변동률 중심 정보로 폴백
+
+### 캡처 라우트
+
+- 기본 캡처 라우트: `/youtube/episode/{date}`
+- 기존 UI(` /episode/{date}`)로 캡처하고 싶으면 환경변수로 변경:
+
+```bash
+export YOUTUBE_CAPTURE_PATH=/episode/20260213
+./run_youtube.sh 20260213 --lang ko --overwrite
+```
+
 ## 데이터 흐름
 
 ```

@@ -1,0 +1,923 @@
+{
+  "date": "20260217",
+  "nutshell": "A mixed close amid Fed caution and concerns over AI disruption.",
+  "user_tickers": [
+    "AAPL"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 27
+    },
+    {
+      "name": "ticker",
+      "start_id": 28,
+      "end_id": 35
+    },
+    {
+      "name": "closing",
+      "start_id": 36,
+      "end_id": 44
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for February 17th. The market seemed to have a tough time finding direction today, bouncing between gains and losses. How can we sum it all up?",
+      "sources": [],
+      "time": [
+        0,
+        11211
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, today can be summed up as a mixed session, caught between the Fed's cautious stance and concerns about AI-driven disruption. After starting the day lower, the market managed to bounce back late in the session, with the major indices finishing near the flatline. The Dow Jones Industrial Average closed up 0.07% at 49,533.19, and the S&P 500 also gained 0.1% to 6,843.22. Meanwhile, the tech-heavy Nasdaq, after a volatile day, ended up 0.14% at 22,578.38. It was a day of complex investor sentiment, with hawkish comments from Fed officials tamping down rate cut hopes, while the promise and peril of AI's impact on industries created a real tug-of-war.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "article",
+          "pk": "id#99ceac3400e35d12",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end higher in volatile trading day as Apple jumps"
+        }
+      ],
+      "time": [
+        11711,
+        60042
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, comments from Fed officials really held the market back. What exactly did they say?",
+      "sources": [],
+      "time": [
+        60542,
+        66913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's right. Fed Vice Chair Michael Barr stated that with inflation still high, it's a prudent approach to hold rates steady for a while. He made it clear he wants to see more evidence of a sustained slowdown in price increases before considering rate cuts. San Francisco Fed President Mary Daly echoed that cautious tone, mentioning that bringing down inflation remains the central bank's primary task. These comments lowered the market's expectations for a swift rate cut, making investors hesitant to increase their exposure to risk assets.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#88b7fe75cade8b2d",
+          "title": "Fed's Barr says central bank likely on hold for some time as it watches for easing inflation"
+        },
+        {
+          "type": "event",
+          "id": "419138",
+          "title": "fed barr speech",
+          "date": "2026-02-17"
+        },
+        {
+          "type": "event",
+          "id": "419048",
+          "title": "fed daly speech",
+          "date": "2026-02-17"
+        }
+      ],
+      "time": [
+        67413,
+        97544
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "But despite that, the market still managed to close higher. What was the driving force behind that? Can you walk us through the key themes that moved the market today?",
+      "sources": [],
+      "time": [
+        98044,
+        107615
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. To understand today's complex market action, we need to look at three key drivers. First, as we mentioned, is the Fed's cautious stance. Second is the double-edged sword of AI, which acted as an opportunity for some companies and a threat to others. And finally, specific corporate news, like the renewed merger talks between Warner Bros. and Paramount, added some life to the market. We'll now take a closer look at each of these three themes.",
+      "sources": [],
+      "time": [
+        108115,
+        137366
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "You mentioned in the opening that hawkish comments from Fed officials put the brakes on hopes for an early rate cut. This seems to have been a key factor today, so could you analyze that in more detail?",
+      "sources": [],
+      "time": [
+        138366,
+        149737
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, that's right. The market is holding its breath, trying to gauge the Fed's next move. Today's comments from Fed Vice Chair Michael Barr and San Francisco Fed President Mary Daly reaffirmed the Fed's position that there's no rush to cut rates. The market reacted immediately to these remarks. For instance, a combination of safe-haven demand and the possibility of prolonged Fed tightening pushed the U.S. Dollar Index up 0.27% to trade around 97.14, which in turn pressured commodities like gold, with gold futures falling over 2%. On the other hand, the 10-year Treasury yield slipped slightly to around 4.05%, which can be interpreted as a mixed result of the Fed's caution also stoking some fears of an economic slowdown. Ultimately, the S&P 500's flat finish after a day of ups and downs clearly showed investors are struggling to find direction ahead of the upcoming FOMC minutes and the Personal Consumption Expenditures price index release.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#88b7fe75cade8b2d",
+          "title": "Fed's Barr says central bank likely on hold for some time as it watches for easing inflation"
+        },
+        {
+          "type": "article",
+          "pk": "id#5f5a2745b541deca",
+          "title": "Fed's Daly says US central bank still needs to get inflation down"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        150237,
+        212928
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "What's the fundamental reason for the Fed maintaining such a cautious stance? What specific data are they looking to confirm?",
+      "sources": [],
+      "time": [
+        213428,
+        220919
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The key is confidence that inflation is sustainably returning to the Fed's 2% target. In his speech, Vice Chair Michael Barr explicitly said he wants to see evidence that goods price inflation is continuing to recede. He sees a significant risk of inflation getting stuck above the target and is wary that a premature rate cut could reignite price pressures. He also mentioned that while the labor market is stable, it's in a delicate balance and could be vulnerable to negative shocks. This suggests the Fed is trying to avoid a worst-case scenario where they ease policy too soon, fail to control inflation, and simultaneously destabilize the job market. So, they're signaling they will maintain the current interest rate level until they can confirm through multiple data points—like the CPI and PCE—that the disinflationary trend is not just a temporary blip.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#88b7fe75cade8b2d",
+          "title": "Fed's Barr says central bank likely on hold for some time as it watches for easing inflation"
+        },
+        {
+          "type": "event",
+          "id": "419138",
+          "title": "fed barr speech",
+          "date": "2026-02-17"
+        },
+        {
+          "type": "event",
+          "id": "398816",
+          "title": "core inflation rate yoy",
+          "date": "2026-02-13"
+        },
+        {
+          "type": "event",
+          "id": "399080",
+          "title": "core pce price index yoy",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        221419,
+        270990
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "In that case, it seems the market's scenario of a rate cut in the first half of the year is now inevitably being revised. What's the outlook from here?",
+      "sources": [],
+      "time": [
+        271490,
+        281021
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, market expectations are definitely being pushed back. At the start of the year, there was even talk of a March rate cut, but now the view that a cut in the first half is uncertain is gaining traction. Today's comments from Fed officials were a decisive factor in recalibrating those expectations. The market's focus is now shifting from *when* the Fed will cut rates to *how much longer* they will maintain the current level. In the immediate term, tomorrow's release of the January FOMC minutes will be key; the market will be watching to see just how many members were concerned about the stickiness of inflation. Furthermore, if this Friday's PCE data supports the Fed's concerns, rate cut expectations could recede even further, likely weighing on the stock market. The fact that the market closed mixed without a clear direction today can be seen as the process of pricing in this very uncertainty.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#99ceac3400e35d12",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end higher in volatile trading day as Apple jumps"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        }
+      ],
+      "time": [
+        281521,
+        331132
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, another variable shaking the market, just as much as the uncertainty around the Fed, was AI. You mentioned a split between winners and losers within tech stocks. That phrase, 'the two faces of AI,' is quite striking. Could you explain what was happening?",
+      "sources": [],
+      "time": [
+        331632,
+        348202
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, today the market starkly illustrated how the massive wave of artificial intelligence can be a tailwind of opportunity for some companies and a destructive tsunami for others. The reason the Nasdaq started the day down nearly 1% was precisely this fear of AI disruption. However, the reason the broader market didn't collapse, and the S&P 500 and Nasdaq managed to close up 0.1% and 0.14% respectively, was because a giant like Apple surged on its AI opportunities, pulling the indices up. In the end, the market showed a dual personality regarding the single theme of AI: it pushed up shares of a perceived beneficiary like Apple by over 2%, while simultaneously unleashing a wave of selling across the software sector, which is seen as threatened by the technology.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "article",
+          "pk": "id#99ceac3400e35d12",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end higher in volatile trading day as Apple jumps"
+        },
+        {
+          "type": "article",
+          "pk": "id#3feb91f23656cdeb",
+          "title": "Tech stocks fall as AI disruption fears hit more companies"
+        }
+      ],
+      "time": [
+        348702,
+        398713
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Let's start with the Apple news that led the market's rebound. What was it that gave the stock such a strong boost?",
+      "sources": [],
+      "time": [
+        399213,
+        406384
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "The decisive news for Apple was a report that it's accelerating the development of new AI-powered wearable devices. According to Bloomberg, Apple is fast-tracking the development of three new devices: smart glasses, a wearable pendant, and AirPods with built-in cameras. All these devices are intended to operate around the Siri digital assistant, aiming to perform AI functions based on visual information from the cameras. Wedbush Securities analyst Dan Ives commented on this, saying that 2026 will finally be the year Apple seriously enters the AI game, suggesting the recent stock decline was overdone and that more advanced AI features will be released by the summer. The market interpreted this as a sign that Apple is securing a new growth engine to succeed the iPhone and can lead the AI era, pushing the stock up more than 2%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f181042082b103ad",
+          "title": "Apple Ramps Up Work on Glasses, Pendant, and Camera AirPods for AI Era"
+        },
+        {
+          "type": "article",
+          "pk": "id#8ac9506a99b78d1e",
+          "title": "Apple's AI moment is finally arriving in 2026, Wedbush says"
+        },
+        {
+          "type": "article",
+          "pk": "id#e11017a7bb81778d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq edge higher in volatile trading, Apple share rise"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        }
+      ],
+      "time": [
+        406884,
+        456695
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "On the flip side, which companies fell as fears of AI disruption spread, and what were the reasons?",
+      "sources": [],
+      "time": [
+        457195,
+        463606
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Yes, software and service companies took a direct hit. As new AI models from companies like OpenAI and Anthropic evolve beyond simple assistance tools into so-called 'agent AI' that can handle complex tasks autonomously, concerns have grown that the position of existing software companies could be threatened. For example, if AI can write its own code, manage customer relationships, and analyze data, the software from companies currently providing these services could become redundant. This fear led to a sell-off across the software sector, and the iShares Expanded Tech-Software Sector ETF fell over 1.4% today alone. Among individual stocks, the weakness was clear across the board, with Salesforce down 3.5%, Adobe falling 1.7%, and Datadog dropping more than 3%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#613d7cee06ba5245",
+          "title": "Autodesk, Datadog, Atlassian, C3.ai, and BlackLine Shares Plummet, What You Need To Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#f9b1e5192990e9b0",
+          "title": "Software stock bulls are still making a lethal assumption"
+        },
+        {
+          "type": "chart",
+          "ticker": "IGV",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "CRM",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "ADBE",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "DDOG",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        }
+      ],
+      "time": [
+        464106,
+        512357
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So how should we interpret this phenomenon of diverging fortunes driven by AI? Is this a temporary trend, or the beginning of a structural shift?",
+      "sources": [],
+      "time": [
+        512857,
+        522508
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "The prevailing view is that this is the beginning of a structural shift. The market has moved past the stage of cheering for the word 'AI' indiscriminately and is now starting to distinguish between the actual beneficiaries and victims of the technology. Companies essential for implementing AI, like semiconductor and data center firms, or those like Apple that can deliver AI services through a powerful platform, are being classified as winners. In contrast, companies whose existing business models could be replaced by AI are being perceived as losers. Some analysts argue that this indiscriminate selling is irrational and an excessive fear unrelated to fundamentals. However, what's clear is that as long as uncertainty exists about how AI will reshape the industrial landscape, this kind of differentiation and volatility within the tech sector is likely to continue. Investors are now at a point where they must carefully discern which companies will ride the AI wave and which will be swept away by it.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#68b896faa52a0536",
+          "title": "Stock Pickers See Their Moment to Shine in Market’s AI Freak-Out"
+        },
+        {
+          "type": "article",
+          "pk": "id#ec6225099db45a77",
+          "title": "AI Stocks Are in Trouble: Is This Just a Pullback or the Start of a Bear Market?"
+        },
+        {
+          "type": "article",
+          "pk": "id#48c23b569df4ece7",
+          "title": "Stocks Retreat on AI Anxiety"
+        },
+        {
+          "type": "article",
+          "pk": "id#a4dc098388663bc2",
+          "title": "Samsara, Cadence Design Systems, BILL, Workiva, and Okta Stocks Trade Down, What You Need To Know"
+        }
+      ],
+      "time": [
+        523008,
+        582899
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "In the opening, you pointed out that with limited macroeconomic influence, individual company issues were moving the market. The news about a merger between Warner Bros. Discovery and Paramount is particularly noteworthy. Could you elaborate?",
+      "sources": [],
+      "time": [
+        583399,
+        598650
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, today's market was a classic example of differentiation, where individual stocks saw diverging fortunes without a clear macroeconomic direction. With the S&P 500 and Nasdaq closing near flat, investors' attention turned to individual company news. At the center of this was the resumption of merger talks between Warner Bros. Discovery and Paramount Global, signaling a potential shake-up in the media industry. As Warner Bros. was given a week to present an improved offer to Paramount, reigniting the negotiations, Paramount's stock rose over 3% today. On the other hand, food giant General Mills saw its stock fall more than 2% after lowering its annual sales forecast due to weakening consumer sentiment. This starkly illustrates how stock prices are diverging based on corporate fundamentals. It shows that with the Fed's rate cut path unclear and a lack of catalysts to move the entire market, investors are focusing more on the viability and growth prospects of individual companies.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b5f3395bbdda83e8",
+          "title": "Warner Bros. Discovery reopens bidding, gives Paramount seven days to make its case"
+        },
+        {
+          "type": "article",
+          "pk": "id#5224f5fbda1f1d11",
+          "title": "General Mills Sees Lower Sales on Weak Consumer Sentiment"
+        },
+        {
+          "type": "article",
+          "pk": "id#a5ae36f7373ab0da",
+          "title": "Stock market today: Nasdaq, S&P 500 slide to kick off shortened week with AI fears in focus"
+        },
+        {
+          "type": "chart",
+          "ticker": "PARA",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "GIS",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        }
+      ],
+      "time": [
+        599150,
+        659081
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "So a major M&A discussion in the media industry is back on the table. Why are these negotiations drawing so much market attention?",
+      "sources": [],
+      "time": [
+        659581,
+        668032
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "It's because as competition in the streaming market intensifies, scaling up to secure content and subscribers has become crucial. This negotiation is not just about the combination of two companies; it's unfolding within a complex competitive landscape involving other potential bidders like Skydance Media. What's particularly noteworthy is that Warner Bros. has temporarily paused its exclusive negotiation rights with Netflix to engage in talks with Paramount. This is seen as a strategy by Warner Bros. to weigh multiple options and secure the most favorable deal. For Paramount, a potential bidding war could be a positive factor for its stock price. The market is closely watching every step because the outcome of this consolidation among media giants could completely reshape the industry landscape.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1b8674a024634619",
+          "title": "Warner Bros rejects Paramount's revised offer, but gives studio a week to negotiate better deal"
+        },
+        {
+          "type": "article",
+          "pk": "id#aca1d8bc6a346097",
+          "title": "Warner Bros reopens takeover talks with Paramount after receiving waiver from Netflix"
+        },
+        {
+          "type": "article",
+          "pk": "id#e6cc1996950927a0",
+          "title": "The Netflix-Paramount-Warner Bros. Three-Way Drama Just Keeps Heating Up"
+        },
+        {
+          "type": "chart",
+          "ticker": "WBD",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        }
+      ],
+      "time": [
+        668532,
+        712863
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "On the other hand, there were also companies with disappointing news, like General Mills. Could you elaborate on that as well?",
+      "sources": [],
+      "time": [
+        713363,
+        721254
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's right. At an investor event today, General Mills lowered its full-year organic net sales growth guidance from a range of minus 1% to 0% down to a range of minus 1% to minus 2%, citing weaker-than-expected demand as consumers feel the pinch from high prices. This is a case that shows the impact of inflation on consumers' real purchasing power is still significant. In times like these, when the direction of macroeconomic indicators is ambiguous, investors are bound to react more sensitively to corporate earnings guidance and individual news. The trend of stocks reacting instantly to positive news like M&A while punishing companies that present weak results or uncertain outlooks is likely to continue for the time being.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#5224f5fbda1f1d11",
+          "title": "General Mills Sees Lower Sales on Weak Consumer Sentiment"
+        },
+        {
+          "type": "chart",
+          "ticker": "GIS",
+          "start_date": "2026-02-10",
+          "end_date": "2026-02-17"
+        },
+        {
+          "type": "event",
+          "id": "399314",
+          "title": "retail sales control group mom",
+          "date": "2026-02-10"
+        },
+        {
+          "type": "event",
+          "id": "398584",
+          "title": "retail sales mom",
+          "date": "2026-02-10"
+        }
+      ],
+      "time": [
+        721754,
+        764365
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So, it's a market environment where individual company fundamentals are becoming more important. What should investors be mindful of?",
+      "sources": [],
+      "time": [
+        764865,
+        773156
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Yes, we're at a point where it's more important to meticulously analyze a company's earnings, growth drivers, and competitive landscape rather than just following the overall market trend. Until the FOMC minutes tomorrow or the various economic indicators scheduled for later this week provide new direction, a stock-picker's market like today's is likely to persist. Therefore, investors should pay closer attention to companies' earnings releases and future guidance. In particular, the ability to manage costs, pricing power, and securing new growth drivers will be key metrics for evaluating a company's value. Until the macroeconomic fog lifts, distinguishing the winners from the losers is set to be the most important theme in the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#99ceac3400e35d12",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq end higher in volatile trading day as Apple jumps"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "398285",
+          "title": "housing starts",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "399166",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-02-19"
+        }
+      ],
+      "time": [
+        773656,
+        814347
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Right, it's a market where sorting the winners from the losers is key. Let's take a closer look at Apple, which showed particular strength amid today's mixed session. It rose over 2% and even surpassed $266 late in the day. What was the driving force?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-02-17",
+          "end_date": "2026-02-17"
+        }
+      ],
+      "time": [
+        815347,
+        832478
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, Apple's stock surge today can be attributed to strong growth expectations fueled by the concept of an 'AI super cycle.' The market is focusing on the prospect that Apple's full-scale adoption of AI features, starting in 2026, will trigger a massive upgrade cycle among existing iPhone users. This is generating excitement not just for increased hardware sales, but also for the potential launch of new AI subscription services built on its active device base of over 2.5 billion. Positive analysis from firms like Wedbush Securities, suggesting that this AI monetization model will be a key driver in taking Apple's valuation to the next level, appears to have boosted investor sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#8ac9506a99b78d1e",
+          "title": "Apple's AI moment is finally arriving in 2026, Wedbush says"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "AAPL",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0000320193-26-000006"
+        }
+      ],
+      "time": [
+        832978,
+        872389
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So the expectation is that AI will become the new growth engine after the iPhone. But surely it can't all be a rosy outlook. Are there any risks the market might be overlooking?",
+      "sources": [],
+      "time": [
+        872889,
+        883620
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "That's precisely the most contentious point of debate surrounding Apple right now. While the market is cheering for the future potential of AI, the company's own SEC filings document clear and present threats. The biggest risks are the sweeping regulatory pressures, exemplified by the European Union's Digital Markets Act and the U.S. Department of Justice's antitrust lawsuit. These regulations directly target the closed ecosystem and high commission policies of the App Store, which is Apple's core competitive advantage and a massive cash generator. In a worst-case scenario, the company could face enormous fines of up to 10% of its global annual revenue, a sum that could wipe out the potential profits from AI in one fell swoop.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AAPL",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0000320193-26-000006"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "AAPL",
+          "form": "10-K",
+          "filed_date": "2025-10-31",
+          "accession_number": "0000320193-25-000079"
+        }
+      ],
+      "time": [
+        884120,
+        927891
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So it's a situation where unproven future optimism is colliding head-on with documented, present-day risks. How should we view the current stock price as reflecting these two factors?",
+      "sources": [],
+      "time": [
+        928391,
+        941442
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "To put it bluntly, the prevailing analysis is that the stock is in overvalued territory. The judgment is that the market is skewed towards extreme optimism, fully pricing in a best-case scenario of AI success while completely ignoring the multi-billion dollar regulatory risks that are clearly disclosed in SEC filings. Even for a great company, investing at a price that exceeds its intrinsic value can be a risky bet with no margin of safety. The market appears to have entered a classic greed phase, driven by the single narrative of the AI revolution, and it's important to note that this kind of psychological momentum can be fragile and easily broken by small shocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#45f18a51bc69a0ad",
+          "title": "Buying stocks everyone loves is a recipe for underperformance — but Apple breaks the rule"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "AAPL",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0000320193-26-000006"
+        }
+      ],
+      "time": [
+        941942,
+        979513
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So what you're saying is that market expectations are getting too far ahead of themselves. From an investor's perspective, what should they be focusing on?",
+      "sources": [],
+      "time": [
+        980013,
+        988624
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, this seems to be a time to weigh potential risks more heavily than potential rewards. The future that AI promises is very appealing, but it's based on uncertainties that require many optimistic assumptions to come true. On the other hand, the regulatory risk is a specific, existing threat acknowledged by the company itself. Therefore, it's crucial to pay close attention to news related to the outcomes of investigations by the EU or the U.S. Department of Justice. Additionally, when new AI features are announced, it will be necessary to coolly assess whether they meet market expectations and if this translates into actual increases in iPhone sales or new service subscriber numbers. This is a situation that calls for a cautious approach based on confirmed numbers, rather than investing in hope.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AAPL",
+          "form": "10-K",
+          "filed_date": "2025-10-31",
+          "accession_number": "0000320193-25-000079"
+        }
+      ],
+      "time": [
+        989124,
+        1038614
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "The market today seemed to be searching for direction as it digested various indicators. If you had to summarize today's market in one sentence, what would it be?",
+      "sources": [],
+      "time": [
+        1039614,
+        1048985
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Yes, it was a day where concerns that the pace of disinflation might not meet market expectations clashed with confidence in the solid fundamentals of the U.S. economy. With recent CPI and retail sales data coming in stronger than expected, the view that the Fed's rate cut timeline could be pushed back is gaining momentum. As a result, investors are taking a cautious stance, preferring to wait for clues about the Fed's next move from upcoming economic data rather than making any rash moves.",
+      "sources": [],
+      "time": [
+        1049485,
+        1078136
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "So, what upcoming economic events should investors be paying particular attention to?",
+      "sources": [],
+      "time": [
+        1078636,
+        1084047
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "This week, two key events are waiting that could determine the market's direction. First is the FOMC minutes, to be released on Wednesday at 2 PM local time. While the last rate decision is already priced in, the minutes will give us a detailed look at how Fed members evaluated the inflation data at the time and what discussions they had about the path for rate cuts. The key thing to watch will be how much support there was for the idea of maintaining a restrictive stance for longer than expected.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        }
+      ],
+      "time": [
+        1084547,
+        1110198
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "It'll be important to see what the Fed members were really thinking in the FOMC minutes. And what's the other event?",
+      "sources": [],
+      "time": [
+        1110698,
+        1117669
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "We need to watch the Personal Consumption Expenditures, or PCE, price index, which will be released on Friday morning. The PCE is the Fed's preferred measure of inflation. The core PCE price index, which excludes volatile food and energy prices, is particularly important. After a 0.2% rise last month, a 0.3% increase is expected this month. If the result comes in above this forecast, rate cut expectations could weaken even further. The S&P Global Composite PMI flash estimate, also released on the same day, could also influence the market as it provides a gauge of manufacturing and services activity.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "399080",
+          "title": "core pce price index yoy",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "398036",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        1118169,
+        1154500
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "So we have some important data concentrated at the end of the week. Finally, do you have a word of advice for our investors?",
+      "sources": [],
+      "time": [
+        1155000,
+        1162651
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "해설자",
+      "text": "The market is currently in the process of pricing in the possibility that the 'last mile' in the fight against inflation could be longer than anticipated. This week's FOMC minutes and PCE inflation data will be a crucial turning point in this market reassessment. Depending on the results, market volatility could increase once again, so this is a time when it's wise to respond calmly by confirming the trend in key economic data, rather than getting caught up in short-term movements.",
+      "sources": [],
+      "time": [
+        1163151,
+        1193322
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "진행자",
+      "text": "Yes, a calm response will be key. That concludes our closing bell briefing for February 17th. Thank you.",
+      "sources": [],
+      "time": [
+        1193822,
+        1201513
+      ]
+    }
+  ]
+}

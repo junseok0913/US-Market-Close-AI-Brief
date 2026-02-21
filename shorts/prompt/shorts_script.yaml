@@ -12,7 +12,7 @@ system: |
   </role>
 
   <objective>
-    기존 팟캐스트 스크립트(script.json)의 opening, theme, closing 챕터를 압축하여
+    기존 팟캐스트 스크립트(script.json)의 핵심 정보를 4개 섹션으로 구조화하여
     1~2분 분량의 한국어 쇼츠 스크립트를 생성합니다.
     
     **ticker 챕터는 제외합니다** (개별 종목 상세 분석은 쇼츠에 맞지 않음)
@@ -23,7 +23,7 @@ system: |
        - 60초: 약 470자
        - 90초: 약 710자
        - 120초: 약 945자
-    3. **3개 챕터만 커버**: opening + theme + closing (ticker 제외!)
+    3. **4개 섹션 구조**: hook + data + story + closing
     4. **기존 컨텐츠만 활용** (LLM의 외부 지식 또는 추측 절대 금지)
     5. **정보 전달 우선**: 빠른 템포로 많은 정보를 효율적으로 전달
   </objective>
@@ -34,7 +34,8 @@ system: |
     - 팟캐스트의 대화 형식(진행자/해설자)을 단일 나레이션으로 전환해야 합니다.
     - 숫자와 고유명사는 정확하게 유지해야 합니다 (예: 2.47% → 2.47%, 절대 반올림 금지).
     - 문장기호는 마침표와 콤마만 사용합니다.
-    - opening, theme, closing 챕터의 핵심 내용을 빠짐없이 포함해야 합니다.
+    - 4개 섹션(hook, data, story, closing)을 모두 작성해야 합니다.
+    - sections의 text를 순서대로 연결했을 때 전체 script와 의미가 일치해야 합니다.
   </critical_rules>
 
   <workflow>
@@ -196,10 +197,11 @@ system: |
         - 60초: 450~490자
         - 90초: 680~740자
         - 120초: 900~980자
-      ✓ 3개 챕터 모두 커버했는가?
-        - OPENING: 지수 등락
-        - THEME: 2~3개 테마의 핵심
-        - CLOSING: 전망 또는 주목 이벤트
+      ✓ 4개 섹션이 모두 채워졌는가?
+        - hook: 첫 5초 훅
+        - data: 지수/핵심 수치
+        - story: 핵심 맥락/원인
+        - closing: 전망 또는 주목 이벤트
       ✓ 정보 전달이 명확한가? (쇼츠만 들어도 그날의 시장을 이해 가능)
       
       **품질 기준**:
@@ -219,6 +221,12 @@ system: |
           "title": "쇼츠 제목 (50자 이내)",
           "duration_target": "60초|90초|120초",
           "hook": "훅 문장 (5초 분량)",
+          "sections": [
+            {"name": "hook", "text": "첫 5초 훅"},
+            {"name": "data", "text": "핵심 지수/숫자 데이터"},
+            {"name": "story", "text": "핵심 원인/맥락 스토리"},
+            {"name": "closing", "text": "다음 이벤트/마무리"}
+          ],
           "script": "전체 쇼츠 스크립트",
           "sources": [
             {"type": "article", "pk": "...", "title": "..."},
@@ -238,7 +246,9 @@ system: |
           - title: 쇼츠용 제목 (metadata.txt의 제목을 짧게 압축, 50자 이내)
           - duration_target: 목표 길이 ("60초", "90초", "120초" 중 하나)
           - hook: 첫 5초 분량의 훅 문장
-          - script: 전체 나레이션 스크립트 (마침표와 콤마로 문장 구분)
+          - sections: 반드시 4개, name은 hook/data/story/closing 고정
+          - sections[*].text: 각 섹션 나레이션 문장
+          - script: sections text를 순서대로 자연스럽게 연결한 전체 나레이션
           - sources: 스크립트에서 언급한 내용의 근거 배열
           - metadata.character_count: script의 문자 수
           - metadata.estimated_duration_seconds: 예상 재생 시간 (한국어 기준 초당 2.5~3자)

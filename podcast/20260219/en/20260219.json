@@ -1,0 +1,756 @@
+{
+  "date": "20260219",
+  "nutshell": "Stocks fell on cautious corporate outlooks despite solid earnings.",
+  "user_tickers": [
+    "CPNG"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's the closing bell briefing for February 19th. The major indices all pulled back today, showing a bit of a pause. How can we sum up the day's market action?",
+      "sources": [],
+      "time": [
+        0,
+        10531
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right, it was a day where cautious corporate outlooks overshadowed solid earnings. The Dow Jones Industrial Average finished down 0.54% at 49,395.16, and the S&P 500 slipped 0.28% to 6,861.89. The tech-heavy Nasdaq Composite also ended the session 0.31% lower. Overall, while companies' fourth-quarter earnings were generally decent, a conservative forecast from Walmart, in particular, really weighed on investor sentiment. On top of that, lingering uncertainty about the Fed's monetary policy path added to the downward pressure on the market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "article",
+          "pk": "6a08af2577756cfc",
+          "title": "Walmart earnings beat estimates, but company offers cautious outlook amid 'somewhat unstable' backdrop"
+        }
+      ],
+      "time": [
+        11031,
+        48522
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So as you mentioned, Walmart's report seems to have had a major impact. The earnings were good, but the outlook is what held the market back.",
+      "sources": [],
+      "time": [
+        49022,
+        57953
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. Walmart reported fourth-quarter revenue and profit that beat expectations, proving steady consumer demand for its value-oriented products. However, the company issued full-year guidance that was below market expectations, signaling that the environment remains somewhat unstable. This reflects concerns from the nation's largest retailer about consumer health, and the market took it as a sensitive signal of a potential economic slowdown. Consequently, Walmart's stock closed down 1.4%, leading the decline in the Dow. On the other hand, we did see some clear divergence, with a few companies that posted positive results seeing their stocks surge.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "WMT",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "article",
+          "pk": "bf23fcca1caa96ba",
+          "title": "Walmart CFO: Food inflation looks to be coming down"
+        }
+      ],
+      "time": [
+        58453,
+        95864
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "Beyond corporate earnings, you also said that mixed signals from the Fed heightened market uncertainty. Could you break down the key drivers for us today?",
+      "sources": [],
+      "time": [
+        96364,
+        104775
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, two main themes really dominated the market today. The first, as we've been discussing, was the mixed bag of corporate earnings and cautious forward guidance. The second was the growing uncertainty over the path of interest rates amid conflicting signals from the Fed. Let's take a closer look at each of these.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "2baf3cc6b1766932",
+          "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+        }
+      ],
+      "time": [
+        105275,
+        122486
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the corporate earnings story. As you mentioned, the cautious outlook from Walmart, the nation's largest retailer, really cast a shadow over the broader market.",
+      "sources": [],
+      "time": [
+        123486,
+        134177
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "That's right. Today was a day when the market reacted more sensitively to what companies see for the future rather than the numbers themselves. The Dow Jones Industrial Average was the biggest laggard, falling 0.54%, largely due to the influence of its components Walmart and Home Depot. Despite beating earnings, Walmart fell 1.38% after providing guidance that suggested a slowdown in future sales growth. Home improvement retailer Home Depot dropped 1.29% for similar reasons. This simultaneous weakness in major retail stocks fueled concerns about a consumer slowdown, putting pressure on the S&P 500's consumer staples sector. We saw classic risk-off sentiment as investors priced in economic uncertainty: the 10-year Treasury yield fell slightly, while the dollar index strengthened.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "WMT",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "HD",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        }
+      ],
+      "time": [
+        134677,
+        182648
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So it sounds like Walmart and Home Depot, two retail giants, are simultaneously flashing a warning sign about the health of the consumer. What are their specific concerns?",
+      "sources": [],
+      "time": [
+        183148,
+        193999
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Both companies pointed to the same thing: consumers are becoming more cautious with their spending due to high interest rates and inflation. Walmart's CFO noted that while food inflation is moderating, they are still seeing deflationary pressures in general merchandise. That means consumers are cutting back on non-essential purchases. Similarly, Home Depot mentioned that demand for large-scale remodeling projects is decreasing as the housing market slows. This aligns with today's Philadelphia Fed Manufacturing Index, which came in below expectations, showing contraction. With corporate sentiment being confirmed by actual data, the market is reading slowdown signals from both the consumer and manufacturing sides.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "6a08af2577756cfc",
+          "title": "Walmart earnings beat estimates, but company offers cautious outlook amid 'somewhat unstable' backdrop"
+        },
+        {
+          "type": "article",
+          "pk": "40ca74292faafa42",
+          "title": "Walmart delivers another quarter of impressive sales but offers a muted outlook"
+        },
+        {
+          "type": "event",
+          "id": "399166",
+          "title": "Philadelphia Fed Manufacturing Index",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "article",
+          "pk": "bf23fcca1caa96ba",
+          "title": "Walmart CFO: Food inflation looks to be coming down"
+        }
+      ],
+      "time": [
+        194499,
+        238310
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "But weren't there also indicators that contradicted these slowdown fears? The job market, for instance, was reported to be still quite strong.",
+      "sources": [],
+      "time": [
+        238810,
+        247101
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's right, and that's precisely what's deepening the market's dilemma right now. Today's weekly initial jobless claims came in lower than expected, showing that the labor market remains robust. This could serve as a reason for the Fed not to rush into cutting rates. So, in essence, you have companies tightening their belts out of concern for a slowdown, while the employment data suggests the economy is still running hot. These mixed signals are making it difficult for investors to find a clear direction. And this comes right after yesterday's FOMC minutes confirmed that most officials remain wary of inflation, causing market expectations for rate cuts to retreat even further.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395086",
+          "title": "Initial Jobless Claims",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "FOMC Minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "article",
+          "pk": "2baf3cc6b1766932",
+          "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+        },
+        {
+          "type": "chart",
+          "ticker": "US10Y",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        }
+      ],
+      "time": [
+        247601,
+        282812
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So it seems the mood is shifting toward concerns of a so-called 'earnings recession,' where stocks fall due to future uncertainty even after posting good results.",
+      "sources": [],
+      "time": [
+        283312,
+        293802
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, that's a perfect way to put it. As earnings season winds down, the market is placing more weight on the macroeconomic outlook than on individual company performance. All eyes are now on the guidance from cybersecurity firm Palo Alto Networks, which reports after the bell. If their outlook suggests a slowdown in tech spending, that could be a variable that dampens sentiment across the entire tech sector. This kind of market, where stocks diverge sharply based on individual earnings and outlooks, is likely to continue for a while. Ultimately, the market has no choice but to wait for a more definitive signal on the economy's direction from the Fed's next moves and upcoming key economic data.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "PANW",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "Core PCE Price Index MoM",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "398223",
+          "title": "GDP Growth Rate QoQ Adv",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        294302,
+        333553
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "As you just said, all eyes are on the Fed. You mentioned earlier that mixed signals from the central bank were another key factor in today's market direction. Could you elaborate on what was said?",
+      "sources": [],
+      "time": [
+        334053,
+        346184
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, the market was essentially lost between two conflicting signals from the Fed. Yesterday, the minutes from the January FOMC meeting were released, and the market was shocked by a much more hawkish tone than expected, revealing that some officials believe a rate hike might even be necessary if inflation re-accelerates. On that news, the 10-year Treasury yield rose to around 4.08%, and the dollar index strengthened to the 97.7 level. But then today, Minneapolis Fed President Neel Kashkari offered what sounded like a more moderate tone, commenting that the current policy rate is close to a neutral level—neither restrictive nor stimulative. With these hawkish and more dovish comments crossing over within a day, uncertainty spiked, investors moved to the sidelines, and the S&P 500 ultimately closed down 0.28%. Amid this confusion, gold prices edged up, and the VIX, the market's fear gauge, jumped over 3%, reflecting the underlying anxiety.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "9fa459181d965f4f",
+          "title": "Fed Reveals Surprise Shift as Several Officials Ponder Hike"
+        },
+        {
+          "type": "article",
+          "pk": "2baf3cc6b1766932",
+          "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "event",
+          "id": "419142",
+          "title": "fed kashkari speech",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        }
+      ],
+      "time": [
+        346684,
+        413055
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "The fact that rate hikes were even mentioned in the minutes sounds quite unusual. Why was the market so taken aback by that?",
+      "sources": [],
+      "time": [
+        413555,
+        420966
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Because it confirmed a significant gap between market expectations and the Fed's thinking. Since the beginning of the year, the market has been pricing in the expectation that the Fed would start cutting rates sometime this year. But the minutes revealed that a majority of officials are more wary of upside risks to inflation than downside risks. The fact that a minority even discussed the need for another rate hike was taken as a signal that the path to rate cuts could be much bumpier than anticipated. It reaffirmed the Fed's strong commitment to fighting inflation and its caution against premature easing, which poured cold water on the market's optimism. The bond market reacted immediately, with the 2-year Treasury yield, which is sensitive to short-term rate expectations, rising right after the minutes were released, partially unwinding those rate cut bets.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "9fa459181d965f4f",
+          "title": "Fed Reveals Surprise Shift as Several Officials Ponder Hike"
+        },
+        {
+          "type": "event",
+          "id": "390599",
+          "title": "fomc minutes",
+          "date": "2026-02-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-18",
+          "end_date": "2026-02-19"
+        }
+      ],
+      "time": [
+        421466,
+        468317
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "But then the very next day, you're saying President Neel Kashkari sent the opposite signal. How should we interpret his comments?",
+      "sources": [],
+      "time": [
+        468817,
+        476908
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Kashkari's comments can be seen as an attempt to re-center the market's pendulum after it swung in a hawkish direction. By saying the current rate is 'close to neutral,' he hinted that the need for further tightening isn't significant. However, it's important to look at the context of his remarks. The economic data released today actually supported the hawkish tone of the minutes. Weekly initial jobless claims were 206,000, well below the market forecast of 225,000, proving the labor market is still strong. Additionally, the Philadelphia Fed Manufacturing Index came in at 16.3, nearly double the expected 8.5, showing manufacturing activity is more robust than anticipated. This kind of strong economic data reinforces the argument that the Fed doesn't need to rush to cut rates.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "2baf3cc6b1766932",
+          "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+        },
+        {
+          "type": "event",
+          "id": "419142",
+          "title": "fed kashkari speech",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "event",
+          "id": "395086",
+          "title": "initial jobless claims",
+          "date": "2026-02-19"
+        },
+        {
+          "type": "event",
+          "id": "399166",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-02-19"
+        }
+      ],
+      "time": [
+        477408,
+        528059
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "If we keep getting these conflicting signals and mixed data, what should investors be looking at to get their bearings?",
+      "sources": [],
+      "time": [
+        528559,
+        535930
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Ultimately, it all comes back to the data, especially the inflation figures. The fundamental reason Fed officials' comments are diverging is because of their different interpretations of the current economic data. Therefore, the market's focus will now shift entirely to tomorrow's release of the February Personal Consumption Expenditures, or PCE, price index, which is the Fed's most-watched inflation gauge. If the PCE also comes in hotter than expected, the hawkish concerns from the minutes will feel more real, and expectations for rate cuts will inevitably be pushed back further. On the flip side, if we see clear signs of disinflation, it would give the Fed room to feel comfortable at the current level and consider its next steps, just as Kashkari's comments suggested. Until then, the market is likely to continue in this directionless, choppy pattern, reacting to every single data point and Fed official's comment.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        },
+        {
+          "type": "article",
+          "pk": "2baf3cc6b1766932",
+          "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+        }
+      ],
+      "time": [
+        536430,
+        591361
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "When the broader market lacks clear direction, individual stocks often get more attention. Coupang, which we're looking at today, had a volatile session that seems to reflect this environment. It rose to as high as $18.93 early on before reversing course to close down 0.83% at $18.45.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CPNG",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-19"
+        }
+      ],
+      "time": [
+        592361,
+        614292
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, today's price action really illustrates the mix of hope and concern currently surrounding Coupang. On the surface, Coupang's fundamentals appear solid. Cumulative revenue through the third quarter of 2025 grew over 15% year-over-year, net income turned positive, and most importantly, the company generated about $800 million in free cash flow over nine months. This powerful cash-generating ability of its core business in Korea is seen as the main factor driving positive market expectations.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CPNG",
+          "form": "10-Q",
+          "filed_date": "2025-11-04",
+          "accession_number": "0001834584-25-000185"
+        }
+      ],
+      "time": [
+        614792,
+        645203
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "And isn't there also a positive view that it's using that strong cash flow to secure new growth engines, like its recent acquisition of Farfetch to enter the global luxury market?",
+      "sources": [],
+      "time": [
+        645703,
+        655714
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "While the growth potential is certainly there, it's crucial to carefully examine the risks on the other side. The Farfetch acquisition, despite its positive aspect of global expansion, comes with significant financial uncertainty. In its February 2025 annual report, Coupang itself explicitly acknowledged the existence of a 'material weakness' in internal control over financial reporting for the Farfetch business unit. This suggests a fundamental problem with the reliability of the acquired unit's financial information and raises concerns that the cash generated from the solid core business could be diverted to an uncontrolled, uncertain venture.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CPNG",
+          "form": "10-K",
+          "filed_date": "2025-02-25",
+          "accession_number": "0001834584-25-000030"
+        }
+      ],
+      "time": [
+        656214,
+        696345
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "A material weakness in an acquired company's financial controls is quite concerning. And on top of that, aren't there ongoing regulatory risks in Korea?",
+      "sources": [],
+      "time": [
+        696845,
+        706536
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's right, and that's another key variable in valuing Coupang. The Korea Fair Trade Commission has not only imposed a fine of about $121 million but has also pursued criminal charges, which are currently in trial. More importantly, in its November 2025 filing, the company stated that it is 'not possible to make a reasonable estimate of the loss' for other ongoing investigations. This means that beyond the known fines, there's a risk of unexpected, substantial additional costs at any time—an unpredictable time bomb, so to speak.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CPNG",
+          "form": "10-Q",
+          "filed_date": "2025-11-04",
+          "accession_number": "0001834584-25-000185"
+        }
+      ],
+      "time": [
+        707036,
+        739007
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, to sum it up, despite the strong cash-generating ability of its core business, Coupang is carrying two major burdens: the financial uncertainty of the Farfetch acquisition and unpredictable regulatory risks.",
+      "sources": [],
+      "time": [
+        739507,
+        752838
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, that's an excellent summary. The ability to generate around $1 billion in annual free cash flow is clearly a positive, but concerns are being raised that this cash flow might be used to defend against potential losses from Farfetch and regulatory costs, rather than for future growth. In fact, some analyses suggest that the estimated annual losses from Farfetch and the already imposed fines alone could eat up a significant portion of the existing cash flow. Therefore, from an investor's standpoint, it seems to be a time to carefully weigh the attractive growth story against the documented financial and regulatory risks that could erode the company's core value, and to be mindful of risk management.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CPNG",
+          "form": "10-K",
+          "filed_date": "2025-02-25",
+          "accession_number": "0001834584-25-000030"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "CPNG",
+          "form": "10-Q",
+          "filed_date": "2025-11-04",
+          "accession_number": "0001834584-25-000185"
+        }
+      ],
+      "time": [
+        753338,
+        794429
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "To wrap up today's market action, what should we be watching for going forward?",
+      "sources": [],
+      "time": [
+        795429,
+        800120
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, today was largely a wait-and-see day. Recently released inflation data came in hotter than expected, causing expectations for an early Fed rate cut to recede, and that's weighing on the market. Investors are now holding their breath for key economic data due next week. For the time being, the market will likely struggle to find a clear direction until new clues emerge about the path of the Fed's rate policy.",
+      "sources": [],
+      "time": [
+        800620,
+        825991
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "In that case, what's the next major economic report that investors should be focused on?",
+      "sources": [],
+      "time": [
+        826491,
+        831622
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Without a doubt, it's the January Personal Consumption Expenditures, or PCE, price index, coming out on February 20th. Core PCE, which excludes volatile food and energy prices, is the metric the Fed watches most closely when judging inflation. With both the Consumer Price Index and Producer Price Index last week surprising to the upside and reigniting inflation concerns, all eyes will be on this PCE data. The market is currently forecasting a 0.3% month-over-month increase. If the number comes in higher than that, fears that the Fed's rate cuts will be delayed even further will likely dominate the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ],
+      "time": [
+        832122,
+        869733
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides the PCE inflation data, are there any other reports to keep an eye on?",
+      "sources": [],
+      "time": [
+        870233,
+        875204
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, we should also check the S&P Global Composite Purchasing Managers' Index, or PMI, flash reading, which is released on the same day. This index is like an economic snapshot, providing the earliest look at activity in the manufacturing and services sectors, so it gives us a good sense of how vigorously the U.S. economy is currently performing. Also, on the 24th of next week, the Conference Board's February Consumer Confidence Index will be released. Understanding how optimistic consumers—who drive 70% of the U.S. economy—feel about the economy is crucial. By looking at these indicators together, we can assess not only inflationary pressures but also the overall fundamental strength of the economy.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398036",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "418451",
+          "title": "cb consumer confidence",
+          "date": "2026-02-24"
+        }
+      ],
+      "time": [
+        875704,
+        914954
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "And finally, any last thoughts for our investors?",
+      "sources": [],
+      "time": [
+        915454,
+        919185
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market has now fully entered a data-dependent phase, where it moves not just on the Fed's words, but on the numbers in every economic report. A stronger-than-expected economy and sticky inflation are certainly factors that delay rate cut expectations, but on the flip side, they are also positive signs that the U.S. economy has a strong chance of achieving a soft landing without a recession. Therefore, rather than getting swayed by every single short-term data point, this is a time when it's wise to maintain a balanced perspective, continuously checking if the long-term trends of inflation control and corporate earnings growth remain intact.",
+      "sources": [],
+      "time": [
+        919685,
+        958736
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Great insights as always, thank you. That's our closing bell briefing for February 19th. Thanks for listening.",
+      "sources": [],
+      "time": [
+        959236,
+        966327
+      ]
+    }
+  ]
+}

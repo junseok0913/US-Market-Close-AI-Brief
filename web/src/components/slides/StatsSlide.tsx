@@ -108,7 +108,7 @@ export function StatsSlide({ slide }: Props) {
                     <span className="ml-2 text-xs text-gray-400">({chart.ticker})</span>
                   </div>
                 )}
-                <TradingViewWidget symbol={chart.ticker} />
+                <TradingViewWidget symbol={chart.ticker} minHeight={160} />
               </div>
             ))}
           </motion.div>

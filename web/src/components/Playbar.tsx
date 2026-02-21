@@ -26,12 +26,6 @@ export default function Playbar({ audioSrc, currentTime, onTimeUpdate }: Playbar
   const [isSpeedControlOpen, setIsSpeedControlOpen] = useState(false);
   const [error, setError] = useState(false);
 
-  // Reset error when src changes
-  useEffect(() => {
-    setError(false);
-    setIsPlaying(false);
-  }, [audioSrc]);
-
   // Close speed control when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

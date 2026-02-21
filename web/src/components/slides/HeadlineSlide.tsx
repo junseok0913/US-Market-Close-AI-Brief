@@ -1,7 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Film, Cpu, Coins, TrendingUp } from 'lucide-react';
+import {
+  AlertTriangle,
+  BarChart3,
+  CalendarClock,
+  Film,
+  Cpu,
+  Coins,
+  TrendingUp,
+} from 'lucide-react';
 import type { HeadlineSlide as HeadlineSlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';
 
@@ -65,6 +73,9 @@ const icons: Record<string, React.ReactNode> = {
   cpu: <Cpu className="w-6 h-6" />,
   coins: <Coins className="w-6 h-6" />,
   trending: <TrendingUp className="w-6 h-6" />,
+  'alert-triangle': <AlertTriangle className="w-6 h-6" />,
+  'bar-chart-3': <BarChart3 className="w-6 h-6" />,
+  'calendar-clock': <CalendarClock className="w-6 h-6" />,
 };
 
 export function HeadlineSlide({ slide }: Props) {
@@ -127,7 +138,7 @@ export function HeadlineSlide({ slide }: Props) {
                     <span className="ml-2 text-xs text-gray-400">({chart.ticker})</span>
                   </div>
                 )}
-                <TradingViewWidget symbol={chart.ticker} />
+                <TradingViewWidget symbol={chart.ticker} minHeight={160} />
               </div>
             ))}
           </motion.div>

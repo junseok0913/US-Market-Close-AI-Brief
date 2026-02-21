@@ -1,0 +1,558 @@
+{
+  "date": "20260220",
+  "nutshell": "Stock market rallies as Supreme Court ruling on tariffs removes uncertainty.",
+  "user_tickers": [
+    "BLK"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 20
+    },
+    {
+      "name": "ticker",
+      "start_id": 21,
+      "end_id": 28
+    },
+    {
+      "name": "closing",
+      "start_id": 29,
+      "end_id": 37
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the February 20th market close briefing. The market shook off some early weakness today to finish with strong gains.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. In a nutshell, the market rallied today as a Supreme Court ruling on tariffs cleared away a lot of uncertainty. The S&P 500 closed up 0.69% at 6909.51, and the tech-heavy Nasdaq gained 0.90% to finish at 22886.07. The Dow Jones Industrial Average also rose, adding 0.47%. We started the day lower on concerns about weaker-than-expected GDP growth and high inflation data, but sentiment turned on a dime after the Supreme Court decision curbing the president's tariff authority, lifting the entire market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#211e0a53ab5c933e",
+          "title": "U.S. stocks rally after Supreme Court strikes down most of Trump's tariffs"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the Supreme Court ruling was really the game-changer that turned the market around. What exactly did the court decide, and why did the market react so positively?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The Court ruled that it's unconstitutional for the executive branch to impose broad tariffs based on the International Emergency Economic Powers Act without explicit congressional approval. This sparked hopes that a significant portion of the tariff barriers, which have been increasing costs and uncertainty for businesses, will be removed. Stocks in sectors that rely heavily on imports—like retail, consumer goods, and auto parts—rallied on the news, as they're seen as direct beneficiaries, and that helped lead the indexes higher. The market is essentially betting that this ruling will ease cost pressures on companies and could even have a positive impact on easing inflation.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1b3d60aa298127a6",
+          "title": "Supreme Court ruling against Trump tariffs will offer relief, businesses say"
+        },
+        {
+          "type": "article",
+          "pk": "id#311feeb80e84748c",
+          "title": "Some Consumer Stocks Are Rising After the Supreme Court's Tariff Ruling"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key drivers for the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there are really two main things to focus on. First is the Supreme Court's tariff ruling that set the market's direction and its ripple effects. And second, though it was overshadowed by the big news, is the potential impact of the weak GDP and inflation data that came out. We'll dig into each of these in more detail shortly.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398223",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point you mentioned. You said the Supreme Court ruling changed the market's direction. Can you give us a comprehensive analysis of the specifics, its impact, and how the market reacted?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, it was the turning point that changed everything for the market today. The Supreme Court, in a 6-to-3 decision, ruled that the president overstepped his authority by imposing broad tariffs under the International Emergency Economic Powers Act, or IEEPA, without congressional approval. As soon as that news hit, the market, which had been struggling early on, staged a dramatic reversal. The S&P 500 gained 0.69 percent, the Nasdaq rose 0.90 percent, and the Dow finished up 0.47 percent. What's interesting is the reaction in the bond market. The 10-year Treasury yield actually ticked up slightly, suggesting that the risk-on sentiment outweighed hopes for lower inflation from the tariff removal. The dollar weakened, and notably, the retail ETF, XRT, which is highly sensitive to tariffs, showed a stronger gain than the major indexes, clearly reflecting the market's optimism. With analysis from the Penn Wharton Budget Model suggesting that companies could be refunded up to $175 billion in tariffs, the market concluded that one of the biggest uncertainties in trade policy has now been removed.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#333b40c47731ef07",
+          "title": "Supreme Court strikes down Trump’s blanket tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#ce7556cff2cf7ccb",
+          "title": "US tariff revenue at risk in Supreme Court ruling tops $175 billion, Penn-Wharton estimates"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XRT",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "Right, so as you said, consumer and industrial sectors rallied particularly hard on hopes of tariff removal. Which specific companies are being talked about as beneficiaries, and what's the analysis on how this ruling will actually impact corporate earnings outlooks?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The direct beneficiaries are companies that import goods to sell. We saw an immediate reaction in the stocks of large online retailers like Amazon, apparel brands like Tapestry, and home goods companies like Williams-Sonoma. For these businesses, the removal of tariffs means lower import costs, which directly translates to cost savings. The market research firm eMarketer analyzed that this ruling, by removing short-term uncertainty, could boost this year's total U.S. retail sales forecast by about $13 billion. The thinking is that for import-heavy items like computers, electronics, apparel, and furniture, this could lead to lower prices or improved margins, positively affecting both corporate earnings and consumer welfare. However, there is some caution, as it's still uncertain whether companies will immediately pass these tariff savings on to consumers through lower prices.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#311feeb80e84748c",
+          "title": "Some Consumer Stocks Are Rising After the Supreme Court's Tariff Ruling"
+        },
+        {
+          "type": "article",
+          "pk": "id#3893a44dd700c73e",
+          "title": "Supreme Court curbs Trump’s tariff powers, reshaping 2026 trade outlook"
+        },
+        {
+          "type": "article",
+          "pk": "id#1b3d60aa298127a6",
+          "title": "Supreme Court ruling against Trump tariffs will offer relief, businesses say"
+        },
+        {
+          "type": "article",
+          "pk": "id#2bcbc3bdc0261c65",
+          "title": "Here's what the Supreme Court tariff ruling means for consumer prices"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "That makes sense. But as you mentioned in the opening, there are still concerns that the administration could find other ways to impose tariffs. How should we view that?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's a very sharp point, and it's exactly why there are worries that the market's celebration could be short-lived. In fact, right after the ruling, the administration immediately announced it would invoke Section 122 of the Trade Act of 1974 to impose a new 10 percent global tariff, valid for 150 days. This shows that today's ruling was specific to the IEEPA law, and the administration still has other legal cards to play on trade. For example, Section 232 of the Trade Expansion Act, based on national security, or Section 301 of the Trade Act, which targets unfair trade practices, are not affected by this ruling. Ultimately, the fundamental problems that were weighing on the market today—sluggish economic growth and sticky inflation—haven't disappeared. It's very likely that the tension around trade policy will just continue in a different form. We can't forget that the Q4 GDP growth announced today came in at just 1.4 percent, well below the 3 percent forecast, and the core PCE price index, which the Fed watches closely, rose by a higher-than-expected 0.4 percent, stoking stagflation fears.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#cdfd769626401ab8",
+          "title": "Trump orders temporary 10% global tariff to replace duties struck down by US Supreme Court"
+        },
+        {
+          "type": "article",
+          "pk": "id#e7a2490e21364d87",
+          "title": "Trump has other tariff options after Supreme Court strikes down his worldwide import taxes"
+        },
+        {
+          "type": "event",
+          "id": "398223",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, you're saying that while it's a big positive in the short term, the underlying tensions around trade policy and the burden of macroeconomic data are still weighing on the market.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "진행자",
+      "text": "Let's dig into those macroeconomic indicators then. The market showed an unusual rally today despite the negative economic data. How should we interpret these conflicting signals?",
+      "sources": []
+    },
+    {
+      "id": 14,
+      "speaker": "해설자",
+      "text": "Yes, the market was hit with a flurry of conflicting signals right from the pre-market session. First, at 8:30 AM Eastern Time, the preliminary estimate for U.S. Q4 GDP growth came in at an annualized 1.4 percent. That was a huge miss from the 3.0 percent market consensus and a sharp slowdown from the previous quarter's 4.4 percent, raising concerns about an economic slowdown. To make matters worse, the December core PCE price index, the Fed's preferred inflation gauge, rose 0.4 percent month-over-month, beating the 0.3 percent estimate and adding to fears that inflation might be re-accelerating. On that double-whammy of bad news, the S&P 500 fell to around the 6836 level right after the open. But the mood shifted 180 degrees around 10 AM when news broke that the Supreme Court had ruled the administration's broad tariff powers unconstitutional. The index quickly erased all its losses, turned positive, and saw a powerful wave of buying that pushed it above 6915 at one point during the session.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398223",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#455ef71832b8ed77",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise after Supreme Court strikes down Trump tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#211e0a53ab5c933e",
+          "title": "U.S. stocks rally after Supreme Court strikes down most of Trump's tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#ca5c16fe667fab1c",
+          "title": "Supreme Court Strikes Down Most Of Trump's Tariffs"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "진행자",
+      "text": "Let's break down that GDP shock first. It came in at less than half of the forecast. Which components were particularly weak?",
+      "sources": []
+    },
+    {
+      "id": 16,
+      "speaker": "해설자",
+      "text": "Right, looking at the details of the GDP report, the decisive factors were a turn to contraction in both government spending and exports. On top of that, a slowdown in the growth of consumer spending, which accounts for two-thirds of the economy, amplified market concerns. However, not everything in the report was negative. Business investment in equipment, or private domestic fixed investment, actually accelerated. And real final sales to private domestic purchasers, which combines consumption and investment, grew by 2.4 percent, showing that the underlying foundation of the domestic economy hasn't completely crumbled. Nevertheless, the headline number came in so much lower than expected that the market initially started pricing in fears of a hard landing. But then, the bigger variable—the Supreme Court ruling—emerged, and for now, those growth concerns have been pushed to the back burner.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398223",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#455ef71832b8ed77",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise after Supreme Court strikes down Trump tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#211e0a53ab5c933e",
+          "title": "U.S. stocks rally after Supreme Court strikes down most of Trump's tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#333b40c47731ef07",
+          "title": "Supreme Court strikes down Trump’s blanket tariffs"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "진행자",
+      "text": "And on top of the growth slowdown fears, we had inflation worries. This seems like it will complicate things for the Fed.",
+      "sources": []
+    },
+    {
+      "id": 18,
+      "speaker": "해설자",
+      "text": "Exactly. The fact that the core PCE price index, which the Fed relies on most for its policy decisions, came in hotter than expected is not something to be taken lightly. The monthly increase of 0.4 percent is double the previous month's 0.2 percent, suggesting that the disinflationary trend is not a smooth one. In fact, the minutes from the January FOMC meeting showed that most members were in no rush to cut rates. Today's inflation data could have served as further justification for the Fed's hawkish stance. So, on any other day, this would have been a significant headwind for the market. But today was an unusual day where the prospect of tariff removal created expectations of lower long-term inflationary pressure, completely absorbing the shock from the short-term inflation data.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399155",
+          "title": "core pce price index mom",
+          "date": "2026-02-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#455ef71832b8ed77",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise after Supreme Court strikes down Trump tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#311feeb80e84748c",
+          "title": "Some Consumer Stocks Are Rising After the Supreme Court's Tariff Ruling"
+        },
+        {
+          "type": "article",
+          "pk": "id#1b3d60aa298127a6",
+          "title": "Supreme Court ruling against Trump tariffs will offer relief, businesses say"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "진행자",
+      "text": "So in the end, the market ignored all the bad news and focused solely on the good news about tariffs. Do you see this as more than just a one-day relief rally?",
+      "sources": []
+    },
+    {
+      "id": 20,
+      "speaker": "해설자",
+      "text": "It seems the market is interpreting this ruling not just as a one-off positive event, but as a structural change that could improve corporate cost structures and future profitability. For a long time, tariffs have been a direct cost pressure and a major source of uncertainty for many import-dependent companies. The expectation that this barrier will now be largely removed sparked a strong reaction, especially in the consumer discretionary and industrial sectors. In fact, the retail sector ETF, XRT, gained over 0.7 percent today, outperforming the broader market and highlighting its position as a key beneficiary of tariff removal. It seems the market placed more weight on the long-term picture—where lower costs for businesses eventually lead to better profits and easing inflation—than on the immediate slowdown in macroeconomic data.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XRT",
+          "start_date": "2026-02-19",
+          "end_date": "2026-02-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#1b3d60aa298127a6",
+          "title": "Supreme Court ruling against Trump tariffs will offer relief, businesses say"
+        },
+        {
+          "type": "article",
+          "pk": "id#311feeb80e84748c",
+          "title": "Some Consumer Stocks Are Rising After the Supreme Court's Tariff Ruling"
+        },
+        {
+          "type": "article",
+          "pk": "id#211e0a53ab5c933e",
+          "title": "U.S. stocks rally after Supreme Court strikes down most of Trump's tariffs"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the big picture. Let's turn to some individual stocks. Amid the broader market rally, BlackRock had a particularly interesting day. It hit a low early in the session but then bounced back hard to close up 1.77%.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BLK",
+          "start_date": "2026-02-20",
+          "end_date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "Yes, today's price action can be seen as a sign that the market is starting to view BlackRock not just as a traditional asset manager, but as a technology platform shaping the future of finance. The growth narrative, particularly around its core risk management platform 'Aladdin' becoming a high-margin software subscription service, and its first-mover advantage in the digital asset space with the spot Bitcoin ETF, seems to have strongly boosted investor sentiment. The market also appears to be interpreting its recent aggressive M&A activity as a strategic investment to overcome the limits of a low-growth era and secure new growth engines, like the private markets.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BLK",
+          "form": "10-K",
+          "filed_date": "2025-02-25",
+          "accession_number": "0000950170-25-026584"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "That growth story is very compelling, but the actual earnings report seems to tell a different story. There were some concerns about profitability deteriorating due to a sharp rise in costs. How should we look at that?",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "That's a very precise observation. If you look closely at the Q3 2025 earnings filing, you see an unusual situation where operating income actually decreased even as revenue grew by a strong 25% year-over-year. This was because costs related to large-scale M&A surged by 43%, causing the company's key profitability metric, the operating margin, to plummet by a staggering 8.6 percentage points, from 38.6% to 30.0%. The technology services segment, namely Aladdin, which is seen as a growth driver, still only accounts for 8% of total revenue. So, despite Aladdin's impressive performance, the sober assessment is that it's not yet enough to offset the overall margin erosion happening as the company bulks up.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BLK",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-267043"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "So, you could say the current stock rally is being driven more by an over-emphasis on future expectations rather than these deteriorating fundamentals.",
+      "sources": []
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "Yes, that's the central debate surrounding BlackRock right now. Some analyses use a sum-of-the-parts valuation, separating the value of the tech segment like Aladdin from the traditional asset management business. Even in that case, and giving a generous valuation to Aladdin, some conclude that the current market price is significantly above its intrinsic value. On top of that, there are potential headwinds like regulatory risk—the possibility of being designated a Systemically Important Financial Institution, or SIFI, as it gets bigger—and operational risks, like failing to successfully integrate its large-scale acquisitions. The view is that these risks may not be fully priced into the current stock price.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BLK",
+          "form": "10-K",
+          "filed_date": "2025-02-25",
+          "accession_number": "0000950170-25-026584"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "BLK",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-267043"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "The arguments for both growth and risk seem valid, making it a tough call. So how should investors make sense of these conflicting signals?",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "Ultimately, BlackRock appears to be at an inflection point where its future growth potential is clashing with the clear reality of its current profitability decline. The growth story is still intact, but the current stock price has already priced in a significant amount of that potential success, making it vulnerable to even minor setbacks. Therefore, it seems a more cautious approach is warranted, rather than an aggressive one. It would be prudent to watch upcoming earnings reports to confirm whether synergies from the M&A are actually materializing and stabilizing the eroded margins, and whether the growth in new businesses like Aladdin is accelerating enough to offset the decline in overall profits.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BLK",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-267043"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "Alright, so how would you sum up the market today in a nutshell?",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "해설자",
+      "text": "Yes, the major indexes all finished lower today. A big factor was investors shifting to a wait-and-see mode ahead of key economic data releases next week. With uncertainty still lingering around the Fed's rate hike path, profit-taking emerged, putting downward pressure on the broader market. The prevailing sentiment was to wait for the upcoming data before making any big bets.",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "진행자",
+      "text": "So looking ahead to next week, what are the key economic events investors should be watching?",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "해설자",
+      "text": "We have some important data points on deck next week that could help gauge the market's direction. First, on Tuesday morning local time, we'll get the House Price Index, followed by the CB Consumer Confidence report in the afternoon. The House Price Index gives us a read on the health of the housing market, and consumer confidence is a crucial barometer for future spending, which makes up two-thirds of the U.S. economy. These two reports will give us a diagnosis of the current state of housing and consumption, the cornerstones of the U.S. economy.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397951",
+          "title": "house price index",
+          "date": "2026-02-24"
+        },
+        {
+          "type": "event",
+          "id": "418451",
+          "title": "cb consumer confidence",
+          "date": "2026-02-24"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "진행자",
+      "text": "Besides housing and consumer sentiment, are there any other important indicators?",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "해설자",
+      "text": "Ultimately, the market's focus will shift back to inflation. The key release will be the February Core Producer Price Index, or Core PPI, on Friday the 27th. The PPI is seen as a leading indicator for final consumer prices, so the market reacts sensitively to it. The consensus forecast is for a 0.3% month-over-month increase. If the actual number comes in significantly higher than that, it could fuel concerns that the Fed's tightening cycle might last longer and be more aggressive than expected, which would weigh on the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398267",
+          "title": "core ppi mom",
+          "date": "2026-02-27"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "진행자",
+      "text": "And finally, what's your advice for investors?",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "해설자",
+      "text": "We're in a phase where the market is trying to find its direction, which means volatility can spike on even minor news. In this kind of environment, it's effective to focus more on a company's fundamental value and earnings rather than relying on short-term market predictions. It's a time that calls for the wisdom to calmly navigate the market while keeping the big picture in mind—how the upcoming economic data will influence the Fed's decision-making.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "진행자",
+      "text": "Great, thank you for your insights today. That wraps up our market close briefing for February 20th.",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "date": "20260220",
+  "title": "GDP 쇼크, 물가 불안에도 증시가 급등한 이유",
+  "duration_target": "90초",
+  "hook": "GDP 쇼크와 물가 불안에도 증시가 급등했습니다. 대체 무슨 일이 있었을까요.",
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "text": "GDP 쇼크와 물가 불안에도 증시가 급등했습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "text": "2월 20일 미국 증시는 대법원의 관세 제동에 불확실성이 걷히며 랠리를 펼쳤습니다. S&P 500은 0.69%, 나스닥은 0.90%, 다우존스는 0.47% 상승 마감했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "text": "시작은 최악이었습니다. 4분기 GDP 성장률이 예상치 3.0%를 크게 밑도는 1.4%에 그쳤고, 연준이 주시하는 근원 PCE 물가도 예상보다 높은 0.4%를 기록하며 스태그플레이션 우려를 키웠습니다. 하지만 대법원이 대통령의 광범위한 관세 부과 권한에 제동을 걸면서 분위기는 180도 바뀌었습니다. 이 판결로 기업들은 최대 1750억 달러의 관세를 환급받을 수 있다는 기대감이 퍼졌고, 특히 수입 의존도가 높은 소매업종 ETF, XRT가 강세를 보였습니다. 시장은 당장의 경기 둔화 우려보다 무역 불확실성 해소라는 구조적 호재에 더 크게 반응한 것입니다. 다만 판결 직후 행정부가 다른 법을 근거로 10%의 새 관세를 부과하며 긴장감은 여전합니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "text": "다음 주 시장의 관심은 다시 물가로 향합니다. 27일 금요일에 발표될 2월 근원 생산자물가지수, Core PPI가 연준의 다음 행보를 결정할 핵심 지표가 될 전망입니다."
+    }
+  ],
+  "script": "GDP 쇼크와 물가 불안에도 증시가 급등했습니다. 대체 무슨 일이 있었을까요. 2월 20일 미국 증시는 대법원의 관세 제동에 불확실성이 걷히며 랠리를 펼쳤습니다. S&P 500은 0.69%, 나스닥은 0.90%, 다우존스는 0.47% 상승 마감했습니다. 시작은 최악이었습니다. 4분기 GDP 성장률이 예상치 3.0%를 크게 밑도는 1.4%에 그쳤고, 연준이 주시하는 근원 PCE 물가도 예상보다 높은 0.4%를 기록하며 스태그플레이션 우려를 키웠습니다. 하지만 대법원이 대통령의 광범위한 관세 부과 권한에 제동을 걸면서 분위기는 180도 바뀌었습니다. 이 판결로 기업들은 최대 1750억 달러의 관세를 환급받을 수 있다는 기대감이 퍼졌고, 특히 수입 의존도가 높은 소매업종 ETF, XRT가 강세를 보였습니다. 시장은 당장의 경기 둔화 우려보다 무역 불확실성 해소라는 구조적 호재에 더 크게 반응한 것입니다. 다만 판결 직후 행정부가 다른 법을 근거로 10%의 새 관세를 부과하며 긴장감은 여전합니다. 다음 주 시장의 관심은 다시 물가로 향합니다. 27일 금요일에 발표될 2월 근원 생산자물가지수, Core PPI가 연준의 다음 행보를 결정할 핵심 지표가 될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-20",
+      "end_date": "2026-02-20"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-20",
+      "end_date": "2026-02-20"
+    },
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-20",
+      "end_date": "2026-02-20"
+    },
+    {
+      "type": "article",
+      "pk": "id#211e0a53ab5c933e",
+      "title": "U.S. stocks rally after Supreme Court strikes down most of Trump's tariffs"
+    },
+    {
+      "type": "event",
+      "id": "398223",
+      "title": "gdp growth rate qoq adv",
+      "date": "2026-02-20"
+    },
+    {
+      "type": "event",
+      "id": "399155",
+      "title": "core pce price index mom",
+      "date": "2026-02-20"
+    },
+    {
+      "type": "article",
+      "pk": "id#ce7556cff2cf7ccb",
+      "title": "US tariff revenue at risk in Supreme Court ruling tops $175 billion, Penn-Wharton estimates"
+    },
+    {
+      "type": "chart",
+      "ticker": "XRT",
+      "start_date": "2026-02-20",
+      "end_date": "2026-02-20"
+    },
+    {
+      "type": "article",
+      "pk": "id#cdfd769626401ab8",
+      "title": "Trump orders temporary 10% global tariff to replace duties struck down by US Supreme Court"
+    },
+    {
+      "type": "event",
+      "id": "398267",
+      "title": "core ppi mom",
+      "date": "2026-02-27"
+    }
+  ],
+  "metadata": {
+    "character_count": 599,
+    "estimated_duration_seconds": 76,
+    "key_points": [
+      "대법원, 대통령 관세 부과 권한 제동으로 불확실성 해소",
+      "4분기 GDP 성장률 1.4%로 예상치 대폭 하회",
+      "근원 PCE 물가 예상 상회하며 스태그플레이션 우려 자극",
+      "관세 호재가 부진한 경제 지표 악재를 압도하며 시장 랠리"
+    ],
+    "featured_tickers": [
+      "XRT",
+      "^GSPC",
+      "^IXIC",
+      "^DJI"
+    ]
+  }
+}

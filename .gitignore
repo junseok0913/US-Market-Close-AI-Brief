@@ -4,6 +4,7 @@ ChartAgent/
 .pytest_cache/
 tmp/
 cache/
+shared/runtime/cache/
 temp/
 closinglegacy/
 .serena/
@@ -11,3 +12,7 @@ closinglegacy/
 .playwright-mcp/
 .DS_store
 .agent-status
+shared/runtime/secrets/
+
+# Video artifacts
+*.mp4

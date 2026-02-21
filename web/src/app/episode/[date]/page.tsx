@@ -1,4 +1,4 @@
-import { getEpisode, getEpisodeList } from '@/lib/data';
+import { getEpisode, getEpisodeDates } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import EpisodePlayer from '@/components/EpisodePlayer';
 
@@ -7,9 +7,9 @@ interface EpisodePageProps {
 }
 
 export async function generateStaticParams() {
-  const episodes = await getEpisodeList();
-  return episodes.map((episode) => ({
-    date: episode.date,
+  const dates = await getEpisodeDates();
+  return dates.map((date) => ({
+    date,
   }));
 }
 

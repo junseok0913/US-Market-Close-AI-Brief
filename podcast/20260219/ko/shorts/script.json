@@ -1,0 +1,89 @@
+{
+  "date": "20260219",
+  "title": "견조한 실적에도 신중한 기업 전망에 하락",
+  "duration_target": "90초",
+  "hook": "견조한 실적에도 신중한 기업 전망에 하락.",
+  "script": "견조한 실적에도 신중한 기업 전망에 하락. 2월 19일 장마감 브리핑입니다. 오늘은 주요 지수가 일제히 하락하며 다소 주춤하는 모습을 보였는데요, 시장 상황을 어떻게 정리해볼 수 있을까요. 네, 오늘은 견조한 실적에도 신중한 기업 전망에 하락한 하루였습니다. 다우존스 산업평균지수는 0.54% 하락한 49,395.16에 마감했고, S&P 500 지수도 0.28% 내린 6,861.89를 기록했습니다. 기술주 중심의 나스닥 지수 역시 0.31% 하락하며 장을 마쳤습니다. 전반적으로 기업들의 4분기 실적 자체는 나쁘지 않았지만, 대표적으로 월마트가 향후 실적 전망을 보수적으로 제시하면서 투자 심리가 위축된 영향이 컸습니다. 여기에 연준의 통화정책 방향에 대한 불확실성까지 더해지며 시장의 하방 압력을 높였습니다. 말씀하신 것처럼 월마트의 실적 발표가 시장에 큰 영향을 미친 것 같군요. 실적은 좋았지만 전망이 발목을 잡은 셈이네요. 그렇습니다. 월마트는 예상치를 웃도는 4분기 매출과 이익을 발표하며 저가 상품에 대한 소비자들의 꾸준한 수요를 증명했습니다. 하지만 올해 전체 가이던스를 시장 기대치보다 낮게 제시하면서 상황이 여전히 불안정하다는 신호를 보냈습니다. 이는 미국 최대 소매업체가 바라보는 소비 경기에 대한 우려를 반영한 것으로, 시장은 이를 경기 둔화의 신호로 민감하게 받아들였습니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "article",
+      "pk": "6a08af2577756cfc",
+      "title": "Walmart earnings beat estimates, but company offers cautious outlook amid 'somewhat unstable' backdrop"
+    },
+    {
+      "type": "chart",
+      "ticker": "WMT",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "article",
+      "pk": "bf23fcca1caa96ba",
+      "title": "Walmart CFO: Food inflation looks to be coming down"
+    },
+    {
+      "type": "article",
+      "pk": "2baf3cc6b1766932",
+      "title": "Minneapolis Fed's Kashkari: 'We're pretty close to neutral' on rates"
+    },
+    {
+      "type": "chart",
+      "ticker": "HD",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "ticker": "^TNX",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "chart",
+      "ticker": "DX-Y.NYB",
+      "start_date": "2026-02-19",
+      "end_date": "2026-02-19"
+    },
+    {
+      "type": "article",
+      "pk": "40ca74292faafa42",
+      "title": "Walmart delivers another quarter of impressive sales but offers a muted outlook"
+    },
+    {
+      "type": "event",
+      "id": "399166",
+      "title": "Philadelphia Fed Manufacturing Index",
+      "date": "2026-02-19"
+    }
+  ],
+  "metadata": {
+    "character_count": 670,
+    "estimated_duration_seconds": 90,
+    "key_points": [
+      "견조한 실적에도 신중한 기업 전망에 하락.",
+      "2월 19일 장마감 브리핑입니다.",
+      "오늘은 주요 지수가 일제히 하락하며 다소 주춤하는 모습을 보였는데요, 시장 상황을 "
+    ],
+    "featured_tickers": [
+      "CPNG"
+    ]
+  }
+}

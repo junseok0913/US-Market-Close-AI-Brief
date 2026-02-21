@@ -21,6 +21,11 @@ START_FROM=1
 DATE=""
 TICKERS_ARR=()
 
+THUMBNAIL_SCRIPT="./shared/ops/scripts/youtube/generate_episode_thumbnail.sh"
+if [ ! -f "$THUMBNAIL_SCRIPT" ] && [ -f "./scripts/generate_episode_thumbnail.sh" ]; then
+    THUMBNAIL_SCRIPT="./scripts/generate_episode_thumbnail.sh"
+fi
+
 
 # AWS 프로필 설정 (기본값: Nam)
 # 이 설정이 있어야 S3 업로드 등 모든 AWS 명령어가 'Nam' 프로필로 실행됩니다.
@@ -93,9 +98,17 @@ if [ $START_FROM -le 2 ]; then
         cp "podcast/$DATE/ko/$DATE.mp3" "web/public/audio/$DATE.mp3"
     fi
     
-    echo -e "\n[2.5/6] Generating Shorts (Korean)..."
-    uv run shorts/generate_shorts.py podcast/$DATE/ko --duration 90
-    uv run shorts/generate_shorts_audio.py $DATE --lang ko --voice Charon --temperature 0.6
+    echo -e "\n[2.5/6] Generating Shorts Script + Slides (Korean)..."
+    if [ -f "podcast/$DATE/ko/script.json" ]; then
+        uv run shorts/generate_shorts.py "podcast/$DATE/ko" --duration 90
+    else
+        echo "  ⚠️  podcast/$DATE/ko/script.json not found. Skipping shorts script/slide generation."
+    fi
+    uv run python shorts/generate_shorts_audio.py "$DATE" --lang ko --voice Charon --temperature 0.6
+    if [ -f "podcast/$DATE/ko/shorts/script.json" ]; then
+        uv run python shorts/generate_shorts_slides.py "$DATE" --lang ko \
+            --section-timing "podcast/$DATE/ko/shorts/sections.timing.json"
+    fi
 else
     echo -e "\n[2/6] Korean TTS & Shorts skipped (Start from $START_FROM)"
 fi
@@ -131,8 +144,24 @@ if [ $START_FROM -le 4 ]; then
 
     # 한국어 업로드
     echo "  ⬆️  Uploading Korean files..."
+    echo "  🖼️  Generating Korean episode thumbnail..."
+    if [ -f "$THUMBNAIL_SCRIPT" ]; then
+        if "$THUMBNAIL_SCRIPT" "$DATE" --lang ko --overwrite; then
+            echo "  ✅ Korean thumbnail generated"
+        else
+            echo "  ⚠️  Failed to generate Korean thumbnail (continuing without thumbnail upload)"
+        fi
+    else
+        echo "  ⚠️  Thumbnail script not found: $THUMBNAIL_SCRIPT (skipping thumbnail generation)"
+    fi
+
     aws s3 cp podcast/$DATE/ko/$DATE.mp3 s3://$BUCKET/$DATE/ko/$DATE.mp3
     aws s3 cp podcast/$DATE/ko/metadata.json s3://$BUCKET/$DATE/ko/metadata.json
+    if [ -f "podcast/$DATE/ko/youtube/${DATE}_ko_thumbnail.png" ]; then
+        aws s3 cp "podcast/$DATE/ko/youtube/${DATE}_ko_thumbnail.png" "s3://$BUCKET/$DATE/ko/thumbnail.png"
+    else
+        echo "  ⏭️  Korean thumbnail not found, skipping thumbnail upload"
+    fi
     
     # 쇼츠 업로드
     if [ -f "podcast/$DATE/ko/shorts/shorts$DATE.mp3" ]; then
@@ -143,10 +172,27 @@ if [ $START_FROM -le 4 ]; then
     # 영어 업로드
     if [ -f "podcast/$DATE/en/$DATE.mp3" ]; then
         echo "  ⬆️  Uploading English files..."
+        echo "  🖼️  Generating English episode thumbnail..."
+        if [ -f "$THUMBNAIL_SCRIPT" ]; then
+            if "$THUMBNAIL_SCRIPT" "$DATE" --lang en --overwrite; then
+                echo "  ✅ English thumbnail generated"
+            else
+                echo "  ⚠️  Failed to generate English thumbnail (continuing without thumbnail upload)"
+            fi
+        else
+            echo "  ⚠️  Thumbnail script not found: $THUMBNAIL_SCRIPT (skipping thumbnail generation)"
+        fi
+
         aws s3 cp podcast/$DATE/en/$DATE.mp3 s3://$BUCKET/$DATE/en/$DATE.mp3
         
         if [ -f "podcast/$DATE/en/metadata.json" ]; then
             aws s3 cp podcast/$DATE/en/metadata.json s3://$BUCKET/$DATE/en/metadata.json
+        fi
+
+        if [ -f "podcast/$DATE/en/youtube/${DATE}_en_thumbnail.png" ]; then
+            aws s3 cp "podcast/$DATE/en/youtube/${DATE}_en_thumbnail.png" "s3://$BUCKET/$DATE/en/thumbnail.png"
+        else
+            echo "  ⏭️  English thumbnail not found, skipping thumbnail upload"
         fi
     else
         echo "  ⏭️  English mp3 not found, skipping English upload for $DATE"

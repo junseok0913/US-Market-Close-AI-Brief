@@ -1,0 +1,25 @@
+Title:
+2026.2.17 US Market Close | A mixed session amid Fed caution and fears of AI disruption
+
+Description:
+On February 17, the US stock market finished mixed as investors weighed the Fed's cautious stance against concerns over AI-driven disruption. Hawkish comments from Fed officials dampened hopes for rate cuts, while the AI theme created a sharp divide among tech stocks, with both excitement and fear driving performance.
+
+Major Indices
+- Dow Jones: +0.07% - Finished flat, influenced by the Fed's cautious tone and company-specific news.
+- S&P 500: +0.1% - Edged slightly higher in a mixed session featuring both AI beneficiaries and victims.
+- Nasdaq: +0.14% - Closed in the green as a surge in Apple offset weakness in software stocks.
+
+Key Market Movers
+- The Fed's Cautious Stance Continues: Officials, including Fed Vice Chair Michael Barr, reiterated that there is no rush to cut interest rates, causing expectations for an early rate cut to recede.
+- The Two Faces of AI: Fears that AI could disrupt existing industries sent software stocks like Salesforce lower. In contrast, Apple surged on news of developing new AI-powered wearable devices, showcasing the dual nature of the AI theme.
+- M&A and Company-Specific News: The market took notice of reports that Warner Bros. and Paramount have resumed merger talks. Meanwhile, individual stock performance varied, with General Mills declining after lowering its earnings forecast.
+- Awaiting Key Economic Data: Investors remained on the sidelines ahead of this week's release of the FOMC minutes and the Personal Consumption Expenditures (PCE) price index.
+
+Key Stocks
+- Apple (AAPL): Jumped over 2% - Emerged as a key AI beneficiary on news of developing new wearable devices, including AI-powered smart glasses.
+- Paramount (PARA): Surged more than 3% following reports that merger talks with Warner Bros. Discovery have resumed.
+- Salesforce (CRM): Dropped 3.5% amid growing concerns that AI could replace existing software solutions.
+- General Mills (GIS): Fell over 2% after cutting its full-year sales forecast, citing weakening consumer sentiment.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,금리,연준,AI,인공지능,애플,AAPL,파라마운트,PARA,세일즈포스,CRM,인수합병

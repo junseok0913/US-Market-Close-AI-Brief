@@ -1,0 +1,128 @@
+{
+  "date": "20260217",
+  "title": "AI가 가른 희비, 애플 급등 속 소프트웨어주 급락",
+  "duration_target": "90초",
+  "hook": "AI가 누군가에겐 기회, 누군가에겐 공포가 됐습니다. 애플은 2% 급등했지만 세일즈포스는 3.5% 급락했습니다.",
+  "script": "AI가 누군가에겐 기회, 누군가에겐 공포가 됐습니다. 애플은 2% 급등했지만 세일즈포스는 3.5% 급락했습니다. 2월 17일 미국 증시는 연준의 신중론과 AI발 격변 우려 속 혼조세로 마감했습니다. 다우는 0.07%, S&P 500은 0.1%, 나스닥은 0.14% 상승하며 사실상 보합권에 머물렀습니다. 마이클 바 연준 부의장 등 연준 인사들이 금리 인하에 서두를 이유가 없다고 재차 강조하며 시장의 기대감을 억눌렀습니다. 이 발언에 달러 인덱스는 0.27% 상승했고, 금 선물 가격은 2% 넘게 하락했습니다. 시장의 진짜 드라마는 AI에서 나왔습니다. 애플은 AI 스마트 안경 등 새로운 웨어러블 기기 개발 소식에 2% 넘게 급등하며 시장을 이끌었습니다. 하지만 반대편에서는 AI가 기존 소프트웨어를 대체할 것이라는 공포가 확산됐습니다. 이 여파로 세일즈포스는 3.5% 급락했고, 소프트웨어 ETF는 1.4% 하락하는 등 관련주들이 직격탄을 맞았습니다. 거시 경제 방향성이 부재한 가운데 개별 기업 이슈도 부각됐습니다. 워너 브라더스와의 인수합병 협상 재개 소식에 파라마운트는 3% 넘게 상승했고, 제너럴 밀스는 매출 전망 하향에 2% 이상 하락하며 희비가 엇갈렸습니다. 시장의 관심은 이제 이번 주에 발표될 중요 지표로 향합니다. 수요일 FOMC 의사록과 금요일 연준이 가장 중시하는 PCE 물가 지표 결과에 따라 시장의 방향성이 결정될 전망입니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "article",
+      "pk": "id#88b7fe75cade8b2d",
+      "title": "Fed's Barr says central bank likely on hold for some time as it watches for easing inflation"
+    },
+    {
+      "type": "event",
+      "id": "419138",
+      "title": "fed barr speech",
+      "date": "2026-02-17"
+    },
+    {
+      "type": "chart",
+      "ticker": "DX-Y.NYB",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "chart",
+      "ticker": "GC=F",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "article",
+      "pk": "id#f181042082b103ad",
+      "title": "Apple Ramps Up Work on Glasses, Pendant, and Camera AirPods for AI Era"
+    },
+    {
+      "type": "chart",
+      "ticker": "AAPL",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "article",
+      "pk": "id#613d7cee06ba5245",
+      "title": "Autodesk, Datadog, Atlassian, C3.ai, and BlackLine Shares Plummet, What You Need To Know"
+    },
+    {
+      "type": "chart",
+      "ticker": "CRM",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "chart",
+      "ticker": "IGV",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "article",
+      "pk": "id#b5f3395bbdda83e8",
+      "title": "Warner Bros. Discovery reopens bidding, gives Paramount seven days to make its case"
+    },
+    {
+      "type": "chart",
+      "ticker": "PARA",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "article",
+      "pk": "id#5224f5fbda1f1d11",
+      "title": "General Mills Sees Lower Sales on Weak Consumer Sentiment"
+    },
+    {
+      "type": "chart",
+      "ticker": "GIS",
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-17"
+    },
+    {
+      "type": "event",
+      "id": "390599",
+      "title": "fomc minutes",
+      "date": "2026-02-18"
+    },
+    {
+      "type": "event",
+      "id": "399155",
+      "title": "core pce price index mom",
+      "date": "2026-02-20"
+    }
+  ],
+  "metadata": {
+    "character_count": 740,
+    "estimated_duration_seconds": 94,
+    "key_points": [
+      "3대 지수 보합권 혼조 마감",
+      "연준의 금리 인하 신중론 지속",
+      "AI 테마 속 애플 급등, 소프트웨어주 급락",
+      "FOMC 의사록 및 PCE 물가 지표 발표 예정"
+    ],
+    "featured_tickers": [
+      "AAPL",
+      "CRM",
+      "PARA",
+      "GIS"
+    ]
+  }
+}

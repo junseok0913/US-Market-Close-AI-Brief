@@ -1,0 +1,26 @@
+# Listener analytics platform and bot classification rules.
+# Patterns are evaluated case-insensitively in this order:
+# 1) spotify -> 2) apple -> 3) amazon -> 4) unknown (fallback)
+
+platform_patterns:
+  spotify:
+    - "spotify"
+
+  apple:
+    - "applecoremedia"
+    - "itunes"
+    - "podcasts"
+
+  amazon:
+    - "amazon"
+    - "amzn"
+
+bot_exclusion_patterns:
+  - "bot"
+  - "crawler"
+  - "spider"
+  - "monitor"
+  - "curl"
+  - "wget"
+  - "python-requests"
+  - "headless"

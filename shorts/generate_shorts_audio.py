@@ -1,8 +1,9 @@
 """
 Generate TTS audio for YouTube Shorts from shorts_script.json.
 
-Unlike the main podcast (which has turn-based dialogue), shorts have a single 
-continuous narration, so we generate one audio file directly.
+Unlike the main podcast (turn-based dialogue), shorts narration is segmented into
+4 sections (hook/data/story/closing). We synthesize each section separately,
+merge them into one audio file, and persist section timing metadata.
 
 Usage:
     python shorts/generate_shorts_audio.py 20260206 --lang ko
@@ -15,11 +16,12 @@ import json
 import logging
 import os
 import random
+import re
 import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 from dotenv import load_dotenv
 import yaml
@@ -54,6 +56,24 @@ DEFAULT_SHORTS_SYSTEM_INSTRUCTIONS = {
         "fast-paced, high energy, engaging, and clear narration. "
         "Read the following text completely without omission."
     ),
+}
+
+SECTION_ORDER = ("hook", "data", "story", "closing")
+SECTION_NAME_ALIASES = {
+    "hook": "hook",
+    "opening": "hook",
+    "open": "hook",
+    "intro": "hook",
+    "data": "data",
+    "market": "data",
+    "stats": "data",
+    "story": "story",
+    "theme": "story",
+    "insight": "story",
+    "closing": "closing",
+    "finale": "closing",
+    "outro": "closing",
+    "watch": "closing",
 }
 
 
@@ -100,6 +120,93 @@ def load_shorts_script(shorts_script_path: Path) -> dict:
         shorts_data = json.load(f)
     
     return shorts_data
+
+
+def compact_text(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def normalize_section_name(value: Any) -> str:
+    return SECTION_NAME_ALIASES.get(compact_text(value).lower(), "")
+
+
+def split_sentences(text: str) -> list[str]:
+    normalized = compact_text(text)
+    if not normalized:
+        return []
+    protected = re.sub(r"(?<=\d)\.(?=\d)", "__DOT__", normalized)
+    raw = re.findall(r"[^.!?]+[.!?]?", protected)
+    out = [token.strip().replace("__DOT__", ".") for token in raw if token.strip()]
+    if out:
+        return out
+    return [normalized]
+
+
+def partition_ranges(item_count: int, bucket_count: int) -> list[tuple[int, int]]:
+    if item_count <= 0 or bucket_count <= 0:
+        return []
+    bucket_count = min(item_count, bucket_count)
+    ranges: list[tuple[int, int]] = []
+    start = 0
+    base = item_count // bucket_count
+    extra = item_count % bucket_count
+    for idx in range(bucket_count):
+        size = base + (1 if idx < extra else 0)
+        end = start + size
+        ranges.append((start, end))
+        start = end
+    return ranges
+
+
+def split_script_to_sections(script_text: str) -> list[dict[str, str]]:
+    sentences = split_sentences(script_text)
+    if not sentences:
+        return [{"name": name, "text": ""} for name in SECTION_ORDER]
+
+    ranges = partition_ranges(len(sentences), len(SECTION_ORDER))
+    by_name: dict[str, str] = {}
+    for idx, (start, end) in enumerate(ranges):
+        if idx >= len(SECTION_ORDER):
+            break
+        by_name[SECTION_ORDER[idx]] = compact_text(" ".join(sentences[start:end]))
+
+    return [
+        {"name": name, "text": by_name.get(name, "")}
+        for name in SECTION_ORDER
+    ]
+
+
+def extract_section_scripts(shorts_data: dict[str, Any]) -> list[dict[str, str]]:
+    script_text = compact_text(shorts_data.get("script"))
+    fallback = split_script_to_sections(script_text)
+    fallback_by_name = {item["name"]: item["text"] for item in fallback}
+
+    sections: dict[str, str] = {}
+    raw_sections = shorts_data.get("sections")
+    if isinstance(raw_sections, list):
+        for item in raw_sections:
+            if not isinstance(item, dict):
+                continue
+            name = normalize_section_name(item.get("name"))
+            if not name:
+                continue
+            text = compact_text(item.get("text") or item.get("script") or item.get("body"))
+            if text and name not in sections:
+                sections[name] = text
+    elif isinstance(raw_sections, dict):
+        for key, value in raw_sections.items():
+            name = normalize_section_name(key)
+            if not name:
+                continue
+            text = compact_text(value)
+            if text and name not in sections:
+                sections[name] = text
+
+    normalized = []
+    for name in SECTION_ORDER:
+        text = sections.get(name) or fallback_by_name.get(name, "")
+        normalized.append({"name": name, "text": compact_text(text)})
+    return normalized
 
 
 def split_text_at_sentence(text: str, target_ratio: float = 0.5) -> tuple[str, str]:
@@ -338,6 +445,119 @@ def generate_audio_with_gemini(
 
 
 
+def generate_audio_with_gemini_sections(
+    *,
+    sections: list[dict[str, str]],
+    output_path: Path,
+    voice_name: str,
+    temperature: float,
+    api_key: str,
+    system_instruction: str,
+    section_pause_seconds: float,
+) -> tuple[list[dict[str, Any]], float]:
+    from tts.src.utils.audio import BYTES_PER_FRAME, _write_wav
+
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY is required")
+    if not system_instruction.strip():
+        raise ValueError("system_instruction is required")
+
+    normalized_sections = [
+        {"name": normalize_section_name(item.get("name")), "text": compact_text(item.get("text"))}
+        for item in sections
+        if isinstance(item, dict)
+    ]
+    normalized_sections = [item for item in normalized_sections if item["name"] in SECTION_ORDER]
+    if not normalized_sections:
+        raise ValueError("No valid sections found for shorts TTS generation")
+
+    logger.info("Generating section-based shorts audio")
+    logger.info("  - Sections: %d", len(normalized_sections))
+    logger.info("  - Pause between sections: %.2fs", section_pause_seconds)
+
+    combined_pcm = b""
+    timeline: list[dict[str, Any]] = []
+    cursor = 0.0
+
+    for idx, section in enumerate(normalized_sections):
+        section_name = section["name"]
+        text = section["text"]
+
+        if not text:
+            logger.warning("  - section '%s' is empty. Inserting short silence placeholder.", section_name)
+            speech_duration = 0.2
+            pcm = b"\x00" * int(speech_duration * 24000) * BYTES_PER_FRAME
+        else:
+            logger.info(
+                "  Generating section %d/%d [%s] (%d chars)",
+                idx + 1,
+                len(normalized_sections),
+                section_name,
+                len(text),
+            )
+            pcm = generate_segment_with_retry(
+                text=text,
+                api_key=api_key,
+                voice_name=voice_name,
+                temperature=temperature,
+                system_instruction=system_instruction,
+            )
+            speech_duration = len(pcm) / BYTES_PER_FRAME / 24000
+
+        start_sec = cursor
+        combined_pcm += pcm
+        cursor += speech_duration
+
+        pause_after = 0.0
+        if idx < len(normalized_sections) - 1 and section_pause_seconds > 0:
+            pause_after = section_pause_seconds
+            silence_padding = int(section_pause_seconds * 24000) * BYTES_PER_FRAME
+            combined_pcm += b"\x00" * silence_padding
+            cursor += section_pause_seconds
+
+        timeline.append(
+            {
+                "id": idx,
+                "name": section_name,
+                "startSec": round(start_sec, 3),
+                "speechEndSec": round(start_sec + speech_duration, 3),
+                "endSec": round(cursor, 3),
+                "speechDurationSec": round(speech_duration, 3),
+                "pauseAfterSec": round(pause_after, 3),
+                "charCount": len(text),
+                "text": text,
+            }
+        )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_wav(output_path, combined_pcm)
+    total_duration = len(combined_pcm) / BYTES_PER_FRAME / 24000
+    logger.info("✓ Saved section-merged audio to %s (%.2fs)", output_path, total_duration)
+    return timeline, total_duration
+
+
+def save_sections_timing(
+    *,
+    output_path: Path,
+    date: str,
+    lang: str,
+    audio_file: str,
+    sections: list[dict[str, Any]],
+    total_duration_seconds: float,
+) -> None:
+    payload = {
+        "date": date,
+        "lang": lang,
+        "audioFile": audio_file,
+        "sectionOrder": list(SECTION_ORDER),
+        "totalDurationSeconds": round(float(total_duration_seconds), 3),
+        "sections": sections,
+    }
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info("✓ Saved section timing metadata: %s", output_path)
+
+
 def convert_to_mp3(wav_path: Path, mp3_path: Path) -> None:
     """Convert WAV to MP3 using ffmpeg with CBR (Constant Bit Rate)."""
     logger.info(f"Converting to MP3: {mp3_path.name}")
@@ -399,6 +619,12 @@ def main(argv: Optional[list[str]] = None) -> int:
         help="Generation temperature (default: 0.6)",
     )
     parser.add_argument(
+        "--section-pause-seconds",
+        type=float,
+        default=float(os.getenv("SHORTS_SECTION_PAUSE_SECONDS", "0")),
+        help="Optional silence gap between section TTS segments (default: env SHORTS_SECTION_PAUSE_SECONDS or 0)",
+    )
+    parser.add_argument(
         "--debug",
         action="store_true",
         help="Enable debug logging",
@@ -408,6 +634,9 @@ def main(argv: Optional[list[str]] = None) -> int:
     
     if args.debug:
         logger.setLevel(logging.DEBUG)
+    if args.section_pause_seconds < 0:
+        logger.error("--section-pause-seconds must be >= 0")
+        return 2
     
     # Parse date
     try:
@@ -446,31 +675,46 @@ def main(argv: Optional[list[str]] = None) -> int:
     # New filename: shorts{date}.mp3 (no underscore)
     output_wav = shorts_dir / f"shorts{date_yyyymmdd}.wav"
     output_mp3 = shorts_dir / f"shorts{date_yyyymmdd}.mp3"
+    output_timing = shorts_dir / "sections.timing.json"
     
     logger.info(f"📅 Date: {date_yyyymmdd}")
     logger.info(f"🌐 Language: {lang}")
     logger.info(f"📄 Input: {shorts_script_path}")
     logger.info(f"🎵 Output: {output_mp3}")
+    logger.info(f"⏱️  Timing metadata: {output_timing}")
     
     try:
         # Load shorts script
         shorts_data = load_shorts_script(shorts_script_path)
-        script_text = shorts_data.get("script", "")
+        script_text = compact_text(shorts_data.get("script", ""))
         
         if not script_text:
             logger.error("No script text found in shorts_script.json")
             return 1
         
         logger.info(f"📝 Script: {len(script_text)} characters")
-        
-        # Generate audio
-        generate_audio_with_gemini(
-            text=script_text,
+
+        sections = extract_section_scripts(shorts_data)
+        logger.info("📚 Section layout: %s", ", ".join(section["name"] for section in sections))
+
+        # Generate audio with 4 section calls and keep exact section timings.
+        section_timeline, total_duration = generate_audio_with_gemini_sections(
+            sections=sections,
             output_path=output_wav,
             voice_name=args.voice,
             temperature=args.temperature,
             api_key=api_key,
             system_instruction=system_instruction,
+            section_pause_seconds=args.section_pause_seconds,
+        )
+
+        save_sections_timing(
+            output_path=output_timing,
+            date=date_yyyymmdd,
+            lang=lang,
+            audio_file=output_mp3.name,
+            sections=section_timeline,
+            total_duration_seconds=total_duration,
         )
         
         # Convert to MP3

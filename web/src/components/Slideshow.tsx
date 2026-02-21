@@ -26,6 +26,13 @@ interface SlideshowProps {
 export function Slideshow({ currentTurnId, episodeDate, onSlideClick }: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [lockedSlideIndex, setLockedSlideIndex] = useState<number | null>(null);
+  const [isCaptureMode] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    const params = new URLSearchParams(window.location.search);
+    const capture = params.get('capture');
+    const render = params.get('render');
+    return capture === '1' || capture === 'true' || render === '1' || render === 'true';
+  });
 
   const slides = useMemo(() => {
     return getSlides(episodeDate || '');
@@ -44,13 +51,20 @@ export function Slideshow({ currentTurnId, episodeDate, onSlideClick }: Slidesho
 
   // Auto-scroll to current section (only if not locked)
   useEffect(() => {
+    if (isCaptureMode) return;
     if (lockedSlideIndex !== null) return;
 
     const targetElement = document.getElementById(`slide-${currentSlideIndex}`);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (targetElement && containerRef.current) {
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const targetRect = targetElement.getBoundingClientRect();
+      const offsetTop = containerRef.current.scrollTop + (targetRect.top - containerRect.top);
+      containerRef.current.scrollTo({
+        top: Math.max(0, offsetTop - 12),
+        behavior: 'smooth',
+      });
     }
-  }, [currentSlideIndex, lockedSlideIndex]);
+  }, [currentSlideIndex, isCaptureMode, lockedSlideIndex]);
 
   const handleLockToggle = (index: number) => {
     if (lockedSlideIndex === index) {
@@ -114,10 +128,10 @@ export function Slideshow({ currentTurnId, episodeDate, onSlideClick }: Slidesho
           y: 0,
           scale: isActive ? 1 : 0.98,
         }}
-        transition={{ duration: 0.3 }}
+        transition={isCaptureMode ? { duration: 0 } : { duration: 0.3 }}
         className={`relative transition-all duration-300 ${
           lockedSlideIndex === null ? 'cursor-pointer' : ''
-        } ${isActive ? 'z-10' : 'z-0'}`}
+        } ${isActive ? 'z-10' : 'z-0'} ${isCaptureMode ? 'h-full' : ''}`}
         onClick={handleSlideClick}
       >
         {isActive && (
@@ -148,7 +162,7 @@ export function Slideshow({ currentTurnId, episodeDate, onSlideClick }: Slidesho
   return (
     <div
       ref={containerRef}
-      className="h-full w-full bg-white overflow-y-auto"
+      className={`h-full w-full bg-white ${isCaptureMode ? 'overflow-hidden' : 'overflow-y-auto'}`}
     >
       {/* Lock indicator */}
       {lockedSlideIndex !== null && (
@@ -161,9 +175,15 @@ export function Slideshow({ currentTurnId, episodeDate, onSlideClick }: Slidesho
       )}
 
       {/* Slides as vertical sections */}
-      <div className="w-full px-6 py-8 space-y-8">
-        {slides.map((slide, index) => renderSlide(slide, index))}
-      </div>
+      {isCaptureMode ? (
+        <div className="h-full w-full px-4 py-4">
+          {slides[currentSlideIndex] ? renderSlide(slides[currentSlideIndex], currentSlideIndex) : null}
+        </div>
+      ) : (
+        <div className="w-full px-6 py-8 space-y-8">
+          {slides.map((slide, index) => renderSlide(slide, index))}
+        </div>
+      )}
     </div>
   );
 }
