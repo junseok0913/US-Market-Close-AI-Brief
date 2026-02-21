@@ -21,7 +21,7 @@ Keep this file brief and operational. Prefer commands and checks the agent can r
 - Full daily run: `./run_daily.sh [YYYYMMDD] [TICKERS...] [--start-from N]`
 - Example (full): `./run_daily.sh 20260214 NVDA AAPL`
 - Example (resume at upload): `./run_daily.sh 20260214 --start-from 4`
-- YouTube video render: `./run_youtube.sh YYYYMMDD --lang ko|en [--upload] [--privacy private|unlisted|public]`
+- YouTube full pipeline: `./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--no-upload]`
 - Orchestrator only: `uv run orchestrator.py YYYYMMDD [-t TICKER ...]`
 - TTS only: `uv run python -m tts.src.tts YYYYMMDD --lang ko|en`
 - Web checks: `cd web && npm run build:data && npm run lint`
@@ -42,8 +42,10 @@ Keep this file brief and operational. Prefer commands and checks the agent can r
 - For upload/feed changes:
 - Run `--start-from 4` and verify S3 + feed update logs.
 - For YouTube render/upload changes:
-- Run `./run_youtube.sh YYYYMMDD --lang ko --overwrite` and verify `podcast/{date}/ko/youtube/{date}_ko_episode.mp4`.
-- If `--upload` is used, verify `videoId` and watch URL are printed.
+- Run `./run_youtube.sh YYYYMMDD --lang ko --overwrite --no-upload` and verify both:
+- `podcast/{date}/ko/youtube/{date}_ko_episode.mp4`
+- `podcast/{date}/ko/shorts/youtube/{date}_ko_shorts.mp4`
+- If upload is enabled, verify `videoId` and watch URL are printed for episode and shorts.
 - For web/data changes:
 - Run `cd web && npm run build:data && npm run lint`.
 - Always report what was not run and why.
@@ -54,7 +56,7 @@ Keep this file brief and operational. Prefer commands and checks the agent can r
 - `--start-from` skips earlier prerequisites; confirm needed artifacts already exist before resume.
 - Do not edit `web/node_modules/` or generated files as a primary fix.
 - Keep date input explicit (`YYYYMMDD`) in scripts and paths.
-- `run_youtube.sh` copies only target episode assets into `web/public/data` and `web/public/audio` for deterministic capture.
+- `run_youtube.sh` runs a 5-step pipeline (episode render/upload, shorts prepare/render/upload) and supports `--start-from` resume.
 - YouTube upload requires OAuth client secrets file (`YOUTUBE_CLIENT_SECRETS_FILE`) and token cache (`YOUTUBE_TOKEN_FILE`).
 
 ## Task-Specific Docs
