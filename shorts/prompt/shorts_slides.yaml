@@ -66,7 +66,10 @@ user_template: |
   {{
     "meta": {{
       "key_points": ["...", "...", "..."],
-      "featured_tickers": ["WMT", "HD"]
+      "featured_tickers": [
+        {{"ticker": "XRT", "label": "소매업종 ETF", "tag": "시장 평균 상회"}},
+        {{"ticker": "BLK", "label": "블랙록", "tag": "자산운용 대장주"}}
+      ]
     }},
     "slides": [
       {{
@@ -87,6 +90,13 @@ user_template: |
   - Scene count must be exactly 4.
   - Slide 1 = hook, Slide 2 = data(phase=market), Slide 3 = story(phase=insight), Slide 4 = closing(phase=finale).
   - If metric text exists in sources (%, $, index levels), include them in highlights/subheadline.
+  - featured_tickers must include at least 3 non-index tickers (no ^GSPC, ^IXIC, ^DJI).
+    Each ticker must have a Korean "label" (e.g. "소매업종 ETF", "블랙록", "엔비디아") and a "tag" (key signal, e.g. "시장 주목", "강세 전환", "실적 서프라이즈").
+    Use tickers actually mentioned in the script — do NOT invent tickers not in the source data.
+  - Slide 4 closing: headline = the event name (large visual title, e.g. "생산자물가지수 (PPI)").
+    eyebrow = event date (e.g. "2월 27일 (금)").
+    subheadline = one-line reason why this matters (e.g. "인플레이션과 시장 방향의 핵심 지표").
+    Do NOT use generic text like "다음 주 핵심 변수" as headline — always use the SPECIFIC event or indicator name.
 
   Copy style examples (follow this tone/length style):
   - hook:
@@ -101,6 +111,8 @@ user_template: |
     subheadline: "대법원 판결이 반전 트리거"
     bullets: ["불확실성 완화", "소매업종 XRT 강세"]
   - closing:
-    headline: "다음 주 핵심 변수"
-    subheadline: "2월 27일 Core PPI 주목"
-    bullets: ["물가 재점검 구간", "연준 경로 재평가"]
+    eyebrow: "2월 27일 (금)"
+    headline: "생산자물가지수 (PPI)"
+    subheadline: "인플레이션과 시장 방향의 핵심 지표"
+    bullets: ["연준의 다음 행보 결정 지표", "시장 방향성 재탐색 구간"]
+

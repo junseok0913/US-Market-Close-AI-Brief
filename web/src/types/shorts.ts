@@ -49,7 +49,7 @@ export interface ShortsEpisode {
   sourceDigest: ShortsSourceDigestItem[];
   meta: {
     keyPoints: string[];
-    featuredTickers: string[];
+    featuredTickers: (string | { ticker: string; label?: string; tag?: string })[];
     sceneCount: number;
   };
 }

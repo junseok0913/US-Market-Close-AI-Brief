@@ -71,8 +71,8 @@ async function main() {
   const maxSeconds = Number(args['max-seconds'] || 1800);
   const startDelaySeconds = Number(args['start-delay-seconds'] || 1);
   const stopOnTimeout = Boolean(args['stop-on-timeout']);
-  const width = 1920;
-  const height = 1080;
+  const width = Number(args.width || 1920);
+  const height = Number(args.height || 1080);
 
   if (!url) {
     throw new Error('Missing required argument: --url');
@@ -85,6 +85,12 @@ async function main() {
   }
   if (!Number.isFinite(startDelaySeconds) || startDelaySeconds < 0) {
     throw new Error(`Invalid --start-delay-seconds: ${args['start-delay-seconds']}`);
+  }
+  if (!Number.isFinite(width) || width <= 0) {
+    throw new Error(`Invalid --width: ${args.width}`);
+  }
+  if (!Number.isFinite(height) || height <= 0) {
+    throw new Error(`Invalid --height: ${args.height}`);
   }
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });

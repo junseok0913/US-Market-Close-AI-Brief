@@ -15,6 +15,22 @@
   --border-default: #000000;
   --border-muted: rgba(0, 0, 0, 0.5);
 
+  /* Shorts semantic tokens */
+  --background: 220 20% 4%;
+  --foreground: 210 20% 95%;
+  --primary: 145 80% 50%;
+  --primary-foreground: 220 20% 4%;
+  --secondary: 215 80% 55%;
+  --secondary-foreground: 210 20% 95%;
+  --muted: 220 15% 15%;
+  --muted-foreground: 215 15% 55%;
+  --accent: 35 95% 55%;
+  --accent-foreground: 220 20% 4%;
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 210 20% 95%;
+  --border: 220 15% 18%;
+  --card: 220 18% 8%;
+  --card-foreground: 210 20% 95%;
 }
 
 @theme inline {
@@ -25,8 +41,37 @@
   --color-text-muted: var(--text-muted);
   --color-border-default: var(--border-default);
   --color-border-muted: var(--border-muted);
+  /* Shorts semantic colors — Tailwind v4 needs raw channel values (NOT hsl()-wrapped)
+     so that opacity modifiers like bg-primary/15 work correctly.
+     bg-primary/15 → hsl(145 80% 50% / 0.15) ✅
+     If we used hsl(var(--primary)) it becomes hsl(hsl(...) / 0.15) ❌ */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
   --font-suit: var(--font-suit);
   --font-serif: "CMU Classical Serif", serif;
+
+  /* Explicit opacity variants for shorts components.
+     Tailwind v4 @theme inline colors that use hsl() wrapper
+     cannot be decomposed for /N opacity — define them manually. */
+  --color-primary-15: hsl(145 80% 50% / 0.15);
+  --color-primary-30: hsl(145 80% 50% / 0.30);
+  --color-primary-50: hsl(145 80% 50% / 0.50);
+  --color-destructive-15: hsl(0 75% 55% / 0.15);
+  --color-destructive-30: hsl(0 75% 55% / 0.30);
+  --color-accent-30: hsl(35 95% 55% / 0.30);
 }
 
 body {
@@ -96,21 +141,17 @@ body {
 }
 
 .gradient-main {
-  background: linear-gradient(
-    180deg,
-    hsl(220 20% 4%) 0%,
-    hsl(220 20% 6%) 50%,
-    hsl(220 18% 8%) 100%
-  );
+  background: linear-gradient(180deg,
+      hsl(220 20% 4%) 0%,
+      hsl(220 20% 6%) 50%,
+      hsl(220 18% 8%) 100%);
 }
 
 .gradient-accent-line {
-  background: linear-gradient(
-    90deg,
-    hsl(145 80% 50%) 0%,
-    hsl(215 80% 55%) 50%,
-    hsl(35 95% 55%) 100%
-  );
+  background: linear-gradient(90deg,
+      hsl(145 80% 50%) 0%,
+      hsl(215 80% 55%) 50%,
+      hsl(35 95% 55%) 100%);
 }
 
 /* View Transitions - Push Animation */
@@ -118,6 +159,7 @@ body {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -127,6 +169,7 @@ body {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-100%);
   }
@@ -136,6 +179,7 @@ body {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -145,6 +189,7 @@ body {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(100%);
   }

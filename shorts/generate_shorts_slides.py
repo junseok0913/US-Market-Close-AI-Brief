@@ -864,11 +864,38 @@ def generate_shorts_slides(
     if not key_points:
         key_points = [clean_text(slide["headline"]) for slide in slides[1:4]]
 
-    featured_tickers = normalize_ticker_list(
-        raw_meta.get("featured_tickers"),
-        fallback_tickers,
-        max_items=5,
-    )
+    # featured_tickers: support both string[] and object[{ticker,label,tag}]
+    raw_ft = raw_meta.get("featured_tickers")
+    if isinstance(raw_ft, list) and raw_ft and isinstance(raw_ft[0], dict):
+        # Gemini returned object array — pass through as-is (with ticker normalization)
+        featured_tickers_objects = []
+        seen_ft = set()
+        for item in raw_ft:
+            if not isinstance(item, dict):
+                continue
+            tick = re.sub(r"[^A-Z0-9^.-]", "", str(item.get("ticker", "")).upper())
+            if not tick or tick in seen_ft:
+                continue
+            seen_ft.add(tick)
+            featured_tickers_objects.append({
+                "ticker": tick,
+                "label": clean_text(item.get("label", "")),
+                "tag": clean_text(item.get("tag", "")),
+            })
+            if len(featured_tickers_objects) >= 5:
+                break
+        # Also add fallback tickers as strings for backward compatibility
+        for fb in fallback_tickers:
+            if fb not in seen_ft and len(featured_tickers_objects) < 5:
+                seen_ft.add(fb)
+                featured_tickers_objects.append({"ticker": fb, "label": "", "tag": ""})
+        featured_tickers = featured_tickers_objects
+    else:
+        featured_tickers = normalize_ticker_list(
+            raw_ft,
+            fallback_tickers,
+            max_items=5,
+        )
 
     result = {
         "date": date,

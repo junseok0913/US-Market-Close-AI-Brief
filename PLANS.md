@@ -212,3 +212,6 @@ Use this for long or risky tasks. Keep it a living document.
 - [x] Follow-up: aligned story key-point sourcing order to shorty-style (`meta.keyPoints` first, then slide fallback) for browser + Remotion parity.
 - [x] Follow-up: changed browser data-bar generation back to shorty-original per-render `Math.random()` behavior for visual parity.
 - [x] Follow-up: added UI-safe display-length clamps (hook/data/story/closing text fields) to prevent dynamic Gemini copy from breaking shorty spacing.
+- [x] Follow-up: added Tailwind v4 semantic color tokens (`background/foreground/primary/...`) in `web/src/app/globals.css` while preserving existing light-theme app tokens.
+- [x] Follow-up: replaced shorts browser UI arbitrary HSL classes with semantic utility classes (`text-foreground`, `bg-primary/15`, `border-border`, etc.) for token-consistent rendering.
+- [x] Follow-up: set browser `realtime` shorts capture to 1080x1920 (9:16) by wiring `--width/--height` into `record_episode_video.mjs` and `run_youtube.sh`.

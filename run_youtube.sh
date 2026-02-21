@@ -634,12 +634,20 @@ else
             --url "${TARGET_URL}"
             --output "${OUTPUT_WEBM}"
         )
+        RECORD_WIDTH="1920"
+        RECORD_HEIGHT="1080"
+        if [ "${IS_SHORTS}" -eq 1 ]; then
+            RECORD_WIDTH="1080"
+            RECORD_HEIGHT="1920"
+        fi
         if [ -n "${PREVIEW_SECONDS}" ]; then
             RECORD_SECONDS="${PREVIEW_SECONDS}"
             RECORD_ARGS+=(--stop-on-timeout)
         fi
         RECORD_ARGS+=(--start-delay-seconds "${START_DELAY_SECONDS}")
         RECORD_ARGS+=(--max-seconds "${RECORD_SECONDS}")
+        RECORD_ARGS+=(--width "${RECORD_WIDTH}")
+        RECORD_ARGS+=(--height "${RECORD_HEIGHT}")
         node "${ROOT_DIR}/web/scripts/record_episode_video.mjs" "${RECORD_ARGS[@]}"
 
         if awk "BEGIN { exit !(${TRIM_START_SECONDS} > 0) }"; then
@@ -675,6 +683,46 @@ else
                 -movflags +faststart \
                 "${OUTPUT_MP4}"
         fi
+    fi
+fi
+
+# ── Shorts 59-second speed-up ──────────────────────────────────────────────
+# YouTube Shorts must be ≤ 60s.  We target 59s to leave a small margin.
+if [ "${IS_SHORTS}" -eq 1 ] && [ -f "${OUTPUT_MP4}" ]; then
+    SHORTS_MAX_SECONDS=59
+    RAW_DURATION="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "${OUTPUT_MP4}" | tr -d '\r')"
+    IS_OVER="$(awk -v d="${RAW_DURATION}" -v m="${SHORTS_MAX_SECONDS}" 'BEGIN { print (d > m) ? 1 : 0 }')"
+
+    if [ "${IS_OVER}" -eq 1 ]; then
+        SPEED_RATIO="$(awk -v d="${RAW_DURATION}" -v m="${SHORTS_MAX_SECONDS}" 'BEGIN { printf "%.6f", d / m }')"
+        VIDEO_PTS="$(awk -v r="${SPEED_RATIO}" 'BEGIN { printf "%.6f", 1.0 / r }')"
+
+        echo "⚡ Shorts speed-up: ${RAW_DURATION}s → ${SHORTS_MAX_SECONDS}s (${SPEED_RATIO}x)"
+
+        # atempo only supports 0.5–2.0 range, so chain filters for higher ratios
+        ATEMPO_FILTERS=""
+        REMAINING="${SPEED_RATIO}"
+        while awk -v r="${REMAINING}" 'BEGIN { exit !(r > 2.0) }'; do
+            ATEMPO_FILTERS="${ATEMPO_FILTERS}atempo=2.0,"
+            REMAINING="$(awk -v r="${REMAINING}" 'BEGIN { printf "%.6f", r / 2.0 }')"
+        done
+        ATEMPO_FILTERS="${ATEMPO_FILTERS}atempo=${REMAINING}"
+
+        SPEEDUP_TMP="${OUTPUT_MP4%.mp4}_speedup.mp4"
+        ffmpeg -hide_banner -loglevel error -y \
+            -i "${OUTPUT_MP4}" \
+            -filter:v "setpts=${VIDEO_PTS}*PTS" \
+            -filter:a "${ATEMPO_FILTERS}" \
+            -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p \
+            -c:a aac -b:a 192k \
+            -movflags +faststart \
+            "${SPEEDUP_TMP}"
+
+        mv "${SPEEDUP_TMP}" "${OUTPUT_MP4}"
+        NEW_DURATION="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "${OUTPUT_MP4}" | tr -d '\r')"
+        echo "✅ Shorts speed-up complete: ${NEW_DURATION}s"
+    else
+        echo "✅ Shorts duration OK: ${RAW_DURATION}s (≤ ${SHORTS_MAX_SECONDS}s)"
     fi
 fi
 

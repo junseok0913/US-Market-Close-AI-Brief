@@ -99,24 +99,17 @@ function extractPercentTokens(source: string): string[] {
   return source.match(/[+-]?\d+(?:\.\d+)?%/g) || [];
 }
 
-function extractNumberTokens(source: string): string[] {
-  return source.match(/\d{1,3}(?:,\d{3})*(?:\.\d+)?/g) || [];
-}
-
-function parseInlineDataSegments(subheadline: string): Array<{ label: string; metric: string }> {
-  const segments = subheadline
+/**
+ * Parse pipe-separated segments from subheadline.
+ * e.g. "S&P 500 +0.69% | 나스닥 +0.90%" → [{metric: '+0.69%'}, {metric: '+0.90%'}]
+ * We intentionally do NOT extract the label here because the index name from
+ * free-text is unreliable — we always keep DEFAULT_DATA_CARDS names.
+ */
+function parsePipePercentSegments(subheadline: string): string[] {
+  return subheadline
     .split('|')
-    .map((part) => part.trim())
+    .map((part) => extractToken(part.trim(), /[+-]?\d+(?:\.\d+)?%/))
     .filter(Boolean);
-
-  return segments
-    .map((segment) => {
-      const metric = extractToken(segment, /[+-]?\d+(?:\.\d+)?%/);
-      if (!metric) return null;
-      const label = compactText(segment.replace(metric, '').replace(/[,:]/g, ''), 'MARKET');
-      return { label, metric };
-    })
-    .filter((item): item is { label: string; metric: string } => Boolean(item));
 }
 
 function buildDataCards(slide: ShortsSlide | undefined): DataCard[] {
@@ -129,26 +122,49 @@ function buildDataCards(slide: ShortsSlide | undefined): DataCard[] {
     }));
   }
 
+  // Priority 1: parse percent values from subheadline pipe segments
+  // e.g. "S&P 500 +0.69% | 나스닥 +0.90%"
   const subheadline = compactText(slide.subheadline);
-  const inline = parseInlineDataSegments(subheadline);
+  const pipePercents = parsePipePercentSegments(subheadline);
 
-  const sourceBlob = [slide.headline, slide.subheadline, slide.body, ...(slide.bullets || []), ...(slide.highlights || [])]
-    .map((item) => compactText(item))
-    .join(' ');
+  // Priority 2: bullet lines that contain a percent
+  // e.g. ["S&P 500: +0.69%", "나스닥: +0.90%"]
+  const bulletPercents = (slide.bullets || [])
+    .map((b) => extractToken(compactText(b), /[+-]?\d+(?:\.\d+)?%/))
+    .filter(Boolean);
 
-  const percentPool = uniqueTexts([...inline.map((item) => item.metric), ...extractPercentTokens(sourceBlob)]);
-  const numberPool = uniqueTexts(extractNumberTokens(sourceBlob).filter((token) => !token.includes('%')));
+  // Priority 3: highlights array (e.g. ["+0.69%", "+0.90%"])
+  const highlightPercents = (slide.highlights || [])
+    .map((h) => extractToken(compactText(h), /[+-]?\d+(?:\.\d+)?%/))
+    .filter(Boolean);
+
+  // Priority 4: parse body text for index-specific percent values
+  // Matches patterns like "S&P 500은 0.69%", "나스닥은 0.90%", "다우존스는 0.47%"
+  const bodyText = compactText(slide.body);
+  const bodyPercents: string[] = [];
+  const spMatch = bodyText.match(/S.P\s*500[^,]*?(\d+\.\d+)%/i);
+  const nasdaqMatch = bodyText.match(/(?:나스닥|NASDAQ)[^,]*?(\d+\.\d+)%/i);
+  const dowMatch = bodyText.match(/(?:다우|DOW)[^,]*?(\d+\.\d+)%/i);
+  if (spMatch) bodyPercents.push(`+${spMatch[1]}%`);
+  if (nasdaqMatch) bodyPercents.push(`+${nasdaqMatch[1]}%`);
+  if (dowMatch) bodyPercents.push(`+${dowMatch[1]}%`);
+
+  // Merge in priority order — take the first available source per index
+  const changePool = DEFAULT_DATA_CARDS.map((_, idx) => {
+    let raw = pipePercents[idx] || bulletPercents[idx] || highlightPercents[idx] || bodyPercents[idx] || '--';
+    // Ensure a '+' prefix for positive values (some sources omit it)
+    if (raw !== '--' && !raw.startsWith('+') && !raw.startsWith('-')) {
+      raw = `+${raw}`;
+    }
+    return raw;
+  });
 
   return DEFAULT_DATA_CARDS.map((base, idx) => {
-    const inlineItem = inline[idx];
-    const change = compactText(inlineItem?.metric || percentPool[idx], '--');
-    const value = compactText(numberPool[idx], change);
-    const name = compactText(inlineItem?.label, base.name);
-
+    const change = changePool[idx];
     return {
-      name,
+      name: base.name,
       ticker: base.ticker,
-      value,
+      value: change,
       change,
       isPositive: !change.startsWith('-'),
     };
@@ -212,9 +228,9 @@ function renderHookSection(params: {
           initial={animated ? { opacity: 0, y: -20 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: animated ? 0.5 : 0 }}
-          className="bg-[hsl(145_80%_50%_/_0.15)] border border-[hsl(145_80%_50%_/_0.3)] rounded-full px-12 py-5"
+          className="bg-primary-15 border border-primary-30 rounded-full px-12 py-5"
         >
-          <span className="font-mono-code text-[40px] tracking-widest text-[hsl(210_20%_95%)] font-bold">
+          <span className="font-mono-code text-[40px] tracking-widest text-foreground font-bold">
             {date}
           </span>
         </motion.div>
@@ -225,8 +241,8 @@ function renderHookSection(params: {
           transition={{ delay: animated ? 0.3 : 0, duration: animated ? 0.5 : 0 }}
           className="flex items-center gap-4"
         >
-          <div className="w-3 h-3 rounded-full bg-[hsl(145_80%_50%)] animate-pulse" />
-          <span className="font-display text-[30px] font-semibold tracking-widest uppercase text-[hsl(145_80%_50%)] glow-text">
+          <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
+          <span className="font-display text-[30px] font-semibold tracking-widest uppercase text-primary glow-text">
             Market Briefing
           </span>
         </motion.div>
@@ -235,7 +251,7 @@ function renderHookSection(params: {
           initial={animated ? { opacity: 0, y: 30 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: animated ? 0.5 : 0, duration: animated ? 0.7 : 0, ease: 'easeOut' }}
-          className="text-[64px] font-black leading-[1.25] tracking-tight text-[hsl(210_20%_95%)] max-w-[900px]"
+          className="text-[64px] font-black leading-[1.25] tracking-tight text-foreground max-w-[900px]"
         >
           {title}
         </motion.h1>
@@ -244,7 +260,7 @@ function renderHookSection(params: {
           initial={animated ? { opacity: 0, y: 20 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: animated ? 1 : 0, duration: animated ? 0.6 : 0 }}
-          className="text-[36px] leading-[1.6] text-[hsl(215_15%_55%)] max-w-[850px] font-medium"
+          className="text-[36px] leading-[1.6] text-muted-foreground max-w-[850px] font-medium"
         >
           {hook}
         </motion.p>
@@ -257,9 +273,9 @@ function renderHookSection(params: {
         transition={{ delay: animated ? 1.3 : 0, duration: animated ? 0.5 : 0 }}
       >
         <div className="flex items-center gap-3">
-          <div className="w-16 h-[2px] bg-[hsl(145_80%_50%_/_0.3)]" />
-          <div className="w-2 h-2 rounded-full bg-[hsl(145_80%_50%_/_0.5)]" />
-          <div className="w-16 h-[2px] bg-[hsl(145_80%_50%_/_0.3)]" />
+          <div className="w-16 h-[2px] bg-primary-30" />
+          <div className="w-2 h-2 rounded-full bg-primary-50" />
+          <div className="w-16 h-[2px] bg-primary-30" />
         </div>
       </motion.div>
     </div>
@@ -285,8 +301,8 @@ function renderDataSection(params: {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-3 h-3 rounded-full bg-[hsl(145_80%_50%)]" />
-            <span className="font-display text-[26px] font-semibold tracking-widest uppercase text-[hsl(145_80%_50%)]">
+            <div className="w-3 h-3 rounded-full bg-primary" />
+            <span className="font-display text-[26px] font-semibold tracking-widest uppercase text-primary">
               Today&apos;s Market
             </span>
           </div>
@@ -300,31 +316,29 @@ function renderDataSection(params: {
               initial={animated ? { opacity: 0, x: -50 } : false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: animated ? 0.3 + idx * 0.2 : 0, duration: animated ? 0.6 : 0, ease: 'easeOut' }}
-              className="bg-surface-elevated border border-[hsl(220_15%_18%)] rounded-2xl p-10 glow-primary"
+              className="bg-surface-elevated border border-border rounded-2xl p-10 glow-primary"
             >
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="font-display text-[40px] font-bold text-[hsl(210_20%_95%)]">{item.name}</h3>
-                  <span className="font-mono-code text-[22px] text-[hsl(215_15%_55%)]">{item.ticker}</span>
+                  <h3 className="font-display text-[40px] font-bold text-foreground">{item.name}</h3>
+                  <span className="font-mono-code text-[22px] text-muted-foreground">{item.ticker}</span>
                 </div>
                 <motion.div
                   initial={animated ? { scale: 0 } : false}
                   animate={{ scale: 1 }}
                   transition={{ delay: animated ? 0.6 + idx * 0.2 : 0, type: 'spring', stiffness: 200 }}
-                  className={`px-8 py-3 rounded-xl ${
-                    item.isPositive ? 'bg-[hsl(145_80%_50%_/_0.15)]' : 'bg-[hsl(0_75%_55%_/_0.15)]'
-                  }`}
+                  className={`px-8 py-3 rounded-xl ${item.isPositive ? 'bg-primary-15' : 'bg-destructive-15'
+                    }`}
                 >
                   <span
-                    className={`font-mono-code text-[36px] font-bold ${
-                      item.isPositive ? 'text-gain' : 'text-loss'
-                    }`}
+                    className={`font-mono-code text-[36px] font-bold ${item.isPositive ? 'text-gain' : 'text-loss'
+                      }`}
                   >
                     {item.change}
                   </span>
                 </motion.div>
               </div>
-              <div className="font-mono-code text-[52px] font-bold text-[hsl(210_20%_95%)]">{item.value}</div>
+              <div className="font-mono-code text-[52px] font-bold text-foreground">{item.value}</div>
               <div className="flex items-end gap-2 mt-6 h-10">
                 {Array.from({ length: 20 }).map((_, i) => (
                   <motion.div
@@ -332,7 +346,7 @@ function renderDataSection(params: {
                     initial={animated ? { height: 0 } : false}
                     animate={{ height: `${Math.random() * 100}%` }}
                     transition={{ delay: animated ? 0.8 + idx * 0.2 + i * 0.02 : 0, duration: animated ? 0.3 : 0 }}
-                    className={`flex-1 rounded-sm ${item.isPositive ? 'bg-[hsl(145_80%_50%_/_0.3)]' : 'bg-[hsl(0_75%_55%_/_0.3)]'}`}
+                    className={`flex-1 rounded-sm ${item.isPositive ? 'bg-primary-30' : 'bg-destructive-30'}`}
                   />
                 ))}
               </div>
@@ -347,13 +361,13 @@ function renderDataSection(params: {
           className="mt-12 grid grid-cols-2 gap-6"
         >
           {metrics.slice(0, 2).map((metric) => (
-            <div key={`${metric.label}-${metric.value}`} className="bg-surface-glass rounded-xl p-8 border border-[hsl(220_15%_18%)]">
-              <span className="text-[22px] text-[hsl(215_15%_55%)] block mb-2">{metric.label}</span>
-              <span className={`font-mono-code text-[38px] font-bold ${metric.tone === 'loss' ? 'text-loss' : 'text-[hsl(35_95%_55%)]'}`}>
+            <div key={`${metric.label}-${metric.value}`} className="bg-surface-glass rounded-xl p-8 border border-border">
+              <span className="text-[22px] text-muted-foreground block mb-2">{metric.label}</span>
+              <span className={`font-mono-code text-[38px] font-bold ${metric.tone === 'loss' ? 'text-loss' : 'text-accent'}`}>
                 {metric.value}
               </span>
               {metric.suffix ? (
-                <span className="text-[20px] text-[hsl(215_15%_55%)] ml-3">{metric.suffix}</span>
+                <span className="text-[20px] text-muted-foreground ml-3">{metric.suffix}</span>
               ) : null}
             </div>
           ))}
@@ -384,15 +398,15 @@ function renderStorySection(params: {
           className="mb-10"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-3 h-3 rounded-full bg-[hsl(215_80%_55%)]" />
-            <span className="font-display text-[26px] font-semibold tracking-widest uppercase text-[hsl(215_80%_55%)]">
+            <div className="w-3 h-3 rounded-full bg-secondary" />
+            <span className="font-display text-[26px] font-semibold tracking-widest uppercase text-secondary">
               Key Insights
             </span>
           </div>
           <div className="h-[2px] gradient-accent-line w-48 rounded-full" />
         </motion.div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-10 flex-1 justify-center">
           {keyPoints.map((point, idx) => (
             <motion.div
               key={`${point}-${idx}`}
@@ -401,16 +415,16 @@ function renderStorySection(params: {
               transition={{ delay: animated ? 0.3 + idx * 0.3 : 0, duration: animated ? 0.6 : 0, ease: 'easeOut' }}
               className="flex gap-6 items-start"
             >
-              <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-elevated border border-[hsl(220_15%_18%)] flex items-center justify-center">
-                <span className="font-display text-[32px] font-bold text-[hsl(145_80%_50%)]">{idx + 1}</span>
+              <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-elevated border border-border flex items-center justify-center">
+                <span className="font-display text-[32px] font-bold text-primary">{idx + 1}</span>
               </div>
 
-              <div className="flex-1 bg-surface-elevated border border-[hsl(220_15%_18%)] rounded-2xl p-6">
+              <div className="flex-1 bg-surface-elevated border border-border rounded-2xl p-6">
                 <motion.p
                   initial={animated ? { opacity: 0 } : false}
                   animate={{ opacity: 1 }}
                   transition={{ delay: animated ? 0.5 + idx * 0.3 : 0, duration: animated ? 0.5 : 0 }}
-                  className="text-[30px] leading-[1.5] text-[hsl(210_20%_95%)] font-medium"
+                  className="text-[30px] leading-[1.5] text-foreground font-medium"
                 >
                   {point}
                 </motion.p>
@@ -423,15 +437,15 @@ function renderStorySection(params: {
           initial={animated ? { opacity: 0, y: 30 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: animated ? 1.8 : 0, duration: animated ? 0.5 : 0 }}
-          className="mt-8 bg-surface-glass border border-[hsl(145_80%_50%_/_0.3)] rounded-2xl p-8 glow-primary"
+          className="mt-auto bg-surface-glass border border-primary-30 rounded-2xl p-8 glow-primary"
         >
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-[22px] text-[hsl(215_15%_55%)] block mb-2">주목 종목</span>
-              <span className="font-display text-[48px] font-bold text-[hsl(145_80%_50%)] glow-text">{featuredTicker}</span>
-              <span className="text-[26px] text-[hsl(215_15%_55%)] ml-4">{featuredSubtitle}</span>
+              <span className="text-[22px] text-muted-foreground block mb-2">주목 종목</span>
+              <span className="font-display text-[48px] font-bold text-primary glow-text">{featuredTicker}</span>
+              <span className="text-[26px] text-muted-foreground ml-4">{featuredSubtitle}</span>
             </div>
-            <div className="px-8 py-4 rounded-xl bg-[hsl(145_80%_50%_/_0.15)]">
+            <div className="px-8 py-4 rounded-xl bg-primary-15">
               <span className="font-display text-[30px] font-bold text-gain">{featuredBadge}</span>
             </div>
           </div>
@@ -468,15 +482,15 @@ function renderClosingSection(params: {
           transition={{ delay: animated ? 0.3 : 0, duration: animated ? 0.6 : 0 }}
           className="flex flex-col items-center gap-8"
         >
-          <h2 className="font-display text-[56px] font-black text-[hsl(210_20%_95%)] leading-[1.3]">{title}</h2>
+          <h2 className="font-display text-[56px] font-black text-foreground leading-[1.3]">{title}</h2>
 
-          <div className="bg-surface-elevated border border-[hsl(35_95%_55%_/_0.3)] rounded-2xl p-10 max-w-[800px]">
+          <div className="bg-surface-elevated border border-accent-30 rounded-2xl p-10 max-w-[800px]">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-3 h-3 rounded-full bg-[hsl(35_95%_55%)] animate-pulse" />
-              <span className="font-display text-[26px] font-semibold text-[hsl(35_95%_55%)]">{eventDate}</span>
+              <div className="w-3 h-3 rounded-full bg-accent animate-pulse" />
+              <span className="font-display text-[26px] font-semibold text-accent">{eventDate}</span>
             </div>
-            <p className="text-[40px] font-bold text-[hsl(210_20%_95%)] leading-[1.4]">{eventName}</p>
-            <p className="text-[28px] text-[hsl(215_15%_55%)] mt-4 leading-[1.5]">{eventDetail}</p>
+            <p className="text-[40px] font-bold text-foreground leading-[1.4]">{eventName}</p>
+            <p className="text-[28px] text-muted-foreground mt-4 leading-[1.5]">{eventDetail}</p>
           </div>
         </motion.div>
 
@@ -486,13 +500,13 @@ function renderClosingSection(params: {
           transition={{ delay: animated ? 0.8 : 0, duration: animated ? 0.5 : 0 }}
           className="flex flex-col items-center gap-6 mt-8"
         >
-          <p className="text-[32px] text-[hsl(215_15%_55%)] font-medium">매일 장마감 후 업데이트됩니다</p>
+          <p className="text-[32px] text-muted-foreground font-medium">매일 장마감 후 업데이트됩니다</p>
           <div className="flex items-center gap-4">
-            <span className="text-[36px] font-bold text-[hsl(145_80%_50%)] glow-text">구독</span>
-            <span className="text-[36px] text-[hsl(215_15%_55%)]">·</span>
-            <span className="text-[36px] font-bold text-[hsl(215_80%_55%)]">좋아요</span>
-            <span className="text-[36px] text-[hsl(215_15%_55%)]">·</span>
-            <span className="text-[36px] font-bold text-[hsl(35_95%_55%)]">알림설정</span>
+            <span className="text-[36px] font-bold text-primary glow-text">구독</span>
+            <span className="text-[36px] text-muted-foreground">·</span>
+            <span className="text-[36px] font-bold text-secondary">좋아요</span>
+            <span className="text-[36px] text-muted-foreground">·</span>
+            <span className="text-[36px] font-bold text-accent">알림설정</span>
           </div>
         </motion.div>
 
@@ -737,8 +751,12 @@ export default function YouTubeShortsPlayer({
 
   return (
     <div
-      className="relative h-screen overflow-hidden bg-[hsl(220_20%_4%)] text-[hsl(210_20%_95%)] font-regular"
-      style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+      className="relative overflow-hidden bg-background text-foreground font-regular"
+      style={{
+        fontFamily: "'Noto Sans KR', sans-serif",
+        width: 1080,
+        height: 1920,
+      }}
     >
       {!effectiveRenderMode && audioSrc && (
         <audio
@@ -768,9 +786,8 @@ export default function YouTubeShortsPlayer({
             key={`${section}-${activeSlide?.id ?? currentSlideIndex}`}
             className="w-full h-full"
             initial={animated ? { opacity: 0 } : false}
-            animate={{ opacity: 1 }}
-            exit={animated ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: animated ? 0.5 : 0 }}
+            animate={{ opacity: 1, transition: { duration: animated ? 0.4 : 0 } }}
+            exit={animated ? { opacity: 0, transition: { duration: 0.15 } } : { opacity: 1 }}
           >
             {section === 'hook' &&
               renderHookSection({

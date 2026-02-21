@@ -37,13 +37,14 @@ type DataCard = {
   value: string;
   change: string;
   isPositive: boolean;
+  linePath: string;
+  chartPath: string;
 };
 
-type MetricCard = {
+type FeaturedTicker = {
+  ticker: string;
   label: string;
-  value: string;
-  suffix: string;
-  tone: "loss" | "accent";
+  tag: string;
 };
 
 type SectionWindow = {
@@ -111,14 +112,54 @@ const DEFAULT_DATA_CARDS = [
   { name: "DOW", ticker: "^DJI" },
 ];
 
-const DATA_BAR_HEIGHTS_CACHE = new Map<string, number[][]>();
+/* SVG chart paths per card — matching the original design */
+const CHART_PATHS = [
+  {
+    linePath:
+      "M0,28 C15,26 25,22 40,20 C55,18 65,24 80,16 C95,8 110,12 125,10 C140,8 155,6 170,8 C185,10 195,5 200,4",
+    chartPath:
+      "M0,28 C15,26 25,22 40,20 C55,18 65,24 80,16 C95,8 110,12 125,10 C140,8 155,6 170,8 C185,10 195,5 200,4 L200,40 L0,40 Z",
+  },
+  {
+    linePath:
+      "M0,30 C20,28 30,25 50,22 C70,19 80,26 100,14 C120,6 140,10 160,8 C175,6 190,3 200,2",
+    chartPath:
+      "M0,30 C20,28 30,25 50,22 C70,19 80,26 100,14 C120,6 140,10 160,8 C175,6 190,3 200,2 L200,40 L0,40 Z",
+  },
+  {
+    linePath:
+      "M0,25 C20,24 35,20 55,22 C75,24 85,18 105,15 C125,12 145,14 165,10 C180,8 190,6 200,7",
+    chartPath:
+      "M0,25 C20,24 35,20 55,22 C75,24 85,18 105,15 C125,12 145,14 165,10 C180,8 190,6 200,7 L200,40 L0,40 Z",
+  },
+];
+
+/* Accent colors for story key-point cards */
+const ACCENT_COLORS = [
+  { bar: COLORS.primary, bg: "hsl(145 80% 50% / 0.08)", border: "hsl(145 80% 50% / 0.25)" },
+  { bar: COLORS.secondary, bg: "hsl(215 80% 55% / 0.08)", border: "hsl(215 80% 55% / 0.25)" },
+  { bar: COLORS.accent, bg: "hsl(35 95% 55% / 0.08)", border: "hsl(35 95% 55% / 0.25)" },
+  { bar: COLORS.gain, bg: "hsl(145 80% 50% / 0.08)", border: "hsl(145 80% 50% / 0.25)" },
+];
+
+const TICKER_COLORS = [
+  { text: COLORS.primary, tagColor: COLORS.gain, bg: "hsl(145 80% 50% / 0.15)" },
+  { text: COLORS.secondary, tagColor: COLORS.accent, bg: "hsl(215 80% 55% / 0.15)" },
+  { text: COLORS.accent, tagColor: COLORS.primary, bg: "hsl(35 95% 55% / 0.15)" },
+];
+
+/* ─── Utility functions ─── */
 
 function compactText(value: unknown, fallback = ""): string {
   const cleaned = String(value ?? "").replace(/\s+/g, " ").trim();
   return cleaned || fallback;
 }
 
-function compactTextWithLimit(value: unknown, fallback: string, maxLen: number): string {
+function compactTextWithLimit(
+  value: unknown,
+  fallback: string,
+  maxLen: number,
+): string {
   const text = compactText(value, fallback);
   if (maxLen <= 0 || text.length <= maxLen) return text;
   return `${text.slice(0, Math.max(1, maxLen - 1)).trimEnd()}…`;
@@ -141,30 +182,11 @@ function extractToken(text: string, pattern: RegExp): string {
   return hit?.[0] || "";
 }
 
-function extractPercentTokens(source: string): string[] {
-  return source.match(/[+-]?\d+(?:\.\d+)?%/g) || [];
-}
-
-function extractNumberTokens(source: string): string[] {
-  return source.match(/\d{1,3}(?:,\d{3})*(?:\.\d+)?/g) || [];
-}
-
-function parseInlineDataSegments(
-  subheadline: string,
-): Array<{ label: string; metric: string }> {
-  const segments = subheadline
+function parsePipePercentSegments(subheadline: string): string[] {
+  return subheadline
     .split("|")
-    .map((part) => part.trim())
+    .map((part) => extractToken(part.trim(), /[+-]?\d+(?:\.\d+)?%/))
     .filter(Boolean);
-
-  return segments
-    .map((segment) => {
-      const metric = extractToken(segment, /[+-]?\d+(?:\.\d+)?%/);
-      if (!metric) return null;
-      const label = compactText(segment.replace(metric, "").replace(/[,:]/g, ""), "MARKET");
-      return { label, metric };
-    })
-    .filter((item): item is { label: string; metric: string } => Boolean(item));
 }
 
 function sectionFromPhase(phase: string | undefined): ShortsSection {
@@ -182,7 +204,10 @@ function formatDotDate(date: string): string {
   return `${cleaned.slice(0, 4)}.${cleaned.slice(4, 6)}.${cleaned.slice(6, 8)}`;
 }
 
-function findSlideIndexByTime(slides: ShortsSlide[], currentTime: number): number {
+function findSlideIndexByTime(
+  slides: ShortsSlide[],
+  currentTime: number,
+): number {
   if (slides.length === 0) return 0;
   for (let i = slides.length - 1; i >= 0; i -= 1) {
     if (currentTime >= slides[i].startSec) return i;
@@ -194,14 +219,17 @@ function deriveSectionWindowsFromTiming(
   sectionTiming: ShortsCompositionProps["sectionTiming"],
   episodeDuration: number,
 ): SectionWindow[] {
-  const rawSections = Array.isArray(sectionTiming?.sections) ? sectionTiming.sections : [];
+  const rawSections = Array.isArray(sectionTiming?.sections)
+    ? sectionTiming.sections
+    : [];
   if (rawSections.length === 0) return [];
 
   const windows = rawSections
     .map((entry) => {
       const startSec = Number(entry?.startSec);
       const endSecCandidate = Number(entry?.endSec ?? entry?.speechEndSec);
-      if (!Number.isFinite(startSec) || !Number.isFinite(endSecCandidate)) return null;
+      if (!Number.isFinite(startSec) || !Number.isFinite(endSecCandidate))
+        return null;
       const endSec = Math.max(endSecCandidate, startSec + 0.01);
       return {
         section: sectionFromName(entry?.name),
@@ -214,7 +242,8 @@ function deriveSectionWindowsFromTiming(
 
   if (windows.length === 0) return [];
   return windows.map((window, idx) => {
-    const nextStart = idx + 1 < windows.length ? windows[idx + 1].startSec : episodeDuration;
+    const nextStart =
+      idx + 1 < windows.length ? windows[idx + 1].startSec : episodeDuration;
     return {
       section: window.section,
       startSec: window.startSec,
@@ -228,7 +257,13 @@ function deriveSectionWindowsFromSlides(
   episodeDuration: number,
 ): SectionWindow[] {
   if (slides.length === 0) {
-    return [{ section: "story", startSec: 0, endSec: Math.max(episodeDuration, 0.01) }];
+    return [
+      {
+        section: "story",
+        startSec: 0,
+        endSec: Math.max(episodeDuration, 0.01),
+      },
+    ];
   }
 
   const windows: SectionWindow[] = [];
@@ -240,7 +275,11 @@ function deriveSectionWindowsFromSlides(
       i + 1 < slides.length
         ? Math.max(0, Number(slides[i + 1].startSec) || startSec)
         : Math.max(episodeDuration, Number(slide.endSec) || startSec + 0.01);
-    const endSec = Math.max(startSec + 0.01, nextStart, Number(slide.endSec) || 0);
+    const endSec = Math.max(
+      startSec + 0.01,
+      nextStart,
+      Number(slide.endSec) || 0,
+    );
 
     const prev = windows[windows.length - 1];
     if (prev && prev.section === section) {
@@ -264,94 +303,137 @@ function findSectionWindowIndexByTime(
   return 0;
 }
 
+/* ─── Data builders ─── */
+
 function buildDataCards(slide: ShortsSlide | undefined): DataCard[] {
   if (!slide) {
-    return DEFAULT_DATA_CARDS.map((base) => ({
+    return DEFAULT_DATA_CARDS.map((base, idx) => ({
       ...base,
       value: "--",
       change: "--",
       isPositive: true,
+      ...CHART_PATHS[idx],
     }));
   }
 
   const subheadline = compactText(slide.subheadline);
-  const inline = parseInlineDataSegments(subheadline);
-  const sourceBlob = [
-    slide.headline,
-    slide.subheadline,
-    slide.body,
-    ...(slide.bullets || []),
-    ...(slide.highlights || []),
-  ]
-    .map((item) => compactText(item))
-    .join(" ");
+  const pipePercents = parsePipePercentSegments(subheadline);
 
-  const percentPool = uniqueTexts([
-    ...inline.map((item) => item.metric),
-    ...extractPercentTokens(sourceBlob),
-  ]);
-  const numberPool = uniqueTexts(
-    extractNumberTokens(sourceBlob).filter((token) => !token.includes("%")),
-  );
+  const bulletPercents = (slide.bullets || [])
+    .map((b) => extractToken(compactText(b), /[+-]?\d+(?:\.\d+)?%/))
+    .filter(Boolean);
+
+  const highlightPercents = (slide.highlights || [])
+    .map((h) => extractToken(compactText(h), /[+-]?\d+(?:\.\d+)?%/))
+    .filter(Boolean);
+
+  const bodyText = compactText(slide.body);
+  const bodyPercents: string[] = [];
+  const spMatch = bodyText.match(/S.P\s*500[^,]*?(\d+\.\d+)%/i);
+  const nasdaqMatch = bodyText.match(/(?:나스닥|NASDAQ)[^,]*?(\d+\.\d+)%/i);
+  const dowMatch = bodyText.match(/(?:다우|DOW)[^,]*?(\d+\.\d+)%/i);
+  if (spMatch) bodyPercents.push(`+${spMatch[1]}%`);
+  if (nasdaqMatch) bodyPercents.push(`+${nasdaqMatch[1]}%`);
+  if (dowMatch) bodyPercents.push(`+${dowMatch[1]}%`);
+
+  const changePool = DEFAULT_DATA_CARDS.map((_, idx) => {
+    let raw =
+      pipePercents[idx] ||
+      bulletPercents[idx] ||
+      highlightPercents[idx] ||
+      bodyPercents[idx] ||
+      "--";
+    if (raw !== "--" && !raw.startsWith("+") && !raw.startsWith("-")) {
+      raw = `+${raw}`;
+    }
+    return raw;
+  });
 
   return DEFAULT_DATA_CARDS.map((base, idx) => {
-    const inlineItem = inline[idx];
-    const change = compactText(inlineItem?.metric || percentPool[idx], "--");
-    const value = compactText(numberPool[idx], change);
-    const name = compactText(inlineItem?.label, base.name);
+    const change = changePool[idx];
     return {
-      name,
+      name: base.name,
       ticker: base.ticker,
-      value,
+      value: change,
       change,
       isPositive: !change.startsWith("-"),
+      ...CHART_PATHS[idx % CHART_PATHS.length],
     };
   });
 }
 
-function buildMetricCards(slide: ShortsSlide | undefined): MetricCard[] {
-  if (!slide) {
-    return [
-      { label: "핵심 지표 1", value: "--", suffix: "예상치 비교", tone: "loss" },
-      { label: "핵심 지표 2", value: "--", suffix: "MoM", tone: "accent" },
-    ];
+function buildFeaturedTickers(
+  episode: ShortsEpisode,
+  storySlide: ShortsSlide | undefined,
+): FeaturedTicker[] {
+  const seen = new Set<string>();
+  const result: FeaturedTicker[] = [];
+
+  // Priority 1: meta.featuredTickers as object array (from Gemini)
+  // e.g. [{"ticker":"XRT","label":"소매업종 ETF","tag":"시장 평균 상회"}]
+  const metaFT = episode.meta?.featuredTickers || [];
+  for (const item of metaFT) {
+    if (result.length >= 3) break;
+    if (typeof item === "object" && item !== null && !Array.isArray(item)) {
+      const obj = item as Record<string, unknown>;
+      const tick = compactText(obj.ticker);
+      if (!tick || tick.startsWith("^") || seen.has(tick)) continue;
+      seen.add(tick);
+      result.push({
+        ticker: tick,
+        label: compactTextWithLimit(obj.label, "주목 종목", 20),
+        tag: compactTextWithLimit(obj.tag, "시장 주목", 12),
+      });
+    } else if (typeof item === "string") {
+      const tick = compactText(item);
+      if (!tick || tick.startsWith("^") || seen.has(tick)) continue;
+      seen.add(tick);
+      // String-only: build label/tag from story slide context
+      const idx = result.length;
+      const storyHighlights = (storySlide?.highlights || []).map((h) => compactText(h));
+      const storyBullets = (storySlide?.bullets || []).map((b) => compactText(b));
+      result.push({
+        ticker: tick,
+        label: compactTextWithLimit(
+          idx === 0 ? storySlide?.subheadline : undefined,
+          "주목 종목",
+          20,
+        ),
+        tag: compactTextWithLimit(
+          storyHighlights[idx] || storyBullets[idx],
+          "시장 주목",
+          12,
+        ),
+      });
+    }
   }
 
-  const bullets = (slide.bullets || []).map((item) => compactText(item)).filter(Boolean);
-  const highlights = (slide.highlights || []).map((item) => compactText(item)).filter(Boolean);
-  const fallback = uniqueTexts([compactText(slide.subheadline), compactText(slide.body)]).filter(Boolean);
-  const numericHighlights = highlights.filter((line) =>
-    /[+-]?\d+(?:\.\d+)?%|\$?\d+(?:,\d{3})*(?:\.\d+)?/.test(line),
-  );
-  const candidates = [...bullets, ...fallback].slice(0, 2);
-  if (numericHighlights.length > 0 && candidates.length < 2) {
-    candidates.push(...numericHighlights.slice(0, 2 - candidates.length));
+  // Priority 2: gather non-index tickers from all slides
+  if (result.length < 3) {
+    for (const slide of episode.slides || []) {
+      for (const t of slide.tickers || []) {
+        if (result.length >= 3) break;
+        const tick = compactText(t);
+        if (!tick || tick.startsWith("^") || seen.has(tick)) continue;
+        seen.add(tick);
+        result.push({
+          ticker: tick,
+          label: "관련 종목",
+          tag: "시장 주목",
+        });
+      }
+    }
   }
 
-  while (candidates.length < 2) {
-    candidates.push(`핵심 지표 ${candidates.length + 1}`);
+  // Minimum 1 fallback if absolutely nothing was found
+  if (result.length === 0) {
+    result.push({ ticker: "XRT", label: "소매업종 ETF", tag: "시장 평균 상회" });
   }
 
-  return candidates.map((line, idx) => {
-    const metric = extractToken(line, /[+-]?\d+(?:\.\d+)?%|\$?\d+(?:,\d{3})*(?:\.\d+)?/);
-    const label = compactText(line.replace(metric, "").replace(/[():]/g, ""), `핵심 지표 ${idx + 1}`);
-    return {
-      label,
-      value: metric || "--",
-      suffix: metric
-        ? compactText(line.replace(metric, "").replace(/[():]/g, ""), idx === 0 ? "예상치 비교" : "MoM")
-        : compactText(line, idx === 0 ? "예상치 비교" : "MoM"),
-      tone: idx === 0 ? "loss" : "accent",
-    };
-  });
+  return result;
 }
 
-function buildSectionBarHeights(cardIndex: number): number[] {
-  return Array.from({ length: 20 }, (_, barIndex) => {
-    if (cardIndex < 0 || barIndex < 0) return 0;
-    return Math.random() * 100;
-  });
-}
+/* ─── Main composition ─── */
 
 export const ShortsComposition: FC<ShortsCompositionProps> = ({
   episode,
@@ -370,15 +452,24 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
 
   const activeSlideIndex = findSlideIndexByTime(slides, currentSec);
   const activeSlide = slides[activeSlideIndex];
-  const episodeDuration = Math.max(Number(episode.durationSeconds) || 0, 0.01);
+  const episodeDuration = Math.max(
+    Number(episode.durationSeconds) || 0,
+    0.01,
+  );
 
-  const windowsFromTiming = deriveSectionWindowsFromTiming(sectionTiming, episodeDuration);
+  const windowsFromTiming = deriveSectionWindowsFromTiming(
+    sectionTiming,
+    episodeDuration,
+  );
   const sectionWindows =
     windowsFromTiming.length > 0
       ? windowsFromTiming
       : deriveSectionWindowsFromSlides(slides, episodeDuration);
 
-  const sectionWindowIndex = findSectionWindowIndexByTime(sectionWindows, currentSec);
+  const sectionWindowIndex = findSectionWindowIndexByTime(
+    sectionWindows,
+    currentSec,
+  );
   const sectionWindow = sectionWindows[sectionWindowIndex] ?? {
     section: sectionFromPhase(activeSlide?.phase),
     startSec: 0,
@@ -393,6 +484,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
 
   const contentSlide = sectionSlides[0] ?? activeSlide;
 
+  /* ── Hook data ── */
   const hookDate = formatDotDate(episode.date);
   const hookTitle = compactTextWithLimit(
     contentSlide?.headline,
@@ -405,30 +497,19 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
     72,
   );
 
+  /* ── Data cards ── */
   const dataCards = buildDataCards(contentSlide).map((card) => ({
     ...card,
     name: compactTextWithLimit(card.name, card.name, 18),
     value: compactTextWithLimit(card.value, card.value, 16),
     change: compactTextWithLimit(card.change, card.change, 12),
   }));
-  const metricCards = buildMetricCards(contentSlide).map((metric) => ({
-    ...metric,
-    label: compactTextWithLimit(metric.label, metric.label, 16),
-    value: compactTextWithLimit(metric.value, metric.value, 10),
-    suffix: compactTextWithLimit(metric.suffix, metric.suffix, 14),
-  }));
-  const dataCardCount = dataCards.length;
-  const dataBarsKey = `${sectionWindow.section}:${sectionWindow.startSec.toFixed(3)}:${
-    contentSlide?.id ?? ""
-  }:${dataCardCount}`;
-  let barHeightsByCard = DATA_BAR_HEIGHTS_CACHE.get(dataBarsKey);
-  if (!barHeightsByCard) {
-    barHeightsByCard = Array.from({ length: dataCardCount }, (_, idx) => buildSectionBarHeights(idx));
-    DATA_BAR_HEIGHTS_CACHE.set(dataBarsKey, barHeightsByCard);
-  }
 
+  /* ── Story key points ── */
   const keyPoints = uniqueTexts(
-    (episode.meta.keyPoints || []).map((item) => compactText(item)).filter(Boolean),
+    (episode.meta.keyPoints || [])
+      .map((item) => compactText(item))
+      .filter(Boolean),
   ).slice(0, 4);
   for (const extra of contentSlide?.bullets || []) {
     if (keyPoints.length >= 4) break;
@@ -447,23 +528,22 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
   }
   while (keyPoints.length < 4) keyPoints.push(`핵심 포인트 ${keyPoints.length + 1}`);
 
-  const featuredTicker = compactTextWithLimit(
-    contentSlide?.tickers?.[0],
-    compactText(episode.meta.featuredTickers?.[0], "XRT"),
-    10,
-  );
-  const featuredSubtitle = compactTextWithLimit(contentSlide?.subheadline, "소매업종 ETF", 20);
-  const featuredBadge = compactTextWithLimit(contentSlide?.highlights?.[0], "시장 평균 상회", 12);
+  /* ── Featured tickers ── */
+  const featuredTickers = buildFeaturedTickers(episode, contentSlide);
 
-  const closingTitle = compactTextWithLimit(contentSlide?.headline, "다음 주 핵심 변수", 24);
-  const closingEventDate = compactTextWithLimit(contentSlide?.eyebrow, "2월 27일 (금)", 18);
+  /* ── Closing data ── */
+  const closingEventDate = compactTextWithLimit(
+    contentSlide?.eyebrow,
+    "2월 27일 (금)",
+    18,
+  );
   const closingEventName = compactTextWithLimit(
-    contentSlide?.subheadline || contentSlide?.bullets?.[0],
+    contentSlide?.headline,
     "생산자물가지수 (PPI)",
-    26,
+    34,
   );
   const closingDetail = compactTextWithLimit(
-    contentSlide?.body || contentSlide?.bullets?.[1],
+    contentSlide?.body || contentSlide?.subheadline || contentSlide?.bullets?.[0],
     "인플레이션과 시장 방향의 핵심 지표",
     52,
   );
@@ -491,6 +571,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
           transition={{ duration: 0.5 }}
           style={{ position: "absolute", inset: 0 }}
         >
+          {/* ═══════════════ HOOK SECTION ═══════════════ */}
           {sectionWindow.section === "hook" ? (
             <AbsoluteFill
               style={{
@@ -502,6 +583,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
             >
               <AbsoluteFill style={{ background: GRADIENT_MAIN }} />
 
+              {/* Decorative line */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -527,6 +609,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   gap: 48,
                 }}
               >
+                {/* Date badge */}
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -550,6 +633,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   </span>
                 </motion.div>
 
+                {/* Market briefing label */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -562,7 +646,8 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                       height: 12,
                       borderRadius: "50%",
                       backgroundColor: COLORS.primary,
-                      animation: "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
+                      animation:
+                        "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
                     }}
                   />
                   <span
@@ -581,6 +666,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   </span>
                 </motion.div>
 
+                {/* Title */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -597,6 +683,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   {hookTitle}
                 </motion.h1>
 
+                {/* Hook */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -614,6 +701,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                 </motion.p>
               </div>
 
+              {/* Bottom decoration */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -625,8 +713,16 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   transform: "translateX(-50%)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{ width: 64, height: 2, backgroundColor: "hsl(145 80% 50% / 0.3)" }} />
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: 12 }}
+                >
+                  <div
+                    style={{
+                      width: 64,
+                      height: 2,
+                      backgroundColor: "hsl(145 80% 50% / 0.3)",
+                    }}
+                  />
                   <div
                     style={{
                       width: 8,
@@ -635,14 +731,27 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                       backgroundColor: "hsl(145 80% 50% / 0.5)",
                     }}
                   />
-                  <div style={{ width: 64, height: 2, backgroundColor: "hsl(145 80% 50% / 0.3)" }} />
+                  <div
+                    style={{
+                      width: 64,
+                      height: 2,
+                      backgroundColor: "hsl(145 80% 50% / 0.3)",
+                    }}
+                  />
                 </div>
               </motion.div>
             </AbsoluteFill>
           ) : null}
 
+          {/* ═══════════════ DATA SECTION ═══════════════ */}
           {sectionWindow.section === "data" ? (
-            <AbsoluteFill style={{ padding: "80px 56px", display: "flex", flexDirection: "column" }}>
+            <AbsoluteFill
+              style={{
+                padding: "80px 56px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <AbsoluteFill style={{ background: GRADIENT_MAIN }} />
 
               <div
@@ -654,18 +763,33 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   height: "100%",
                 }}
               >
+                {/* Header */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
-                  style={{ marginBottom: 64 }}
+                  style={{ marginBottom: 24 }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
-                    <div style={{ width: 12, height: 12, borderRadius: "50%", backgroundColor: COLORS.primary }} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 16,
+                      marginBottom: 16,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 12,
+                        height: 12,
+                        borderRadius: "50%",
+                        backgroundColor: COLORS.primary,
+                      }}
+                    />
                     <span
                       style={{
                         fontFamily: DISPLAY_FONT,
-                        fontSize: 26,
+                        fontSize: 28,
                         fontWeight: 600,
                         letterSpacing: "0.12em",
                         textTransform: "uppercase",
@@ -675,16 +799,36 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                       Today&apos;s Market
                     </span>
                   </div>
-                  <div style={{ width: 192, height: 2, borderRadius: 999, background: GRADIENT_ACCENT }} />
+                  <div
+                    style={{
+                      width: 192,
+                      height: 2,
+                      borderRadius: 999,
+                      background: GRADIENT_ACCENT,
+                    }}
+                  />
                 </motion.div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 32, flex: 1, justifyContent: "center" }}>
+                {/* Market cards */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 32,
+                    flex: 1,
+                    justifyContent: "center",
+                  }}
+                >
                   {dataCards.map((item, idx) => (
                     <motion.div
                       key={item.ticker}
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + idx * 0.2, duration: 0.6, ease: "easeOut" }}
+                      transition={{
+                        delay: 0.3 + idx * 0.2,
+                        duration: 0.6,
+                        ease: "easeOut",
+                      }}
                       style={{
                         borderRadius: 16,
                         padding: 40,
@@ -693,19 +837,37 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                         boxShadow: GLOW_PRIMARY,
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24 }}>
-                        <div>
-                          <h3 style={{ margin: 0, fontFamily: DISPLAY_FONT, fontSize: 40, fontWeight: 700 }}>{item.name}</h3>
-                          <span style={{ fontFamily: MONO_FONT, fontSize: 22, color: COLORS.mutedForeground }}>{item.ticker}</span>
-                        </div>
+                      {/* Name + change badge */}
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          marginBottom: 12,
+                        }}
+                      >
+                        <h3
+                          style={{
+                            margin: 0,
+                            fontFamily: DISPLAY_FONT,
+                            fontSize: 46,
+                            fontWeight: 700,
+                          }}
+                        >
+                          {item.name}
+                        </h3>
 
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
-                          transition={{ delay: 0.6 + idx * 0.2, type: "spring", stiffness: 200 }}
+                          transition={{
+                            delay: 0.6 + idx * 0.2,
+                            type: "spring",
+                            stiffness: 200,
+                          }}
                           style={{
                             borderRadius: 12,
-                            padding: "12px 32px",
+                            padding: "8px 24px",
                             backgroundColor: item.isPositive
                               ? "hsl(145 80% 50% / 0.15)"
                               : "hsl(0 75% 55% / 0.15)",
@@ -716,7 +878,9 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                               fontFamily: MONO_FONT,
                               fontSize: 36,
                               fontWeight: 700,
-                              color: item.isPositive ? COLORS.gain : COLORS.loss,
+                              color: item.isPositive
+                                ? COLORS.gain
+                                : COLORS.loss,
                             }}
                           >
                             {item.change}
@@ -724,92 +888,110 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                         </motion.div>
                       </div>
 
-                      <div style={{ fontFamily: MONO_FONT, fontSize: 52, fontWeight: 700 }}>{item.value}</div>
+                      {/* Value */}
+                      <div
+                        style={{
+                          fontFamily: MONO_FONT,
+                          fontSize: 52,
+                          fontWeight: 700,
+                          marginBottom: 16,
+                        }}
+                      >
+                        {item.value}
+                      </div>
 
-                      <div style={{ display: "flex", alignItems: "flex-end", gap: 8, marginTop: 24, height: 40 }}>
-                        {barHeightsByCard[idx]?.map((height, i) => (
-                          <motion.div
-                            key={`${item.ticker}-${i}`}
-                            initial={{ height: 0 }}
-                            animate={{ height: `${height}%` }}
-                            transition={{ delay: 0.8 + idx * 0.2 + i * 0.02, duration: 0.3 }}
-                            style={{
-                              flex: 1,
-                              borderRadius: 2,
-                              backgroundColor: item.isPositive
-                                ? "hsl(145 80% 50% / 0.3)"
-                                : "hsl(0 75% 55% / 0.3)",
+                      {/* SVG area chart */}
+                      <div style={{ position: "relative", height: 64, marginTop: 8 }}>
+                        <svg
+                          viewBox="0 0 200 40"
+                          style={{ width: "100%", height: "100%" }}
+                          preserveAspectRatio="none"
+                        >
+                          <defs>
+                            <linearGradient
+                              id={`grad-${idx}`}
+                              x1="0"
+                              y1="0"
+                              x2="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stopColor={
+                                  item.isPositive
+                                    ? COLORS.primary
+                                    : COLORS.loss
+                                }
+                                stopOpacity="0.4"
+                              />
+                              <stop
+                                offset="100%"
+                                stopColor={
+                                  item.isPositive
+                                    ? COLORS.primary
+                                    : COLORS.loss
+                                }
+                                stopOpacity="0.02"
+                              />
+                            </linearGradient>
+                          </defs>
+                          <motion.path
+                            d={item.chartPath}
+                            fill={`url(#grad-${idx})`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                              delay: 0.8 + idx * 0.2,
+                              duration: 0.6,
                             }}
                           />
-                        ))}
+                          <motion.path
+                            d={item.linePath}
+                            fill="none"
+                            stroke={
+                              item.isPositive ? COLORS.primary : COLORS.loss
+                            }
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            initial={{ pathLength: 0 }}
+                            animate={{ pathLength: 1 }}
+                            transition={{
+                              delay: 0.8 + idx * 0.2,
+                              duration: 1,
+                              ease: "easeOut",
+                            }}
+                          />
+                        </svg>
                       </div>
                     </motion.div>
                   ))}
                 </div>
 
+                {/* Bottom accent line */}
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 1.2, duration: 0.6 }}
                   style={{
-                    marginTop: 48,
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                    gap: 24,
+                    marginTop: 24,
+                    height: 2,
+                    borderRadius: 999,
+                    background: GRADIENT_ACCENT,
                   }}
-                >
-                  {metricCards.slice(0, 2).map((metric) => (
-                    <div
-                      key={`${metric.label}-${metric.value}`}
-                      style={{
-                        borderRadius: 12,
-                        padding: 32,
-                        border: `1px solid ${COLORS.border}`,
-                        backgroundColor: COLORS.surfaceGlass,
-                        backdropFilter: "blur(20px)",
-                      }}
-                    >
-                      <span
-                        style={{
-                          display: "block",
-                          marginBottom: 8,
-                          fontSize: 22,
-                          color: "hsl(215 15% 55%)",
-                        }}
-                      >
-                        {metric.label}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: MONO_FONT,
-                          fontSize: 38,
-                          fontWeight: 700,
-                          color: metric.tone === "loss" ? COLORS.loss : COLORS.accent,
-                        }}
-                      >
-                        {metric.value}
-                      </span>
-                      {metric.suffix ? (
-                        <span
-                          style={{
-                            marginLeft: 12,
-                            fontSize: 20,
-                            color: "hsl(215 15% 55%)",
-                          }}
-                        >
-                          {metric.suffix}
-                        </span>
-                      ) : null}
-                    </div>
-                  ))}
-                </motion.div>
-
+                />
               </div>
             </AbsoluteFill>
           ) : null}
 
+          {/* ═══════════════ STORY SECTION ═══════════════ */}
           {sectionWindow.section === "story" ? (
-            <AbsoluteFill style={{ padding: "56px 56px", display: "flex", flexDirection: "column" }}>
+            <AbsoluteFill
+              style={{
+                padding: "64px 56px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <AbsoluteFill style={{ background: GRADIENT_MAIN }} />
 
               <div
@@ -821,18 +1003,33 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   height: "100%",
                 }}
               >
+                {/* Header */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
-                  style={{ marginBottom: 40 }}
+                  style={{ marginBottom: 48 }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
-                    <div style={{ width: 12, height: 12, borderRadius: "50%", backgroundColor: COLORS.secondary }} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 20,
+                      marginBottom: 20,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 16,
+                        height: 16,
+                        borderRadius: "50%",
+                        backgroundColor: COLORS.secondary,
+                      }}
+                    />
                     <span
                       style={{
                         fontFamily: DISPLAY_FONT,
-                        fontSize: 26,
+                        fontSize: 34,
                         fontWeight: 600,
                         letterSpacing: "0.12em",
                         textTransform: "uppercase",
@@ -842,105 +1039,251 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                       Key Insights
                     </span>
                   </div>
-                  <div style={{ width: 192, height: 2, borderRadius: 999, background: GRADIENT_ACCENT }} />
+                  <div
+                    style={{
+                      width: 224,
+                      height: 3,
+                      borderRadius: 999,
+                      background: GRADIENT_ACCENT,
+                    }}
+                  />
                 </motion.div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-                  {keyPoints.map((point, idx) => (
-                    <motion.div
-                      key={`${point}-${idx}`}
-                      initial={{ opacity: 0, x: -40 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + idx * 0.3, duration: 0.6, ease: "easeOut" }}
-                      style={{ display: "flex", alignItems: "flex-start", gap: 24 }}
+                {/* Card-news style key points */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 24,
+                    flex: 1,
+                    justifyContent: "center",
+                  }}
+                >
+                  {keyPoints.map((point, idx) => {
+                    const color = ACCENT_COLORS[idx % ACCENT_COLORS.length];
+                    return (
+                      <motion.div
+                        key={`${point}-${idx}`}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          delay: 0.3 + idx * 0.25,
+                          duration: 0.6,
+                          ease: "easeOut",
+                        }}
+                        style={{
+                          position: "relative",
+                          borderRadius: 16,
+                          backgroundColor: color.bg,
+                          border: `1px solid ${color.border}`,
+                          overflow: "hidden",
+                        }}
+                      >
+                        {/* Left accent bar */}
+                        <div
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            bottom: 0,
+                            width: 8,
+                            backgroundColor: color.bar,
+                            borderTopLeftRadius: 16,
+                            borderBottomLeftRadius: 16,
+                          }}
+                        />
+
+                        <div
+                          style={{
+                            paddingLeft: 48,
+                            paddingRight: 40,
+                            paddingTop: 32,
+                            paddingBottom: 32,
+                          }}
+                        >
+                          {/* Point label */}
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 12,
+                              marginBottom: 16,
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: 12,
+                                height: 12,
+                                borderRadius: "50%",
+                                backgroundColor: color.bar,
+                              }}
+                            />
+                            <span
+                              style={{
+                                fontFamily: DISPLAY_FONT,
+                                fontSize: 24,
+                                fontWeight: 600,
+                                color: COLORS.mutedForeground,
+                                letterSpacing: "0.05em",
+                                textTransform: "uppercase",
+                              }}
+                            >
+                              Point {idx + 1}
+                            </span>
+                          </div>
+
+                          {/* Point text */}
+                          <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                              delay: 0.5 + idx * 0.25,
+                              duration: 0.5,
+                            }}
+                            style={{
+                              margin: 0,
+                              fontSize: 36,
+                              lineHeight: 1.5,
+                              fontWeight: 700,
+                            }}
+                          >
+                            {point}
+                          </motion.p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                {/* Featured tickers */}
+                {featuredTickers.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.6, duration: 0.5 }}
+                    style={{ marginTop: 40 }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 16,
+                        marginBottom: 24,
+                      }}
                     >
                       <div
                         style={{
-                          width: 64,
-                          height: 64,
-                          borderRadius: 12,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          backgroundColor: COLORS.surfaceElevated,
-                          border: `1px solid ${COLORS.border}`,
+                          width: 12,
+                          height: 12,
+                          borderRadius: "50%",
+                          backgroundColor: COLORS.primary,
+                          animation:
+                            "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
                         }}
-                      >
-                        <span style={{ fontFamily: DISPLAY_FONT, fontSize: 32, fontWeight: 700, color: COLORS.primary }}>
-                          {idx + 1}
-                        </span>
-                      </div>
-
-                      <div
-                        style={{
-                          flex: 1,
-                          borderRadius: 16,
-                          padding: 24,
-                          backgroundColor: COLORS.surfaceElevated,
-                          border: `1px solid ${COLORS.border}`,
-                        }}
-                      >
-                        <motion.p
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.5 + idx * 0.3, duration: 0.5 }}
-                          style={{ margin: 0, fontSize: 30, lineHeight: 1.5, fontWeight: 500 }}
-                        >
-                          {point}
-                        </motion.p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.8, duration: 0.5 }}
-                  style={{
-                    marginTop: 32,
-                    borderRadius: 16,
-                    padding: 32,
-                    border: "1px solid hsl(145 80% 50% / 0.3)",
-                    backgroundColor: COLORS.surfaceGlass,
-                    backdropFilter: "blur(20px)",
-                    boxShadow: GLOW_PRIMARY,
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <span style={{ display: "block", marginBottom: 8, fontSize: 22, color: COLORS.mutedForeground }}>
-                        주목 종목
-                      </span>
+                      />
                       <span
                         style={{
                           fontFamily: DISPLAY_FONT,
-                          fontSize: 48,
-                          fontWeight: 700,
-                          color: COLORS.primary,
-                          textShadow:
-                            "0 0 20px hsl(145 80% 50% / 0.4), 0 0 40px hsl(145 80% 50% / 0.1)",
+                          fontSize: 26,
+                          fontWeight: 600,
+                          color: COLORS.mutedForeground,
+                          letterSpacing: "0.05em",
+                          textTransform: "uppercase",
                         }}
                       >
-                        {featuredTicker}
-                      </span>
-                      <span style={{ marginLeft: 16, fontSize: 26, color: COLORS.mutedForeground }}>
-                        {featuredSubtitle}
+                        Featured Tickers
                       </span>
                     </div>
 
-                    <div style={{ borderRadius: 12, padding: "16px 32px", backgroundColor: "hsl(145 80% 50% / 0.15)" }}>
-                      <span style={{ fontFamily: DISPLAY_FONT, fontSize: 30, fontWeight: 700, color: COLORS.gain }}>
-                        {featuredBadge}
-                      </span>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 20,
+                      }}
+                    >
+                      {featuredTickers.map((t, idx) => {
+                        const tc =
+                          TICKER_COLORS[idx % TICKER_COLORS.length];
+                        return (
+                          <motion.div
+                            key={t.ticker}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              delay: 1.8 + idx * 0.15,
+                              duration: 0.4,
+                            }}
+                            style={{
+                              backgroundColor: COLORS.surfaceGlass,
+                              backdropFilter: "blur(20px)",
+                              border: "1px solid hsl(145 80% 50% / 0.2)",
+                              borderRadius: 16,
+                              padding: "28px 40px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "baseline",
+                                gap: 20,
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontFamily: DISPLAY_FONT,
+                                  fontSize: 52,
+                                  fontWeight: 700,
+                                  color: tc.text,
+                                  textShadow:
+                                    idx === 0
+                                      ? "0 0 20px hsl(145 80% 50% / 0.4), 0 0 40px hsl(145 80% 50% / 0.1)"
+                                      : undefined,
+                                }}
+                              >
+                                {t.ticker}
+                              </span>
+                              <span
+                                style={{
+                                  fontSize: 26,
+                                  color: COLORS.mutedForeground,
+                                }}
+                              >
+                                {t.label}
+                              </span>
+                            </div>
+                            <div
+                              style={{
+                                padding: "12px 24px",
+                                borderRadius: 12,
+                                backgroundColor: tc.bg,
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontFamily: DISPLAY_FONT,
+                                  fontSize: 26,
+                                  fontWeight: 700,
+                                  color: tc.tagColor,
+                                }}
+                              >
+                                {t.tag}
+                              </span>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                )}
               </div>
             </AbsoluteFill>
           ) : null}
 
+          {/* ═══════════════ CLOSING SECTION ═══════════════ */}
           {sectionWindow.section === "closing" ? (
             <AbsoluteFill
               style={{
@@ -952,6 +1295,22 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
             >
               <AbsoluteFill style={{ background: GRADIENT_MAIN }} />
 
+              {/* Top decorative line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                style={{
+                  position: "absolute",
+                  top: 280,
+                  left: 64,
+                  right: 64,
+                  height: 3,
+                  borderRadius: 999,
+                  background: GRADIENT_ACCENT,
+                }}
+              />
+
               <div
                 style={{
                   position: "relative",
@@ -959,122 +1318,197 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: 56,
+                  gap: 48,
                 }}
               >
+                {/* Date badge */}
                 <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
                   style={{
-                    width: 256,
-                    height: 3,
                     borderRadius: 999,
-                    background: GRADIENT_ACCENT,
+                    padding: "20px 48px",
+                    backgroundColor: "hsl(35 95% 55% / 0.15)",
+                    border: "1px solid hsl(35 95% 55% / 0.3)",
                   }}
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}
                 >
-                  <h2
+                  <span
                     style={{
-                      margin: 0,
-                      fontFamily: DISPLAY_FONT,
-                      fontSize: 56,
-                      lineHeight: 1.3,
-                      fontWeight: 900,
+                      fontFamily: MONO_FONT,
+                      fontSize: 40,
+                      letterSpacing: "0.1em",
+                      fontWeight: 700,
                     }}
                   >
-                    {closingTitle}
-                  </h2>
-
-                  <div
-                    style={{
-                      maxWidth: 800,
-                      borderRadius: 16,
-                      padding: 40,
-                      backgroundColor: COLORS.surfaceElevated,
-                      border: "1px solid hsl(35 95% 55% / 0.3)",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
-                      <div
-                        style={{
-                          width: 12,
-                          height: 12,
-                          borderRadius: "50%",
-                          backgroundColor: COLORS.accent,
-                          animation: "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontFamily: DISPLAY_FONT,
-                          fontSize: 26,
-                          fontWeight: 600,
-                          color: COLORS.accent,
-                        }}
-                      >
-                        {closingEventDate}
-                      </span>
-                    </div>
-                    <p style={{ margin: 0, fontSize: 40, fontWeight: 700, lineHeight: 1.4 }}>{closingEventName}</p>
-                    <p style={{ margin: "16px 0 0", fontSize: 28, lineHeight: 1.5, color: COLORS.mutedForeground }}>
-                      {closingDetail}
-                    </p>
-                  </div>
+                    {closingEventDate}
+                  </span>
                 </motion.div>
 
+                {/* Label */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  style={{ display: "flex", alignItems: "center", gap: 16 }}
+                >
+                  <div
+                    style={{
+                      width: 12,
+                      height: 12,
+                      borderRadius: "50%",
+                      backgroundColor: COLORS.accent,
+                      animation:
+                        "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: DISPLAY_FONT,
+                      fontSize: 30,
+                      fontWeight: 600,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: COLORS.accent,
+                    }}
+                  >
+                    Next Week Key Event
+                  </span>
+                </motion.div>
+
+                {/* Main event title */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
+                  style={{
+                    margin: 0,
+                    fontSize: 72,
+                    fontWeight: 900,
+                    lineHeight: 1.25,
+                    letterSpacing: "-0.01em",
+                    maxWidth: 900,
+                  }}
+                >
+                  {closingEventName}
+                </motion.h1>
+
+                {/* Sub description */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.6 }}
+                  style={{
+                    margin: 0,
+                    fontSize: 36,
+                    lineHeight: 1.6,
+                    fontWeight: 500,
+                    color: COLORS.mutedForeground,
+                    maxWidth: 850,
+                  }}
+                >
+                  {closingDetail}
+                </motion.p>
+
+                {/* CTA */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
+                  transition={{ delay: 1.3, duration: 0.5 }}
                   style={{
                     display: "flex",
-                    flexDirection: "column",
                     alignItems: "center",
-                    gap: 24,
-                    marginTop: 32,
+                    gap: 20,
+                    marginTop: 16,
                   }}
                 >
-                  <p style={{ margin: 0, fontSize: 32, color: COLORS.mutedForeground, fontWeight: 500 }}>
-                    매일 장마감 후 업데이트됩니다
-                  </p>
-                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <span
-                      style={{
-                        fontSize: 36,
-                        fontWeight: 700,
-                        color: COLORS.primary,
-                        textShadow:
-                          "0 0 20px hsl(145 80% 50% / 0.4), 0 0 40px hsl(145 80% 50% / 0.1)",
-                      }}
-                    >
-                      구독
-                    </span>
-                    <span style={{ fontSize: 36, color: COLORS.mutedForeground }}>·</span>
-                    <span style={{ fontSize: 36, fontWeight: 700, color: COLORS.secondary }}>좋아요</span>
-                    <span style={{ fontSize: 36, color: COLORS.mutedForeground }}>·</span>
-                    <span style={{ fontSize: 36, fontWeight: 700, color: COLORS.accent }}>알림설정</span>
-                  </div>
+                  <span
+                    style={{
+                      fontSize: 44,
+                      fontWeight: 700,
+                      color: COLORS.primary,
+                      textShadow:
+                        "0 0 20px hsl(145 80% 50% / 0.4), 0 0 40px hsl(145 80% 50% / 0.1)",
+                    }}
+                  >
+                    구독
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 44,
+                      color: COLORS.mutedForeground,
+                    }}
+                  >
+                    ·
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 44,
+                      fontWeight: 700,
+                      color: COLORS.secondary,
+                    }}
+                  >
+                    좋아요
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 44,
+                      color: COLORS.mutedForeground,
+                    }}
+                  >
+                    ·
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 44,
+                      fontWeight: 700,
+                      color: COLORS.accent,
+                    }}
+                  >
+                    알림설정
+                  </span>
                 </motion.div>
-
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 1.0, duration: 0.8 }}
-                  style={{
-                    width: 256,
-                    height: 3,
-                    borderRadius: 999,
-                    background: GRADIENT_ACCENT,
-                  }}
-                />
               </div>
+
+              {/* Bottom decoration */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.6, duration: 0.5 }}
+                style={{
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 200,
+                  transform: "translateX(-50%)",
+                }}
+              >
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: 12 }}
+                >
+                  <div
+                    style={{
+                      width: 64,
+                      height: 2,
+                      backgroundColor: "hsl(35 95% 55% / 0.3)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      backgroundColor: "hsl(35 95% 55% / 0.5)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      width: 64,
+                      height: 2,
+                      backgroundColor: "hsl(35 95% 55% / 0.3)",
+                    }}
+                  />
+                </div>
+              </motion.div>
             </AbsoluteFill>
           ) : null}
         </motion.div>
