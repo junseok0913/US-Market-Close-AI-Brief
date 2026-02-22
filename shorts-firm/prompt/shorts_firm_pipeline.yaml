@@ -1,0 +1,207 @@
+meta:
+  description: "Independent shorts-firm pipeline prompt/config"
+  language: "ko"
+  last_updated: "2026-02-22"
+
+script:
+  model_hint: "gemini-2.5-pro"
+  audio_analysis: "실제 측정: 7.88자/초"
+  duration_char_guide:
+    "60":
+      target: 470
+      min: 430
+      max: 520
+    "90":
+      target: 710
+      min: 650
+      max: 780
+    "120":
+      target: 945
+      min: 880
+      max: 1030
+  section_char_guide:
+    hook:
+      target: 40
+      min: 20
+      max: 80
+    company_each:
+      target: 150
+      min: 90
+      max: 230
+    closing:
+      target: 20
+      min: 12
+      max: 40
+  company_count_char_guide:
+    "60":
+      "2":
+        target: 205
+        min: 155
+        max: 244
+      "3":
+        target: 137
+        min: 103
+        max: 163
+      "4":
+        target: 102
+        min: 78
+        max: 122
+    "90":
+      "2":
+        target: 325
+        min: 265
+        max: 374
+      "3":
+        target: 217
+        min: 177
+        max: 249
+      "4":
+        target: 163
+        min: 133
+        max: 187
+    "120":
+      "2":
+        target: 443
+        min: 380
+        max: 499
+      "3":
+        target: 295
+        min: 253
+        max: 333
+      "4":
+        target: 221
+        min: 190
+        max: 250
+  title_prefix:
+    ko: "미국장 핵심 기업 브리핑 | "
+    en: "US Market Firm Brief | "
+  final_cta:
+    ko: "구독과 좋아요 부탁드립니다."
+    en: "Please like and subscribe."
+  system: |
+    <role>
+      당신은 미국 주식 장마감 쇼츠 스크립트 라이터입니다.
+      출력은 반드시 '기업별 움직임' 중심이어야 하며, 거시 서술만으로 채우면 안 됩니다.
+    </role>
+
+    <objective>
+      - 핵심 기업 2~4개를 선정해, 각 기업이 왜 올랐거나 내렸는지 짧고 명확하게 설명합니다.
+      - hook -> company_1..N -> closing 구조로 작성합니다.
+      - 회사별로 1D/1M, 시총, PER, PBR, ROE 데이터를 metadata.company_moves에 반드시 채웁니다.
+      - spoken_text(음성용)와 slide_points(슬라이드용)도 회사별로 생성합니다.
+      - 시총/PER/PBR/ROE는 spoken_text에서 생략 가능하지만 metadata에는 반드시 포함합니다.
+      - closing은 구독/좋아요 CTA 한 문장만 사용합니다.
+      - 목표 길이는 실측 7.88자/초 기준으로 맞춥니다.
+        - 60초: 약 470자
+        - 90초: 약 710자
+        - 120초: 약 945자
+    </objective>
+
+    <hard_rules>
+      - script.json + metadata.txt + company_context_json 외 정보 사용 금지.
+      - 숫자/고유명사 임의 수정 금지.
+      - 'data/story' 일반 섹션만으로 서술하지 말 것.
+      - sections는 hook/company_1..N/closing으로 구성할 것.
+      - metadata.company_moves는 2~4개를 목표로, 최소 2개 이상 채울 것.
+      - closing 섹션은 반드시 CTA 문장만 사용:
+        - ko: "구독과 좋아요 부탁드립니다."
+        - en: "Please like and subscribe."
+      - closing에 PPI/CPI/FOMC/다음 주 일정/거시 이벤트를 넣지 말 것.
+      - title은 기존 shorts1 톤과 구분되는 기업 포커스형 제목으로 작성할 것.
+      - metadata.character_count와 metadata.estimated_duration_seconds를 반드시 채울 것.
+      - 회사 수(2~4개)에 맞춰 company_count_char_guide 기준을 지킬 것.
+      - 목표 길이 기준 허용 범위:
+        - 60초: 430~520자
+        - 90초: 650~780자
+        - 120초: 880~1030자
+      - 유효한 JSON만 출력.
+    </hard_rules>
+  user_template: |
+    날짜: {date}
+    목표 길이(초): {duration}
+    문자 수 기준:
+    - 60초: 약 470자 (허용 430~520자)
+    - 90초: 약 710자 (허용 650~780자)
+    - 120초: 약 945자 (허용 880~1030자)
+    회사 수별 기업당 글자수 가이드(핵심):
+    {company_char_guide_by_count}
+    섹션 글자수 가이드:
+    - hook: 20~80자
+    - company_1..N: 회사 수별 가이드를 따를 것
+    - closing: 12~40자 (CTA 한 문장만)
+
+    <podcast_script_json>
+    {script_json}
+    </podcast_script_json>
+
+    <metadata_txt>
+    {metadata_txt}
+    </metadata_txt>
+
+    <company_context_json>
+    {company_context_json}
+    </company_context_json>
+
+    <company_context_summary>
+    {company_context_summary}
+    </company_context_summary>
+
+    아래 스키마로 JSON만 출력하세요.
+    {{
+      "date": "YYYYMMDD",
+      "title": "string",
+      "duration_target": "N초",
+      "hook": "string",
+      "sections": [
+        {{"name": "hook", "text": "string"}},
+        {{"name": "company_1", "ticker": "AAPL", "text": "string"}},
+        {{"name": "company_2", "ticker": "MSFT", "text": "string"}},
+        {{"name": "company_3", "ticker": "NVDA", "text": "string"}},
+        {{"name": "closing", "text": "string"}}
+      ],
+      "script": "string",
+      "sources": [
+        {{"type":"article","pk":"...","title":"..."}},
+        {{"type":"chart","ticker":"...","start_date":"YYYY-MM-DD","end_date":"YYYY-MM-DD"}}
+      ],
+      "metadata": {{
+        "character_count": 0,
+        "estimated_duration_seconds": 0,
+        "key_points": ["string", "string", "string", "string"],
+        "featured_tickers": ["AAPL", "MSFT", "NVDA"],
+        "company_moves": [
+          {{
+            "ticker": "AAPL",
+            "name": "Apple Inc.",
+            "day_change_pct": 0.0,
+            "day_change_display": "+0.00%",
+            "month_change_pct": 0.0,
+            "month_change_display": "+0.00%",
+            "market_cap": 0,
+            "market_cap_display": "$0.00B",
+            "pe_ratio": 0.0,
+            "pe_ratio_display": "0.00",
+            "pbr": 0.0,
+            "pbr_display": "0.00",
+            "roe": 0.0,
+            "roe_display": "0.00%",
+            "reason": "오늘 주가가 움직인 핵심 이유",
+            "spoken_text": "TTS에서 읽을 기업별 설명 문장",
+            "slide_points": ["슬라이드 포인트1", "슬라이드 포인트2", "슬라이드 포인트3"],
+            "valuation_note": "시총/PER/PBR/ROE 요약",
+            "move_summary": "짧은 한 줄 요약"
+          }}
+        ]
+      }}
+    }}
+
+tts:
+  prompts:
+    ko: |
+      Output audio only. Speed=1.10, Volume=1.00.
+      YouTube Shorts style Korean U.S. stock market briefing:
+      fast-paced, clear narration, no omission.
+    en: |
+      Output audio only. Speed=1.10, Volume=1.00.
+      YouTube Shorts style U.S. market briefing:
+      fast-paced, clear narration, no omission.

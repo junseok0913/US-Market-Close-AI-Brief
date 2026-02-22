@@ -1,0 +1,164 @@
+meta:
+  description: "Shorts-firm slide scene generation prompt (shorts2 style)"
+  language: "ko"
+  model_hint: "gemini-2.5-pro"
+  last_updated: "2026-02-22"
+
+defaults:
+  min_scene_count: 4
+  max_scene_count: 6
+  ideal_scene_count: 5
+  phase_by_section:
+    hook: "hook"
+    company: "insight"
+    closing: "finale"
+  theme_by_section:
+    hook: "alert"
+    company: "neutral"
+    closing: "flash"
+  eyebrow_by_section:
+    hook: "장마감 쇼츠"
+    company: "핵심 기업"
+    closing: "체크포인트"
+
+system: |
+  <role>
+    You design slide copy for the shorts2-style 9:16 YouTube Shorts layout.
+  </role>
+
+  <objective>
+    Build readable scene text for this fixed structure:
+    hook -> company_1..N -> closing.
+    Focus only on company movers and preserve shorts2 visual rhythm.
+  </objective>
+
+  <shorts2_hardcoded_reference>
+    - Hook section visual identity:
+      - date badge: YYYY.MM.DD
+      - channel label: "Stock Picks"
+      - headline scale: very large hero title
+      - hook copy scale: one short sentence
+    - Company section visual identity:
+      - label pattern: "PICK 1", "PICK 2", "PICK 3" (cycle if 4 companies)
+      - ticker is the largest text
+      - move_summary is the second largest text
+      - stats cards are fixed labels:
+        당일, 1개월, 시가총액, PER, PBR, ROE
+      - bullets are rendered as 1~3 strong statement cards
+    - Closing section visual identity:
+      - label: "Wrap Up"
+      - headline: one short sentence only
+      - CTA row is fixed in layout:
+        "구독 · 좋아요 · 알림설정"
+      - closing copy must not add macro schedule/event text
+  </shorts2_hardcoded_reference>
+
+  <hard_rules>
+    - Use only provided JSON inputs.
+    - Return valid JSON only (no markdown fence).
+    - Scene count must match section count exactly.
+    - Scene order must follow section order exactly.
+    - Company slides must explain why price moved (cause-and-effect).
+    - Closing scene must be CTA-only.
+      Do not include PPI/CPI/FOMC/schedule/macro-watch copy in closing.
+    - Keep text short for shorts2 visual style.
+    - Never invent tickers, numbers, or events not present in inputs.
+    - Do not output placeholders like "string", "N/A", "...".
+  </hard_rules>
+
+  <style_rules>
+    - Hook:
+      - headline: curiosity-driven, 12~28 Korean chars
+      - subheadline: 18~42 Korean chars
+      - body: optional, keep <= 42 chars
+    - Company:
+      - headline: ticker or 핵심 요약 (<= 24 chars)
+      - subheadline: why it moved (<= 42 chars)
+      - body: one concise sentence (<= 52 chars)
+      - bullets: 1~3 items, each <= 34 chars
+      - highlights: prefer 1D/1M like "+1.24%", "-3.08%"
+    - Closing:
+      - headline/subheadline/body should all remain CTA-toned.
+      - recommended phrase: "구독과 좋아요 부탁드립니다."
+      - bullets should be empty or CTA-only short fragments.
+    - Prefer Korean, visual-safe phrasing over long explanation.
+  </style_rules>
+
+user_template: |
+  Create shorts-firm slides for date {date} and language {lang}.
+
+  <duration_seconds>{duration_seconds}</duration_seconds>
+
+  <shorts_script_json>
+  {shorts_script_json}
+  </shorts_script_json>
+
+  <sections_json>
+  {sections_json}
+  </sections_json>
+
+  <section_timing_json>
+  {section_timing_json}
+  </section_timing_json>
+
+  <company_moves_json>
+  {company_moves_json}
+  </company_moves_json>
+
+  Output JSON schema:
+  {{
+    "meta": {{
+      "key_points": ["...", "...", "..."],
+      "featured_tickers": [
+        {{"ticker": "XRT", "label": "소매 ETF", "tag": "강세"}},
+        {{"ticker": "BLK", "label": "블랙록", "tag": "상승"}}
+      ]
+    }},
+    "slides": [
+      {{
+        "phase": "hook|insight|finale",
+        "theme": "alert|neutral|flash|bull|bear|macro",
+        "eyebrow": "string",
+        "headline": "string",
+        "subheadline": "string",
+        "body": "string",
+        "bullets": ["string", "string", "string"],
+        "tickers": ["string"],
+        "highlights": ["string", "string"]
+      }}
+    ]
+  }}
+
+  Constraints:
+  - First slide must be hook(phase=hook).
+  - Middle slides must be company slides(phase=insight).
+  - Last slide must be closing(phase=finale, theme=flash).
+  - Slide index must map 1:1 to sections_json index.
+  - Last slide headline/subheadline/body must be CTA only.
+    Example: "구독과 좋아요 부탁드립니다."
+  - Last slide must not contain macro/event words:
+    PPI, CPI, FOMC, 금리, 고용지표, GDP, 소비자신뢰지수, 생산자물가지수.
+  - Company slides should include reason + move summary and may include 1D/1M highlights.
+  - Use only tickers present in company_moves_json.
+  - If company count is 2, output 4 scenes total.
+  - If company count is 3, output 5 scenes total.
+  - If company count is 4, output 6 scenes total.
+
+  Tone examples (shorts2 style):
+  - hook:
+    eyebrow="장마감 쇼츠"
+    headline="오늘 시장, 기업으로 보면 더 명확합니다"
+    subheadline="핵심 종목 3개만 보면 흐름이 보입니다"
+  - company:
+    eyebrow="핵심 기업"
+    headline="XRT"
+    subheadline="관세 완화 기대로 소매주 강세"
+    body="비용 부담 완화 기대가 매수로 연결됐습니다"
+    bullets=["1D +0.73% / 1M -1.91%", "수입 원가 부담 완화 기대", "마진 개선 기대 반영"]
+    highlights=["+0.73%", "-1.91%"]
+  - closing:
+    eyebrow="체크포인트"
+    headline="구독과 좋아요 부탁드립니다."
+    subheadline="구독과 좋아요 부탁드립니다."
+    body="구독과 좋아요 부탁드립니다."
+    bullets=[]

@@ -51,6 +51,115 @@ Use this for long or risky tasks. Keep it a living document.
 
 ---
 
+## Shorts-Firm Shorts2 Render Integration (In Progress 2026-02-22)
+
+## 1) Objective
+
+- Reuse `shorty-script-studio` `shorts2` visual design in shorts-firm rendering.
+- Keep existing `shorts/` pipeline unchanged.
+- Use Gemini-generated slide copy (not hardcoded fallback text) for shorts-firm slide payload.
+- Preserve shorts-firm 59-second compression contract during render.
+
+## 2) Constraints
+
+- Font family, sizing, colors, and animation timing should match shorts2 source components.
+- Slide transition timing must follow TTS timing as naturally as possible.
+- Shorts-firm remains independent from existing shorts path.
+
+## 3) Affected Areas
+
+- `shorts-firm/prompt/shorts_firm_pipeline.yaml`
+- `shorts-firm/generate_slide_script.py`
+- `shorts-firm/render_shorts_remotion.mjs`
+- `web/remotion/Root.tsx`
+- `web/remotion/ShortsFirmComposition.tsx` (new)
+
+## 4) Execution Steps
+
+- Step 1: Port shorts2 design into a dedicated Remotion composition for shorts-firm.
+- Step 2: Add Gemini-driven slides generation in shorts-firm slide builder using unified YAML.
+- Step 3: Improve section timing split logic (hook/company/closing) from company-based TTS timings.
+- Step 4: Wire shorts-firm render command to the new composition.
+- Step 5: Run syntax/build checks and perform an end-to-end shorts-firm render run.
+
+## 5) Progress Log
+
+- [ ] Step 1
+- [ ] Step 2
+- [ ] Step 3
+- [ ] Step 4
+- [ ] Step 5
+
+---
+
+## Shorts-Firm Independent Pipeline (In Progress 2026-02-22)
+
+## 1) Objective
+
+- Build a fully independent shorts pipeline under `shorts-firm/`.
+- Keep existing `shorts/` behavior untouched.
+- Produce the same artifact shape/path pattern under `podcast/{date}/{lang}/shorts-firm/`.
+
+## 2) Constraints
+
+- One YAML file should manage all prompt configs for this new pipeline.
+- Script/TTS/slide-input generation should run independently before any integration.
+- Do not modify `run_daily.sh` or `run_youtube.sh` yet.
+
+## 3) Affected Areas
+
+- `shorts-firm/prompt/shorts_firm_pipeline.yaml` (new)
+- `shorts-firm/generate_script.py` (new)
+- `shorts-firm/generate_audio.py` (new)
+- `shorts-firm/generate_slide_script.py` (new)
+- `shorts-firm/generate_tsx.py` (new)
+- `shorts-firm/render_shorts_remotion.mjs` (new)
+- `shorts-firm/run_shorts_firm.sh` (new)
+
+## 4) Execution Steps
+
+- Step 1: Create unified YAML prompt/config for script + TTS + slide template settings.
+- Step 2: Implement independent script generator with company context inputs.
+- Step 3: Implement independent section-based TTS generator.
+- Step 4: Implement slide input/template placeholder generator.
+- Step 5: Implement independent render/upload shell pipeline.
+- Step 6: Run syntax/contract checks and report runnable commands.
+
+## 5) Progress Log
+
+- [x] Step 1
+- [x] Step 2
+- [x] Step 3
+- [x] Step 4
+- [x] Step 5
+- [x] Step 6
+- Verification note: `shorts-firm/run_shorts_firm.sh 20260220 --lang ko --start-from 3 --no-upload --preview-seconds 3 --overwrite`
+  completed Step 3 (slide script/template + TSX), then failed at Step 4 in this sandbox with browser launch `SIGABRT` (Remotion Chromium/Chrome start restriction).
+  This is environment-specific; script wiring and artifact paths were validated.
+- Follow-up (2026-02-22): `shorts-firm/generate_slide_script.py` timing merge now enforces
+  `hook=0~3s`, `closing=last 3s`, and clamps company slide windows to the remaining range while
+  preserving company TTS timing boundaries for natural mid-section transitions.
+- Follow-up (2026-02-22): `shorts-firm` script normalization now forces
+  `closing=CTA only` (`구독과 좋아요 부탁드립니다.` / `Please like and subscribe.`),
+  with title prefix separation for shorts-firm branding.
+- Follow-up (2026-02-22): slides prompt was split into a dedicated file
+  `shorts-firm/prompt/shorts_firm_slides.yaml` with detailed shorts2 hardcoded-style guidance
+  (hook/company/closing copy rules, label patterns, and strict closing constraints).
+- Follow-up (2026-02-22): `shorts-firm/run_shorts_firm.sh` now uses separate configs:
+  `--prompt-config` (script/TTS) and `--slides-prompt-config` (slides).
+- Follow-up (2026-02-22): post-render 59s speed-up now applies CFR output (`fps=30`) and
+  audio resync (`aresample=async=1:first_pts=0`) in both `shorts-firm/run_shorts_firm.sh`
+  and `run_youtube.sh` to reduce short stutter artifacts during forced speed-up.
+- Follow-up (2026-02-22): `shorts-firm/generate_audio.py` switched from 4-section TTS to company-count TTS
+  (one TTS call per company segment). Hook/closing CTA are included in narration but are not split criteria.
+- Follow-up (2026-02-22): `shorts-firm` script/prompt/slide-template normalization was tightened to
+  `hook -> company_1..N -> closing` only (no `data/story`), with per-company reason + metrics output
+  (`1D/1M`, `market_cap`, `PER`, `spoken_text`, `slide_points`, `valuation_note`, `move_summary`).
+- Follow-up (2026-02-22): `shorts-firm` metrics were expanded with `PBR` and `ROE` in
+  prompt schema + company context + normalized `metadata.company_moves`.
+
+---
+
 ## Shorts 4-Section Timing Sync (In Progress 2026-02-21)
 
 ## 1) Objective

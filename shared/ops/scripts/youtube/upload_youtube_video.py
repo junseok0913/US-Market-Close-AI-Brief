@@ -13,6 +13,7 @@ import json
 import logging
 import mimetypes
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -38,6 +39,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+FIXED_DESCRIPTION_HASHTAGS = [
+    "미국주식",
+    "주식",
+    "주식요약",
+    "미장",
+    "장마감브리핑",
+]
+
+CHAPTER_ORDER = ("opening", "theme", "ticker", "closing")
+CHAPTER_LABELS: dict[str, dict[str, str]] = {
+    "ko": {
+        "opening": "오프닝",
+        "theme": "핵심 테마",
+        "ticker": "종목 포커스",
+        "closing": "마무리",
+    },
+    "en": {
+        "opening": "Opening",
+        "theme": "Market Themes",
+        "ticker": "Ticker Focus",
+        "closing": "Closing",
+    },
+}
+
 
 def parse_date_arg(date_str: str) -> str:
     date_str = date_str.replace("-", "")
@@ -59,6 +84,209 @@ def _dedupe_keep_order(items: list[str]) -> list[str]:
         seen.add(key)
         result.append(normalized)
     return result
+
+
+def _parse_positive_int_env(env_name: str, default: int) -> int:
+    raw_value = os.getenv(env_name, "").strip()
+    if not raw_value:
+        return default
+    if raw_value.isdigit() and int(raw_value) > 0:
+        return int(raw_value)
+    logger.warning("%s must be a positive integer. Using default=%s", env_name, default)
+    return default
+
+
+def _parse_int(value: Any) -> int | None:
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+    if isinstance(value, str):
+        raw = value.strip()
+        if raw.startswith("-"):
+            body = raw[1:]
+            if body.isdigit():
+                return int(raw)
+            return None
+        if raw.isdigit():
+            return int(raw)
+    return None
+
+
+def _format_seconds_to_timestamp(total_seconds: int) -> str:
+    total_seconds = max(0, total_seconds)
+    hours, rem = divmod(total_seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+    if hours > 0:
+        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+    return f"{minutes:02d}:{seconds:02d}"
+
+
+def _parse_timestamp_text_to_seconds(value: str) -> int | None:
+    parts = [part.strip() for part in value.split(":")]
+    if len(parts) not in (2, 3):
+        return None
+    if any(not part.isdigit() for part in parts):
+        return None
+    numbers = [int(part) for part in parts]
+    if len(numbers) == 2:
+        minutes, seconds = numbers
+        return minutes * 60 + seconds
+    hours, minutes, seconds = numbers
+    return hours * 3600 + minutes * 60 + seconds
+
+
+def _normalize_tag_to_hashtag(tag: str) -> str:
+    normalized = tag.strip().lstrip("#")
+    # Keep letters/numbers/underscore and Korean characters, remove separators.
+    normalized = re.sub(r"[^0-9A-Za-z_가-힣ㄱ-ㅎㅏ-ㅣ]+", "", normalized)
+    if not normalized:
+        return ""
+    return f"#{normalized}"
+
+
+def _build_description_hashtags(tags: list[str]) -> list[str]:
+    max_dynamic_hashtags = _parse_positive_int_env(
+        "YOUTUBE_DESCRIPTION_DYNAMIC_HASHTAG_LIMIT",
+        _parse_positive_int_env("YOUTUBE_DESCRIPTION_HASHTAG_LIMIT", 3),
+    )
+    hashtags: list[str] = []
+    seen: set[str] = set()
+
+    for tag in FIXED_DESCRIPTION_HASHTAGS:
+        hashtag = _normalize_tag_to_hashtag(tag)
+        if not hashtag:
+            continue
+        key = hashtag.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        hashtags.append(hashtag)
+
+    dynamic_count = 0
+    for tag in tags:
+        hashtag = _normalize_tag_to_hashtag(tag)
+        if not hashtag:
+            continue
+        key = hashtag.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        hashtags.append(hashtag)
+        dynamic_count += 1
+        if dynamic_count >= max_dynamic_hashtags:
+            break
+    return hashtags
+
+
+def _build_chapter_lines_from_metadata(metadata: dict[str, Any]) -> list[str]:
+    raw_chapters = metadata.get("youtube_chapters")
+    if not isinstance(raw_chapters, list):
+        return []
+
+    lines: list[str] = []
+    for item in raw_chapters:
+        if not isinstance(item, dict):
+            continue
+        label = str(item.get("title") or item.get("label") or "").strip()
+        if not label:
+            continue
+
+        start_seconds = _parse_int(item.get("start_seconds"))
+        if start_seconds is not None and start_seconds >= 0:
+            start_text = _format_seconds_to_timestamp(start_seconds)
+        else:
+            start_text = str(item.get("start") or item.get("time") or "").strip()
+            if start_text:
+                parsed_seconds = _parse_timestamp_text_to_seconds(start_text)
+                if parsed_seconds is None:
+                    continue
+                start_text = _format_seconds_to_timestamp(parsed_seconds)
+        if not start_text:
+            continue
+        lines.append(f"{start_text} {label}")
+    return lines
+
+
+def _build_chapter_lines_from_episode_json(episode_json: dict[str, Any], lang: str) -> list[str]:
+    raw_scripts = episode_json.get("scripts")
+    raw_chapters = episode_json.get("chapter")
+    if not isinstance(raw_scripts, list) or not isinstance(raw_chapters, list):
+        return []
+
+    start_ms_by_id: dict[int, int] = {}
+    for item in raw_scripts:
+        if not isinstance(item, dict):
+            continue
+        script_id = _parse_int(item.get("id"))
+        raw_time = item.get("time")
+        if script_id is None or script_id < 0 or not isinstance(raw_time, list) or not raw_time:
+            continue
+        start_ms = _parse_int(raw_time[0])
+        if start_ms is None or start_ms < 0:
+            continue
+        start_ms_by_id[script_id] = start_ms
+
+    if not start_ms_by_id:
+        return []
+
+    chapter_ranges: dict[str, tuple[int, int]] = {}
+    for chapter in raw_chapters:
+        if not isinstance(chapter, dict):
+            continue
+        name = str(chapter.get("name") or "").strip().lower()
+        if name not in CHAPTER_ORDER:
+            continue
+        start_id = _parse_int(chapter.get("start_id"))
+        end_id = _parse_int(chapter.get("end_id"))
+        if start_id is None or end_id is None or start_id < 0 or end_id < start_id:
+            continue
+        chapter_ranges[name] = (start_id, end_id)
+
+    labels = CHAPTER_LABELS.get(lang, CHAPTER_LABELS["en"])
+    lines: list[str] = []
+    for chapter_name in CHAPTER_ORDER:
+        chapter_range = chapter_ranges.get(chapter_name)
+        if not chapter_range:
+            continue
+        start_id, end_id = chapter_range
+        chapter_start_ms: int | None = None
+        for script_id in range(start_id, end_id + 1):
+            if script_id in start_ms_by_id:
+                chapter_start_ms = start_ms_by_id[script_id]
+                break
+        if chapter_start_ms is None:
+            continue
+        start_text = _format_seconds_to_timestamp(chapter_start_ms // 1000)
+        lines.append(f"{start_text} {labels.get(chapter_name, chapter_name)}")
+    return lines
+
+
+def _build_chapter_lines(metadata: dict[str, Any], episode_json: dict[str, Any], lang: str) -> list[str]:
+    manual_lines = _build_chapter_lines_from_metadata(metadata)
+    if manual_lines:
+        return manual_lines
+    return _build_chapter_lines_from_episode_json(episode_json, lang)
+
+
+def _prepend_hashtags_to_description(description: str, tags: list[str], chapter_lines: list[str]) -> str:
+    hashtags = _build_description_hashtags(tags)
+    blocks: list[str] = []
+    if hashtags:
+        blocks.append(" ".join(hashtags))
+    if chapter_lines:
+        blocks.append("\n".join(chapter_lines))
+    clean_description = description.strip()
+    if clean_description:
+        blocks.append(clean_description)
+    return "\n\n".join(blocks).strip()
+
+
+def _is_shorts_upload(file_path: Path) -> bool:
+    path_text = str(file_path).lower()
+    return "/shorts/" in path_text or "_shorts" in file_path.name.lower()
 
 
 def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
@@ -93,7 +321,8 @@ def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
     env_tags_raw = os.getenv("YOUTUBE_DEFAULT_TAGS", "")
     env_tags = [tag.strip() for tag in env_tags_raw.split(",") if tag.strip()]
 
-    tags = _dedupe_keep_order(metadata_tags + env_tags)
+    tags = _dedupe_keep_order(FIXED_DESCRIPTION_HASHTAGS + metadata_tags + env_tags)
+    chapter_lines = _build_chapter_lines(metadata, episode_json, lang)
 
     if len(title) > 100:
         logger.warning("Title longer than 100 chars; truncating.")
@@ -107,6 +336,7 @@ def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
         "title": title,
         "description": description,
         "tags": tags,
+        "chapter_lines": chapter_lines,
     }
 
 
@@ -267,6 +497,25 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         metadata = load_upload_metadata(date_yyyymmdd, args.lang)
+        is_shorts = _is_shorts_upload(file_path)
+        if is_shorts:
+            metadata["tags"] = _dedupe_keep_order([*metadata["tags"], "shorts"])
+            chapter_lines: list[str] = []
+        else:
+            chapter_lines = list(metadata.get("chapter_lines", []))
+            if chapter_lines:
+                logger.info("Detected chapter timestamps for description: %s", " | ".join(chapter_lines))
+            else:
+                logger.warning("No chapter timestamps detected. Upload description will omit chapter lines.")
+        metadata["description"] = _prepend_hashtags_to_description(
+            str(metadata["description"]),
+            list(metadata["tags"]),
+            chapter_lines,
+        )
+        if len(metadata["description"]) > 5000:
+            logger.warning("Description longer than 5000 chars after hashtag prefix; truncating.")
+            metadata["description"] = metadata["description"][:5000]
+
         creds = load_credentials(args.client_secrets, args.token_file)
         video_id = upload_video(
             file_path=file_path,

@@ -387,7 +387,7 @@ function renderStorySection(params: {
   const { keyPoints, featuredTicker, featuredSubtitle, featuredBadge, animated } = params;
 
   return (
-    <div className="flex flex-col h-full px-14 py-14 relative">
+    <div className="flex flex-col h-full px-14 pt-14 pb-[220px] relative">
       <div className="absolute inset-0 gradient-main" />
 
       <div className="relative z-10 flex flex-col h-full">

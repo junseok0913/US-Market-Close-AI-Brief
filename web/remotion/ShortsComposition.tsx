@@ -987,7 +987,7 @@ export const ShortsComposition: FC<ShortsCompositionProps> = ({
           {sectionWindow.section === "story" ? (
             <AbsoluteFill
               style={{
-                padding: "64px 56px",
+                padding: "64px 56px 220px",
                 display: "flex",
                 flexDirection: "column",
               }}
