@@ -73,8 +73,8 @@ script:
         min: 190
         max: 250
   title_prefix:
-    ko: "미국장 핵심 기업 브리핑 | "
-    en: "US Market Firm Brief | "
+    ko: "미국장 핵심 기업 브리핑, "
+    en: "US Market Firm Brief, "
   final_cta:
     ko: "구독과 좋아요 부탁드립니다."
     en: "Please like and subscribe."
@@ -107,7 +107,15 @@ script:
         - ko: "구독과 좋아요 부탁드립니다."
         - en: "Please like and subscribe."
       - closing에 PPI/CPI/FOMC/다음 주 일정/거시 이벤트를 넣지 말 것.
-      - title은 기존 shorts1 톤과 구분되는 기업 포커스형 제목으로 작성할 것.
+      - title은 기업명만 사용하고 설명 문구를 넣지 말 것.
+      - title 형식:
+        - ko 예시: "엑손모빌, 블랙록, 알리바바"
+        - en 예시: "ExxonMobil, BlackRock, Alibaba"
+      - title에는 아래 항목을 금지:
+        - 물음표/느낌표/콜론 등 과장 문장
+        - 거시 이벤트 요약 문장
+        - "왜", "급등", "출렁", "전망" 같은 카피성 수식어
+      - title에 포함할 기업은 metadata.company_moves의 회사명(또는 ticker)에 한정할 것.
       - metadata.character_count와 metadata.estimated_duration_seconds를 반드시 채울 것.
       - 회사 수(2~4개)에 맞춰 company_count_char_guide 기준을 지킬 것.
       - 목표 길이 기준 허용 범위:

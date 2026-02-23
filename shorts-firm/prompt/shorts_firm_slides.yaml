@@ -58,6 +58,7 @@ system: |
     - Return valid JSON only (no markdown fence).
     - Scene count must match section count exactly.
     - Scene order must follow section order exactly.
+    - First slide headline must use shorts_script_json.title (same text, no rewrite).
     - Company slides must explain why price moved (cause-and-effect).
     - Closing scene must be CTA-only.
       Do not include PPI/CPI/FOMC/schedule/macro-watch copy in closing.
@@ -131,6 +132,7 @@ user_template: |
 
   Constraints:
   - First slide must be hook(phase=hook).
+  - First slide headline must equal shorts_script_json.title.
   - Middle slides must be company slides(phase=insight).
   - Last slide must be closing(phase=finale, theme=flash).
   - Slide index must map 1:1 to sections_json index.

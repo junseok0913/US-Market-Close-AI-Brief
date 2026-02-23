@@ -473,6 +473,7 @@ def normalize_llm_render_payload(
 
     for idx, section in enumerate(sections):
         section_name = compact_text(section.get("name"))
+        section_key = normalize_section_name(section_name)
         section_group = section_group_name(section_name)
         expected_phase = compact_text(phase_by_section.get(section_name) or phase_by_section.get(section_group)) or section_to_phase(section_name)
         expected_theme = compact_text(theme_by_section.get(section_name) or theme_by_section.get(section_group)) or "neutral"
@@ -494,8 +495,8 @@ def normalize_llm_render_payload(
         if is_company_section_name(section_name):
             company_idx += 1
 
-        default_headline = title if section_name == "hook" else compact_text(company_move.get("move_summary")) or expected_eyebrow
-        if section_name == "closing":
+        default_headline = title if section_key == "hook" else compact_text(company_move.get("move_summary")) or expected_eyebrow
+        if section_key == "closing":
             default_headline = compact_text(section.get("text")) or "Wrap Up"
         default_subheadline = compact_text(section.get("text")) or hook
         default_body = compact_text(section.get("text")) or default_subheadline
@@ -508,7 +509,7 @@ def normalize_llm_render_payload(
                 bullets = split_bullets_from_text(default_body, limit=3)
         if not bullets:
             bullets = [default_body]
-        if normalize_section_name(section_name) == "closing":
+        if section_key == "closing":
             bullets = []
 
         tickers = normalize_tickers(llm_slide.get("tickers"))
@@ -521,7 +522,10 @@ def normalize_llm_render_payload(
         headline = compact_text(llm_slide.get("headline")) or default_headline
         subheadline = compact_text(llm_slide.get("subheadline")) or default_subheadline
         body = compact_text(llm_slide.get("body")) or default_body
-        if normalize_section_name(section_name) == "closing":
+        if section_key == "hook":
+            # Hook screen title must always match script title.
+            headline = title
+        if section_key == "closing":
             cta_text = default_cta_text(lang)
             headline = cta_text
             subheadline = cta_text

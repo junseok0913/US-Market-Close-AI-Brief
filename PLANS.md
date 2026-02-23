@@ -157,6 +157,14 @@ Use this for long or risky tasks. Keep it a living document.
   (`1D/1M`, `market_cap`, `PER`, `spoken_text`, `slide_points`, `valuation_note`, `move_summary`).
 - Follow-up (2026-02-22): `shorts-firm` metrics were expanded with `PBR` and `ROE` in
   prompt schema + company context + normalized `metadata.company_moves`.
+- Follow-up (2026-02-22): restored `shorts-firm/prompt/shorts_firm_pipeline.yaml`
+  `title_prefix` baseline and enforced hook headline=`script.title` in
+  `shorts-firm/prompt/shorts_firm_slides.yaml` + `shorts-firm/generate_slide_script.py`;
+  rerender verified with `run_shorts_firm.sh` output.
+- Follow-up (2026-02-22): integrated `shorts-firm` into both orchestration entrypoints:
+  `run_daily.sh` now generates shorts-firm script/audio/slides/tsx(+S3 mp3 upload),
+  and `run_youtube.sh` now prepares/renders/uploads both `shorts` and `shorts-firm`
+  in the same 5-step flow with Remotion concurrency forced to `1`.
 
 ---
 

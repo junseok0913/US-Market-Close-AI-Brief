@@ -6,9 +6,9 @@
 # Default flow:
 #   1) Episode render (browser capture -> MP4)
 #   2) Episode upload to YouTube (public by default)
-#   3) Shorts assets prepare (script/audio/slides as needed)
-#   4) Shorts render (Remotion -> MP4 + first-frame thumbnail)
-#   5) Shorts upload to YouTube (public by default)
+#   3) Shorts + Shorts-Firm assets prepare (script/audio/slides as needed)
+#   4) Shorts + Shorts-Firm render (Remotion -> MP4 + first-frame thumbnail)
+#   5) Shorts + Shorts-Firm upload to YouTube (public by default)
 #
 # Usage:
 #   ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--overwrite]
@@ -42,10 +42,15 @@ TURN_LEAD_MS=550
 START_DELAY_SECONDS=1
 TRIM_START_SECONDS=1
 REMOTION_TIMEOUT_MS="${YOUTUBE_REMOTION_TIMEOUT_MS:-180000}"
-REMOTION_CONCURRENCY="${YOUTUBE_REMOTION_CONCURRENCY:-2}"
+REMOTION_CONCURRENCY="${YOUTUBE_REMOTION_CONCURRENCY:-1}"
 SHORTS_DURATION_SECONDS="${YOUTUBE_SHORTS_DURATION_SECONDS:-90}"
 SHORTS_TTS_VOICE="${YOUTUBE_SHORTS_TTS_VOICE:-Charon}"
 SHORTS_TTS_TEMPERATURE="${YOUTUBE_SHORTS_TTS_TEMPERATURE:-0.6}"
+SHORTS_FIRM_DURATION_SECONDS="${YOUTUBE_SHORTS_FIRM_DURATION_SECONDS:-90}"
+SHORTS_FIRM_TTS_VOICE="${YOUTUBE_SHORTS_FIRM_TTS_VOICE:-Charon}"
+SHORTS_FIRM_TTS_TEMPERATURE="${YOUTUBE_SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
+SHORTS_FIRM_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_pipeline.yaml}"
+SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_slides.yaml}"
 
 WEB_PID=""
 WEB_STARTED_BY_SCRIPT=0
@@ -61,7 +66,7 @@ Options:
   --lang ko|en              Language path to render (default: ko)
   --start-from <n>          Resume from step n (1..5, default: 1)
                             1=episode render, 2=episode upload,
-                            3=shorts assets, 4=shorts render, 5=shorts upload
+                            3=shorts+shorts-firm assets, 4=shorts+shorts-firm render, 5=shorts+shorts-firm upload
   --overwrite               Overwrite existing output files
   --privacy <value>         YouTube privacy status: private|unlisted|public (default: public)
   --no-upload               Render only, skip YouTube uploads
@@ -70,7 +75,7 @@ Options:
   --port <number>           Next.js local port for episode capture (default: 3100)
   --max-seconds <number>    Timeout in seconds for browser recording (default: 1800)
   --remotion-timeout-ms <n> Remotion timeout in ms for shorts render (default: 180000)
-  --remotion-concurrency <n> Remotion frame workers for shorts render (default: 2)
+  --remotion-concurrency <n> Parsed for compatibility. Render concurrency is fixed to 1.
   -h, --help                Show this help
 EOF
 }
@@ -425,6 +430,74 @@ prepare_shorts_assets() {
     require_file "${SHORTS_RENDER_JSON}"
 }
 
+prepare_shorts_firm_assets() {
+    require_cmd uv
+    mkdir -p "${SHORTS_FIRM_BASE}"
+
+    require_file "${SHORTS_FIRM_PROMPT_CONFIG}"
+    require_file "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_FIRM_SCRIPT_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-firm/generate_script.py"
+        require_file "${EPISODE_BASE}/script.json"
+        require_file "${EPISODE_BASE}/metadata.txt"
+        echo "🧠 Generating shorts-firm script..."
+        uv run python "${ROOT_DIR}/shorts-firm/generate_script.py" \
+            "${EPISODE_BASE}" \
+            --duration "${SHORTS_FIRM_DURATION_SECONDS}" \
+            --prompt-config "${SHORTS_FIRM_PROMPT_CONFIG}"
+    else
+        echo "♻️  Reusing existing shorts-firm script: ${SHORTS_FIRM_SCRIPT_PATH}"
+    fi
+    require_file "${SHORTS_FIRM_SCRIPT_PATH}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_FIRM_MP3}" ] || [ ! -f "${SHORTS_FIRM_SECTION_TIMING_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-firm/generate_audio.py"
+        echo "🎙️  Generating shorts-firm audio + section timings..."
+        uv run python "${ROOT_DIR}/shorts-firm/generate_audio.py" \
+            "${DATE}" \
+            --lang "${LANG}" \
+            --voice "${SHORTS_FIRM_TTS_VOICE}" \
+            --temperature "${SHORTS_FIRM_TTS_TEMPERATURE}" \
+            --config "${SHORTS_FIRM_PROMPT_CONFIG}"
+    else
+        echo "♻️  Reusing existing shorts-firm audio/timing: ${SHORTS_FIRM_MP3}"
+    fi
+    require_file "${SHORTS_FIRM_MP3}"
+    require_file "${SHORTS_FIRM_SECTION_TIMING_PATH}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_FIRM_RENDER_JSON}" ] || [ ! -f "${SHORTS_FIRM_SLIDE_SCRIPT_PATH}" ] || [ ! -f "${SHORTS_FIRM_RENDER_TEMPLATE_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-firm/generate_slide_script.py"
+        echo "🧩 Generating shorts-firm slides render JSON..."
+        uv run python "${ROOT_DIR}/shorts-firm/generate_slide_script.py" \
+            "${DATE}" \
+            --lang "${LANG}" \
+            --script "${SHORTS_FIRM_SCRIPT_PATH}" \
+            --timing "${SHORTS_FIRM_SECTION_TIMING_PATH}" \
+            --script-output "${SHORTS_FIRM_SLIDE_SCRIPT_PATH}" \
+            --template-output "${SHORTS_FIRM_RENDER_TEMPLATE_PATH}" \
+            --render-output "${SHORTS_FIRM_RENDER_JSON}" \
+            --config "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" \
+            --overwrite-render
+    else
+        echo "♻️  Reusing existing shorts-firm render JSON: ${SHORTS_FIRM_RENDER_JSON}"
+    fi
+    require_file "${SHORTS_FIRM_RENDER_JSON}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_FIRM_TSX_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-firm/generate_tsx.py"
+        echo "🧱 Generating shorts-firm TSX payload..."
+        uv run python "${ROOT_DIR}/shorts-firm/generate_tsx.py" \
+            "${DATE}" \
+            --lang "${LANG}" \
+            --input "${SHORTS_FIRM_RENDER_JSON}" \
+            --output "${SHORTS_FIRM_TSX_PATH}"
+    else
+        echo "♻️  Reusing existing shorts-firm TSX payload: ${SHORTS_FIRM_TSX_PATH}"
+    fi
+    require_file "${SHORTS_FIRM_TSX_PATH}"
+}
+
 render_shorts_video() {
     require_cmd ffmpeg
     require_cmd ffprobe
@@ -474,6 +547,56 @@ render_shorts_video() {
         "${SHORTS_THUMBNAIL_PNG}"
 }
 
+render_shorts_firm_video() {
+    require_cmd ffmpeg
+    require_cmd ffprobe
+    require_cmd node
+    require_file "${ROOT_DIR}/shorts-firm/render_shorts_remotion.mjs"
+    require_file "${SHORTS_FIRM_RENDER_JSON}"
+    require_file "${SHORTS_FIRM_MP3}"
+    require_file "${SHORTS_FIRM_SECTION_TIMING_PATH}"
+
+    mkdir -p "${SHORTS_FIRM_OUTPUT_DIR}"
+    mkdir -p "${ROOT_DIR}/web/public/data/shorts-firm"
+    mkdir -p "${ROOT_DIR}/web/public/audio/shorts-firm"
+
+    if [ -f "${SHORTS_FIRM_OUTPUT_MP4}" ] && [ "${OVERWRITE}" -ne 1 ]; then
+        echo "❌ Output already exists: ${SHORTS_FIRM_OUTPUT_MP4}"
+        echo "   Use --overwrite to replace existing files."
+        exit 1
+    fi
+    if [ "${OVERWRITE}" -eq 1 ]; then
+        rm -f "${SHORTS_FIRM_OUTPUT_MP4}" "${SHORTS_FIRM_THUMBNAIL_PNG}" "${SHORTS_FIRM_OUTPUT_WEBM}"
+    fi
+
+    echo "📂 Syncing shorts-firm assets into web/public..."
+    cp "${SHORTS_FIRM_RENDER_JSON}" "${SHORTS_FIRM_WEB_DATA_PATH}"
+    cp "${SHORTS_FIRM_MP3}" "${SHORTS_FIRM_WEB_AUDIO_PATH}"
+
+    echo "🎬 Rendering shorts-firm via Remotion..."
+    local remotion_args=(
+        --episode-json "${SHORTS_FIRM_RENDER_JSON}"
+        --section-timing-json "${SHORTS_FIRM_SECTION_TIMING_PATH}"
+        --output "${SHORTS_FIRM_OUTPUT_MP4}"
+        --audio-src "audio/shorts-firm/${DATE}.mp3"
+        --timeout "${REMOTION_TIMEOUT_MS}"
+        --concurrency "${REMOTION_CONCURRENCY}"
+    )
+    if [ -n "${PREVIEW_SECONDS}" ]; then
+        remotion_args+=(--preview-seconds "${PREVIEW_SECONDS}")
+    fi
+    node "${ROOT_DIR}/shorts-firm/render_shorts_remotion.mjs" "${remotion_args[@]}"
+
+    enforce_shorts_duration_limit "${SHORTS_FIRM_OUTPUT_MP4}"
+    validate_mp4_streams "${SHORTS_FIRM_OUTPUT_MP4}"
+
+    echo "🖼️  Creating shorts-firm thumbnail from first frame..."
+    ffmpeg -hide_banner -loglevel error -y \
+        -i "${SHORTS_FIRM_OUTPUT_MP4}" \
+        -frames:v 1 \
+        "${SHORTS_FIRM_THUMBNAIL_PNG}"
+}
+
 upload_shorts_video() {
     if [ "${UPLOAD}" -ne 1 ]; then
         echo "⏭️  Upload disabled. Skipping shorts upload."
@@ -501,6 +624,36 @@ upload_shorts_video() {
     if [ -f "${SHORTS_OUTPUT_WEBM}" ]; then
         rm -f "${SHORTS_OUTPUT_WEBM}"
         echo "🧹 Removed shorts intermediate WEBM: ${SHORTS_OUTPUT_WEBM}"
+    fi
+}
+
+upload_shorts_firm_video() {
+    if [ "${UPLOAD}" -ne 1 ]; then
+        echo "⏭️  Upload disabled. Skipping shorts-firm upload."
+        return 0
+    fi
+
+    require_file "${SHORTS_FIRM_OUTPUT_MP4}"
+    require_cmd uv
+    require_file "${YOUTUBE_UPLOAD_SCRIPT}"
+
+    echo "☁️  Uploading shorts-firm MP4 to YouTube..."
+    local upload_args=(
+        --file "${SHORTS_FIRM_OUTPUT_MP4}"
+        --date "${DATE}"
+        --lang "${LANG}"
+        --privacy "${PRIVACY}"
+    )
+    if [ -f "${SHORTS_FIRM_THUMBNAIL_PNG}" ]; then
+        upload_args+=(--thumbnail "${SHORTS_FIRM_THUMBNAIL_PNG}")
+    else
+        echo "⚠️  Shorts-firm thumbnail not found. Uploading without thumbnail."
+    fi
+    uv run python "${YOUTUBE_UPLOAD_SCRIPT}" "${upload_args[@]}"
+
+    if [ -f "${SHORTS_FIRM_OUTPUT_WEBM}" ]; then
+        rm -f "${SHORTS_FIRM_OUTPUT_WEBM}"
+        echo "🧹 Removed shorts-firm intermediate WEBM: ${SHORTS_FIRM_OUTPUT_WEBM}"
     fi
 }
 
@@ -629,6 +782,20 @@ if ! [[ "${REMOTION_CONCURRENCY}" =~ ^[0-9]+$ ]] || [ "${REMOTION_CONCURRENCY}" 
     echo "❌ --remotion-concurrency must be a positive integer: ${REMOTION_CONCURRENCY}"
     exit 1
 fi
+if [ "${REMOTION_CONCURRENCY}" -ne 1 ]; then
+    echo "⚠️  Remotion concurrency is fixed to 1. Ignoring requested value: ${REMOTION_CONCURRENCY}"
+fi
+REMOTION_CONCURRENCY=1
+
+if [[ "${SHORTS_FIRM_PROMPT_CONFIG}" != /* ]]; then
+    SHORTS_FIRM_PROMPT_CONFIG="${ROOT_DIR}/${SHORTS_FIRM_PROMPT_CONFIG}"
+fi
+if [[ "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" != /* ]]; then
+    SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${ROOT_DIR}/${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}"
+fi
+
+require_file "${SHORTS_FIRM_PROMPT_CONFIG}"
+require_file "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}"
 
 EPISODE_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}"
 EPISODE_JSON="${EPISODE_BASE}/${DATE}.json"
@@ -664,6 +831,27 @@ SHORTS_THUMBNAIL_PNG="${SHORTS_OUTPUT_DIR}/${SHORTS_THUMBNAIL_BASENAME}.png"
 SHORTS_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts/${DATE}.json"
 SHORTS_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts/${DATE}.mp3"
 
+SHORTS_FIRM_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}/shorts-firm"
+SHORTS_FIRM_SCRIPT_PATH="${SHORTS_FIRM_BASE}/script.json"
+SHORTS_FIRM_MP3="${SHORTS_FIRM_BASE}/shorts${DATE}.mp3"
+SHORTS_FIRM_SECTION_TIMING_PATH="${SHORTS_FIRM_BASE}/sections.timing.json"
+SHORTS_FIRM_SLIDE_SCRIPT_PATH="${SHORTS_FIRM_BASE}/slides.script.json"
+SHORTS_FIRM_RENDER_TEMPLATE_PATH="${SHORTS_FIRM_BASE}/slides.render.template.json"
+SHORTS_FIRM_RENDER_JSON="${SHORTS_FIRM_BASE}/slides.render.json"
+SHORTS_FIRM_TSX_PATH="${ROOT_DIR}/web/src/generated/shorts-firm/${DATE}_${LANG}.generated.tsx"
+SHORTS_FIRM_OUTPUT_DIR="${SHORTS_FIRM_BASE}/youtube"
+SHORTS_FIRM_BASENAME="${DATE}_${LANG}_shorts"
+SHORTS_FIRM_THUMBNAIL_BASENAME="${DATE}_${LANG}_shorts_thumbnail"
+if [ -n "${PREVIEW_SECONDS}" ]; then
+    SHORTS_FIRM_BASENAME="${DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
+    SHORTS_FIRM_THUMBNAIL_BASENAME="${DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
+fi
+SHORTS_FIRM_OUTPUT_WEBM="${SHORTS_FIRM_OUTPUT_DIR}/${SHORTS_FIRM_BASENAME}.webm"
+SHORTS_FIRM_OUTPUT_MP4="${SHORTS_FIRM_OUTPUT_DIR}/${SHORTS_FIRM_BASENAME}.mp4"
+SHORTS_FIRM_THUMBNAIL_PNG="${SHORTS_FIRM_OUTPUT_DIR}/${SHORTS_FIRM_THUMBNAIL_BASENAME}.png"
+SHORTS_FIRM_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts-firm/${DATE}.json"
+SHORTS_FIRM_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-firm/${DATE}.mp3"
+
 echo "========================================================"
 echo "🎬 YouTube Full Pipeline Start"
 echo "📅 Date: ${DATE}"
@@ -695,31 +883,34 @@ fi
 if [ "${START_FROM}" -le 3 ]; then
     CURRENT_STEP="step3_shorts_assets"
     echo ""
-    echo "[3/5] Shorts assets prepare"
+    echo "[3/5] Shorts + Shorts-Firm assets prepare"
     prepare_shorts_assets
+    prepare_shorts_firm_assets
 else
     echo ""
-    echo "[3/5] Shorts assets prepare skipped (start-from ${START_FROM})"
+    echo "[3/5] Shorts + Shorts-Firm assets prepare skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 4 ]; then
     CURRENT_STEP="step4_shorts_render"
     echo ""
-    echo "[4/5] Shorts render (Remotion -> MP4 + first-frame thumbnail)"
+    echo "[4/5] Shorts + Shorts-Firm render (Remotion -> MP4 + first-frame thumbnail)"
     render_shorts_video
+    render_shorts_firm_video
 else
     echo ""
-    echo "[4/5] Shorts render skipped (start-from ${START_FROM})"
+    echo "[4/5] Shorts + Shorts-Firm render skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 5 ]; then
     CURRENT_STEP="step5_shorts_upload"
     echo ""
-    echo "[5/5] Shorts upload"
+    echo "[5/5] Shorts + Shorts-Firm upload"
     upload_shorts_video
+    upload_shorts_firm_video
 else
     echo ""
-    echo "[5/5] Shorts upload skipped (start-from ${START_FROM})"
+    echo "[5/5] Shorts + Shorts-Firm upload skipped (start-from ${START_FROM})"
 fi
 
 CURRENT_STEP="done"
@@ -729,3 +920,5 @@ echo "📹 Episode MP4: ${EPISODE_OUTPUT_MP4}"
 echo "🖼️  Episode thumbnail: ${EPISODE_THUMBNAIL_PNG}"
 echo "📹 Shorts MP4: ${SHORTS_OUTPUT_MP4}"
 echo "🖼️  Shorts thumbnail: ${SHORTS_THUMBNAIL_PNG}"
+echo "📹 Shorts-Firm MP4: ${SHORTS_FIRM_OUTPUT_MP4}"
+echo "🖼️  Shorts-Firm thumbnail: ${SHORTS_FIRM_THUMBNAIL_PNG}"

@@ -20,6 +20,11 @@ set -e
 START_FROM=1
 DATE=""
 TICKERS_ARR=()
+SHORTS_FIRM_DURATION_SECONDS="${SHORTS_FIRM_DURATION_SECONDS:-90}"
+SHORTS_FIRM_TTS_VOICE="${SHORTS_FIRM_TTS_VOICE:-Charon}"
+SHORTS_FIRM_TTS_TEMPERATURE="${SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
+SHORTS_FIRM_PROMPT_CONFIG="${SHORTS_FIRM_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_pipeline.yaml}"
+SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_slides.yaml}"
 
 THUMBNAIL_SCRIPT="./shared/ops/scripts/youtube/generate_episode_thumbnail.sh"
 if [ ! -f "$THUMBNAIL_SCRIPT" ] && [ -f "./scripts/generate_episode_thumbnail.sh" ]; then
@@ -109,8 +114,35 @@ if [ $START_FROM -le 2 ]; then
         uv run python shorts/generate_shorts_slides.py "$DATE" --lang ko \
             --section-timing "podcast/$DATE/ko/shorts/sections.timing.json"
     fi
+
+    echo -e "\n[2.6/6] Generating Shorts-Firm Script + Audio + Slides (Korean)..."
+    if [ -f "podcast/$DATE/ko/script.json" ] && [ -f "podcast/$DATE/ko/metadata.txt" ]; then
+        uv run python shorts-firm/generate_script.py "podcast/$DATE/ko" \
+            --duration "${SHORTS_FIRM_DURATION_SECONDS}" \
+            --prompt-config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+        uv run python shorts-firm/generate_audio.py "$DATE" --lang ko \
+            --voice "${SHORTS_FIRM_TTS_VOICE}" \
+            --temperature "${SHORTS_FIRM_TTS_TEMPERATURE}" \
+            --config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+        uv run python shorts-firm/generate_slide_script.py "$DATE" --lang ko \
+            --script "podcast/$DATE/ko/shorts-firm/script.json" \
+            --timing "podcast/$DATE/ko/shorts-firm/sections.timing.json" \
+            --script-output "podcast/$DATE/ko/shorts-firm/slides.script.json" \
+            --template-output "podcast/$DATE/ko/shorts-firm/slides.render.template.json" \
+            --render-output "podcast/$DATE/ko/shorts-firm/slides.render.json" \
+            --config "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" \
+            --overwrite-render
+
+        uv run python shorts-firm/generate_tsx.py "$DATE" --lang ko \
+            --input "podcast/$DATE/ko/shorts-firm/slides.render.json" \
+            --output "web/src/generated/shorts-firm/${DATE}_ko.generated.tsx"
+    else
+        echo "  ⚠️  podcast/$DATE/ko/script.json or metadata.txt not found. Skipping shorts-firm generation."
+    fi
 else
-    echo -e "\n[2/6] Korean TTS & Shorts skipped (Start from $START_FROM)"
+    echo -e "\n[2/6] Korean TTS & Shorts + Shorts-Firm skipped (Start from $START_FROM)"
 fi
 
 # ------------------------------------------------------------------------------
@@ -167,6 +199,10 @@ if [ $START_FROM -le 4 ]; then
     if [ -f "podcast/$DATE/ko/shorts/shorts$DATE.mp3" ]; then
         echo "  ⬆️  Uploading Shorts..."
         aws s3 cp podcast/$DATE/ko/shorts/shorts$DATE.mp3 s3://$BUCKET/$DATE/ko/shorts/shorts$DATE.mp3
+    fi
+    if [ -f "podcast/$DATE/ko/shorts-firm/shorts$DATE.mp3" ]; then
+        echo "  ⬆️  Uploading Shorts-Firm..."
+        aws s3 cp podcast/$DATE/ko/shorts-firm/shorts$DATE.mp3 s3://$BUCKET/$DATE/ko/shorts-firm/shorts$DATE.mp3
     fi
 
     # 영어 업로드
@@ -242,6 +278,16 @@ fi
 if ls podcast/$DATE/ko/*.wav 1> /dev/null 2>&1; then
     echo "  🗑️  Deleting Korean WAV files..."
     rm -f podcast/$DATE/ko/*.wav
+fi
+
+if [ -d "podcast/$DATE/ko/shorts-firm/tts" ]; then
+    echo "  🗑️  Deleting Shorts-Firm TTS folder..."
+    rm -rf "podcast/$DATE/ko/shorts-firm/tts"
+fi
+
+if ls podcast/$DATE/ko/shorts-firm/*.wav 1> /dev/null 2>&1; then
+    echo "  🗑️  Deleting Shorts-Firm WAV files..."
+    rm -f podcast/$DATE/ko/shorts-firm/*.wav
 fi
 
 if ls podcast/$DATE/en/*.wav 1> /dev/null 2>&1; then
