@@ -59,6 +59,13 @@ def parse_date_arg(value: str) -> str:
     return token
 
 
+def resolve_display_date(script_payload: dict[str, Any], fallback_date: str) -> str:
+    try:
+        return parse_date_arg(str(script_payload.get("date") or ""))
+    except ValueError:
+        return fallback_date
+
+
 def normalize_section_name(value: Any) -> str:
     key = compact_text(value).lower().replace("-", "_")
     aliased = SECTION_NAME_ALIASES.get(key)
@@ -827,6 +834,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         config = load_yaml_config(config_path)
         script_payload = load_json(script_path)
+        display_date = resolve_display_date(script_payload, date)
         timing_payload = load_json(timing_path) if timing_path.exists() else None
         duration_seconds = parse_duration_seconds(script_payload, timing_payload)
         sections = extract_sections(script_payload, duration_seconds)
@@ -837,7 +845,7 @@ def main(argv: list[str] | None = None) -> int:
         audio_file = compact_text((timing_payload or {}).get("audioFile")) or f"shorts{date}.mp3"
 
         slide_script_payload = build_slide_script_payload(
-            date=date,
+            date=display_date,
             lang=args.lang,
             script_payload=script_payload,
             sections=sections,
@@ -845,7 +853,7 @@ def main(argv: list[str] | None = None) -> int:
             audio_file=audio_file,
         )
         template_payload = build_slide_render_template(
-            date=date,
+            date=display_date,
             lang=args.lang,
             script_payload=script_payload,
             sections=sections,
@@ -863,7 +871,7 @@ def main(argv: list[str] | None = None) -> int:
                 llm_payload = generate_llm_slides_payload(
                     llm=llm,
                     config=config,
-                    date=date,
+                    date=display_date,
                     lang=args.lang,
                     duration_seconds=duration_seconds,
                     script_payload=script_payload,
@@ -872,7 +880,7 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 render_payload = normalize_llm_render_payload(
                     llm_payload=llm_payload,
-                    date=date,
+                    date=display_date,
                     lang=args.lang,
                     script_payload=script_payload,
                     sections=sections,

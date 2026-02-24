@@ -27,6 +27,7 @@ from shared.config import (
     set_briefing_date,
 )
 from shared.fetchers import prefetch_all
+from shared.date_display import resolve_display_date
 from shared.normalization import normalize_script_turns, parse_json_from_response
 from shared.tools import (
     count_keyword_frequency,
@@ -198,7 +199,8 @@ def _prepare_initial_messages(state: OpeningState) -> OpeningState:
     if not date_str:
         raise ValueError("date 필드가 state에 없습니다.")
 
-    date_korean = _format_date_korean(date_str)
+    date_display = resolve_display_date(date_str.replace("-", ""), "ko")
+    date_korean = _format_date_korean(date_display)
 
     prompt_cfg = load_prompt()
     system_prompt = prompt_cfg["system"].replace("{tools}", _get_tools_description()).replace("{date}", date_korean)

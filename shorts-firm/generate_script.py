@@ -922,61 +922,22 @@ def normalize_company_moves(
         ticker = normalize_ticker(value.get("ticker"))
         if not ticker or ticker in seen or not is_company_ticker(ticker):
             continue
+        fallback = fallback_by_ticker.get(ticker)
+        # Enforce data authority: pricing/valuation metrics must come from company_context (yfinance).
+        if not fallback:
+            continue
         seen.add(ticker)
-        fallback = fallback_by_ticker.get(ticker, {})
-
-        day_change_pct = normalize_float(value.get("day_change_pct"))
-        if day_change_pct is None:
-            day_change_pct = normalize_float(value.get("change_1d_pct"))
-        if day_change_pct is None:
-            day_change_pct = normalize_float(fallback.get("day_change_pct"))
-
-        month_change_pct = normalize_float(value.get("month_change_pct"))
-        if month_change_pct is None:
-            month_change_pct = normalize_float(value.get("change_1m_pct"))
-        if month_change_pct is None:
-            month_change_pct = normalize_float(fallback.get("month_change_pct"))
-
-        market_cap = normalize_float(value.get("market_cap"))
-        if market_cap is None:
-            market_cap = normalize_float(value.get("marketCap"))
-        if market_cap is None:
-            market_cap = normalize_float(fallback.get("market_cap"))
-
-        pe_ratio = normalize_float(value.get("pe_ratio"))
-        if pe_ratio is None:
-            pe_ratio = normalize_float(value.get("per"))
-        if pe_ratio is None:
-            pe_ratio = normalize_float(value.get("trailing_pe"))
-        if pe_ratio is None:
-            pe_ratio = normalize_float(fallback.get("pe_ratio"))
-
-        pbr = normalize_float(value.get("pbr"))
-        if pbr is None:
-            pbr = normalize_float(value.get("price_to_book"))
-        if pbr is None:
-            pbr = normalize_float(value.get("priceToBook"))
-        if pbr is None:
-            pbr = normalize_float(value.get("pbr_display"))
-        if pbr is None:
-            pbr = normalize_float(fallback.get("pbr"))
-
-        roe = normalize_roe_percent(value.get("roe"))
-        if roe is None:
-            roe = normalize_roe_percent(value.get("return_on_equity"))
-        if roe is None:
-            roe = normalize_roe_percent(value.get("returnOnEquity"))
-        if roe is None:
-            roe = normalize_roe_percent(value.get("roe_percent"))
-        if roe is None:
-            roe = normalize_roe_percent(value.get("roe_display"))
-        if roe is None:
-            roe = normalize_roe_percent(fallback.get("roe"))
+        day_change_pct = normalize_float(fallback.get("day_change_pct"))
+        month_change_pct = normalize_float(fallback.get("month_change_pct"))
+        market_cap = normalize_float(fallback.get("market_cap"))
+        pe_ratio = normalize_float(fallback.get("pe_ratio"))
+        pbr = normalize_float(fallback.get("pbr"))
+        roe = normalize_roe_percent(fallback.get("roe"))
 
         move = {
             "ticker": ticker,
-            "name": compact_text(value.get("name") or fallback.get("name")),
-            "as_of": compact_text(value.get("as_of") or fallback.get("as_of")),
+            "name": compact_text(fallback.get("name") or value.get("name")),
+            "as_of": compact_text(fallback.get("as_of") or value.get("as_of")),
             "day_change_pct": day_change_pct,
             "day_change_display": format_percent(day_change_pct),
             "month_change_pct": month_change_pct,

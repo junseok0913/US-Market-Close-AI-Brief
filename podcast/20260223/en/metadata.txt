@@ -1,0 +1,22 @@
+Title:
+2026.2.24 US Market Close | Trade war concerns flare up after Supreme Court tariff decision
+
+Description:
+On February 23, the New York stock market tumbled, with all three major indices dropping over 1%. The decline was driven by a combination of President Trump's announcement of new global tariffs, which came on the heels of a Supreme Court ruling on the matter, and hawkish comments from a Fed official. Investor sentiment was sharply curtailed by fears of a renewed trade war and the prospect of higher-for-longer interest rates.
+
+Major Indices
+- Dow Jones: Dropped 1.66% - Trade war fears dominated the market following President Trump's announcement of a new 15% global tariff.
+- S&P 500: Fell 1.04% - A sell-off intensified due to the dual headwinds of tariff risks and hawkish Fed commentary.
+- Nasdaq: Declined 1.13% - Heightened geopolitical uncertainty and concerns over prolonged high interest rates weighed on technology stocks.
+
+Key Issues
+- The Trump Administration's New Tariff Shock: Despite the Supreme Court ruling existing tariffs unconstitutional, President Trump immediately sent shockwaves through the market by announcing a new 15% tariff on all imported goods, citing the Trade Act of 1974.
+- The Fed's Hawkish Stance Strengthens: Fed Governor Christopher Waller poured cold water on market expectations for an early rate cut, stating that there is no need to rush a March rate cut if strong employment data persists.
+- Flight to Safe Havens: As uncertainty mounted, the Volatility Index (VIX) surged over 13%, and the price of gold climbed 3.8%, indicating investors were fleeing risk assets for the safety of havens.
+- Fears of Reigniting Inflation: The new tariffs sparked concerns that they could lead to higher import prices and reignite inflation, a factor that could further complicate the Fed's decision-making on interest rate cuts.
+
+Key Stocks
+- IonQ (IONQ): Dropped 0.7% - Despite impressive top-line growth, including a 222% revenue surge in Q3 2025, underlying risks came into focus. These included significant cash burn, shareholder value dilution from a 47% increase in outstanding shares, and the departure of key executives.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,다우존스,무역전쟁,관세,금리,연준,트럼프,아이온큐,IONQ,양자컴퓨팅

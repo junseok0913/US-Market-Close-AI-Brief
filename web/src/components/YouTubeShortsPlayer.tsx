@@ -27,6 +27,8 @@ interface MetricCard {
   tone: 'loss' | 'accent';
 }
 
+type IndexKey = 'sp500' | 'nasdaq' | 'dow';
+
 const PHASE_TO_SECTION: Record<string, ShortsSection> = {
   hook: 'hook',
   market: 'data',
@@ -42,6 +44,21 @@ const DEFAULT_DATA_CARDS: Array<{ name: string; ticker: string }> = [
   { name: 'NASDAQ', ticker: '^IXIC' },
   { name: 'DOW', ticker: '^DJI' },
 ];
+
+const INDEX_KEY_ORDER: IndexKey[] = ['sp500', 'nasdaq', 'dow'];
+const INDEX_KEY_BY_TICKER: Record<string, IndexKey> = {
+  '^GSPC': 'sp500',
+  '^IXIC': 'nasdaq',
+  '^DJI': 'dow',
+};
+const INDEX_PATTERNS: Record<IndexKey, RegExp> = {
+  sp500: /(?:S\.?\s*&?\s*P\.?\s*500|S&P500|에스앤피(?:\s*500)?)/i,
+  nasdaq: /(?:NASDAQ|나스닥)/i,
+  dow: /(?:\bDOW\b|다우존스|다우)/i,
+};
+const PERCENT_TOKEN_RE = /[+-]?\d+(?:\.\d+)?%/;
+const NEGATIVE_CONTEXT_RE = /(하락|급락|약세|내렸|내린|떨어|감소|부진|밀리|약화|down|decline|declined|fell|drop|dropped|slid|lower)/i;
+const POSITIVE_CONTEXT_RE = /(상승|급등|강세|올랐|오른|증가|반등|개선|회복|up|rise|rose|gain|gained|higher)/i;
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
@@ -95,21 +112,71 @@ function extractToken(text: string, pattern: RegExp): string {
   return hit?.[0] || '';
 }
 
-function extractPercentTokens(source: string): string[] {
-  return source.match(/[+-]?\d+(?:\.\d+)?%/g) || [];
+function detectIndexKey(text: string): IndexKey | '' {
+  for (const key of INDEX_KEY_ORDER) {
+    if (INDEX_PATTERNS[key].test(text)) {
+      return key;
+    }
+  }
+  return '';
 }
 
-/**
- * Parse pipe-separated segments from subheadline.
- * e.g. "S&P 500 +0.69% | 나스닥 +0.90%" → [{metric: '+0.69%'}, {metric: '+0.90%'}]
- * We intentionally do NOT extract the label here because the index name from
- * free-text is unreliable — we always keep DEFAULT_DATA_CARDS names.
- */
-function parsePipePercentSegments(subheadline: string): string[] {
-  return subheadline
-    .split('|')
-    .map((part) => extractToken(part.trim(), /[+-]?\d+(?:\.\d+)?%/))
+function inferDirectionFromContext(context: string, defaultDirection: '+' | '-'): '+' | '-' {
+  if (NEGATIVE_CONTEXT_RE.test(context)) return '-';
+  if (POSITIVE_CONTEXT_RE.test(context)) return '+';
+  return defaultDirection;
+}
+
+function normalizePercentToken(
+  token: string,
+  context: string,
+  defaultDirection: '+' | '-',
+): string {
+  const cleaned = compactText(token).replace(/%/g, '').replace(/,/g, '');
+  if (!cleaned) return '';
+
+  const explicit = cleaned.startsWith('+') || cleaned.startsWith('-');
+  const magnitude = explicit ? cleaned.slice(1) : cleaned;
+  if (!/^\d+(?:\.\d+)?$/.test(magnitude)) return '';
+
+  const sign = explicit
+    ? (cleaned[0] as '+' | '-')
+    : inferDirectionFromContext(context, defaultDirection);
+  return `${sign}${magnitude}%`;
+}
+
+function parseIndexPercents(
+  source: string,
+  defaultDirection: '+' | '-',
+): Partial<Record<IndexKey, string>> {
+  const output: Partial<Record<IndexKey, string>> = {};
+  const text = compactText(source);
+  if (!text) return output;
+
+  const segments = text
+    .split(/[|,\n]/)
+    .map((segment) => compactText(segment))
     .filter(Boolean);
+
+  for (const segment of segments) {
+    const key = detectIndexKey(segment);
+    if (!key || output[key]) continue;
+    const token = extractToken(segment, PERCENT_TOKEN_RE);
+    if (!token) continue;
+    const normalized = normalizePercentToken(token, segment, defaultDirection);
+    if (normalized) output[key] = normalized;
+  }
+
+  for (const key of INDEX_KEY_ORDER) {
+    if (output[key]) continue;
+    const regex = new RegExp(`${INDEX_PATTERNS[key].source}[^%]{0,48}?([+-]?\\d+(?:\\.\\d+)?%)`, 'i');
+    const hit = text.match(regex);
+    if (!hit) continue;
+    const normalized = normalizePercentToken(hit[1], hit[0], defaultDirection);
+    if (normalized) output[key] = normalized;
+  }
+
+  return output;
 }
 
 function buildDataCards(slide: ShortsSlide | undefined): DataCard[] {
@@ -122,45 +189,38 @@ function buildDataCards(slide: ShortsSlide | undefined): DataCard[] {
     }));
   }
 
-  // Priority 1: parse percent values from subheadline pipe segments
-  // e.g. "S&P 500 +0.69% | 나스닥 +0.90%"
-  const subheadline = compactText(slide.subheadline);
-  const pipePercents = parsePipePercentSegments(subheadline);
+  const defaultDirection: '+' | '-' = slide.theme === 'bear' ? '-' : '+';
+  const indexChanges: Partial<Record<IndexKey, string>> = {};
 
-  // Priority 2: bullet lines that contain a percent
-  // e.g. ["S&P 500: +0.69%", "나스닥: +0.90%"]
-  const bulletPercents = (slide.bullets || [])
-    .map((b) => extractToken(compactText(b), /[+-]?\d+(?:\.\d+)?%/))
-    .filter(Boolean);
-
-  // Priority 3: highlights array (e.g. ["+0.69%", "+0.90%"])
-  const highlightPercents = (slide.highlights || [])
-    .map((h) => extractToken(compactText(h), /[+-]?\d+(?:\.\d+)?%/))
-    .filter(Boolean);
-
-  // Priority 4: parse body text for index-specific percent values
-  // Matches patterns like "S&P 500은 0.69%", "나스닥은 0.90%", "다우존스는 0.47%"
-  const bodyText = compactText(slide.body);
-  const bodyPercents: string[] = [];
-  const spMatch = bodyText.match(/S.P\s*500[^,]*?(\d+\.\d+)%/i);
-  const nasdaqMatch = bodyText.match(/(?:나스닥|NASDAQ)[^,]*?(\d+\.\d+)%/i);
-  const dowMatch = bodyText.match(/(?:다우|DOW)[^,]*?(\d+\.\d+)%/i);
-  if (spMatch) bodyPercents.push(`+${spMatch[1]}%`);
-  if (nasdaqMatch) bodyPercents.push(`+${nasdaqMatch[1]}%`);
-  if (dowMatch) bodyPercents.push(`+${dowMatch[1]}%`);
-
-  // Merge in priority order — take the first available source per index
-  const changePool = DEFAULT_DATA_CARDS.map((_, idx) => {
-    let raw = pipePercents[idx] || bulletPercents[idx] || highlightPercents[idx] || bodyPercents[idx] || '--';
-    // Ensure a '+' prefix for positive values (some sources omit it)
-    if (raw !== '--' && !raw.startsWith('+') && !raw.startsWith('-')) {
-      raw = `+${raw}`;
+  const applyParsed = (source: string) => {
+    const parsed = parseIndexPercents(source, defaultDirection);
+    for (const key of INDEX_KEY_ORDER) {
+      if (indexChanges[key]) continue;
+      if (parsed[key]) indexChanges[key] = parsed[key];
     }
-    return raw;
-  });
+  };
 
-  return DEFAULT_DATA_CARDS.map((base, idx) => {
-    const change = changePool[idx];
+  applyParsed(compactText(slide.subheadline));
+  for (const bullet of slide.bullets || []) {
+    applyParsed(compactText(bullet));
+  }
+  applyParsed(compactText(slide.body));
+
+  const highlightPercents = (slide.highlights || [])
+    .map((h) => normalizePercentToken(extractToken(compactText(h), PERCENT_TOKEN_RE), compactText(h), defaultDirection))
+    .filter(Boolean);
+  let highlightCursor = 0;
+  for (const key of INDEX_KEY_ORDER) {
+    if (indexChanges[key]) continue;
+    if (highlightCursor < highlightPercents.length) {
+      indexChanges[key] = highlightPercents[highlightCursor];
+      highlightCursor += 1;
+    }
+  }
+
+  return DEFAULT_DATA_CARDS.map((base) => {
+    const indexKey = INDEX_KEY_BY_TICKER[base.ticker];
+    const change = indexChanges[indexKey] || '--';
     return {
       name: base.name,
       ticker: base.ticker,

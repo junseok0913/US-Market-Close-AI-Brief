@@ -1,0 +1,53 @@
+{
+  "date": "20260223",
+  "lang": "ko",
+  "audioFile": "shorts20260223.mp3",
+  "sectionOrder": [
+    "xrt",
+    "ionq",
+    "xli"
+  ],
+  "ttsCallCount": 3,
+  "totalDurationSeconds": 69.913,
+  "sections": [
+    {
+      "id": 0,
+      "name": "xrt",
+      "ticker": "XRT",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 30.331,
+      "endSec": 30.331,
+      "speechDurationSec": 30.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 272,
+      "text": "대법원 판결을 무색하게 만든 트럼프 대통령의 관세 폭탄 선언에 시장이 공포에 휩싸였습니다. 먼저 소매업종 ETF인 XRT는 2.09% 하락하며 관세 충격을 온몸으로 받았습니다. 트럼프 대통령이 모든 수입품에 15% 관세를 부과하겠다고 발표하자, 수입 의존도가 높은 소매 기업들의 비용 부담 우려가 즉각적으로 반영된 것입니다. 이는 단순히 기업 이익률을 훼손하는 것을 넘어, 인플레이션을 재점화하고 최종적으로 소비자의 지갑을 닫게 만들 수 있다는 공포로 확산되며 강한 매도세를 불렀습니다."
+    },
+    {
+      "id": 1,
+      "name": "ionq",
+      "ticker": "IONQ",
+      "kind": "company",
+      "startSec": 30.331,
+      "speechEndSec": 57.302,
+      "endSec": 57.302,
+      "speechDurationSec": 26.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 245,
+      "text": "양자컴퓨팅 선두주자 아이온큐는 3.51% 하락했습니다. 3분기 매출이 222% 급증하는 등 화려한 성장 스토리에도 불구하고, 재무적 현실에 대한 우려가 주가를 끌어내렸습니다. 9개월간 영업활동으로 2억 달러가 넘는 현금이 유출됐고, 성장을 위해 발행 주식 수를 47%나 늘리며 주주가치를 희석시켰습니다. 결정적으로 회사가 직접 '경영진의 중대한 이직'과 '제도적 지식 손실' 위험을 인정하면서 리더십 공백 문제까지 수면 위로 떠올랐습니다."
+    },
+    {
+      "id": 2,
+      "name": "xli",
+      "ticker": "XLI",
+      "kind": "company",
+      "startSec": 57.302,
+      "speechEndSec": 69.913,
+      "endSec": 69.913,
+      "speechDurationSec": 12.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 114,
+      "text": "State Street Industrial Select는 하루 -1.35% / 한 달 +6.46% 움직였습니다. 맞습니다. 가장 우려되는 지점은 인플레이션 재점화 가능성입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

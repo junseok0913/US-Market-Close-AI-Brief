@@ -119,15 +119,6 @@ async function main() {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
     await page.waitForSelector('audio', { state: 'attached', timeout: 30000 });
 
-    const youtubeStartButton = page.locator('[data-testid="yt-start-playback"]').first();
-    const hasYouTubeStart = await youtubeStartButton
-      .isVisible({ timeout: 3000 })
-      .catch(() => false);
-    if (hasYouTubeStart) {
-      // Dismiss overlay immediately so it doesn't get captured.
-      await youtubeStartButton.click();
-    }
-
     // Ensure audio starts from 0 after the optional start delay.
     await page.evaluate(() => {
       const audio = document.querySelector('audio');
@@ -157,9 +148,28 @@ async function main() {
     });
 
     if (!startedByJs) {
-      const playButton = page.locator('button:has(img[alt="play"])').first();
-      await playButton.waitFor({ state: 'visible', timeout: 30000 });
-      await playButton.click();
+      console.log('[record] Initial JS autoplay failed. Retrying without manual button click.');
+      let startedByRetry = false;
+      for (let retry = 0; retry < 40; retry += 1) {
+        await page.waitForTimeout(250);
+        startedByRetry = await page.evaluate(async () => {
+          const audio = document.querySelector('audio');
+          if (!audio) return false;
+          try {
+            await audio.play();
+            return !audio.paused;
+          } catch {
+            return false;
+          }
+        });
+        if (startedByRetry) {
+          console.log(`[record] Playback started by JS retry (${retry + 1}/40).`);
+          break;
+        }
+      }
+      if (!startedByRetry) {
+        throw new Error('Autoplay failed after JS retries (manual button click disabled).');
+      }
     }
 
     await page.waitForFunction(() => {

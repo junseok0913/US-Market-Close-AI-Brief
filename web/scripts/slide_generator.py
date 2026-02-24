@@ -14,6 +14,7 @@ import pandas as pd
 import yfinance as yf
 
 from shared.utils.llm import build_llm
+from shared.date_display import normalize_yyyymmdd
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +59,7 @@ class SlideGenerator:
         logger.info("슬라이드 생성 시작: date=%s", date)
 
         script_data = self._load_script_json(date)
+        display_date = normalize_yyyymmdd(script_data.get("date")) or date
         type_definitions = self._load_type_definitions()
         example_slides = self._load_example_slides()
 
@@ -73,12 +75,12 @@ class SlideGenerator:
                     script_data=script_data,
                     type_definitions=type_definitions,
                     example_slides=example_slides,
-                    date=date,
+                    date=display_date,
                     target_slides=target_slides,
                     quality_rules=quality_rules,
                 )
                 slides_code = self._post_process_tickers(slides_code)
-                slides_code = self._pin_title_slide_date(slides_code, date)
+                slides_code = self._pin_title_slide_date(slides_code, display_date)
                 slides_code = self._enrich_market_summary_indices(slides_code, date)
                 slides_code = self._enrich_ticker_intro_prices(slides_code, date)
 
@@ -99,13 +101,13 @@ class SlideGenerator:
                         script_data=script_data,
                         type_definitions=type_definitions,
                         existing_slides_code=slides_code,
-                        date=date,
+                        date=display_date,
                         target_slides=target_slides,
                         quality_rules=quality_rules,
                         issues=issues,
                     )
                     slides_code = self._post_process_tickers(slides_code)
-                    slides_code = self._pin_title_slide_date(slides_code, date)
+                    slides_code = self._pin_title_slide_date(slides_code, display_date)
                     slides_code = self._enrich_market_summary_indices(slides_code, date)
                     slides_code = self._enrich_ticker_intro_prices(slides_code, date)
                     analysis = self._analyze_slides_code(slides_code)

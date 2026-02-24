@@ -1,0 +1,58 @@
+{
+  "date": "20260223",
+  "lang": "ko",
+  "audioFile": "shorts20260223.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 70.524,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.691,
+      "endSec": 5.691,
+      "speechDurationSec": 5.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 41,
+      "text": "대법원이 관세에 제동을 걸었는데, 왜 시장은 무역전쟁 공포에 휩싸였을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.691,
+      "speechEndSec": 22.582,
+      "endSec": 22.582,
+      "speechDurationSec": 16.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 128,
+      "text": "2월 24일 미국 증시는 다우 -1.66%, S&P 500 -1.04%, 나스닥 -1.13% 등 3대 지수 모두 1% 넘게 급락했습니다. 시장은 대법원 관세 판결에도 불구하고 새로운 무역전쟁 우려가 부각되며 큰 충격을 받았습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.582,
+      "speechEndSec": 60.593,
+      "endSec": 60.593,
+      "speechDurationSec": 38.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 303,
+      "text": "발단은 대법원이 기존 관세를 위헌으로 판결하자, 트럼프 대통령이 즉각 '1974년 무역법'을 근거로 모든 수입품에 15%의 새로운 관세를 부과하겠다고 맞선 것이었습니다. 이 소식에 시장의 공포지수인 VIX는 13% 넘게 폭등했고, 안전자산인 금 가격은 3.8% 급등했습니다. 설상가상으로 대표적 비둘기파였던 크리스토퍼 월러 연준 이사마저 3월 금리 인하를 서두를 필요가 없다고 발언하며 시장의 기대에 찬물을 끼얹었습니다. 결국 새로운 관세로 인한 인플레이션 재점화 우려와 고금리 장기화 가능성이라는 두 가지 악재가 동시에 시장을 짓눌렀습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 60.593,
+      "speechEndSec": 70.524,
+      "endSec": 70.524,
+      "speechDurationSec": 9.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 80,
+      "text": "다음 주에는 화요일 소비자 신뢰지수와 금요일 생산자물가지수, PPI 발표가 예정되어 있어, 시장의 향방을 가늠할 중요한 분수령이 될 전망입니다."
+    }
+  ]
+}

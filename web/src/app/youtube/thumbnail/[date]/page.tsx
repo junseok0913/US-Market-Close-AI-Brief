@@ -28,6 +28,6 @@ export default async function YouTubeThumbnailPage({
     notFound();
   }
 
-  return <YouTubeThumbnailView episodeDate={episode.date} slideIndex={slideIndex} />;
+  // Always resolve slide set by route date (storage date). episode.date may be display-shifted.
+  return <YouTubeThumbnailView episodeDate={date} slideIndex={slideIndex} />;
 }
-

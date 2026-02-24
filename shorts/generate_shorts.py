@@ -55,6 +55,10 @@ SECTION_NAME_ALIASES = {
     "outro": "closing",
     "watch": "closing",
 }
+DEFAULT_FINAL_CTA = {
+    "ko": "구독과 좋아요 부탁드립니다.",
+    "en": "Please like and subscribe.",
+}
 
 
 DurationTarget = Literal[60, 90, 120]
@@ -62,6 +66,70 @@ DurationTarget = Literal[60, 90, 120]
 
 def compact_text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def detect_output_lang(*texts: Any) -> str:
+    blob = " ".join(compact_text(text) for text in texts)
+    return "ko" if re.search(r"[가-힣]", blob) else "en"
+
+
+def ensure_sentence_end(text: str) -> str:
+    normalized = compact_text(text)
+    if not normalized:
+        return ""
+    if re.search(r"[.!?…]$", normalized):
+        return normalized
+    return f"{normalized}."
+
+
+def resolve_final_cta(prompt_config: dict[str, Any], script_json: dict[str, Any]) -> str:
+    script_cfg = prompt_config.get("script")
+    if not isinstance(script_cfg, dict):
+        lang = detect_output_lang(script_json.get("nutshell"), script_json.get("date"))
+        return DEFAULT_FINAL_CTA.get(lang, DEFAULT_FINAL_CTA["en"])
+
+    cta_config = script_cfg.get("final_cta")
+    if not isinstance(cta_config, dict):
+        lang = detect_output_lang(script_json.get("nutshell"), script_json.get("date"))
+        return DEFAULT_FINAL_CTA.get(lang, DEFAULT_FINAL_CTA["en"])
+
+    lang = detect_output_lang(script_json.get("nutshell"), script_json.get("date"))
+    resolved = compact_text(cta_config.get(lang) or cta_config.get("ko") or cta_config.get("en"))
+    if resolved:
+        return ensure_sentence_end(resolved)
+    return DEFAULT_FINAL_CTA.get(lang, DEFAULT_FINAL_CTA["en"])
+
+
+def force_closing_cta(
+    sections: list[dict[str, str]],
+    final_cta: str,
+) -> list[dict[str, str]]:
+    cta = ensure_sentence_end(final_cta)
+    if not cta:
+        return sections
+
+    out: list[dict[str, str]] = []
+    for section in sections:
+        if section.get("name") == "closing":
+            out.append({"name": "closing", "text": cta})
+            continue
+        out.append({"name": section.get("name", ""), "text": compact_text(section.get("text"))})
+    return out
+
+
+def ensure_script_ends_with_cta(script_text: str, final_cta: str) -> str:
+    script = compact_text(script_text)
+    cta = ensure_sentence_end(final_cta)
+    if not cta:
+        return script
+    if not script:
+        return cta
+
+    script_no_tail = re.sub(r"[.!?…\s]+$", "", script)
+    cta_no_tail = re.sub(r"[.!?…\s]+$", "", cta)
+    if script_no_tail.endswith(cta_no_tail):
+        return script
+    return compact_text(f"{script} {cta}")
 
 
 def split_sentences(text: str) -> list[str]:
@@ -185,11 +253,14 @@ def normalize_shorts_result(
     *,
     script_json: dict[str, Any],
     duration: DurationTarget,
+    final_cta: str,
 ) -> dict[str, Any]:
     script_text = compact_text(raw_result.get("script"))
     sections = normalize_sections(raw_result, script_text)
+    sections = force_closing_cta(sections, final_cta)
     if not script_text:
         script_text = compact_text(" ".join(item["text"] for item in sections if item["text"]))
+    script_text = ensure_script_ends_with_cta(script_text, final_cta)
 
     metadata = raw_result.get("metadata") if isinstance(raw_result.get("metadata"), dict) else {}
     key_points = metadata.get("key_points") if isinstance(metadata.get("key_points"), list) else []
@@ -301,6 +372,7 @@ def generate_shorts_script(
     """
     # Load prompt configuration
     config = load_prompt_config(SHORTS_PROMPT_PATH)
+    final_cta = resolve_final_cta(config, script_json)
     
     system_prompt = config.get("system", "")
     user_template = config.get("user_template", "")
@@ -351,6 +423,7 @@ def generate_shorts_script(
             result,
             script_json=script_json,
             duration=duration,
+            final_cta=final_cta,
         )
         
         logger.info(f"✓ Generated shorts script: {normalized['title']}")

@@ -24,6 +24,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@remotion/cli": "^4.0.427",
     "@tailwindcss/postcss": "^4",
     "@types/better-sqlite3": "^7.6.13",

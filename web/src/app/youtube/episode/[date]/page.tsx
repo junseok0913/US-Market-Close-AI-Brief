@@ -20,5 +20,5 @@ export default async function YouTubeEpisodePage({ params }: YouTubeEpisodePageP
     notFound();
   }
 
-  return <YouTubeEpisodePlayer episode={episode} />;
+  return <YouTubeEpisodePlayer episode={episode} storageDate={date} />;
 }

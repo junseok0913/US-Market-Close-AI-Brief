@@ -28,11 +28,17 @@ const SYMBOL_TO_YAHOO: Record<string, string> = {
   'NASDAQ:IXIC': '^IXIC',
   'NASDAQ:QQQ': 'QQQ',
   'DJ:DJI': '^DJI',
+  'TVC:VIX': '^VIX',
   'TVC:RUT': '^RUT',
   'AMEX:IWM': 'IWM',
   'TVC:US10Y': '^TNX',
   'TVC:DXY': 'DX-Y.NYB',
   'AMEX:GLD': 'GLD',
+  'COMEX:GC1!': 'GC=F',
+  'COMEX:GCI': 'GC=F',
+  'COMEX:GCI!': 'GC=F',
+  'AMEX:XRT': 'XRT',
+  'AMEX:XLI': 'XLI',
 };
 
 const SYMBOL_ALIASES: Record<string, string> = {
@@ -50,13 +56,22 @@ const SYMBOL_ALIASES: Record<string, string> = {
   '^RUT': 'TVC:RUT',
   RUT: 'TVC:RUT',
   RUSSELL2000: 'TVC:RUT',
+  '^VIX': 'TVC:VIX',
+  VIX: 'TVC:VIX',
   IWM: 'AMEX:IWM',
   '^TNX': 'TVC:US10Y',
   TNX: 'TVC:US10Y',
   US10Y: 'TVC:US10Y',
   'DX-Y.NYB': 'TVC:DXY',
   DXY: 'TVC:DXY',
+  'GC=F': 'COMEX:GC1!',
+  GC1: 'COMEX:GC1!',
+  'GC1!': 'COMEX:GC1!',
+  GCI: 'COMEX:GC1!',
+  'GCI!': 'COMEX:GC1!',
   GLD: 'AMEX:GLD',
+  XRT: 'AMEX:XRT',
+  XLI: 'AMEX:XLI',
 };
 
 const ALLOWED_RANGES = new Set(['5d', '1mo', '3mo', '6mo', '1y']);
@@ -86,7 +101,7 @@ function mapToYahooSymbol(symbol: string): string {
 }
 
 function isSafeSymbol(symbol: string): boolean {
-  return /^[A-Z0-9:^._-]+$/.test(symbol);
+  return /^[A-Z0-9:^._=!-]+$/.test(symbol);
 }
 
 function normalizeAsOf(rawAsOf: string | null): string | null {

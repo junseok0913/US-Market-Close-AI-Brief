@@ -26,6 +26,7 @@ import {
 
 interface YouTubeEpisodePlayerProps {
   episode: Episode;
+  storageDate?: string;
   renderMode?: boolean;
   forcedSlideIndex?: number;
 }
@@ -211,6 +212,7 @@ function FitSlideCanvas({ slideKey, children, minScale = 0.72 }: FitSlideCanvasP
 
 export default function YouTubeEpisodePlayer({
   episode,
+  storageDate,
   renderMode = false,
   forcedSlideIndex,
 }: YouTubeEpisodePlayerProps) {
@@ -257,7 +259,8 @@ export default function YouTubeEpisodePlayer({
   const effectiveRenderMode = renderMode || queryParams.render;
   const effectiveForcedSlideIndex = forcedSlideIndex ?? queryParams.slide;
 
-  const slides = useMemo(() => getSlides(episode.date), [episode.date]);
+  const slideLookupDate = storageDate || episode.date;
+  const slides = useMemo(() => getSlides(slideLookupDate), [slideLookupDate]);
 
   const getCurrentTurnId = useCallback(
     (timeInSeconds: number): number => {

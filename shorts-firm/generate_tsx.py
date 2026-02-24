@@ -31,6 +31,13 @@ def parse_date_token(raw: str) -> str:
     return token
 
 
+def parse_optional_date_token(raw: Any) -> str | None:
+    token = str(raw or "").replace("-", "").strip()
+    if len(token) != 8 or not token.isdigit():
+        return None
+    return token
+
+
 def compact_text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
@@ -67,6 +74,7 @@ def to_export_name(date: str, lang: str) -> str:
 
 
 def normalize_from_script_payload(payload: dict[str, Any], *, date: str, lang: str) -> dict[str, Any]:
+    episode_date = parse_optional_date_token(payload.get("date")) or date
     raw_sections = payload.get("sections")
     normalized_sections: list[dict[str, str]] = []
 
@@ -137,14 +145,15 @@ def normalize_from_script_payload(payload: dict[str, Any], *, date: str, lang: s
 
     metadata = payload.get("metadata") if isinstance(payload.get("metadata"), dict) else {}
     featured_tickers = metadata.get("featured_tickers") if isinstance(metadata.get("featured_tickers"), list) else []
+    audio_file = compact_text(payload.get("audioFile")) or f"shorts{date}.mp3"
 
     return {
-        "date": date,
+        "date": episode_date,
         "lang": lang,
         "title": compact_text(payload.get("title")) or "US Market Close",
         "hook": compact_text(payload.get("hook")) or compact_text(payload.get("script")),
         "durationSeconds": round(duration_seconds, 3),
-        "audioFile": f"shorts{date}.mp3",
+        "audioFile": audio_file,
         "slides": slides,
         "captions": captions,
         "sourceDigest": [],

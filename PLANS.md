@@ -51,6 +51,65 @@ Use this for long or risky tasks. Keep it a living document.
 
 ---
 
+## KO Display Date Offset (+1 Day) Without Path Changes (In Progress 2026-02-23)
+
+## 1) Objective
+
+- Keep all storage/output paths on market date (`podcast/{date}/...`) unchanged.
+- Shift KO-facing display date fields to `market_date + 1 day` across podcast + shorts + shorts-firm payloads.
+- Prevent EN script date from inheriting KO shifted date.
+
+## 2) Constraints
+
+- Do not rename/move folders by display date.
+- Preserve existing render/upload contracts and file names.
+- Apply root-cause fixes at date-origin points instead of ad-hoc output edits.
+
+## 3) Affected Areas
+
+- `shared/date_display.py` (new helper)
+- `orchestrator.py`
+- `AWS/translation/translate.py`
+- `web/scripts/generate-podcast-metadata.py`
+- `web/scripts/slide_generator.py`
+- `shorts/generate_shorts_slides.py`
+- `shorts/generate_shorts_tsx.py`
+- `shorts-firm/generate_slide_script.py`
+- `shorts-firm/generate_tsx.py`
+- `shared/ops/scripts/youtube/upload_youtube_video.py`
+
+## 4) Execution Steps
+
+- Step 1: Add shared display-date helper and wire KO script date origin.
+- Step 2: Propagate display date into KO-facing metadata/slides payload generators.
+- Step 3: Ensure fallback TSX/upload metadata paths keep market-date filenames while preserving display date fields.
+- Step 4: Run focused verification and summarize remaining gaps.
+
+## 5) Progress Log
+
+- [x] Step 1
+- [x] Step 2
+- [x] Step 3
+- [x] Step 4
+- Verification note (2026-02-23):
+  - `uv run python -m py_compile ...` passed for all touched Python files.
+  - Fallback TSX checks confirmed payload `date` follows script display date while `audioFile` keeps market-date filename:
+    - `python shorts/generate_shorts_tsx.py ...` -> `date=20260224`, `audioFile=shorts20260223.mp3`
+    - `python shorts-firm/generate_tsx.py ...` -> `date=20260224`, `audioFile=shorts20260223.mp3`
+  - `uv run python shorts-firm/generate_slide_script.py ... --no-llm` sample run confirmed render payload keeps
+    `date=20260224` with `audioFile=shorts20260223.mp3`.
+  - Follow-up fix (2026-02-23): opening/theme/closing agent prompt date placeholders now use KO display date (+1 day),
+    and metadata prompt includes explicit rule to keep narration date aligned to `{date}`.
+  - Artifact backfill (2026-02-23): `podcast/20260223/ko/script.json`, `podcast/20260223/ko/metadata.json`,
+    `podcast/20260223/ko/metadata.txt` literal `2월 23일` strings were updated to `2월 24일`.
+  - Follow-up fix (2026-02-23): episode YouTube thumbnail flow is unified to thumbnail-route capture
+    (`/youtube/thumbnail/{date}`) in `run_youtube.sh` (no first-frame fallback), and
+    `generate_episode_thumbnail.sh` now starts Next.js with `--webpack` to avoid Turbopack instability.
+  - Follow-up fix (2026-02-23): `run_youtube.sh --overwrite` now deletes existing episode thumbnail PNG too,
+    so stale thumbnails are not reused after route/date logic changes.
+
+---
+
 ## Shorts-Firm Shorts2 Render Integration (In Progress 2026-02-22)
 
 ## 1) Objective
@@ -415,3 +474,32 @@ Use this for long or risky tasks. Keep it a living document.
 - [x] Set default upload behavior to enabled with privacy default `public`.
 - [x] Added shorts thumbnail generation from the rendered MP4 first frame and included it in upload.
 - [x] Updated repo-local command docs in `AGENTS.md` for the new `run_youtube.sh` contract.
+
+---
+
+## YouTube Episode/Shorts Data Integrity Fixes (In Progress 2026-02-24)
+
+## 1) Objective
+
+- Restore episode slide rendering when KO display date is shifted (+1 day) by using storage date for slide lookup.
+- Fix shorts index sign/ticker mapping so DOW/S&P/NASDAQ values are not swapped or polarity-flipped.
+- Render negative trend charts as down-sloping (red + down) for shorts and shorts-firm.
+- Enforce shorts-firm metrics (1D/1M/시총/PER/PBR/ROE) to use yfinance-backed company context only.
+
+## 2) Affected Areas
+
+- `web/src/app/youtube/episode/[date]/page.tsx`
+- `web/src/components/YouTubeEpisodePlayer.tsx`
+- `web/src/components/YouTubeShortsPlayer.tsx`
+- `web/remotion/ShortsComposition.tsx`
+- `web/remotion/ShortsFirmComposition.tsx`
+- `shorts-firm/generate_script.py`
+- `shorts-firm/prompt/shorts_firm_pipeline.yaml`
+
+## 3) Progress Log
+
+- [x] Episode page now passes storage date to player for slide map lookup.
+- [x] Shorts index parsing changed from positional parse to index-label parse with sign-context inference.
+- [x] Shorts + shorts-firm chart paths now switch to downtrend variants for negative moves.
+- [x] Shorts-firm metric normalization now ignores LLM numeric metrics and uses `company_context` values only.
+- [ ] Run focused verification and one render pass (`run_youtube.sh --start-from 1/4`) in local runtime.

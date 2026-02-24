@@ -53,16 +53,10 @@ function resolveDurationSeconds(episode) {
 }
 
 function detectBrowserExecutable() {
-  const candidates = [
-    process.env.REMOTION_BROWSER_EXECUTABLE,
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
+  // Prefer Remotion's default browser unless the user explicitly pins one.
+  const pinned = process.env.REMOTION_BROWSER_EXECUTABLE;
+  if (pinned && fs.existsSync(pinned)) {
+    return pinned;
   }
   return "";
 }

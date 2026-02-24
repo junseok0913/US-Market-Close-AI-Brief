@@ -53,18 +53,20 @@ function resolveDurationSeconds(episode) {
 }
 
 function detectBrowserExecutable() {
-  const candidates = [
-    process.env.REMOTION_BROWSER_EXECUTABLE,
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
+  // Prefer Remotion's default browser unless the user explicitly pins one.
+  const pinned = process.env.REMOTION_BROWSER_EXECUTABLE;
+  if (pinned && fs.existsSync(pinned)) {
+    return pinned;
   }
   return "";
+}
+
+function resolveRemotionCommand(webRoot) {
+  const localBin = path.resolve(webRoot, "node_modules/.bin/remotion");
+  if (fs.existsSync(localBin)) {
+    return { cmd: localBin, argsPrefix: [] };
+  }
+  return { cmd: "npx", argsPrefix: ["remotion"] };
 }
 
 function main() {
@@ -157,11 +159,12 @@ function main() {
     console.log(`[remotion] browser-executable: ${browserExecutable}`);
   }
 
+  const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+  const webRoot = path.resolve(scriptDir, "..");
+  const remotion = resolveRemotionCommand(webRoot);
+
   const remotionArgs = [
-    "--yes",
-    "--package",
-    "@remotion/cli@latest",
-    "remotion",
+    ...remotion.argsPrefix,
     "render",
     entryPoint,
     compositionId,
@@ -182,10 +185,7 @@ function main() {
     remotionArgs.push("--browser-executable", browserExecutable);
   }
 
-  const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-  const webRoot = path.resolve(scriptDir, "..");
-
-  const result = spawnSync("npx", remotionArgs, {
+  const result = spawnSync(remotion.cmd, remotionArgs, {
     cwd: webRoot,
     stdio: "inherit",
     env: process.env,

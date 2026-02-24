@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT))
 
 from shared.utils.llm import build_llm
+from shared.date_display import normalize_yyyymmdd
 from shared.yaml_config import load_env_from_yaml
 
 
@@ -87,13 +88,15 @@ class PodcastMetadataGenerator:
         if not nutshell:
             raise ValueError("script.json에 nutshell이 없습니다")
         
+        display_date = normalize_yyyymmdd(script_data.get("date")) or normalize_yyyymmdd(date) or date
+
         # 날짜 포맷팅 (YYYYMMDD -> YYYY.M.D)
         from datetime import datetime
         try:
-            dt = datetime.strptime(date, "%Y%m%d")
+            dt = datetime.strptime(display_date, "%Y%m%d")
             formatted_date = f"{dt.year}.{dt.month}.{dt.day}"
         except:
-            formatted_date = date
+            formatted_date = display_date
         
         # title = 날짜 + nutshell (언어별)
         if lang == "en":
@@ -124,7 +127,7 @@ class PodcastMetadataGenerator:
 
 ---
 
-{prompt_config.get('user_template', '').format(date=date, nutshell=nutshell, script_summary=script_summary)}
+{prompt_config.get('user_template', '').format(date=display_date, nutshell=nutshell, script_summary=script_summary)}
 """
         
         response = self.llm.invoke(prompt)

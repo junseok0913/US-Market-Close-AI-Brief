@@ -193,7 +193,7 @@ else
     echo "🚀 Starting Next.js dev server on 127.0.0.1:${WEB_PORT}..."
     (
         cd "${ROOT_DIR}/web"
-        npm run dev -- --hostname 127.0.0.1 --port "${WEB_PORT}" >/tmp/thumbnail-dev-${DATE}-${LANG}.log 2>&1
+        npm run dev -- --webpack --hostname 127.0.0.1 --port "${WEB_PORT}" >/tmp/thumbnail-dev-${DATE}-${LANG}.log 2>&1
     ) &
     WEB_PID=$!
     WEB_STARTED_BY_SCRIPT=1

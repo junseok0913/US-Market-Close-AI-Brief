@@ -26,6 +26,7 @@ from shared.config import (
     set_briefing_date,
 )
 from shared.fetchers import prefetch_all
+from shared.date_display import resolve_display_date
 from shared.normalization import normalize_script_turns, parse_json_from_response
 from shared.tools import get_calendar, get_ohlcv
 from shared.types import ScriptTurn
@@ -170,7 +171,8 @@ def prepare_messages_node(state: ClosingState) -> ClosingState:
 
     scripts = state.get("scripts", [])
     prompt_cfg = _load_prompt()
-    date_korean = _format_date_korean(date_str)
+    date_display = resolve_display_date(date_str.replace("-", ""), "ko")
+    date_korean = _format_date_korean(date_display)
 
     system_prompt = (
         prompt_cfg["system"]

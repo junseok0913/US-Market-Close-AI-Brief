@@ -64,10 +64,14 @@ const THEMES = [
     accentBorder: "hsl(185 75% 48% / 0.20)",
     dot: COLORS.s2Primary,
     label: "PICK 1",
-    chartLine:
+    chartLineUp:
       "M0,32 C20,30 35,24 55,20 C75,16 85,22 105,14 C125,8 145,12 165,10 C180,7 195,4 200,3",
-    chartFill:
+    chartFillUp:
       "M0,32 C20,30 35,24 55,20 C75,16 85,22 105,14 C125,8 145,12 165,10 C180,7 195,4 200,3 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,6 C20,8 35,14 55,18 C75,22 85,16 105,24 C125,30 145,26 165,28 C180,31 195,34 200,35",
+    chartFillDown:
+      "M0,6 C20,8 35,14 55,18 C75,22 85,16 105,24 C125,30 145,26 165,28 C180,31 195,34 200,35 L200,40 L0,40 Z",
   },
   {
     accent: COLORS.s2Secondary,
@@ -76,10 +80,14 @@ const THEMES = [
     accentBorder: "hsl(265 70% 60% / 0.20)",
     dot: COLORS.s2Secondary,
     label: "PICK 2",
-    chartLine:
+    chartLineUp:
       "M0,28 C15,30 30,26 50,22 C70,18 90,24 110,16 C130,10 150,14 170,8 C185,6 195,3 200,5",
-    chartFill:
+    chartFillUp:
       "M0,28 C15,30 30,26 50,22 C70,18 90,24 110,16 C130,10 150,14 170,8 C185,6 195,3 200,5 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,5 C15,7 30,11 50,15 C70,19 90,13 110,21 C130,27 150,23 170,29 C185,31 195,34 200,32",
+    chartFillDown:
+      "M0,5 C15,7 30,11 50,15 C70,19 90,13 110,21 C130,27 150,23 170,29 C185,31 195,34 200,32 L200,40 L0,40 Z",
   },
   {
     accent: COLORS.s2Accent,
@@ -88,10 +96,14 @@ const THEMES = [
     accentBorder: "hsl(345 75% 58% / 0.20)",
     dot: COLORS.s2Accent,
     label: "PICK 3",
-    chartLine:
+    chartLineUp:
       "M0,30 C25,28 40,22 60,18 C80,14 95,20 115,12 C135,6 155,10 175,8 C190,5 200,4 200,3",
-    chartFill:
+    chartFillUp:
       "M0,30 C25,28 40,22 60,18 C80,14 95,20 115,12 C135,6 155,10 175,8 C190,5 200,4 200,3 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,3 C25,5 40,11 60,15 C80,19 95,13 115,21 C135,27 155,23 175,25 C190,28 200,29 200,30",
+    chartFillDown:
+      "M0,3 C25,5 40,11 60,15 C80,19 95,13 115,21 C135,27 155,23 175,25 C190,28 200,29 200,30 L200,40 L0,40 Z",
   },
 ] as const;
 
@@ -332,6 +344,8 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number }>
   const isMonthPositive = Number(company.month_change_pct || 0) >= 0;
   const points = normalizeStringList(company.slide_points, 3);
   const finalPoints = points.length > 0 ? points : normalizeStringList([company.reason, company.move_summary], 3);
+  const chartLine = isPositive ? theme.chartLineUp : theme.chartLineDown;
+  const chartFill = isPositive ? theme.chartFillUp : theme.chartFillDown;
 
   return (
     <AbsoluteFill
@@ -471,9 +485,9 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number }>
                   <stop offset="100%" stopColor={isPositive ? COLORS.gain : COLORS.loss} stopOpacity="0.02" />
                 </linearGradient>
               </defs>
-              <motion.path d={theme.chartFill} fill={`url(#firm-grad-${index})`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} />
+              <motion.path d={chartFill} fill={`url(#firm-grad-${index})`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} />
               <motion.path
-                d={theme.chartLine}
+                d={chartLine}
                 fill="none"
                 stroke={isPositive ? COLORS.gain : COLORS.loss}
                 strokeWidth={1.5}

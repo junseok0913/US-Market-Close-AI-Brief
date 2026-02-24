@@ -103,6 +103,8 @@ script:
       - 'data/story' 일반 섹션만으로 서술하지 말 것.
       - sections는 hook/company_1..N/closing으로 구성할 것.
       - metadata.company_moves는 2~4개를 목표로, 최소 2개 이상 채울 것.
+      - metadata.company_moves의 숫자 지표(1D/1M, 시총, PER, PBR, ROE)는 company_context_json 값을 그대로 사용할 것.
+      - company_context_json에 없는 숫자 지표는 null/N/A로 두고, 절대 추정/생성하지 말 것.
       - closing 섹션은 반드시 CTA 문장만 사용:
         - ko: "구독과 좋아요 부탁드립니다."
         - en: "Please like and subscribe."

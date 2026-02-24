@@ -43,6 +43,7 @@ from shared.config import (
     set_briefing_date,
 )
 from shared.fetchers import prefetch_all
+from shared.date_display import resolve_display_date
 from shared.types import ScriptTurn, Theme
 from shared.utils.tracing import configure_tracing
 from shared.yaml_config import load_env_from_yaml
@@ -603,7 +604,7 @@ def main() -> None:
 
         # 최종 산출물 생성
         final_payload = {
-            "date": result.get("date", date_yyyymmdd),
+            "date": resolve_display_date(result.get("date", date_yyyymmdd), "ko"),
             "nutshell": result.get("nutshell", ""),
             "user_tickers": result.get("user_tickers", user_tickers),
             "chapter": result.get("chapter", _init_chapter()),

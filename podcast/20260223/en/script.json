@@ -1,0 +1,580 @@
+{
+  "date": "20260223",
+  "nutshell": "Trade war fears intensify following Supreme Court tariff ruling.",
+  "user_tickers": [
+    "IONQ"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the market closing brief for February 23rd. It was a tough day for investors on Wall Street, with all three major indices falling more than 1%.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up in one phrase: growing fears of a trade war following the Supreme Court's tariff ruling. The Dow Jones Industrial Average finished down 1.66% at 48,804.06. The S&P 500 slipped 1.04% to 6,837.75, and the tech-heavy Nasdaq Composite also dropped 1.13% to close at 22,627.27. What really dominated the market from the opening bell was the news that despite the Supreme Court striking down existing tariffs, President Trump immediately announced he would impose new global tariffs. This sent geopolitical uncertainty to a fever pitch, sparking a broad-based sell-off.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#365f4491fe4f7607",
+          "title": "Reaction to US Supreme Court ruling and Trump's new tariff threat"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, as you mentioned, this tariff risk was the key factor dragging the market down. I also heard there were some comments from a Federal Reserve official amid all this.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. And to make matters worse, hawkish comments from Fed Governor Christopher Waller added to the downward pressure. Waller suggested that if the next jobs report comes in strong, there's no need to rush a rate cut in March. This dampened the market's hopes for a rate cut and was like pouring cold water on already fragile investor sentiment. In the end, the twin headwinds of renewed trade war fears and concerns about higher-for-longer interest rates hit the market at the same time, forcing investors into a full-on risk-off mode.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#30752f21612d0693",
+          "title": "Fed's Waller says he could shift to holding rates steady if next jobs report comes in strong"
+        },
+        {
+          "type": "event",
+          "id": "419174",
+          "title": "fed waller speech",
+          "date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it was really the combination of the major tariff variable and the Fed's hawkish tone that soured investor sentiment. Could you break down the key themes that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there were two main currents we need to look at today. First, the potential revival of the Trump administration's tariff policy, which really shook the market. And second, the added signal from the Fed that high interest rates could be here to stay. We'll dive into each of these themes in detail right after this.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "As you pointed out in the opening, the market was really shaken today by the surprise variable of President Trump's tariff announcement. Let's take a closer look at that.",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the market was gripped by the fear of an unpredictable trade war. The Dow fell 1.65 percent and the S&P 500 dropped 1.04 percent. On top of that, the VIX, the market's fear gauge, shot up over 13 percent to close above 21.6. Investors fled from risk assets and piled into safe havens. As a result, gold prices surged 3.8 percent, breaking through the $5,250 an ounce level. Conversely, the 10-year Treasury yield fell to the 4.02 percent range, signaling strong demand for bonds. Sectors directly in the line of fire, like the retail index which is heavily dependent on imports, were hit particularly hard, falling over 2 percent. And the catalyst for all this chaos was President Trump's announcement of a new 15 percent global tariff, despite the Supreme Court's ruling.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "XRT",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#365f4491fe4f7607",
+          "title": "Reaction to US Supreme Court ruling and Trump's new tariff threat"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "That's interesting. You'd think the news that the Supreme Court blocked the existing tariffs would have been seen as a positive. How did the situation turn around so quickly?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The problem is that the administration immediately played a new card that effectively nullifies the court's decision. The Supreme Court ruled that the Trump administration overstepped its authority by using the International Emergency Economic Powers Act to impose tariffs. But right after the ruling, President Trump cited a completely different legal basis—Section 122 of the Trade Act of 1974—to announce a 15 percent tariff on all imports. This law gives the president the authority to impose tariffs for up to 150 days without congressional approval. The market saw this as an attempt to bypass judicial checks and balances, which created extreme uncertainty. So, regardless of the constitutionality of the old tariffs, the market was hit with the reality that a new, more immediate and broader trade barrier could be erected.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#21730c6bcdd547a8",
+          "title": "With tariffs ruling, Supreme Court reasserts its power to check Trump​"
+        },
+        {
+          "type": "article",
+          "pk": "id#8c760f2769fd4387",
+          "title": "Morning Minute: Supreme Court Rules Against Trump Tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#7f8cde438a65bf67",
+          "title": "Supreme Court tariff reversal cements China’s upper hand ahead of a critical meeting with Trump"
+        },
+        {
+          "type": "article",
+          "pk": "id#74554f0b3522f524",
+          "title": "Supreme Court decision against Trump's tariffs raises uncertainty, but markets stay calm"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "I see. So if we're talking about a tariff on virtually all imports, not just specific goods, the ripple effects on the entire economy could be significant.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's right. The biggest concern is the potential for inflation to reignite. A 15 percent tariff would directly translate into higher import prices, which could push up the cost of final consumer goods. That's a factor that makes it even harder for the Fed to cut rates. At the same time, companies will face pressure on their profit margins from increased costs for raw materials and components. While many CEOs are refraining from public criticism, they are reportedly scrambling internally to deal with supply chain disruptions and rising costs. Ultimately, this move is seen as a major headwind that could derail the economic recovery by increasing costs for both households and businesses.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d7138eba681d01b0",
+          "title": "CEOs who despised Trump’s tariffs are still silent after Supreme Court ruling: ‘There’s no upside in speaking up’"
+        },
+        {
+          "type": "article",
+          "pk": "id#8c760f2769fd4387",
+          "title": "Morning Minute: Supreme Court Rules Against Trump Tariffs"
+        },
+        {
+          "type": "chart",
+          "ticker": "XRT",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLI",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "What has the reaction been from other countries to this sudden move by the U.S.? Is there a chance this trade dispute could escalate into an all-out conflict?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Major trading partners are already pushing back forcefully. China's Ministry of Commerce immediately issued a statement urging the U.S. to withdraw the unilateral tariff measures, and the European Commission has also raised its voice, insisting that existing trade agreements must be respected. ECB President Christine Lagarde expressed deep concern, stating that this move could cause further disruption. Some analysts even suggest that with the old tariffs nullified by the Supreme Court, China's negotiating position has actually strengthened. Morgan Stanley noted in a report that the effective U.S. tariff rate on Chinese goods could fall from 32 percent to 24 percent. But what's clear is that if the Trump administration pushes ahead with new tariffs, the risk of retaliatory measures from major countries, and thus a renewed global trade war, has increased significantly. For the next 150 days, the market is likely to remain swayed by political uncertainty surrounding these tariffs.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#365f4491fe4f7607",
+          "title": "Reaction to US Supreme Court ruling and Trump's new tariff threat"
+        },
+        {
+          "type": "article",
+          "pk": "id#7f8cde438a65bf67",
+          "title": "Supreme Court tariff reversal cements China’s upper hand ahead of a critical meeting with Trump"
+        },
+        {
+          "type": "article",
+          "pk": "id#74554f0b3522f524",
+          "title": "Supreme Court decision against Trump's tariffs raises uncertainty, but markets stay calm"
+        },
+        {
+          "type": "article",
+          "pk": "id#7b06e93001102782",
+          "title": "US futures fall while Asian markets are mostly higher after the Supreme Court nixes Trump's tariffs"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "As you mentioned in our opening, the Supreme Court's tariff ruling and President Trump's new tariff plan shook the markets, and hawkish comments from the Fed further dampened investor sentiment. Let's first take a closer look at this tariff storm.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today was a day completely dominated by uncertainty. The Dow Jones Industrial Average fell 1.66 percent, the S&P 500 lost 1.04 percent, and the Nasdaq dropped 1.13 percent, with all three major indices seeing a sharp decline. The VIX, the market's fear gauge, jumped over 5 percent, clearly showing investor anxiety. It all started when President Trump immediately countered the Supreme Court's ruling against existing tariffs by announcing a new 15 percent global tariff. In response to this news, the European Union put the ratification of its trade deal with the U.S. on hold, and India also postponed sending its negotiating team, fueling concerns that the global trade order could once again descend into chaos. As this geopolitical risk came to the forefront, the price of gold, a safe-haven asset, jumped to a three-week high, soaring past $5,100 an ounce. Meanwhile, the Dollar Index saw increased volatility during the session, reflecting the market's confusion.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#acbd43d025468888",
+          "title": "EU halts US trade deal over Trump tariffs chaos"
+        },
+        {
+          "type": "article",
+          "pk": "id#ece8b7423f545ba5",
+          "title": "Stocks sell off as traders wake up to the realization that Trump has ‘highly punitive’ options for new trade tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#86418ca188c34639",
+          "title": "Gold Rises as Trump Tariff Defeat Throws Trade Deals Into Doubt"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So you're saying that even though the old tariffs are gone, uncertainty has actually increased. How are the new tariffs different, both legally and in substance?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "The key difference is the legal basis the president is using to impose tariffs without congressional approval. Previously, it was the International Emergency Economic Powers Act, which the Supreme Court blocked. This time, he's using Section 122 of the Trade Act of 1974. The catch is that tariffs under this provision are only valid for 150 days and require congressional consent for an extension. This sets the stage for another round of political uncertainty in a few months. Furthermore, investment banks like BNP Paribas are analyzing that the administration could be considering even more powerful and broader tools that don't require congressional approval, like Section 232 or Section 301 of the Trade Act, as its next move. So, in the end, the market isn't just dealing with the removal of one tariff risk; it's now facing the possibility of a more unpredictable and complex trade dispute.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6cc8cc35e9239849",
+          "title": "Global Trade Confusion Returns as Trump Overhauls Tariff Toolkit"
+        },
+        {
+          "type": "article",
+          "pk": "id#ece8b7423f545ba5",
+          "title": "Stocks sell off as traders wake up to the realization that Trump has ‘highly punitive’ options for new trade tariffs"
+        },
+        {
+          "type": "article",
+          "pk": "id#acbd43d025468888",
+          "title": "EU halts US trade deal over Trump tariffs chaos"
+        },
+        {
+          "type": "article",
+          "pk": "id#2fbe985cd4195e1a",
+          "title": "EU Set to Halt US Trade Deal Approval Over Trump Tariff Risk"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "It really is one thing after another. And you mentioned that amid these trade dispute fears, Fed Governor Christopher Waller's comments poured cold water on the market?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's right. In a speech to the National Association for Business Economics, Governor Christopher Waller stated that if the February jobs report, due out next month, comes in as strong as January's, it might be appropriate to hold rates steady at the March FOMC meeting. He essentially described a March rate cut as a 'coin flip,' directly pushing back against the market's expectations for an early cut. This is significant because Waller has been a prominent dove, arguing for rate cuts since last year due to a cooling labor market, and he was the one who dissented in favor of a cut at the January meeting. His change in tone is being interpreted as a strong signal that the Fed's policy stance is tilting hawkish again, which amplified concerns about a double whammy: the tariff shock combined with higher-for-longer interest rates.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#30752f21612d0693",
+          "title": "Fed's Waller says he could shift to holding rates steady if next jobs report comes in strong"
+        },
+        {
+          "type": "article",
+          "pk": "id#bd21b4ba9fef5d7f",
+          "title": "Fed's Waller says rate cut in March is a 'coin flip' following a strong US jobs report"
+        },
+        {
+          "type": "event",
+          "id": "419174",
+          "title": "fed waller speech",
+          "date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, in essence, the market was crushed by the twin fears of a new trade war and the Fed's prolonged tightening cycle.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Exactly. The market is now caught in a dilemma. On one hand, tariffs themselves are inflationary because they raise import prices, making it harder for the Fed to cut rates. On the other hand, the trade slowdown and increased uncertainty caused by tariffs could slow down business investment and consumption, raising the risk of a recession, which paradoxically increases the need for rate cuts. Waller's comments show that, for now, the Fed is more focused on the strong employment and inflation data than on the risk of an economic slowdown. As a result, investors found themselves lost between the conflicting risks of inflation and a downturn, and for today, they had little choice but to reduce their exposure to risk assets.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#30752f21612d0693",
+          "title": "Fed's Waller says he could shift to holding rates steady if next jobs report comes in strong"
+        },
+        {
+          "type": "article",
+          "pk": "id#6cc8cc35e9239849",
+          "title": "Global Trade Confusion Returns as Trump Overhauls Tariff Toolkit"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, amid this complex market environment, let's also look at some noteworthy individual stock movements. Today, we'll take a closer look at the quantum computing company, IonQ. The stock rose to the mid-$31 range early in the session before reversing course, ultimately closing down about 0.7% at $30.80.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "IONQ",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, IonQ is a company where the excitement for future technology starkly contrasts with its current financial reality. On the positive side, the company's top-line growth is very impressive. Revenue in the third quarter of 2025 surged by 222% year-over-year. And they're showing a bold vision to build a 'full-stack quantum ecosystem' by acquiring companies not just in quantum computing, but also in related fields like satellites, security, and networking. This growth story is a key reason why many investors are focused on IonQ's future potential.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "IONQ",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-266942"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "The revenue growth and future vision sound quite positive. But as the stock's performance suggests, the market's assessment isn't entirely optimistic. What are the risks on the other side of the coin?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's the heart of the issue. Behind that impressive growth lies severe financial pressure. In the first nine months of 2025, the company's cash outflow from operating activities was $208.7 million, a more than threefold increase from the same period last year. Simply put, the business isn't generating cash; it's burning through it at a rapid pace. What's more concerning is that the company is relying on massive stock issuance to fund this growth. The number of shares outstanding increased by about 47% in just nine months, which is essentially buying growth while severely diluting the value for existing shareholders.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "IONQ",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-266942"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So the rapid cash burn and shareholder dilution are clearly major burdens. Are there any other structural risk factors?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The most worrying part is the stability of the company's leadership. In its own Q3 2025 report, the company explicitly states there has been 'significant turnover in our executive team and board of directors.' They even acknowledge the risk that this could result in a loss of institutional knowledge and impair their ability to execute their business strategy. No matter how great the technology and vision are, if the core leadership responsible for execution is unstable, the credibility of that growth story is fundamentally undermined. This is seen as a serious red flag that goes beyond mere financial risk and raises questions about the company's very viability.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "IONQ",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-266942"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So to sum it up, IonQ has an attractive blueprint for a quantum ecosystem, but on the flip side, it's dealing with the clear and present dangers of massive cash burn and the departure of key executives.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Precisely. IonQ appears to be walking a tightrope between the uncertain possibility of future success and the very clear risks of the present. From an investor's perspective, it's a time to very carefully weigh the potential for disruptive innovation that the company presents against three key risk factors: accelerating cash burn, significant shareholder dilution, and the leadership vacuum. For now, until the company can clearly demonstrate its technological superiority and present a sustainable business model with real numbers, it seems to be carrying a substantial amount of uncertainty.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "IONQ",
+          "form": "10-Q",
+          "filed_date": "2025-11-05",
+          "accession_number": "0001193125-25-266942"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So, how would you sum up today's market in a nutshell?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Well, it was a day where the AI rally pushed the market to new highs, but we also saw some profit-taking, leading to a bit of a breather. NVIDIA's explosive earnings report sent a wave of optimism through the entire market, pushing both the S&P 500 and the Dow to new all-time highs. However, as the week progressed, selling pressure from concerns about the market being overbought emerged, causing the indices to give back some of their gains. Ultimately, the market ended the week with a mix of powerful growth momentum and a sense of caution about a short-term peak.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. So it was a week of hitting new highs, but with an undercurrent of caution. Looking ahead, what are the key events next week that could give us a sense of the market's direction?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Next week is packed with important economic data releases that will test the market's direction. First, we'll be watching the Conference Board's Consumer Confidence Index on Tuesday. This is a key indicator for gauging the health of the consumer, which accounts for two-thirds of the U.S. economy. The market is currently forecasting a reading of 87.3, an improvement from the previous 84.5. If the number comes in above expectations, it could be interpreted as a positive sign that strong consumption is supporting the economy.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "418451",
+          "title": "cb consumer confidence",
+          "date": "2026-02-24"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So consumer sentiment will continue to play a crucial role. What about jobs and inflation data? What should we be keeping an eye on?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Absolutely. On Thursday, we get the weekly initial jobless claims. This will give us a read on whether the labor market, which has been remarkably resilient, is staying hot. The market expects a slight increase to 216,000 claims from last week's 206,000. Then, at the end of the week on Friday, we have the Producer Price Index, or PPI. This is often seen as a leading indicator for the Consumer Price Index, so it provides important clues about the Fed's future policy path. The core PPI, which excludes volatile food and energy prices, is expected to have slowed to a 0.3% increase for the month, down from 0.7% last month. The key will be whether we see this easing of inflationary pressures as forecasted.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395129",
+          "title": "initial jobless claims",
+          "date": "2026-02-26"
+        },
+        {
+          "type": "event",
+          "id": "398267",
+          "title": "core ppi mom",
+          "date": "2026-02-27"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So each data point will be a test of the market's expectations. Finally, do you have any closing thoughts for our investors?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Even though the market is showing incredible strength by hitting all-time highs, times like these call for a renewed focus on fundamentals. The economic data coming out next week will be a crucial test of whether the current high valuations are justified and what changes they might bring to the Fed's policy path. Rather than just riding the wave of optimism, it's a time to calmly analyze the incoming data and carefully review one's investment strategy.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Understood. That concludes our market closing brief for February 23rd. Thank you.",
+      "sources": []
+    }
+  ]
+}

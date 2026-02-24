@@ -41,7 +41,7 @@ system: |
     - Slide 1(hook): use a strong hook sentence that creates curiosity in first 5 seconds.
     - Slide 2(data): include concrete index/macro numbers in highlights or subheadline.
     - Slide 3(story): summarize cause-and-effect with 2 short bullets.
-    - Slide 4(closing): provide one next-watch point and one closing takeaway.
+    - Slide 4(closing): CTA only. Use subscribe/like closing copy.
     - Prefer short, visual-safe Korean phrasing over long explanatory sentences.
   </style_rules>
 
@@ -93,10 +93,10 @@ user_template: |
   - featured_tickers must include at least 3 non-index tickers (no ^GSPC, ^IXIC, ^DJI).
     Each ticker must have a Korean "label" (e.g. "소매업종 ETF", "블랙록", "엔비디아") and a "tag" (key signal, e.g. "시장 주목", "강세 전환", "실적 서프라이즈").
     Use tickers actually mentioned in the script — do NOT invent tickers not in the source data.
-  - Slide 4 closing: headline = the event name (large visual title, e.g. "생산자물가지수 (PPI)").
-    eyebrow = event date (e.g. "2월 27일 (금)").
-    subheadline = one-line reason why this matters (e.g. "인플레이션과 시장 방향의 핵심 지표").
-    Do NOT use generic text like "다음 주 핵심 변수" as headline — always use the SPECIFIC event or indicator name.
+  - Slide 4 closing: CTA only.
+    Use the same closing sentence from shorts script.
+    headline/subheadline/body should be CTA phrasing.
+    Do NOT add event schedule or macro watch copy (CPI/PPI/FOMC/고용지표 등).
 
   Copy style examples (follow this tone/length style):
   - hook:
@@ -111,8 +111,7 @@ user_template: |
     subheadline: "대법원 판결이 반전 트리거"
     bullets: ["불확실성 완화", "소매업종 XRT 강세"]
   - closing:
-    eyebrow: "2월 27일 (금)"
-    headline: "생산자물가지수 (PPI)"
-    subheadline: "인플레이션과 시장 방향의 핵심 지표"
-    bullets: ["연준의 다음 행보 결정 지표", "시장 방향성 재탐색 구간"]
-
+    eyebrow: "마무리"
+    headline: "구독과 좋아요 부탁드립니다."
+    subheadline: "구독과 좋아요 부탁드립니다."
+    bullets: ["구독과 좋아요 부탁드립니다."]

@@ -25,6 +25,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.utils.llm import build_llm
+from shared.date_display import normalize_yyyymmdd
 from shared.yaml_config import load_env_from_yaml
 
 logging.basicConfig(
@@ -83,6 +84,11 @@ def parse_date_token(token: str) -> str:
     if len(normalized) != 8 or not normalized.isdigit():
         raise ValueError(f"Invalid date: {token}")
     return normalized
+
+
+def resolve_display_date(payload: dict[str, Any], fallback_date: str) -> str:
+    candidate = normalize_yyyymmdd(payload.get("date"))
+    return candidate or fallback_date
 
 
 def compact_text(text: Any, max_len: int) -> str:
@@ -1019,6 +1025,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         prompt_cfg = load_prompt_yaml(PROMPT_PATH)
         shorts_script = load_json_file(shorts_script_path)
+        display_date = resolve_display_date(shorts_script, date)
         if full_script_path and full_script_path.exists():
             full_script = load_json_file(full_script_path)
         else:
@@ -1033,7 +1040,7 @@ def main(argv: list[str] | None = None) -> int:
         llm = build_llm(prefix=args.prefix, logger=logger)
 
         payload = generate_shorts_slides(
-            date=date,
+            date=display_date,
             lang=lang,
             shorts_script=shorts_script,
             full_script=full_script,

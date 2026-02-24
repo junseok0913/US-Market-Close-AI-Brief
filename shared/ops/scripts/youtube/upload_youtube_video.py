@@ -29,6 +29,7 @@ ROOT_DIR = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.yaml_config import load_env_from_yaml
+from shared.date_display import resolve_display_date
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
@@ -289,6 +290,11 @@ def _is_shorts_upload(file_path: Path) -> bool:
     return "/shorts/" in path_text or "_shorts" in file_path.name.lower()
 
 
+def _is_shorts_firm_upload(file_path: Path) -> bool:
+    path_text = str(file_path).lower()
+    return "/shorts-firm/" in path_text or "shorts-firm" in file_path.name.lower()
+
+
 def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
     episode_dir = ROOT_DIR / "podcast" / date_yyyymmdd / lang
     metadata_path = episode_dir / "metadata.json"
@@ -308,7 +314,8 @@ def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
     else:
         logger.warning("%s not found, fallback title/description may be generic.", episode_json_path.name)
 
-    default_title = f"{date_yyyymmdd} US Market Close Briefing ({lang.upper()})"
+    display_date = resolve_display_date(date_yyyymmdd, lang)
+    default_title = f"{display_date} US Market Close Briefing ({lang.upper()})"
     default_desc = "AI-generated market close briefing."
 
     nutshell = str(episode_json.get("nutshell", "")).strip()
@@ -498,6 +505,15 @@ def main(argv: list[str] | None = None) -> int:
     try:
         metadata = load_upload_metadata(date_yyyymmdd, args.lang)
         is_shorts = _is_shorts_upload(file_path)
+        is_shorts_firm = _is_shorts_firm_upload(file_path)
+
+        if is_shorts_firm:
+            display_date = resolve_display_date(date_yyyymmdd, args.lang)
+            if args.lang == "ko":
+                metadata["title"] = f"{display_date} 미국 증시 장마감 | 오늘의 화제 종목"
+            else:
+                metadata["title"] = f"{display_date} US Market Close | Today's Focus Stocks"
+
         if is_shorts:
             metadata["tags"] = _dedupe_keep_order([*metadata["tags"], "shorts"])
             chapter_lines: list[str] = []

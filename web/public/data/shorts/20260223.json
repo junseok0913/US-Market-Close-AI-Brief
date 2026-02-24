@@ -1,0 +1,224 @@
+{
+  "date": "20260224",
+  "lang": "ko",
+  "title": "대법원 관세 제동에도 시장이 1% 급락한 이유",
+  "hook": "대법원이 관세에 제동을 걸었는데, 왜 시장은 무역전쟁 공포에 휩싸였을까요.",
+  "durationSeconds": 70.524,
+  "audioFile": "shorts20260223.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.691,
+      "eyebrow": "2026년 2월 24일",
+      "headline": "관세 제동, 증시는 왜 급락?",
+      "subheadline": "대법원 판결에도 무역전쟁 공포가 덮친 이유",
+      "body": "대법원이 관세에 제동을 걸었는데, 왜 시장은 무역전쟁 공포에 휩싸였을까요.",
+      "bullets": [
+        "대법원이 관세에 제동을 걸었는데, 왜 시장은 무역전쟁 공포에 휩싸였을까요."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "^VIX"
+      ],
+      "highlights": [
+        "71초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.691,
+      "endSec": 22.582,
+      "eyebrow": "미국 증시 현황",
+      "headline": "3대 지수 1%대 동반 급락",
+      "subheadline": "다우 -1.66% | S&P 500 -1.04% | 나스닥 -1.13%",
+      "body": "2월 24일 미국 증시는 다우 -1.66%, S&P 500 -1.04%, 나스닥 -1.13% 등 3대 지수 모두 1% 넘게 급락했습니다. 시장은 대법원 관세 판결에도 불구하고 새로운 무역전쟁 우려가 부각되며 큰 충격을 받았습니다.",
+      "bullets": [
+        "2월 24일 미국 증시는 다우 -1.66%, S&P 500 -1.04%, 나스닥 -1.13% 등 3대 지수 모두 1% 넘게 급락했습니다.",
+        "시장은 대법원 관세 판결에도 불구하고 새로운 무역전쟁 우려가 부각되며 큰 충격을 받았습니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "^VIX"
+      ],
+      "highlights": [
+        "-1.66%",
+        "-1.04%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 22.582,
+      "endSec": 60.593,
+      "eyebrow": "시장 급락의 두 가지 이유",
+      "headline": "관세와 금리, 이중 악재",
+      "subheadline": "트럼프의 15% 관세 발표에 연준의 매파적 발언이 더해졌습니다.",
+      "body": "발단은 대법원이 기존 관세를 위헌으로 판결하자, 트럼프 대통령이 즉각 '1974년 무역법'을 근거로 모든 수입품에 15%의 새로운 관세를 부과하겠다고 맞선 것이었습니다. 이 소식에 시장의 공포지수인 VIX는 13% 넘게 폭등했고, 안전자산인 금 가격은 3.8% 급등했습니다. 설상가상으로 대표적 비둘기파였던 크리스토퍼 월러 연준 이사마저 3월 금리 인하를 서두를 필요가 없다고 발언하며 시장의 기대에 찬물을 끼얹었습니다. 결국…",
+      "bullets": [
+        "트럼프, 대법원 판결 피해 모든 수입품에 15% 관세 부과 선언",
+        "연준 월러 이사, '3월 금리인하 시기상조' 발언으로 기대감 하락"
+      ],
+      "tickers": [
+        "^VIX",
+        "GCF",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "VIX +13%",
+        "금 +3.8%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 60.593,
+      "endSec": 70.524,
+      "eyebrow": "2월 27일 (금)",
+      "headline": "생산자물가지수 (PPI)",
+      "subheadline": "새로운 관세 우려 속 인플레이션 향방을 가늠할 핵심 지표",
+      "body": "다음 주에는 화요일 소비자 신뢰지수와 금요일 생산자물가지수, PPI 발표가 예정되어 있어, 시장의 향방을 가늠할 중요한 분수령이 될 전망입니다.",
+      "bullets": [
+        "다음 주 주목할 지표: 소비자 신뢰지수(화), PPI(금)",
+        "인플레이션 재점화 여부가 시장의 단기 방향성을 결정할 전망"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "^VIX"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.691,
+      "text": "대법원이 관세에 제동을 걸었는데, 왜 시장은 무역전쟁 공포에 휩싸였을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.691,
+      "endSec": 22.582,
+      "text": "2월 24일 미국 증시는 다우 -1.66%, S&P 500 -1.04%, 나스닥 -1.13% 등 3대 지수 모두 1% 넘게 급락했습니다. 시장은 대법원 관세 판결에도 불구하고 새로운 무역전쟁 우려가 부각되며 큰 충격을 받았습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 22.582,
+      "endSec": 60.593,
+      "text": "발단은 대법원이 기존 관세를 위헌으로 판결하자, 트럼프 대통령이 즉각 '1974년 무역법'을 근거로 모든 수입품에 15%의 새로운 관세를 부과하겠다고 맞선 것이었습니다. 이 소식에 시장의 공포지수인 VIX는 13% 넘게 폭등했고, 안전자산인 금 가격은 3.8% 급등했습니다. 설상가상으…"
+    },
+    {
+      "id": 3,
+      "startSec": 60.593,
+      "endSec": 70.524,
+      "text": "다음 주에는 화요일 소비자 신뢰지수와 금요일 생산자물가지수, PPI 발표가 예정되어 있어, 시장의 향방을 가늠할 중요한 분수령이 될 전망입니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "article",
+      "label": "Reaction to US Supreme Court ruling and Trump's new tar…",
+      "detail": "id#365f4491fe4f7607"
+    },
+    {
+      "type": "article",
+      "label": "With tariffs ruling, Supreme Court reasserts its power…",
+      "detail": "id#21730c6bcdd547a8"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "chart",
+      "label": "GC=F",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "article",
+      "label": "Fed's Waller says he could shift to holding rates stead…",
+      "detail": "id#30752f21612d0693"
+    },
+    {
+      "type": "event",
+      "label": "fed waller speech",
+      "detail": "2026-02-23"
+    },
+    {
+      "type": "event",
+      "label": "cb consumer confidence",
+      "detail": "2026-02-24"
+    },
+    {
+      "type": "event",
+      "label": "core ppi mom",
+      "detail": "2026-02-27"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 1% 이상 동반 하락",
+      "트럼프, 대법원 판결 우회하는 15% 신규 관세 발표",
+      "연준 월러 이사, 3월 금리인하 신중론 발언",
+      "VIX 13% 폭등 등 안전자산으로 자금 이동"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "^VIX",
+        "label": "변동성 지수",
+        "tag": "13% 폭등"
+      },
+      {
+        "ticker": "GCF",
+        "label": "금 선물",
+        "tag": "안전자산 선호"
+      },
+      {
+        "ticker": "XRT",
+        "label": "소매업종 ETF",
+        "tag": "관세 우려 직격탄"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

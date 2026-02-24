@@ -10,6 +10,7 @@ critical_rules: |
   1. script.json에 있는 숫자/날짜/종목명/퍼센트를 그대로 사용하세요
   2. script.json에 없는 정보는 절대 만들지 마세요
   3. script.json에 구체적 숫자가 있으면 반드시 사용하세요
+  4. 방송 날짜 표기는 반드시 "{date}" 기준으로 통일하세요 (예: "2월 24일 뉴욕 증시는 ...")
 
 description_guide: |
   # 설명 작성 원칙

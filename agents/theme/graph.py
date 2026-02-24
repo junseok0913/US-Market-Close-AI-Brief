@@ -26,6 +26,7 @@ from shared.config import (
     set_briefing_date,
 )
 from shared.fetchers import prefetch_all
+from shared.date_display import resolve_display_date
 from shared.normalization import normalize_script_turns, parse_json_from_response
 from shared.tools import (
     count_keyword_frequency,
@@ -188,7 +189,8 @@ def prepare_messages_node(state: ThemeWorkerState) -> ThemeWorkerState:
     if not date_str:
         raise ValueError("date 필드가 state에 없습니다.")
 
-    date_korean = _format_date_korean(date_str.replace("-", ""))
+    date_display = resolve_display_date(date_str.replace("-", ""), "ko")
+    date_korean = _format_date_korean(date_display)
 
     system_prompt = prompt_cfg["worker_system"].replace("{tools}", _get_tools_description()).replace("{date}", date_korean)
 
@@ -434,7 +436,11 @@ def build_theme_graph():
         scripts_minimal_json = json.dumps(scripts_minimal, ensure_ascii=False, separators=(",", ":"))
         themes_json = json.dumps(state.get("themes", []), ensure_ascii=False, separators=(",", ":"))
         date_str = state.get("date") or ""
-        date_korean = _format_date_korean(date_str.replace("-", "")) if date_str else ""
+        date_korean = (
+            _format_date_korean(resolve_display_date(date_str.replace("-", ""), "ko"))
+            if date_str
+            else ""
+        )
 
         system_prompt = prompt_cfg["refiner_system"].replace("{date}", date_korean)
         human_prompt = (

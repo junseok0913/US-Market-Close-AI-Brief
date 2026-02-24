@@ -51,6 +51,10 @@ SHORTS_FIRM_TTS_VOICE="${YOUTUBE_SHORTS_FIRM_TTS_VOICE:-Charon}"
 SHORTS_FIRM_TTS_TEMPERATURE="${YOUTUBE_SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
 SHORTS_FIRM_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_pipeline.yaml}"
 SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_slides.yaml}"
+THUMBNAIL_SLIDE_INDEX="${YOUTUBE_THUMBNAIL_SLIDE_INDEX:-0}"
+THUMBNAIL_WIDTH="${YOUTUBE_THUMBNAIL_WIDTH:-1280}"
+THUMBNAIL_HEIGHT="${YOUTUBE_THUMBNAIL_HEIGHT:-720}"
+THUMBNAIL_TIMEOUT_SECONDS="${YOUTUBE_THUMBNAIL_TIMEOUT_SECONDS:-120}"
 
 WEB_PID=""
 WEB_STARTED_BY_SCRIPT=0
@@ -149,23 +153,23 @@ ensure_web_ready() {
 
     if curl -sSf "${target_url}" >/dev/null 2>&1; then
         reuse_existing=1
-        echo "♻️  Reusing existing Next.js server on 127.0.0.1:${WEB_PORT}"
+        echo "♻️  Reusing existing Next.js server on 127.0.0.1:${WEB_PORT}" >&2
     elif [ "${WEB_PORT}" != "3000" ]; then
         local alt_target_url="http://127.0.0.1:3000${target_suffix}"
         if curl -sSf "${alt_target_url}" >/dev/null 2>&1; then
             reuse_existing=1
             WEB_PORT="3000"
             target_url="${alt_target_url}"
-            echo "♻️  Found existing Next.js server on 127.0.0.1:3000"
-            echo "🔗 Updated target URL: ${target_url}"
+            echo "♻️  Found existing Next.js server on 127.0.0.1:3000" >&2
+            echo "🔗 Updated target URL: ${target_url}" >&2
         fi
     fi
 
     if [ "${reuse_existing}" -ne 1 ]; then
-        echo "🚀 Starting Next.js dev server on 127.0.0.1:${WEB_PORT}..."
+        echo "🚀 Starting Next.js dev server on 127.0.0.1:${WEB_PORT}..." >&2
         (
             cd "${ROOT_DIR}/web"
-            npm run dev -- --hostname 127.0.0.1 --port "${WEB_PORT}" >"${WEB_LOG}" 2>&1
+            npm run dev -- --webpack --hostname 127.0.0.1 --port "${WEB_PORT}" >"${WEB_LOG}" 2>&1
         ) &
         WEB_PID=$!
         WEB_STARTED_BY_SCRIPT=1
@@ -179,14 +183,14 @@ ensure_web_ready() {
             break
         fi
         if [ "${WEB_STARTED_BY_SCRIPT}" -eq 1 ] && ! kill -0 "${WEB_PID}" 2>/dev/null; then
-            echo "❌ Web server exited unexpectedly."
+            echo "❌ Web server exited unexpectedly." >&2
             exit 1
         fi
         sleep 1
     done
 
     if [ "${ready}" -ne 1 ]; then
-        echo "❌ Timed out waiting for web server readiness: ${target_url}"
+        echo "❌ Timed out waiting for web server readiness: ${target_url}" >&2
         exit 1
     fi
 
@@ -245,7 +249,9 @@ render_episode_video() {
     require_cmd curl
 
     local record_script="${ROOT_DIR}/web/scripts/record_episode_video.mjs"
+    local thumbnail_capture_script="${ROOT_DIR}/web/scripts/capture_thumbnail.mjs"
     require_file "${record_script}"
+    require_file "${thumbnail_capture_script}"
     require_file "${EPISODE_JSON}"
     require_file "${EPISODE_MP3}"
 
@@ -259,12 +265,18 @@ render_episode_video() {
         exit 1
     fi
     if [ "${OVERWRITE}" -eq 1 ]; then
-        rm -f "${EPISODE_OUTPUT_WEBM}" "${EPISODE_OUTPUT_MP4}"
+        rm -f "${EPISODE_OUTPUT_WEBM}" "${EPISODE_OUTPUT_MP4}" "${EPISODE_THUMBNAIL_PNG}"
     fi
 
     echo "📂 Syncing episode assets into web/public..."
     cp "${EPISODE_JSON}" "${EPISODE_WEB_DATA_PATH}"
     cp "${EPISODE_MP3}" "${EPISODE_WEB_AUDIO_PATH}"
+    local episode_display_date=""
+    episode_display_date="$(node -e "const fs=require('fs'); try { const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8')).date; process.stdout.write(typeof d === 'string' ? d : ''); } catch { process.stdout.write(''); }" "${EPISODE_JSON}")"
+    if [[ "${episode_display_date}" =~ ^[0-9]{8}$ ]] && [ "${episode_display_date}" != "${DATE}" ]; then
+        cp "${EPISODE_MP3}" "${ROOT_DIR}/web/public/audio/${episode_display_date}.mp3"
+        echo "📂 Synced display-date audio alias: ${episode_display_date}.mp3"
+    fi
 
     local audio_duration
     audio_duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "${EPISODE_MP3}" | tr -d '\r')"
@@ -283,9 +295,9 @@ render_episode_video() {
         target_url="${target_url}?leadMs=${TURN_LEAD_MS}"
     fi
     if [[ "${target_url}" == *\?* ]]; then
-        target_url="${target_url}&capture=1"
+        target_url="${target_url}&autoplay=1&capture=1"
     else
-        target_url="${target_url}?capture=1"
+        target_url="${target_url}?autoplay=1&capture=1"
     fi
     target_url="$(ensure_web_ready "${target_url}" "${EPISODE_OUTPUT_DIR}")"
     echo "🔗 Episode target URL: ${target_url}"
@@ -335,11 +347,15 @@ render_episode_video() {
     if [ -f "${EPISODE_THUMBNAIL_PNG}" ]; then
         echo "🖼️  Reusing existing episode thumbnail: ${EPISODE_THUMBNAIL_PNG}"
     else
-        echo "⚠️  Episode thumbnail missing. Extracting first frame from MP4..."
-        ffmpeg -hide_banner -loglevel error -y \
-            -i "${EPISODE_OUTPUT_MP4}" \
-            -frames:v 1 \
-            "${EPISODE_THUMBNAIL_PNG}"
+        echo "🖼️  Capturing episode thumbnail from /youtube/thumbnail route..."
+        local thumbnail_url="http://127.0.0.1:${WEB_PORT}/youtube/thumbnail/${DATE}?slide=${THUMBNAIL_SLIDE_INDEX}"
+        thumbnail_url="$(ensure_web_ready "${thumbnail_url}" "${EPISODE_OUTPUT_DIR}")"
+        node "${thumbnail_capture_script}" \
+            --url "${thumbnail_url}" \
+            --output "${EPISODE_THUMBNAIL_PNG}" \
+            --width "${THUMBNAIL_WIDTH}" \
+            --height "${THUMBNAIL_HEIGHT}" \
+            --timeout "$((THUMBNAIL_TIMEOUT_SECONDS * 1000))"
     fi
 
     cleanup
@@ -765,6 +781,26 @@ fi
 
 if ! [[ "${WEB_PORT}" =~ ^[0-9]+$ ]]; then
     echo "❌ --port must be numeric: ${WEB_PORT}"
+    exit 1
+fi
+
+if ! [[ "${THUMBNAIL_SLIDE_INDEX}" =~ ^[0-9]+$ ]]; then
+    echo "❌ YOUTUBE_THUMBNAIL_SLIDE_INDEX must be numeric: ${THUMBNAIL_SLIDE_INDEX}"
+    exit 1
+fi
+
+if ! [[ "${THUMBNAIL_WIDTH}" =~ ^[0-9]+$ ]]; then
+    echo "❌ YOUTUBE_THUMBNAIL_WIDTH must be numeric: ${THUMBNAIL_WIDTH}"
+    exit 1
+fi
+
+if ! [[ "${THUMBNAIL_HEIGHT}" =~ ^[0-9]+$ ]]; then
+    echo "❌ YOUTUBE_THUMBNAIL_HEIGHT must be numeric: ${THUMBNAIL_HEIGHT}"
+    exit 1
+fi
+
+if ! [[ "${THUMBNAIL_TIMEOUT_SECONDS}" =~ ^[0-9]+$ ]]; then
+    echo "❌ YOUTUBE_THUMBNAIL_TIMEOUT_SECONDS must be numeric: ${THUMBNAIL_TIMEOUT_SECONDS}"
     exit 1
 fi
 

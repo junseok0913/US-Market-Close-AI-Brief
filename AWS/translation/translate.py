@@ -82,7 +82,8 @@ def translate_script_batch(
     output_path: Path,
     llm: Any,
     system_prompt: str,
-    user_template: str
+    user_template: str,
+    source_date: str | None = None,
 ) -> Dict[str, Any]:
     """
     한국어 script.json을 영어로 일괄 번역
@@ -154,8 +155,9 @@ def translate_script_batch(
             )
         
         # 최종 결과 조합 (원본 구조 유지)
+        output_date = source_date or str(korean_data.get("date") or "").strip()
         english_data = {
-            "date": korean_data.get("date"),
+            "date": output_date,
             "nutshell": translated_data.get("nutshell", ""),
             "user_tickers": korean_data.get("user_tickers", []),
             "chapter": korean_data.get("chapter", []),
@@ -262,7 +264,8 @@ def main():
             output_path=english_script,
             llm=llm,
             system_prompt=system_prompt,
-            user_template=user_template
+            user_template=user_template,
+            source_date=date,
         )
         
         print(f"\n✅ 번역 완료!")
