@@ -1,0 +1,14 @@
+
+> web@0.1.0 dev
+> next dev --webpack --hostname 127.0.0.1 --port 3100
+
+▲ Next.js 16.1.1 (webpack)
+- Local:         http://127.0.0.1:3100
+- Network:       http://127.0.0.1:3100
+- Experiments (use with caution):
+  ✓ viewTransition
+
+✓ Starting...
+✓ Ready in 1165ms
+ GET /youtube/episode/20260225?leadMs=550&autoplay=1&capture=1 200 in 2.6s (compile: 2.4s, generate-params: 504ms, render: 221ms)
+[?25h

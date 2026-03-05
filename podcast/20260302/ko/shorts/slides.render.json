@@ -1,0 +1,218 @@
+{
+  "date": "20260303",
+  "lang": "ko",
+  "title": "유가 7% 폭등, 증시를 덮친 지정학적 리스크와 인플레 공포",
+  "hook": "유가가 7% 가까이 폭등했는데, 왜 증시는 혼조세로 끝났을까요.",
+  "durationSeconds": 65.164,
+  "audioFile": "shorts20260302.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 4.771,
+      "eyebrow": "2026년 3월 3일",
+      "headline": "유가 7% 폭등, 증시는 왜?",
+      "subheadline": "지정학 리스크 속 혼조세 마감의 비밀",
+      "body": "유가가 7% 가까이 폭등했는데, 왜 증시는 혼조세로 끝났을까요.",
+      "bullets": [
+        "유가가 7% 가까이 폭등했는데, 왜 증시는 혼조세로 끝났을까요."
+      ],
+      "tickers": [
+        "CLF",
+        "AAL",
+        "DAL",
+        "UAL"
+      ],
+      "highlights": [
+        "7%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 4.771,
+      "endSec": 17.582,
+      "eyebrow": "미국 증시 마감",
+      "headline": "3대 지수 혼조 마감",
+      "subheadline": "S&P 500 +0.04% | NASDAQ +0.36% | DOW -0.15%",
+      "body": "3월 3일 미국 증시는 중동 지정학적 충격과 인플레이션 우려가 충돌하며 혼란스러운 모습을 보였습니다. S&P 500은 0.04%, 나스닥은 0.36% 상승했지만 다우존스는 0.15% 하락하며 마감했습니다.",
+      "bullets": [
+        "3월 3일 미국 증시는 중동 지정학적 충격과 인플레이션 우려가 충돌하며 혼란스러운 모습을 보였습니다.",
+        "S&P 500은 0.04%, 나스닥은 0.36% 상승했지만 다우존스는 0.15% 하락하며 마감했습니다."
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "AAL"
+      ],
+      "highlights": [
+        "S&P 500 +0.04%",
+        "NASDAQ +0.36%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 17.582,
+      "endSec": 63.193,
+      "eyebrow": "시장 분석",
+      "headline": "리스크와 공포의 충돌",
+      "subheadline": "유가 급등이 인플레이션 우려를 자극하며 시장을 덮쳤습니다.",
+      "body": "주말 사이 전해진 미국과 이스라엘의 이란 공습 소식이 시장을 강타했습니다. 이로 인해 서부 텍사스산 원유 가격은 6.8%나 급등했고, 공포지수 VIX는 장중 18% 이상 치솟았습니다. 하지만 시장의 반응은 단순하지 않았습니다. 보통 이런 위기 상황에서는 안전자산인 국채 금리가 내려가야 하지만, 오늘은 10년물 국채 금리가 오히려 4%를 넘어서며 상승했습니다. 유가 급등이 인플레이션을 다시 자극할 것이라는 우려가 지정학적 리스…",
+      "bullets": [
+        "중동 리스크로 유가 6.8% 급등, VIX 18%↑",
+        "에너지/방산주 상승 vs 항공주 급락"
+      ],
+      "tickers": [
+        "AAL",
+        "DAL",
+        "UAL",
+        "^GSPC"
+      ],
+      "highlights": [
+        "6.8%",
+        "18%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 63.193,
+      "endSec": 65.164,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 찾아오는 미국 증시 마감 정보를 놓치지 마세요.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "AAL",
+        "DAL",
+        "UAL",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.771,
+      "text": "유가가 7% 가까이 폭등했는데, 왜 증시는 혼조세로 끝났을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.771,
+      "endSec": 17.582,
+      "text": "3월 3일 미국 증시는 중동 지정학적 충격과 인플레이션 우려가 충돌하며 혼란스러운 모습을 보였습니다. S&P 500은 0.04%, 나스닥은 0.36% 상승했지만 다우존스는 0.15% 하락하며 마감했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 17.582,
+      "endSec": 63.193,
+      "text": "주말 사이 전해진 미국과 이스라엘의 이란 공습 소식이 시장을 강타했습니다. 이로 인해 서부 텍사스산 원유 가격은 6.8%나 급등했고, 공포지수 VIX는 장중 18% 이상 치솟았습니다. 하지만 시장의 반응은 단순하지 않았습니다. 보통 이런 위기 상황에서는 안전자산인 국채 금리가 내려가야…"
+    },
+    {
+      "id": 3,
+      "startSec": 63.193,
+      "endSec": 65.164,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-02"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-02"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-02"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "JETS",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq recover from m…",
+      "detail": "id#a74da1c445c8e855"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq futures sink,…",
+      "detail": "id#c81940e2ecf270ea"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices surge, cross $80 after US-Iran conflict engu…",
+      "detail": "id#11d2bf9b2dc6ed09"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "유가 6.8% 급등, 지정학 리스크 부상",
+      "인플레이션 우려로 국채 금리 동반 상승",
+      "업종별 희비 교차: 에너지/방산↑ 항공↓",
+      "3대 지수 혼조세 마감"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "AAL",
+        "label": "아메리칸 항공",
+        "tag": "유가 급등 직격탄"
+      },
+      {
+        "ticker": "DAL",
+        "label": "델타 항공",
+        "tag": "4% 이상 하락"
+      },
+      {
+        "ticker": "UAL",
+        "label": "유나이티드 항공",
+        "tag": "6% 이상 하락"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

@@ -146,7 +146,8 @@ resolve_full_script_path() {
 ensure_web_ready() {
     local target_url="$1"
     local output_dir="$2"
-    local target_suffix="${target_url#http://127.0.0.1:${WEB_PORT}}"
+    local initial_port="${WEB_PORT}"
+    local target_suffix="${target_url#http://127.0.0.1:${initial_port}}"
     local reuse_existing=0
 
     WEB_LOG="${output_dir}/next-dev.log"
@@ -154,14 +155,29 @@ ensure_web_ready() {
     if curl -sSf "${target_url}" >/dev/null 2>&1; then
         reuse_existing=1
         echo "♻️  Reusing existing Next.js server on 127.0.0.1:${WEB_PORT}" >&2
-    elif [ "${WEB_PORT}" != "3000" ]; then
-        local alt_target_url="http://127.0.0.1:3000${target_suffix}"
-        if curl -sSf "${alt_target_url}" >/dev/null 2>&1; then
-            reuse_existing=1
-            WEB_PORT="3000"
-            target_url="${alt_target_url}"
-            echo "♻️  Found existing Next.js server on 127.0.0.1:3000" >&2
-            echo "🔗 Updated target URL: ${target_url}" >&2
+    else
+        local alt_port
+        for alt_port in 3000 3001; do
+            if [ "${initial_port}" = "${alt_port}" ]; then
+                continue
+            fi
+            local alt_target_url="http://127.0.0.1:${alt_port}${target_suffix}"
+            if curl -sSf "${alt_target_url}" >/dev/null 2>&1; then
+                reuse_existing=1
+                WEB_PORT="${alt_port}"
+                target_url="${alt_target_url}"
+                echo "♻️  Found existing Next.js server on 127.0.0.1:${alt_port}" >&2
+                echo "🔗 Updated target URL: ${target_url}" >&2
+                break
+            fi
+        done
+    fi
+
+    if [ "${reuse_existing}" -ne 1 ]; then
+        local next_lock_path="${ROOT_DIR}/web/.next/dev/lock"
+        if [ -f "${next_lock_path}" ]; then
+            echo "⚠️  Found stale Next.js lock. Removing: ${next_lock_path}" >&2
+            rm -f "${next_lock_path}" || true
         fi
     fi
 
@@ -183,8 +199,14 @@ ensure_web_ready() {
             break
         fi
         if [ "${WEB_STARTED_BY_SCRIPT}" -eq 1 ] && ! kill -0 "${WEB_PID}" 2>/dev/null; then
-            echo "❌ Web server exited unexpectedly." >&2
+            echo "❌ Web server exited unexpectedly. Log: ${WEB_LOG}" >&2
+            if [ -f "${WEB_LOG}" ]; then
+                tail -n 40 "${WEB_LOG}" >&2 || true
+            fi
             exit 1
+        fi
+        if [ $((attempt % 15)) -eq 0 ]; then
+            echo "⏳ Waiting for Next.js readiness (${attempt}s): ${target_url}" >&2
         fi
         sleep 1
     done

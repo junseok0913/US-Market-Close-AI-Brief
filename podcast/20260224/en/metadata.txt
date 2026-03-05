@@ -1,0 +1,23 @@
+Title:
+2026.2.25 US Market Close | AI Rally Powers Through Lingering Tariff Worries
+
+Description:
+On February 25, the New York stock market saw all three major indices close higher, driven by a relief rally in AI-related stocks despite the headwind of new 10% tariffs. Fears over the disruptive power of AI technology, which had weighed on the market the previous day, shifted to optimism about collaboration following a new partnership announcement from AI startup Anthropic, leading a strong tech-driven rebound.
+
+- S&P 500: +0.77% (6,890.07) - Investor sentiment recovered as AI fears subsided.
+- Nasdaq: +1.04% (22,863.68) - Tech stocks rallied on positive news from Anthropic and anticipation for Nvidia's earnings.
+- Dow Jones: +0.76% (49,174.50) - Joined the broader market rebound.
+
+Key Market Movers
+- From AI Fear to Relief: Software stocks, which had plunged the previous day, staged a broad relief rally after AI startup Anthropic announced a collaboration model rather than one aimed at replacing existing software companies.
+- 10% Tariffs Take Effect: Although new tariffs were implemented, the market rallied as a sense of uncertainty eased after the worst-case scenarios feared by investors did not materialize in the State of the Union address.
+- Awaiting Nvidia Earnings: All eyes are on the upcoming earnings report from Nvidia (NVDA), a key barometer for the AI industry. The growth trajectory of its data center revenue is seen as a critical variable for the future direction of the AI market.
+- AMD's Major Deal with Meta: Shares of AMD (AMD) surged on news of a large-scale AI chip supply contract with Meta (META), positioning the company as a key alternative to Nvidia. However, the news also highlighted risks associated with single-customer and supply chain dependency.
+
+Notable Stock Moves
+- AMD (AMD): Surged over 8% following the announcement of a major AI chip supply deal with Meta.
+- Thomson Reuters (TRI): Jumped more than 10% after being named as a partner of AI startup Anthropic.
+- IBM (IBM): The stock had plunged nearly 13% in the previous session, reacting to Anthropic's announcement of its COBOL modernization technology.
+
+Keywords:
+미국주식,주식,재테크,시황,AI,인공지능,엔비디아,NVDA,AMD,메타,META,관세,반도체,실적

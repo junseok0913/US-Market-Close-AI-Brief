@@ -1,0 +1,24 @@
+Title:
+2026.3.3 US Market Close | Geopolitical shock clashes with inflation fears
+
+Description:
+The New York stock market closed mixed on March 3rd as a geopolitical shock in the Middle East collided with persistent inflation concerns. News of US and Israeli airstrikes on Iran sent oil prices surging 6.8%, fueling market anxiety. However, the major indices showed a divided performance, with the tech-heavy Nasdaq managing to post gains.
+
+- S&P 500: +0.04%
+- Nasdaq: +0.36%
+- Dow Jones: -0.15%
+
+Key Market Movers
+- Escalating Middle East Geopolitical Risk: Market anxiety intensified following reports of US and Israeli airstrikes on Iran, causing West Texas Intermediate (WTI) crude oil prices to jump 6.8% and the Volatility Index (VIX) to spike.
+- Oil Spike and Inflation Fears: In a complex reaction that diverged from a typical flight-to-safety, the 10-year Treasury yield rose on concerns that the surge in oil prices could reignite inflation.
+- Sector Divergence: The oil price surge boosted energy stocks like ExxonMobil and defense stocks like Lockheed Martin. In contrast, airline stocks plunged across the board due to concerns over higher fuel costs.
+- Mixed Signals from Coinbase: Shares of Coinbase surged over 7% on optimism about its future growth potential. However, this was juxtaposed with concerns over its weak financial structure and regulatory risks, as operating expenses soared 35% and net income plummeted 51%.
+
+Notable Stocks
+- American Airlines: Tumbled over 7% on concerns that surging oil prices will increase fuel costs and hurt profitability.
+- Delta Air Lines: Dropped more than 4% as the broader airline sector weakened due to the oil price spike.
+- United Airlines: Fell over 6%, also dragged down by the sector-wide sell-off triggered by rising oil prices.
+- Coinbase (COIN): Jumped more than 7%, fueled by investor expectations that it will become a core operating system for the future digital economy.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,중동,이란,유가,인플레이션,금리,코인베이스,COIN,항공주,버크셔해서웨이

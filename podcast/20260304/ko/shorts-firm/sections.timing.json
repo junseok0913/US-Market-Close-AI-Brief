@@ -1,0 +1,67 @@
+{
+  "date": "20260304",
+  "lang": "ko",
+  "audioFile": "shorts20260304.mp3",
+  "sectionOrder": [
+    "avgo",
+    "aapl",
+    "tsla",
+    "nvda"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 80.924,
+  "sections": [
+    {
+      "id": 0,
+      "name": "avgo",
+      "ticker": "AVGO",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 30.491,
+      "endSec": 30.491,
+      "speechDurationSec": 30.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 261,
+      "text": "이란 리스크가 줄면서 기술주가 반등했지만, 모두가 웃지는 못했습니다. 브로드컴은 2분기 AI 매출이 107억 달러에 달할 것이라는 강력한 전망을 내놨지만 주가는 보합권에 머물렀습니다. 상위 5개 고객이 매출의 40%를 차지하고, 웨이퍼 생산의 95%를 TSMC 한 곳에 의존하는 극단적인 집중 리스크가 부각됐기 때문입니다. VM웨어 인수로 인한 막대한 부채 역시 부담으로 작용하며, 폭발적인 성장세 이면의 구조적 취약성에 대한 시장의 우려가 주가의 발목을 잡았습니다."
+    },
+    {
+      "id": 1,
+      "name": "aapl",
+      "ticker": "AAPL",
+      "kind": "company",
+      "startSec": 30.491,
+      "speechEndSec": 48.302,
+      "endSec": 48.302,
+      "speechDurationSec": 17.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 163,
+      "text": "애플은 교육 시장을 겨냥한 599달러짜리 '맥북 네오' 공개 소식에 상승했습니다. 구글의 크롬북과 저가 윈도우 PC에 대항하기 위한 전략적 모델로, 새로운 시장 공략에 대한 기대감이 주가에 긍정적으로 작용했습니다. 지정학적 리스크 완화와 함께 개별 호재가 더해지며 시장의 반등을 이끌었습니다."
+    },
+    {
+      "id": 2,
+      "name": "tsla",
+      "ticker": "TSLA",
+      "kind": "company",
+      "startSec": 48.302,
+      "speechEndSec": 64.593,
+      "endSec": 64.593,
+      "speechDurationSec": 16.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 148,
+      "text": "최근 부진했던 테슬라는 3% 넘게 반등했습니다. 뱅크 오브 아메리카가 테슬라를 자율주행과 로보택시 부문의 선두주자라며 긍정적인 투자의견을 제시한 것이 투자 심리를 되살렸습니다. 위험자산 선호 심리가 회복된 가운데 나온 분석가 호평이 주가 상승의 기폭제가 되었습니다."
+    },
+    {
+      "id": 3,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 64.593,
+      "speechEndSec": 80.924,
+      "endSec": 80.924,
+      "speechDurationSec": 16.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 151,
+      "text": "NVIDIA Corporation는 하루 +1.66% / 한 달 +1.50% 움직였습니다. 네, 오늘 장은 매그니피센트 세븐 종목군이 모두 상승하며 시장을 이끌었습니다. 특히 인공지능 랠리의 선두주자인 엔비디아는 견조한 상승세를 이어갔습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

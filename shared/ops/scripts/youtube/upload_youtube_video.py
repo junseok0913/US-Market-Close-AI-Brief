@@ -15,6 +15,7 @@ import mimetypes
 import os
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -70,6 +71,12 @@ def parse_date_arg(date_str: str) -> str:
     if len(date_str) != 8 or not date_str.isdigit():
         raise ValueError(f"Invalid date format: {date_str}. Expected YYYYMMDD or YYYY-MM-DD")
     return date_str
+
+
+def _format_dotted_date(date_yyyymmdd: str) -> str:
+    """Convert YYYYMMDD -> YYYY.M.D (no zero padding for month/day)."""
+    dt = datetime.strptime(date_yyyymmdd, "%Y%m%d")
+    return f"{dt.year}.{dt.month}.{dt.day}"
 
 
 def _dedupe_keep_order(items: list[str]) -> list[str]:
@@ -508,7 +515,7 @@ def main(argv: list[str] | None = None) -> int:
         is_shorts_firm = _is_shorts_firm_upload(file_path)
 
         if is_shorts_firm:
-            display_date = resolve_display_date(date_yyyymmdd, args.lang)
+            display_date = _format_dotted_date(date_yyyymmdd)
             if args.lang == "ko":
                 metadata["title"] = f"{display_date} 미국 증시 장마감 | 오늘의 화제 종목"
             else:

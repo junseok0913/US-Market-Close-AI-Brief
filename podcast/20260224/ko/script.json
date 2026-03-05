@@ -1,0 +1,579 @@
+{
+  "date": "20260225",
+  "nutshell": "AI발 반등 장세 속 관세 우려 지속",
+  "user_tickers": [
+    "AMD"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 20
+    },
+    {
+      "name": "ticker",
+      "start_id": 21,
+      "end_id": 28
+    },
+    {
+      "name": "closing",
+      "start_id": 29,
+      "end_id": 37
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "2월 25일 장마감 브리핑입니다. 어제 큰 폭으로 하락했던 시장이 오늘은 반등에 성공했군요.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "네, 그렇습니다. 오늘 시장은 AI발 반등 장세 속 관세 우려 지속이라는 한마디로 요약할 수 있겠습니다. S&P 500 지수는 0.77% 상승한 6,890.07에 마감했고, 기술주 중심의 나스닥 지수는 1.04% 오른 22,863.68을 기록했습니다. 다우존스 산업평균지수 역시 0.76% 상승하며 49,174.50으로 장을 마쳤습니다. 오늘부터 트럼프 대통령의 새로운 10% 관세가 발효되었음에도 불구하고, 시장은 전날의 하락을 딛고 일어섰습니다. 특히 AI 분야에서 나온 긍정적인 소식이 투자 심리를 되살리며 기술주 중심의 상승을 이끌었습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "article",
+          "pk": "id#33d10e27c1d8d9fe",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq climb after AI-fueled sell-off as new Trump tariff kicks in"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "관세라는 악재가 현실화됐는데도 시장이 상승했다는 점이 흥미롭습니다. AI 분야에서 어떤 소식이 있었던 건가요.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "어제는 AI 스타트업 앤스로픽의 기술이 기존 소프트웨어 기업들을 위협할 수 있다는 우려가 시장을 짓눌렀습니다. 하지만 바로 오늘, 앤스로픽이 여러 기업과의 새로운 파트너십을 발표하면서 상황이 반전됐습니다. 이 소식에 그동안 AI 기술의 파괴력에 대한 공포로 하락했던 소프트웨어 관련 주식들이 일제히 안도 랠리를 펼쳤고, 이것이 시장 전반의 반등을 이끄는 촉매제가 되었습니다. 여기에 내일로 예정된 엔비디아의 실적 발표에 대한 기대감까지 더해지면서 기술주에 대한 매수세가 강하게 유입되었습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c7d13b077dd57c20",
+          "title": "US software stocks climb as Anthropic announcement sparks relief rally"
+        },
+        {
+          "type": "article",
+          "pk": "id#a14b13ee5d37463d",
+          "title": "Tech news today: Countdown to Nvidia earnings begins as AI fears weigh on stocks"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "그렇군요. 그럼 오늘 시장을 움직인 핵심 동력은 무엇이었는지 마지막으로 정리해주시죠.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장의 핵심은 크게 두 가지였습니다. 첫째는 새로운 관세 부과라는 악재 속에서도 시장이 회복탄력성을 보였다는 점이고, 둘째는 AI 기술이 때로는 공포로, 때로는 안도감으로 작용하며 시장의 방향키를 쥐고 있다는 점입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "419204",
+          "title": "President Trump State of the Union Speech",
+          "date": "2026-02-24"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "네, 그럼 먼저 첫 번째로 짚어주신 관세 이야기부터 자세히 들어보겠습니다. 새로운 관세가 발효됐는데도 시장이 반등할 수 있었던 배경은 무엇이었나요?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "네, 그야말로 냉탕과 온탕을 오간 시장이었습니다. 지난 월요일, 새로운 관세 정책에 대한 불확실성으로 S&P 500 지수가 1퍼센트 넘게 하락하고, 공포지수로 불리는 VIX 지수는 장중 22를 넘어서며 2월 들어 최고 수준으로 치솟았습니다. 투자자들이 안전자산인 국채로 몰리면서 10년물 국채금리는 4.03퍼센트 수준까지 떨어졌죠. 특히 수입 의존도가 높은 산업재 섹터와 소비재 섹터의 타격이 두드러졌습니다. 하지만 관세가 발효된 어제와 국정연설이 있었던 오늘, 시장은 반등에 성공했습니다. 이는 대통령이 국정연설에서 추가 관세율 인상과 같은 시장이 우려하던 최악의 발언을 내놓지 않은 것에 대한 안도감과 AI 관련주의 강세가 맞물린 결과로 분석됩니다. 다만 달러 인덱스가 여전히 97대에서 움직이며 외환시장의 경계감은 완전히 해소되지 않은 모습입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e813a23fda075634",
+          "title": "Stock market today: Dow drops 800 points as S&P 500, Nasdaq slide on Trump tariff fears, AI 'scare trade'"
+        },
+        {
+          "type": "article",
+          "pk": "id#0065cf88d3c72074",
+          "title": "Trump’s 10% Levy Takes Effect as US Rebuilds Tariff Wall"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLI",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLY",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-02-23",
+          "end_date": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "어제 있었던 국정연설에서 관세와 관련해 구체적으로 어떤 내용이 나왔기에 시장이 일단 안도하는 모습을 보인 건가요?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "대통령은 국정연설에서 자신의 관세 정책을 강력하게 옹호하면서도, 시장이 가장 우려했던 세율의 추가적인 즉각 인상에 대해서는 언급하지 않았습니다. 이는 불확실성 속에서 최악의 시나리오는 피했다는 인식을 주며 투자 심리를 안정시키는 데 기여했습니다. 하지만 공화당 내부에서조차 관세 정책에 대한 회의적인 시각이 존재하고, 유럽연합 등 주요 교역 상대국들은 새로운 관세가 기존 무역 협정을 위반할 수 있다며 강력히 경고하고 있어 갈등의 불씨는 여전히 남아있는 상황입니다. 여론조사에서도 미국인들의 64퍼센트가 대통령의 관세 정책을 지지하지 않는 것으로 나타나, 정책 추진 동력이 계속 유지될 수 있을지에 대한 의문도 제기되고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#38e4613544c916e4",
+          "title": "Trump prepares to make new case for tariffs at State of the Union. Even some Republicans are skeptical."
+        },
+        {
+          "type": "article",
+          "pk": "id#a2f11e58280781f5",
+          "title": "EU Warns That Trump’s New Tariff Policy Breaks Trade Agreement"
+        },
+        {
+          "type": "article",
+          "pk": "id#0065cf88d3c72074",
+          "title": "Trump’s 10% Levy Takes Effect as US Rebuilds Tariff Wall"
+        },
+        {
+          "type": "event",
+          "id": "419204",
+          "title": "President Trump State of the Union Speech",
+          "date": "2026-02-24"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "최악은 피했지만 불확실성은 여전하다는 말씀이군요. 그렇다면 이 관세 정책이 앞으로 미국 경제와 기업들에는 어떤 실질적인 영향을 미치게 될까요?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "단기적인 안도에도 불구하고 중장기적인 부담은 상당합니다. 이번 관세의 법적 근거인 무역법 122조는 의회 동의 없이 최대 150일만 유지될 수 있어, 7월 말이면 또다시 정책 불확실성에 직면하게 됩니다. 많은 경제학자들은 행정부가 내세운 관세 부과 명분인 국제수지 위기 상황에 해당하지 않는다고 보고 있어, 향후 법적 분쟁의 소지도 남아있습니다. 이미 페덱스와 같은 주요 기업들은 대법원에서 위헌 판결을 받은 이전 관세에 대한 환급 소송에 나서며 행정부와 대립각을 세우고 있습니다. 결국 이 관세 장벽은 기업들의 비용 부담을 늘리고 최종적으로는 소비자 물가 상승으로 이어져, 인플레이션 억제를 위한 연준의 노력을 무력화시킬 수 있다는 우려를 낳고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#53dc9e1bb27fcc72",
+          "title": "Trump's Section 122 tariffs could spur new legal battle, experts say"
+        },
+        {
+          "type": "article",
+          "pk": "id#8802cd623e017f11",
+          "title": "Trump's new tariffs shift focus to balance of payments; economists see no crisis"
+        },
+        {
+          "type": "article",
+          "pk": "id#faab8fea8842ebf6",
+          "title": "FedEx sues for tariff refund as Trump threatens new ‘obnoxious’ levies"
+        },
+        {
+          "type": "article",
+          "pk": "id#a47a93f20b427237",
+          "title": "FedEx sues Trump administration for 'full refund' after tariffs overturned"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "네, 결국 시장은 단기적으로 안도했지만, 관세라는 변수가 중장기적으로 계속해서 시장의 발목을 잡을 수 있겠군요. 자세한 분석 감사합니다.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "진행자",
+      "text": "자, 그리고 오늘 시장을 움직인 또 다른 핵심 동력이 바로 AI였죠. 어제는 공포감에 시장을 끌어내리더니, 오늘은 반대로 안도감을 주며 시장을 반등시켰습니다. 하루 만에 이렇게 분위기가 바뀐 배경은 무엇이었습니까?",
+      "sources": []
+    },
+    {
+      "id": 14,
+      "speaker": "해설자",
+      "text": "네, 어제와 오늘 시장은 인공지능이라는 하나의 키워드를 두고 극명한 온도차를 보였습니다. 오늘 S&P 500 지수가 0.77퍼센트, 나스닥 지수가 1.04퍼센트 반등에 성공했지만, 그 과정은 매우 드라마틱했습니다. 어제 시장을 짓눌렀던 것은 AI가 기존 산업을 파괴할 수 있다는 공포감, 이른바 AI 스케어 트레이드였습니다. 하지만 오늘은 바로 그 공포의 진원지였던 AI 스타트업 앤스로픽이 새로운 파트너십을 발표하며, 파괴가 아닌 협력의 가능성을 보여주자 투자 심리가 빠르게 회복된 것입니다. 이 과정에서 시장의 변동성 지수인 빅스는 어제 21선에서 오늘 19선으로 6퍼센트 넘게 하락하며 공포감이 빠르게 진정되는 모습을 보였고, 10년물 국채금리 역시 안정세를 찾으면서 위험자산 선호 심리가 살아났습니다. 결국 AI를 둘러싼 치열한 심리전이 하루 만에 시장의 방향을 완전히 뒤바꾼 셈입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e813a23fda075634",
+          "title": "Stock market today: Dow drops 800 points as S&P 500, Nasdaq slide on Trump tariff fears, AI 'scare trade'"
+        },
+        {
+          "type": "article",
+          "pk": "id#c7d13b077dd57c20",
+          "title": "US software stocks climb as Anthropic announcement sparks relief rally"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "진행자",
+      "text": "말씀하신 AI 공포라는 게 정확히 무엇이었나요? 앤스로픽이라는 스타트업의 기술이 어떻게 시장 전체를 하락시킬 만큼 위협적이었던 건가요?",
+      "sources": []
+    },
+    {
+      "id": 16,
+      "speaker": "해설자",
+      "text": "네, 어제 시장의 공포는 앤스로픽이 공개한 새로운 AI 기능에서 시작됐습니다. 예를 들어, 이 AI가 기업의 오래된 코볼 프로그래밍 언어를 현대화할 수 있다는 소식에 IBM 주가가 2000년 이후 최대 낙폭을 기록하며 13퍼센트 가까이 하락했습니다. 또한 AI가 스스로 소프트웨어의 보안 취약점을 찾아내고 수정하는 기능을 선보이자 크라우드스트라이크, 데이터독 같은 사이버 보안 기업들의 주가도 큰 폭으로 하락했습니다. 이는 단순히 특정 기업의 문제가 아니라, 어도비나 세일즈포스 같은 소프트웨어 기업 전반의 비즈니스 모델이 AI에 의해 대체될 수 있다는 구조적인 위기감으로 번졌고, 일부에서는 이를 두고 소프트웨어의 종말을 뜻하는 사스포칼립스라는 단어까지 등장하며 투매를 부추겼습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#639751be82cc9135",
+          "title": "IBM Sinks Most Since 2000 as Anthropic Touts COBOL Modernization"
+        },
+        {
+          "type": "article",
+          "pk": "id#0f9a822e3e944bf6",
+          "title": "CrowdStrike, Datadog and other cybersecurity stocks slide after Anthropic's AI tool launch"
+        },
+        {
+          "type": "article",
+          "pk": "id#a310f583fec66dd3",
+          "title": "Investors Are Dumping Software Stocks and Earnings Won’t Stop It"
+        },
+        {
+          "type": "chart",
+          "ticker": "IBM",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "진행자",
+      "text": "그런데 하루 만에 그 공포가 안도감으로 바뀌었다는 건데요. 앤스로픽이 파트너십을 발표한 것이 어떻게 공포를 잠재우는 효과를 낸 것입니까?",
+      "sources": []
+    },
+    {
+      "id": 18,
+      "speaker": "해설자",
+      "text": "바로 그 점이 오늘 시장 반전의 핵심이었습니다. 앤스로픽은 오늘 행사에서 자신들의 AI 기술을 기존 기업들을 대체하는 것이 아니라, 그들의 업무 환경에 통합시키는 플러그인 형태로 제공하겠다고 발표했습니다. 예를 들어 세일즈포스의 슬랙이나 도큐사인, 팩트셋 같은 기업들과 협력하여 투자 분석이나 인사 관리 같은 특정 업무를 돕는 방식으로 AI를 활용하겠다는 청사진을 제시한 것입니다. 이 발표는 AI가 파괴자가 아닌 협력자이자 조력자가 될 수 있다는 인식을 심어주었고, 어제의 공포가 과도했다는 안도감을 불러일으켰습니다. 이 소식에 어제 급락했던 소프트웨어 기술주들이 일제히 강하게 반등했고, 특히 파트너로 언급된 톰슨 로이터 같은 기업은 주가가 10퍼센트 넘게 급등하기도 했습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#2eccf85bb995d68d",
+          "title": "Anthropic launches new push for enterprise agents with plugins for finance, engineering, and design"
+        },
+        {
+          "type": "article",
+          "pk": "id#c960abf320e1c188",
+          "title": "Analysts' comments after Anthropic unveils new plug-ins"
+        },
+        {
+          "type": "article",
+          "pk": "id#59a932d6a0127c30",
+          "title": "Anthropic Shout-Out Makes Thomson Reuters Stock Latest AI Winner"
+        },
+        {
+          "type": "chart",
+          "ticker": "CRM",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "DOCU",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "진행자",
+      "text": "결국 AI가 기존 산업을 파괴하는 것이 아니라, 오히려 새로운 성장의 기회가 될 수 있다는 쪽으로 인식이 바뀐 거군요. 이런 상황에서 내일 발표될 엔비디아 실적이 더 중요해지겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 20,
+      "speaker": "해설자",
+      "text": "정확합니다. 지난 이틀간의 변동성은 시장이 AI의 잠재력에 얼마나 민감하게 반응하는지를 보여줬고, 이제 모든 투자자들은 AI 산업의 바로미터인 엔비디아의 실적 발표를 기다리고 있습니다. 시장은 엔비디아의 실적을 통해 AI 인프라에 대한 투자가 여전히 강력하게 이어지고 있는지 확인하고 싶어 합니다. 특히 핵심 사업부인 데이터센터 매출 성장세와 향후 실적 가이던스가 가장 중요한 관전 포인트가 될 것입니다. 옵션 시장에서는 실적 발표 이후 엔비디아 주가가 6퍼센트 이상 움직일 가능성을 가격에 반영하고 있는데, 이는 엔비디아의 실적이 AI는 물론 시장 전체의 향방을 결정할 중대 변수가 될 것임을 시사합니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e71bd21e63f77490",
+          "title": "Nvidia Q4 earnings: Can it push the AI trade higher — again?"
+        },
+        {
+          "type": "article",
+          "pk": "id#6d5bd6599b979ff1",
+          "title": "Nvidia results are AI market's biggest test amid competitive worries"
+        },
+        {
+          "type": "article",
+          "pk": "id#099ad9bba158f5be",
+          "title": "Here's Why Nvidia's Earnings Could Move Your Portfolio Even If You Don't Hold the Stock"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-25",
+          "end_date": "2026-02-25"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "네, AI 시장의 향방을 가늠할 엔비디아 실적 발표도 중요하지만, 오늘 시장에서는 개별 종목들의 움직임도 아주 뜨거웠습니다. 특히 엔비디아의 경쟁사인 AMD가 메타와의 대규모 공급 계약 소식에 주가가 8퍼센트 넘게 급등하며 마감했는데요, 이 계약이 어느 정도의 의미를 가지는 것인가요.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#edd99c877a6fe52e",
+          "title": "AMD Just Won Another Massive AI Chip Deal. Its Stock Is Soaring."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "네, 이번 계약은 AMD의 미래 성장 궤도를 근본적으로 바꾸는 게임 체인저로 평가됩니다. 시장에서는 이를 단순한 매출 증가를 넘어, 업계 리더인 메타가 AMD의 기술력을 공인한 일종의 인증서로 받아들이고 있습니다. 이로 인해 엔비디아에 대한 공급망 종속을 우려하던 다른 대형 클라우드 기업들의 AMD 칩 도입이 가속화되는 나비 효과가 기대된다는 분석이 지배적입니다. 실제로 AMD는 이번 계약을 통해 AI 가속기 시장에서 엔비디아의 유일한 대안이라는 전략적 지위를 확고히 다지는 계기를 마련한 것으로 보입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a13a77c48426c636",
+          "title": "Facebook owner Meta to buy AI chips from AMD in deal worth up to $100 billion"
+        },
+        {
+          "type": "article",
+          "pk": "id#1ba160f8cdf10cec",
+          "title": "Meta strikes up to $100B AMD chip deal as it chases ‘personal superintelligence’"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "엔비디아의 유일한 대안이라는 평가는 매우 인상적입니다, 하지만 이렇게 한 기업의 운명을 바꿀 정도의 계약이라면, 그 이면에 숨겨진 위험 부담도 상당할 것 같은데요.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "정확한 지적입니다, 일각에서는 이번 계약을 두고 '독이 든 성배'라는 표현까지 나오고 있습니다. 가장 큰 우려는 AMD가 스스로 10-K 보고서에서 인정한 두 가지 구조적 취약점이 이번 계약으로 인해 더욱 증폭되었다는 점입니다. 첫째는 '소수 고객에 대한 의존도'로, 잠재적으로 연간 매출의 절반 이상을 메타 단 한 곳에 의존하게 되어 메타의 전략 수정 하나에 회사 전체가 흔들릴 수 있는 구조가 되었습니다. 둘째는 핵심 제품 생산을 전적으로 대만의 TSMC 한 곳에 의존하는 '공급망 종속 리스크'로, 이 거대한 계약의 이행 여부가 AMD가 통제할 수 없는 외부 요인에 좌우되는 상황입니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AMD",
+          "form": "10-K",
+          "filed_date": "2026-02-04",
+          "accession_number": "0000002488-26-000018"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "단일 고객과 단일 공급망이라는, 두 개의 거대한 리스크에 직면했다는 말씀이군요, 특히 메타가 AMD의 지분을 확보할 수 있는 워런트를 받은 점은 강력한 파트너십의 증거라는 시각도 있지 않습니까.",
+      "sources": []
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "그 점이 바로 이번 계약의 핵심 쟁점입니다, 긍정적으로 보면 전략적 동맹이지만, 비판적인 시각에서는 AMD의 협상력이 열위에 있었음을 보여주는 결정적 증거로 해석됩니다. 이 워런트는 기존 주주들의 가치를 최대 10퍼센트까지 희석시킬 수 있는 잠재적 비용입니다. 경쟁사인 엔비디아는 이러한 인센티브 없이도 계약을 체결하는 것으로 알려져 있는데, 이는 AMD가 제품 경쟁력만으로는 계약을 따내기 어려워 미래의 주주 가치를 담보로 제공해야 했음을 시사할 수 있습니다. 따라서 이를 단순한 파트너십 강화로 보기보다는, 계약을 성사시키기 위해 치러야 했던 대가로 보는 것이 더 현실적인 분석일 수 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a613fb6bb144b385",
+          "title": "AMD clinches second mega chip supply deal, this time with Meta"
+        },
+        {
+          "type": "article",
+          "pk": "id#01490cc7acd4f0e4",
+          "title": "AMD secures Meta as next big AI chip customer"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "결국 장밋빛 전망과 치명적인 리스크가 공존하는 상황이군요, 그렇다면 오늘 8퍼센트 넘게 급등한 주가는 이러한 상황을 어떻게 반영하고 있다고 봐야 할까요.",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "현재 시장은 명백한 과열 양상을 보이고 있습니다, 시장 참여자들은 '1000억 달러', '대규모 계약'과 같은 자극적인 헤드라인에 열광하며 탐욕 구간에 진입한 것으로 분석됩니다. 오늘 주가 급등은 앞서 말씀드린 고객 집중 리스크나 공급망 리스크, 그리고 주주가치 희석 가능성과 같은 부정적인 요인들은 전혀 고려하지 않고, 오직 최상의 시나리오가 완벽하게 실현될 것이라는 기대감만을 가격에 반영한 결과로 보입니다. 따라서 현재 주가는 기업의 내재 가치와 위험 요인을 균형 있게 평가했다기보다는, 단기적인 호재에 대한 비이성적 과열에 가깝다는 우려가 제기되고 있는 상황입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#edd99c877a6fe52e",
+          "title": "AMD Just Won Another Massive AI Chip Deal. Its Stock Is Soaring."
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-02-24",
+          "end_date": "2026-02-24"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "오늘 시장 상황을 한마디로 정리하고, 앞으로 우리가 주목해야 할 주요 경제 지표들을 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "해설자",
+      "text": "오늘은 연준의 금리 인상 사이클 종료 기대감과 인플레이션 우려가 공존하며 시장이 혼조세로 마감했습니다. 투자자들이 향후 방향성을 가늠하기 위해 경제 지표 발표에 더욱 민감하게 반응하는 모습입니다. 당장 내일 발표될 주간 신규 실업수당 청구건수를 통해 고용시장의 온도를 확인할 수 있겠고, 이번 주 금요일에는 생산자물가지수 PPI가 발표됩니다. 이 두 가지 지표가 단기적인 시장의 분위기를 결정할 중요한 분기점이 될 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395129",
+          "title": "initial jobless claims",
+          "date": "2026-02-26"
+        },
+        {
+          "type": "event",
+          "id": "398267",
+          "title": "core ppi mom",
+          "date": "2026-02-27"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "진행자",
+      "text": "생산자물가지수, 즉 PPI가 소비자물가지수 CPI의 선행지표로 여겨지는데, 이번 발표에서 주목할 점은 무엇인가요?",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "해설자",
+      "text": "네, 맞습니다. PPI는 기업의 생산 비용을 보여주기 때문에 최종 소비재 가격에 영향을 미치는 중요한 선행 지표입니다. 지난달 근원 PPI가 0.7%로 예상보다 높게 나오면서 인플레이션 경계심을 자극한 바 있는데, 이번에는 컨센서스가 0.3%로 다소 누그러질 것으로 예상되고 있습니다. 만약 예상치에 부합하거나 더 낮게 나온다면 인플레이션 둔화 추세에 대한 신뢰를 더해줄 수 있지만, 다시 한번 예상을 웃도는 수치가 나온다면 연준의 긴축 장기화 우려가 다시금 시장을 압박할 수 있습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398267",
+          "title": "core ppi mom",
+          "date": "2026-02-27"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "진행자",
+      "text": "이번 주가 지나고 3월 초로 넘어가면, 시장의 흐름을 완전히 바꿀 만한 더 중요한 지표들이 기다리고 있죠?",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "해설자",
+      "text": "그렇습니다. 3월 첫째 주에는 제조업 경기를 가늠할 수 있는 ISM 제조업 구매관리자지수가 발표되고, 하이라이트는 단연 3월 6일에 발표될 고용보고서입니다. 비농업 부문 고용자 수 변동과 실업률은 연준이 가장 중요하게 생각하는 지표 중 하나입니다. 지난달 13만 명 증가에 그쳤던 고용이 이번에도 둔화 흐름을 이어갈지, 아니면 견조한 모습을 보일지에 따라 연준의 다음 행보에 대한 시장의 기대가 크게 달라질 것입니다. 고용 시장의 과열이 식어야 인플레이션 압력도 낮아질 수 있기 때문입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395177",
+          "title": "ism manufacturing pmi",
+          "date": "2026-03-02"
+        },
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "진행자",
+      "text": "정말 중요한 경제 지표 발표가 연이어 예정되어 있군요. 마지막으로 투자자들이 유의해야 할 점을 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "해설자",
+      "text": "향후 시장은 개별 기업의 실적보다는 거시 경제 지표의 결과에 따라 전체가 움직이는 데이터 의존적인 장세가 이어질 가능성이 높습니다. 단기적인 변동성에 일희일비하기보다는, 발표되는 지표들이 인플레이션 둔화와 경기 연착륙이라는 큰 그림에 부합하는지를 차분히 지켜보는 지혜가 필요합니다. 특히 고용과 물가 지표의 추세적인 흐름을 확인하며 다음 FOMC 회의까지 이어질 연준 위원들의 발언 강도를 예측해보는 것이 중요하겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "진행자",
+      "text": "네, 상세한 분석과 전망 감사합니다. 지금까지 2월 25일 장마감 브리핑이었습니다. 감사합니다.",
+      "sources": []
+    }
+  ]
+}

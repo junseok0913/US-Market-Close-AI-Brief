@@ -1,0 +1,241 @@
+{
+  "date": "20260227",
+  "lang": "ko",
+  "title": "엔비디아 완벽 실적에도 5% 폭락, AI 랠리 끝났나?",
+  "hook": "완벽한 실적을 발표한 엔비디아가 5% 넘게 폭락했습니다. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 83.204,
+  "audioFile": "shorts20260226.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.891,
+      "eyebrow": "2월 27일 마감",
+      "headline": "엔비디아, 완벽 실적에도 폭락?",
+      "subheadline": "대체 무슨 일이 있었을까요?",
+      "body": "완벽한 실적을 발표한 엔비디아가 5% 넘게 폭락했습니다. 대체 무슨 일이 있었을까요.",
+      "bullets": [
+        "완벽한 실적을 발표한 엔비디아가 5% 넘게 폭락했습니다.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO",
+        "SOXX"
+      ],
+      "highlights": [
+        "NVDA -5%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.891,
+      "endSec": 22.342,
+      "eyebrow": "시장 지표",
+      "headline": "기술주 하락, 시장 혼조세",
+      "subheadline": "나스닥 -1.18% | S&P500 -0.54% | 다우 +0.03%",
+      "body": "2월 27일 미국 증시는 엔비디아 실적 발표 후 차익실현이 나오며 기술주 하락 속 혼조세로 마감했습니다. 다우 지수는 0.03% 소폭 상승했지만, S&P 500은 0.54% 하락했고, 특히 기술주 중심의 나스닥은 1.18%나 내렸습니다.",
+      "bullets": [
+        "엔비디아 실적 발표 후 차익실현 매물 출회",
+        "기술주 중심의 나스닥 지수 하락 주도"
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "나스닥 -1.18%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 22.342,
+      "endSec": 81.313,
+      "eyebrow": "핵심 원인",
+      "headline": "뉴스에 판 엔비디아",
+      "subheadline": "과도한 기대감에 차익실현 매물 출회",
+      "body": "시장의 모든 관심이 쏠렸던 엔비디아는 4분기 매출 681억 달러, 다음 분기 가이던스 약 780억 달러로 월가 예상치를 가볍게 뛰어넘는 완벽한 실적을 내놨습니다. 하지만 시장의 눈높이가 너무 높았던 탓에, 뉴스를 계기로 이익을 실현하려는 매물이 쏟아지며 주가는 5% 넘게 급락했습니다. 이 여파로 경쟁사인 AMD는 4%, 브로드컴은 6% 넘게 하락했고, 반도체 ETF인 SOXX도 3.5% 내렸습니다. 이처럼 기술주가 조정을 받…",
+      "bullets": [
+        "기대치를 웃돈 실적에도 '뉴스에 팔자' 심리 확산",
+        "자금, 기술주(XLK)에서 산업재(XLI)·금융주(XLF)로 이동"
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "SOXX",
+        "XLK"
+      ],
+      "highlights": [
+        "섹터 순환매 발생"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 81.313,
+      "endSec": 83.204,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO",
+        "SOXX"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.891,
+      "text": "완벽한 실적을 발표한 엔비디아가 5% 넘게 폭락했습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.891,
+      "endSec": 22.342,
+      "text": "2월 27일 미국 증시는 엔비디아 실적 발표 후 차익실현이 나오며 기술주 하락 속 혼조세로 마감했습니다. 다우 지수는 0.03% 소폭 상승했지만, S&P 500은 0.54% 하락했고, 특히 기술주 중심의 나스닥은 1.18%나 내렸습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 22.342,
+      "endSec": 81.313,
+      "text": "시장의 모든 관심이 쏠렸던 엔비디아는 4분기 매출 681억 달러, 다음 분기 가이던스 약 780억 달러로 월가 예상치를 가볍게 뛰어넘는 완벽한 실적을 내놨습니다. 하지만 시장의 눈높이가 너무 높았던 탓에, 뉴스를 계기로 이익을 실현하려는 매물이 쏟아지며 주가는 5% 넘게 급락했습니다.…"
+    },
+    {
+      "id": 3,
+      "startSec": 81.313,
+      "endSec": 83.204,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow climbs, S&P 500 and Nasdaq slip…",
+      "detail": "fc1d4166ba1a2d22"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia stock falls as Q4 beat, guidance fail to satisfy…",
+      "detail": "b856132e97ec6fcc"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia: Fiscal Q4 Earnings Snapshot",
+      "detail": "2d6852f2eaf9646b"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia forecasts upbeat quarterly sales as AI boosts ch…",
+      "detail": "33c9c503a6fdbd93"
+    },
+    {
+      "type": "chart",
+      "label": "AMD",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "AVGO",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "SOXX",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "XLK",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "XLI",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "XLF",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "^RUT",
+      "detail": "2026-02-26"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "엔비디아, 호실적에도 '뉴스에 파는' 현상으로 5% 넘게 하락",
+      "기술주 하락과 경기 순환주 상승의 뚜렷한 섹터 순환매 발생",
+      "나스닥 1.18% 하락, 다우 0.03% 상승 등 지수별 혼조 마감"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "실적 발표 후 하락"
+      },
+      {
+        "ticker": "AMD",
+        "label": "AMD",
+        "tag": "동반 하락"
+      },
+      {
+        "ticker": "XLI",
+        "label": "산업재 ETF",
+        "tag": "자금 유입"
+      },
+      {
+        "ticker": "AVGO",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "SOXX",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

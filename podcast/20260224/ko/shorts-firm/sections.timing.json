@@ -1,0 +1,67 @@
+{
+  "date": "20260224",
+  "lang": "ko",
+  "audioFile": "shorts20260224.mp3",
+  "sectionOrder": [
+    "amd",
+    "ibm",
+    "xli",
+    "xly"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 125.804,
+  "sections": [
+    {
+      "id": 0,
+      "name": "amd",
+      "ticker": "AMD",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 42.211,
+      "endSec": 42.211,
+      "speechDurationSec": 42.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 378,
+      "text": "AI가 시장의 희비를 가른 하루였습니다. 먼저 AMD입니다. 메타와의 대규모 AI 칩 공급 계약 소식에 주가가 8% 넘게 급등했습니다. 시장은 이를 단순한 매출 증가를 넘어, 업계 리더인 메타가 AMD의 기술력을 공인한 것으로 평가하며 엔비디아의 유일한 대안이라는 지위를 확고히 했다고 보고 있습니다. 하지만 이 계약을 '독이 든 성배'로 보는 시각도 있습니다. 연간 매출의 절반 이상을 메타 한 곳에 의존하게 될 수 있고, 생산은 TSMC 한 곳에 전적으로 맡겨야 하는 리스크가 부각됩니다. 또한 메타에 제공한 워런트는 기존 주주가치를 희석시킬 수 있어, 계약을 위해 치른 대가라는 분석도 나옵니다. 현재 주가 급등은 이런 리스크를 외면한 과열 양상이라는 우려가 제기됩니다."
+    },
+    {
+      "id": 1,
+      "name": "ibm",
+      "ticker": "IBM",
+      "kind": "company",
+      "startSec": 42.211,
+      "speechEndSec": 79.062,
+      "endSec": 79.062,
+      "speechDurationSec": 36.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 340,
+      "text": "다음은 IBM입니다. 어제 AI 스타트업 앤스로픽이 기업의 오래된 코볼 프로그래밍 언어를 현대화할 수 있는 기술을 공개하자, IBM 주가는 2000년 이후 최대 낙폭을 기록하며 직격탄을 맞았습니다. 이는 IBM의 핵심 비즈니스 모델이 AI에 의해 대체될 수 있다는 구조적 위기감을 불러일으켰습니다. 하지만 오늘은 앤스로픽이 파괴가 아닌 협력 모델을 발표하며 시장 분위기가 반전됐습니다. AI가 기존 기업의 조력자가 될 수 있다는 인식이 확산되며, 어제 급락했던 IBM을 포함한 소프트웨어 기술주들이 일제히 안도 랠리를 펼쳤습니다. AI가 어떻게 공포와 안도감의 양면으로 작용하는지 보여준 대표적인 사례입니다."
+    },
+    {
+      "id": 2,
+      "name": "xli",
+      "ticker": "XLI",
+      "kind": "company",
+      "startSec": 79.062,
+      "speechEndSec": 99.233,
+      "endSec": 99.233,
+      "speechDurationSec": 20.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 197,
+      "text": "State Street Industrial Select는 하루 +1.23% / 한 달 +7.67% 움직였습니다. 네, 그야말로 냉탕과 온탕을 오간 시장이었습니다. 지난 월요일, 새로운 관세 정책에 대한 불확실성으로 S&P 500 지수가 1퍼센트 넘게 하락하고, 공포지수로 불리는 VIX 지수는 장중 22를 넘어서며 2월 들어 최고 수준으로 치솟았습니다."
+    },
+    {
+      "id": 3,
+      "name": "xly",
+      "ticker": "XLY",
+      "kind": "company",
+      "startSec": 99.233,
+      "speechEndSec": 125.804,
+      "endSec": 125.804,
+      "speechDurationSec": 26.571,
+      "pauseAfterSec": 0.0,
+      "charCount": 214,
+      "text": "State Street Consumer Discretio는 하루 +1.52% / 한 달 -4.56% 움직였습니다. 네, 그야말로 냉탕과 온탕을 오간 시장이었습니다. 지난 월요일, 새로운 관세 정책에 대한 불확실성으로 S&P 500 지수가 1퍼센트 넘게 하락하고, 공포지수로 불리는 VIX 지수는 장중 22를 넘어서며 2월 들어 최고 수준으로 치솟았습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "date": "20260304",
+  "lang": "ko",
+  "title": "유가 9% 폭등, 인플레이션 공포에 증시 급락",
+  "hook": "유가가 장중 9% 넘게 폭등하며 증시를 덮쳤습니다.",
+  "durationSeconds": 72.524,
+  "audioFile": "shorts20260303.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.891,
+      "eyebrow": "3월 4일 마감",
+      "headline": "유가 9% 폭등 쇼크",
+      "subheadline": "인플레이션 공포가 증시를 덮쳤습니다.",
+      "body": "유가가 장중 9% 넘게 폭등하며 증시를 덮쳤습니다.",
+      "bullets": [
+        "유가가 장중 9% 넘게 폭등하며 증시를 덮쳤습니다."
+      ],
+      "tickers": [
+        "CLF",
+        "^GSPC",
+        "^IXIC",
+        "^DJI"
+      ],
+      "highlights": [
+        "WTI 장중 +9%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 3.891,
+      "endSec": 28.142,
+      "eyebrow": "시장 지표",
+      "headline": "3대 지수 동반 하락",
+      "subheadline": "S&P 500 -0.94% | NASDAQ -1.02%",
+      "body": "3월 4일 미국 증시는 중동 지정학적 리스크와 유가 급등에 따른 인플레이션 우려가 부각되며 3대 지수 모두 하락했습니다. 다우존스는 0.83%, S&P 500은 0.94%, 기술주 중심의 나스닥은 1.02% 내렸습니다. 서부 텍사스산 원유 WTI 가격은 하루 만에 4% 넘게 급등하며 배럴당 74달러를 넘어섰고, 10년물 국채금리도 상승하며 시장을 압박했습니다.",
+      "bullets": [
+        "DOW: -0.83%",
+        "S&P 500: -0.94%"
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "CLF"
+      ],
+      "highlights": [
+        "WTI 유가 +4%",
+        "10년물 국채금리 상승"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 28.142,
+      "endSec": 70.233,
+      "eyebrow": "핵심 원인",
+      "headline": "겹악재에 발목 잡힌 시장",
+      "subheadline": "공급망 쇼크와 강한 경제의 역설",
+      "body": "이번 유가 충격의 진원지는 이란입니다. 이란 혁명수비대가 전 세계 원유 수송량의 20%가 통과하는 호르무즈 해협의 폐쇄를 선언하고 유조선 피격 영상까지 공개되면서 공급망 마비 우려가 현실화됐습니다. 이 소식에 WTI는 장중 9% 넘게 폭등하며 76달러 선을 위협했습니다. 여기에 설상가상으로 발표된 ISM 서비스업 구매관리자지수가 예상치를 상회하며 미국 경제의 3분의 2를 차지하는 서비스업의 강한 확장세를 증명했습니다. 평소라…",
+      "bullets": [
+        "이란, 호르무즈 해협 봉쇄 선언에 유가 폭등",
+        "견조한 서비스업 지표, 고금리 장기화 우려 자극"
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "CLF"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 70.233,
+      "endSec": 72.524,
+      "eyebrow": "콘텐츠 더보기",
+      "headline": "구독과 좋아요 부탁드립니다",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "매일 찾아오는 미국 증시 마감 브리핑을 놓치지 마세요.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "CLF"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.891,
+      "text": "유가가 장중 9% 넘게 폭등하며 증시를 덮쳤습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 3.891,
+      "endSec": 28.142,
+      "text": "3월 4일 미국 증시는 중동 지정학적 리스크와 유가 급등에 따른 인플레이션 우려가 부각되며 3대 지수 모두 하락했습니다. 다우존스는 0.83%, S&P 500은 0.94%, 기술주 중심의 나스닥은 1.02% 내렸습니다. 서부 텍사스산 원유 WTI 가격은 하루 만에 4% 넘게 급등하며…"
+    },
+    {
+      "id": 2,
+      "startSec": 28.142,
+      "endSec": 70.233,
+      "text": "이번 유가 충격의 진원지는 이란입니다. 이란 혁명수비대가 전 세계 원유 수송량의 20%가 통과하는 호르무즈 해협의 폐쇄를 선언하고 유조선 피격 영상까지 공개되면서 공급망 마비 우려가 현실화됐습니다. 이 소식에 WTI는 장중 9% 넘게 폭등하며 76달러 선을 위협했습니다. 여기에 설상가…"
+    },
+    {
+      "id": 3,
+      "startSec": 70.233,
+      "endSec": 72.524,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-03"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-04"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices soar again and stocks crumble as Iran war es…",
+      "detail": "id#eab9336f029f8b1b"
+    },
+    {
+      "type": "event",
+      "label": "ism services pmi",
+      "detail": "2026-03-04"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices surge as analysts say Iran conflict 'may be…",
+      "detail": "id#0f8a8ddbd4aba6c3"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 모두 약 1% 하락 마감",
+      "이란발 지정학적 리스크로 WTI 유가 장중 9% 폭등",
+      "예상 상회한 ISM 서비스업 지표가 고금리 장기화 우려 자극"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "CLF",
+        "label": "WTI 유가",
+        "tag": "장중 9% 폭등"
+      },
+      {
+        "ticker": "LMT",
+        "label": "록히드마틴",
+        "tag": "지정학적 리스크 주목"
+      },
+      {
+        "ticker": "JPM",
+        "label": "JP모건",
+        "tag": "중동 사태 장기화 경고"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

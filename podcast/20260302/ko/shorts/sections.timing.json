@@ -1,0 +1,58 @@
+{
+  "date": "20260302",
+  "lang": "ko",
+  "audioFile": "shorts20260302.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 65.164,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.771,
+      "endSec": 4.771,
+      "speechDurationSec": 4.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 35,
+      "text": "유가가 7% 가까이 폭등했는데, 왜 증시는 혼조세로 끝났을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.771,
+      "speechEndSec": 17.582,
+      "endSec": 17.582,
+      "speechDurationSec": 12.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 114,
+      "text": "3월 3일 미국 증시는 중동 지정학적 충격과 인플레이션 우려가 충돌하며 혼란스러운 모습을 보였습니다. S&P 500은 0.04%, 나스닥은 0.36% 상승했지만 다우존스는 0.15% 하락하며 마감했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 17.582,
+      "speechEndSec": 63.193,
+      "endSec": 63.193,
+      "speechDurationSec": 45.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 383,
+      "text": "주말 사이 전해진 미국과 이스라엘의 이란 공습 소식이 시장을 강타했습니다. 이로 인해 서부 텍사스산 원유 가격은 6.8%나 급등했고, 공포지수 VIX는 장중 18% 이상 치솟았습니다. 하지만 시장의 반응은 단순하지 않았습니다. 보통 이런 위기 상황에서는 안전자산인 국채 금리가 내려가야 하지만, 오늘은 10년물 국채 금리가 오히려 4%를 넘어서며 상승했습니다. 유가 급등이 인플레이션을 다시 자극할 것이라는 우려가 지정학적 리스크를 압도한 것입니다. 이런 상황 속에서 업종별 희비는 극명하게 갈렸습니다. 에너지주와 방산주는 상승했지만, 유류비 부담이 커진 항공업계는 직격탄을 맞았습니다. 아메리칸 항공은 7% 넘게 급락했고 델타와 유나이티드 항공도 각각 4%, 6% 이상 하락했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 63.193,
+      "speechEndSec": 65.164,
+      "endSec": 65.164,
+      "speechDurationSec": 1.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

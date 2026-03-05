@@ -1,0 +1,58 @@
+{
+  "date": "20260225",
+  "lang": "ko",
+  "audioFile": "shorts20260225.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 86.004,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.251,
+      "endSec": 5.251,
+      "speechDurationSec": 5.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 33,
+      "text": "실적이 좋아도 28% 폭락, 엔비디아는 과연 살아남았을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.251,
+      "speechEndSec": 32.702,
+      "endSec": 32.702,
+      "speechDurationSec": 27.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 183,
+      "text": "2월 26일 미국 증시는 엔비디아 실적 발표 기대감 하나로 움직였습니다. 다우는 0.63% 상승한 49,482.15, S&P 500은 0.81% 오른 6,946.13을 기록했고, 기술주 중심의 나스닥은 1.26% 급등하며 23,152.08로 마감했습니다. 시장의 한마디는 ‘엔비디아 실적 기대감 속 기술주 중심의 랠리’였습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 32.702,
+      "speechEndSec": 83.993,
+      "endSec": 83.993,
+      "speechDurationSec": 51.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 416,
+      "text": "시장의 모든 시선이 장 마감 후 발표될 엔비디아 실적에 쏠렸습니다. AI 산업 전체의 성장성과 수요를 가늠할 바로미터였기 때문입니다. 투자자들은 이미 예상된 폭발적인 매출 성장보다, 중국 수출 통제 영향과 미래 성장 가이던스에 집중했습니다. 공포지수 VIX가 8% 넘게 하락하고 10년물 국채금리가 4.2%대에서 안정되며 기대감을 키웠지만, 한편에선 엄청난 불안감도 있었습니다. 며칠 전 팔로알토 네트웍스는 양호한 실적에도 향후 전망치를 낮췄다는 이유만으로 주가가 28% 넘게 폭락했습니다. 이는 엔비디아에 대한 기대가 조금이라도 꺾이면 시장 전체가 흔들릴 수 있다는 강력한 경고였습니다. 심지어 대통령이 국정연설에서 관세 정책 강행을 시사했지만, 시장은 잠재적 무역 분쟁 리스크보다 AI라는 거대한 성장 서사를 선택하며 이마저도 무시했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 83.993,
+      "speechEndSec": 86.004,
+      "endSec": 86.004,
+      "speechDurationSec": 2.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

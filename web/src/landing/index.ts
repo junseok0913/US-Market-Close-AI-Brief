@@ -24,8 +24,22 @@ import { slides as slides20260218 } from './20260218/slides';
 import { slides as slides20260219 } from './20260219/slides';
 import { slides as slides20260220 } from './20260220/slides';
 import { slides as slides20260223 } from './20260223/slides';
+import { slides as slides20260224 } from './20260224/slides';
+import { slides as slides20260225 } from './20260225/slides';
+import { slides as slides20260226 } from './20260226/slides';
+import { slides as slides20260227 } from './20260227/slides';
+import { slides as slides20260302 } from './20260302/slides';
+import { slides as slides20260303 } from './20260303/slides';
+import { slides as slides20260304 } from './20260304/slides';
 
 const slidesMap: Record<string, Slide[]> = {
+  '20260304': slides20260304,
+  '20260303': slides20260303,
+  '20260302': slides20260302,
+  '20260227': slides20260227,
+  '20260226': slides20260226,
+  '20260225': slides20260225,
+  '20260224': slides20260224,
   '20260223': slides20260223,
   '20260220': slides20260220,
   '20260219': slides20260219,

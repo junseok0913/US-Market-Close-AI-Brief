@@ -1,0 +1,58 @@
+{
+  "date": "20260226",
+  "lang": "ko",
+  "audioFile": "shorts20260226.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 83.204,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.891,
+      "endSec": 5.891,
+      "speechDurationSec": 5.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 47,
+      "text": "완벽한 실적을 발표한 엔비디아가 5% 넘게 폭락했습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.891,
+      "speechEndSec": 22.342,
+      "endSec": 22.342,
+      "speechDurationSec": 16.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 132,
+      "text": "2월 27일 미국 증시는 엔비디아 실적 발표 후 차익실현이 나오며 기술주 하락 속 혼조세로 마감했습니다. 다우 지수는 0.03% 소폭 상승했지만, S&P 500은 0.54% 하락했고, 특히 기술주 중심의 나스닥은 1.18%나 내렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.342,
+      "speechEndSec": 81.313,
+      "endSec": 81.313,
+      "speechDurationSec": 58.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 456,
+      "text": "시장의 모든 관심이 쏠렸던 엔비디아는 4분기 매출 681억 달러, 다음 분기 가이던스 약 780억 달러로 월가 예상치를 가볍게 뛰어넘는 완벽한 실적을 내놨습니다. 하지만 시장의 눈높이가 너무 높았던 탓에, 뉴스를 계기로 이익을 실현하려는 매물이 쏟아지며 주가는 5% 넘게 급락했습니다. 이 여파로 경쟁사인 AMD는 4%, 브로드컴은 6% 넘게 하락했고, 반도체 ETF인 SOXX도 3.5% 내렸습니다. 이처럼 기술주가 조정을 받자 자금은 다른 곳으로 이동했습니다. 기술주 ETF인 XLK가 1.4% 하락하는 동안, 산업재 XLI와 금융주 XLF ETF는 각각 1.2% 넘게 상승하며 뚜렷한 대조를 이뤘습니다. 중소형주 중심의 러셀 2000 지수도 0.5% 넘게 오르며 시장의 저변이 넓어지고 있음을 보여줬습니다. 과열된 기술주를 피해 안정적인 경기 순환주로 자금이 이동하는 섹터 순환매가 명확히 나타난 하루였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 81.313,
+      "speechEndSec": 83.204,
+      "endSec": 83.204,
+      "speechDurationSec": 1.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

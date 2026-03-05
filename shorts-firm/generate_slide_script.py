@@ -40,6 +40,7 @@ SECTION_NAME_ALIASES = {
 }
 ALLOWED_PHASES = {"hook", "market", "insight", "finale", "watch"}
 ALLOWED_THEMES = {"alert", "bear", "bull", "neutral", "macro", "flash"}
+MAX_COMPANY_BULLETS = 3
 
 
 def compact_text(value: Any) -> str:
@@ -412,6 +413,124 @@ def split_bullets_from_text(text: str, limit: int) -> list[str]:
     return normalize_string_list(parts, limit=limit, max_len=72)
 
 
+def truncate_text(value: Any, max_len: int) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    if len(text) <= max_len:
+        return text
+    return f"{text[: max_len - 1].rstrip()}…"
+
+
+def first_sentence(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    parts = [compact_text(item) for item in re.split(r"(?<=[.!?])\s+", text) if compact_text(item)]
+    return parts[0] if parts else text
+
+
+def normalize_company_point_lines(values: Any, *, limit: int, max_len: int | None = None) -> list[str]:
+    if not isinstance(values, list):
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = first_sentence(value)
+        if max_len is not None:
+            text = truncate_text(text, max_len=max_len)
+        else:
+            text = compact_text(text)
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def build_company_default_text(company_move: dict[str, Any], *, fallback: str = "") -> tuple[str, str]:
+    summary = truncate_text(
+        compact_text(company_move.get("move_summary")) or first_sentence(company_move.get("reason")),
+        max_len=58,
+    )
+    reason = truncate_text(first_sentence(company_move.get("reason")) or summary, max_len=72)
+    if not summary:
+        summary = truncate_text(fallback, max_len=58)
+    if not reason:
+        reason = truncate_text(fallback or summary, max_len=72)
+    return summary, reason
+
+
+def build_company_bullets(company_move: dict[str, Any], *, lang: str, limit: int = MAX_COMPANY_BULLETS) -> list[str]:
+    provided = normalize_company_point_lines(company_move.get("slide_points"), limit=limit, max_len=44)
+
+    day_text = compact_text(company_move.get("day_change_display"))
+    month_text = compact_text(company_move.get("month_change_display"))
+    market_cap_text = compact_text(company_move.get("market_cap_display"))
+    pe_text = compact_text(company_move.get("pe_ratio_display"))
+    pbr_text = compact_text(company_move.get("pbr_display"))
+    roe_text = compact_text(company_move.get("roe_display"))
+    summary, reason = build_company_default_text(company_move)
+
+    metric_line = ""
+    metric_bits: list[str] = []
+    if day_text and day_text != "N/A":
+        metric_bits.append(f"1D {day_text}" if lang == "en" else f"1일 {day_text}")
+    if month_text and month_text != "N/A":
+        metric_bits.append(f"1M {month_text}" if lang == "en" else f"1개월 {month_text}")
+    if metric_bits:
+        metric_line = " / ".join(metric_bits)
+
+    valuation_bits: list[str] = []
+    if market_cap_text and market_cap_text != "N/A":
+        valuation_bits.append(f"Market Cap {market_cap_text}" if lang == "en" else f"시총 {market_cap_text}")
+    if pe_text and pe_text != "N/A":
+        valuation_bits.append(f"PER {pe_text}")
+    if pbr_text and pbr_text != "N/A":
+        valuation_bits.append(f"PBR {pbr_text}")
+    if roe_text and roe_text != "N/A":
+        valuation_bits.append(f"ROE {roe_text}")
+    valuation_line = ", ".join(valuation_bits)
+
+    fallback_pool = (
+        [
+            metric_line,
+            valuation_line,
+            summary,
+            reason,
+            "Track the next catalyst",
+        ]
+        if lang == "en"
+        else [
+            metric_line,
+            valuation_line,
+            summary,
+            reason,
+            "추가 촉매와 리스크 확인",
+        ]
+    )
+
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in provided + fallback_pool:
+        text = truncate_text(first_sentence(value), max_len=44)
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+        if len(out) >= limit:
+            break
+    return out[:limit]
+
+
 def normalize_featured_tickers(values: Any) -> list[str | dict[str, str]]:
     if not isinstance(values, list):
         return []
@@ -502,20 +621,29 @@ def normalize_llm_render_payload(
         if is_company_section_name(section_name):
             company_idx += 1
 
-        default_headline = title if section_key == "hook" else compact_text(company_move.get("move_summary")) or expected_eyebrow
+        company_summary, company_reason = build_company_default_text(
+            company_move,
+            fallback=compact_text(section.get("text")) or hook,
+        )
+
+        default_headline = title if section_key == "hook" else company_summary or expected_eyebrow
         if section_key == "closing":
             default_headline = compact_text(section.get("text")) or "Wrap Up"
-        default_subheadline = compact_text(section.get("text")) or hook
-        default_body = compact_text(section.get("text")) or default_subheadline
+        if is_company_section_name(section_name):
+            default_subheadline = company_summary or compact_text(section.get("text")) or hook
+            default_body = company_reason or default_subheadline
+        else:
+            default_subheadline = compact_text(section.get("text")) or hook
+            default_body = compact_text(section.get("text")) or default_subheadline
 
-        bullets = normalize_string_list(llm_slide.get("bullets"), limit=3, max_len=72)
+        bullets = normalize_company_point_lines(llm_slide.get("bullets"), limit=MAX_COMPANY_BULLETS)
         if not bullets:
             if is_company_section_name(section_name):
-                bullets = normalize_string_list(company_move.get("slide_points"), limit=3, max_len=72)
+                bullets = build_company_bullets(company_move, lang=lang, limit=MAX_COMPANY_BULLETS)
             if not bullets:
-                bullets = split_bullets_from_text(default_body, limit=3)
+                bullets = split_bullets_from_text(default_body, limit=MAX_COMPANY_BULLETS)
         if not bullets:
-            bullets = [default_body]
+            bullets = [truncate_text(default_body, 44)]
         if section_key == "closing":
             bullets = []
 
@@ -527,8 +655,10 @@ def normalize_llm_render_payload(
         highlights = normalize_string_list(llm_slide.get("highlights"), limit=3, max_len=40)
 
         headline = compact_text(llm_slide.get("headline")) or default_headline
-        subheadline = compact_text(llm_slide.get("subheadline")) or default_subheadline
-        body = compact_text(llm_slide.get("body")) or default_body
+        llm_subheadline = compact_text(llm_slide.get("subheadline"))
+        llm_body = compact_text(llm_slide.get("body"))
+        subheadline = llm_subheadline or truncate_text(default_subheadline, max_len=72)
+        body = llm_body or truncate_text(default_body, max_len=72)
         if section_key == "hook":
             # Hook screen title must always match script title.
             headline = title
@@ -698,22 +828,24 @@ def build_slide_render_template(
         if is_company:
             company_idx += 1
 
+        company_summary, company_reason = build_company_default_text(company_move, fallback=text)
+
         headline = compact_text(script_payload.get("title"))
-        subheadline = text or compact_text(script_payload.get("hook"))
-        body = text or subheadline
+        subheadline = truncate_text(text or compact_text(script_payload.get("hook")), max_len=72)
+        body = subheadline
         bullets = [sentence for sentence in re.split(r"(?<=[.!?])\s+", body) if compact_text(sentence)][:2]
-        bullets = [compact_text(item) for item in bullets if compact_text(item)]
+        bullets = [truncate_text(item, max_len=44) for item in bullets if compact_text(item)]
         if not bullets:
-            bullets = [body]
+            bullets = [truncate_text(body, max_len=44)]
         if is_hook:
             headline = compact_text(script_payload.get("title")) or "US Market Close"
-            subheadline = text or compact_text(script_payload.get("hook"))
+            subheadline = truncate_text(text or compact_text(script_payload.get("hook")), max_len=72)
             body = subheadline
         if is_company:
-            headline = compact_text(company_move.get("move_summary")) or compact_text(company_move.get("ticker")) or headline
-            subheadline = text or compact_text(company_move.get("reason")) or subheadline
-            body = subheadline
-            bullets = normalize_string_list(company_move.get("slide_points"), limit=3, max_len=72) or bullets
+            headline = company_summary or compact_text(company_move.get("ticker")) or headline
+            subheadline = company_summary or subheadline
+            body = company_reason or subheadline
+            bullets = build_company_bullets(company_move, lang=lang, limit=MAX_COMPANY_BULLETS) or bullets
         if is_closing:
             cta = default_cta_text(lang)
             headline = cta
@@ -747,7 +879,7 @@ def build_slide_render_template(
                 "id": section["id"],
                 "startSec": section["startSec"],
                 "endSec": section["endSec"],
-                "text": text or subheadline,
+                "text": truncate_text(text or subheadline, max_len=72),
             }
         )
 

@@ -1,0 +1,25 @@
+{
+  "date": "20260303",
+  "lang": "ko",
+  "audioFile": "shorts20260303.mp3",
+  "sectionOrder": [
+    "lmt"
+  ],
+  "ttsCallCount": 1,
+  "totalDurationSeconds": 33.171,
+  "sections": [
+    {
+      "id": 0,
+      "name": "lmt",
+      "ticker": "LMT",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 33.171,
+      "endSec": 33.171,
+      "speechDurationSec": 33.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 283,
+      "text": "사상 최고가를 찍자마자 급락한 주식이 있습니다. 록히드마틴입니다. 이란과의 분쟁 격화 소식에 주가는 개장 직후 사상 최고치를 경신했습니다. 하지만 기쁨도 잠시, 연차보고서에 담긴 '구조적 위험'이 부각되며 2% 넘게 하락 마감했습니다. 회사 매출의 40%를 차지하는 핵심 항공 사업부의 영업이익률이 1년 만에 8.8%에서 6.9%로 붕괴했고, 9억 5천만 달러의 막대한 손실이 발생한 사실이 드러난 겁니다. 막대한 수주잔고가 오히려 시한폭탄일 수 있다는 경고등이 켜진 셈입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

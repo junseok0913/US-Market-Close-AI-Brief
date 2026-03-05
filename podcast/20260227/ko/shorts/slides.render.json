@@ -1,0 +1,229 @@
+{
+  "date": "20260228",
+  "lang": "ko",
+  "title": "블록 20% 폭등, 시장은 하락. 엇갈린 증시의 두 얼굴",
+  "hook": "블록 20% 폭등, 시장은 하락. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 70.604,
+  "audioFile": "shorts20260227.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.371,
+      "eyebrow": "2월 28일 미국 증시",
+      "headline": "블록 20% 폭등, 시장은 하락",
+      "subheadline": "엇갈린 증시, 대체 무슨 일이?",
+      "body": "블록 20% 폭등, 시장은 하락. 대체 무슨 일이 있었을까요.",
+      "bullets": [
+        "블록 20% 폭등, 시장은 하락.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "SQ",
+        "NFLX",
+        "PARA",
+        "WBD"
+      ],
+      "highlights": [
+        "블록(SQ) +20%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 4.371,
+      "endSec": 17.342,
+      "eyebrow": "시장 지표",
+      "headline": "인플레이션 우려에 지수 하락",
+      "subheadline": "DOW -1% | NASDAQ -0.9% | S&P500 -0.4%",
+      "body": "시장 한마디: 인플레이션 우려 속 개별 기업 격변 장세",
+      "bullets": [
+        "다우 -1% 이상 하락",
+        "나스닥 -0.9% 하락"
+      ],
+      "tickers": [
+        "^DJI",
+        "^IXIC",
+        "^GSPC",
+        "SQ"
+      ],
+      "highlights": [
+        "DOW -1%",
+        "NASDAQ -0.9%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 17.342,
+      "endSec": 68.913,
+      "eyebrow": "핵심 요약",
+      "headline": "예상보다 뜨거웠던 PPI 쇼크",
+      "subheadline": "금리 인하 기대감 후퇴하며 기술주 하락",
+      "body": "하락의 주범은 예상보다 뜨거웠던 1월 생산자물가지수, PPI였습니다. 월간 상승률이 예상치 0.3%를 훌쩍 넘는 0.5%를 기록했고, 변동성을 제외한 근원 PPI는 예상의 두 배가 넘는 0.8%나 급등했습니다. 이 소식에 연준의 금리 인하 기대감이 크게 후퇴하며 기술주 섹터는 1.6% 넘게 하락했습니다. 하지만 이런 시장 분위기와 무관하게 개별 기업들은 각자의 서사를 썼습니다. 미디어 업계에서는 넷플릭스가 워너 브라더스 인수…",
+      "bullets": [
+        "예상 상회한 생산자물가지수(PPI)에 시장 전반 하방 압력",
+        "개별 기업은 M&A, 구조조정 호재로 급등 (SQ, NFLX, PARA)"
+      ],
+      "tickers": [
+        "SQ",
+        "NFLX",
+        "PARA",
+        "WBD"
+      ],
+      "highlights": [
+        "근원 PPI +0.8% (예상 2배)",
+        "블록(SQ) +20%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 68.913,
+      "endSec": 70.604,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "SQ",
+        "NFLX",
+        "PARA",
+        "WBD"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.371,
+      "text": "블록 20% 폭등, 시장은 하락. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.371,
+      "endSec": 17.342,
+      "text": "2월 28일 미국 증시는 인플레이션 우려로 하락 마감했습니다. 다우는 1% 넘게, 나스닥은 0.9%, S&P 500은 0.4% 내렸습니다. 시장 한마디는 '인플레이션 우려 속 개별 기업 격변 장세'입니다."
+    },
+    {
+      "id": 2,
+      "startSec": 17.342,
+      "endSec": 68.913,
+      "text": "하락의 주범은 예상보다 뜨거웠던 1월 생산자물가지수, PPI였습니다. 월간 상승률이 예상치 0.3%를 훌쩍 넘는 0.5%를 기록했고, 변동성을 제외한 근원 PPI는 예상의 두 배가 넘는 0.8%나 급등했습니다. 이 소식에 연준의 금리 인하 기대감이 크게 후퇴하며 기술주 섹터는 1.6%…"
+    },
+    {
+      "id": 3,
+      "startSec": 68.913,
+      "endSec": 70.604,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "event",
+      "label": "ppi mom",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq sink after hot…",
+      "detail": "id#5d2df7c2f649327f"
+    },
+    {
+      "type": "chart",
+      "label": "XLK",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "article",
+      "label": "Netflix, Paramount shares jump as months-long fight for…",
+      "detail": "id#b5bec1c2943c6504"
+    },
+    {
+      "type": "chart",
+      "label": "NFLX",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "PARA",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "chart",
+      "label": "WBD",
+      "detail": "2026-02-27"
+    },
+    {
+      "type": "article",
+      "label": "Jack Dorsey’s Block Slashes Nearly Half Its Staff in AI…",
+      "detail": "id#2b3aa8c591ea045d"
+    },
+    {
+      "type": "chart",
+      "label": "SQ",
+      "detail": "2026-02-27"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 모두 하락 마감",
+      "예상보다 높은 PPI로 금리인하 기대감 후퇴",
+      "넷플릭스, 파라마운트 등 M&A 관련주 급등락",
+      "블록, AI 기반 구조조정 발표로 20% 폭등"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "SQ",
+        "label": "블록",
+        "tag": "AI 구조조정 발표"
+      },
+      {
+        "ticker": "NFLX",
+        "label": "넷플릭스",
+        "tag": "M&A 인수전 철수"
+      },
+      {
+        "ticker": "PARA",
+        "label": "파라마운트",
+        "tag": "인수 기대감 고조"
+      },
+      {
+        "ticker": "WBD",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

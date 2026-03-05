@@ -1,0 +1,24 @@
+Title:
+2026.2.26 US Market Close | Tech stocks rally on high hopes for NVIDIA's earnings
+
+Description:
+On February 26, the New York stock market saw a strong, tech-led rally driven by high anticipation for NVIDIA's earnings announcement. All three major indices closed higher, with the Nasdaq Composite leading the optimistic sentiment by surging over 1%.
+
+- Dow Jones: +0.63%
+- S&P 500: +0.81%
+- Nasdaq: Surged 1.26%
+
+Key Issues
+- Anticipation for NVIDIA's Earnings: All eyes were on NVIDIA's earnings, set to be released after the closing bell. The company's results and guidance are considered a key barometer for the entire AI industry's growth potential, driving a rally in related stocks.
+- Shrugging Off Political Uncertainty: Despite President Trump's tough stance on tariff policy in the State of the Union address, the market continued its ascent, placing more weight on the AI growth story than on the potential risk of trade disputes.
+- Concerns of an Overheated AI Rally: Warning signs also emerged, as seen in the case of Palo Alto Networks, which plunged over 28% despite strong earnings simply due to a downward revision of its forecast. This highlights the vulnerability of high-expectation tech stocks to even minor imperfections.
+- Re-evaluating IBM: IBM's annual report (10-K) raised expectations for its transition into a hybrid cloud and AI platform company. However, with software segment growth at only 6%, concerns were also raised about intensifying competition and the risk of its massive pension liabilities.
+- Awaiting Key Economic Data: Investors also showed a wait-and-see attitude, looking for clues about the Fed's future policy direction ahead of this week's Producer Price Index (PPI) and next week's jobs report.
+
+Key Stocks
+- NVIDIA (NVDA): Gained over 2% during the session as high expectations for its earnings were priced in.
+- IBM (IBM): Rose more than 1.8%, highlighting optimism for its successful transition into a hybrid cloud and AI platform company.
+- Palo Alto Networks (PANW): (From a few days prior) Plunged over 28% after shocking investors by lowering its future billings forecast.
+
+Keywords:
+미국주식,주식,재테크,시황,엔비디아,NVDA,AI,인공지능,반도체,실적,IBM,나스닥,S&P500,금리,관세

@@ -1,0 +1,58 @@
+{
+  "date": "20260304",
+  "lang": "ko",
+  "audioFile": "shorts20260304.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 76.964,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.731,
+      "endSec": 4.731,
+      "speechDurationSec": 4.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 38,
+      "text": "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.731,
+      "speechEndSec": 20.702,
+      "endSec": 20.702,
+      "speechDurationSec": 15.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 119,
+      "text": "3월 5일 미국 증시는 지정학적 우려 완화와 기술주 강세에 따른 반등 장세를 펼쳤습니다. 다우존스는 0.5%, S&P 500은 0.8% 상승했고, 기술주 중심의 나스닥은 1.3% 급등하며 시장 회복을 주도했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 20.702,
+      "speechEndSec": 74.793,
+      "endSec": 74.793,
+      "speechDurationSec": 54.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 474,
+      "text": "시장 분위기를 뒤바꾼 것은 이란이 비공식 채널로 미국과 접촉했다는 보도였습니다. 전면전 우려가 급격히 완화되자 공포지수 VIX는 24선에서 21선으로 내려왔고, 배럴당 77달러를 위협하던 서부 텍사스산 원유는 73달러 선으로 크게 후퇴했습니다. 위험자산 선호 심리가 되살아나면서 그동안 눌려있던 기술주가 강하게 반등했습니다. 매그니피센트 세븐 종목이 모두 상승한 가운데, 애플은 저가형 맥북 네오 공개 소식에, 테슬라는 자율주행 부문에 대한 긍정적 평가에 힘입어 상승했습니다. 필라델피아 반도체 지수 역시 강세를 보였습니다. 여기에 견조한 경제 지표가 더해졌습니다. 2월 ADP 민간 고용은 예상치 5만 개를 넘는 6만 3천 개를 기록했고, 2월 서비스업 PMI는 56.1로 3년 반 만에 가장 빠른 확장세를 보였습니다. 특히 서비스업 물가 지수가 11개월 만에 최저치로 하락하며 인플레이션 압력 완화 신호를 보낸 점도 투자 심리를 개선시켰습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 74.793,
+      "speechEndSec": 76.964,
+      "endSec": 76.964,
+      "speechDurationSec": 2.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

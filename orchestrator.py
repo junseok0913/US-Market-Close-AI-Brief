@@ -32,6 +32,7 @@ from langgraph.graph import END, StateGraph
 from agents.closing import graph as closing_graph
 from agents.opening import graph as opening_graph
 from agents.theme import graph as theme_graph
+from agents.theme.news_ticker_extractor import extract_news_tickers_from_theme
 from podcast_db import get_default_db_path, upsert_script_row, utc_iso_from_timestamp
 from shared.config import (
     cleanup_cache_dir,
@@ -602,13 +603,28 @@ def main() -> None:
         finally:
             cleanup_cache_dir(date_yyyymmdd)
 
+        scripts = result.get("scripts", [])
+        chapter = result.get("chapter", _init_chapter())
+        result_user_tickers = result.get("user_tickers", user_tickers)
+        if not isinstance(result_user_tickers, list):
+            result_user_tickers = user_tickers
+        scripts_list = scripts if isinstance(scripts, list) else []
+        chapter_list = chapter if isinstance(chapter, list) else _init_chapter()
+        news_tickers = extract_news_tickers_from_theme(
+            date=resolve_display_date(result.get("date", date_yyyymmdd), "ko"),
+            user_tickers=result_user_tickers,
+            scripts=[item for item in scripts_list if isinstance(item, dict)],
+            chapter=[item for item in chapter_list if isinstance(item, dict)],
+        )
+
         # 최종 산출물 생성
         final_payload = {
             "date": resolve_display_date(result.get("date", date_yyyymmdd), "ko"),
             "nutshell": result.get("nutshell", ""),
-            "user_tickers": result.get("user_tickers", user_tickers),
-            "chapter": result.get("chapter", _init_chapter()),
-            "scripts": result.get("scripts", []),
+            "user_tickers": result_user_tickers,
+            "news_tickers": news_tickers,
+            "chapter": chapter_list,
+            "scripts": scripts_list,
         }
         final_json = json.dumps(final_payload, ensure_ascii=False, indent=2)
         

@@ -1,0 +1,58 @@
+{
+  "date": "20260224",
+  "lang": "ko",
+  "audioFile": "shorts20260224.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 67.484,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.211,
+      "endSec": 4.211,
+      "speechDurationSec": 4.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 36,
+      "text": "10% 관세 폭탄이 터졌는데, 증시는 왜 1% 가까이 올랐을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.211,
+      "speechEndSec": 18.542,
+      "endSec": 18.542,
+      "speechDurationSec": 14.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 114,
+      "text": "2월 25일 미국 증시는 AI발 반등에 힘입어 S&P 500 0.77%, 나스닥 1.04%, 다우 0.76% 상승 마감했습니다. 새로운 10% 관세가 발효됐지만, 시장은 오히려 안도하는 모습을 보였습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 18.542,
+      "speechEndSec": 65.513,
+      "endSec": 65.513,
+      "speechDurationSec": 46.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 416,
+      "text": "이는 대통령의 국정연설에서 추가 관세 인상 같은 최악의 시나리오가 나오지 않았기 때문입니다. 하지만 시장 반등의 진짜 주인공은 AI였습니다. 어제는 AI 스타트업 앤스로픽의 기술이 기존 소프트웨어를 파괴할 수 있다는 공포에 IBM 주가가 13% 가까이 폭락하는 등 '사스포칼립스' 우려가 컸습니다. 하지만 바로 오늘, 앤스로픽이 세일즈포스 등과 협력하는 파트너십을 발표하며 파괴자가 아닌 조력자의 가능성을 보여주자 시장은 환호했습니다. 공포지수 VIX는 6% 넘게 하락했고, 파트너사 톰슨 로이터는 10% 넘게 급등했습니다. AI 칩 경쟁도 뜨거웠습니다. AMD는 메타와의 대규모 공급 계약 소식에 8% 이상 급등했고, 시장의 모든 관심은 엔비디아 실적에 쏠리고 있습니다. 옵션 시장은 실적 발표 후 6% 이상 변동 가능성을 반영하고 있습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 65.513,
+      "speechEndSec": 67.484,
+      "endSec": 67.484,
+      "speechDurationSec": 1.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

@@ -73,6 +73,7 @@ async function main() {
   const stopOnTimeout = Boolean(args['stop-on-timeout']);
   const width = Number(args.width || 1920);
   const height = Number(args.height || 1080);
+  const stallTimeoutSeconds = Number(args['stall-timeout-seconds'] || 30);
 
   if (!url) {
     throw new Error('Missing required argument: --url');
@@ -99,7 +100,18 @@ async function main() {
   const chromium = await loadChromium();
   const browser = await chromium.launch({
     headless: true,
-    args: ['--autoplay-policy=no-user-gesture-required'],
+    args: [
+      '--autoplay-policy=no-user-gesture-required',
+      // Prevent headless Chromium from suspending or throttling background media.
+      // Without these, audio can silently freeze mid-playback in long recordings.
+      '--disable-background-media-suspend',
+      '--disable-background-timer-throttling',
+      '--disable-backgrounding-occluded-windows',
+      '--disable-renderer-backgrounding',
+      '--disable-features=IntensiveWakeUpThrottling',
+      // Disable GPU compositing (not available headless) to avoid frame drops.
+      '--disable-gpu',
+    ],
   });
   let context = null;
 
@@ -181,6 +193,9 @@ async function main() {
 
     const startedAt = Date.now();
     let lastLogAt = 0;
+    let lastCurrentTime = -1;
+    let lastProgressAt = Date.now();
+    let stallResumeAttempted = false;
 
     while (true) {
       const state = await page.evaluate(() => {
@@ -217,6 +232,34 @@ async function main() {
           break;
         }
         throw new Error(`Recording timeout exceeded (${maxSeconds}s).`);
+      }
+
+      // Stall detection: check if currentTime has advanced since last poll.
+      if (Math.abs(state.currentTime - lastCurrentTime) > 0.05) {
+        lastCurrentTime = state.currentTime;
+        lastProgressAt = Date.now();
+        stallResumeAttempted = false;
+      } else {
+        const stallSeconds = (Date.now() - lastProgressAt) / 1000;
+        if (stallSeconds >= stallTimeoutSeconds) {
+          if (!stallResumeAttempted) {
+            console.log(
+              `[record] ⚠️  Playback stalled at ${state.currentTime.toFixed(1)}s for ${stallSeconds.toFixed(0)}s. Attempting resume...`,
+            );
+            await page.evaluate(async () => {
+              const audio = document.querySelector('audio');
+              if (audio) {
+                try { await audio.play(); } catch { /* ignore */ }
+              }
+            });
+            stallResumeAttempted = true;
+            lastProgressAt = Date.now(); // reset window for second chance
+          } else {
+            throw new Error(
+              `Playback stalled at ${state.currentTime.toFixed(1)}s for ${(stallSeconds * 2).toFixed(0)}s after resume attempt. Aborting.`,
+            );
+          }
+        }
       }
 
       if (Date.now() - lastLogAt > 15000) {

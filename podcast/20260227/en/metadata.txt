@@ -1,0 +1,26 @@
+Title:
+2026.2.28 US Market Close | A volatile session for individual stocks amid inflation concerns
+
+Description:
+On February 28, the New York stock market saw major indices fall across the board following a hotter-than-expected Producer Price Index (PPI) report. While concerns over prolonged inflation weighed on the market, companies with strong individual catalysts—such as M&A activity or AI-driven restructuring—surged, creating a divergent market landscape.
+
+Major Indices
+- Dow Jones: Fell over 1% on tightening concerns after the higher-than-expected PPI release.
+- Nasdaq: Dropped 0.9% as fading rate cut hopes put pressure on tech-heavy growth stocks.
+- S&P 500: Declined 0.4% as inflation fears exerted downward pressure on the broader market.
+
+Key Issues
+- Hotter-Than-Expected Inflation Data: The January Producer Price Index (PPI) rose 0.5% month-over-month, significantly exceeding the 0.3% forecast. Core PPI climbed 0.8%, pushing back expectations for a Fed rate cut.
+- Media M&A Shake-up: Netflix withdrew from the bidding for Warner Bros. Discovery, resolving a key uncertainty. Paramount has now emerged as a leading contender, causing significant price swings in related stocks.
+- The AI-Driven Restructuring Wave: Fintech company Block (SQ) announced major layoffs, citing the adoption of AI. The market reacted positively, sending the stock surging on expectations of improved cost efficiency.
+- Morgan Stanley's Dilemma: Despite announcing a full-scale push into digital assets like Bitcoin, the company's stock fell as concerns over 'reputational contagion' risk came to the forefront.
+
+Key Stocks
+- Block (SQ): Surged over 20% after announcing a major restructuring plan driven by AI adoption.
+- Netflix (NFLX): Jumped more than 13% as uncertainty was resolved following its withdrawal from the Warner Bros. Discovery bid.
+- Paramount Skydance (PARA): Rose over 20% on heightened speculation that it could acquire Warner Bros. Discovery.
+- Warner Bros. Discovery (WBD): Fell more than 2% on news that Netflix, a strong potential acquirer, had dropped its bid.
+- Morgan Stanley (MS): Dropped over 4% due to concerns about 'reputational contagion' risk associated with its new digital assets venture.
+
+Keywords:
+미국주식,주식,재테크,시황,인플레이션,금리,PPI,AI,M&A,블록,SQ,넷플릭스,NFLX,파라마운트,PARA,모건스탠리,MS

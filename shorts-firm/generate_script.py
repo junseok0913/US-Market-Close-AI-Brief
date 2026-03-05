@@ -59,6 +59,25 @@ INDEX_LIKE_TICKERS = {
     "ES=F",
     "NQ=F",
     "YM=F",
+    "US10Y",
+    "US02Y",
+    "US05Y",
+    "US30Y",
+}
+NON_COMPANY_TICKER_PATTERNS = (
+    r"^US\d{1,2}Y$",
+    r".*[\^=].*",
+)
+EQUITY_QUOTE_TYPES = {"EQUITY", "COMMONSTOCK", "ADR", "DR"}
+NON_EQUITY_QUOTE_TYPES = {
+    "ETF",
+    "INDEX",
+    "MUTUALFUND",
+    "CRYPTOCURRENCY",
+    "CURRENCY",
+    "FUTURE",
+    "OPTION",
+    "BOND",
 }
 DEFAULT_DURATION = 90
 MIN_DURATION = 45
@@ -135,7 +154,27 @@ def is_company_ticker(ticker: str) -> bool:
         return False
     if ticker in INDEX_LIKE_TICKERS:
         return False
+    for pattern in NON_COMPANY_TICKER_PATTERNS:
+        if re.match(pattern, ticker):
+            return False
     return not ticker.startswith("^")
+
+
+def normalize_quote_type(value: Any) -> str:
+    return compact_text(value).upper().replace(" ", "")
+
+
+def is_equity_snapshot(ticker: str, snapshot: dict[str, Any]) -> bool:
+    if not is_company_ticker(ticker):
+        return False
+    quote_type = normalize_quote_type(snapshot.get("quote_type"))
+    if not quote_type:
+        return True
+    if quote_type in EQUITY_QUOTE_TYPES:
+        return True
+    if quote_type in NON_EQUITY_QUOTE_TYPES:
+        return False
+    return True
 
 
 def format_percent(value: float | None) -> str:
@@ -411,10 +450,6 @@ def build_company_spoken_text(move: dict[str, Any], *, lang: str) -> str:
 
 
 def build_company_slide_points(move: dict[str, Any], *, lang: str) -> list[str]:
-    provided = normalize_string_list(move.get("slide_points"), MAX_SLIDE_POINTS_PER_COMPANY)
-    if provided:
-        return provided
-
     day_text = compact_text(move.get("day_change_display"))
     month_text = compact_text(move.get("month_change_display"))
     market_cap_text = compact_text(move.get("market_cap_display"))
@@ -422,6 +457,9 @@ def build_company_slide_points(move: dict[str, Any], *, lang: str) -> list[str]:
     pbr_text = compact_text(move.get("pbr_display"))
     roe_text = compact_text(move.get("roe_display"))
     reason_text = compact_text(move.get("reason"))
+    move_summary = compact_text(move.get("move_summary"))
+
+    provided = normalize_string_list(move.get("slide_points"), MAX_SLIDE_POINTS_PER_COMPANY)
 
     bullets: list[str] = []
     if lang == "en":
@@ -450,6 +488,8 @@ def build_company_slide_points(move: dict[str, Any], *, lang: str) -> list[str]:
             bullets.append(", ".join(valuation_bits))
         if reason_text:
             bullets.append(reason_text)
+        if move_summary:
+            bullets.append(move_summary)
     else:
         metric_bits_ko: list[str] = []
         if day_text and day_text != "N/A":
@@ -476,8 +516,47 @@ def build_company_slide_points(move: dict[str, Any], *, lang: str) -> list[str]:
             bullets.append(", ".join(valuation_bits_ko))
         if reason_text:
             bullets.append(reason_text)
+        if move_summary:
+            bullets.append(move_summary)
 
-    return normalize_string_list(bullets, MAX_SLIDE_POINTS_PER_COMPANY)
+    fallback_defaults = (
+        [
+            "1D/1M move snapshot",
+            "Market cap/PER/PBR/ROE check",
+            "Track the core catalyst",
+        ]
+        if lang == "en"
+        else [
+            "1일·1개월 변동률 점검",
+            "시총·PER·PBR·ROE 확인",
+            "주가 변동 핵심 이유 추적",
+        ]
+    )
+
+    merged: list[str] = []
+    seen: set[str] = set()
+    for item in provided + bullets:
+        text = compact_text(item)
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(text)
+        if len(merged) >= MAX_SLIDE_POINTS_PER_COMPANY:
+            return merged
+
+    for filler in fallback_defaults:
+        text = compact_text(filler)
+        key = text.lower()
+        if not text or key in seen:
+            continue
+        seen.add(key)
+        merged.append(text)
+        if len(merged) >= MAX_SLIDE_POINTS_PER_COMPANY:
+            break
+    return merged[:MAX_SLIDE_POINTS_PER_COMPANY]
 
 
 def normalize_section_name(value: Any) -> str:
@@ -777,6 +856,7 @@ def fetch_market_snapshot(ticker: str, target_date: dt.date | None) -> dict[str,
         "pe_ratio": None,
         "pbr": None,
         "roe": None,
+        "quote_type": "",
     }
 
     ticker_obj = yf.Ticker(ticker)
@@ -832,6 +912,11 @@ def fetch_market_snapshot(ticker: str, target_date: dt.date | None) -> dict[str,
         logger.warning("yfinance info fetch failed: %s (%s)", ticker, exc)
 
     output["name"] = compact_text(info.get("shortName") or info.get("longName"))
+    output["quote_type"] = normalize_quote_type(
+        info.get("quoteType")
+        or fast_info.get("quote_type")
+        or fast_info.get("quoteType")
+    )
     output["market_cap"] = normalize_float(fast_info.get("market_cap"))
     if output["market_cap"] is None:
         output["market_cap"] = normalize_float(info.get("marketCap"))
@@ -843,13 +928,59 @@ def fetch_market_snapshot(ticker: str, target_date: dt.date | None) -> dict[str,
     return output
 
 
+def passes_yahoo_company_validation(snapshot: dict[str, Any]) -> bool:
+    """Yahoo snapshot strict validation: require A and B.
+
+    A) history-derived move exists: day_change_pct or month_change_pct
+    B) quote_type is EQUITY and (name + at least one core metric)
+    """
+    day_change = normalize_float(snapshot.get("day_change_pct"))
+    month_change = normalize_float(snapshot.get("month_change_pct"))
+    condition_a = day_change is not None or month_change is not None
+
+    quote_type = normalize_quote_type(snapshot.get("quote_type"))
+    has_name = bool(compact_text(snapshot.get("name")))
+    core_metrics = (
+        normalize_float(snapshot.get("market_cap")),
+        normalize_float(snapshot.get("pe_ratio")),
+        normalize_float(snapshot.get("pbr")),
+        normalize_roe_percent(snapshot.get("roe")),
+    )
+    has_core_metric = any(value is not None for value in core_metrics)
+    condition_b = quote_type == "EQUITY" and has_name and has_core_metric
+
+    return condition_a and condition_b
+
+
 def build_company_context(script_json: dict[str, Any], max_count: int) -> list[dict[str, Any]]:
     target_date = parse_date_token(script_json.get("date"))
-    tickers = extract_candidate_tickers(script_json, max_count=max_count)
+    candidate_limit = max(max_count * 2, max_count)
+    tickers = extract_candidate_tickers(script_json, max_count=candidate_limit)
     rows: list[dict[str, Any]] = []
     for ticker in tickers:
         reason = extract_ticker_reason(script_json, ticker)
         snapshot = fetch_market_snapshot(ticker, target_date)
+        if not is_equity_snapshot(ticker, snapshot):
+            logger.info(
+                "Skipping non-company ticker for shorts-firm: %s (quote_type=%s)",
+                ticker,
+                snapshot.get("quote_type") or "unknown",
+            )
+            continue
+        if not passes_yahoo_company_validation(snapshot):
+            logger.info(
+                "Skipping ticker by Yahoo strict validation (A&B required): %s (quote_type=%s, name=%s, day=%s, month=%s, cap=%s, pe=%s, pbr=%s, roe=%s)",
+                ticker,
+                snapshot.get("quote_type") or "unknown",
+                compact_text(snapshot.get("name")) or "N/A",
+                snapshot.get("day_change_pct"),
+                snapshot.get("month_change_pct"),
+                snapshot.get("market_cap"),
+                snapshot.get("pe_ratio"),
+                snapshot.get("pbr"),
+                snapshot.get("roe"),
+            )
+            continue
         day_change_pct = normalize_float(snapshot.get("day_change_pct"))
         month_change_pct = normalize_float(snapshot.get("month_change_pct"))
         market_cap = normalize_float(snapshot.get("market_cap"))
@@ -874,8 +1005,11 @@ def build_company_context(script_json: dict[str, Any], max_count: int) -> list[d
                 "roe": roe,
                 "roe_display": format_roe(roe),
                 "reason": reason,
+                "quote_type": compact_text(snapshot.get("quote_type")),
             }
         )
+        if len(rows) >= max_count:
+            break
     return rows
 
 

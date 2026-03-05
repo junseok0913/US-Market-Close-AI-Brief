@@ -1,0 +1,23 @@
+Title:
+2026.3.5 US Market Close | Market rebounds on easing geopolitical concerns and strong tech rally
+
+Description:
+The New York stock market closed higher on March 5th, with all three major indices rebounding as geopolitical concerns over Iran eased and technology stocks rallied. The recovery in risk-on sentiment was particularly evident in the tech-heavy Nasdaq, which posted the strongest gains.
+
+- Dow Jones: +0.5% on easing geopolitical risks and improved investor sentiment.
+- S&P 500: +0.8%, lifted by the strength in technology stocks.
+- Nasdaq: +1.3%, leading the gains as risk-on sentiment fueled a tech rally.
+
+Key Market Movers
+- Easing Geopolitical Risk: Reports that Iran contacted the US through unofficial channels helped alleviate fears of a full-scale conflict. Consequently, West Texas Intermediate (WTI) crude oil prices retreated to the $73 level.
+- Solid Economic Data: The fundamentals of the US economy were viewed positively, with the February ADP private employment report showing an increase of 63,000 jobs, surpassing the forecast of 50,000. Additionally, the February Services PMI registered 56.1, marking its fastest pace of expansion in three and a half years.
+- Tech Stock Strength: All Magnificent Seven stocks rose, leading the market rebound. The Philadelphia Semiconductor Index showed particularly strong performance, continuing the optimism around the structural growth of the AI industry.
+- Broadcom's Volatility: Despite a strong forecast for Q2 AI-related revenue to reach $10.7 billion, the stock finished flat. Concerns were raised about business structure risks, including the fact that its top five customers account for 40% of revenue and its 95% reliance on TSMC for wafer production.
+
+Key Stocks in Focus
+- Apple (AAPL): Gained on anticipation for the unveiling of the low-cost MacBook Neo, aimed at the education market.
+- Tesla (TSLA): Rebounded after Bank of America issued a positive note, calling the company a leader in the autonomous driving and robotaxi sectors.
+- Broadcom (AVGO): Closed flat. Despite a strong AI revenue forecast, concerns about its extreme customer and supply chain concentration weighed on the stock.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,기술주,이란,AI,애플,AAPL,테슬라,TSLA,엔비디아,NVDA,브로드컴,AVGO,고용보고서

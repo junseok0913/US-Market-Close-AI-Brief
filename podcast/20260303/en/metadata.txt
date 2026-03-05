@@ -1,0 +1,20 @@
+Title:
+2026.3.4 US Market Close | Inflation fears rise amid Middle East geopolitical risks and surging oil prices
+
+Description:
+On March 4, all three major US indices closed lower as geopolitical risks in the Middle East escalated and oil prices surged. The market was weighed down by a combination of oil-driven inflation concerns and strong economic data, which highlighted the possibility of the Fed keeping interest rates higher for longer.
+
+- Dow Jones: Down 0.83% - Weighed down by inflation concerns from Middle East risks and rising oil prices.
+- S&P 500: Down 0.94% - Impacted by geopolitical risks and concerns over prolonged high interest rates.
+- Nasdaq: Down 1.02% - Tech stocks led the decline amid growing caution over rate hikes.
+
+Key Issues
+- Middle East Geopolitical Risk and Surging Oil Prices: Intensifying military conflict with Iran paralyzed shipping in the Strait of Hormuz, causing WTI crude oil to jump over 4% in a single day, surpassing $74 a barrel and fueling inflation fears.
+- Strong Economic Data and Higher-for-Longer Rate Concerns: The release of the ISM Services PMI, which beat market expectations, pressured the market as interpretations grew that a strong economy could justify the Fed maintaining its high-interest-rate policy for an extended period.
+- Upcoming Key Employment Data: Market focus is now shifting to the March Non-Farm Payrolls report, due later this week. Whether the labor market shows signs of cooling is seen as a key variable in determining the timing of the Fed's potential rate cuts.
+
+Key Stocks
+- Lockheed Martin (LMT): Tumbled over 2% - After hitting an all-time high early in the session on geopolitical risks, the stock plunged. Its annual report revealed structural risks, including a collapse in profitability in a key business segment (operating margin dropping from 8.8% to 6.9%) and a $950 million loss, which overshadowed the initial gains.
+
+Keywords:
+미국주식,주식,재테크,시황,중동리스크,유가,인플레이션,금리,ISM,고용보고서,록히드마틴,LMT

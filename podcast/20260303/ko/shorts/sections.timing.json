@@ -1,0 +1,58 @@
+{
+  "date": "20260303",
+  "lang": "ko",
+  "audioFile": "shorts20260303.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 72.524,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 3.891,
+      "endSec": 3.891,
+      "speechDurationSec": 3.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 28,
+      "text": "유가가 장중 9% 넘게 폭등하며 증시를 덮쳤습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 3.891,
+      "speechEndSec": 28.142,
+      "endSec": 28.142,
+      "speechDurationSec": 24.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 202,
+      "text": "3월 4일 미국 증시는 중동 지정학적 리스크와 유가 급등에 따른 인플레이션 우려가 부각되며 3대 지수 모두 하락했습니다. 다우존스는 0.83%, S&P 500은 0.94%, 기술주 중심의 나스닥은 1.02% 내렸습니다. 서부 텍사스산 원유 WTI 가격은 하루 만에 4% 넘게 급등하며 배럴당 74달러를 넘어섰고, 10년물 국채금리도 상승하며 시장을 압박했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 28.142,
+      "speechEndSec": 70.233,
+      "endSec": 70.233,
+      "speechDurationSec": 42.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 382,
+      "text": "이번 유가 충격의 진원지는 이란입니다. 이란 혁명수비대가 전 세계 원유 수송량의 20%가 통과하는 호르무즈 해협의 폐쇄를 선언하고 유조선 피격 영상까지 공개되면서 공급망 마비 우려가 현실화됐습니다. 이 소식에 WTI는 장중 9% 넘게 폭등하며 76달러 선을 위협했습니다. 여기에 설상가상으로 발표된 ISM 서비스업 구매관리자지수가 예상치를 상회하며 미국 경제의 3분의 2를 차지하는 서비스업의 강한 확장세를 증명했습니다. 평소라면 호재지만, 인플레이션 경계심이 최고조인 상황에선 연준이 고금리를 더 오래 유지할 명분으로 해석됐습니다. 결국 공급 측의 유가 쇼크와 수요 측의 강한 경제가 동시에 확인되면서 금리 인하 기대감은 더욱 후퇴했고, 기술주를 중심으로 시장 하락을 이끌었습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 70.233,
+      "speechEndSec": 72.524,
+      "endSec": 72.524,
+      "speechDurationSec": 2.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

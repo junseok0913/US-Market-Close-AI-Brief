@@ -1,0 +1,109 @@
+{
+  "date": "20260225",
+  "title": "10% 관세에도 증시 1% 상승? AI가 시장을 뒤집은 이유",
+  "duration_target": "90초",
+  "hook": "10% 관세 폭탄이 터졌는데, 증시는 왜 1% 가까이 올랐을까요.",
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "text": "10% 관세 폭탄이 터졌는데, 증시는 왜 1% 가까이 올랐을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "text": "2월 25일 미국 증시는 AI발 반등에 힘입어 S&P 500 0.77%, 나스닥 1.04%, 다우 0.76% 상승 마감했습니다. 새로운 10% 관세가 발효됐지만, 시장은 오히려 안도하는 모습을 보였습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "text": "이는 대통령의 국정연설에서 추가 관세 인상 같은 최악의 시나리오가 나오지 않았기 때문입니다. 하지만 시장 반등의 진짜 주인공은 AI였습니다. 어제는 AI 스타트업 앤스로픽의 기술이 기존 소프트웨어를 파괴할 수 있다는 공포에 IBM 주가가 13% 가까이 폭락하는 등 '사스포칼립스' 우려가 컸습니다. 하지만 바로 오늘, 앤스로픽이 세일즈포스 등과 협력하는 파트너십을 발표하며 파괴자가 아닌 조력자의 가능성을 보여주자 시장은 환호했습니다. 공포지수 VIX는 6% 넘게 하락했고, 파트너사 톰슨 로이터는 10% 넘게 급등했습니다. AI 칩 경쟁도 뜨거웠습니다. AMD는 메타와의 대규모 공급 계약 소식에 8% 이상 급등했고, 시장의 모든 관심은 엔비디아 실적에 쏠리고 있습니다. 옵션 시장은 실적 발표 후 6% 이상 변동 가능성을 반영하고 있습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "script": "10% 관세 폭탄이 터졌는데, 증시는 왜 1% 가까이 올랐을까요. 2월 25일 미국 증시는 AI발 반등에 힘입어 S&P 500 0.77%, 나스닥 1.04%, 다우 0.76% 상승 마감했습니다. 새로운 10% 관세가 발효됐지만, 시장은 오히려 안도하는 모습을 보였습니다. 이는 대통령의 국정연설에서 추가 관세 인상 같은 최악의 시나리오가 나오지 않았기 때문입니다. 하지만 시장 반등의 진짜 주인공은 AI였습니다. 어제는 AI 스타트업 앤스로픽의 기술이 기존 소프트웨어를 파괴할 수 있다는 공포에 IBM 주가가 13% 가까이 폭락하는 등 '사스포칼립스' 우려가 컸습니다. 하지만 바로 오늘, 앤스로픽이 세일즈포스 등과 협력하는 파트너십을 발표하며 파괴자가 아닌 조력자의 가능성을 보여주자 시장은 환호했습니다. 공포지수 VIX는 6% 넘게 하락했고, 파트너사 톰슨 로이터는 10% 넘게 급등했습니다. AI 칩 경쟁도 뜨거웠습니다. AMD는 메타와의 대규모 공급 계약 소식에 8% 이상 급등했고, 시장의 모든 관심은 엔비디아 실적에 쏠리고 있습니다. 옵션 시장은 실적 발표 후 6% 이상 변동 가능성을 반영하고 있습니다. 구독과 좋아요 부탁드립니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-02-24",
+      "end_date": "2026-02-25"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-02-24",
+      "end_date": "2026-02-25"
+    },
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-02-24",
+      "end_date": "2026-02-25"
+    },
+    {
+      "type": "article",
+      "pk": "id#33d10e27c1d8d9fe",
+      "title": "Stock market today: Dow, S&P 500, Nasdaq climb after AI-fueled sell-off as new Trump tariff kicks in"
+    },
+    {
+      "type": "event",
+      "id": "419204",
+      "title": "President Trump State of the Union Speech",
+      "date": "2026-02-24"
+    },
+    {
+      "type": "article",
+      "pk": "id#639751be82cc9135",
+      "title": "IBM Sinks Most Since 2000 as Anthropic Touts COBOL Modernization"
+    },
+    {
+      "type": "article",
+      "pk": "id#c7d13b077dd57c20",
+      "title": "US software stocks climb as Anthropic announcement sparks relief rally"
+    },
+    {
+      "type": "chart",
+      "ticker": "^VIX",
+      "start_date": "2026-02-24",
+      "end_date": "2026-02-25"
+    },
+    {
+      "type": "article",
+      "pk": "id#59a932d6a0127c30",
+      "title": "Anthropic Shout-Out Makes Thomson Reuters Stock Latest AI Winner"
+    },
+    {
+      "type": "article",
+      "pk": "id#edd99c877a6fe52e",
+      "title": "AMD Just Won Another Massive AI Chip Deal. Its Stock Is Soaring."
+    },
+    {
+      "type": "article",
+      "pk": "id#e71bd21e63f77490",
+      "title": "Nvidia Q4 earnings: Can it push the AI trade higher — again?"
+    }
+  ],
+  "metadata": {
+    "character_count": 584,
+    "estimated_duration_seconds": 74,
+    "key_points": [
+      "3대 지수, 10% 관세 발효에도 불구하고 상승",
+      "AI 공포에서 안도 랠리로 전환 (앤스로픽 파트너십 발표)",
+      "AMD, 메타와 대규모 공급 계약으로 8% 이상 급등",
+      "엔비디아 실적 발표에 대한 시장의 높은 기대감"
+    ],
+    "featured_tickers": [
+      "IBM",
+      "CRM",
+      "AMD",
+      "NVDA",
+      "^GSPC",
+      "^IXIC"
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "date": "20260226",
+  "lang": "ko",
+  "title": "실적 좋아도 28% 폭락? 엔비디아에 모든 게 걸렸다",
+  "hook": "실적이 좋아도 28% 폭락, 엔비디아는 과연 살아남았을까요.",
+  "durationSeconds": 86.004,
+  "audioFile": "shorts20260225.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.251,
+      "eyebrow": "2026년 2월 26일",
+      "headline": "실적 좋아도 28% 폭락?",
+      "subheadline": "엔비디아는 과연 살아남았을까요?",
+      "body": "실적이 좋아도 28% 폭락, 엔비디아는 과연 살아남았을까요.",
+      "bullets": [
+        "실적이 좋아도 28% 폭락, 엔비디아는 과연 살아남았을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "PANW",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "28%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 5.251,
+      "endSec": 32.702,
+      "eyebrow": "시장 요약",
+      "headline": "엔비디아 기대감에 랠리",
+      "subheadline": "기술주 중심의 나스닥 1.26% 급등",
+      "body": "2월 26일 미국 증시는 엔비디아 실적 발표 기대감 하나로 움직였습니다. 다우는 0.63% 상승한 49,482.15, S&P 500은 0.81% 오른 6,946.13을 기록했고, 기술주 중심의 나스닥은 1.26% 급등하며 23,152.08로 마감했습니다. 시장의 한마디는 ‘엔비디아 실적 기대감 속 기술주 중심의 랠리’였습니다.",
+      "bullets": [
+        "2월 26일 미국 증시는 엔비디아 실적 발표 기대감 하나로 움직였습니다.",
+        "다우는 0.63% 상승한 49,482.15, S&P 500은 0.81% 오른 6,946.13을 기록했고, 기술주 중심의 나스닥은 1.26% 급등하며 23,152.08로 마감했습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "나스닥 +1.26%",
+        "S&P 500 +0.81%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 32.702,
+      "endSec": 83.993,
+      "eyebrow": "핵심 분석",
+      "headline": "기대와 불안의 공존",
+      "subheadline": "시장의 모든 시선이 엔비디아 실적에 집중",
+      "body": "시장의 모든 시선이 장 마감 후 발표될 엔비디아 실적에 쏠렸습니다. AI 산업 전체의 성장성과 수요를 가늠할 바로미터였기 때문입니다. 투자자들은 이미 예상된 폭발적인 매출 성장보다, 중국 수출 통제 영향과 미래 성장 가이던스에 집중했습니다. 공포지수 VIX가 8% 넘게 하락하고 10년물 국채금리가 4.2%대에서 안정되며 기대감을 키웠지만, 한편에선 엄청난 불안감도 있었습니다. 며칠 전 팔로알토 네트웍스는 양호한 실적에도 향후…",
+      "bullets": [
+        "가이던스 우려에 28% 폭락한 팔로알토(PANW) 사례가 불안감 증폭",
+        "시장은 잠재적 무역 분쟁 리스크보다 AI 성장 서사를 선택"
+      ],
+      "tickers": [
+        "NVDA",
+        "PANW",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "VIX 지수 -8% 하락"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 83.993,
+      "endSec": 86.004,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "PANW",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.251,
+      "text": "실적이 좋아도 28% 폭락, 엔비디아는 과연 살아남았을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.251,
+      "endSec": 32.702,
+      "text": "2월 26일 미국 증시는 엔비디아 실적 발표 기대감 하나로 움직였습니다. 다우는 0.63% 상승한 49,482.15, S&P 500은 0.81% 오른 6,946.13을 기록했고, 기술주 중심의 나스닥은 1.26% 급등하며 23,152.08로 마감했습니다. 시장의 한마디는 ‘엔비디아 실…"
+    },
+    {
+      "id": 2,
+      "startSec": 32.702,
+      "endSec": 83.993,
+      "text": "시장의 모든 시선이 장 마감 후 발표될 엔비디아 실적에 쏠렸습니다. AI 산업 전체의 성장성과 수요를 가늠할 바로미터였기 때문입니다. 투자자들은 이미 예상된 폭발적인 매출 성장보다, 중국 수출 통제 영향과 미래 성장 가이던스에 집중했습니다. 공포지수 VIX가 8% 넘게 하락하고 10년…"
+    },
+    {
+      "id": 3,
+      "startSec": 83.993,
+      "endSec": 86.004,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-02-25"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-02-25"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-02-25"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq rise with Nvid…",
+      "detail": "id#f1458f925da14974"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia Earnings Slam Into Market With No Patience for A…",
+      "detail": "id#dd7d3612025e150e"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "US10Y",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "chart",
+      "label": "PANW",
+      "detail": "2026-02-26"
+    },
+    {
+      "type": "event",
+      "label": "President Trump State of the Union Speech",
+      "detail": "2026-02-24"
+    },
+    {
+      "type": "article",
+      "label": "Teetering US tech trade puts anchor on market as Nvidia…",
+      "detail": "id#c206f2e308ad3892"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 기술주 중심 상승",
+      "시장 전체가 엔비디아 실적 발표에 집중",
+      "팔로알토 28% 폭락으로 본 AI 주식의 높은 변동성"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "AI 랠리 시험대"
+      },
+      {
+        "ticker": "PANW",
+        "label": "팔로알토 네트웍스",
+        "tag": "실적 경고 사례"
+      },
+      {
+        "ticker": "SMCI",
+        "label": "슈퍼 마이크로 컴퓨터",
+        "tag": "AI 관련주 동반 상승"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
