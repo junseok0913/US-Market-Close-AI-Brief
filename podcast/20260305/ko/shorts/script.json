@@ -1,0 +1,124 @@
+{
+  "date": "20260306",
+  "title": "유가 5.6% 폭등! 다우는 추락하는데 기술주만 버틴 이유",
+  "duration_target": "90초",
+  "hook": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요.",
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "text": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "text": "3월 6일 미국 증시는 유가 급등 충격과 고용지표 경계감에 휩싸였습니다. 다우존스는 1.61%, S&P 500은 0.56% 하락했고, 특히 중소형주 중심의 러셀 2000 지수는 1.9% 이상 급락했습니다. 하지만 기술주 중심의 나스닥은 0.26% 하락에 그치며 선방했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "text": "시장을 뒤흔든 건 이란과의 갈등으로 촉발된 유가 폭등이었습니다. 서부 텍사스산 원유 WTI가 하루 만에 5.6% 급등해 배럴당 78달러를 넘어서자 인플레이션 공포가 재점화됐습니다. 변동성 지수 VIX는 12% 넘게 치솟았고, 10년물 국채금리도 상승했습니다. 이 여파로 엑슨모빌 같은 에너지주는 올랐지만, 항공주 ETF JETS는 4.5% 넘게 추락했습니다. 다우 지수는 연중 상승분을 모두 반납할 정도로 충격이 컸습니다. 하지만 이런 혼란 속에서 AI 관련 기술주들은 구조적 성장 스토리를 바탕으로 시장의 방파제 역할을 했습니다. 거시 경제 악재 앞에서 투자자들이 '퀄리티로의 도피'를 선택한 것입니다. 여기에 다음 날 발표될 2월 고용 보고서에 대한 극심한 경계감까지 더해져 시장을 짓눌렀습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "script": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요. 3월 6일 미국 증시는 유가 급등 충격과 고용지표 경계감에 휩싸였습니다. 다우존스는 1.61%, S&P 500은 0.56% 하락했고, 특히 중소형주 중심의 러셀 2000 지수는 1.9% 이상 급락했습니다. 하지만 기술주 중심의 나스닥은 0.26% 하락에 그치며 선방했습니다. 시장을 뒤흔든 건 이란과의 갈등으로 촉발된 유가 폭등이었습니다. 서부 텍사스산 원유 WTI가 하루 만에 5.6% 급등해 배럴당 78달러를 넘어서자 인플레이션 공포가 재점화됐습니다. 변동성 지수 VIX는 12% 넘게 치솟았고, 10년물 국채금리도 상승했습니다. 이 여파로 엑슨모빌 같은 에너지주는 올랐지만, 항공주 ETF JETS는 4.5% 넘게 추락했습니다. 다우 지수는 연중 상승분을 모두 반납할 정도로 충격이 컸습니다. 하지만 이런 혼란 속에서 AI 관련 기술주들은 구조적 성장 스토리를 바탕으로 시장의 방파제 역할을 했습니다. 거시 경제 악재 앞에서 투자자들이 '퀄리티로의 도피'를 선택한 것입니다. 여기에 다음 날 발표될 2월 고용 보고서에 대한 극심한 경계감까지 더해져 시장을 짓눌렀습니다. 구독과 좋아요 부탁드립니다.",
+  "sources": [
+    {
+      "type": "chart",
+      "ticker": "^DJI",
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "^GSPC",
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "^IXIC",
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "^RUT",
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "CL=F",
+      "start_date": "2026-03-04",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "article",
+      "pk": "id#d574e0e743e4ce88",
+      "title": "Dow drops 1,000 points as oil prices keep climbing because of the war with Iran"
+    },
+    {
+      "type": "chart",
+      "ticker": "^VIX",
+      "start_date": "2026-03-04",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "^TNX",
+      "start_date": "2026-03-04",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "XOM",
+      "start_date": "2026-03-04",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "ticker": "JETS",
+      "start_date": "2026-03-04",
+      "end_date": "2026-03-05"
+    },
+    {
+      "type": "article",
+      "pk": "id#b674e93159613aec",
+      "title": "Stock market today: Dow falls more than 1,000 points, S&P 500 and Nasdaq tank as Iran war jitters return with another oil surge"
+    },
+    {
+      "type": "article",
+      "pk": "id#135500872848a184",
+      "title": "Tech stocks today: Nvidia stops H200 chip production, Anthropic restarts talks with Pentagon"
+    },
+    {
+      "type": "event",
+      "id": "395236",
+      "title": "non farm payrolls",
+      "date": "2026-03-06"
+    }
+  ],
+  "metadata": {
+    "character_count": 595,
+    "estimated_duration_seconds": 76,
+    "key_points": [
+      "유가 5.6% 폭등 및 인플레이션 우려 재점화",
+      "다우 -1.61% vs 나스닥 -0.26% 차별화 장세",
+      "AI 기술주, '퀄리티로의 도피' 현상으로 선방",
+      "2월 고용 보고서 발표 앞둔 시장 경계감"
+    ],
+    "featured_tickers": [
+      "XOM",
+      "JETS",
+      "^DJI",
+      "^GSPC",
+      "^IXIC",
+      "^RUT"
+    ]
+  }
+}

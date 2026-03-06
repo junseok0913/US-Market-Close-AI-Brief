@@ -1,0 +1,234 @@
+{
+  "date": "20260306",
+  "lang": "ko",
+  "title": "유가 5.6% 폭등! 다우는 추락하는데 기술주만 버틴 이유",
+  "hook": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요.",
+  "durationSeconds": 74.604,
+  "audioFile": "shorts20260305.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.891,
+      "eyebrow": "3월 6일 미국 증시",
+      "headline": "다우 폭락, 나스닥 선방?",
+      "subheadline": "다우 -1.6% 폭락에도 기술주가 버틴 진짜 이유",
+      "body": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요.",
+      "bullets": [
+        "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요."
+      ],
+      "tickers": [
+        "^DJI",
+        "^IXIC",
+        "XOM",
+        "JETS"
+      ],
+      "highlights": [
+        "-1.6%",
+        "1.6%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 3.891,
+      "endSec": 23.342,
+      "eyebrow": "시장 요약",
+      "headline": "유가 충격에 지수 하락",
+      "subheadline": "다우 -1.61% | S&P500 -0.56% | 나스닥 -0.26%",
+      "body": "유가 급등과 고용지표 경계감에 시장이 휩싸였습니다. 중소형주 러셀 2000은 1.9% 이상 급락했습니다.",
+      "bullets": [
+        "3월 6일 미국 증시는 유가 급등 충격과 고용지표 경계감에 휩싸였습니다.",
+        "다우존스는 1.61%, S&P 500은 0.56% 하락했고, 특히 중소형주 중심의 러셀 2000 지수는 1.9% 이상 급락했습니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "^RUT"
+      ],
+      "highlights": [
+        "다우 -1.61%",
+        "나스닥 -0.26%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 23.342,
+      "endSec": 72.673,
+      "eyebrow": "핵심 원인",
+      "headline": "유가 폭등과 '질적 도피'",
+      "subheadline": "WTI 유가 5.6% 급등, 인플레이션 공포 재점화",
+      "body": "시장을 뒤흔든 건 이란과의 갈등으로 촉발된 유가 폭등이었습니다. 서부 텍사스산 원유 WTI가 하루 만에 5.6% 급등해 배럴당 78달러를 넘어서자 인플레이션 공포가 재점화됐습니다. 변동성 지수 VIX는 12% 넘게 치솟았고, 10년물 국채금리도 상승했습니다. 이 여파로 엑슨모빌 같은 에너지주는 올랐지만, 항공주 ETF JETS는 4.5% 넘게 추락했습니다. 다우 지수는 연중 상승분을 모두 반납할 정도로 충격이 컸습니다. 하지…",
+      "bullets": [
+        "이란 갈등으로 유가가 폭등하며 항공주(JETS) 등 경기민감주가 급락했습니다.",
+        "AI 기술주는 구조적 성장 스토리로 자금이 쏠리며 시장의 방파제 역할을 했습니다."
+      ],
+      "tickers": [
+        "CLF",
+        "JETS",
+        "XOM",
+        "^DJI"
+      ],
+      "highlights": [
+        "WTI +5.6%",
+        "JETS -4.5%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 72.673,
+      "endSec": 74.604,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "다음 마감 시황에서 뵙겠습니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "JETS",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.891,
+      "text": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 3.891,
+      "endSec": 23.342,
+      "text": "3월 6일 미국 증시는 유가 급등 충격과 고용지표 경계감에 휩싸였습니다. 다우존스는 1.61%, S&P 500은 0.56% 하락했고, 특히 중소형주 중심의 러셀 2000 지수는 1.9% 이상 급락했습니다. 하지만 기술주 중심의 나스닥은 0.26% 하락에 그치며 선방했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 23.342,
+      "endSec": 72.673,
+      "text": "시장을 뒤흔든 건 이란과의 갈등으로 촉발된 유가 폭등이었습니다. 서부 텍사스산 원유 WTI가 하루 만에 5.6% 급등해 배럴당 78달러를 넘어서자 인플레이션 공포가 재점화됐습니다. 변동성 지수 VIX는 12% 넘게 치솟았고, 10년물 국채금리도 상승했습니다. 이 여파로 엑슨모빌 같은…"
+    },
+    {
+      "id": 3,
+      "startSec": 72.673,
+      "endSec": 74.604,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "^RUT",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "article",
+      "label": "Dow drops 1,000 points as oil prices keep climbing beca…",
+      "detail": "id#d574e0e743e4ce88"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "chart",
+      "label": "JETS",
+      "detail": "2026-03-05"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow falls more than 1,000 points, S…",
+      "detail": "id#b674e93159613aec"
+    },
+    {
+      "type": "article",
+      "label": "Tech stocks today: Nvidia stops H200 chip production, A…",
+      "detail": "id#135500872848a184"
+    },
+    {
+      "type": "event",
+      "label": "non farm payrolls",
+      "detail": "2026-03-06"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "유가 5.6% 폭등 및 인플레이션 우려 재점화",
+      "다우 -1.61% vs 나스닥 -0.26% 차별화 장세",
+      "AI 기술주, '퀄리티로의 도피' 현상으로 선방",
+      "2월 고용 보고서 발표 앞둔 시장 경계감"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "JETS",
+        "label": "항공주 ETF",
+        "tag": "유가 급등 직격탄"
+      },
+      {
+        "ticker": "CVX",
+        "label": "셰브론",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

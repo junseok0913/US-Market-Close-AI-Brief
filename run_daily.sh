@@ -20,6 +20,8 @@ set -e
 START_FROM=1
 DATE=""
 TICKERS_ARR=()
+TTS_ROUND_RETRY_MAX_ATTEMPTS="${TTS_ROUND_RETRY_MAX_ATTEMPTS:-3}"
+TTS_ROUND_RETRY_DELAY_SECONDS="${TTS_ROUND_RETRY_DELAY_SECONDS:-5}"
 SHORTS_FIRM_DURATION_SECONDS="${SHORTS_FIRM_DURATION_SECONDS:-90}"
 SHORTS_FIRM_TTS_VOICE="${SHORTS_FIRM_TTS_VOICE:-Charon}"
 SHORTS_FIRM_TTS_TEMPERATURE="${SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
@@ -68,6 +70,100 @@ fi
 TICKERS="${TICKERS_ARR[*]}"
 BUCKET="podcast-daily-stock"
 
+retry_round() {
+    local round_name="$1"
+    local max_attempts="$2"
+    shift 2
+
+    local attempt=1
+    local exit_code=1
+
+    while [ "$attempt" -le "$max_attempts" ]; do
+        echo "  🔁 ${round_name} attempt ${attempt}/${max_attempts}..."
+        set +e
+        "$@"
+        exit_code=$?
+        set -e
+
+        if [ "$exit_code" -eq 0 ]; then
+            if [ "$attempt" -gt 1 ]; then
+                echo "  ✅ ${round_name} recovered on attempt ${attempt}/${max_attempts}"
+            fi
+            return 0
+        fi
+
+        if [ "$attempt" -lt "$max_attempts" ]; then
+            echo "  ⚠️  ${round_name} failed (exit=${exit_code}). Retrying in ${TTS_ROUND_RETRY_DELAY_SECONDS}s..."
+            sleep "$TTS_ROUND_RETRY_DELAY_SECONDS"
+        fi
+
+        attempt=$((attempt + 1))
+    done
+
+    echo "  ❌ ${round_name} failed after ${max_attempts} attempts."
+    return "$exit_code"
+}
+
+run_step2_round() {
+    (
+        set -e
+        uv run python -m tts.src.tts "$DATE" --lang ko
+
+        # Copy main MP3 to web public folder for local development
+        # Keep this before shorts so main episode audio is available even if shorts fails.
+        if [ -f "podcast/$DATE/ko/$DATE.mp3" ]; then
+            echo "  📂 Copying main MP3 to web/public/audio..."
+            cp "podcast/$DATE/ko/$DATE.mp3" "web/public/audio/$DATE.mp3"
+        fi
+        
+        echo -e "\n[2.5/6] Generating Shorts Script + Slides (Korean)..."
+        if [ -f "podcast/$DATE/ko/script.json" ]; then
+            uv run shorts/generate_shorts.py "podcast/$DATE/ko" --duration 90
+        else
+            echo "  ⚠️  podcast/$DATE/ko/script.json not found. Skipping shorts script/slide generation."
+        fi
+        uv run python shorts/generate_shorts_audio.py "$DATE" --lang ko --voice Charon --temperature 0.6
+        if [ -f "podcast/$DATE/ko/shorts/script.json" ]; then
+            uv run python shorts/generate_shorts_slides.py "$DATE" --lang ko \
+                --section-timing "podcast/$DATE/ko/shorts/sections.timing.json"
+        fi
+
+        echo -e "\n[2.6/6] Generating Shorts-Firm Script + Audio + Slides (Korean)..."
+        if [ -f "podcast/$DATE/ko/script.json" ] && [ -f "podcast/$DATE/ko/metadata.txt" ]; then
+            uv run python shorts-firm/generate_script.py "podcast/$DATE/ko" \
+                --duration "${SHORTS_FIRM_DURATION_SECONDS}" \
+                --prompt-config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+            uv run python shorts-firm/generate_audio.py "$DATE" --lang ko \
+                --voice "${SHORTS_FIRM_TTS_VOICE}" \
+                --temperature "${SHORTS_FIRM_TTS_TEMPERATURE}" \
+                --config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+            uv run python shorts-firm/generate_slide_script.py "$DATE" --lang ko \
+                --script "podcast/$DATE/ko/shorts-firm/script.json" \
+                --timing "podcast/$DATE/ko/shorts-firm/sections.timing.json" \
+                --script-output "podcast/$DATE/ko/shorts-firm/slides.script.json" \
+                --template-output "podcast/$DATE/ko/shorts-firm/slides.render.template.json" \
+                --render-output "podcast/$DATE/ko/shorts-firm/slides.render.json" \
+                --config "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" \
+                --overwrite-render
+
+            uv run python shorts-firm/generate_tsx.py "$DATE" --lang ko \
+                --input "podcast/$DATE/ko/shorts-firm/slides.render.json" \
+                --output "web/src/generated/shorts-firm/${DATE}_ko.generated.tsx"
+        else
+            echo "  ⚠️  podcast/$DATE/ko/script.json or metadata.txt not found. Skipping shorts-firm generation."
+        fi
+    )
+}
+
+run_step3_round() {
+    (
+        set -e
+        uv run python -m tts.src.tts "$DATE" --lang en
+    )
+}
+
 echo "========================================================"
 echo "🚀 Daily Podcast Pipeline Start"
 echo "📅 Date: $DATE"
@@ -94,53 +190,7 @@ fi
 # ------------------------------------------------------------------------------
 if [ $START_FROM -le 2 ]; then
     echo -e "\n[2/6] Generating Korean TTS..."
-    uv run python -m tts.src.tts $DATE --lang ko
-
-    # Copy main MP3 to web public folder for local development
-    # Keep this before shorts so main episode audio is available even if shorts fails.
-    if [ -f "podcast/$DATE/ko/$DATE.mp3" ]; then
-        echo "  📂 Copying main MP3 to web/public/audio..."
-        cp "podcast/$DATE/ko/$DATE.mp3" "web/public/audio/$DATE.mp3"
-    fi
-    
-    echo -e "\n[2.5/6] Generating Shorts Script + Slides (Korean)..."
-    if [ -f "podcast/$DATE/ko/script.json" ]; then
-        uv run shorts/generate_shorts.py "podcast/$DATE/ko" --duration 90
-    else
-        echo "  ⚠️  podcast/$DATE/ko/script.json not found. Skipping shorts script/slide generation."
-    fi
-    uv run python shorts/generate_shorts_audio.py "$DATE" --lang ko --voice Charon --temperature 0.6
-    if [ -f "podcast/$DATE/ko/shorts/script.json" ]; then
-        uv run python shorts/generate_shorts_slides.py "$DATE" --lang ko \
-            --section-timing "podcast/$DATE/ko/shorts/sections.timing.json"
-    fi
-
-    echo -e "\n[2.6/6] Generating Shorts-Firm Script + Audio + Slides (Korean)..."
-    if [ -f "podcast/$DATE/ko/script.json" ] && [ -f "podcast/$DATE/ko/metadata.txt" ]; then
-        uv run python shorts-firm/generate_script.py "podcast/$DATE/ko" \
-            --duration "${SHORTS_FIRM_DURATION_SECONDS}" \
-            --prompt-config "${SHORTS_FIRM_PROMPT_CONFIG}"
-
-        uv run python shorts-firm/generate_audio.py "$DATE" --lang ko \
-            --voice "${SHORTS_FIRM_TTS_VOICE}" \
-            --temperature "${SHORTS_FIRM_TTS_TEMPERATURE}" \
-            --config "${SHORTS_FIRM_PROMPT_CONFIG}"
-
-        uv run python shorts-firm/generate_slide_script.py "$DATE" --lang ko \
-            --script "podcast/$DATE/ko/shorts-firm/script.json" \
-            --timing "podcast/$DATE/ko/shorts-firm/sections.timing.json" \
-            --script-output "podcast/$DATE/ko/shorts-firm/slides.script.json" \
-            --template-output "podcast/$DATE/ko/shorts-firm/slides.render.template.json" \
-            --render-output "podcast/$DATE/ko/shorts-firm/slides.render.json" \
-            --config "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" \
-            --overwrite-render
-
-        uv run python shorts-firm/generate_tsx.py "$DATE" --lang ko \
-            --input "podcast/$DATE/ko/shorts-firm/slides.render.json" \
-            --output "web/src/generated/shorts-firm/${DATE}_ko.generated.tsx"
-    else
-        echo "  ⚠️  podcast/$DATE/ko/script.json or metadata.txt not found. Skipping shorts-firm generation."
-    fi
+    retry_round "Step 2 (Korean TTS + Shorts + Shorts-Firm)" "$TTS_ROUND_RETRY_MAX_ATTEMPTS" run_step2_round
 else
     echo -e "\n[2/6] Korean TTS & Shorts + Shorts-Firm skipped (Start from $START_FROM)"
 fi
@@ -150,7 +200,7 @@ fi
 # ------------------------------------------------------------------------------
 if [ $START_FROM -le 3 ]; then
     echo -e "\n[3/6] Generating English TTS..."
-    uv run python -m tts.src.tts $DATE --lang en
+    retry_round "Step 3 (English TTS)" "$TTS_ROUND_RETRY_MAX_ATTEMPTS" run_step3_round
 else
     echo -e "\n[3/6] English TTS skipped (Start from $START_FROM)"
 fi

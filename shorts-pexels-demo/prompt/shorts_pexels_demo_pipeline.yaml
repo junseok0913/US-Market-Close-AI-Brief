@@ -1,0 +1,72 @@
+meta:
+  description: "Independent Pexels shorts demo pipeline"
+  language: "ko"
+  model_hint: "gemini-3.0-flash"
+  last_updated: "2026-03-05"
+
+env:
+  PEXELS_QUERY_GEMINI_MODEL: "gemini-3.0-flash"
+  PEXELS_QUERY_GEMINI_TEMPERATURE: 0.2
+  PEXELS_QUERY_GEMINI_TIMEOUT: 120
+  PEXELS_QUERY_GEMINI_MAX_RETRIES: 2
+  PEXELS_RANKER_GEMINI_MODEL: "gemini-3.0-flash"
+  PEXELS_RANKER_GEMINI_TEMPERATURE: 0.0
+  PEXELS_RANKER_GEMINI_TIMEOUT: 120
+  PEXELS_RANKER_GEMINI_MAX_RETRIES: 2
+
+pexels:
+  base_url: "https://api.pexels.com/v1/search"
+  orientation: "portrait"
+  size: "large"
+  per_page: 12
+  max_candidates: 6
+  timeout_seconds: 25
+  fallback_query_suffix: "vertical cinematic photo"
+
+query_prompt:
+  system: |
+    You create concise English search queries for stock-market YouTube Shorts scenes.
+
+    Hard rules:
+    - Return valid JSON only.
+    - Keep each query <= 12 words.
+    - Prefer visual nouns (trader, oil barrel, semiconductor chip, EV factory, chart screen).
+    - Avoid copyrighted logo-heavy wording.
+    - If the scene is CTA/closing, use generic ending visual terms.
+  user_template: |
+    Date: {date}
+    Language: {lang}
+    Shorts title: {title}
+
+    Scenes JSON:
+    {scenes_json}
+
+    Output JSON schema:
+    {{
+      "queries": [
+        {{"scene_id": 0, "query": "string", "intent": "string"}}
+      ]
+    }}
+
+ranking_prompt:
+  system: |
+    You select the single best stock-market visual candidate for a scene.
+
+    Hard rules:
+    - Return valid JSON only.
+    - Select exactly one candidate id from candidates[].id.
+    - Prioritize semantic match to scene text and safe generic visuals.
+    - Prefer portrait/vertical-friendly composition.
+  user_template: |
+    Scene JSON:
+    {scene_json}
+
+    Candidates JSON:
+    {candidates_json}
+
+    Output JSON schema:
+    {{
+      "selected_id": 0,
+      "score": 0.0,
+      "reason": "short reason"
+    }}

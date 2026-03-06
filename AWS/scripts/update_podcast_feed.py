@@ -25,6 +25,8 @@ except ImportError:
 
 load_dotenv()
 
+INDEX_VERSION = 1
+
 
 def get_s3_client():
     return boto3.client(
@@ -49,6 +51,137 @@ def get_channel_info(lang):
             "language": "ko-kr",
             "description": "[매일 아침 7시 업데이트] AI agent가 분석하는 팩트체크를 거친 가장 정확하고 빠른 미국 주식 마감 시황.\n\n밤사이 뉴욕 증시, 왜 올랐을까요? 최신 랭그래프(LangGraph) 기술을 활용하여 방대한 뉴스 데이터와 시장 지표를 분석하고 팩트 검증 과정까지 거쳐 핵심을 정리해 드립니다.\n\n투자 유의사항: 본 콘텐츠는 정보 제공 목적이며, 투자 권유가 아닙니다. 모든 투자 결정은 본인의 책임입니다."
         }
+
+
+def _iso_or_empty(value):
+    if not value:
+        return ""
+    if hasattr(value, "isoformat"):
+        return value.isoformat()
+    return str(value)
+
+
+def get_index_s3_key(lang):
+    return f"rss_index_{lang}.json"
+
+
+def get_local_index_path(lang):
+    return Path(__file__).parent.parent / get_index_s3_key(lang)
+
+
+def load_index_file(path):
+    if not path.exists():
+        return {"version": INDEX_VERSION, "episodes": {}}
+
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        episodes = raw.get("episodes", {})
+        if isinstance(episodes, list):
+            episodes = {ep.get("date", ""): ep for ep in episodes if ep.get("date")}
+        if not isinstance(episodes, dict):
+            episodes = {}
+        return {"version": INDEX_VERSION, "episodes": episodes}
+    except Exception:
+        return {"version": INDEX_VERSION, "episodes": {}}
+
+
+def load_index_from_s3(s3, bucket_name, key):
+    try:
+        obj = s3.get_object(Bucket=bucket_name, Key=key)
+    except Exception:
+        return {"version": INDEX_VERSION, "episodes": {}}
+
+    try:
+        raw = json.loads(obj["Body"].read().decode("utf-8"))
+        episodes = raw.get("episodes", {})
+        if isinstance(episodes, list):
+            episodes = {ep.get("date", ""): ep for ep in episodes if ep.get("date")}
+        if not isinstance(episodes, dict):
+            episodes = {}
+        return {"version": INDEX_VERSION, "episodes": episodes}
+    except Exception:
+        return {"version": INDEX_VERSION, "episodes": {}}
+
+
+def merge_indexes(local_index, s3_index):
+    merged = {}
+    merged.update(local_index.get("episodes", {}))
+    merged.update(s3_index.get("episodes", {}))
+    return merged
+
+
+def list_date_folders(s3, bucket_name):
+    folders = set()
+    paginator = s3.get_paginator("list_objects_v2")
+    pages = paginator.paginate(Bucket=bucket_name, Delimiter="/")
+    for page in pages:
+        for prefix in page.get("CommonPrefixes", []):
+            date_folder = prefix.get("Prefix", "").strip("/")
+            if len(date_folder) == 8 and date_folder.isdigit():
+                folders.add(date_folder)
+    return sorted(folders)
+
+
+def safe_head_object(s3, bucket_name, key):
+    try:
+        return s3.head_object(Bucket=bucket_name, Key=key)
+    except Exception:
+        return None
+
+
+def build_sync_fingerprint(audio_head, metadata_head, thumbnail_head):
+    audio_etag = (audio_head or {}).get("ETag", "")
+    audio_lm = _iso_or_empty((audio_head or {}).get("LastModified"))
+    metadata_etag = (metadata_head or {}).get("ETag", "")
+    thumbnail_etag = (thumbnail_head or {}).get("ETag", "")
+    return f"{audio_etag}|{audio_lm}|{metadata_etag}|{thumbnail_etag}"
+
+
+def read_metadata_json(s3, bucket_name, metadata_key, date_folder, lang):
+    try:
+        metadata_obj = s3.get_object(Bucket=bucket_name, Key=metadata_key)
+        return json.loads(metadata_obj["Body"].read().decode("utf-8"))
+    except Exception:
+        print(f"⚠️  Metadata not found for {date_folder}/{lang}, using defaults")
+        return {}
+
+
+def get_duration_from_metadata(metadata):
+    value = metadata.get("duration_seconds")
+    if isinstance(value, int):
+        return max(value, 0)
+    if isinstance(value, float):
+        return max(int(value), 0)
+    return 0
+
+
+def calculate_mp3_duration(s3, bucket_name, audio_key):
+    duration_seconds = 0
+    if not MP3:
+        return duration_seconds
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+            s3.download_fileobj(bucket_name, audio_key, tmp)
+            tmp_path = tmp.name
+        audio = MP3(tmp_path)
+        duration_seconds = int(audio.info.length)
+        os.unlink(tmp_path)
+    except Exception:
+        return 0
+    return duration_seconds
+
+
+def build_episode_entry(date_folder, lang, base_url, metadata, file_size, duration_seconds, thumbnail_exists):
+    thumbnail_key = f"{date_folder}/{lang}/thumbnail.png"
+    image_url = f"{base_url}/{thumbnail_key}" if thumbnail_exists else ""
+    return {
+        "date": date_folder,
+        "title": metadata.get("title", ""),
+        "description": metadata.get("description", ""),
+        "file_size_bytes": file_size,
+        "duration_seconds": duration_seconds,
+        "image_url": image_url,
+    }
 
 
 def generate_rss_xml(base_url, episodes, lang="ko"):
@@ -151,74 +284,149 @@ def main():
     print(f"🔗 Base URL: {base_url}")
     
     s3 = get_s3_client()
+    index_key = get_index_s3_key(lang)
+    local_index_path = get_local_index_path(lang)
     
     # S3에서 에피소드 목록 가져오기
     print(f"\n📥 Fetching episodes from S3...")
     try:
-        response = s3.list_objects_v2(Bucket=bucket_name, Delimiter='/')
-        
-        episodes = []
-        if 'CommonPrefixes' in response:
-            for prefix in response['CommonPrefixes']:
-                date_folder = prefix['Prefix'].strip('/')
-                
-                # YYYYMMDD 형식 검증
-                if len(date_folder) == 8 and date_folder.isdigit():
-                    # 언어별 metadata.json 로드
-                    metadata_key = f"{date_folder}/{lang}/metadata.json"
-                    audio_key = f"{date_folder}/{lang}/{date_folder}.mp3"
-                    
-                    # metadata 가져오기
-                    try:
-                        metadata_obj = s3.get_object(Bucket=bucket_name, Key=metadata_key)
-                        metadata = json.loads(metadata_obj['Body'].read().decode('utf-8'))
-                    except Exception as e:
-                        print(f"⚠️  Metadata not found for {date_folder}/{lang}, using defaults")
-                        metadata = {}
-                    
-                    # MP3 파일 크기 및 duration 가져오기
-                    try:
-                        audio_obj = s3.head_object(Bucket=bucket_name, Key=audio_key)
-                        file_size = audio_obj['ContentLength']
-                        
-                        # Duration 계산 (mutagen 사용)
-                        duration_seconds = 0
-                        if MP3:
-                            try:
-                                with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp:
-                                    s3.download_fileobj(bucket_name, audio_key, tmp)
-                                    tmp_path = tmp.name
-                                
-                                audio = MP3(tmp_path)
-                                duration_seconds = int(audio.info.length)
-                                os.unlink(tmp_path)
-                            except:
-                                pass
+        local_index = load_index_file(local_index_path)
+        s3_index = load_index_from_s3(s3, bucket_name, index_key)
+        merged_cached_entries = merge_indexes(local_index, s3_index)
+        print(
+            "🗂️  Index cache loaded:"
+            f" local={len(local_index.get('episodes', {}))},"
+            f" s3={len(s3_index.get('episodes', {}))},"
+            f" merged={len(merged_cached_entries)}"
+        )
 
-                        image_url = ''
-                        thumbnail_key = f"{date_folder}/{lang}/thumbnail.png"
-                        try:
-                            s3.head_object(Bucket=bucket_name, Key=thumbnail_key)
-                            image_url = f"{base_url}/{thumbnail_key}"
-                        except Exception:
-                            image_url = ''
-                        
-                        episodes.append({
-                            'date': date_folder,
-                            'title': metadata.get('title', ''),
-                            'description': metadata.get('description', ''),
-                            'file_size_bytes': file_size,
-                            'duration_seconds': duration_seconds,
-                            'image_url': image_url,
-                        })
-                        
-                        print(f"  ✅ {date_folder}/{lang}")
-                    
-                    except Exception as e:
-                        # Skip if MP3 file doesn't exist (404, NoSuchKey, etc.)
-                        print(f"  ⏭️  {date_folder}/{lang} (MP3 not found)")
+        date_folders = list_date_folders(s3, bucket_name)
+        episodes = []
+        next_index_entries = {}
+        cached_count = 0
+        updated_count = 0
+        duration_download_count = 0
+
+        for date_folder in date_folders:
+            metadata_key = f"{date_folder}/{lang}/metadata.json"
+            audio_key = f"{date_folder}/{lang}/{date_folder}.mp3"
+            thumbnail_key = f"{date_folder}/{lang}/thumbnail.png"
+
+            audio_head = safe_head_object(s3, bucket_name, audio_key)
+            if not audio_head:
+                print(f"  ⏭️  {date_folder}/{lang} (MP3 not found)")
+                continue
+
+            metadata_head = safe_head_object(s3, bucket_name, metadata_key)
+            thumbnail_head = safe_head_object(s3, bucket_name, thumbnail_key)
+            sync_fingerprint = build_sync_fingerprint(audio_head, metadata_head, thumbnail_head)
+
+            cached_entry = merged_cached_entries.get(date_folder, {})
+            if cached_entry and cached_entry.get("sync_fingerprint") == sync_fingerprint:
+                entry = build_episode_entry(
+                    date_folder=date_folder,
+                    lang=lang,
+                    base_url=base_url,
+                    metadata={
+                        "title": cached_entry.get("title", ""),
+                        "description": cached_entry.get("description", ""),
+                    },
+                    file_size=audio_head.get("ContentLength", cached_entry.get("file_size_bytes", 0)),
+                    duration_seconds=int(cached_entry.get("duration_seconds", 0) or 0),
+                    thumbnail_exists=bool(thumbnail_head),
+                )
+                episodes.append(entry)
+                next_index_entries[date_folder] = {
+                    **entry,
+                    "sync_fingerprint": sync_fingerprint,
+                    "audio_etag": audio_head.get("ETag", ""),
+                    "audio_last_modified": _iso_or_empty(audio_head.get("LastModified")),
+                    "metadata_etag": (metadata_head or {}).get("ETag", ""),
+                    "thumbnail_etag": (thumbnail_head or {}).get("ETag", ""),
+                }
+                cached_count += 1
+                print(f"  ✅ {date_folder}/{lang} (cached)")
+                continue
+
+            metadata = (
+                read_metadata_json(s3, bucket_name, metadata_key, date_folder, lang)
+                if metadata_head
+                else {}
+            )
+            if not metadata_head:
+                print(f"⚠️  Metadata not found for {date_folder}/{lang}, using defaults")
+
+            file_size = audio_head.get("ContentLength", 0)
+            duration_seconds = get_duration_from_metadata(metadata)
+
+            if duration_seconds <= 0:
+                same_audio_as_cache = (
+                    cached_entry
+                    and cached_entry.get("audio_etag", "") == audio_head.get("ETag", "")
+                    and cached_entry.get("audio_last_modified", "") == _iso_or_empty(audio_head.get("LastModified"))
+                )
+                if same_audio_as_cache and cached_entry.get("duration_seconds"):
+                    duration_seconds = int(cached_entry.get("duration_seconds", 0))
+                else:
+                    duration_seconds = calculate_mp3_duration(s3, bucket_name, audio_key)
+                    if duration_seconds > 0:
+                        duration_download_count += 1
+
+            entry = build_episode_entry(
+                date_folder=date_folder,
+                lang=lang,
+                base_url=base_url,
+                metadata=metadata,
+                file_size=file_size,
+                duration_seconds=duration_seconds,
+                thumbnail_exists=bool(thumbnail_head),
+            )
+            episodes.append(entry)
+            next_index_entries[date_folder] = {
+                **entry,
+                "sync_fingerprint": sync_fingerprint,
+                "audio_etag": audio_head.get("ETag", ""),
+                "audio_last_modified": _iso_or_empty(audio_head.get("LastModified")),
+                "metadata_etag": (metadata_head or {}).get("ETag", ""),
+                "thumbnail_etag": (thumbnail_head or {}).get("ETag", ""),
+            }
+            updated_count += 1
+            print(f"  ✅ {date_folder}/{lang} (updated)")
         
         print(f"\n📊 Total episodes: {len(episodes)}")
+        print(
+            "⚡ Index stats:"
+            f" cached={cached_count}, updated={updated_count},"
+            f" duration_downloads={duration_download_count}"
+        )
+
+        previous_entries = merged_cached_entries
+        index_changed = previous_entries != next_index_entries
+        new_index = {
+            "version": INDEX_VERSION,
+            "lang": lang,
+            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "episodes": next_index_entries,
+        }
+
+        local_index_path.write_text(
+            json.dumps(new_index, ensure_ascii=False, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
+        print(f"💾 Saved local index: {local_index_path}")
+
+        if index_changed:
+            print(f"📤 Uploading {index_key} to S3...")
+            s3.put_object(
+                Bucket=bucket_name,
+                Key=index_key,
+                Body=json.dumps(new_index, ensure_ascii=False, indent=2).encode("utf-8"),
+                ContentType="application/json",
+                CacheControl="max-age=60",
+            )
+            print(f"✅ Updated index uploaded: {index_key}")
+        else:
+            print(f"⏭️  Index unchanged: {index_key}")
         
         # RSS XML 생성
         rss_xml = generate_rss_xml(base_url, episodes, lang)

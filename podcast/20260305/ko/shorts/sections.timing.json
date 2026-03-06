@@ -1,0 +1,58 @@
+{
+  "date": "20260305",
+  "lang": "ko",
+  "audioFile": "shorts20260305.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 74.604,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 3.891,
+      "endSec": 3.891,
+      "speechDurationSec": 3.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 33,
+      "text": "다우가 1.6% 넘게 폭락하는 동안 나스닥은 왜 버텼을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 3.891,
+      "speechEndSec": 23.342,
+      "endSec": 23.342,
+      "speechDurationSec": 19.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 153,
+      "text": "3월 6일 미국 증시는 유가 급등 충격과 고용지표 경계감에 휩싸였습니다. 다우존스는 1.61%, S&P 500은 0.56% 하락했고, 특히 중소형주 중심의 러셀 2000 지수는 1.9% 이상 급락했습니다. 하지만 기술주 중심의 나스닥은 0.26% 하락에 그치며 선방했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 23.342,
+      "speechEndSec": 72.673,
+      "endSec": 72.673,
+      "speechDurationSec": 49.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 391,
+      "text": "시장을 뒤흔든 건 이란과의 갈등으로 촉발된 유가 폭등이었습니다. 서부 텍사스산 원유 WTI가 하루 만에 5.6% 급등해 배럴당 78달러를 넘어서자 인플레이션 공포가 재점화됐습니다. 변동성 지수 VIX는 12% 넘게 치솟았고, 10년물 국채금리도 상승했습니다. 이 여파로 엑슨모빌 같은 에너지주는 올랐지만, 항공주 ETF JETS는 4.5% 넘게 추락했습니다. 다우 지수는 연중 상승분을 모두 반납할 정도로 충격이 컸습니다. 하지만 이런 혼란 속에서 AI 관련 기술주들은 구조적 성장 스토리를 바탕으로 시장의 방파제 역할을 했습니다. 거시 경제 악재 앞에서 투자자들이 '퀄리티로의 도피'를 선택한 것입니다. 여기에 다음 날 발표될 2월 고용 보고서에 대한 극심한 경계감까지 더해져 시장을 짓눌렀습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 72.673,
+      "speechEndSec": 74.604,
+      "endSec": 74.604,
+      "speechDurationSec": 1.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

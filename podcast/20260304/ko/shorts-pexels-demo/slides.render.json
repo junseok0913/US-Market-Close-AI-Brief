@@ -1,0 +1,184 @@
+{
+  "date": "20260304",
+  "lang": "ko",
+  "title": "이란발 훈풍에 유가 급락, 나스닥 1.3% 급등!",
+  "hook": "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다.",
+  "durationSeconds": 76.964,
+  "audioFile": "shorts20260304.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.731,
+      "eyebrow": "hook",
+      "headline": "유가 4달러 급락!",
+      "subheadline": "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다.",
+      "body": "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다.",
+      "bullets": [
+        "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다."
+      ],
+      "tickers": [
+        "CLF",
+        "AAPL",
+        "TSLA",
+        "NVDA"
+      ],
+      "highlights": [
+        "77초"
+      ],
+      "query": "CLF stock market trading screen portrait",
+      "imagePath": "images/scene_00.jpg",
+      "image": {
+        "provider": "pexels",
+        "pexelsId": 7567223,
+        "url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "sourcePage": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+        "photographer": "Tima Miroshnichenko",
+        "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+        "score": 0.5,
+        "reason": "first candidate fallback"
+      }
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 4.731,
+      "endSec": 20.702,
+      "eyebrow": "market",
+      "headline": "기술주 중심 반등 장세",
+      "subheadline": "3월 5일 미국 증시는 지정학적 우려 완화와 기술주 강세에 따른 반등 장세를 펼쳤습니다. 다우존스는 0.5%, S&P 500은 0.8% 상승했고, 기술주 중심의 나스닥은 1.3% 급등하며 시장 회복을 주도했습니다.",
+      "body": "3월 5일 미국 증시는 지정학적 우려 완화와 기술주 강세에 따른 반등 장세를 펼쳤습니다. 다우존스는 0.5%, S&P 500은 0.8% 상승했고, 기술주 중심의 나스닥은 1.3% 급등하며 시장 회복을 주도했습니다.",
+      "bullets": [
+        "3월 5일 미국 증시는 지정학적 우려 완화와 기술주 강세에 따른 반등 장세를 펼쳤습니다. 다우존스는 0.5…"
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "AAPL"
+      ],
+      "highlights": [
+        "NASDAQ +1.3%"
+      ],
+      "query": "stock market chart traders monitor wall street",
+      "imagePath": "images/scene_01.jpg",
+      "image": {
+        "provider": "pexels",
+        "pexelsId": 6801650,
+        "url": "https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "sourcePage": "https://www.pexels.com/photo/photo-of-man-in-front-of-laptop-6801650/",
+        "photographer": "Hanna Pad",
+        "photographerUrl": "https://www.pexels.com/@anna-nekrashevich",
+        "score": 0.5,
+        "reason": "first candidate fallback"
+      }
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 20.702,
+      "endSec": 74.793,
+      "eyebrow": "insight",
+      "headline": "리스크 OFF, 기술주 ON",
+      "subheadline": "시장 분위기를 뒤바꾼 것은 이란이 비공식 채널로 미국과 접촉했다는 보도였습니다. 전면전 우려가 급격히 완화되자 공포지수 VIX는 24선에서 21선으로 내려왔고, 배럴당 77달러를 위협하던 서부 텍사스산 원유는 73달러 선으로 크게 후퇴했습니다. 위험…",
+      "body": "시장 분위기를 뒤바꾼 것은 이란이 비공식 채널로 미국과 접촉했다는 보도였습니다. 전면전 우려가 급격히 완화되자 공포지수 VIX는 24선에서 21선으로 내려왔고, 배럴당 77달러를 위협하던 서부 텍사스산 원유는 73달러 선으로 크게 후퇴했습니다. 위험자산 선호 심리가 되살아나면서 그동안 눌려있던 기술주가 강하게 반등했습니다. 매그니피센트 세븐 종목이 모두 상승한 가운데, 애플은 저가형 맥북…",
+      "bullets": [
+        "시장 분위기를 뒤바꾼 것은 이란이 비공식 채널로 미국과 접촉했다는 보도였습니다. 전면전 우려가 급격히 완화…"
+      ],
+      "tickers": [
+        "AAPL",
+        "TSLA",
+        "SOXX",
+        "NVDA"
+      ],
+      "highlights": [],
+      "query": "AAPL stock market trading screen portrait",
+      "imagePath": "images/scene_02.jpg",
+      "image": {
+        "provider": "pexels",
+        "pexelsId": 7567223,
+        "url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "sourcePage": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+        "photographer": "Tima Miroshnichenko",
+        "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+        "score": 0.5,
+        "reason": "first candidate fallback"
+      }
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 74.793,
+      "endSec": 76.964,
+      "eyebrow": "finale",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "AAPL",
+        "TSLA",
+        "NVDA",
+        "^DJI"
+      ],
+      "highlights": [],
+      "query": "stock market closing scene smartphone trading app",
+      "imagePath": "images/scene_03.jpg",
+      "image": {
+        "provider": "pexels",
+        "pexelsId": 6802046,
+        "url": "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "sourcePage": "https://www.pexels.com/photo/man-holding-black-smartphone-6802046/",
+        "photographer": "Hanna Pad",
+        "photographerUrl": "https://www.pexels.com/@anna-nekrashevich",
+        "score": 0.5,
+        "reason": "first candidate fallback"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.731,
+      "text": "이란발 전쟁 우려가 사라지자 유가가 하루 만에 4달러나 급락했습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 4.731,
+      "endSec": 20.702,
+      "text": "3월 5일 미국 증시는 지정학적 우려 완화와 기술주 강세에 따른 반등 장세를 펼쳤습니다. 다우존스는 0.5%, S&P 500은 0.8% 상승했고, 기술주 중심의 나스닥은 1.3% 급등하며 시장 회복을 주도했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 20.702,
+      "endSec": 74.793,
+      "text": "시장 분위기를 뒤바꾼 것은 이란이 비공식 채널로 미국과 접촉했다는 보도였습니다. 전면전 우려가 급격히 완화되자 공포지수 VIX는 24선에서 21선으로 내려왔고, 배럴당 77달러를 위협하던 서부 텍사스산 원유는 73달러 선으로 크게 후퇴했습니다. 위험자산 선호 심리가 되살아나면서 그동안 눌려있던 기술주가 강하게 반등했습니…"
+    },
+    {
+      "id": 3,
+      "startSec": 74.793,
+      "endSec": 76.964,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "image_search",
+      "label": "Pexels",
+      "detail": "free stock photos"
+    }
+  ],
+  "meta": {
+    "sceneCount": 4,
+    "imageProvider": "pexels",
+    "modelHint": "gemini-3.0-flash"
+  }
+}

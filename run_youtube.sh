@@ -55,6 +55,8 @@ THUMBNAIL_SLIDE_INDEX="${YOUTUBE_THUMBNAIL_SLIDE_INDEX:-0}"
 THUMBNAIL_WIDTH="${YOUTUBE_THUMBNAIL_WIDTH:-1280}"
 THUMBNAIL_HEIGHT="${YOUTUBE_THUMBNAIL_HEIGHT:-720}"
 THUMBNAIL_TIMEOUT_SECONDS="${YOUTUBE_THUMBNAIL_TIMEOUT_SECONDS:-120}"
+EPISODE_RENDER_RETRY_MAX_ATTEMPTS="${YOUTUBE_EPISODE_RENDER_RETRY_MAX_ATTEMPTS:-3}"
+EPISODE_RENDER_RETRY_DELAY_SECONDS="${YOUTUBE_EPISODE_RENDER_RETRY_DELAY_SECONDS:-5}"
 
 WEB_PID=""
 WEB_STARTED_BY_SCRIPT=0
@@ -383,6 +385,35 @@ render_episode_video() {
     cleanup
     WEB_PID=""
     WEB_STARTED_BY_SCRIPT=0
+}
+
+run_step1_with_retry() {
+    local attempt=1
+    local max_attempts="${EPISODE_RENDER_RETRY_MAX_ATTEMPTS}"
+
+    while [ "${attempt}" -le "${max_attempts}" ]; do
+        echo "  🔁 Step 1 attempt ${attempt}/${max_attempts}..."
+        if render_episode_video; then
+            if [ "${attempt}" -gt 1 ]; then
+                echo "  ✅ Step 1 recovered on attempt ${attempt}/${max_attempts}"
+            fi
+            return 0
+        fi
+
+        local exit_code=$?
+        if [ "${attempt}" -lt "${max_attempts}" ]; then
+            echo "  ⚠️  Step 1 failed (exit=${exit_code}). Retrying in ${EPISODE_RENDER_RETRY_DELAY_SECONDS}s..."
+            cleanup
+            WEB_PID=""
+            WEB_STARTED_BY_SCRIPT=0
+            sleep "${EPISODE_RENDER_RETRY_DELAY_SECONDS}"
+        else
+            echo "  ❌ Step 1 failed after ${max_attempts} attempts."
+            return "${exit_code}"
+        fi
+
+        attempt=$((attempt + 1))
+    done
 }
 
 upload_episode_video() {
@@ -922,7 +953,7 @@ if [ "${START_FROM}" -le 1 ]; then
     CURRENT_STEP="step1_episode_render"
     echo ""
     echo "[1/5] Episode render (browser capture -> MP4)"
-    render_episode_video
+    run_step1_with_retry
 else
     echo ""
     echo "[1/5] Episode render skipped (start-from ${START_FROM})"

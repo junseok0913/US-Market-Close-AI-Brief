@@ -1,0 +1,318 @@
+[
+  {
+    "sceneId": 0,
+    "query": "CLF stock market trading screen portrait",
+    "imagePath": "images/scene_00.jpg",
+    "provider": "pexels",
+    "pexels": {
+      "id": 7567223,
+      "url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+      "sourcePage": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko"
+    },
+    "ranking": {
+      "score": 0.5,
+      "reason": "first candidate fallback"
+    },
+    "candidates": [
+      {
+        "id": 7567223,
+        "alt": "Close-up of a digital stock market chart showcasing analytics on a screen.",
+        "photographer": "Tima Miroshnichenko",
+        "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+        "source_page": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+        "image_url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 6802046,
+        "alt": "Businessman showing stock graph on smartphone, symbolizing market trends.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/man-holding-black-smartphone-6802046/",
+        "image_url": "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4448,
+        "height": 6173
+      },
+      {
+        "id": 10628032,
+        "alt": "Close-up view of a cryptocurrency trading screen showing market trends and data.",
+        "photographer": "Vito Goričan",
+        "photographer_url": "https://www.pexels.com/@vito-gorican-10954628",
+        "source_page": "https://www.pexels.com/photo/close-up-photo-of-data-in-a-monitor-10628032/",
+        "image_url": "https://images.pexels.com/photos/10628032/pexels-photo-10628032.png?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 6801650,
+        "alt": "A person examines stock market data on a laptop while holding dollar bills, showcasing finance and trading concepts.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/photo-of-man-in-front-of-laptop-6801650/",
+        "image_url": "https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 10628029,
+        "alt": "Close-up of a digital screen showing cryptocurrency market trading graph and data.",
+        "photographer": "Vito Goričan",
+        "photographer_url": "https://www.pexels.com/@vito-gorican-10954628",
+        "source_page": "https://www.pexels.com/photo/close-up-photo-of-data-in-a-monitor-10628029/",
+        "image_url": "https://images.pexels.com/photos/10628029/pexels-photo-10628029.png?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 7691737,
+        "alt": "Man holding smartphone with stock market chart, focusing on financial growth.",
+        "photographer": "Yan Krukau",
+        "photographer_url": "https://www.pexels.com/@yankrukov",
+        "source_page": "https://www.pexels.com/photo/man-holding-a-smartphone-7691737/",
+        "image_url": "https://images.pexels.com/photos/7691737/pexels-photo-7691737.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      }
+    ]
+  },
+  {
+    "sceneId": 1,
+    "query": "stock market chart traders monitor wall street",
+    "imagePath": "images/scene_01.jpg",
+    "provider": "pexels",
+    "pexels": {
+      "id": 6801650,
+      "url": "https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+      "sourcePage": "https://www.pexels.com/photo/photo-of-man-in-front-of-laptop-6801650/",
+      "photographer": "Hanna Pad",
+      "photographerUrl": "https://www.pexels.com/@anna-nekrashevich"
+    },
+    "ranking": {
+      "score": 0.5,
+      "reason": "first candidate fallback"
+    },
+    "candidates": [
+      {
+        "id": 6801650,
+        "alt": "A person examines stock market data on a laptop while holding dollar bills, showcasing finance and trading concepts.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/photo-of-man-in-front-of-laptop-6801650/",
+        "image_url": "https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 6347729,
+        "alt": "Close-up of hands using smartphone to analyze stock market data.",
+        "photographer": "Liza Summer",
+        "photographer_url": "https://www.pexels.com/@liza-summer",
+        "source_page": "https://www.pexels.com/photo/crop-dealer-analyzing-graphic-while-using-application-on-smartphone-screen-6347729/",
+        "image_url": "https://images.pexels.com/photos/6347729/pexels-photo-6347729.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 7567223,
+        "alt": "Close-up of a digital stock market chart showcasing analytics on a screen.",
+        "photographer": "Tima Miroshnichenko",
+        "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+        "source_page": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+        "image_url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 7567234,
+        "alt": "Close-up of a business analyst reviewing printed financial graphs and charts at an office desk.",
+        "photographer": "Tima Miroshnichenko",
+        "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+        "source_page": "https://www.pexels.com/photo/a-business-person-studying-the-business-analytics-7567234/",
+        "image_url": "https://images.pexels.com/photos/7567234/pexels-photo-7567234.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 6802048,
+        "alt": "A businessman using a smartphone while analyzing stock market graphs on a laptop indoors.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/marketing-businessman-person-hands-6802048/",
+        "image_url": "https://images.pexels.com/photos/6802048/pexels-photo-6802048.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 7681677,
+        "alt": "Close-up of hands using a smartphone to track stock market stats indoors.",
+        "photographer": "Mikhail Nilov",
+        "photographer_url": "https://www.pexels.com/@mikhail-nilov",
+        "source_page": "https://www.pexels.com/photo/businessperson-using-her-smartphone-7681677/",
+        "image_url": "https://images.pexels.com/photos/7681677/pexels-photo-7681677.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 5142,
+        "height": 7709
+      }
+    ]
+  },
+  {
+    "sceneId": 2,
+    "query": "AAPL stock market trading screen portrait",
+    "imagePath": "images/scene_02.jpg",
+    "provider": "pexels",
+    "pexels": {
+      "id": 7567223,
+      "url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+      "sourcePage": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko"
+    },
+    "ranking": {
+      "score": 0.5,
+      "reason": "first candidate fallback"
+    },
+    "candidates": [
+      {
+        "id": 7567223,
+        "alt": "Close-up of a digital stock market chart showcasing analytics on a screen.",
+        "photographer": "Tima Miroshnichenko",
+        "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+        "source_page": "https://www.pexels.com/photo/stock-market-illustration-on-the-screen-7567223/",
+        "image_url": "https://images.pexels.com/photos/7567223/pexels-photo-7567223.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 6802046,
+        "alt": "Businessman showing stock graph on smartphone, symbolizing market trends.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/man-holding-black-smartphone-6802046/",
+        "image_url": "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4448,
+        "height": 6173
+      },
+      {
+        "id": 10628032,
+        "alt": "Close-up view of a cryptocurrency trading screen showing market trends and data.",
+        "photographer": "Vito Goričan",
+        "photographer_url": "https://www.pexels.com/@vito-gorican-10954628",
+        "source_page": "https://www.pexels.com/photo/close-up-photo-of-data-in-a-monitor-10628032/",
+        "image_url": "https://images.pexels.com/photos/10628032/pexels-photo-10628032.png?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 6801650,
+        "alt": "A person examines stock market data on a laptop while holding dollar bills, showcasing finance and trading concepts.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/photo-of-man-in-front-of-laptop-6801650/",
+        "image_url": "https://images.pexels.com/photos/6801650/pexels-photo-6801650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 10628029,
+        "alt": "Close-up of a digital screen showing cryptocurrency market trading graph and data.",
+        "photographer": "Vito Goričan",
+        "photographer_url": "https://www.pexels.com/@vito-gorican-10954628",
+        "source_page": "https://www.pexels.com/photo/close-up-photo-of-data-in-a-monitor-10628029/",
+        "image_url": "https://images.pexels.com/photos/10628029/pexels-photo-10628029.png?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 7691737,
+        "alt": "Man holding smartphone with stock market chart, focusing on financial growth.",
+        "photographer": "Yan Krukau",
+        "photographer_url": "https://www.pexels.com/@yankrukov",
+        "source_page": "https://www.pexels.com/photo/man-holding-a-smartphone-7691737/",
+        "image_url": "https://images.pexels.com/photos/7691737/pexels-photo-7691737.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      }
+    ]
+  },
+  {
+    "sceneId": 3,
+    "query": "stock market closing scene smartphone trading app",
+    "imagePath": "images/scene_03.jpg",
+    "provider": "pexels",
+    "pexels": {
+      "id": 6802046,
+      "url": "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+      "sourcePage": "https://www.pexels.com/photo/man-holding-black-smartphone-6802046/",
+      "photographer": "Hanna Pad",
+      "photographerUrl": "https://www.pexels.com/@anna-nekrashevich"
+    },
+    "ranking": {
+      "score": 0.5,
+      "reason": "first candidate fallback"
+    },
+    "candidates": [
+      {
+        "id": 6802046,
+        "alt": "Businessman showing stock graph on smartphone, symbolizing market trends.",
+        "photographer": "Hanna Pad",
+        "photographer_url": "https://www.pexels.com/@anna-nekrashevich",
+        "source_page": "https://www.pexels.com/photo/man-holding-black-smartphone-6802046/",
+        "image_url": "https://images.pexels.com/photos/6802046/pexels-photo-6802046.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4448,
+        "height": 6173
+      },
+      {
+        "id": 7989073,
+        "alt": "A close-up of a hand holding a smartphone displaying stock market data indoors.",
+        "photographer": "Mikhail Nilov",
+        "photographer_url": "https://www.pexels.com/@mikhail-nilov",
+        "source_page": "https://www.pexels.com/photo/person-holding-black-smartphone-7989073/",
+        "image_url": "https://images.pexels.com/photos/7989073/pexels-photo-7989073.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4016,
+        "height": 6016
+      },
+      {
+        "id": 7947740,
+        "alt": "Close-up of hands holding a smartphone with stock market data on the screen.",
+        "photographer": "RDNE Stock project",
+        "photographer_url": "https://www.pexels.com/@rdne",
+        "source_page": "https://www.pexels.com/photo/a-person-holding-smartphone-7947740/",
+        "image_url": "https://images.pexels.com/photos/7947740/pexels-photo-7947740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 7691737,
+        "alt": "Man holding smartphone with stock market chart, focusing on financial growth.",
+        "photographer": "Yan Krukau",
+        "photographer_url": "https://www.pexels.com/@yankrukov",
+        "source_page": "https://www.pexels.com/photo/man-holding-a-smartphone-7691737/",
+        "image_url": "https://images.pexels.com/photos/7691737/pexels-photo-7691737.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": 7948056,
+        "alt": "Close-up of hands holding a smartphone displaying stock market investment app.",
+        "photographer": "RDNE Stock project",
+        "photographer_url": "https://www.pexels.com/@rdne",
+        "source_page": "https://www.pexels.com/photo/close-up-shot-of-a-person-holding-a-smartphone-7948056/",
+        "image_url": "https://images.pexels.com/photos/7948056/pexels-photo-7948056.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4480,
+        "height": 6720
+      },
+      {
+        "id": 7567441,
+        "alt": "Hand holding smartphone displaying cryptocurrency trading graph in app.",
+        "photographer": "Tima Miroshnichenko",
+        "photographer_url": "https://www.pexels.com/@tima-miroshnichenko",
+        "source_page": "https://www.pexels.com/photo/hand-holding-android-smartphone-displaying-data-7567441/",
+        "image_url": "https://images.pexels.com/photos/7567441/pexels-photo-7567441.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+        "width": 4000,
+        "height": 6000
+      }
+    ]
+  }
+]

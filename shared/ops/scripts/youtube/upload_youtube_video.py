@@ -515,7 +515,7 @@ def main(argv: list[str] | None = None) -> int:
         is_shorts_firm = _is_shorts_firm_upload(file_path)
 
         if is_shorts_firm:
-            display_date = _format_dotted_date(date_yyyymmdd)
+            display_date = _format_dotted_date(resolve_display_date(date_yyyymmdd, args.lang))
             if args.lang == "ko":
                 metadata["title"] = f"{display_date} 미국 증시 장마감 | 오늘의 화제 종목"
             else:
