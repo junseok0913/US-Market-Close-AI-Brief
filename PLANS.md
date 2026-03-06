@@ -52,4 +52,11 @@
 
 - [x] Diagnose why scheduled runs were skipping even after the intended 13:10 window.
 - [x] Remove the gate entirely and simplify to a single 20:10 UTC weekday cron for post-2026-03-08 BC time.
-- [ ] Verify workflow YAML after the schedule simplification.
+- [x] Verify workflow YAML after the schedule simplification.
+
+## 2026-03-06 - GitHub Commit Step Fix
+
+- [x] Diagnose why workflow commit steps failed with `cannot pull with rebase: You have unstaged changes`.
+- [x] Reorder commit steps to stage/commit generated files before rebase, and include `web/src/landing/index.ts`.
+- [x] Reduce default `DEBATE_MAX_ROUNDS` from 4 to 3.
+- [x] Re-run static GitHub Actions validation after the workflow fix.
