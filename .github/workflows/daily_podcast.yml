@@ -1,159 +1,404 @@
 name: Daily Stock Podcast Automation
 
 on:
-  # Temporarily disabled - only manual runs allowed
-  # push:
-  #   branches:
-  #     - youtube # 예: develop 또는 feat/podcast
-  #schedule:
-    # 매일 평일(월-금) UTC 21:30 (한국 시간 오전 6:30, 미국 장 마감 후)
-  #  - cron: '30 21 * * 1-5'
-  workflow_dispatch: # 수동 실행 버튼 (테스트용)
+  schedule:
+    # US market close +10m in Vancouver local time (13:10).
+    # GitHub cron is UTC-only, so keep both DST companion slots and gate in-step.
+    - cron: "10 20 * * 1-5"
+    - cron: "10 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Run date (YYYYMMDD). Empty = America/New_York today"
+        required: false
+        type: string
+      tickers:
+        description: "Optional tickers (space/comma separated)"
+        required: false
+        type: string
+      start_from:
+        description: "Start from pipeline step (1-6)"
+        required: false
+        default: "1"
+        type: string
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: daily-podcast-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  run-daily:
     runs-on: ubuntu-latest
-    
+    env:
+      PYTHONUNBUFFERED: "1"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Gate scheduled run at Vancouver 13:10
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          SHOULD_RUN="true"
+          NOW_VANCOUVER="$(TZ=America/Vancouver date +'%H:%M')"
+          echo "Current Vancouver time: ${NOW_VANCOUVER}"
+
+          if [[ "$EVENT_NAME" == "schedule" && "$NOW_VANCOUVER" != "13:10" ]]; then
+            SHOULD_RUN="false"
+            echo "Skipping companion cron slot."
+          fi
+
+          echo "should_run=${SHOULD_RUN}" >> "$GITHUB_OUTPUT"
 
       - name: Install uv
+        if: steps.gate.outputs.should_run == 'true'
         uses: astral-sh/setup-uv@v1
 
       - name: Set up Python
+        if: steps.gate.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
       - name: Install dependencies
+        if: steps.gate.outputs.should_run == 'true'
         run: uv sync --frozen
 
-      - name: Set Date Variable
-        id: date
-        run: |
-          # 미국 동부 시간 기준 현재 날짜 (YYYYMMDD) 계산
-          # GitHub Runner는 UTC 기준이므로 -5시간(EST) 적용
-          CURRENT_DATE=$(date -d '-5 hours' +'%Y%m%d')
-          echo "TARGET_DATE=$CURRENT_DATE" >> $GITHUB_ENV
-          echo "Target Date is $CURRENT_DATE"
-
-      - name: Cache Podcast Data
-        id: cache-podcast
-        uses: actions/cache@v4
-        with:
-          path: podcast/${{ env.TARGET_DATE }}
-          key: podcast-data-${{ env.TARGET_DATE }}
-
-      - name: Generate Podcast Script (Orchestrator)
-        if: steps.cache-podcast.outputs.cache-hit != 'true'
+      - name: Resolve run parameters
+        if: steps.gate.outputs.should_run == 'true'
+        id: params
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
+          INPUT_TICKERS: ${{ github.event.inputs.tickers }}
+          INPUT_START_FROM: ${{ github.event.inputs.start_from }}
+        run: |
+          set -euo pipefail
+
+          TARGET_DATE="${INPUT_DATE:-}"
+          if [[ -z "$TARGET_DATE" ]]; then
+            TARGET_DATE="$(TZ=America/New_York date +'%Y%m%d')"
+          fi
+
+          if ! [[ "$TARGET_DATE" =~ ^[0-9]{8}$ ]]; then
+            echo "Invalid date format: $TARGET_DATE (expected YYYYMMDD)" >&2
+            exit 1
+          fi
+
+          START_FROM="${INPUT_START_FROM:-1}"
+          if ! [[ "$START_FROM" =~ ^[1-6]$ ]]; then
+            echo "Invalid --start-from value: $START_FROM (expected 1-6)" >&2
+            exit 1
+          fi
+
+          TICKERS_CLEAN="$(echo "${INPUT_TICKERS:-}" | tr ',' ' ' | xargs || true)"
+
+          echo "target_date=$TARGET_DATE" >> "$GITHUB_OUTPUT"
+          echo "tickers=$TICKERS_CLEAN" >> "$GITHUB_OUTPUT"
+          echo "start_from=$START_FROM" >> "$GITHUB_OUTPUT"
+
+          echo "TARGET_DATE=$TARGET_DATE"
+          echo "TICKERS=$TICKERS_CLEAN"
+          echo "START_FROM=$START_FROM"
+
+      - name: Configure AWS profile for news collection
+        if: steps.gate.outputs.should_run == 'true'
+        env:
           NEWS_AWS_ACCESS_KEY_ID: ${{ secrets.NEWS_AWS_ACCESS_KEY_ID }}
           NEWS_AWS_SECRET_ACCESS_KEY: ${{ secrets.NEWS_AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "ap-northeast-2"
+          NEWS_AWS_REGION: ${{ secrets.NEWS_AWS_REGION || 'ap-northeast-2' }}
         run: |
-          echo "Generating script for $TARGET_DATE..."
-          # 예시 티커: SPY QQQ NVDA TSLA (원하는 티커로 수정 가능)
-          uv run python orchestrator.py $TARGET_DATE -t LMT
+          set -euo pipefail
+          : "${NEWS_AWS_ACCESS_KEY_ID:?Missing NEWS_AWS_ACCESS_KEY_ID secret}"
+          : "${NEWS_AWS_SECRET_ACCESS_KEY:?Missing NEWS_AWS_SECRET_ACCESS_KEY secret}"
 
-      - name: Upload Script Artifact
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: podcast-script-${{ env.TARGET_DATE }}
-          path: podcast/${{ env.TARGET_DATE }}
+          mkdir -p "$HOME/.aws"
+          cat > "$HOME/.aws/credentials" <<EOF
+          [Nam]
+          aws_access_key_id=${NEWS_AWS_ACCESS_KEY_ID}
+          aws_secret_access_key=${NEWS_AWS_SECRET_ACCESS_KEY}
+          EOF
 
-      - name: Generate Audio (TTS Korean)
-        if: steps.cache-podcast.outputs.cache-hit != 'true'
+          cat > "$HOME/.aws/config" <<EOF
+          [profile Nam]
+          region=${NEWS_AWS_REGION}
+          output=json
+          EOF
+
+          chmod 600 "$HOME/.aws/credentials" "$HOME/.aws/config"
+
+      - name: Create .env for S3 upload step
+        if: steps.gate.outputs.should_run == 'true'
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          echo "Generating Korean Audio for $TARGET_DATE..."
-          uv run python -m tts.src.tts $TARGET_DATE --lang ko
-
-      - name: Upload Korean Audio Artifact
-        if: success() || steps.cache-podcast.outputs.cache-hit == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: podcast-audio-ko-${{ env.TARGET_DATE }}
-          path: podcast/${{ env.TARGET_DATE }}
-
-      - name: Generate Audio (TTS English)
-        if: steps.cache-podcast.outputs.cache-hit != 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          echo "Generating English Audio for $TARGET_DATE..."
-          uv run python -m tts.src.tts $TARGET_DATE --lang en
-
-      - name: Upload English Audio Artifact
-        if: success() || steps.cache-podcast.outputs.cache-hit == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: podcast-audio-en-${{ env.TARGET_DATE }}
-          path: podcast/${{ env.TARGET_DATE }}
-
-      - name: Upload to S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-2" # 버킷 리전에 맞춰 수정 필요
-          BUCKET_NAME: "podcast-daily-stock"
-        run: |
-          echo "Uploading results to S3..."
-          # MP3와 metadata만 업로드 (한국어/영어)
-          aws s3 cp podcast/$TARGET_DATE/ko/$TARGET_DATE.mp3 s3://$BUCKET_NAME/$TARGET_DATE/ko/$TARGET_DATE.mp3
-          aws s3 cp podcast/$TARGET_DATE/ko/metadata.json s3://$BUCKET_NAME/$TARGET_DATE/ko/metadata.json
-          aws s3 cp podcast/$TARGET_DATE/en/$TARGET_DATE.mp3 s3://$BUCKET_NAME/$TARGET_DATE/en/$TARGET_DATE.mp3
-          aws s3 cp podcast/$TARGET_DATE/en/metadata.json s3://$BUCKET_NAME/$TARGET_DATE/en/metadata.json
-          
-      - name: Update RSS Feed (Korean)
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-2"
-          BUCKET_NAME: "podcast-daily-stock"
+          S3_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          S3_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_AWS_REGION: ${{ secrets.AWS_REGION || 'us-east-2' }}
           CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
         run: |
-          echo "Updating Korean RSS Feed..."
-          uv run python AWS/scripts/update_podcast_feed.py --lang ko
+          set -euo pipefail
+          : "${S3_AWS_ACCESS_KEY_ID:?Missing AWS_ACCESS_KEY_ID secret}"
+          : "${S3_AWS_SECRET_ACCESS_KEY:?Missing AWS_SECRET_ACCESS_KEY secret}"
+          : "${CLOUDFRONT_DOMAIN:?Missing CLOUDFRONT_DOMAIN secret}"
 
-      - name: Update RSS Feed (English)
+          cat > .env <<EOF
+          AWS_ACCESS_KEY_ID=${S3_AWS_ACCESS_KEY_ID}
+          AWS_SECRET_ACCESS_KEY=${S3_AWS_SECRET_ACCESS_KEY}
+          AWS_REGION=${S3_AWS_REGION}
+          CLOUDFRONT_DOMAIN=${CLOUDFRONT_DOMAIN}
+          EOF
+
+      - name: Run Step 1 (orchestrator only)
+        if: steps.gate.outputs.should_run == 'true' && steps.params.outputs.start_from == '1'
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-2"
-          BUCKET_NAME: "podcast-daily-stock"
-          CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          TICKERS: ${{ steps.params.outputs.tickers }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          echo "Updating English RSS Feed..."
-          uv run python AWS/scripts/update_podcast_feed.py --lang en
+          set -euo pipefail
 
-      - name: Invalidate CloudFront Cache
-        # CLOUDFRONT_DISTRIBUTION_ID가 설정되어 있으면 실행됨
-        continue-on-error: true
+          if [[ -n "$TICKERS" ]]; then
+            read -r -a TICKER_ARR <<< "$TICKERS"
+            NEWS_AWS_PROFILE=Nam uv run orchestrator.py "$TARGET_DATE" -t "${TICKER_ARR[@]}"
+          else
+            NEWS_AWS_PROFILE=Nam uv run orchestrator.py "$TARGET_DATE"
+          fi
+
+      - name: Commit and push Step 1 outputs
+        if: success() && steps.gate.outputs.should_run == 'true' && steps.params.outputs.start_from == '1'
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-2"
-          DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          echo "Invalidating CloudFront Cache for RSS feeds..."
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/podcast.xml" "/podcast_en.xml"
+          set -euo pipefail
 
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH_NAME"
+          git pull --rebase origin "$BRANCH_NAME"
 
+          for path in podcast web/public/audio web/src/generated/shorts-firm; do
+            if [[ -e "$path" ]]; then
+              git add -A "$path"
+            fi
+          done
 
-      - name: Commit and Push changes
+          if git diff --cached --quiet; then
+            echo "No Step 1 changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(podcast): ${TARGET_DATE} step1 artifacts"
+          git push origin HEAD:"$BRANCH_NAME"
+
+      - name: Run Step 2 only (Korean round)
+        if: steps.gate.outputs.should_run == 'true' && (steps.params.outputs.start_from == '1' || steps.params.outputs.start_from == '2')
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
-          git pull --rebase
-          git add podcast/
-          git commit -m "Add podcast data for $TARGET_DATE" || echo "No changes to commit"
-          git push
+          set -euo pipefail
+          MAX_ATTEMPTS="${TTS_ROUND_RETRY_MAX_ATTEMPTS:-5}"
+          DELAY_SECONDS="${TTS_ROUND_RETRY_DELAY_SECONDS:-5}"
+          SHORTS_FIRM_DURATION_SECONDS="${SHORTS_FIRM_DURATION_SECONDS:-90}"
+          SHORTS_FIRM_TTS_VOICE="${SHORTS_FIRM_TTS_VOICE:-Charon}"
+          SHORTS_FIRM_TTS_TEMPERATURE="${SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
+          SHORTS_FIRM_PROMPT_CONFIG="${SHORTS_FIRM_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_pipeline.yaml}"
+          SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_slides.yaml}"
 
+          ATTEMPT=1
+          EXIT_CODE=1
+          while [[ "$ATTEMPT" -le "$MAX_ATTEMPTS" ]]; do
+            echo "Step2 attempt ${ATTEMPT}/${MAX_ATTEMPTS}"
+            set +e
+            (
+              set -e
+              uv run python -m tts.src.tts "$TARGET_DATE" --lang ko
+
+              if [[ -f "podcast/$TARGET_DATE/ko/$TARGET_DATE.mp3" ]]; then
+                cp "podcast/$TARGET_DATE/ko/$TARGET_DATE.mp3" "web/public/audio/$TARGET_DATE.mp3"
+              fi
+
+              if [[ -f "podcast/$TARGET_DATE/ko/script.json" ]]; then
+                uv run shorts/generate_shorts.py "podcast/$TARGET_DATE/ko" --duration 90
+              fi
+
+              uv run python shorts/generate_shorts_audio.py "$TARGET_DATE" --lang ko --voice Charon --temperature 0.6
+
+              if [[ -f "podcast/$TARGET_DATE/ko/shorts/script.json" ]]; then
+                uv run python shorts/generate_shorts_slides.py "$TARGET_DATE" --lang ko \
+                  --section-timing "podcast/$TARGET_DATE/ko/shorts/sections.timing.json"
+              fi
+
+              if [[ -f "podcast/$TARGET_DATE/ko/script.json" && -f "podcast/$TARGET_DATE/ko/metadata.txt" ]]; then
+                uv run python shorts-firm/generate_script.py "podcast/$TARGET_DATE/ko" \
+                  --duration "${SHORTS_FIRM_DURATION_SECONDS}" \
+                  --prompt-config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+                uv run python shorts-firm/generate_audio.py "$TARGET_DATE" --lang ko \
+                  --voice "${SHORTS_FIRM_TTS_VOICE}" \
+                  --temperature "${SHORTS_FIRM_TTS_TEMPERATURE}" \
+                  --config "${SHORTS_FIRM_PROMPT_CONFIG}"
+
+                uv run python shorts-firm/generate_slide_script.py "$TARGET_DATE" --lang ko \
+                  --script "podcast/$TARGET_DATE/ko/shorts-firm/script.json" \
+                  --timing "podcast/$TARGET_DATE/ko/shorts-firm/sections.timing.json" \
+                  --script-output "podcast/$TARGET_DATE/ko/shorts-firm/slides.script.json" \
+                  --template-output "podcast/$TARGET_DATE/ko/shorts-firm/slides.render.template.json" \
+                  --render-output "podcast/$TARGET_DATE/ko/shorts-firm/slides.render.json" \
+                  --config "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}" \
+                  --overwrite-render
+
+                uv run python shorts-firm/generate_tsx.py "$TARGET_DATE" --lang ko \
+                  --input "podcast/$TARGET_DATE/ko/shorts-firm/slides.render.json" \
+                  --output "web/src/generated/shorts-firm/${TARGET_DATE}_ko.generated.tsx"
+              fi
+            )
+            EXIT_CODE=$?
+            set -e
+
+            if [[ "$EXIT_CODE" -eq 0 ]]; then
+              break
+            fi
+
+            if [[ "$ATTEMPT" -lt "$MAX_ATTEMPTS" ]]; then
+              sleep "$DELAY_SECONDS"
+            fi
+            ATTEMPT=$((ATTEMPT + 1))
+          done
+
+          if [[ "$EXIT_CODE" -ne 0 ]]; then
+            exit "$EXIT_CODE"
+          fi
+
+      - name: Cleanup intermediates after Step 2
+        if: success() && steps.gate.outputs.should_run == 'true' && (steps.params.outputs.start_from == '1' || steps.params.outputs.start_from == '2')
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+        run: |
+          set -euo pipefail
+          if [[ -d "podcast/$TARGET_DATE/ko/tts" ]]; then
+            rm -rf "podcast/$TARGET_DATE/ko/tts"
+          fi
+          if ls podcast/$TARGET_DATE/ko/*.wav 1> /dev/null 2>&1; then
+            rm -f podcast/$TARGET_DATE/ko/*.wav
+          fi
+          if [[ -d "podcast/$TARGET_DATE/ko/shorts-firm/tts" ]]; then
+            rm -rf "podcast/$TARGET_DATE/ko/shorts-firm/tts"
+          fi
+          if ls podcast/$TARGET_DATE/ko/shorts-firm/*.wav 1> /dev/null 2>&1; then
+            rm -f podcast/$TARGET_DATE/ko/shorts-firm/*.wav
+          fi
+
+          # Keep only publish-ready KO assets after Step 2.
+          # metadata.json is retained because Step 4 uploads it.
+          KO_DIR="podcast/$TARGET_DATE/ko"
+          if [[ -d "$KO_DIR" ]]; then
+            find "$KO_DIR" -type f \
+              ! -path "$KO_DIR/$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/metadata.json" \
+              ! -path "$KO_DIR/shorts/shorts$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/shorts-firm/shorts$TARGET_DATE.mp3" \
+              -delete
+            find "$KO_DIR" -depth -type d -empty -delete
+          fi
+
+      - name: Commit and push Step 2 outputs
+        if: success() && steps.gate.outputs.should_run == 'true' && (steps.params.outputs.start_from == '1' || steps.params.outputs.start_from == '2')
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH_NAME"
+          git pull --rebase origin "$BRANCH_NAME"
+
+          for path in podcast web/public/audio web/src/generated/shorts-firm; do
+            if [[ -e "$path" ]]; then
+              git add -A "$path"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "No Step 2 changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(podcast): ${TARGET_DATE} step2 artifacts"
+          git push origin HEAD:"$BRANCH_NAME"
+
+      - name: Run remaining daily pipeline (Step 3-6)
+        if: steps.gate.outputs.should_run == 'true'
+        id: pipeline
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          TICKERS: ${{ steps.params.outputs.tickers }}
+          START_FROM: ${{ steps.params.outputs.start_from }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          chmod +x ./run_daily.sh
+
+          RESUME_FROM="$START_FROM"
+          if [[ "$RESUME_FROM" == "1" || "$RESUME_FROM" == "2" ]]; then
+            RESUME_FROM="3"
+          fi
+
+          ARGS=("$TARGET_DATE")
+          if [[ -n "$TICKERS" ]]; then
+            read -r -a TICKER_ARR <<< "$TICKERS"
+            ARGS+=("${TICKER_ARR[@]}")
+          fi
+          ARGS+=(--start-from "$RESUME_FROM")
+
+          echo "Running: ./run_daily.sh ${ARGS[*]}"
+          ./run_daily.sh "${ARGS[@]}"
+
+      - name: Upload generated artifacts
+        if: success() && steps.gate.outputs.should_run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-${{ steps.params.outputs.target_date }}
+          path: podcast/${{ steps.params.outputs.target_date }}
+          if-no-files-found: warn
+
+      - name: Commit and push generated changes
+        if: success() && steps.gate.outputs.should_run == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          BRANCH_NAME: ${{ github.ref_name }}
+          PIPELINE_OUTCOME: ${{ steps.pipeline.outcome }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH_NAME"
+          git pull --rebase origin "$BRANCH_NAME"
+
+          for path in podcast web/public/audio web/src/generated/shorts-firm; do
+            if [[ -e "$path" ]]; then
+              git add -A "$path"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(podcast): ${TARGET_DATE} artifacts (pipeline=${PIPELINE_OUTCOME})"
+          git push origin HEAD:"$BRANCH_NAME"

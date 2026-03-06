@@ -65,7 +65,6 @@ Keep this file brief and operational. Prefer commands and checks the agent can r
 - `ORCHESTRATOR.md`: pipeline internals and stages.
 - `WEB.md`: web build/data behavior.
 - `LAMBDA.md`: AWS news collection path.
-- `PLANS.md`: template for multi-step or multi-hour implementation plans.
 
 ## Mistake Feedback Loop
 

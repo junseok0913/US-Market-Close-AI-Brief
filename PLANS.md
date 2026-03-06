@@ -27,3 +27,9 @@
 - [x] Inspect shorts-firm upload title override path.
 - [x] Switch title date source to `resolve_display_date(..., lang)` before dotted formatting.
 - [x] Verify script syntax.
+
+## 2026-03-06 - GitHub Actions run_daily Alignment
+
+- [x] Inspect `run_daily.sh` flow and current `.github/workflows/daily_podcast.yml` mismatch.
+- [x] Rebuild workflow to execute `run_daily.sh` with manual inputs (`date`, `tickers`, `start_from`) and weekday schedule.
+- [x] Add and verify commit-on-failure behavior (pipeline step can fail, commit still runs, final status reflects failure).
