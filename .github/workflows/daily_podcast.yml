@@ -13,7 +13,7 @@ on:
         required: false
         type: string
       tickers:
-        description: "Optional tickers (space/comma separated)"
+        description: "Optional tickers (space/comma separated). Empty = auto picker after theme stage"
         required: false
         type: string
       start_from:
@@ -34,6 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: "1"
+      AUTO_THEME_DISTINCT_TICKER_ENABLED: "1"
+      AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE: "150"
+      AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT: "2.0"
+      AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES: "10"
 
     steps:
       - name: Checkout repository
@@ -106,7 +110,11 @@ jobs:
           echo "start_from=$START_FROM" >> "$GITHUB_OUTPUT"
 
           echo "TARGET_DATE=$TARGET_DATE"
-          echo "TICKERS=$TICKERS_CLEAN"
+          if [[ -n "$TICKERS_CLEAN" ]]; then
+            echo "TICKERS=$TICKERS_CLEAN"
+          else
+            echo "TICKERS=(auto theme-distinct large-cap picker after theme)"
+          fi
           echo "START_FROM=$START_FROM"
 
       - name: Configure AWS profile for news collection
@@ -169,6 +177,7 @@ jobs:
             read -r -a TICKER_ARR <<< "$TICKERS"
             NEWS_AWS_PROFILE=Nam uv run orchestrator.py "$TARGET_DATE" -t "${TICKER_ARR[@]}"
           else
+            echo "No manual tickers provided. Orchestrator will auto-pick one theme-distinct large-cap mover after theme generation."
             NEWS_AWS_PROFILE=Nam uv run orchestrator.py "$TARGET_DATE"
           fi
 

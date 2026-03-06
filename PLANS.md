@@ -33,3 +33,17 @@
 - [x] Inspect `run_daily.sh` flow and current `.github/workflows/daily_podcast.yml` mismatch.
 - [x] Rebuild workflow to execute `run_daily.sh` with manual inputs (`date`, `tickers`, `start_from`) and weekday schedule.
 - [x] Add and verify commit-on-failure behavior (pipeline step can fail, commit still runs, final status reflects failure).
+
+## 2026-03-06 - Theme-Distinct Large-Cap Ticker Prototype
+
+- [x] Inspect theme script payload shape and existing Gemini wrapper usage.
+- [x] Convert the market prototype from pure price ranking into `abs(change) >= 2%` candidate filtering.
+- [x] Add theme-context loading and a single Gemini picker prompt that selects one candidate not already covered in theme.
+- [x] Run one live end-to-end validation with market data + Gemini selection.
+
+## 2026-03-06 - Auto Ticker Integration
+
+- [x] Refactor the market picker into a reusable helper callable from orchestrator.
+- [x] Wire orchestrator to auto-pick one ticker when no manual ticker is provided.
+- [x] Expose the auto-picker behavior/config through `run_daily.sh` and GitHub Actions.
+- [ ] Run static verification for Python, shell, workflow YAML, and run_daily contract.

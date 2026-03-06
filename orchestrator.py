@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import sys
 from datetime import datetime
@@ -44,12 +45,14 @@ from shared.config import (
     set_briefing_date,
 )
 from shared.fetchers import prefetch_all
+from shared.ops.scripts.market.select_fallen_large_caps import select_theme_distinct_large_cap_ticker
 from shared.date_display import resolve_display_date
 from shared.types import ScriptTurn, Theme
 from shared.utils.tracing import configure_tracing
 from shared.yaml_config import load_env_from_yaml
 
 ROOT = Path(__file__).parent
+logger = logging.getLogger(__name__)
 
 
 def parse_date_arg(date_str: str) -> str:
@@ -90,6 +93,58 @@ def parse_tickers(raw_tickers: List[str]) -> List[str]:
             if normalized:
                 out.append(normalized)
     return out
+
+
+def _env_flag_enabled(name: str, default: bool = True) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() not in {"", "0", "false", "no", "off"}
+
+
+def _auto_select_ticker_from_theme(
+    *,
+    date_str: str,
+    base_scripts: list[dict[str, Any]],
+    chapter: list[ChapterRange],
+) -> list[str]:
+    if not _env_flag_enabled("AUTO_THEME_DISTINCT_TICKER_ENABLED", True):
+        return []
+
+    script_payload = {
+        "date": resolve_display_date(date_str, "ko"),
+        "chapter": chapter,
+        "scripts": base_scripts,
+    }
+
+    try:
+        picker_payload = select_theme_distinct_large_cap_ticker(
+            date=date_str,
+            script_payload=script_payload,
+            universe_size=int(os.getenv("AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE", "150") or "150"),
+            min_abs_change_pct=float(os.getenv("AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT", "2.0") or "2.0"),
+            max_candidates=int(os.getenv("AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES", "10") or "10"),
+            prefix=os.getenv("AUTO_THEME_DISTINCT_TICKER_LLM_PREFIX", "MARKET_PICKER") or "MARKET_PICKER",
+        )
+    except Exception as exc:
+        logger.warning("Auto ticker picker failed; continuing without ticker selection: %s", exc)
+        return []
+
+    selected = picker_payload.get("selected")
+    if not isinstance(selected, dict):
+        logger.info("Auto ticker picker found no eligible candidate.")
+        return []
+
+    symbol = str(selected.get("symbol") or "").upper().strip()
+    if not symbol:
+        logger.info("Auto ticker picker returned an empty symbol.")
+        return []
+
+    reason = str(selected.get("reason") or "").strip()
+    logger.info("Auto-selected ticker %s via theme-distinct market picker", symbol)
+    if reason:
+        logger.info("Auto-selection reason: %s", reason)
+    return [symbol]
 
 
 def format_date_korean(date_yyyymmdd: str) -> str:
@@ -326,6 +381,16 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
                 chapter = _set_chapter_range(chapter, "theme", -1, -1)
 
     if not tickers:
+        auto_tickers = _auto_select_ticker_from_theme(
+            date_str=date_str,
+            base_scripts=[item for item in base_scripts if isinstance(item, dict)],
+            chapter=[item for item in chapter if isinstance(item, dict)],
+        )
+        if auto_tickers:
+            tickers = auto_tickers
+            state = {**state, "user_tickers": tickers}
+
+    if not tickers:
         # Persist a "no-op" ticker pipeline artifact for debuggability/consistency.
         pipeline_path = get_temp_ticker_pipeline_path()
         pipeline_path.write_text(
@@ -344,7 +409,7 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
             encoding="utf-8",
         )
         chapter = _set_chapter_range(chapter, "ticker", -1, -1)
-        return {**state, "scripts": base_scripts, "current_section": "closing", "chapter": chapter}
+        return {**state, "user_tickers": [], "scripts": base_scripts, "current_section": "closing", "chapter": chapter}
 
     # Fan-out: run debate per ticker, always persist debate artifacts.
     from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -396,7 +461,13 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
     else:
         chapter = _set_chapter_range(chapter, "ticker", -1, -1)
 
-    return {**state, "scripts": scripts if isinstance(scripts, list) else [], "current_section": "closing", "chapter": chapter}
+    return {
+        **state,
+        "user_tickers": tickers,
+        "scripts": scripts if isinstance(scripts, list) else [],
+        "current_section": "closing",
+        "chapter": chapter,
+    }
 
 
 def closing_node(state: BriefingState) -> BriefingState:

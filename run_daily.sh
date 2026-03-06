@@ -7,7 +7,7 @@
 #   ./run_daily.sh [YYYYMMDD] [TICKERS...] [--start-from N]
 #
 # 예시:
-#   ./run_daily.sh                 # 오늘 날짜로 실행 (처음부터)
+#   ./run_daily.sh                 # 오늘 날짜로 실행 (theme 생성 후 티커 없으면 자동 선택)
 #   ./run_daily.sh 20260126        # 특정 날짜 실행
 #   ./run_daily.sh 20260126 META   # 특정 날짜 + 티커 지정
 #   ./run_daily.sh 20260126 --start-from 3  # step 3(S3 Upload)부터 시작
@@ -27,6 +27,10 @@ SHORTS_FIRM_TTS_VOICE="${SHORTS_FIRM_TTS_VOICE:-Charon}"
 SHORTS_FIRM_TTS_TEMPERATURE="${SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
 SHORTS_FIRM_PROMPT_CONFIG="${SHORTS_FIRM_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_pipeline.yaml}"
 SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-shorts-firm/prompt/shorts_firm_slides.yaml}"
+AUTO_THEME_DISTINCT_TICKER_ENABLED="${AUTO_THEME_DISTINCT_TICKER_ENABLED:-1}"
+AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE="${AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE:-150}"
+AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT="${AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT:-2.0}"
+AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES="${AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES:-10}"
 
 THUMBNAIL_SCRIPT="./shared/ops/scripts/youtube/generate_episode_thumbnail.sh"
 if [ ! -f "$THUMBNAIL_SCRIPT" ] && [ -f "./scripts/generate_episode_thumbnail.sh" ]; then
@@ -37,6 +41,10 @@ fi
 # AWS 프로필 설정 (기본값: Nam)
 # 이 설정이 있어야 S3 업로드 등 모든 AWS 명령어가 'Nam' 프로필로 실행됩니다.
 export AWS_PROFILE=${AWS_PROFILE:-Nam}
+export AUTO_THEME_DISTINCT_TICKER_ENABLED
+export AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE
+export AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT
+export AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES
 
 # 인자 파싱 (순서 무관하도록 처리)
 while [[ $# -gt 0 ]]; do
@@ -167,7 +175,8 @@ run_step3_round() {
 echo "========================================================"
 echo "🚀 Daily Podcast Pipeline Start"
 echo "📅 Date: $DATE"
-echo "🎯 Tickers: ${TICKERS:-"(Auto Select)"}"
+echo "🎯 Tickers: ${TICKERS:-"(Auto Select after theme: theme-distinct >=2% large-cap mover)"}"
+echo "🤖 Auto Ticker Picker: ${AUTO_THEME_DISTINCT_TICKER_ENABLED} (universe=${AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE}, min_abs_change=${AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT}%, max_candidates=${AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES})"
 echo "▶️  Start From: Step $START_FROM"
 echo "========================================================"
 
@@ -175,14 +184,15 @@ echo "========================================================"
 # Step 1: Orchestrator (Script, Translation, Metadata, Slides)
 # ------------------------------------------------------------------------------
 if [ $START_FROM -le 1 ]; then
-    echo -e "\n[1/5] Running Orchestrator..."
+    echo -e "\n[1/6] Running Orchestrator..."
     if [ -z "$TICKERS" ]; then
+        echo "  🤖 No manual tickers provided. Orchestrator will auto-pick one theme-distinct large-cap mover after theme generation."
         NEWS_AWS_PROFILE=Nam uv run orchestrator.py $DATE
     else
         NEWS_AWS_PROFILE=Nam uv run orchestrator.py $DATE -t $TICKERS
     fi
 else
-    echo -e "\n[1/5] Orchestrator skipped (Start from $START_FROM)"
+    echo -e "\n[1/6] Orchestrator skipped (Start from $START_FROM)"
 fi
 
 # ------------------------------------------------------------------------------
