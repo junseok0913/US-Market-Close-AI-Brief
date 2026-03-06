@@ -60,3 +60,10 @@
 - [x] Reorder commit steps to stage/commit generated files before rebase, and include `web/src/landing/index.ts`.
 - [x] Reduce default `DEBATE_MAX_ROUNDS` from 4 to 3.
 - [x] Re-run static GitHub Actions validation after the workflow fix.
+
+## 2026-03-06 - GitHub Actions Runtime Hardening
+
+- [x] Diagnose the latest scheduled run failure and separate fatal errors from warning-only noise.
+- [in_progress] Add missing GitHub runner system dependencies and CI-safe tracing env defaults.
+- [x] Harden tracing utilities so missing API keys disable tracing instead of emitting runtime auth noise.
+- [x] Re-run static verification for workflow YAML, Python modules, and shell entrypoints.

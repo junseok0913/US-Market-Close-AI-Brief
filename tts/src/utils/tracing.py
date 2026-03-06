@@ -38,6 +38,12 @@ def configure_tracing(logger: logging.Logger | None = None) -> None:
             os.environ["LANGSMITH_TRACING_V2"] = normalized
             tracing_flag = normalized
 
+    if not api_key and str(tracing_flag).lower() == "true":
+        # Avoid CI/local auth noise when tracing is enabled by config but no key is present.
+        os.environ["LANGSMITH_TRACING_V2"] = "false"
+        os.environ["LANGCHAIN_TRACING_V2"] = "false"
+        tracing_flag = "false"
+
     log.info(
         "LangSmith tracing 설정 확인: tracing_v2=%s, project=%s, endpoint=%s, api_key(masked)=%s",
         tracing_flag,
@@ -47,8 +53,8 @@ def configure_tracing(logger: logging.Logger | None = None) -> None:
     )
 
     if not api_key:
-        log.warning("LangSmith API 키가 설정되지 않았습니다. .env의 LANGSMITH_API_KEY를 확인하세요.")
-    if str(tracing_flag).lower() != "true":
-        log.warning("LANGSMITH_TRACING_V2가 true가 아니면 트레이싱이 기록되지 않을 수 있습니다.")
+        log.info("LangSmith tracing disabled: LANGSMITH_API_KEY is not set.")
+    elif str(tracing_flag).lower() != "true":
+        log.info("LangSmith tracing disabled via LANGSMITH_TRACING_V2.")
 
     _CONFIGURED = True

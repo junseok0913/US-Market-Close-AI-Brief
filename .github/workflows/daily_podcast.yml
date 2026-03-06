@@ -36,6 +36,10 @@ jobs:
       AUTO_THEME_DISTINCT_TICKER_UNIVERSE_SIZE: "150"
       AUTO_THEME_DISTINCT_TICKER_MIN_ABS_CHANGE_PCT: "2.0"
       AUTO_THEME_DISTINCT_TICKER_MAX_CANDIDATES: "10"
+      LANGSMITH_TRACING_V2: "false"
+      LANGCHAIN_TRACING_V2: "false"
+      LANGSMITH_API_KEY: ""
+      LANGCHAIN_API_KEY: ""
 
     steps:
       - name: Checkout repository
@@ -51,6 +55,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+
+      - name: Install system dependencies
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg awscli
+          ffmpeg -version | head -n 1
+          aws --version
 
       - name: Install dependencies
         run: uv sync --frozen
