@@ -46,4 +46,10 @@
 - [x] Refactor the market picker into a reusable helper callable from orchestrator.
 - [x] Wire orchestrator to auto-pick one ticker when no manual ticker is provided.
 - [x] Expose the auto-picker behavior/config through `run_daily.sh` and GitHub Actions.
-- [ ] Run static verification for Python, shell, workflow YAML, and run_daily contract.
+- [x] Run static verification for Python, shell, workflow YAML, and run_daily contract.
+
+## 2026-03-06 - GitHub Schedule Gate Fix
+
+- [x] Diagnose why scheduled runs were skipping even after the intended 13:10 window.
+- [x] Remove the gate entirely and simplify to a single 20:10 UTC weekday cron for post-2026-03-08 BC time.
+- [ ] Verify workflow YAML after the schedule simplification.
