@@ -1,0 +1,714 @@
+{
+  "date": "20260307",
+  "nutshell": "경기 침체 공포와 유가 급등, 스태그플레이션 우려에 시장 급락",
+  "user_tickers": [
+    "AMAT"
+  ],
+  "news_tickers": [
+    "DAL",
+    "GS",
+    "JPM",
+    "MS",
+    "UAL"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 28
+    },
+    {
+      "name": "ticker",
+      "start_id": 29,
+      "end_id": 36
+    },
+    {
+      "name": "closing",
+      "start_id": 37,
+      "end_id": 45
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "3월 7일 장마감 브리핑입니다. 오늘은 모든 지수가 큰 폭으로 하락하며 시장 전반에 걸쳐 매도세가 뚜렷한 하루였습니다.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "네, 그렇습니다. 오늘 시장은 경기 침체 공포와 유가 급등, 스태그플레이션 우려에 시장 급락이라는 한마디로 요약할 수 있겠습니다. 다우존스 산업평균지수는 0.95% 하락했고, S&P 500 지수는 1.33%, 기술주 중심의 나스닥 지수는 1.59%나 급락하며 장을 마감했습니다. 예상보다 훨씬 부진한 고용 지표와 중동의 지정학적 리스크로 인한 유가 폭등이라는 두 가지 악재가 동시에 시장을 덮쳤습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "보통 고용이 부진하면 연준의 금리 인하 기대감으로 시장이 반기는 경우도 있었는데, 오늘은 왜 정반대의 결과가 나온 건가요.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "매우 중요한 지점입니다. 이번 고용 보고서는 시장의 기대를 긍정적으로 바꿀 수준이 아니라, 경제의 경착륙 가능성을 시사하는 충격적인 수치였기 때문입니다. 2월 비농업 일자리가 9만 2천 개나 감소한 것으로 나타나면서, 투자자들은 연준의 정책 전환을 기대하기보다 경기 침체 자체에 대한 공포를 먼저 느낀 것입니다. 여기에 더해 중동 분쟁으로 국제 유가가 10% 이상 폭등하면서, 경기는 둔화하는데 물가만 오르는 최악의 조합, 즉 스태그플레이션에 대한 우려가 시장을 완전히 지배했습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        },
+        {
+          "type": "article",
+          "pk": "ce34633b3c264e8a",
+          "title": "Dow tumbles and gas prices jump as war and weak jobs report rattle market"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "그렇군요. 그렇다면 오늘 시장을 움직인 핵심적인 두 가지 요인에 대해 좀 더 자세히 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "네, 바로 예상치를 크게 벗어난 고용 충격이 불러온 경기 침체 공포와, 중동의 지정학적 위기가 촉발한 유가 급등, 이 두 가지가 만들어낸 스태그플레이션 우려가 오늘의 핵심입니다. 잠시 후에 이 내용들을 하나씩 자세히 살펴보겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "네, 그럼 먼저 오늘 시장을 강타한 고용 쇼크부터 자세히 들여다보겠습니다. 예상 밖의 수치가 나오면서 경기 침체 공포가 시장을 뒤덮었는데, 구체적으로 어떤 내용이었는지 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 한마디로 ‘쇼크’라는 단어가 가장 적절했습니다. 2월 비농업 일자리가 5만 9천 개 증가할 것이라는 예상을 깨고 무려 9만 2천 개 감소한 것으로 발표되면서, 시장은 곧바로 경착륙 공포에 휩싸였습니다. 실업률 역시 4.4퍼센트로 오르며 노동 시장의 냉각을 명확히 보여주었습니다. 이 소식이 전해지자마자 다우존스 산업평균지수는 장중 700포인트 넘게 급락했고 S&P 500과 나스닥 지수 역시 각각 1퍼센트 넘게 하락하며 마감했습니다. 여기에 중동의 지정학적 위기로 서부 텍사스산 원유가 하루 만에 10퍼센트 이상 폭등해 배럴당 91달러를 넘어서면서, 경기는 침체하는데 물가만 오르는 스태그플레이션 공포가 시장 전체를 짓눌렀습니다. 안전자산 선호 심리가 강해지면서도 달러 인덱스는 약세를 보였고, 시장의 공포를 보여주는 변동성지수 VIX는 29를 넘어서며 급등하는 등 모든 자산 시장이 극심한 혼란을 겪었습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        },
+        {
+          "type": "event",
+          "id": "395238",
+          "title": "unemployment rate",
+          "date": "2026-03-06"
+        },
+        {
+          "type": "article",
+          "pk": "18db48762913e559",
+          "title": "Dow falls by nearly 700 points as surging oil prices and weak jobs data add to market anxiety"
+        },
+        {
+          "type": "article",
+          "pk": "ce34633b3c264e8a",
+          "title": "Dow tumbles and gas prices jump as war and weak jobs report rattle market"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "단순히 일자리 숫자만 충격적인 것이 아니라, 보고서의 세부 내용 역시 좋지 않았다고 들었습니다. 어느 부분에서 특히 위험 신호가 감지되었나요?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "맞습니다. 세부 내용을 들여다보면 고용 시장의 구조적인 약점이 드러납니다. 우선, 지난 12월과 1월의 고용 수치도 총 6만 9천 개 하향 수정되면서 이전에 생각했던 것보다 고용 둔화 추세가 더 가파르다는 점이 확인되었습니다. 특히 정보통신 부문에서 1만 1천 개의 일자리가 사라지고, 연방 정부 고용도 1만 개 줄어드는 등 소위 화이트칼라 일자리의 위축이 두드러졌습니다. 일부 분석에 따르면 화이트칼라 부문 고용은 경기 침체 없이 이렇게 장기간 감소한 전례가 없을 정도입니다. 또한 27주 이상 일자리를 찾지 못한 장기 실업자 수가 1년 전 150만 명에서 현재 190만 명으로 40만 명이나 급증한 점도 매우 우려스러운 대목입니다. 이는 한번 실직하면 새로운 일자리를 구하기가 점점 더 어려워지고 있다는 명백한 증거이기 때문입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "9fdaf077ee9fb7f1",
+          "title": "Jobs report: BLS shows job losses, unemployment rate rise in February"
+        },
+        {
+          "type": "article",
+          "pk": "c087747b41ea5c37",
+          "title": "U.S. economy lost 92,000 jobs in February, an unexpected setback"
+        },
+        {
+          "type": "article",
+          "pk": "b2cf01efae3a9323",
+          "title": "Weak jobs report likely to keep Fed on hold in wake of oil price shock"
+        },
+        {
+          "type": "article",
+          "pk": "0a1d292432a99d11",
+          "title": "US shed 92,000 jobs, unemployment ticked up to 4.4% in February"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "그렇다면 시장은 이제 연준의 금리 인하를 기대하기보다는, 침체의 깊이를 더 걱정하는 단계로 넘어갔다고 봐야 할까요?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "정확한 지적입니다. 오늘 시장의 반응은 전형적인 ‘나쁜 뉴스는 그냥 나쁜 뉴스’였습니다. 고용 충격의 강도가 너무 커서 연준의 정책 변화에 대한 기대를 압도해버린 것입니다. 실제로 JP모건 웰스 매니지먼트와 모건 스탠리 등 주요 투자은행들은 보고서를 통해 연준이 진퇴양난에 빠졌다고 분석했습니다. 노동 시장의 심각한 약화는 금리 인하를 지지하지만, 동시에 유가 급등으로 인한 인플레이션 재발 위험이 연준의 손발을 묶고 있다는 것입니다. 샌프란시스코 연방준비은행의 메리 데일리 총재 역시 직접 나서서 노동 시장이 생각보다 약할 수 있다면서도 유가 충격은 실재하는 위험이라고 언급하며, 연준이 양쪽의 위험을 모두 마주하고 있음을 시사했습니다. 결국 시장은 연준의 구원을 기대하기보다, 정책 대응이 어려운 상황에서 찾아올 수 있는 경기 침체와 인플레이션의 동시 발생 가능성을 가격에 본격적으로 반영하기 시작한 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "18db48762913e559",
+          "title": "Dow falls by nearly 700 points as surging oil prices and weak jobs data add to market anxiety"
+        },
+        {
+          "type": "article",
+          "pk": "b2cf01efae3a9323",
+          "title": "Weak jobs report likely to keep Fed on hold in wake of oil price shock"
+        },
+        {
+          "type": "article",
+          "pk": "17caa5c59ad8dfcb",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after jobs report surprise, oil tops $90"
+        },
+        {
+          "type": "article",
+          "pk": "8b677d56e542ccd7",
+          "title": "Iran's strikes on Gulf energy sites rattle markets and raise recession fears"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "결국 고용 충격이 연준의 정책 기대를 무너뜨리고, 스태그플레이션이라는 최악의 시나리오에 대한 공포를 키운 하루였군요.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "진행자",
+      "text": "이런 스태그플레이션 우려에 불을 지핀 것이 바로 유가 급등 문제입니다. 경기 침체 공포와 유가 급등이라는 두 악재가 시장을 덮친 상황, 자세히 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 14,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 그야말로 퍼펙트 스톰이었습니다. 중동의 지정학적 분쟁이 격화되면서 세계 해상 원유 공급량의 약 20퍼센트가 통과하는 호르무즈 해협의 통행이 사실상 중단된 것이 결정적이었습니다. 이로 인해 서부 텍사스산 원유는 이번 주에만 38퍼센트 넘게 폭등하며 1985년 이후 최대 주간 상승폭을 기록했고, 장중에는 배럴당 92달러를 넘어서기도 했습니다. 브렌트유 역시 94달러를 돌파했습니다. 이런 유가 충격이 인플레이션 공포를 자극하는 와중에, 오늘 아침 발표된 2월 비농업 일자리가 예상과 달리 9만 2천 개 감소한 것으로 나타나자 시장은 패닉에 빠졌습니다. 성장 둔화와 물가 급등이 동시에 나타나는 최악의 시나리오가 부상하면서 S&P 500 지수는 1.3퍼센트 넘게 하락했고, 다우지수도 1퍼센트 가까이 밀려났습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "36b1d46d04ed5132",
+          "title": "US oil prices notch biggest weekly surge since at least 1985 as Iran war disrupts Strait of Hormuz"
+        },
+        {
+          "type": "article",
+          "pk": "008e0d3853b2b838",
+          "title": "Oil Powers to 18% Weekly Surge as War Paralyzes Hormuz Traffic"
+        },
+        {
+          "type": "article",
+          "pk": "55c3cf9fe1386d2f",
+          "title": "Employers unexpectedly cut 92,000 jobs last month and unemployment edges up to 4.4% with labor market under pressure"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-02-28",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-02-28",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "진행자",
+      "text": "호르무즈 해협의 공급망 차질이 어느 정도로 심각하기에 유가가 이토록 단기간에 급등한 것인가요.",
+      "sources": []
+    },
+    {
+      "id": 16,
+      "speaker": "해설자",
+      "text": "단순한 위협이 아니라 물리적인 봉쇄에 가깝기 때문입니다. 다국적 해군 자문 그룹인 공동해상정보센터는 호르무즈 해협의 상업적 교통이 보안 위협과 보험 문제 등으로 거의 완전히 중단됐다고 밝혔습니다. 이로 인해 약 1천 6백만 배럴의 원유가 페르시아만에 갇혀버렸고, 이라크와 쿠웨이트 등 주요 산유국들은 원유를 보낼 곳이 없어지자 하루 150만 배럴 이상의 감산을 시작했습니다. 상황이 악화되자 카타르 에너지 장관은 며칠 내로 모든 걸프만 에너지 수출이 중단될 수 있으며, 이 경우 유가가 배럴당 150달러까지 치솟을 수 있다고 경고했습니다. 골드만삭스와 맥쿼리 같은 투자은행들도 봉쇄가 몇 주 더 이어지면 유가가 100달러를 넘어 150달러까지 갈 수 있다는 시나리오를 제시하고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "008e0d3853b2b838",
+          "title": "Oil Powers to 18% Weekly Surge as War Paralyzes Hormuz Traffic"
+        },
+        {
+          "type": "article",
+          "pk": "d932c2d0b0626389",
+          "title": "Oil prices jump after Qatar warns disruption could push crude to $150"
+        },
+        {
+          "type": "article",
+          "pk": "36b1d46d04ed5132",
+          "title": "US oil prices notch biggest weekly surge since at least 1985 as Iran war disrupts Strait of Hormuz"
+        },
+        {
+          "type": "article",
+          "pk": "5acaf5086289db4e",
+          "title": "WTI Crude Tops $85 a Barrel as War Paralyzes Hormuz Traffic"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "진행자",
+      "text": "유가 급등이 인플레이션을 자극하는 것은 알겠습니다. 그렇다면 이것이 실제 경제와 소비에는 어떤 영향을 미치고 있습니까.",
+      "sources": []
+    },
+    {
+      "id": 18,
+      "speaker": "해설자",
+      "text": "영향은 이미 나타나고 있습니다. 전미자동차협회에 따르면 미국의 평균 휘발유 가격은 일주일 만에 34센트나 급등해 갤런당 3달러 32센트를 기록하며 2024년 이후 최고 수준으로 치솟았습니다. 이는 소비자들의 지갑을 직접적으로 압박하는 요인입니다. 기업 측면에서는 항공사들이 직격탄을 맞았습니다. 제트유 가격이 2월 말 대비 50퍼센트 이상 폭등하면서 유나이티드 항공 최고경영자는 항공료 인상이 불가피할 것이라고 언급했습니다. 더 큰 문제는 에너지 위기가 식량 안보로 번질 수 있다는 점입니다. 호르무즈 해협은 원유뿐만 아니라 천연가스와 질소 비료의 주요 수출 통로이기도 한데, 이곳이 막히면 비료 공급에 차질이 생겨 몇 달 후 전 세계 농작물 생산량 감소와 식량 가격 급등으로 이어질 수 있다는 분석이 나오고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "fc34f3290f2a75eb",
+          "title": "U.S. Gasoline Surges to Highest Under Trump as Iran War Roils Oil Market"
+        },
+        {
+          "type": "article",
+          "pk": "e3f8fd0932667993",
+          "title": "United CEO said U.S. airfares could rise as Iran war drives up oil prices"
+        },
+        {
+          "type": "article",
+          "pk": "019bdf067bdb933c",
+          "title": "Beyond Oil: How The Iran War Could Send Food Prices Soaring"
+        },
+        {
+          "type": "article",
+          "pk": "17caa5c59ad8dfcb",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after jobs report surprise, oil tops $90"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "진행자",
+      "text": "결국 연준의 고민이 깊어질 수밖에 없겠군요. 경기 둔화와 인플레이션 압력 사이에서 어떤 선택을 하게 될까요.",
+      "sources": []
+    },
+    {
+      "id": 20,
+      "speaker": "해설자",
+      "text": "그야말로 진퇴양난의 상황입니다. 오늘 발표된 고용 충격은 연준이 금리를 인하해야 한다는 주장에 힘을 실어주지만, 동시에 유가 급등으로 인한 인플레이션 재점화 위험은 금리 인하를 주저하게 만듭니다. 제이피모건 웰스 매니지먼트의 투자 전략 책임자는 현재 상황을 연준에게 까다로운 스태그플레이션의 위험 조합이라고 평가했습니다. 모건 스탠리의 수석 경제 전략가 역시 노동 시장의 약화는 금리 인하를 지지하지만, 유가 상승이 또 다른 인플레이션 급등을 촉발할 위험 때문에 연준이 이러지도 저러지도 못하고 관망할 수밖에 없을 것이라고 분석했습니다. 결국 시장은 당분간 뚜렷한 방향성 없이 스태그플레이션 공포라는 안갯속을 헤맬 가능성이 커졌습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "18db48762913e559",
+          "title": "Dow falls by nearly 700 points as surging oil prices and weak jobs data add to market anxiety"
+        },
+        {
+          "type": "article",
+          "pk": "17caa5c59ad8dfcb",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after jobs report surprise, oil tops $90"
+        },
+        {
+          "type": "article",
+          "pk": "ce34633b3c264e8a",
+          "title": "Dow tumbles and gas prices jump as war and weak jobs report rattle market"
+        },
+        {
+          "type": "chart",
+          "ticker": "US10Y",
+          "start_date": "2026-03-02",
+          "end_date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "네, 바로 그 스태그플레이션 공포가 연준을 진퇴양난에 빠뜨리고 있다는 분석이군요. 경기 둔화와 인플레이션 압력 사이에서 겪는 딜레마, 더 자세히 설명해주시죠.",
+      "sources": []
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "네, 오늘 시장은 연준이 처한 정책적 딜레마를 그대로 투영했습니다. 우선 아침에 발표된 2월 비농업 일자리가 시장 예상치였던 5만 5천 개 증가를 크게 밑돌아 9만 2천 개 감소라는 충격적인 수치를 기록하면서 경기 침체 공포에 불을 지폈습니다. 동시에 중동의 지정학적 위기로 서부 텍사스산 원유가 하루 만에 12퍼센트 넘게 폭등하며 배럴당 91달러를 돌파, 2년 만에 최고치를 경신하면서 인플레이션 재점화 우려를 키웠습니다. 이 두 가지 악재가 겹치자 S&P 500 지수는 1.3퍼센트 넘게 하락했고, 투자자들은 안전자산으로 몰려들며 달러 인덱스는 강세를 보였습니다. 반면 미 국채 10년물 금리는 경기 둔화 우려와 인플레이션 위험 사이에서 방향을 잡지 못하고 혼조세를 보이는 등, 시장 전체가 성장과 물가라는 두 가지 변수 사이에서 극심한 불확실성에 휩싸인 하루였습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395236",
+          "title": "non farm payrolls",
+          "date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-05",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-05",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-05",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-05",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "article",
+          "pk": "18db48762913e559",
+          "title": "Dow falls by nearly 700 points as surging oil prices and weak jobs data add to market anxiety"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "말씀하신 대로 경기 부양과 물가 안정, 두 가지 목표가 정면으로 충돌하는 상황이군요. 연준 입장에서는 어떤 선택지도 쉽지 않아 보입니다.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "그렇습니다. 그야말로 '바위와 단단한 곳 사이', 즉 진퇴양난에 빠진 형국입니다. 급격히 식어가는 고용 시장을 고려하면 금리 인하를 통해 경기 연착륙을 유도해야 하지만, 유가 급등으로 인플레이션이 다시 고개를 들 위험이 커져 섣불리 완화적인 정책을 펼 수 없습니다. 샌프란시스코 연방준비은행의 메리 데일리 총재 역시 오늘 발언에서 현재 연준이 '양면적 위험'에 직면해 있다고 인정했습니다. 모건 스탠리의 수석 경제학자 엘렌 젠트너는 노동 시장의 약화는 금리 인하를 지지하지만, 유가 상승이 인플레이션을 다시 자극할 위험 때문에 연준이 방관자적 입장을 취할 수밖에 없을 것이라고 분석했습니다. 결국 시장은 연준이 3월 18일 연방공개시장위원회 회의에서 뚜렷한 방향을 제시하기 어려울 것이라는 비관론에 무게를 싣고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "b2cf01efae3a9323",
+          "title": "Weak jobs report likely to keep Fed on hold in wake of oil price shock"
+        },
+        {
+          "type": "article",
+          "pk": "17caa5c59ad8dfcb",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after jobs report surprise, oil tops $90"
+        },
+        {
+          "type": "article",
+          "pk": "18db48762913e559",
+          "title": "Dow falls by nearly 700 points as surging oil prices and weak jobs data add to market anxiety"
+        },
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "이러한 연준의 정책적 불확실성이 시장의 불안감을 더욱 키우고 있는 것 같습니다. 투자자들은 구체적으로 어떻게 반응하고 있나요?",
+      "sources": []
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "전형적인 위험 회피 현상이 나타나고 있습니다. 다우와 나스닥 지수가 각각 0.95퍼센트, 1.59퍼센트 하락하는 등 주식 시장 전반에서 매도세가 출회되었습니다. 특히 유가 급등에 따른 비용 압박 우려로 델타, 유나이티드 항공 등 항공주들이 3퍼센트 넘게 하락하며 직격탄을 맞았습니다. 반면 안전자산인 금 선물 가격은 온스당 1퍼센트 이상 상승했고, 달러화 역시 강세를 보였습니다. 채권 시장에서는 10년물 국채 금리가 장중 등락을 거듭하며 마감했는데, 이는 경기 침체 우려와 인플레이션 압력 사이에서 채권 투자자들마저 얼마나 혼란스러워하는지를 명확히 보여주는 대목입니다. 결국 시장은 뚜렷한 방향성 없이 개별 자산들이 각기 다른 공포에 반응하는 모습을 보였습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "article",
+          "pk": "17caa5c59ad8dfcb",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after jobs report surprise, oil tops $90"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "그렇다면 앞으로 시장의 향방을 가늠하기 위해 어떤 점들을 주목해야 할까요?",
+      "sources": []
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "단기적으로는 두 가지를 지켜봐야 합니다. 첫째는 중동의 지정학적 상황입니다. 호르무즈 해협의 통행 차질이 유가 급등의 핵심 원인인 만큼, 이 지역의 긴장 완화 여부가 인플레이션 압력을 결정할 가장 큰 변수입니다. 둘째는 다음 주 11일에 발표될 소비자물가지수입니다. 이번 유가 급등세가 인플레이션 지표에 얼마나 반영될지가 연준의 다음 행보를 예측하는 데 중요한 단서가 될 것입니다. 결국 시장은 경기 침체와 인플레이션이라는 두려움 사이에서, 다가오는 경제 지표와 중동의 뉴스 헤드라인 하나하나에 극도로 민감하게 반응하는 장세를 이어갈 것으로 보입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398677",
+          "title": "core inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "event",
+          "id": "398710",
+          "title": "inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "article",
+          "pk": "e59a2c0ebb63fcac",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures plummet after jobs report surprise as oil jumps"
+        },
+        {
+          "type": "article",
+          "pk": "d6f208e6aab1d94b",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq plummet after jobs report surprise as oil jumps"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "네, 이렇게 시장 전반의 흐름을 짚어봤습니다. 이런 상황 속에서 투자자들의 관심이 쏠렸던 개별 종목들을 살펴보겠습니다. 먼저 어플라이드 머티리얼즈인데요, 오늘 시장의 전반적인 약세 속에서도 유독 큰 폭의 하락을 보였습니다. 장 초반에는 상승세를 보이기도 했지만 이내 급락하며 마감했는데, 이 변동성의 원인은 무엇이었나요.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AMAT",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "해설자",
+      "text": "네, 오늘 어플라이드 머티리얼즈는 장중 한때 341달러를 넘어서며 강세를 보이다가 급격히 매도세가 출회되며 324달러 선에서 마감하는, 매우 변동성이 큰 하루를 보냈습니다. 시장에서는 이 6퍼센트가 넘는 하락을 두고, 최근 공시된 내용에 대한 지연된 반응 혹은 지정학적 리스크에 대한 재평가가 이루어진 것으로 해석하고 있습니다. 인공지능 시대의 핵심 수혜주라는 강력한 성장 스토리와 미중 수출 통제라는 치명적인 리스크가 정면으로 충돌하는 양상입니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AMAT",
+          "start_date": "2026-03-06",
+          "end_date": "2026-03-06"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "AMAT",
+          "form": "10-Q",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001628280-26-009694"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "진행자",
+      "text": "성장과 리스크의 충돌이군요. 먼저 긍정적인 측면부터 살펴보죠, 이런 급락을 비이성적인 과잉 반응으로 보고 오히려 기회로 삼아야 한다는 시각도 있지 않습니까.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "해설자",
+      "text": "그렇습니다, 바로 그 점이 이 종목을 둘러싼 논쟁의 핵심입니다. 긍정적으로 보는 측에서는 어플라이드 머티리얼즈가 AI 칩 생산에 필수적인 차세대 공정, 예를 들어 GAA 트랜지스터나 HBM용 첨단 패키징 장비 시장에서 독보적인 기술력을 가졌다는 점을 강조합니다. 실제로 최근 실적에서도 DRAM 고객사 투자가 늘어난 것이 확인됐습니다. 또한 2억 5천만 달러가 넘는 법률 합의금은 이미 알려진 일회성 비용으로 불확실성을 해소한 측면이 있고, 72억 달러에 달하는 현금과 안정적인 서비스 부문 매출이 완충 역할을 충분히 할 수 있다고 판단하는 것입니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AMAT",
+          "form": "10-Q",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001628280-26-009694"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "진행자",
+      "text": "탄탄한 펀더멘털과 성장성을 감안하면 그럴 수 있겠군요. 하지만 반대로, 시장의 하락이 합리적인 위험 평가의 결과라는 반론도 만만치 않을 것 같습니다.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "해설자",
+      "text": "정확합니다, 리스크를 우려하는 측의 논리는 매우 구체적입니다. 이들은 최근 미국 상무부와 합의한 2억 5천 3백만 달러의 벌금이 끝이 아니라고 봅니다. 합의 조건에는 향후 규정 위반 시 중국으로의 수출을 즉시 중단시킬 수 있는 '유예된 수출 거부 명령'이 포함되어 있기 때문입니다. 이는 회사 매출의 30퍼센트를 차지하는 중국 사업 전체를 위협할 수 있는, 이른바 '다모클레스의 칼'과 같은 지속적인 족쇄로 작용할 수 있다는 분석입니다. 따라서 오늘 주가 하락은 막연한 공포가 아니라, 현실화된 규제 리스크의 무게를 시장이 뒤늦게나마 가격에 반영하는 과정으로 해석됩니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AMAT",
+          "form": "10-Q",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001628280-26-009694"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "AMAT",
+          "form": "10-K",
+          "filed_date": "2025-12-12",
+          "accession_number": "0001628280-25-056742"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "진행자",
+      "text": "그렇다면 투자자 입장에서는 AI라는 거대한 기회와 지정학적 리스크라는 암초 사이에서 방향을 잡기가 매우 어렵겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "해설자",
+      "text": "네, 현재로서는 섣부른 판단을 내리기 어려운 국면으로 보입니다. 의심의 여지 없이 훌륭한 기술적 해자를 가진 기업이지만, 그 가치를 한순간에 훼손할 수 있는 통제 불가능한 외부 변수에 노출되어 있습니다. 성장 잠재력은 강력한 매도 방어 논리가 되지만, 언제 현실화될지 모르는 수출 통제 리스크는 신규 진입을 망설이게 하는 결정적 요인입니다. 현재 주가는 이 두 가지 상반된 힘이 팽팽하게 맞서는 위태로운 균형 상태를 반영하고 있는 것으로 판단되며, 리스크 관리가 필요한 시점으로 보입니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "AMAT",
+          "form": "10-Q",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001628280-26-009694"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "진행자",
+      "text": "네, 오늘 시장은 파월 의장의 발언에 힘입어 그야말로 뜨거웠습니다. 오늘 장 흐름을 간단하게 정리해주시죠.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "해설자",
+      "text": "한마디로 요약하면 연준의 금리 인하 기대감이 시장을 최고치로 이끌었습니다. 제롬 파월 연준 의장이 올해 어느 시점엔가 금리를 인하하는 것이 적절할 것이라고 재차 확인하면서 투자 심리가 크게 개선됐습니다. 특히 기술주 중심의 나스닥 지수가 1.5% 이상 급등하며 사상 최고치를 경신했고, S&P 500 지수 역시 장중 및 종가 기준 모두 역대 최고 기록을 세웠습니다. 금리 인하 경로에 대한 불확실성이 어느 정도 해소되면서, 시장은 이제 다음 경제 지표로 시선을 옮기고 있습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2024-03-07",
+          "end_date": "2024-03-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2024-03-07",
+          "end_date": "2024-03-07"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "진행자",
+      "text": "시장의 시선이 다음 경제 지표로 향하고 있다면, 당장 내일 발표될 고용보고서가 중요하겠군요?",
+      "sources": []
+    },
+    {
+      "id": 40,
+      "speaker": "해설자",
+      "text": "맞습니다. 시장의 관심은 온통 현지 시간으로 금요일 오전에 발표될 2월 비농업 고용보고서에 쏠려 있습니다. 이 보고서는 연준의 향후 금리 정책 방향을 가늠할 수 있는 핵심적인 자료이기 때문입니다. 투자자들은 고용 시장이 너무 과열되지도, 너무 급격히 냉각되지도 않는 이른바 '골디락스' 시나리오를 기대하고 있습니다. 만약 신규 고용이 예상치를 크게 웃돌고 임금 상승률이 여전히 높게 나온다면 금리 인하 시점이 더 늦춰질 수 있다는 우려를 낳을 수 있고, 반대로 고용이 급격히 위축된다면 경기 침체에 대한 불안감을 키울 수 있어 그 결과에 따라 시장 변동성이 커질 수 있습니다.",
+      "sources": []
+    },
+    {
+      "id": 41,
+      "speaker": "진행자",
+      "text": "고용보고서 이후에는 또 어떤 경제 지표들을 주목해야 할까요?",
+      "sources": []
+    },
+    {
+      "id": 42,
+      "speaker": "해설자",
+      "text": "고용보고서의 충격이 가시고 나면 시장은 곧바로 다음 주에 발표될 2월 소비자물가지수 CPI에 주목할 것입니다. 지난 1월 CPI가 예상보다 높게 나오면서 인플레이션 둔화세가 정체된 것 아니냐는 우려가 있었기 때문에, 이번 2월 데이터가 매우 중요합니다. 여기서 인플레이션이 다시 안정적인 둔화 추세를 보인다는 증거가 확인된다면, 시장은 6월 금리 인하 가능성을 더욱 확신하게 될 것입니다. 결국 고용과 물가, 이 두 가지 지표가 앞으로 몇 달간 시장의 방향을 결정짓는 가장 중요한 변수가 될 전망입니다.",
+      "sources": []
+    },
+    {
+      "id": 43,
+      "speaker": "진행자",
+      "text": "그렇군요. 마지막으로 투자자들이 유념해야 할 점을 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 44,
+      "speaker": "해설자",
+      "text": "시장이 사상 최고치를 경신하며 낙관적인 분위기가 팽배하지만, 이러한 기대감은 앞으로 발표될 데이터에 의해 얼마든지 바뀔 수 있다는 점을 기억해야 합니다. 파월 의장은 금리 인하의 문을 열어두었지만, 그 문을 통과하기 위해서는 인플레이션이 확실히 잡히고 있다는 데이터 증거가 필요합니다. 따라서 투자자들은 시장의 긍정적인 분위기에만 편승하기보다는, 앞으로 발표될 주요 경제 지표들을 면밀히 살피면서 시장의 미묘한 온도 변화에 대응할 수 있는 신중한 자세를 유지하는 것이 중요하겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 45,
+      "speaker": "진행자",
+      "text": "네, 신중한 접근이 필요하겠군요. 지금까지 3월 7일 미국 증시 장마감 브리핑이었습니다. 감사합니다.",
+      "sources": []
+    }
+  ]
+}
