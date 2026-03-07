@@ -298,16 +298,24 @@ jobs:
             rm -f podcast/$TARGET_DATE/ko/shorts-firm/*.wav
           fi
 
-          # Keep only publish-ready KO assets after Step 2.
-          # metadata.json is retained because Step 4 uploads it.
-          # metadata.txt is retained because shorts-firm regeneration depends on it.
+          # Keep publish-ready KO assets plus YouTube prerequisites after Step 2.
+          # These files allow later run_youtube.sh reruns without rebuilding everything.
           KO_DIR="podcast/$TARGET_DATE/ko"
           if [[ -d "$KO_DIR" ]]; then
             find "$KO_DIR" -type f \
               ! -path "$KO_DIR/$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/script.json" \
               ! -path "$KO_DIR/metadata.json" \
               ! -path "$KO_DIR/metadata.txt" \
+              ! -path "$KO_DIR/shorts/script.json" \
+              ! -path "$KO_DIR/shorts/sections.timing.json" \
+              ! -path "$KO_DIR/shorts/slides.render.json" \
               ! -path "$KO_DIR/shorts/shorts$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/shorts-firm/script.json" \
+              ! -path "$KO_DIR/shorts-firm/sections.timing.json" \
+              ! -path "$KO_DIR/shorts-firm/slides.script.json" \
+              ! -path "$KO_DIR/shorts-firm/slides.render.template.json" \
+              ! -path "$KO_DIR/shorts-firm/slides.render.json" \
               ! -path "$KO_DIR/shorts-firm/shorts$TARGET_DATE.mp3" \
               -delete
             find "$KO_DIR" -depth -type d -empty -delete

@@ -888,6 +888,9 @@ require_file "${SHORTS_FIRM_SLIDES_PROMPT_CONFIG}"
 
 EPISODE_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}"
 EPISODE_JSON="${EPISODE_BASE}/${DATE}.json"
+if [ ! -f "${EPISODE_JSON}" ] && [ -f "${EPISODE_BASE}/script.json" ]; then
+    EPISODE_JSON="${EPISODE_BASE}/script.json"
+fi
 EPISODE_MP3="${EPISODE_BASE}/${DATE}.mp3"
 EPISODE_OUTPUT_DIR="${EPISODE_BASE}/youtube"
 EPISODE_BASENAME="${DATE}_${LANG}_episode"

@@ -1,0 +1,58 @@
+{
+  "date": "20260306",
+  "lang": "ko",
+  "audioFile": "shorts20260306.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 70.484,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 7.131,
+      "endSec": 7.131,
+      "speechDurationSec": 7.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 53,
+      "text": "예상치 15만 개를 빗나간 고용 쇼크와 10% 넘게 폭등한 유가, 시장은 왜 패닉에 빠졌을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 7.131,
+      "speechEndSec": 22.342,
+      "endSec": 22.342,
+      "speechDurationSec": 15.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 108,
+      "text": "3월 7일 미국 증시는 다우 0.95%, S&P 500 1.33%, 나스닥 1.59% 급락하며 장을 마감했습니다. 경기 침체 공포와 유가 급등이 만들어낸 스태그플레이션 우려가 시장을 덮쳤습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.342,
+      "speechEndSec": 68.633,
+      "endSec": 68.633,
+      "speechDurationSec": 46.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 428,
+      "text": "시장을 강타한 악재는 두 가지였습니다. 첫째, 2월 비농업 일자리가 5만 9천 개 증가할 것이란 예상을 깨고 무려 9만 2천 개나 감소하며 경착륙 공포를 불러왔습니다. 실업률도 4.4%로 상승했습니다. 둘째, 중동 분쟁으로 호르무즈 해협 통행이 사실상 중단되면서 서부 텍사스산 원유가 하루 만에 10% 이상 폭등해 배럴당 91달러를 돌파했습니다. 주간 상승률은 38%로 1985년 이후 최대폭입니다. 성장 둔화와 물가 급등이 동시에 나타나는 최악의 스태그플레이션 시나리오가 부상하자 시장은 패닉에 빠졌습니다. 델타, 유나이티드 등 항공주들은 3% 넘게 급락했고, 공포지수 VIX는 29를 넘어섰으며, 안전자산인 금 가격은 상승했습니다. 연준은 경기 부양을 위해 금리를 내려야 하지만, 인플레이션 우려에 손발이 묶인 진퇴양난의 상황에 빠졌다는 분석이 지배적이었습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 68.633,
+      "speechEndSec": 70.484,
+      "endSec": 70.484,
+      "speechDurationSec": 1.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
