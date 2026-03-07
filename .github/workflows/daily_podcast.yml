@@ -300,11 +300,13 @@ jobs:
 
           # Keep only publish-ready KO assets after Step 2.
           # metadata.json is retained because Step 4 uploads it.
+          # metadata.txt is retained because shorts-firm regeneration depends on it.
           KO_DIR="podcast/$TARGET_DATE/ko"
           if [[ -d "$KO_DIR" ]]; then
             find "$KO_DIR" -type f \
               ! -path "$KO_DIR/$TARGET_DATE.mp3" \
               ! -path "$KO_DIR/metadata.json" \
+              ! -path "$KO_DIR/metadata.txt" \
               ! -path "$KO_DIR/shorts/shorts$TARGET_DATE.mp3" \
               ! -path "$KO_DIR/shorts-firm/shorts$TARGET_DATE.mp3" \
               -delete

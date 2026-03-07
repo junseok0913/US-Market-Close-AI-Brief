@@ -1,0 +1,333 @@
+name: YouTube Automation
+
+on:
+  schedule:
+    # Vancouver 14:00 after BC's final DST change on March 8, 2026.
+    - cron: "0 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Run date (YYYYMMDD). Empty = America/New_York today"
+        required: false
+        type: string
+      lang:
+        description: "Render language"
+        required: false
+        default: "ko"
+        type: choice
+        options:
+          - ko
+          - en
+      start_from:
+        description: "Start from pipeline step (1-5)"
+        required: false
+        default: "1"
+        type: string
+      overwrite:
+        description: "Overwrite existing outputs"
+        required: false
+        default: false
+        type: boolean
+      upload:
+        description: "Upload generated videos to YouTube"
+        required: false
+        default: true
+        type: boolean
+      privacy:
+        description: "YouTube privacy"
+        required: false
+        default: "public"
+        type: choice
+        options:
+          - public
+          - unlisted
+          - private
+      preview_seconds:
+        description: "Optional preview render length in seconds"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run-youtube:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: "1"
+      LANGSMITH_TRACING_V2: "false"
+      LANGCHAIN_TRACING_V2: "false"
+      LANGSMITH_API_KEY: ""
+      LANGCHAIN_API_KEY: ""
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install system dependencies
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      - name: Install Python dependencies
+        run: uv sync --frozen
+
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        working-directory: web
+        run: npx playwright install --with-deps chromium
+
+      - name: Resolve run parameters
+        id: params
+        env:
+          INPUT_DATE: ${{ github.event.inputs.date }}
+          INPUT_LANG: ${{ github.event.inputs.lang }}
+          INPUT_START_FROM: ${{ github.event.inputs.start_from }}
+          INPUT_OVERWRITE: ${{ github.event.inputs.overwrite }}
+          INPUT_UPLOAD: ${{ github.event.inputs.upload }}
+          INPUT_PRIVACY: ${{ github.event.inputs.privacy }}
+          INPUT_PREVIEW_SECONDS: ${{ github.event.inputs.preview_seconds }}
+        run: |
+          set -euo pipefail
+
+          normalize_bool() {
+            case "${1,,}" in
+              1|true|yes|on) echo "true" ;;
+              ""|0|false|no|off) echo "false" ;;
+              *) return 1 ;;
+            esac
+          }
+
+          TARGET_DATE="${INPUT_DATE:-}"
+          if [[ -z "$TARGET_DATE" ]]; then
+            TARGET_DATE="$(TZ=America/New_York date +'%Y%m%d')"
+          fi
+          if ! [[ "$TARGET_DATE" =~ ^[0-9]{8}$ ]]; then
+            echo "Invalid date format: $TARGET_DATE (expected YYYYMMDD)" >&2
+            exit 1
+          fi
+
+          LANG="${INPUT_LANG:-ko}"
+          if [[ "$LANG" != "ko" && "$LANG" != "en" ]]; then
+            echo "Invalid --lang value: $LANG (expected ko or en)" >&2
+            exit 1
+          fi
+
+          START_FROM="${INPUT_START_FROM:-1}"
+          if ! [[ "$START_FROM" =~ ^[1-5]$ ]]; then
+            echo "Invalid --start-from value: $START_FROM (expected 1-5)" >&2
+            exit 1
+          fi
+
+          OVERWRITE="$(normalize_bool "${INPUT_OVERWRITE:-false}")" || {
+            echo "Invalid overwrite flag: ${INPUT_OVERWRITE:-}" >&2
+            exit 1
+          }
+          UPLOAD="$(normalize_bool "${INPUT_UPLOAD:-true}")" || {
+            echo "Invalid upload flag: ${INPUT_UPLOAD:-}" >&2
+            exit 1
+          }
+
+          PRIVACY="${INPUT_PRIVACY:-public}"
+          if [[ "$PRIVACY" != "public" && "$PRIVACY" != "unlisted" && "$PRIVACY" != "private" ]]; then
+            echo "Invalid --privacy value: $PRIVACY" >&2
+            exit 1
+          fi
+
+          PREVIEW_SECONDS="${INPUT_PREVIEW_SECONDS:-}"
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            if ! [[ "$PREVIEW_SECONDS" =~ ^[0-9]+$ ]] || [[ "$PREVIEW_SECONDS" -le 0 ]]; then
+              echo "Invalid --preview-seconds value: $PREVIEW_SECONDS" >&2
+              exit 1
+            fi
+          fi
+
+          EPISODE_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_thumbnail"
+          SHORTS_BASENAME="${TARGET_DATE}_${LANG}_shorts"
+          SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
+          SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts"
+          SHORTS_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            EPISODE_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_episode_preview_${PREVIEW_SECONDS}s_thumbnail"
+            SHORTS_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
+            SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
+            SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
+            SHORTS_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
+          fi
+
+          echo "target_date=$TARGET_DATE" >> "$GITHUB_OUTPUT"
+          echo "lang=$LANG" >> "$GITHUB_OUTPUT"
+          echo "start_from=$START_FROM" >> "$GITHUB_OUTPUT"
+          echo "overwrite=$OVERWRITE" >> "$GITHUB_OUTPUT"
+          echo "upload=$UPLOAD" >> "$GITHUB_OUTPUT"
+          echo "privacy=$PRIVACY" >> "$GITHUB_OUTPUT"
+          echo "preview_seconds=$PREVIEW_SECONDS" >> "$GITHUB_OUTPUT"
+          echo "episode_thumbnail=podcast/$TARGET_DATE/$LANG/youtube/${EPISODE_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+          echo "shorts_mp4=podcast/$TARGET_DATE/$LANG/shorts/youtube/${SHORTS_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
+          echo "shorts_thumbnail=podcast/$TARGET_DATE/$LANG/shorts/youtube/${SHORTS_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+          echo "shorts_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
+          echo "shorts_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+
+          echo "TARGET_DATE=$TARGET_DATE"
+          echo "LANG=$LANG"
+          echo "START_FROM=$START_FROM"
+          echo "OVERWRITE=$OVERWRITE"
+          echo "UPLOAD=$UPLOAD ($PRIVACY)"
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            echo "PREVIEW_SECONDS=$PREVIEW_SECONDS"
+          fi
+
+      - name: Restore YouTube OAuth files
+        if: steps.params.outputs.upload == 'true'
+        env:
+          YOUTUBE_CLIENT_SECRETS_JSON_BASE64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_JSON_BASE64 }}
+          YOUTUBE_TOKEN_JSON_BASE64: ${{ secrets.YOUTUBE_TOKEN_JSON_BASE64 }}
+        run: |
+          set -euo pipefail
+          : "${YOUTUBE_CLIENT_SECRETS_JSON_BASE64:?Missing YOUTUBE_CLIENT_SECRETS_JSON_BASE64 secret}"
+          : "${YOUTUBE_TOKEN_JSON_BASE64:?Missing YOUTUBE_TOKEN_JSON_BASE64 secret}"
+
+          mkdir -p shared/runtime/secrets/youtube shared/runtime/cache/youtube
+          python - <<'PY'
+          import base64
+          import os
+          from pathlib import Path
+
+          files = [
+              ("YOUTUBE_CLIENT_SECRETS_JSON_BASE64", Path("shared/runtime/secrets/youtube/client_secret.json")),
+              ("YOUTUBE_TOKEN_JSON_BASE64", Path("shared/runtime/cache/youtube/token.json")),
+          ]
+          for env_name, path in files:
+              raw = os.environ.get(env_name, "").strip()
+              if not raw:
+                  raise SystemExit(f"Missing required secret payload: {env_name}")
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_bytes(base64.b64decode(raw))
+          PY
+
+          chmod 600 shared/runtime/secrets/youtube/client_secret.json shared/runtime/cache/youtube/token.json
+
+      - name: Run YouTube pipeline
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          START_FROM: ${{ steps.params.outputs.start_from }}
+          OVERWRITE: ${{ steps.params.outputs.overwrite }}
+          UPLOAD: ${{ steps.params.outputs.upload }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          PREVIEW_SECONDS: ${{ steps.params.outputs.preview_seconds }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+          chmod +x ./run_youtube.sh
+
+          ARGS=("$TARGET_DATE" "--lang" "$LANG" "--start-from" "$START_FROM" "--privacy" "$PRIVACY")
+          if [[ "$OVERWRITE" == "true" ]]; then
+            ARGS+=(--overwrite)
+          fi
+          if [[ "$UPLOAD" == "false" ]]; then
+            ARGS+=(--no-upload)
+          fi
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            ARGS+=(--preview-seconds "$PREVIEW_SECONDS")
+          fi
+
+          echo "Running: ./run_youtube.sh ${ARGS[*]}"
+          ./run_youtube.sh "${ARGS[@]}"
+
+      - name: Upload YouTube artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: youtube-${{ steps.params.outputs.target_date }}-${{ steps.params.outputs.lang }}
+          path: |
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/youtube
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts/youtube
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-firm/youtube
+          if-no-files-found: warn
+
+      - name: Commit and push generated YouTube outputs
+        if: success()
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          BRANCH_NAME: ${{ github.ref_name }}
+          EPISODE_THUMBNAIL: ${{ steps.params.outputs.episode_thumbnail }}
+          SHORTS_MP4: ${{ steps.params.outputs.shorts_mp4 }}
+          SHORTS_THUMBNAIL: ${{ steps.params.outputs.shorts_thumbnail }}
+          SHORTS_FIRM_MP4: ${{ steps.params.outputs.shorts_firm_mp4 }}
+          SHORTS_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_firm_thumbnail }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH_NAME"
+
+          normal_paths=(
+            "web/public/data/$TARGET_DATE.json"
+            "web/public/audio/$TARGET_DATE.mp3"
+            "web/public/data/shorts/$TARGET_DATE.json"
+            "web/public/audio/shorts/$TARGET_DATE.mp3"
+            "web/public/data/shorts-firm/$TARGET_DATE.json"
+            "web/public/audio/shorts-firm/$TARGET_DATE.mp3"
+            "web/src/generated/shorts-firm/${TARGET_DATE}_${LANG}.generated.tsx"
+            "$EPISODE_THUMBNAIL"
+            "$SHORTS_THUMBNAIL"
+            "$SHORTS_FIRM_THUMBNAIL"
+          )
+          for path in "${normal_paths[@]}"; do
+            if [[ -e "$path" ]]; then
+              git add -A "$path"
+            fi
+          done
+
+          force_paths=(
+            "$SHORTS_MP4"
+            "$SHORTS_FIRM_MP4"
+          )
+          for path in "${force_paths[@]}"; do
+            if [[ -e "$path" ]]; then
+              git add -f "$path"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "No YouTube output changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(youtube): ${TARGET_DATE} ${LANG} artifacts"
+          git pull --rebase --autostash origin "$BRANCH_NAME"
+          git push origin HEAD:"$BRANCH_NAME"

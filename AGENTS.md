@@ -2,6 +2,8 @@
 
 Keep this file brief and operational. Prefer commands and checks the agent can run.
 
+- Do not require creating or updating `PLANS.md` in this repo.
+
 ## Scope
 
 - Repo: US market close briefing pipeline (Python + LangGraph + Next.js).
