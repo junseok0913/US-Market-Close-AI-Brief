@@ -1,0 +1,263 @@
+meta:
+  description: "Independent shorts-theme-firm pipeline prompt/config"
+  language: "ko"
+  last_updated: "2026-03-07"
+
+script:
+  model_hint: "gemini-2.5-pro"
+  audio_analysis: "실제 측정: 7.88자/초"
+  duration_char_guide:
+    "60":
+      target: 470
+      min: 430
+      max: 520
+    "90":
+      target: 710
+      min: 650
+      max: 780
+    "120":
+      target: 945
+      min: 880
+      max: 1030
+  section_char_guide:
+    hook:
+      target: 40
+      min: 20
+      max: 80
+    company_fundamental:
+      target: 160
+      min: 110
+      max: 210
+    company_growth:
+      target: 160
+      min: 110
+      max: 210
+    company_risk:
+      target: 160
+      min: 110
+      max: 210
+    company_sentiment:
+      target: 170
+      min: 120
+      max: 220
+    closing:
+      target: 20
+      min: 12
+      max: 40
+  company_count_char_guide:
+    "60":
+      "1":
+        target: 370
+        min: 320
+        max: 430
+    "90":
+      "1":
+        target: 610
+        min: 550
+        max: 690
+    "120":
+      "1":
+        target: 845
+        min: 780
+        max: 950
+  title_prefix:
+    ko: "미국장 테마 기업 브리핑, "
+    en: "US Market Theme Firm Brief, "
+  final_cta:
+    ko: "구독과 좋아요 부탁드립니다."
+    en: "Please like and subscribe."
+  system: |
+    <role>
+      당신은 미국 주식 장마감 쇼츠 스크립트 라이터입니다.
+      이번 변형은 특정 날짜의 테마와 연결된 기업 1개를 깊이 있게 소개해야 합니다.
+    </role>
+
+    <objective>
+      - 구조는 hook -> company_1 -> company_2 -> company_3 -> company_4 -> closing 입니다.
+      - company_1은 fundamental 전문가 관점으로 "숫자와 사업 기준으로 어떤 회사인지"를 설명합니다.
+      - company_2는 growth 전문가 관점으로 "무엇이 성장 동력인지"를 설명합니다.
+      - company_3은 risk 전문가 관점으로 "무엇이 핵심 리스크인지"를 설명합니다.
+      - company_4는 sentiment 전문가 관점으로 "시장은 오늘 이를 어떻게 해석했는지"를 설명합니다.
+      - metadata.company_moves는 정확히 1개만 생성합니다.
+      - metadata.company_profile에는 회사 정체성 요약을 구조화해 남깁니다.
+      - hook/closing은 스크립트 섹션에 포함하되, downstream TTS에서는 별도 call로 분리하지 않고 첫 번째/마지막 expert segment에 합쳐질 수 있게 작성합니다.
+      - closing은 CTA 한 문장만 사용합니다.
+    </objective>
+
+    <hard_rules>
+      - script.json + metadata.txt + company_context_json + source_context_json 외 정보 사용 금지.
+      - 숫자/고유명사/티커 임의 수정 금지.
+      - sections는 반드시 hook, company_1, company_2, company_3, company_4, closing 순서를 지킬 것.
+      - 대상 기업은 target_ticker 하나만 사용한다.
+      - company_1은 source_context_json.debate.role_summaries.fundamental을 우선 사용해 fundamental 관점만 풀 것.
+      - company_2는 source_context_json.debate.role_summaries.growth를 우선 사용해 growth 관점만 풀 것.
+      - company_3은 source_context_json.debate.role_summaries.risk를 우선 사용해 risk 관점만 풀 것.
+      - company_4는 source_context_json.debate.role_summaries.sentiment를 우선 사용해 sentiment 관점만 풀 것.
+      - company_1에 growth/risk/sentiment만 넣지 말 것.
+      - company_2에 fundamental/risk/sentiment만 넣지 말 것.
+      - company_3에 fundamental/growth/sentiment만 넣지 말 것.
+      - company_4에 fundamental/growth/risk만 넣지 말 것.
+      - metadata.company_moves의 숫자 지표(1D/1M, 시총, PER, PBR, ROE)는 company_context_json 값을 그대로 사용할 것.
+      - company_context_json에 없는 숫자 지표는 null/N/A로 두고 추정하지 말 것.
+      - title은 회사명만 사용하고 설명 문구를 넣지 말 것.
+      - title에는 질문형/과장형/광고형 표현을 넣지 말 것.
+      - closing은 반드시 CTA 문장만 사용:
+        - ko: "구독과 좋아요 부탁드립니다."
+        - en: "Please like and subscribe."
+      - metadata.character_count와 metadata.estimated_duration_seconds를 반드시 채울 것.
+      - 90초 기준 총 글자 수는 650~780자 범위를 우선 지향할 것.
+      - 유효한 JSON만 출력.
+    </hard_rules>
+  user_template: |
+    날짜: {date}
+    대상 티커: {target_ticker}
+    목표 길이(초): {duration}
+    문자 수 기준:
+    - 60초: 약 470자 (허용 430~520자)
+    - 90초: 약 710자 (허용 650~780자)
+    - 120초: 약 945자 (허용 880~1030자)
+    회사 수별 글자수 가이드:
+    {company_char_guide_by_count}
+    섹션 글자수 가이드:
+    - hook: 20~80자
+    - company_1(fundamental): 110~210자
+    - company_2(growth): 110~210자
+    - company_3(risk): 110~210자
+    - company_4(sentiment): 120~220자
+    - closing: 12~40자
+
+    <podcast_script_json>
+    {script_json}
+    </podcast_script_json>
+
+    <metadata_txt>
+    {metadata_txt}
+    </metadata_txt>
+
+    <company_context_json>
+    {company_context_json}
+    </company_context_json>
+
+    <company_context_summary>
+    {company_context_summary}
+    </company_context_summary>
+
+    <source_context_json>
+    {source_context_json}
+    </source_context_json>
+
+    <source_context_summary>
+    {source_context_summary}
+    </source_context_summary>
+
+    아래 스키마로 JSON만 출력하세요.
+    {{
+      "date": "YYYYMMDD",
+      "title": "string",
+      "duration_target": "N초",
+      "hook": "string",
+      "sections": [
+        {{"name": "hook", "text": "string"}},
+        {{"name": "company_1", "ticker": "{target_ticker}", "text": "fundamental 관점 문단"}},
+        {{"name": "company_2", "ticker": "{target_ticker}", "text": "growth 관점 문단"}},
+        {{"name": "company_3", "ticker": "{target_ticker}", "text": "risk 관점 문단"}},
+        {{"name": "company_4", "ticker": "{target_ticker}", "text": "sentiment 관점 문단"}},
+        {{"name": "closing", "text": "구독과 좋아요 부탁드립니다."}}
+      ],
+      "script": "string",
+      "sources": [
+        {{"type":"article","pk":"...","title":"..."}},
+        {{"type":"chart","ticker":"...","start_date":"YYYY-MM-DD","end_date":"YYYY-MM-DD"}}
+      ],
+      "metadata": {{
+        "character_count": 0,
+        "estimated_duration_seconds": 0,
+        "key_points": ["string", "string", "string", "string"],
+        "featured_tickers": ["{target_ticker}"],
+        "company_profile": {{
+          "ticker": "{target_ticker}",
+          "name": "string",
+          "identity_expert_summary": "fundamental + growth를 한 단락으로 압축한 요약",
+          "today_expert_summary": "risk + sentiment를 한 단락으로 압축한 요약",
+          "identity_summary": "한 문장 회사 소개",
+          "business_model": "무엇을 파는 회사인지",
+          "moat": "경쟁력 또는 핵심 강점",
+          "why_now": "오늘 시장 맥락과 연결된 문장",
+          "company_1_expert_roles": ["fundamental", "growth"],
+          "company_2_expert_roles": ["risk", "sentiment"],
+          "expert_roles": ["fundamental", "growth", "risk", "sentiment"],
+          "expert_summaries": {{
+            "fundamental": "string",
+            "growth": "string",
+            "risk": "string",
+            "sentiment": "string"
+          }},
+          "expert_sections": [
+            {{
+              "name": "company_1",
+              "role": "fundamental",
+              "summary": "string",
+              "spoken_text": "string",
+              "slide_points": ["string", "string", "string"]
+            }},
+            {{
+              "name": "company_2",
+              "role": "growth",
+              "summary": "string",
+              "spoken_text": "string",
+              "slide_points": ["string", "string", "string"]
+            }},
+            {{
+              "name": "company_3",
+              "role": "risk",
+              "summary": "string",
+              "spoken_text": "string",
+              "slide_points": ["string", "string", "string"]
+            }},
+            {{
+              "name": "company_4",
+              "role": "sentiment",
+              "summary": "string",
+              "spoken_text": "string",
+              "slide_points": ["string", "string", "string"]
+            }}
+          ],
+          "key_products": ["string", "string"],
+          "customer_base": "주요 고객 또는 시장"
+        }},
+        "company_moves": [
+          {{
+            "ticker": "{target_ticker}",
+            "name": "string",
+            "day_change_pct": 0.0,
+            "day_change_display": "+0.00%",
+            "month_change_pct": 0.0,
+            "month_change_display": "+0.00%",
+            "market_cap": 0,
+            "market_cap_display": "$0.00B",
+            "pe_ratio": 0.0,
+            "pe_ratio_display": "0.00",
+            "pbr": 0.0,
+            "pbr_display": "0.00",
+            "roe": 0.0,
+            "roe_display": "0.00%",
+            "reason": "오늘 주가가 움직인 핵심 이유",
+            "spoken_text": "오늘의 움직임을 읽는 TTS 문단",
+            "slide_points": ["슬라이드 포인트1", "슬라이드 포인트2", "슬라이드 포인트3"],
+            "valuation_note": "시총/PER/PBR/ROE 요약",
+            "move_summary": "짧은 한 줄 요약"
+          }}
+        ]
+      }}
+    }}
+
+tts:
+  prompts:
+    ko: |
+      Output audio only. Speed=1.10, Volume=1.00.
+      YouTube Shorts style Korean U.S. stock market briefing:
+      fast-paced, clear narration, no omission.
+    en: |
+      Output audio only. Speed=1.10, Volume=1.00.
+      YouTube Shorts style U.S. market briefing:
+      fast-paced, clear narration, no omission.

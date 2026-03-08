@@ -36,7 +36,11 @@ function toInteger(raw, fallback = 0) {
   return Math.trunc(value);
 }
 
-function resolveDurationSeconds(episode) {
+function resolveDurationSeconds(episode, explicitDurationSeconds = 0) {
+  if (Number.isFinite(explicitDurationSeconds) && explicitDurationSeconds > 0) {
+    return explicitDurationSeconds;
+  }
+
   const scripts = Array.isArray(episode?.scripts) ? episode.scripts : [];
   if (scripts.length > 0) {
     const last = scripts[scripts.length - 1];
@@ -53,18 +57,20 @@ function resolveDurationSeconds(episode) {
 }
 
 function detectBrowserExecutable() {
-  const candidates = [
-    process.env.REMOTION_BROWSER_EXECUTABLE,
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
+  // Prefer Remotion's default browser unless the user explicitly pins one.
+  const pinned = process.env.REMOTION_BROWSER_EXECUTABLE;
+  if (pinned && fs.existsSync(pinned)) {
+    return pinned;
   }
   return "";
+}
+
+function resolveRemotionCommand(webRoot) {
+  const localBin = path.resolve(webRoot, "node_modules/.bin/remotion");
+  if (fs.existsSync(localBin)) {
+    return { cmd: localBin, argsPrefix: [] };
+  }
+  return { cmd: "npx", argsPrefix: ["remotion"] };
 }
 
 function main() {
@@ -73,6 +79,7 @@ function main() {
   const outputPath = args.output ? path.resolve(args.output) : "";
   const fps = toPositiveNumber(args.fps, 30);
   const previewSeconds = toPositiveNumber(args["preview-seconds"], 0);
+  const explicitDurationSeconds = toPositiveNumber(args["duration-seconds"], 0);
   const renderTimeoutMs = toPositiveNumber(
     args.timeout ?? process.env.YOUTUBE_REMOTION_TIMEOUT_MS ?? process.env.REMOTION_TIMEOUT_MS,
     180000,
@@ -92,6 +99,7 @@ function main() {
   const entryPoint = args["entry-point"] || "remotion/episode.index.ts";
   const compositionId = args["composition-id"] || "EpisodeComposition";
   const includeAudio = args["no-audio"] ? false : true;
+  const chartDataJsonPath = args["chart-data-json"] ? path.resolve(args["chart-data-json"]) : "";
   const logLevel = String(args.log || process.env.REMOTION_LOG_LEVEL || "info").trim();
   const browserExecutable = args["browser-executable"] || detectBrowserExecutable();
 
@@ -108,7 +116,10 @@ function main() {
   const raw = fs.readFileSync(episodeJsonPath, "utf-8");
   const episode = JSON.parse(raw);
 
-  const durationSeconds = resolveDurationSeconds(episode);
+  const durationSeconds = resolveDurationSeconds(episode, explicitDurationSeconds);
+  if (durationSeconds > 0) {
+    episode.durationSeconds = durationSeconds;
+  }
   const targetDuration =
     previewSeconds > 0 ? Math.max(0.2, Math.min(previewSeconds, durationSeconds)) : durationSeconds;
   const frameCount = Math.max(1, Math.ceil(targetDuration * fps));
@@ -116,12 +127,20 @@ function main() {
 
   const date = String(episode?.date || "").replace(/[^0-9]/g, "");
   const audioSrc = args["audio-src"] || `audio/${date || "episode"}.mp3`;
+  let chartDataMap = {};
+  if (chartDataJsonPath) {
+    if (!fs.existsSync(chartDataJsonPath)) {
+      throw new Error(`Chart data JSON not found: ${chartDataJsonPath}`);
+    }
+    chartDataMap = JSON.parse(fs.readFileSync(chartDataJsonPath, "utf-8"));
+  }
 
   const props = {
     episode,
     audioSrc,
     includeAudio,
     turnLeadMs,
+    chartDataMap,
   };
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
@@ -145,8 +164,9 @@ function main() {
     console.log(`[remotion-episode] browser-executable: ${browserExecutable}`);
   }
 
-  const renderCoreArgs = [
-    "remotion",
+  const remotion = resolveRemotionCommand(webRoot);
+  const remotionArgs = [
+    ...remotion.argsPrefix,
     "render",
     entryPoint,
     compositionId,
@@ -163,32 +183,16 @@ function main() {
     logLevel || "info",
     "--overwrite",
   ];
-  const hasLocalRemotion =
-    spawnSync("npx", ["--no-install", "remotion", "--version"], {
-      cwd: webRoot,
-      stdio: "ignore",
-      env: process.env,
-    }).status === 0;
-  const remotionArgs = hasLocalRemotion
-    ? renderCoreArgs
-    : [
-        "--yes",
-        "--package",
-        "@remotion/cli@4.0.427",
-        "--package",
-        "zod@4.3.6",
-        ...renderCoreArgs,
-      ];
   console.log(
     `[remotion-episode] cli-source: ${
-      hasLocalRemotion ? "local (npx --no-install)" : "npx package (@remotion/cli@4.0.427)"
+      remotion.cmd === "npx" ? "npx remotion" : "local (node_modules/.bin/remotion)"
     }`,
   );
   if (browserExecutable) {
     remotionArgs.push("--browser-executable", browserExecutable);
   }
 
-  const result = spawnSync("npx", remotionArgs, {
+  const result = spawnSync(remotion.cmd, remotionArgs, {
     cwd: webRoot,
     stdio: "inherit",
     env: process.env,

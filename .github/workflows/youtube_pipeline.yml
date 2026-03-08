@@ -21,7 +21,7 @@ on:
       start_from:
         description: "Start from pipeline step (1-5)"
         required: false
-        default: "1"
+        default: "3"
         type: string
       overwrite:
         description: "Overwrite existing outputs"
@@ -141,7 +141,7 @@ jobs:
             exit 1
           fi
 
-          START_FROM="${INPUT_START_FROM:-1}"
+          START_FROM="${INPUT_START_FROM:-3}"
           if ! [[ "$START_FROM" =~ ^[1-5]$ ]]; then
             echo "Invalid --start-from value: $START_FROM (expected 1-5)" >&2
             exit 1

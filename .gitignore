@@ -16,3 +16,11 @@ shared/runtime/secrets/
 
 # Video artifacts
 *.mp4
+
+# Allow shorts mp4s from 20260306 onwards only
+!podcast/2026030[6-9]/ko/shorts*/youtube/*.mp4
+!podcast/202603[123]*/ko/shorts*/youtube/*.mp4
+!podcast/20260[4-9]*/ko/shorts*/youtube/*.mp4
+!podcast/20261*/ko/shorts*/youtube/*.mp4
+!podcast/202[7-9]*/ko/shorts*/youtube/*.mp4
+!podcast/20[3-9]*/ko/shorts*/youtube/*.mp4

@@ -29,6 +29,9 @@ interface YouTubeEpisodePlayerProps {
   storageDate?: string;
   renderMode?: boolean;
   forcedSlideIndex?: number;
+  renderCurrentTimeSec?: number;
+  renderDurationSec?: number;
+  renderLeadMs?: number;
 }
 
 interface FitSlideCanvasProps {
@@ -111,6 +114,179 @@ function slideTitle(slide: Slide | undefined): string {
     default:
       return '브리핑';
   }
+}
+
+function splitSentences(text: string): string[] {
+  return text
+    .split(/(?<=[.!?])\s+|(?<=다\.)\s+|(?<=요\.)\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function compactText(text: string, limit = 120): string {
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= limit) return normalized;
+  return `${normalized.slice(0, Math.max(0, limit - 1)).trim()}…`;
+}
+
+function buildBullets(text: string, maxItems = 3, limit = 80): string[] {
+  return splitSentences(text)
+    .slice(0, maxItems)
+    .map((sentence) => compactText(sentence, limit))
+    .filter(Boolean);
+}
+
+function chapterScripts(episode: Episode, chapterName: Episode['chapter'][number]['name']): Script[] {
+  const chapter = episode.chapter.find((item) => item.name === chapterName);
+  if (!chapter) return [];
+  return episode.scripts.filter((script) => script.id >= chapter.start_id && script.id <= chapter.end_id);
+}
+
+function inferIndexDirection(text: string, fallbackValue: number): number {
+  if (/(하락|급락|하회|밀렸|약세)/.test(text)) return -Math.abs(fallbackValue);
+  if (/(상승|반등|급등|올랐|강세)/.test(text)) return Math.abs(fallbackValue);
+  return fallbackValue;
+}
+
+function extractIndexChange(text: string, pattern: RegExp): number | null {
+  const match = text.match(pattern);
+  if (!match) return null;
+  const value = Number.parseFloat(match[1]);
+  if (!Number.isFinite(value)) return null;
+  const start = Math.max(0, (match.index ?? 0) - 8);
+  const end = Math.min(text.length, (match.index ?? 0) + match[0].length + 24);
+  return inferIndexDirection(text.slice(start, end), value);
+}
+
+function toIsoDate(compactDate: string): string {
+  const cleaned = compactDate.replace(/[^0-9]/g, '');
+  if (cleaned.length !== 8) return compactDate;
+  return `${cleaned.slice(0, 4)}-${cleaned.slice(4, 6)}-${cleaned.slice(6, 8)}`;
+}
+
+function buildFallbackIndices(episode: Episode) {
+  const combined = episode.scripts.slice(0, 10).map((script) => script.text).join(' ');
+  const dow = extractIndexChange(combined, /다우(?:존스)?(?: 산업평균지수)?(?:는)?\s*([0-9]+(?:\.[0-9]+)?)%/);
+  const spx = extractIndexChange(combined, /S&P\s*500(?: 지수)?(?:는)?\s*([0-9]+(?:\.[0-9]+)?)%/i);
+  const nasdaq = extractIndexChange(combined, /나스닥(?: 지수)?(?:는)?\s*([0-9]+(?:\.[0-9]+)?)%/);
+
+  return [
+    { name: 'DOW', value: null, change: null, changePercent: dow ?? 0 },
+    { name: 'S&P 500', value: null, change: null, changePercent: spx ?? 0 },
+    { name: 'NASDAQ', value: null, change: null, changePercent: nasdaq ?? 0 },
+  ];
+}
+
+function buildFallbackSlides(episode: Episode, slideDate: string): Slide[] {
+  const openingScripts = chapterScripts(episode, 'opening');
+  const themeScripts = chapterScripts(episode, 'theme');
+  const tickerScripts = chapterScripts(episode, 'ticker');
+  const closingScripts = chapterScripts(episode, 'closing');
+  const firstTicker = episode.user_tickers[0] || 'TICKER';
+  const eventSources = themeScripts
+    .flatMap((script) => script.sources || [])
+    .filter((source) => source.type === 'event')
+    .slice(0, 3);
+
+  const themeAnalystScripts = themeScripts.filter((script) => script.speaker === '해설자').slice(0, 3);
+  const tickerAnalystScripts = tickerScripts.filter((script) => script.speaker === '해설자').slice(0, 2);
+
+  const slides: Slide[] = [
+    {
+      id: 0,
+      type: 'title',
+      turnId: openingScripts[0]?.id ?? 0,
+      date: toIsoDate(slideDate),
+      nutshell: episode.nutshell,
+      description: compactText(openingScripts[0]?.text || episode.nutshell, 180),
+    },
+    {
+      id: 1,
+      type: 'market-summary',
+      turnId: openingScripts[1]?.id ?? openingScripts[0]?.id ?? 0,
+      title: '오늘의 시장 요약',
+      description: compactText(themeScripts[0]?.text || episode.nutshell, 180),
+      indices: buildFallbackIndices(episode),
+      commodities: [],
+      charts: [
+        { ticker: '^GSPC', title: 'S&P 500' },
+        { ticker: '^IXIC', title: 'NASDAQ' },
+      ],
+    },
+  ];
+
+  for (const [index, script] of themeAnalystScripts.entries()) {
+    slides.push({
+      id: slides.length,
+      type: 'headline',
+      turnId: script.id,
+      title: index === 0 ? '메인 이슈' : `핵심 포인트 ${index + 1}`,
+      subtitle: compactText(splitSentences(script.text)[0] || script.text, 90),
+      description: compactText(script.text, 220),
+      bullets: buildBullets(script.text),
+      theme: index === 0 ? 'red' : 'blue',
+    });
+  }
+
+  if (tickerAnalystScripts.length > 0) {
+    slides.push({
+      id: slides.length,
+      type: 'ticker-intro',
+      turnId: tickerScripts[0]?.id ?? tickerAnalystScripts[0].id,
+      ticker: firstTicker,
+      companyName: firstTicker,
+      currentPrice: 0,
+      dayChange: 0,
+      dayChangePercent: 0,
+      description: compactText(tickerScripts[0]?.text || tickerAnalystScripts[0].text, 180),
+      charts: [{ ticker: firstTicker }],
+    });
+  }
+
+  for (const script of tickerAnalystScripts) {
+    slides.push({
+      id: slides.length,
+      type: 'ticker-analysis',
+      turnId: script.id,
+      ticker: firstTicker,
+      title: compactText(splitSentences(script.text)[0] || `${firstTicker} 분석`, 70),
+      points: buildBullets(script.text, 4, 90),
+      description: compactText(script.text, 220),
+      charts: [{ ticker: firstTicker }],
+    });
+  }
+
+  slides.push({
+    id: slides.length,
+    type: 'events',
+    turnId: themeAnalystScripts.at(-1)?.id ?? closingScripts[0]?.id ?? episode.scripts.at(-1)?.id ?? 0,
+    title: '체크 포인트',
+    description: '시장에 영향을 준 이벤트와 다음 확인 포인트를 정리합니다.',
+    events: eventSources.length > 0
+      ? eventSources.map((source) => ({
+          date: source.date || slideDate,
+          label: compactText(source.title || '주요 이벤트', 50),
+          description: compactText(source.title || '시장 변동성에 영향을 준 이벤트', 90),
+        }))
+      : [
+          {
+            date: slideDate,
+            label: '주요 이벤트 점검',
+            description: compactText(themeScripts[0]?.text || episode.nutshell, 90),
+          },
+        ],
+  });
+
+  slides.push({
+    id: slides.length,
+    type: 'closing',
+    turnId: closingScripts[0]?.id ?? episode.scripts.at(-1)?.id ?? 0,
+    headline: compactText(episode.nutshell, 60),
+    tagline: compactText(closingScripts.at(-1)?.text || '오늘 브리핑을 마칩니다.', 90),
+    description: compactText(closingScripts.map((script) => script.text).join(' '), 220),
+  });
+
+  return slides;
 }
 
 function renderSlide(slide: Slide) {
@@ -215,6 +391,9 @@ export default function YouTubeEpisodePlayer({
   storageDate,
   renderMode = false,
   forcedSlideIndex,
+  renderCurrentTimeSec,
+  renderDurationSec,
+  renderLeadMs,
 }: YouTubeEpisodePlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const lastSyncedTimeRef = useRef(0);
@@ -260,7 +439,11 @@ export default function YouTubeEpisodePlayer({
   const effectiveForcedSlideIndex = forcedSlideIndex ?? queryParams.slide;
 
   const slideLookupDate = storageDate || episode.date;
-  const slides = useMemo(() => getSlides(slideLookupDate), [slideLookupDate]);
+  const staticSlides = useMemo(() => getSlides(slideLookupDate), [slideLookupDate]);
+  const slides = useMemo(
+    () => (staticSlides.length > 0 ? staticSlides : buildFallbackSlides(episode, slideLookupDate)),
+    [episode, slideLookupDate, staticSlides],
+  );
 
   const getCurrentTurnId = useCallback(
     (timeInSeconds: number): number => {
@@ -276,12 +459,19 @@ export default function YouTubeEpisodePlayer({
     [episode.scripts],
   );
 
-  const effectiveLeadMs = queryParams.leadProvided
-    ? queryParams.leadMs
-    : queryParams.capture
-      ? 550
-      : 0;
-  const effectiveTurnTime = Math.max(0, currentTime + effectiveLeadMs / 1000);
+  const effectivePlaybackTime =
+    effectiveRenderMode && Number.isFinite(renderCurrentTimeSec)
+      ? Math.max(0, renderCurrentTimeSec ?? 0)
+      : currentTime;
+  const effectiveLeadMs =
+    effectiveRenderMode && Number.isFinite(renderLeadMs)
+      ? Math.max(0, renderLeadMs ?? 0)
+      : queryParams.leadProvided
+        ? queryParams.leadMs
+        : queryParams.capture
+          ? 550
+          : 0;
+  const effectiveTurnTime = Math.max(0, effectivePlaybackTime + effectiveLeadMs / 1000);
   const currentTurnId = getCurrentTurnId(effectiveTurnTime);
 
   const autoSlideIndex = useMemo(() => {
@@ -367,12 +557,17 @@ export default function YouTubeEpisodePlayer({
   );
 
   const displayTime = useMemo(() => {
-    if (!effectiveRenderMode) return currentTime;
-    if (!currentScript) return currentTime;
+    if (!effectiveRenderMode) return effectivePlaybackTime;
+    if (!currentScript) return effectivePlaybackTime;
     return Math.max(0, currentScript.time[0] / 1000);
-  }, [effectiveRenderMode, currentScript, currentTime]);
+  }, [effectivePlaybackTime, effectiveRenderMode, currentScript]);
 
-  const effectiveDuration = effectiveRenderMode ? scriptedDuration : duration;
+  const effectiveDuration =
+    effectiveRenderMode && Number.isFinite(renderDurationSec)
+      ? Math.max(0, renderDurationSec ?? 0)
+      : effectiveRenderMode
+        ? scriptedDuration
+        : duration;
   const progressPercent =
     effectiveDuration > 0 ? Math.min((displayTime / effectiveDuration) * 100, 100) : 0;
 

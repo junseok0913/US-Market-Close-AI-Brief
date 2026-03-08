@@ -1,0 +1,171 @@
+meta:
+  description: "Shorts-theme-firm slide scene generation prompt"
+  language: "ko"
+  model_hint: "gemini-2.5-pro"
+  last_updated: "2026-03-07"
+
+defaults:
+  min_scene_count: 6
+  max_scene_count: 6
+  ideal_scene_count: 6
+  phase_by_section:
+    hook: "hook"
+    company_1: "insight"
+    company_2: "insight"
+    company_3: "insight"
+    company_4: "insight"
+    closing: "finale"
+  theme_by_section:
+    hook: "alert"
+    company_1: "neutral"
+    company_2: "bull"
+    company_3: "bear"
+    company_4: "macro"
+    closing: "flash"
+  eyebrow_by_section:
+    hook: "장마감 쇼츠"
+    company_1: "펀더멘털"
+    company_2: "성장 포인트"
+    company_3: "리스크"
+    company_4: "시장 해석"
+    closing: "체크포인트"
+
+system: |
+  <role>
+    You design slide copy for the shorts2-style 9:16 YouTube Shorts layout.
+  </role>
+
+  <objective>
+    Build readable scene text for this fixed structure:
+    hook -> company_1(fundamental) -> company_2(growth) -> company_3(risk) -> company_4(sentiment) -> closing.
+    Preserve the existing shorts-firm visual rhythm while making each expert scene clearly distinct.
+  </objective>
+
+  <hard_rules>
+    - Use only provided JSON inputs.
+    - Return valid JSON only.
+    - Scene count must match section count exactly.
+    - First slide headline must equal shorts_script_json.title.
+    - This variant follows shorts-firm audio policy: hook/closing are visual scenes, while narration is merged into first/last expert TTS.
+    - company_1 must answer "숫자와 사업 기준으로 어떤 회사인가" using fundamental.
+    - company_2 must answer "무엇이 성장 동력인가" using growth.
+    - company_3 must answer "무엇이 핵심 리스크인가" using risk.
+    - company_4 must answer "시장은 오늘 이를 어떻게 해석했는가" using sentiment.
+    - company_1..company_4 may use the same ticker.
+    - Closing scene must be CTA-only.
+    - Never invent tickers, numbers, products, or events not present in inputs.
+    - Do not output placeholders like "string", "N/A", "...".
+  </hard_rules>
+
+  <style_rules>
+    - Hook:
+      - headline: keep shorts_script_json.title exactly
+      - subheadline: 18~42 Korean chars
+      - body: optional, <= 42 chars
+    - company_1:
+      - headline: ticker or 사업 정체성 phrase (<= 24 chars)
+      - subheadline: core business or financial snapshot (<= 42 chars)
+      - body: fundamental summary sentence (<= 52 chars)
+      - bullets: 1~3 items, each <= 34 chars
+    - company_2:
+      - headline: ticker or growth phrase (<= 24 chars)
+      - subheadline: what can expand earnings or narrative (<= 42 chars)
+      - body: growth summary sentence (<= 52 chars)
+      - bullets: 1~3 items, each <= 34 chars
+    - company_3:
+      - headline: ticker or risk phrase (<= 24 chars)
+      - subheadline: cost/debt/competition/execution risk (<= 42 chars)
+      - body: risk summary sentence (<= 52 chars)
+      - bullets: 1~3 items, each <= 34 chars
+    - company_4:
+      - headline: ticker or market reaction phrase (<= 24 chars)
+      - subheadline: today’s interpretation or sentiment pivot (<= 42 chars)
+      - body: sentiment summary sentence (<= 52 chars)
+      - bullets: 1~3 items, each <= 34 chars
+      - highlights: prefer 1D/1M like "+1.24%", "-3.08%"
+    - Closing:
+      - headline/subheadline/body should all remain CTA-toned.
+      - bullets should be empty.
+  </style_rules>
+
+user_template: |
+  Create shorts-theme-firm slides for date {date} and language {lang}.
+
+  <duration_seconds>{duration_seconds}</duration_seconds>
+
+  <shorts_script_json>
+  {shorts_script_json}
+  </shorts_script_json>
+
+  <sections_json>
+  {sections_json}
+  </sections_json>
+
+  <section_timing_json>
+  {section_timing_json}
+  </section_timing_json>
+
+  <company_moves_json>
+  {company_moves_json}
+  </company_moves_json>
+
+  Output JSON schema:
+  {{
+    "meta": {{
+      "key_points": ["...", "...", "..."],
+      "featured_tickers": [
+        {{"ticker": "ORCL", "label": "오라클", "tag": "핵심"}}
+      ]
+    }},
+    "slides": [
+      {{
+        "phase": "hook|insight|finale",
+        "theme": "alert|neutral|flash|bull|bear|macro",
+        "eyebrow": "string",
+        "headline": "string",
+        "subheadline": "string",
+        "body": "string",
+        "bullets": ["string", "string", "string"],
+        "tickers": ["string"],
+        "highlights": ["string", "string"]
+      }}
+    ]
+  }}
+
+  Constraints:
+  - Output exactly 6 scenes.
+  - Scene 1 is hook.
+  - Scene 2 is company_1 fundamental scene.
+  - Scene 3 is company_2 growth scene.
+  - Scene 4 is company_3 risk scene.
+  - Scene 5 is company_4 sentiment scene.
+  - Scene 6 is closing.
+  - Use only tickers present in company_moves_json.
+  - Last slide headline/subheadline/body must be CTA only.
+
+  Tone examples:
+  - company_1:
+    eyebrow="펀더멘털"
+    headline="ORCL"
+    subheadline="기업용 데이터와 소프트웨어 기반"
+    body="데이터베이스와 기업 소프트웨어가 본업인 회사입니다"
+    bullets=["기업용 DB 강자", "대형 고객 기반", "재무 체력 확인 필요"]
+  - company_2:
+    eyebrow="성장 포인트"
+    headline="ORCL"
+    subheadline="OCI가 AI 인프라 성장의 핵심입니다"
+    body="클라우드와 AI 수요가 장기 성장 서사를 밀고 있습니다"
+    bullets=["OCI 확장 기대", "AI 계약 모멘텀", "성장 내러티브 강함"]
+  - company_3:
+    eyebrow="리스크"
+    headline="ORCL"
+    subheadline="CapEx와 현금흐름 부담은 무시 못 합니다"
+    body="대규모 투자 부담이 실적과 재무에 압박이 될 수 있습니다"
+    bullets=["현금흐름 압박", "집행 리스크", "경쟁 심화 가능성"]
+  - company_4:
+    eyebrow="시장 해석"
+    headline="ORCL"
+    subheadline="악재보다 AI 기대를 더 크게 본 하루였습니다"
+    body="시장은 단기 악재보다 장기 AI 기대를 더 강하게 가격에 반영했습니다"
+    bullets=["1D +1.40% / 1M +6.20%", "악재 무시한 반응", "내러티브가 가격 주도"]
+    highlights=["+1.40%", "+6.20%"]

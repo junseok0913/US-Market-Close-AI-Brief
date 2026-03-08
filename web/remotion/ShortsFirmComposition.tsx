@@ -7,6 +7,7 @@ import type { ShortsEpisode, ShortsSlide } from "../src/types/shorts";
 import "./shorty-fonts.css";
 
 type SectionKind = "hook" | "company" | "closing";
+type FirmVariant = "firm" | "theme-firm";
 
 export interface ShortsFirmCompositionProps {
   episode: ShortsEpisode;
@@ -55,6 +56,13 @@ const COLORS = {
 
 const GRADIENT_MAIN_S2 =
   "linear-gradient(180deg, hsl(255 18% 7%) 0%, hsl(260 20% 6%) 50%, hsl(258 16% 8%) 100%)";
+const GRADIENT_THEME_FIRM =
+  "linear-gradient(180deg, hsl(198 42% 10%) 0%, hsl(190 38% 8%) 52%, hsl(178 34% 11%) 100%)";
+
+const BACKGROUND_BY_VARIANT: Record<FirmVariant, string> = {
+  firm: GRADIENT_MAIN_S2,
+  "theme-firm": GRADIENT_THEME_FIRM,
+};
 
 const THEMES = [
   {
@@ -174,6 +182,11 @@ function getCompanyMoves(episode: ShortsEpisode): CompanyMove[] {
   return out;
 }
 
+function resolveFirmVariant(episode: ShortsEpisode): FirmVariant {
+  const raw = (episode.meta as Record<string, unknown> | undefined)?.variant;
+  return compactText(raw) === "theme-firm" ? "theme-firm" : "firm";
+}
+
 function resolveSectionKind(slide: ShortsSlide | undefined, index: number, total: number): SectionKind {
   const phase = compactText(slide?.phase).toLowerCase();
   if (phase === "hook") return "hook";
@@ -214,7 +227,12 @@ function normalizeSlides(episode: ShortsEpisode, companyMoves: CompanyMove[]): S
   return slides;
 }
 
-const HookSection: FC<{ date: string; title: string; hook: string }> = ({ date, title, hook }) => {
+const HookSection: FC<{ date: string; title: string; hook: string; variant: FirmVariant }> = ({
+  date,
+  title,
+  hook,
+  variant,
+}) => {
   return (
     <AbsoluteFill
       style={{
@@ -230,7 +248,7 @@ const HookSection: FC<{ date: string; title: string; hook: string }> = ({ date, 
         color: COLORS.foreground,
       }}
     >
-      <AbsoluteFill style={{ background: GRADIENT_MAIN_S2 }} />
+      <AbsoluteFill style={{ background: BACKGROUND_BY_VARIANT[variant] }} />
 
       <motion.div
         style={{
@@ -338,7 +356,12 @@ const HookSection: FC<{ date: string; title: string; hook: string }> = ({ date, 
   );
 };
 
-const CompanySection: FC<{ company: CompanyMove; index: number; total: number }> = ({ company, index, total }) => {
+const CompanySection: FC<{ company: CompanyMove; index: number; total: number; variant: FirmVariant }> = ({
+  company,
+  index,
+  total,
+  variant,
+}) => {
   const theme = THEMES[index % THEMES.length];
   const isPositive = Number(company.day_change_pct || 0) >= 0;
   const isMonthPositive = Number(company.month_change_pct || 0) >= 0;
@@ -360,7 +383,7 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number }>
         color: COLORS.foreground,
       }}
     >
-      <AbsoluteFill style={{ background: GRADIENT_MAIN_S2 }} />
+      <AbsoluteFill style={{ background: BACKGROUND_BY_VARIANT[variant] }} />
 
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
         <motion.div
@@ -529,7 +552,11 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number }>
   );
 };
 
-const ClosingSection: FC<{ closingText: string; keyPoints: string[] }> = ({ closingText, keyPoints }) => {
+const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: FirmVariant }> = ({
+  closingText,
+  keyPoints,
+  variant,
+}) => {
   const firstSentence = compactText(closingText).split(/[.!?]/)[0] || "오늘 장 핵심 정리";
   const headline = compactTextWithLimit(`${firstSentence}.`, "오늘 장 핵심 정리.", 52);
   const points = normalizeStringList(keyPoints, 3);
@@ -549,7 +576,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[] }> = ({ clos
         color: COLORS.foreground,
       }}
     >
-      <AbsoluteFill style={{ background: GRADIENT_MAIN_S2 }} />
+      <AbsoluteFill style={{ background: BACKGROUND_BY_VARIANT[variant] }} />
 
       <motion.div
         style={{
@@ -671,6 +698,7 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
   const { fps } = useVideoConfig();
   const currentSec = frame / fps;
 
+  const variant = resolveFirmVariant(episode);
   const companyMoves = useMemo(() => getCompanyMoves(episode), [episode]);
   const slides = useMemo(() => normalizeSlides(episode, companyMoves), [episode, companyMoves]);
 
@@ -678,16 +706,17 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
   const activeSlide = slides[activeSlideIndex];
 
   const sectionKinds = slides.map((slide, idx) => resolveSectionKind(slide, idx, slides.length));
+  const totalCompanyScenes = sectionKinds.filter((kind) => kind === "company").length;
   let companyIndex = -1;
   for (let i = 0; i <= activeSlideIndex; i += 1) {
     if (sectionKinds[i] === "company") companyIndex += 1;
   }
 
   const activeSection = sectionKinds[activeSlideIndex] || "company";
-  const activeCompany =
-    companyIndex >= 0 && companyIndex < companyMoves.length
-      ? companyMoves[companyIndex]
-      : companyMoves[Math.min(Math.max(0, companyMoves.length - 1), 0)] || {
+  const companyFallback =
+    companyMoves.length > 0
+      ? companyMoves[Math.max(0, Math.min(companyMoves.length - 1, companyIndex))]
+      : {
           ticker: compactText(activeSlide?.tickers?.[0], "N/A"),
           name: compactText(activeSlide?.headline, "Company"),
           day_change_pct: 0,
@@ -702,6 +731,24 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
           reason: compactText(activeSlide?.body),
           slide_points: normalizeStringList(activeSlide?.bullets, 3),
         };
+
+  const activeCompany =
+    variant === "theme-firm"
+      ? {
+          ...companyFallback,
+          move_summary: compactText(
+            activeSlide?.subheadline || activeSlide?.headline,
+            companyFallback.move_summary,
+          ),
+          reason: compactText(activeSlide?.body || activeSlide?.subheadline, companyFallback.reason),
+          slide_points: normalizeStringList(
+            Array.isArray(activeSlide?.bullets) ? activeSlide.bullets : companyFallback.slide_points,
+            3,
+          ),
+        }
+      : companyIndex >= 0 && companyIndex < companyMoves.length
+        ? companyMoves[companyIndex]
+        : companyFallback;
 
   const hookTitle = compactTextWithLimit(activeSlide?.headline, compactText(episode.title, "US Market Close"), 54);
   const hookCopy = compactTextWithLimit(
@@ -718,7 +765,12 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
   const closingKeyPoints = normalizeStringList(Array.isArray(activeSlide?.bullets) ? activeSlide?.bullets : [], 3);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "hsl(255 18% 7%)", fontFamily: BASE_FONT }}>
+    <AbsoluteFill
+      style={{
+        backgroundColor: variant === "theme-firm" ? "hsl(191 40% 9%)" : "hsl(255 18% 7%)",
+        fontFamily: BASE_FONT,
+      }}
+    >
       {includeAudio && audioSrc ? <Audio src={staticFile(audioSrc.replace(/^\/+/, ""))} /> : null}
 
       <AnimatePresence mode="wait">
@@ -731,15 +783,20 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
           style={{ position: "absolute", inset: 0 }}
         >
           {activeSection === "hook" ? (
-            <HookSection date={episode.date} title={hookTitle} hook={hookCopy} />
+            <HookSection date={episode.date} title={hookTitle} hook={hookCopy} variant={variant} />
           ) : null}
 
           {activeSection === "company" ? (
-            <CompanySection company={activeCompany} index={Math.max(0, companyIndex)} total={Math.max(1, companyMoves.length)} />
+            <CompanySection
+              company={activeCompany}
+              index={Math.max(0, companyIndex)}
+              total={Math.max(1, totalCompanyScenes)}
+              variant={variant}
+            />
           ) : null}
 
           {activeSection === "closing" ? (
-            <ClosingSection closingText={closingText} keyPoints={closingKeyPoints} />
+            <ClosingSection closingText={closingText} keyPoints={closingKeyPoints} variant={variant} />
           ) : null}
         </motion.div>
       </AnimatePresence>

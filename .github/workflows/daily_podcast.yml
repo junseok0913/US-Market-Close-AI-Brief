@@ -183,9 +183,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH_NAME"
 
-          for path in podcast web/public/audio web/src/generated/shorts-firm web/src/landing/index.ts; do
+          for path in podcast web/public/audio web/src/generated/shorts-firm "web/src/landing/$TARGET_DATE" web/src/landing/index.ts; do
             if [[ -e "$path" ]]; then
               git add -A "$path"
+            fi
+          done
+
+          # Force-add shorts mp4s (they are in .gitignore via wildcard but negated for shorts paths)
+          for shorts_path in \
+            "podcast/$TARGET_DATE/ko/shorts/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-firm/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-theme-firm/youtube"; do
+            if [[ -d "$shorts_path" ]]; then
+              git add -f "$shorts_path"/*.mp4 2>/dev/null || true
             fi
           done
 
@@ -304,6 +314,7 @@ jobs:
           if [[ -d "$KO_DIR" ]]; then
             find "$KO_DIR" -type f \
               ! -path "$KO_DIR/$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/$TARGET_DATE.json" \
               ! -path "$KO_DIR/script.json" \
               ! -path "$KO_DIR/metadata.json" \
               ! -path "$KO_DIR/metadata.txt" \
@@ -311,12 +322,14 @@ jobs:
               ! -path "$KO_DIR/shorts/sections.timing.json" \
               ! -path "$KO_DIR/shorts/slides.render.json" \
               ! -path "$KO_DIR/shorts/shorts$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/shorts/youtube/*" \
               ! -path "$KO_DIR/shorts-firm/script.json" \
               ! -path "$KO_DIR/shorts-firm/sections.timing.json" \
               ! -path "$KO_DIR/shorts-firm/slides.script.json" \
               ! -path "$KO_DIR/shorts-firm/slides.render.template.json" \
               ! -path "$KO_DIR/shorts-firm/slides.render.json" \
               ! -path "$KO_DIR/shorts-firm/shorts$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/shorts-firm/youtube/*" \
               -delete
             find "$KO_DIR" -depth -type d -empty -delete
           fi
@@ -333,9 +346,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH_NAME"
 
-          for path in podcast web/public/audio web/src/generated/shorts-firm web/src/landing/index.ts; do
+          for path in podcast web/public/audio web/src/generated/shorts-firm "web/src/landing/$TARGET_DATE" web/src/landing/index.ts; do
             if [[ -e "$path" ]]; then
               git add -A "$path"
+            fi
+          done
+
+          # Force-add shorts mp4s (they are in .gitignore via wildcard but negated for shorts paths)
+          for shorts_path in \
+            "podcast/$TARGET_DATE/ko/shorts/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-firm/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-theme-firm/youtube"; do
+            if [[ -d "$shorts_path" ]]; then
+              git add -f "$shorts_path"/*.mp4 2>/dev/null || true
             fi
           done
 
@@ -396,9 +419,19 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH_NAME"
 
-          for path in podcast web/public/audio web/src/generated/shorts-firm web/src/landing/index.ts; do
+          for path in podcast web/public/audio web/src/generated/shorts-firm "web/src/landing/$TARGET_DATE" web/src/landing/index.ts; do
             if [[ -e "$path" ]]; then
               git add -A "$path"
+            fi
+          done
+
+          # Force-add shorts mp4s (they are in .gitignore via wildcard but negated for shorts paths)
+          for shorts_path in \
+            "podcast/$TARGET_DATE/ko/shorts/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-firm/youtube" \
+            "podcast/$TARGET_DATE/ko/shorts-theme-firm/youtube"; do
+            if [[ -d "$shorts_path" ]]; then
+              git add -f "$shorts_path"/*.mp4 2>/dev/null || true
             fi
           done
 

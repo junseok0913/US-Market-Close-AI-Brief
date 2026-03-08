@@ -48,6 +48,7 @@ export const EpisodeRemotionRoot = () => {
         audioSrc: "audio/20260220.mp3",
         includeAudio: true,
         turnLeadMs: 550,
+        chartDataMap: {},
       }}
     />
   );

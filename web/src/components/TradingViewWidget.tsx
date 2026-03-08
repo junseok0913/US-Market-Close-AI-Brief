@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState, memo } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRenderChartDataMap } from './RenderChartDataContext';
+import type { MarketChartData, MarketChartPoint } from '@/types/market-chart';
 
 interface TradingViewWidgetProps {
   symbol: string;
@@ -9,25 +10,7 @@ interface TradingViewWidgetProps {
   minHeight?: number;
   onMarketData?: (data: MarketChartData | null) => void;
 }
-
-interface MarketChartPoint {
-  t: number;
-  c: number;
-}
-
-export interface MarketChartData {
-  symbol: string;
-  providerSymbol: string;
-  asOf: string | null;
-  currency: string | null;
-  exchangeName: string | null;
-  points: MarketChartPoint[];
-  latest: number;
-  previous: number;
-  change: number;
-  changePercent: number;
-  trend: 'up' | 'down' | 'flat';
-}
+export type { MarketChartData } from '@/types/market-chart';
 
 const EMBED_SYMBOL_FALLBACK_MAP: Record<string, string> = {
   // These index symbols are frequently blocked in embedded TradingView widgets.
@@ -111,12 +94,19 @@ function TradingViewWidgetComponent({
   onMarketData,
 }: TradingViewWidgetProps) {
   const container = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
+  const [pathname] = useState(() => {
+    if (typeof window === 'undefined') {
+      return null;
+    }
+    return window.location.pathname || null;
+  });
   const normalizedSymbol = useMemo(() => normalizeRequestedSymbol(symbol), [symbol]);
+  const renderChartDataMap = useRenderChartDataMap();
   const embedSymbol = useMemo(() => normalizeEmbedSymbol(normalizedSymbol), [normalizedSymbol]);
   const episodeAsOf = useMemo(() => extractEpisodeAsOf(pathname), [pathname]);
   const isDateFixedMode = Boolean(episodeAsOf);
-  const [chartData, setChartData] = useState<MarketChartData | null>(null);
+  const preloadedChartData = renderChartDataMap[normalizedSymbol] || null;
+  const [chartData, setChartData] = useState<MarketChartData | null>(preloadedChartData);
   const [chartError, setChartError] = useState<string | null>(null);
   const [useApiFallback, setUseApiFallback] = useState(false);
   const [renderMode] = useState(
@@ -155,6 +145,13 @@ function TradingViewWidgetComponent({
     [chartData?.points],
   );
   const trend = chartData?.trend || 'flat';
+
+  useEffect(() => {
+    if (!renderMode) return;
+    setChartError(null);
+    setChartData(preloadedChartData);
+    onMarketData?.(preloadedChartData);
+  }, [onMarketData, preloadedChartData, renderMode]);
 
   useEffect(() => {
     if (!container.current || shouldUseApiChart) return;
@@ -204,6 +201,12 @@ function TradingViewWidgetComponent({
 
   useEffect(() => {
     if (!shouldUseApiChart) return;
+    if (renderMode) {
+      setChartError(null);
+      setChartData(preloadedChartData);
+      onMarketData?.(preloadedChartData);
+      return;
+    }
 
     const controller = new AbortController();
     const timeoutMs = 10000;
@@ -251,7 +254,7 @@ function TradingViewWidgetComponent({
       window.clearTimeout(timeoutId);
       controller.abort();
     };
-  }, [normalizedSymbol, shouldUseApiChart, episodeAsOf, onMarketData]);
+  }, [normalizedSymbol, shouldUseApiChart, episodeAsOf, onMarketData, preloadedChartData, renderMode]);
 
   if (shouldUseApiChart) {
     const renderMinHeight = Math.max(110, Math.min(minHeight, 170));
