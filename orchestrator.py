@@ -38,7 +38,9 @@ from podcast_db import get_default_db_path, upsert_script_row, utc_iso_from_time
 from shared.config import (
     cleanup_cache_dir,
     ensure_cache_dir,
+    ensure_podcast_debate_dir,
     ensure_temp_dir,
+    get_podcast_debate_path,
     get_temp_opening_path,
     get_temp_theme_path,
     get_temp_ticker_pipeline_path,
@@ -392,6 +394,7 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
 
     if not tickers:
         # Persist a "no-op" ticker pipeline artifact for debuggability/consistency.
+        ensure_temp_dir()
         pipeline_path = get_temp_ticker_pipeline_path()
         pipeline_path.write_text(
             json.dumps(
@@ -417,9 +420,7 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
     from debate.graph import run_debate
     from debate.ticker_script import run_ticker_script_pipeline
 
-    ensure_temp_dir()
-    debate_out_dir = ROOT / "temp" / "debate" / date_str
-    debate_out_dir.mkdir(parents=True, exist_ok=True)
+    ensure_podcast_debate_dir(date_str)
 
     try:
         max_rounds = int(os.getenv("DEBATE_MAX_ROUNDS", "2") or "2")
@@ -438,7 +439,7 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
             ticker = tickers[idx]
             out = fut.result()
             debate_outputs[idx] = out
-            (debate_out_dir / f"{ticker}_debate.json").write_text(
+            get_podcast_debate_path(ticker, date_str).write_text(
                 json.dumps(out, ensure_ascii=False, indent=2),
                 encoding="utf-8",
             )
@@ -451,6 +452,7 @@ def ticker_pipeline_node(state: BriefingState) -> BriefingState:
         debate_outputs=debate_outputs,  # type: ignore[arg-type]
     )
 
+    ensure_temp_dir()
     pipeline_path = get_temp_ticker_pipeline_path()
     pipeline_path.write_text(json.dumps(pipeline_out, ensure_ascii=False, indent=2), encoding="utf-8")
 

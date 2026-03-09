@@ -372,8 +372,12 @@ def debate_load_context_node(state: TickerDebateState) -> TickerDebateState:
     raw_articles = news.get("articles", []) if isinstance(news, dict) else []
     articles_min: list[dict[str, str]] = []
     allowed_sources: list[Source] = []
+    try:
+        news_limit = max(1, int(os.getenv("DEBATE_NEWS_MAX_ARTICLES", "5") or "5"))
+    except Exception:
+        news_limit = 5
 
-    for art in raw_articles[:10]:
+    for art in raw_articles[:news_limit]:
         if not isinstance(art, dict):
             continue
         pk = art.get("pk")
@@ -480,6 +484,50 @@ def debate_load_context_node(state: TickerDebateState) -> TickerDebateState:
     }
 
 
+def _get_expert_max_retries() -> int:
+    """Max retries per failed expert (default 2). Controlled by DEBATE_EXPERT_MAX_RETRIES."""
+    try:
+        return max(0, int(os.getenv("DEBATE_EXPERT_MAX_RETRIES", "2")))
+    except Exception:
+        return 2
+
+
+def _is_empty_utterance(result: Any) -> bool:
+    """Check if an expert result is a failure (Exception) or produced empty text."""
+    if isinstance(result, Exception):
+        return True
+    if not isinstance(result, dict):
+        return True
+    utter = result.get("utterance")
+    if not isinstance(utter, dict):
+        return True
+    text = str(utter.get("text") or "").strip()
+    return len(text) == 0
+
+
+def _result_to_utterance(res: Any, *, allowed_sources: List[Source]) -> Dict[str, Any]:
+    """Convert an expert result to a round utterance dict."""
+    fallback: Dict[str, Any] = {
+        "text": "",
+        "action": "HOLD",
+        "confidence": 0.5,
+        "sources": allowed_sources[:1] if allowed_sources else [],
+    }
+    if isinstance(res, Exception):
+        return fallback
+    if not isinstance(res, dict):
+        return fallback
+    utter = res.get("utterance")
+    if not isinstance(utter, dict):
+        return fallback
+    return {
+        "text": str(utter.get("text") or "").strip(),
+        "action": _normalize_action(utter.get("action")),
+        "confidence": _normalize_confidence(utter.get("confidence")),
+        "sources": utter.get("sources") if isinstance(utter.get("sources"), list) else [],
+    }
+
+
 def debate_run_round_node(state: TickerDebateState) -> TickerDebateState:
     roles = list(ROLES)
     expert_graph = build_expert_graph()
@@ -491,50 +539,67 @@ def debate_run_round_node(state: TickerDebateState) -> TickerDebateState:
     guidance_by_role = state.get("guidance_by_role") if isinstance(state.get("guidance_by_role"), dict) else {}
     allowed_sources = state.get("allowed_sources", []) or []
 
-    inputs: list[ExpertState] = []
+    # Build inputs for all roles
+    inputs_by_role: Dict[str, ExpertState] = {}
     for role in roles:
-        inputs.append(
-            {
-                "date": state.get("date", ""),
-                "ticker": state.get("ticker", ""),
-                "role": role,
-                "round_number": round_number,
-                "news_list_json": str(state.get("news_list_json") or "[]"),
-                "sec_list_json": str(state.get("sec_list_json") or "[]"),
-                "ohlcv_summary": str(state.get("ohlcv_summary") or ""),
-                "allowed_sources": allowed_sources,
-                "guidance": str((guidance_by_role or {}).get(role) or ""),
-                "opponents": _format_opponents(prev_round, role=role),
-            }
-        )
+        inputs_by_role[role] = {
+            "date": state.get("date", ""),
+            "ticker": state.get("ticker", ""),
+            "role": role,
+            "round_number": round_number,
+            "news_list_json": str(state.get("news_list_json") or "[]"),
+            "sec_list_json": str(state.get("sec_list_json") or "[]"),
+            "ohlcv_summary": str(state.get("ohlcv_summary") or ""),
+            "allowed_sources": allowed_sources,
+            "guidance": str((guidance_by_role or {}).get(role) or ""),
+            "opponents": _format_opponents(prev_round, role=role),
+        }
 
+    # --- Initial batch execution (all 4 experts in parallel) ---
+    inputs = [inputs_by_role[r] for r in roles]
     results = expert_graph.batch(inputs, return_exceptions=True)  # type: ignore[attr-defined]
 
-    round_obj: Dict[str, Any] = {"round": round_number}
-    for role, res in zip(roles, results):
+    # Map role -> result
+    results_by_role: Dict[str, Any] = dict(zip(roles, results))
+    for role, res in results_by_role.items():
         if isinstance(res, Exception):
-            logger.warning("Expert %s 실패: %s", role, res)
-            round_obj[role] = {
-                "text": "",
-                "action": "HOLD",
-                "confidence": 0.5,
-                "sources": allowed_sources[:1] if allowed_sources else [],
-            }
-            continue
-        utter = res.get("utterance")
-        if not isinstance(utter, dict):
-            utter = {
-                "text": "",
-                "action": "HOLD",
-                "confidence": 0.5,
-                "sources": allowed_sources[:1] if allowed_sources else [],
-            }
-        round_obj[role] = {
-            "text": str(utter.get("text") or "").strip(),
-            "action": _normalize_action(utter.get("action")),
-            "confidence": _normalize_confidence(utter.get("confidence")),
-            "sources": utter.get("sources") if isinstance(utter.get("sources"), list) else [],
-        }
+            logger.warning("Expert %s 실패 (initial): %s", role, res)
+        elif _is_empty_utterance(res):
+            logger.warning("Expert %s 빈 응답 (initial)", role)
+
+    # --- Retry failed roles individually ---
+    max_retries = _get_expert_max_retries()
+    for attempt in range(1, max_retries + 1):
+        failed_roles = [r for r in roles if _is_empty_utterance(results_by_role[r])]
+        if not failed_roles:
+            break
+        logger.info(
+            "라운드 %d: 실패한 expert %s 재시도 (attempt %d/%d)",
+            round_number, failed_roles, attempt, max_retries,
+        )
+        retry_inputs = [inputs_by_role[r] for r in failed_roles]
+        retry_results = expert_graph.batch(retry_inputs, return_exceptions=True)  # type: ignore[attr-defined]
+        for role, res in zip(failed_roles, retry_results):
+            if isinstance(res, Exception):
+                logger.warning("Expert %s 재시도 실패 (attempt %d): %s", role, attempt, res)
+            elif _is_empty_utterance(res):
+                logger.warning("Expert %s 재시도 빈 응답 (attempt %d)", role, attempt)
+            else:
+                logger.info("Expert %s 재시도 성공 (attempt %d)", role, attempt)
+                results_by_role[role] = res
+
+    # --- Build round object ---
+    round_obj: Dict[str, Any] = {"round": round_number}
+    for role in roles:
+        round_obj[role] = _result_to_utterance(results_by_role[role], allowed_sources=allowed_sources)
+
+    # Log final failures
+    final_failures = [r for r in roles if not round_obj[r].get("text")]
+    if final_failures:
+        logger.error(
+            "라운드 %d: %d/%d expert(s) 최종 실패 (빈 응답): %s",
+            round_number, len(final_failures), len(roles), final_failures,
+        )
 
     rounds.append(round_obj)  # type: ignore[arg-type]
     return {**state, "rounds": rounds}

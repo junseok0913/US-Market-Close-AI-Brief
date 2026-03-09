@@ -55,6 +55,9 @@ system: |
     - Closing scene must be CTA-only.
     - Never invent tickers, numbers, products, or events not present in inputs.
     - Do not output placeholders like "string", "N/A", "...".
+    - Do not copy narration sentences directly from shorts_script_json.sections[].text.
+    - Do not use spoken lead-ins like "Fundamental 관점에서", "Growth 관점에서", "하지만 Risk 관점에서", "Sentiment 관점에서" on slide text.
+    - Avoid polite sentence endings like "~입니다" and "~였습니다" on company slides.
   </hard_rules>
 
   <style_rules>
@@ -67,22 +70,30 @@ system: |
       - subheadline: core business or financial snapshot (<= 42 chars)
       - body: fundamental summary sentence (<= 52 chars)
       - bullets: 1~3 items, each <= 34 chars
+      - Rewrite into on-screen summary copy. Do not mirror narration wording.
+      - Prefer label-like wording over full spoken sentences.
     - company_2:
       - headline: ticker or growth phrase (<= 24 chars)
       - subheadline: what can expand earnings or narrative (<= 42 chars)
       - body: growth summary sentence (<= 52 chars)
       - bullets: 1~3 items, each <= 34 chars
+      - Prefer compressed keyword-style copy over spoken sentences.
+      - Avoid polite endings.
     - company_3:
       - headline: ticker or risk phrase (<= 24 chars)
       - subheadline: cost/debt/competition/execution risk (<= 42 chars)
       - body: risk summary sentence (<= 52 chars)
       - bullets: 1~3 items, each <= 34 chars
+      - Prefer compressed keyword-style copy over spoken sentences.
+      - Avoid polite endings.
     - company_4:
       - headline: ticker or market reaction phrase (<= 24 chars)
       - subheadline: today’s interpretation or sentiment pivot (<= 42 chars)
       - body: sentiment summary sentence (<= 52 chars)
       - bullets: 1~3 items, each <= 34 chars
       - highlights: prefer 1D/1M like "+1.24%", "-3.08%"
+      - Prefer compressed keyword-style copy over spoken sentences.
+      - Avoid polite endings.
     - Closing:
       - headline/subheadline/body should all remain CTA-toned.
       - bullets should be empty.

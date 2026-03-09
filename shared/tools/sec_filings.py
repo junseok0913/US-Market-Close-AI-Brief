@@ -630,7 +630,6 @@ def get_sec_filing_content(ticker: str, accession_numbers: List[str], page: Opti
                     "form": form or None,
                     "filed_date": filed_date or None,
                     "url": url,
-                    "index": index,
                     "page": page_actual,
                     "total_pages": total_pages,
                     "content": content,

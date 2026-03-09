@@ -10,6 +10,7 @@ from typing import Optional
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 CACHE_DIR = ROOT_DIR / "cache"
+PODCAST_DIR = ROOT_DIR / "podcast"
 TEMP_DIR = ROOT_DIR / "temp"
 
 
@@ -40,6 +41,19 @@ def get_cache_dir(date: Optional[str] = None) -> Path:
     """Return cache/{YYYYMMDD} directory."""
     normalized = normalize_date(date) if date else get_briefing_date()
     return CACHE_DIR / normalized
+
+
+def get_podcast_dir(date: Optional[str] = None) -> Path:
+    """Return podcast/{YYYYMMDD} directory."""
+    normalized = normalize_date(date) if date else get_briefing_date()
+    return PODCAST_DIR / normalized
+
+
+def ensure_podcast_dir(date: Optional[str] = None) -> Path:
+    """Ensure podcast/{YYYYMMDD} directory exists and return it."""
+    podcast_dir = get_podcast_dir(date)
+    podcast_dir.mkdir(parents=True, exist_ok=True)
+    return podcast_dir
 
 
 def ensure_cache_dir(date: Optional[str] = None) -> Path:
@@ -100,3 +114,32 @@ def get_temp_closing_path() -> Path:
 
 def get_temp_ticker_pipeline_path() -> Path:
     return TEMP_DIR / "ticker_pipeline.json"
+
+
+def get_podcast_debate_dir(date: Optional[str] = None) -> Path:
+    normalized = normalize_date(date) if date else get_briefing_date()
+    return PODCAST_DIR / normalized / "intermediate" / "debate"
+
+
+def ensure_podcast_debate_dir(date: Optional[str] = None) -> Path:
+    debate_dir = get_podcast_debate_dir(date)
+    debate_dir.mkdir(parents=True, exist_ok=True)
+    return debate_dir
+
+
+def get_podcast_debate_path(ticker: str, date: Optional[str] = None) -> Path:
+    return get_podcast_debate_dir(date) / f"{str(ticker).upper().strip()}_debate.json"
+
+
+def resolve_podcast_debate_path(ticker: str, date: Optional[str] = None) -> Path:
+    current_path = get_podcast_debate_path(ticker, date)
+    if current_path.exists():
+        return current_path
+
+    if date is None:
+        date = get_briefing_date()
+    legacy_path = TEMP_DIR / "debate" / normalize_date(date) / f"{str(ticker).upper().strip()}_debate.json"
+    if legacy_path.exists():
+        return legacy_path
+
+    return current_path

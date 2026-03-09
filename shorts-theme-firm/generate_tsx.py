@@ -42,6 +42,77 @@ def compact_text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
+def simplify_company_name(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    simplified = re.sub(
+        r",?\s+(?:incorporated|inc\.?|corporation|corp\.?|company|co\.?|holdings|holding|group|limited|ltd\.?|llc|plc)\s*$",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    simplified = re.sub(r"\s+class\s+[a-z]\s*$", "", simplified, flags=re.IGNORECASE)
+    simplified = simplified.strip(" ,")
+    return simplified or text
+
+
+def resolve_company_name(payload: dict[str, Any]) -> str:
+    meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
+    metadata = payload.get("metadata") if isinstance(payload.get("metadata"), dict) else {}
+
+    company_profile = meta.get("companyProfile") if isinstance(meta.get("companyProfile"), dict) else {}
+    if not company_profile:
+        company_profile = metadata.get("company_profile") if isinstance(metadata.get("company_profile"), dict) else {}
+    company_name = compact_text(company_profile.get("name"))
+    if company_name:
+        return company_name
+
+    company_moves = meta.get("companyMoves") if isinstance(meta.get("companyMoves"), list) else []
+    if not company_moves:
+        company_moves = metadata.get("company_moves") if isinstance(metadata.get("company_moves"), list) else []
+    if company_moves and isinstance(company_moves[0], dict):
+        company_name = compact_text(company_moves[0].get("name"))
+        if company_name:
+            return company_name
+
+    return compact_text(payload.get("title"))
+
+
+def build_analysis_title(payload: dict[str, Any], *, lang: str) -> str:
+    base = simplify_company_name(resolve_company_name(payload)) or ("핵심 기업" if lang != "en" else "Company")
+    suffix = "Analysis" if lang == "en" else "분석"
+    if re.search(r"(?:^|\s)(?:분석|analysis)$", base, flags=re.IGNORECASE):
+        return base
+    return f"{base} {suffix}".strip()
+
+
+def normalize_theme_firm_episode(payload: dict[str, Any], *, lang: str) -> dict[str, Any]:
+    title = build_analysis_title(payload, lang=lang)
+    normalized = dict(payload)
+    normalized["title"] = title
+
+    slides = payload.get("slides")
+    if not isinstance(slides, list):
+        return normalized
+
+    normalized_slides: list[dict[str, Any]] = []
+    hook_applied = False
+    for idx, item in enumerate(slides):
+        if not isinstance(item, dict):
+            normalized_slides.append(item)
+            continue
+        slide = dict(item)
+        phase = compact_text(slide.get("phase")).lower()
+        if not hook_applied and (phase == "hook" or idx == 0):
+            slide["headline"] = title
+            hook_applied = True
+        normalized_slides.append(slide)
+
+    normalized["slides"] = normalized_slides
+    return normalized
+
+
 def resolve_phase(section_name: Any) -> str:
     key = compact_text(section_name).lower().replace("-", "_")
     if key == "company" or key.startswith("company_") or re.match(r"^company\d+$", key):
@@ -176,8 +247,8 @@ def load_episode_payload(input_path: Path, *, date: str, lang: str) -> dict[str,
     if not isinstance(payload, dict):
         raise ValueError(f"Input JSON must be object: {input_path}")
     if isinstance(payload.get("slides"), list):
-        return payload
-    return normalize_from_script_payload(payload, date=date, lang=lang)
+        return normalize_theme_firm_episode(payload, lang=lang)
+    return normalize_theme_firm_episode(normalize_from_script_payload(payload, date=date, lang=lang), lang=lang)
 
 
 def save_tsx_payload(*, episode: dict[str, Any], output_path: Path, export_name: str, source_path: Path) -> None:

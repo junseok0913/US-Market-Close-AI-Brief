@@ -86,6 +86,28 @@ flowchart TD
 - 최소 2라운드를 강제합니다(`DEBATE_MIN_ROUNDS`, 기본 2). 즉, 최소 1번은 전문가 간 상호 반응(논쟁)이 발생하도록 설계합니다.
 - 중재자 단계는 "협의(합의)"를 엄격히 정의합니다: **4명 action 동일 AND 4명 confidence가 임계값 이상**일 때만 합의로 간주합니다(`DEBATE_CONSENSUS_CONFIDENCE`, 기본 0.7).
 
+### 3.1 Expert 실패 재시도(Retry) 메커니즘
+
+4명이 동시 병렬 실행될 때, API timeout·rate limit·JSON 파싱 실패 등으로 일부 expert가 빈 응답(`text: ""`)을 반환할 수 있습니다.
+이를 방지하기 위해 **실패한 expert만 개별 재시도**하는 로직이 포함되어 있습니다:
+
+```mermaid
+flowchart TD
+  B["batch(4 experts, parallel)"] --> C{"실패한 role 있음?"}
+  C -->|없음| D["round 결과 확정"]
+  C -->|있음| R["실패한 role만 batch 재실행"]
+  R --> C2{"재시도 성공?"}
+  C2 -->|성공| U["결과 교체"]
+  C2 -->|실패 + attempt < max| R
+  C2 -->|실패 + 최대 도달| D
+  U --> C
+```
+
+- **환경변수**: `DEBATE_EXPERT_MAX_RETRIES` (기본 `2`) — 실패한 expert당 최대 재시도 횟수
+- 재시도 대상 판별: Exception 발생 또는 utterance `text`가 빈 문자열인 경우
+- 성공 시 해당 role의 결과만 교체, 나머지는 유지
+- 최종 실패(모든 재시도 소진)한 role은 `ERROR` 로그 출력 후 빈 응답 fallback 유지
+
 ## 4) Context 로딩 원리(`load_context`)
 
 `load_context` 단계에서 프롬프트에 넣을 “목록”만 먼저 얇게 구성하고, 상세 본문은 LLM이 필요할 때 tool-call로 가져오도록 설계했습니다.

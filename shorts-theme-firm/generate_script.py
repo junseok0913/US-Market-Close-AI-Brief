@@ -21,6 +21,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.utils.llm import build_llm
+from shared.config import resolve_podcast_debate_path
 from shared.yaml_config import load_env_from_yaml
 
 logging.basicConfig(
@@ -718,19 +719,34 @@ def normalize_cta_only(cta: Any) -> str:
     return ensure_sentence_end(text)
 
 
+def simplify_company_name(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    simplified = re.sub(
+        r",?\s+(?:incorporated|inc\.?|corporation|corp\.?|company|co\.?|holdings|holding|group|limited|ltd\.?|llc|plc)\s*$",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    simplified = re.sub(r"\s+class\s+[a-z]\s*$", "", simplified, flags=re.IGNORECASE)
+    simplified = simplified.strip(" ,")
+    return simplified or text
+
+
 def build_shorts_theme_firm_title(raw_title: Any, fallback_title: Any, *, title_prefix: str) -> str:
-    base = compact_text(raw_title) or compact_text(fallback_title) or "미국장 핵심 기업 쇼츠"
-    prefix = compact_text(title_prefix)
-    if not prefix:
+    lang = "ko" if re.search(r"[가-힣]", compact_text(title_prefix)) else "en"
+    base = (
+        simplify_company_name(fallback_title)
+        or simplify_company_name(raw_title)
+        or compact_text(raw_title)
+        or compact_text(fallback_title)
+        or ("핵심 기업" if lang == "ko" else "Company")
+    )
+    suffix = "분석" if lang == "ko" else "Analysis"
+    if re.search(r"(?:^|\s)(?:분석|analysis)$", base, flags=re.IGNORECASE):
         return base
-    if base.startswith(prefix):
-        return base
-    joiner = ""
-    if prefix.endswith(("|", "/", "-", "·", ":", "｜")):
-        joiner = " "
-    elif not prefix.endswith(" "):
-        joiner = " "
-    return f"{prefix}{joiner}{base}"
+    return f"{base} {suffix}".strip()
 
 
 def iter_script_turns(script_json: dict[str, Any]) -> list[dict[str, Any]]:
@@ -1260,7 +1276,7 @@ def resolve_source_context(
 ) -> dict[str, Any]:
     date_token = podcast_dir_date_token(podcast_dir)
     ticker_pipeline_path = ROOT_DIR / "temp" / "ticker_pipeline.json"
-    debate_path = ROOT_DIR / "temp" / "debate" / date_token / f"{ticker}_debate.json"
+    debate_path = resolve_podcast_debate_path(ticker, date_token)
 
     ticker_turns = extract_matching_ticker_turns(script_json, ticker)
     ticker_pipeline_payload = load_optional_json(ticker_pipeline_path) or {}

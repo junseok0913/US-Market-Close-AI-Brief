@@ -41,10 +41,52 @@ SECTION_NAME_ALIASES = {
 ALLOWED_PHASES = {"hook", "market", "insight", "finale", "watch"}
 ALLOWED_THEMES = {"alert", "bear", "bull", "neutral", "macro", "flash"}
 MAX_COMPANY_BULLETS = 3
+MAX_VISUAL_HEADLINE = 24
+MAX_VISUAL_SUBHEADLINE = 42
+MAX_VISUAL_BODY = 52
 
 
 def compact_text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def simplify_company_name(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    simplified = re.sub(
+        r",?\s+(?:incorporated|inc\.?|corporation|corp\.?|company|co\.?|holdings|holding|group|limited|ltd\.?|llc|plc)\s*$",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    simplified = re.sub(r"\s+class\s+[a-z]\s*$", "", simplified, flags=re.IGNORECASE)
+    simplified = simplified.strip(" ,")
+    return simplified or text
+
+
+def resolve_company_name(script_payload: dict[str, Any]) -> str:
+    metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
+    company_profile = metadata.get("company_profile") if isinstance(metadata.get("company_profile"), dict) else {}
+    company_name = compact_text(company_profile.get("name"))
+    if company_name:
+        return company_name
+    company_moves = metadata.get("company_moves") if isinstance(metadata.get("company_moves"), list) else []
+    if company_moves and isinstance(company_moves[0], dict):
+        company_name = compact_text(company_moves[0].get("name"))
+        if company_name:
+            return company_name
+    return compact_text(script_payload.get("title"))
+
+
+def build_analysis_title(script_payload: dict[str, Any], lang: str) -> str:
+    base = simplify_company_name(resolve_company_name(script_payload)) or (
+        "핵심 기업" if compact_text(lang).lower() != "en" else "Company"
+    )
+    suffix = "Analysis" if compact_text(lang).lower() == "en" else "분석"
+    if re.search(r"(?:^|\s)(?:분석|analysis)$", base, flags=re.IGNORECASE):
+        return base
+    return f"{base} {suffix}".strip()
 
 
 def default_cta_text(lang: str) -> str:
@@ -435,13 +477,156 @@ def first_sentence(value: Any) -> str:
     return parts[0] if parts else text
 
 
+def strip_visual_lead(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    text = re.sub(r"^(?:먼저|하지만|그리고|또한|반면)\s+", "", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"^(?:fundamental|growth|risk|sentiment)\s*관점(?:에서|에선|으로(?:\s*보면)?)?\s*",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(r"^(?:시장(?:은)?\s*오늘|오늘\s*시장은)\s*", "", text)
+    text = re.sub(r"^바로\s+", "", text)
+    return compact_text(text)
+
+
+def strip_visual_tone(value: Any) -> str:
+    text = compact_text(value)
+    if not text:
+        return ""
+    text = strip_visual_lead(text)
+    text = re.sub(r"\s*(?:입니다|였습니다)(?:[.!?])?$", "", text)
+    text = re.sub(r"[.!?]+$", "", text)
+    text = text.strip(" ,")
+    return compact_text(text)
+
+
+def point_value(value: Any) -> str:
+    text = strip_visual_tone(first_sentence(value))
+    if not text:
+        return ""
+    if ":" in text:
+        _, tail = text.split(":", 1)
+        tail = strip_visual_tone(tail)
+        if len(tail) >= 4:
+            return tail
+    return compact_text(text)
+
+
+def join_short_texts(values: list[Any], *, max_len: int, separator: str) -> str:
+    out = ""
+    for value in values:
+        text = strip_visual_tone(value)
+        if not text:
+            continue
+        candidate = text if not out else f"{out}{separator}{text}"
+        if len(candidate) <= max_len:
+            out = candidate
+            continue
+        if not out:
+            return truncate_text(text, max_len=max_len)
+        break
+    return out
+
+
+def pick_visual_candidate(values: list[Any], *, max_len: int, exclude: str = "") -> str:
+    excluded = strip_visual_tone(exclude)
+    for value in values:
+        text = strip_visual_tone(value)
+        if not text:
+            continue
+        text = truncate_text(text, max_len=max_len)
+        if excluded and compact_text(text) == excluded:
+            continue
+        return text
+    return ""
+
+
+def looks_like_narration(value: Any) -> bool:
+    text = compact_text(value)
+    if not text:
+        return False
+    if len(text) > MAX_VISUAL_BODY:
+        return True
+    if re.search(r"(?:fundamental|growth|risk|sentiment)\s*관점", text, flags=re.IGNORECASE):
+        return True
+    if re.match(r"^(?:먼저|하지만|그리고|또한|반면)\s+", text):
+        return True
+    return False
+
+
+def choose_visual_text(candidate: Any, default: str, *, max_len: int, reject_narration: bool = False) -> str:
+    text = compact_text(candidate)
+    if not text:
+        return truncate_text(strip_visual_tone(default), max_len=max_len)
+    if reject_narration and looks_like_narration(text):
+        return truncate_text(strip_visual_tone(default), max_len=max_len)
+    return truncate_text(strip_visual_tone(text), max_len=max_len)
+
+
+def build_company_visual_copy(
+    *,
+    company_move: dict[str, Any],
+    company_profile: dict[str, Any],
+    role: str,
+    fallback: str = "",
+) -> tuple[str, str]:
+    points = normalize_company_point_lines(company_move.get("slide_points"), limit=3, max_len=44)
+    point_values = [point_value(item) for item in points]
+    business_model = strip_visual_tone(company_profile.get("business_model"))
+    identity_summary = strip_visual_tone(company_profile.get("identity_summary"))
+    why_now = strip_visual_tone(company_profile.get("why_now"))
+    moat = strip_visual_tone(company_profile.get("moat"))
+    summary_fallback = strip_visual_tone(company_move.get("move_summary") or company_move.get("reason") or fallback)
+    body_fallback = strip_visual_tone(company_move.get("reason") or company_move.get("move_summary") or fallback)
+
+    day_text = compact_text(company_move.get("day_change_display"))
+    month_text = compact_text(company_move.get("month_change_display"))
+    metric_bits: list[str] = []
+    if day_text and day_text != "N/A":
+        metric_bits.append(f"1D {day_text}")
+    if month_text and month_text != "N/A":
+        metric_bits.append(f"1M {month_text}")
+    market_line = join_short_texts(metric_bits, max_len=MAX_VISUAL_SUBHEADLINE, separator=" / ")
+
+    if role == "fundamental":
+        summary_candidates = [business_model, identity_summary, points[0] if points else "", summary_fallback]
+        body_candidates = [points[0] if points else "", points[1] if len(points) > 1 else "", moat, body_fallback]
+    elif role == "growth":
+        joined_growth = join_short_texts(point_values[:2], max_len=MAX_VISUAL_SUBHEADLINE, separator=" + ")
+        summary_candidates = [joined_growth, points[0] if points else "", summary_fallback]
+        body_candidates = [points[1] if len(points) > 1 else "", points[2] if len(points) > 2 else "", moat, body_fallback]
+    elif role == "risk":
+        joined_risk = join_short_texts(point_values[:2], max_len=MAX_VISUAL_SUBHEADLINE, separator=" / ")
+        summary_candidates = [points[0] if points else "", joined_risk, summary_fallback]
+        body_candidates = [points[1] if len(points) > 1 else "", points[2] if len(points) > 2 else "", body_fallback]
+    elif role == "sentiment":
+        summary_candidates = [points[0] if points else "", market_line, summary_fallback]
+        body_candidates = [points[2] if len(points) > 2 else "", points[1] if len(points) > 1 else "", why_now, body_fallback]
+    else:
+        summary_candidates = [summary_fallback, points[0] if points else "", fallback]
+        body_candidates = [body_fallback, points[1] if len(points) > 1 else "", summary_fallback]
+
+    summary = pick_visual_candidate(summary_candidates, max_len=MAX_VISUAL_SUBHEADLINE)
+    body = pick_visual_candidate(body_candidates, max_len=MAX_VISUAL_BODY, exclude=summary)
+
+    if not summary:
+        summary = truncate_text(strip_visual_tone(fallback), max_len=MAX_VISUAL_SUBHEADLINE)
+    if not body:
+        body = truncate_text(strip_visual_tone(summary or fallback), max_len=MAX_VISUAL_BODY)
+    return summary, body
+
+
 def normalize_company_point_lines(values: Any, *, limit: int, max_len: int | None = None) -> list[str]:
     if not isinstance(values, list):
         return []
     out: list[str] = []
     seen: set[str] = set()
     for value in values:
-        text = first_sentence(value)
+        text = strip_visual_tone(first_sentence(value))
         if max_len is not None:
             text = truncate_text(text, max_len=max_len)
         else:
@@ -619,18 +804,21 @@ def expand_company_moves_for_sections(
             max_len=34,
         )
         move = dict(base_move)
-        move["segment_role"] = compact_text(expert_section.get("role"))
-        move["move_summary"] = compact_text(
-            expert_summary
-            or move.get("move_summary")
-            or move.get("reason")
+        role = compact_text(expert_section.get("role"))
+        visual_summary, visual_body = build_company_visual_copy(
+            company_move={
+                **move,
+                "slide_points": expert_points or move.get("slide_points"),
+                "move_summary": expert_summary or move.get("move_summary"),
+                "reason": section_text or expert_summary or move.get("reason"),
+            },
+            company_profile=company_profile,
+            role=role,
+            fallback=section_text or expert_summary,
         )
-        move["reason"] = compact_text(
-            section_text
-            or expert_summary
-            or move.get("spoken_text")
-            or move.get("reason")
-        )
+        move["segment_role"] = role
+        move["move_summary"] = compact_text(visual_summary or expert_summary or move.get("move_summary") or move.get("reason"))
+        move["reason"] = compact_text(visual_body or visual_summary or section_text or expert_summary or move.get("reason"))
         if expert_points:
             move["slide_points"] = expert_points
         elif section_name == "company_1":
@@ -667,7 +855,7 @@ def normalize_llm_render_payload(
 ) -> dict[str, Any]:
     metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
     company_moves = expand_company_moves_for_sections(script_payload, sections)
-    title = compact_text(script_payload.get("title")) or "US Market Close"
+    title = build_analysis_title(script_payload, lang) or "US Market Close"
     hook = compact_text(script_payload.get("hook"))
 
     defaults = resolve_slides_defaults(config) if isinstance(config, dict) else {}
@@ -711,18 +899,19 @@ def normalize_llm_render_payload(
             company_move,
             fallback=compact_text(section.get("text")) or hook,
         )
+        company_ticker = truncate_text(company_move.get("ticker"), max_len=MAX_VISUAL_HEADLINE)
 
-        default_headline = title if section_key == "hook" else company_summary or expected_eyebrow
+        default_headline = title if section_key == "hook" else company_ticker or expected_eyebrow
         if section_key == "closing":
             default_headline = compact_text(section.get("text")) or "Wrap Up"
         if is_company_section_name(section_name):
             default_subheadline = company_summary or compact_text(section.get("text")) or hook
             default_body = company_reason or default_subheadline
         else:
-            default_subheadline = compact_text(section.get("text")) or hook
-            default_body = compact_text(section.get("text")) or default_subheadline
+            default_subheadline = truncate_text(compact_text(section.get("text")) or hook, max_len=MAX_VISUAL_SUBHEADLINE)
+            default_body = truncate_text(compact_text(section.get("text")) or default_subheadline, max_len=MAX_VISUAL_BODY)
 
-        bullets = normalize_company_point_lines(llm_slide.get("bullets"), limit=MAX_COMPANY_BULLETS)
+        bullets = normalize_company_point_lines(llm_slide.get("bullets"), limit=MAX_COMPANY_BULLETS, max_len=34)
         if not bullets:
             if is_company_section_name(section_name):
                 bullets = build_company_bullets(company_move, lang=lang, limit=MAX_COMPANY_BULLETS)
@@ -740,11 +929,17 @@ def normalize_llm_render_payload(
                 tickers = [ticker]
         highlights = normalize_string_list(llm_slide.get("highlights"), limit=3, max_len=40)
 
-        headline = compact_text(llm_slide.get("headline")) or default_headline
+        llm_headline = compact_text(llm_slide.get("headline"))
         llm_subheadline = compact_text(llm_slide.get("subheadline"))
         llm_body = compact_text(llm_slide.get("body"))
-        subheadline = llm_subheadline or truncate_text(default_subheadline, max_len=72)
-        body = llm_body or truncate_text(default_body, max_len=72)
+        if is_company_section_name(section_name):
+            headline = choose_visual_text(llm_headline, default_headline, max_len=MAX_VISUAL_HEADLINE, reject_narration=True)
+            subheadline = choose_visual_text(llm_subheadline, default_subheadline, max_len=MAX_VISUAL_SUBHEADLINE, reject_narration=True)
+            body = choose_visual_text(llm_body, default_body, max_len=MAX_VISUAL_BODY, reject_narration=True)
+        else:
+            headline = strip_visual_tone(llm_headline) or strip_visual_tone(default_headline)
+            subheadline = choose_visual_text(llm_subheadline, default_subheadline, max_len=MAX_VISUAL_SUBHEADLINE)
+            body = choose_visual_text(llm_body, default_body, max_len=MAX_VISUAL_BODY)
         if section_key == "hook":
             # Hook screen title must always match script title.
             headline = title
@@ -776,7 +971,7 @@ def normalize_llm_render_payload(
                 "id": slide["id"],
                 "startSec": slide["startSec"],
                 "endSec": slide["endSec"],
-                "text": compact_text(subheadline or body or headline),
+                "text": compact_text(strip_visual_tone(subheadline or body or headline)),
             }
         )
 
@@ -853,11 +1048,12 @@ def build_slide_script_payload(
     metadata = script_payload.get("metadata")
     if not isinstance(metadata, dict):
         metadata = {}
+    title = build_analysis_title(script_payload, lang)
 
     return {
         "date": date,
         "lang": lang,
-        "title": compact_text(script_payload.get("title")),
+        "title": title,
         "hook": compact_text(script_payload.get("hook")),
         "durationSeconds": round(duration_seconds, 3),
         "audioFile": audio_file,
@@ -893,6 +1089,7 @@ def build_slide_render_template(
     metadata = script_payload.get("metadata")
     if not isinstance(metadata, dict):
         metadata = {}
+    title = build_analysis_title(script_payload, lang)
 
     defaults = resolve_slides_defaults(config) if isinstance(config, dict) else {}
     phase_by_section = defaults.get("phase_by_section") if isinstance(defaults.get("phase_by_section"), dict) else {}
@@ -920,20 +1117,21 @@ def build_slide_render_template(
             company_idx += 1
 
         company_summary, company_reason = build_company_default_text(company_move, fallback=text)
+        company_ticker = truncate_text(company_move.get("ticker"), max_len=MAX_VISUAL_HEADLINE)
 
-        headline = compact_text(script_payload.get("title"))
-        subheadline = truncate_text(text or compact_text(script_payload.get("hook")), max_len=72)
+        headline = title
+        subheadline = truncate_text(strip_visual_tone(text or compact_text(script_payload.get("hook"))), max_len=MAX_VISUAL_SUBHEADLINE)
         body = subheadline
         bullets = [sentence for sentence in re.split(r"(?<=[.!?])\s+", body) if compact_text(sentence)][:2]
         bullets = [truncate_text(item, max_len=44) for item in bullets if compact_text(item)]
         if not bullets:
             bullets = [truncate_text(body, max_len=44)]
         if is_hook:
-            headline = compact_text(script_payload.get("title")) or "US Market Close"
-            subheadline = truncate_text(text or compact_text(script_payload.get("hook")), max_len=72)
+            headline = title or "US Market Close"
+            subheadline = truncate_text(strip_visual_tone(text or compact_text(script_payload.get("hook"))), max_len=MAX_VISUAL_SUBHEADLINE)
             body = subheadline
         if is_company:
-            headline = company_summary or compact_text(company_move.get("ticker")) or headline
+            headline = company_ticker or headline
             subheadline = company_summary or subheadline
             body = company_reason or subheadline
             bullets = build_company_bullets(company_move, lang=lang, limit=MAX_COMPANY_BULLETS) or bullets
@@ -957,9 +1155,9 @@ def build_slide_render_template(
                 "startSec": section["startSec"],
                 "endSec": section["endSec"],
                 "eyebrow": eyebrow,
-                "headline": headline,
-                "subheadline": subheadline,
-                "body": body,
+                "headline": strip_visual_tone(headline),
+                "subheadline": strip_visual_tone(subheadline),
+                "body": strip_visual_tone(body),
                 "bullets": bullets,
                 "tickers": tickers,
                 "highlights": [],
@@ -970,14 +1168,14 @@ def build_slide_render_template(
                 "id": section["id"],
                 "startSec": section["startSec"],
                 "endSec": section["endSec"],
-                "text": truncate_text(text or subheadline, max_len=72),
+                "text": truncate_text(strip_visual_tone(text or subheadline), max_len=72),
             }
         )
 
     return {
         "date": date,
         "lang": lang,
-        "title": compact_text(script_payload.get("title")) or "US Market Close",
+        "title": title or "US Market Close",
         "hook": compact_text(script_payload.get("hook")),
         "durationSeconds": round(duration_seconds, 3),
         "audioFile": audio_file,

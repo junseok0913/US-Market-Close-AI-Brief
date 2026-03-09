@@ -99,7 +99,8 @@ script:
       - company_4에 fundamental/growth/risk만 넣지 말 것.
       - metadata.company_moves의 숫자 지표(1D/1M, 시총, PER, PBR, ROE)는 company_context_json 값을 그대로 사용할 것.
       - company_context_json에 없는 숫자 지표는 null/N/A로 두고 추정하지 말 것.
-      - title은 회사명만 사용하고 설명 문구를 넣지 말 것.
+      - title은 반드시 "회사명 + 분석" 형식으로 작성할 것.
+      - en 출력이면 title은 반드시 "Company Name + Analysis" 형식으로 작성할 것.
       - title에는 질문형/과장형/광고형 표현을 넣지 말 것.
       - closing은 반드시 CTA 문장만 사용:
         - ko: "구독과 좋아요 부탁드립니다."

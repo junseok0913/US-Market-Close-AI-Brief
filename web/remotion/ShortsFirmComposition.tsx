@@ -53,18 +53,57 @@ const COLORS = {
   s2Secondary: "hsl(265 70% 60%)",
   s2Accent: "hsl(345 75% 58%)",
 };
+const OXBLOOD_SOLID = "#2A1218";
 
 const GRADIENT_MAIN_S2 =
   "linear-gradient(180deg, hsl(255 18% 7%) 0%, hsl(260 20% 6%) 50%, hsl(258 16% 8%) 100%)";
-const GRADIENT_THEME_FIRM =
-  "linear-gradient(180deg, hsl(198 42% 10%) 0%, hsl(190 38% 8%) 52%, hsl(178 34% 11%) 100%)";
+const GRADIENT_THEME_FIRM = `linear-gradient(180deg, ${OXBLOOD_SOLID} 0%, ${OXBLOOD_SOLID} 100%)`;
 
 const BACKGROUND_BY_VARIANT: Record<FirmVariant, string> = {
   firm: GRADIENT_MAIN_S2,
   "theme-firm": GRADIENT_THEME_FIRM,
 };
 
-const THEMES = [
+const VARIANT_FRAME = {
+  firm: {
+    rootBackground: "hsl(255 18% 7%)",
+    surface: COLORS.surfaceElevated,
+    border: COLORS.border,
+    hookPattern:
+      "repeating-linear-gradient(135deg, hsl(265 70% 60%) 0px, hsl(265 70% 60%) 2px, transparent 2px, transparent 40px)",
+    hookBar: "linear-gradient(90deg, hsl(185 75% 48%), hsl(265 70% 60%), hsl(345 75% 58%))",
+    hookPillBg: "hsl(185 75% 48% / 0.12)",
+    hookPillBorder: "hsl(185 75% 48% / 0.25)",
+    hookDot: COLORS.s2Secondary,
+    hookLabel: "Stock Picks",
+    hookLabelColor: COLORS.s2Secondary,
+    closingPattern:
+      "repeating-linear-gradient(-135deg, hsl(345 75% 58%) 0px, hsl(345 75% 58%) 2px, transparent 2px, transparent 40px)",
+    closingBar: "linear-gradient(90deg, hsl(185 75% 48%), hsl(345 75% 58%), hsl(265 70% 60%))",
+    closingDot: COLORS.s2Accent,
+    closingLabel: "Wrap Up",
+    closingLabelColor: COLORS.s2Accent,
+  },
+  "theme-firm": {
+    rootBackground: OXBLOOD_SOLID,
+    surface: "hsl(345 22% 16% / 0.92)",
+    border: "hsl(345 18% 24%)",
+    hookPattern: "none",
+    hookBar: "linear-gradient(90deg, hsl(185 75% 48%), hsl(265 70% 60%), hsl(345 75% 58%))",
+    hookPillBg: "hsl(185 75% 48% / 0.12)",
+    hookPillBorder: "hsl(185 75% 48% / 0.25)",
+    hookDot: COLORS.s2Secondary,
+    hookLabel: "Firm Analysis",
+    hookLabelColor: COLORS.s2Secondary,
+    closingPattern: "none",
+    closingBar: "linear-gradient(90deg, hsl(185 75% 48%), hsl(345 75% 58%), hsl(265 70% 60%))",
+    closingDot: COLORS.s2Accent,
+    closingLabel: "Closing Note",
+    closingLabelColor: COLORS.s2Accent,
+  },
+} as const;
+
+const FIRM_THEMES = [
   {
     accent: COLORS.s2Primary,
     accentText: COLORS.s2Primary,
@@ -114,6 +153,105 @@ const THEMES = [
       "M0,3 C25,5 40,11 60,15 C80,19 95,13 115,21 C135,27 155,23 175,25 C190,28 200,29 200,30 L200,40 L0,40 Z",
   },
 ] as const;
+
+const THEME_FIRM_THEMES = [
+  {
+    accent: COLORS.s2Primary,
+    accentText: COLORS.s2Primary,
+    accentBg: "hsl(185 75% 48% / 0.10)",
+    accentBorder: "hsl(185 75% 48% / 0.20)",
+    dot: COLORS.s2Primary,
+    label: "FUNDAMENTAL",
+    chartLineUp:
+      "M0,30 C20,28 34,22 54,18 C74,14 88,20 108,12 C128,6 146,10 166,8 C184,6 195,3 200,4",
+    chartFillUp:
+      "M0,30 C20,28 34,22 54,18 C74,14 88,20 108,12 C128,6 146,10 166,8 C184,6 195,3 200,4 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,6 C20,8 34,14 54,18 C74,22 88,16 108,24 C128,30 146,26 166,28 C184,30 195,33 200,32",
+    chartFillDown:
+      "M0,6 C20,8 34,14 54,18 C74,22 88,16 108,24 C128,30 146,26 166,28 C184,30 195,33 200,32 L200,40 L0,40 Z",
+  },
+  {
+    accent: COLORS.s2Secondary,
+    accentText: COLORS.s2Secondary,
+    accentBg: "hsl(265 70% 60% / 0.10)",
+    accentBorder: "hsl(265 70% 60% / 0.20)",
+    dot: COLORS.s2Secondary,
+    label: "GROWTH",
+    chartLineUp:
+      "M0,28 C18,29 34,26 52,20 C72,14 92,20 112,12 C132,5 152,8 172,6 C188,4 197,3 200,2",
+    chartFillUp:
+      "M0,28 C18,29 34,26 52,20 C72,14 92,20 112,12 C132,5 152,8 172,6 C188,4 197,3 200,2 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,5 C18,7 34,13 52,17 C72,21 92,15 112,23 C132,29 152,25 172,27 C188,29 197,31 200,30",
+    chartFillDown:
+      "M0,5 C18,7 34,13 52,17 C72,21 92,15 112,23 C132,29 152,25 172,27 C188,29 197,31 200,30 L200,40 L0,40 Z",
+  },
+  {
+    accent: COLORS.s2Accent,
+    accentText: COLORS.s2Accent,
+    accentBg: "hsl(345 75% 58% / 0.10)",
+    accentBorder: "hsl(345 75% 58% / 0.20)",
+    dot: COLORS.s2Accent,
+    label: "RISK",
+    chartLineUp:
+      "M0,32 C24,28 44,22 64,18 C84,14 102,18 122,12 C142,6 160,8 178,5 C190,4 197,2 200,2",
+    chartFillUp:
+      "M0,32 C24,28 44,22 64,18 C84,14 102,18 122,12 C142,6 160,8 178,5 C190,4 197,2 200,2 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,4 C24,8 44,16 64,20 C84,24 102,20 122,28 C142,34 160,30 178,33 C190,35 197,37 200,38",
+    chartFillDown:
+      "M0,4 C24,8 44,16 64,20 C84,24 102,20 122,28 C142,34 160,30 178,33 C190,35 197,37 200,38 L200,40 L0,40 Z",
+  },
+  {
+    accent: COLORS.s2Primary,
+    accentText: COLORS.s2Primary,
+    accentBg: "hsl(185 75% 48% / 0.10)",
+    accentBorder: "hsl(185 75% 48% / 0.20)",
+    dot: COLORS.s2Primary,
+    label: "SENTIMENT",
+    chartLineUp:
+      "M0,29 C18,30 36,25 56,18 C76,11 96,18 116,11 C136,4 156,7 176,5 C190,4 197,4 200,5",
+    chartFillUp:
+      "M0,29 C18,30 36,25 56,18 C76,11 96,18 116,11 C136,4 156,7 176,5 C190,4 197,4 200,5 L200,40 L0,40 Z",
+    chartLineDown:
+      "M0,6 C18,8 36,14 56,21 C76,28 96,21 116,28 C136,35 156,32 176,34 C190,35 197,35 200,34",
+    chartFillDown:
+      "M0,6 C18,8 36,14 56,21 C76,28 96,21 116,28 C136,35 156,32 176,34 C190,35 197,35 200,34 L200,40 L0,40 Z",
+  },
+] as const;
+
+function simplifyCompanyName(value: unknown): string {
+  const text = compactText(value);
+  if (!text) return "";
+  const simplified = text
+    .replace(/,?\s+(?:incorporated|inc\.?|corporation|corp\.?|company|co\.?|holdings|holding|group|limited|ltd\.?|llc|plc)\s*$/i, "")
+    .replace(/\s+class\s+[a-z]\s*$/i, "")
+    .trim()
+    .replace(/[,\s]+$/, "");
+  return simplified || text;
+}
+
+function buildThemeFirmTitle(episode: ShortsEpisode): string {
+  const meta = (episode.meta as Record<string, unknown> | undefined) ?? {};
+  const companyProfile =
+    meta.companyProfile && typeof meta.companyProfile === "object"
+      ? (meta.companyProfile as Record<string, unknown>)
+      : undefined;
+  const companyMoves = Array.isArray(meta.companyMoves) ? meta.companyMoves : [];
+  const fallbackName =
+    companyMoves.length > 0 && companyMoves[0] && typeof companyMoves[0] === "object"
+      ? compactText((companyMoves[0] as Record<string, unknown>).name)
+      : "";
+  const base =
+    simplifyCompanyName(companyProfile?.name) ||
+    simplifyCompanyName(fallbackName) ||
+    simplifyCompanyName(episode.title) ||
+    (compactText(episode.lang).toLowerCase() === "en" ? "Company" : "핵심 기업");
+  const suffix = compactText(episode.lang).toLowerCase() === "en" ? "Analysis" : "분석";
+  if (/(?:^|\s)(?:분석|analysis)$/i.test(base)) return base;
+  return `${base} ${suffix}`.trim();
+}
 
 function compactText(value: unknown, fallback = ""): string {
   const text = String(value ?? "").replace(/\s+/g, " ").trim();
@@ -233,6 +371,7 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
   hook,
   variant,
 }) => {
+  const frameTheme = VARIANT_FRAME[variant];
   return (
     <AbsoluteFill
       style={{
@@ -258,8 +397,7 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
           width: 600,
           height: 600,
           opacity: 0.04,
-          background:
-            "repeating-linear-gradient(135deg, hsl(265 70% 60%) 0px, hsl(265 70% 60%) 2px, transparent 2px, transparent 40px)",
+          background: frameTheme.hookPattern,
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.04 }}
@@ -274,7 +412,7 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
           right: 56,
           height: 4,
           borderRadius: 999,
-          background: "linear-gradient(90deg, hsl(185 75% 48%), hsl(265 70% 60%), hsl(345 75% 58%))",
+          background: frameTheme.hookBar,
         }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -289,8 +427,8 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
           style={{
             borderRadius: 999,
             padding: "20px 56px",
-            background: "hsl(185 75% 48% / 0.12)",
-            border: "1px solid hsl(185 75% 48% / 0.25)",
+            background: frameTheme.hookPillBg,
+            border: `1px solid ${frameTheme.hookPillBorder}`,
           }}
         >
           <span style={{ fontFamily: MONO_FONT, fontSize: 42, letterSpacing: "0.25em", fontWeight: 700 }}>{formatDotDate(date)}</span>
@@ -307,7 +445,7 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: COLORS.s2Secondary,
+              background: frameTheme.hookDot,
               animation: "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
             }}
           />
@@ -318,10 +456,10 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
               fontWeight: 600,
               letterSpacing: "0.25em",
               textTransform: "uppercase",
-              color: COLORS.s2Secondary,
+              color: frameTheme.hookLabelColor,
             }}
           >
-            Stock Picks
+            {frameTheme.hookLabel}
           </span>
         </motion.div>
 
@@ -350,7 +488,7 @@ const HookSection: FC<{ date: string; title: string; hook: string; variant: Firm
         animate={{ opacity: 1, rotate: 45 }}
         transition={{ delay: 1.4, duration: 0.5 }}
       >
-        <div style={{ width: 16, height: 16, border: "2px solid hsl(265 70% 60% / 0.4)" }} />
+        <div style={{ width: 16, height: 16, border: `2px solid ${frameTheme.hookLabelColor}66` }} />
       </motion.div>
     </AbsoluteFill>
   );
@@ -362,13 +500,45 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
   total,
   variant,
 }) => {
-  const theme = THEMES[index % THEMES.length];
+  const frameTheme = VARIANT_FRAME[variant];
+  const themes = variant === "theme-firm" ? THEME_FIRM_THEMES : FIRM_THEMES;
+  const theme = themes[index % themes.length];
   const isPositive = Number(company.day_change_pct || 0) >= 0;
   const isMonthPositive = Number(company.month_change_pct || 0) >= 0;
   const points = normalizeStringList(company.slide_points, 3);
   const finalPoints = points.length > 0 ? points : normalizeStringList([company.reason, company.move_summary], 3);
   const chartLine = isPositive ? theme.chartLineUp : theme.chartLineDown;
   const chartFill = isPositive ? theme.chartFillUp : theme.chartFillDown;
+  const isThemeFirm = variant === "theme-firm";
+  const companyBackground = isThemeFirm ? OXBLOOD_SOLID : BACKGROUND_BY_VARIANT[variant];
+  const surfaceBackground = isThemeFirm
+    ? `linear-gradient(180deg, hsl(345 20% 18% / 0.95) 0%, hsl(345 22% 14% / 0.98) 100%)`
+    : frameTheme.surface;
+  const pointBackground = isThemeFirm
+    ? `linear-gradient(180deg, hsl(345 18% 17% / 0.96) 0%, hsl(345 18% 14% / 0.96) 100%)`
+    : theme.accentBg;
+  const summaryColor = theme.accentText;
+  const companyNameColor = COLORS.mutedForeground;
+  const trendCardBackground = isThemeFirm
+    ? `linear-gradient(180deg, hsl(345 18% 17% / 0.98) 0%, hsl(345 18% 14% / 0.98) 100%)`
+    : isPositive
+      ? "hsl(145 80% 50% / 0.08)"
+      : "hsl(0 75% 55% / 0.08)";
+  const trendCardBorder = isThemeFirm
+    ? `1px solid ${theme.accentBorder}`
+    : `1px solid ${isPositive ? "hsl(145 80% 50% / 0.15)" : "hsl(0 75% 55% / 0.15)"}`;
+  const trendTextColor = isThemeFirm ? theme.accentText : isPositive ? COLORS.gain : COLORS.loss;
+  const monthTrendBackground = isThemeFirm
+    ? trendCardBackground
+    : isMonthPositive
+      ? "hsl(145 80% 50% / 0.08)"
+      : "hsl(0 75% 55% / 0.08)";
+  const monthTrendBorder = isThemeFirm
+    ? `1px solid ${theme.accentBorder}`
+    : `1px solid ${isMonthPositive ? "hsl(145 80% 50% / 0.15)" : "hsl(0 75% 55% / 0.15)"}`;
+  const monthTrendTextColor = isThemeFirm ? theme.accentText : isMonthPositive ? COLORS.gain : COLORS.loss;
+  const chartStroke = isThemeFirm ? theme.accent : isPositive ? COLORS.gain : COLORS.loss;
+  const chartFillColor = isThemeFirm ? theme.accent : isPositive ? COLORS.gain : COLORS.loss;
 
   return (
     <AbsoluteFill
@@ -383,7 +553,7 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
         color: COLORS.foreground,
       }}
     >
-      <AbsoluteFill style={{ background: BACKGROUND_BY_VARIANT[variant] }} />
+      <AbsoluteFill style={{ background: companyBackground }} />
 
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
         <motion.div
@@ -392,11 +562,26 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
           transition={{ duration: 0.5 }}
           style={{ marginBottom: 24 }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
             <div style={{ width: 16, height: 16, borderRadius: "50%", background: theme.dot }} />
-            <span style={{ fontFamily: DISPLAY_FONT, fontSize: 32, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: theme.accentText }}>
-              {theme.label}
-            </span>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                paddingLeft: 16,
+                paddingRight: 18,
+                paddingTop: 8,
+                paddingBottom: 8,
+                borderRadius: 999,
+                background: isThemeFirm ? theme.accentBg : "transparent",
+                border: isThemeFirm ? `1px solid ${theme.accentBorder}` : "none",
+              }}
+            >
+              <span style={{ fontFamily: DISPLAY_FONT, fontSize: 32, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: theme.accentText }}>
+                {theme.label}
+              </span>
+            </div>
             <span style={{ fontFamily: MONO_FONT, fontSize: 24, color: COLORS.mutedForeground }}>{index + 1}/{total}</span>
           </div>
           <div style={{ height: 3, width: 176, borderRadius: 999, background: `linear-gradient(90deg, ${theme.accent}, transparent)` }} />
@@ -414,12 +599,12 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
               fontSize: 100,
               fontWeight: 900,
               color: theme.accentText,
-              textShadow: `0 0 40px ${theme.accent}30`,
+              textShadow: isThemeFirm ? `0 0 28px ${theme.accentBg}` : `0 0 40px ${theme.accent}30`,
             }}
           >
             {compactText(company.ticker, "N/A")}
           </span>
-          <p style={{ margin: 0, fontSize: 30, color: COLORS.mutedForeground, fontWeight: 500 }}>{compactTextWithLimit(company.name, "Company", 48)}</p>
+          <p style={{ margin: 0, fontSize: 30, color: companyNameColor, fontWeight: 500 }}>{compactTextWithLimit(company.name, "Company", 48)}</p>
         </motion.div>
 
         <motion.div
@@ -428,8 +613,11 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
           transition={{ delay: 0.25, duration: 0.5 }}
           style={{ textAlign: "center", marginBottom: 32 }}
         >
-          <p style={{ margin: 0, fontSize: 36, fontWeight: 700, lineHeight: 1.4, color: theme.accentText }}>
-            {compactTextWithLimit(company.move_summary, compactText(company.reason, "핵심 변동 요인"), 60)}
+          <p style={{ margin: 0, fontSize: 36, fontWeight: 700, lineHeight: 1.4, color: summaryColor }}>
+            {compactTextWithLimit(company.move_summary, compactText(company.reason, "핵심 변동 요인"), 48)}
+          </p>
+          <p style={{ margin: "12px 0 0", fontSize: 24, lineHeight: 1.5, color: companyNameColor, fontWeight: 500 }}>
+            {compactTextWithLimit(company.reason, company.move_summary, 56)}
           </p>
         </motion.div>
 
@@ -438,11 +626,13 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
           style={{
-            background: COLORS.surfaceElevated,
-            border: `1px solid ${COLORS.border}`,
+            background: surfaceBackground,
+            border: `1px solid ${frameTheme.border}`,
             borderRadius: 24,
             padding: 32,
             marginBottom: 32,
+            boxShadow: isThemeFirm ? "0 24px 64px hsl(220 40% 3% / 0.34)" : "none",
+            backdropFilter: isThemeFirm ? "blur(8px)" : undefined,
           }}
         >
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -451,12 +641,12 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
                 borderRadius: 16,
                 padding: 20,
                 textAlign: "center",
-                background: isPositive ? "hsl(145 80% 50% / 0.08)" : "hsl(0 75% 55% / 0.08)",
-                border: `1px solid ${isPositive ? "hsl(145 80% 50% / 0.15)" : "hsl(0 75% 55% / 0.15)"}`,
+                background: trendCardBackground,
+                border: trendCardBorder,
               }}
             >
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>당일</div>
-              <div style={{ fontFamily: MONO_FONT, fontSize: 48, fontWeight: 900, lineHeight: 1, color: isPositive ? COLORS.gain : COLORS.loss }}>
+              <div style={{ fontFamily: MONO_FONT, fontSize: 48, fontWeight: 900, lineHeight: 1, color: trendTextColor }}>
                 {compactText(company.day_change_display, "N/A")}
               </div>
             </div>
@@ -465,34 +655,34 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
                 borderRadius: 16,
                 padding: 20,
                 textAlign: "center",
-                background: isMonthPositive ? "hsl(145 80% 50% / 0.08)" : "hsl(0 75% 55% / 0.08)",
-                border: `1px solid ${isMonthPositive ? "hsl(145 80% 50% / 0.15)" : "hsl(0 75% 55% / 0.15)"}`,
+                background: monthTrendBackground,
+                border: monthTrendBorder,
               }}
             >
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>1개월</div>
-              <div style={{ fontFamily: MONO_FONT, fontSize: 48, fontWeight: 900, lineHeight: 1, color: isMonthPositive ? COLORS.gain : COLORS.loss }}>
+              <div style={{ fontFamily: MONO_FONT, fontSize: 48, fontWeight: 900, lineHeight: 1, color: monthTrendTextColor }}>
                 {compactText(company.month_change_display, "N/A")}
               </div>
             </div>
-            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: theme.accentBg, border: `1px solid ${theme.accentBorder}` }}>
+            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: pointBackground, border: `1px solid ${theme.accentBorder}` }}>
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>시가총액</div>
               <div style={{ fontFamily: MONO_FONT, fontSize: 40, fontWeight: 700, lineHeight: 1, color: theme.accentText }}>
                 {compactText(company.market_cap_display, "N/A")}
               </div>
             </div>
-            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: theme.accentBg, border: `1px solid ${theme.accentBorder}` }}>
+            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: pointBackground, border: `1px solid ${theme.accentBorder}` }}>
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>PER</div>
               <div style={{ fontFamily: MONO_FONT, fontSize: 40, fontWeight: 700, lineHeight: 1, color: theme.accentText }}>
                 {compactText(company.pe_ratio_display, "N/A")}
               </div>
             </div>
-            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: theme.accentBg, border: `1px solid ${theme.accentBorder}` }}>
+            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: pointBackground, border: `1px solid ${theme.accentBorder}` }}>
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>PBR</div>
               <div style={{ fontFamily: MONO_FONT, fontSize: 40, fontWeight: 700, lineHeight: 1, color: theme.accentText }}>
                 {compactText(company.pbr_display, "N/A")}
               </div>
             </div>
-            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: theme.accentBg, border: `1px solid ${theme.accentBorder}` }}>
+            <div style={{ borderRadius: 16, padding: 20, textAlign: "center", background: pointBackground, border: `1px solid ${theme.accentBorder}` }}>
               <div style={{ fontSize: 22, color: COLORS.mutedForeground, marginBottom: 8 }}>ROE</div>
               <div style={{ fontFamily: MONO_FONT, fontSize: 40, fontWeight: 700, lineHeight: 1, color: theme.accentText }}>
                 {compactText(company.roe_display, "N/A")}
@@ -504,15 +694,15 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
             <svg viewBox="0 0 200 40" preserveAspectRatio="none" style={{ width: "100%", height: "100%" }}>
               <defs>
                 <linearGradient id={`firm-grad-${index}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor={isPositive ? COLORS.gain : COLORS.loss} stopOpacity="0.3" />
-                  <stop offset="100%" stopColor={isPositive ? COLORS.gain : COLORS.loss} stopOpacity="0.02" />
+                  <stop offset="0%" stopColor={chartFillColor} stopOpacity="0.26" />
+                  <stop offset="100%" stopColor={chartFillColor} stopOpacity="0.02" />
                 </linearGradient>
               </defs>
               <motion.path d={chartFill} fill={`url(#firm-grad-${index})`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} />
               <motion.path
                 d={chartLine}
                 fill="none"
-                stroke={isPositive ? COLORS.gain : COLORS.loss}
+                stroke={chartStroke}
                 strokeWidth={1.5}
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
@@ -534,8 +724,9 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
                 position: "relative",
                 borderRadius: 16,
                 overflow: "hidden",
-                background: theme.accentBg,
+                background: pointBackground,
                 border: `1px solid ${theme.accentBorder}`,
+                boxShadow: isThemeFirm ? "0 14px 30px hsl(220 40% 3% / 0.22)" : "none",
               }}
             >
               <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 8, background: theme.accent }} />
@@ -560,6 +751,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
   const firstSentence = compactText(closingText).split(/[.!?]/)[0] || "오늘 장 핵심 정리";
   const headline = compactTextWithLimit(`${firstSentence}.`, "오늘 장 핵심 정리.", 52);
   const points = normalizeStringList(keyPoints, 3);
+  const frameTheme = VARIANT_FRAME[variant];
 
   return (
     <AbsoluteFill
@@ -586,8 +778,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
           width: 600,
           height: 600,
           opacity: 0.04,
-          background:
-            "repeating-linear-gradient(-135deg, hsl(345 75% 58%) 0px, hsl(345 75% 58%) 2px, transparent 2px, transparent 40px)",
+          background: frameTheme.closingPattern,
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.04 }}
@@ -602,7 +793,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
           right: 56,
           height: 4,
           borderRadius: 999,
-          background: "linear-gradient(90deg, hsl(185 75% 48%), hsl(345 75% 58%), hsl(265 70% 60%))",
+          background: frameTheme.closingBar,
         }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -621,12 +812,12 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: COLORS.s2Accent,
+              background: frameTheme.closingDot,
               animation: "shortyPulse 2s cubic-bezier(0.4,0,0.6,1) infinite",
             }}
           />
-          <span style={{ fontFamily: DISPLAY_FONT, fontSize: 28, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.s2Accent }}>
-            Wrap Up
+          <span style={{ fontFamily: DISPLAY_FONT, fontSize: 28, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: frameTheme.closingLabelColor }}>
+            {frameTheme.closingLabel}
           </span>
         </motion.div>
 
@@ -654,7 +845,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
                 transition={{ delay: 1.0 + idx * 0.15, duration: 0.4 }}
                 style={{ display: "flex", alignItems: "flex-start", gap: 20, textAlign: "left" }}
               >
-                <div style={{ marginTop: 10, width: 12, height: 12, borderRadius: "50%", background: "hsl(345 75% 58% / 0.4)", flexShrink: 0 }} />
+                <div style={{ marginTop: 10, width: 12, height: 12, borderRadius: "50%", background: `${frameTheme.closingLabelColor}66`, flexShrink: 0 }} />
                 <p style={{ margin: 0, fontSize: 30, lineHeight: 1.5, color: COLORS.mutedForeground, fontWeight: 500 }}>
                   {compactTextWithLimit(point, point, 56)}
                 </p>
@@ -683,7 +874,7 @@ const ClosingSection: FC<{ closingText: string; keyPoints: string[]; variant: Fi
         animate={{ opacity: 1, rotate: 45 }}
         transition={{ delay: 1.8, duration: 0.5 }}
       >
-        <div style={{ width: 16, height: 16, border: "2px solid hsl(345 75% 58% / 0.4)" }} />
+        <div style={{ width: 16, height: 16, border: `2px solid ${frameTheme.closingLabelColor}66` }} />
       </motion.div>
     </AbsoluteFill>
   );
@@ -699,6 +890,7 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
   const currentSec = frame / fps;
 
   const variant = resolveFirmVariant(episode);
+  const displayTitle = variant === "theme-firm" ? buildThemeFirmTitle(episode) : compactText(episode.title, "US Market Close");
   const companyMoves = useMemo(() => getCompanyMoves(episode), [episode]);
   const slides = useMemo(() => normalizeSlides(episode, companyMoves), [episode, companyMoves]);
 
@@ -750,7 +942,11 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
         ? companyMoves[companyIndex]
         : companyFallback;
 
-  const hookTitle = compactTextWithLimit(activeSlide?.headline, compactText(episode.title, "US Market Close"), 54);
+  const hookTitle = compactTextWithLimit(
+    variant === "theme-firm" ? displayTitle : activeSlide?.headline,
+    displayTitle,
+    54,
+  );
   const hookCopy = compactTextWithLimit(
     activeSlide?.subheadline || activeSlide?.body,
     compactText(episode.hook, "오늘 장 핵심을 빠르게 정리합니다."),
@@ -767,7 +963,7 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: variant === "theme-firm" ? "hsl(191 40% 9%)" : "hsl(255 18% 7%)",
+        backgroundColor: VARIANT_FRAME[variant].rootBackground,
         fontFamily: BASE_FONT,
       }}
     >

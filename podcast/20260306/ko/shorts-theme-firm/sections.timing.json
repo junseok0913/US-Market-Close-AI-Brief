@@ -1,0 +1,67 @@
+{
+  "date": "20260306",
+  "lang": "ko",
+  "audioFile": "shorts20260306.mp3",
+  "sectionOrder": [
+    "company_1",
+    "company_2",
+    "company_3",
+    "company_4"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 97.084,
+  "sections": [
+    {
+      "id": 0,
+      "name": "company_1",
+      "ticker": "AMAT",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 30.211,
+      "endSec": 30.211,
+      "speechDurationSec": 30.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 279,
+      "text": "스태그플레이션 공포가 덮친 시장, 그 속에서 AI의 희망과 지정학적 리스크의 폭풍을 동시에 맞은 기업이 있습니다. 먼저 Fundamental 관점에서 어플라이드 머티리얼즈는 반도체 장비 시장의 거인입니다. 72억 달러에 달하는 풍부한 현금과 안정적인 서비스 부문 매출은 이 회사의 탄탄한 재무 기반을 보여줍니다. 최근 2억 5천만 달러가 넘는 법률 합의금을 지불했지만, 이는 이미 알려진 일회성 비용으로 재무적 불확실성을 일부 해소한 측면도 있습니다. 숫자로 증명되는 안정성이 이 기업의 본질입니다."
+    },
+    {
+      "id": 1,
+      "name": "company_2",
+      "ticker": "AMAT",
+      "kind": "company",
+      "startSec": 30.211,
+      "speechEndSec": 54.542,
+      "endSec": 54.542,
+      "speechDurationSec": 24.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 198,
+      "text": "Growth 관점에서 성장 동력은 명확합니다. 바로 AI 혁명이죠. AI 칩 생산에 필수적인 차세대 공정, 즉 GAA 트랜지스터나 HBM용 첨단 패키징 장비 시장에서 독보적인 기술력을 보유하고 있습니다. 최근 실적에서 DRAM 고객사의 투자가 늘어난 것이 확인된 것처럼, AI 시대가 깊어질수록 어플라이드의 장비 수요는 구조적으로 증가할 수밖에 없습니다."
+    },
+    {
+      "id": 2,
+      "name": "company_3",
+      "ticker": "AMAT",
+      "kind": "company",
+      "startSec": 54.542,
+      "speechEndSec": 73.953,
+      "endSec": 73.953,
+      "speechDurationSec": 19.411,
+      "pauseAfterSec": 0.0,
+      "charCount": 191,
+      "text": "하지만 Risk 관점에서 보면 치명적인 리스크가 발목을 잡고 있습니다. 최근 미국 상무부와 합의한 벌금에 포함된 '유예된 수출 거부 명령'이 바로 그것입니다. 이는 향후 규정 위반 시, 회사 전체 매출의 30%를 차지하는 중국으로의 수출이 즉시 중단될 수 있음을 의미합니다. AI 성장 스토리 전체를 위협할 수 있는 지정학적 폭탄인 셈입니다."
+    },
+    {
+      "id": 3,
+      "name": "company_4",
+      "ticker": "AMAT",
+      "kind": "company",
+      "startSec": 73.953,
+      "speechEndSec": 97.084,
+      "endSec": 97.084,
+      "speechDurationSec": 23.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 203,
+      "text": "Sentiment 관점에서 시장은 오늘 이 리스크의 무게를 뒤늦게 깨달은 듯합니다. 장 초반 상승세를 보이다 6% 넘게 급락한 것은, AI 수혜주라는 막연한 기대감보다 중국 사업 전체를 위협하는 현실적인 리스크에 대한 공포가 더 컸다는 해석입니다. 성장과 리스크의 팽팽한 줄다리기에서, 오늘은 비관론이 시장 심리를 압도한 하루였습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
