@@ -1,0 +1,58 @@
+{
+  "date": "20260309",
+  "lang": "ko",
+  "audioFile": "shorts20260309.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 73.204,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.131,
+      "endSec": 5.131,
+      "speechDurationSec": 5.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 41,
+      "text": "유가가 배럴당 119달러까지 폭등했다가 하루 만에 8% 넘게 폭락했습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.131,
+      "speechEndSec": 19.662,
+      "endSec": 19.662,
+      "speechDurationSec": 14.531,
+      "pauseAfterSec": 0.0,
+      "charCount": 116,
+      "text": "3월 10일 미국 증시는 이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리에 힘입어 상승 마감했습니다. 다우는 0.5%, S&P 500은 0.83% 올랐고, 기술주 중심의 나스닥은 1.38% 급등했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 19.662,
+      "speechEndSec": 71.113,
+      "endSec": 71.113,
+      "speechDurationSec": 51.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 452,
+      "text": "밤사이 이란과의 전면전 우려로 2022년 이후 최고 수준인 119달러까지 치솟았던 유가는, G7의 전략비축유 방출 논의와 확전 우려가 완화되자 극적으로 반전했습니다. 결국 유가는 고점 대비 30퍼센트 이상 폭락하며 8퍼센트 넘게 하락 마감했고, 이는 인플레이션 우려를 잠재우며 10년물 국채 금리를 4.14퍼센트 아래로 끌어내렸습니다. 이 금리 하락이 기술주에 강력한 상승 동력을 제공했습니다. 여기에 마이크로소프트가 AI 스타트업 앤트로픽의 기술로 복잡한 업무를 자율 처리하는 AI 에이전트 서비스를 강화한다는 소식이 AI 모멘텀에 불을 지폈습니다. 이는 AI 기술의 수익화 모델이 한 단계 발전했다는 신호로 읽히며, 구글의 모회사 알파벳 주가도 2.6퍼센트 상승했습니다. AI 칩 수요 기대감에 엔비디아는 2.7퍼센트, AMD는 5.3퍼센트 급등했고, 반도체 ETF SOXX는 4퍼센트 가까이 올랐습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 71.113,
+      "speechEndSec": 73.204,
+      "endSec": 73.204,
+      "speechDurationSec": 2.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

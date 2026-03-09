@@ -1,0 +1,67 @@
+{
+  "date": "20260309",
+  "lang": "ko",
+  "audioFile": "shorts20260309.mp3",
+  "sectionOrder": [
+    "msft",
+    "nvda",
+    "vrt",
+    "googl"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 109.204,
+  "sections": [
+    {
+      "id": 0,
+      "name": "msft",
+      "ticker": "MSFT",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 29.011,
+      "endSec": 29.011,
+      "speechDurationSec": 29.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 274,
+      "text": "마이크로소프트가 스스로 일하는 AI 에이전트를 발표하며 AI 시장의 새로운 장을 열었습니다. 첫 번째 기업은 마이크로소프트입니다. 앤트로픽과 협력해 복잡한 업무를 자율적으로 처리하는 '코파일럿 코워크'를 선보인다는 소식이 주가 상승을 이끌었습니다. 이는 단순한 AI 챗봇을 넘어, 이메일 예약부터 데이터 정리, 발표자료 제작까지 대신해주는 AI 에이전트의 등장을 의미하는데요. 시장은 AI 기술의 수익화 모델이 한 단계 진화하는 신호로 해석하며, AI 산업 전체의 성장 기대감을 키웠습니다."
+    },
+    {
+      "id": 1,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 29.011,
+      "speechEndSec": 53.502,
+      "endSec": 53.502,
+      "speechDurationSec": 24.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 197,
+      "text": "다음은 엔비디아입니다. 마이크로소프트가 발표한 AI 에이전트처럼 더 정교한 AI 모델을 구동하려면, 더 강력한 반도체는 필수적입니다. 이 소식은 AI 칩에 대한 수요가 앞으로도 폭발적으로 증가할 것이라는 시장의 믿음을 재확인시켜 주었습니다. AI 칩 시장의 독보적 선두주자인 엔비디아는 오늘 2.7% 넘게 상승하며, AI 모멘텀이 건재함을 증명했습니다."
+    },
+    {
+      "id": 2,
+      "name": "vrt",
+      "ticker": "VRT",
+      "kind": "company",
+      "startSec": 53.502,
+      "speechEndSec": 78.713,
+      "endSec": 78.713,
+      "speechDurationSec": 25.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 219,
+      "text": "마지막은 데이터센터 인프라 기업 버티브입니다. AI 데이터센터의 전력 및 냉각 솔루션을 공급하는 핵심 수혜주로 부각되며 오늘 9% 넘게 급등했습니다. 150억 달러에 달하는 수주 잔고가 폭발적인 성장 기대감을 키웠죠. 하지만 PER 77배의 고평가 논란과, 경영진이 자사주 매입을 하지 않고 있다는 점은 리스크 요인으로 지적됩니다. 시장의 뜨거운 기대와 밸류에이션 부담이 공존하는 모습입니다."
+    },
+    {
+      "id": 3,
+      "name": "googl",
+      "ticker": "GOOGL",
+      "kind": "company",
+      "startSec": 78.713,
+      "speechEndSec": 109.204,
+      "endSec": 109.204,
+      "speechDurationSec": 30.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 275,
+      "text": "Alphabet Inc.는 하루 +2.63% / 한 달 -5.11% 움직였습니다. 이번 발표의 핵심은 마이크로소프트가 자사의 코파일럿 서비스에 앤트로픽의 클로드 코워크 기술을 기반으로 한 코파일럿 코워크라는 새로운 도구를 추가한다는 것입니다. 이것은 단순히 기존의 AI 챗봇 기능을 넘어, 사용자를 대신해 이메일을 보내 회의를 잡거나, 엑셀 데이터를 정리해 프레젠테이션을 만드는 등 여러 단계의 복잡한 업무를 자율적으로 수행하는 AI 에이전트의 등장을 의미합니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

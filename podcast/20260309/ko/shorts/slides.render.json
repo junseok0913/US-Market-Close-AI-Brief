@@ -1,0 +1,225 @@
+{
+  "date": "20260310",
+  "lang": "ko",
+  "title": "유가 30% 폭락, AI 랠리 폭발! 증시 급반등의 두 가지 이유",
+  "hook": "유가가 배럴당 119달러까지 폭등했다가 하루 만에 8% 넘게 폭락했습니다.",
+  "durationSeconds": 73.204,
+  "audioFile": "shorts20260309.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.131,
+      "eyebrow": "2026년 3월 10일",
+      "headline": "유가 30% 폭락!",
+      "subheadline": "하루 만에 $119에서 급락한 이유는?",
+      "body": "유가가 배럴당 119달러까지 폭등했다가 하루 만에 8% 넘게 폭락했습니다.",
+      "bullets": [
+        "유가가 배럴당 119달러까지 폭등했다가 하루 만에 8% 넘게 폭락했습니다."
+      ],
+      "tickers": [
+        "CLF",
+        "MSFT",
+        "GOOGL",
+        "NVDA"
+      ],
+      "highlights": [
+        "하루 만에 8% 이상 하락"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 5.131,
+      "endSec": 19.662,
+      "eyebrow": "미국 증시 마감",
+      "headline": "기술주 랠리, 증시 급반등",
+      "subheadline": "나스닥 +1.38% | S&P 500 +0.83%",
+      "body": "3월 10일 미국 증시는 이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리에 힘입어 상승 마감했습니다. 다우는 0.5%, S&P 500은 0.83% 올랐고, 기술주 중심의 나스닥은 1.38% 급등했습니다.",
+      "bullets": [
+        "3월 10일 미국 증시는 이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리에 힘입어 상승 마감했습니다.",
+        "다우는 0.5%, S&P 500은 0.83% 올랐고, 기술주 중심의 나스닥은 1.38% 급등했습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "MSFT"
+      ],
+      "highlights": [
+        "NASDAQ +1.38%",
+        "S&P 500 +0.83%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 19.662,
+      "endSec": 71.113,
+      "eyebrow": "상승 동력 분석",
+      "headline": "급반등의 두 가지 이유",
+      "subheadline": "유가 급락과 AI 모멘텀이 시장을 이끌다",
+      "body": "밤사이 이란과의 전면전 우려로 2022년 이후 최고 수준인 119달러까지 치솟았던 유가는, G7의 전략비축유 방출 논의와 확전 우려가 완화되자 극적으로 반전했습니다. 결국 유가는 고점 대비 30퍼센트 이상 폭락하며 8퍼센트 넘게 하락 마감했고, 이는 인플레이션 우려를 잠재우며 10년물 국채 금리를 4.14퍼센트 아래로 끌어내렸습니다. 이 금리 하락이 기술주에 강력한 상승 동력을 제공했습니다. 여기에 마이크로소프트가 AI 스타…",
+      "bullets": [
+        "유가 급락 → 국채 금리 하락 → 기술주 상승 동력",
+        "MSFT AI 발표 → AI 칩 수요 기대감 증폭"
+      ],
+      "tickers": [
+        "MSFT",
+        "NVDA",
+        "AMD",
+        "GOOGL"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 71.113,
+      "endSec": 73.204,
+      "eyebrow": "채널 고정",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "다음 마감 시황도 놓치지 마세요.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "NVDA",
+        "AMD"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.131,
+      "text": "유가가 배럴당 119달러까지 폭등했다가 하루 만에 8% 넘게 폭락했습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 5.131,
+      "endSec": 19.662,
+      "text": "3월 10일 미국 증시는 이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리에 힘입어 상승 마감했습니다. 다우는 0.5%, S&P 500은 0.83% 올랐고, 기술주 중심의 나스닥은 1.38% 급등했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 19.662,
+      "endSec": 71.113,
+      "text": "밤사이 이란과의 전면전 우려로 2022년 이후 최고 수준인 119달러까지 치솟았던 유가는, G7의 전략비축유 방출 논의와 확전 우려가 완화되자 극적으로 반전했습니다. 결국 유가는 고점 대비 30퍼센트 이상 폭락하며 8퍼센트 넘게 하락 마감했고, 이는 인플레이션 우려를 잠재우며 10년물…"
+    },
+    {
+      "id": 3,
+      "startSec": 71.113,
+      "endSec": 73.204,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-09"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-09"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-09"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-09"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices surge to highest since 2022 at over $119 a b…",
+      "detail": "id#36c222880aecd864"
+    },
+    {
+      "type": "article",
+      "label": "G-7 to Discuss Joint Release of Emergency Oil Reserves",
+      "detail": "id#98a947c4688caadf"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-09"
+    },
+    {
+      "type": "article",
+      "label": "Microsoft taps Anthropic for Copilot Cowork in push for…",
+      "detail": "id#f716d0c04557f55e"
+    },
+    {
+      "type": "chart",
+      "label": "GOOGL",
+      "detail": "2026-03-10"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-03-10"
+    },
+    {
+      "type": "chart",
+      "label": "AMD",
+      "detail": "2026-03-10"
+    },
+    {
+      "type": "chart",
+      "label": "SOXX",
+      "detail": "2026-03-10"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "이란 전쟁 우려 완화로 유가 8% 이상 급락",
+      "마이크로소프트 AI 에이전트 발표로 기술주 랠리",
+      "엔비디아 2.7%, AMD 5.3% 등 반도체 섹터 급등",
+      "10년물 국채 금리 4.14% 아래로 하락"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "MSFT",
+        "label": "마이크로소프트",
+        "tag": "AI 에이전트 발표"
+      },
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "AI 칩 수요 기대감"
+      },
+      {
+        "ticker": "AMD",
+        "label": "AMD",
+        "tag": "5.3% 급등"
+      },
+      {
+        "ticker": "GOOGL",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
