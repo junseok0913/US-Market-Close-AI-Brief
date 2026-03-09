@@ -1,0 +1,276 @@
+import type { Slide } from '@/types/slide';
+
+export const slides: Slide[] = [
+  {
+    id: 0,
+    type: 'title',
+    turnId: 0,
+    date: '2026-03-10',
+    nutshell: '이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리',
+    description:
+      '밤 사이 최고조에 달했던 지정학적 긴장감이 완화되며 유가가 급락하고, 기술주가 시장의 반등을 이끌었습니다. 오늘 브리핑에서는 시장의 극적인 반전 배경과 AI 모멘텀, 그리고 급등주 버티브(VRT)에 대해 심층 분석합니다.',
+  },
+  {
+    id: 1,
+    type: 'market-summary',
+    turnId: 1,
+    title: '오늘의 시장 요약',
+    description:
+      '장 초반의 지정학적 우려를 딛고 모든 지수가 상승 마감했습니다. 특히 유가 급락에 힘입어 기술주 중심의 나스닥이 1.38% 급등하며 가장 강한 모습을 보였습니다.',
+    indices: [
+      { name: 'S&P 500', value: 6795.99, change: 55.97, changePercent: 0.83 },
+      { name: 'NASDAQ', value: 22695.95, change: 308.27, changePercent: 1.38 },
+      { name: 'DOW', value: 47740.80, change: 239.25, changePercent: 0.50 },
+      { name: 'Russell 2000', value: 2553.67, change: 28.37, changePercent: 1.12 },
+    ],
+    commodities: [
+      { name: 'WTI Crude (CL=F)', value: 85.08, change: -5.82, changePercent: -6.40 },
+      { name: '10-Yr Yield', value: 4.14, change: -0.02, changePercent: -0.5 },
+      { name: 'Dollar Index', value: 98.74, change: -0.25, changePercent: -0.25 },
+      { name: 'Gold Futures', value: 5148.70, change: 2.60, changePercent: 0.05 },
+    ],
+    charts: [
+      { ticker: 'SP:SPX' },
+      { ticker: 'NASDAQ:IXIC' },
+      { ticker: 'DJ:DJI' },
+      { ticker: 'TVC:RUT' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'headline',
+    turnId: 6,
+    icon: 'shield-half-full',
+    title: '지정학적 리스크와 유가',
+    subtitle: '공포에서 안도 랠리로의 극적 반전',
+    description:
+      '밤 사이 이란과의 전면전 우려로 배럴당 119달러까지 치솟았던 유가가 극적으로 하락 반전하며 시장 분위기를 완전히 뒤바꿨습니다. 인플레이션 우려가 완화되면서 기술주 중심의 강한 반등이 나타났습니다.',
+    bullets: [
+      'WTI 유가, 장중 119달러 돌파 후 30% 이상 폭락',
+      'G7, 전략비축유 공동 방출 논의로 공급 불안 심리 진정',
+      '트럼프 대통령의 조기 종전 가능성 언급도 유가 하락에 기여',
+      '유가 안정 → 10년물 국채 금리 하락 → 기술주 랠리 촉발',
+    ],
+    theme: 'gold',
+    charts: [{ ticker: 'CL=F' }, { ticker: 'TVC:US10Y' }],
+  },
+  {
+    id: 3,
+    type: 'stats',
+    turnId: 8,
+    title: '유가 급등락의 배경',
+    description:
+      '시장의 심리는 최악의 시나리오에 대한 우려와 현실화되지 않았다는 안도감 사이에서 급격하게 움직였습니다.',
+    stats: [
+      { label: '상승 요인', value: '전면전 우려', subtext: '호르무즈 해협 봉쇄 등 공급 차질 가능성', trend: 'up' },
+      { label: '하락 요인', value: 'G7 개입 신호', subtext: '전략비축유 공동 방출 논의 보도', trend: 'down' },
+      { label: '핵심 변수', value: '확전 부재', subtext: '이란의 추가 군사 행동 부재', trend: 'neutral' },
+    ],
+    note: '최악의 시나리오가 현실화되지 않자, 유가에 반영됐던 지정학적 리스크 프리미엄이 빠르게 해소되었습니다.',
+    theme: 'gold',
+  },
+  {
+    id: 4,
+    type: 'comparison',
+    turnId: 10,
+    title: '유가 하락의 연쇄 효과',
+    description:
+      '유가 안정은 인플레이션 우려를 완화하고 채권 금리를 낮춰, 특히 기술주와 같은 성장주에 강력한 상승 동력을 제공했습니다.',
+    items: [
+      {
+        label: '유가 (Oil Price)',
+        value: '급등 → 급락',
+        description: '지정학적 리스크 프리미엄 해소',
+      },
+      {
+        label: '인플레이션 우려',
+        value: '고조 → 완화',
+        description: '시장의 가장 큰 걱정거리 해소',
+        highlight: true,
+      },
+      {
+        label: '10년물 국채 금리',
+        value: '상승 압력 → 하락',
+        description: '연준의 긴축 필요성 감소 기대',
+      },
+      {
+        label: '기술주 (Tech Stocks)',
+        value: '하락 압력 → 상승 동력',
+        description: '밸류에이션 부담 완화로 투자 매력도 증가',
+      },
+    ],
+  },
+  {
+    id: 5,
+    type: 'headline',
+    turnId: 14,
+    icon: 'cpu',
+    title: 'AI 모멘텀',
+    subtitle: '시장의 주도주임을 재확인하다',
+    description:
+      '지정학적 불안감 속에서도 AI 산업의 성장 기대감은 굳건했습니다. 마이크로소프트의 AI 에이전트 강화 소식은 관련 산업 전반에 온기를 불어넣으며 시장 반등을 이끌었습니다.',
+    bullets: [
+      'MS, 앤트로픽 기술 도입해 ‘AI 에이전트’ 서비스 강화',
+      'AI 기술의 수익화 모델 진화에 대한 기대감 증폭',
+      '반도체 섹터(SOXX ETF) 4% 가까이 급등',
+      '나스닥 지수, 주요 지수 중 가장 높은 1.38% 상승률 기록',
+    ],
+    theme: 'blue',
+    charts: [{ ticker: 'NASDAQ:IXIC' }, { ticker: 'SOXX' }],
+  },
+  {
+    id: 6,
+    type: 'stats',
+    turnId: 16,
+    title: 'AI 에이전트 경쟁 본격화',
+    description:
+      '마이크로소프트의 발표는 AI가 단순 챗봇을 넘어 복잡한 업무를 자율적으로 수행하는 단계로 진입했음을 알리는 신호탄이 되었습니다. 이는 빅테크 간의 AI 서비스 경쟁을 더욱 가속화시켰습니다.',
+    stats: [
+      { label: 'MSFT', value: '+0.1%', subtext: '코파일럿 코워크 발표', trend: 'up' },
+      { label: 'GOOGL', value: '+2.6%', subtext: 'AI 서비스 경쟁 심화 기대', trend: 'up' },
+      { label: 'AMZN', value: '경쟁 참여', subtext: '클라우드 AI 서비스 경쟁사', trend: 'neutral' },
+    ],
+    note: '시장은 AI 에이전트의 등장을 AI 기술 수익화의 중요한 변곡점으로 인식하며 긍정적으로 반응했습니다.',
+    theme: 'blue',
+    charts: [{ ticker: 'MSFT' }, { ticker: 'GOOGL' }],
+  },
+  {
+    id: 7,
+    type: 'stats',
+    turnId: 18,
+    title: 'AI 생태계 확장과 반도체 랠리',
+    description:
+      '고도화된 AI 모델 구동을 위해 더 강력한 반도체가 필수적이라는 인식이 확산되며, AI 칩 선두주자들이 동반 급등했습니다. AI 기술이 산업 곳곳으로 확산되는 모습도 확인되었습니다.',
+    stats: [
+      { label: 'NVDA', value: '+2.7%', subtext: 'AI 칩 시장 선두주자', trend: 'up' },
+      { label: 'AMD', value: '+5.3%', subtext: '강력한 동반 상승 흐름', trend: 'up' },
+      { label: '산업 협력', value: 'NVIDIA-ABB', subtext: '공장 로봇 훈련 개선 협력', trend: 'neutral' },
+    ],
+    note: 'AI 칩에 대한 폭발적인 수요가 지속될 것이라는 시장의 믿음이 더욱 굳건해졌습니다.',
+    theme: 'blue',
+    charts: [{ ticker: 'NVDA' }, { ticker: 'AMD' }],
+  },
+  {
+    id: 8,
+    type: 'ticker-intro',
+    turnId: 22,
+    ticker: 'VRT',
+    companyName: 'Vertiv',
+    currentPrice: 264.35,
+    dayChange: 22.57,
+    dayChangePercent: 9.33,
+    description:
+      'AI 혁명의 핵심 기반 시설인 데이터센터에 전력 및 냉각 솔루션을 공급하는 기업으로, AI 랠리의 숨은 수혜주로 부상하며 하루 만에 9% 넘게 급등했습니다.',
+    charts: [{ ticker: 'VRT' }],
+  },
+  {
+    id: 9,
+    type: 'ticker-analysis',
+    turnId: 23,
+    ticker: 'VRT',
+    title: '강세 요인: 폭발적인 수주 잔고',
+    points: [
+      '2025년 말 기준 수주 잔고 150억 달러 달성',
+      '수주 잔고가 전년 대비 두 배 이상 폭증',
+      'AI 데이터센터 구축 수요의 폭발적 증가를 증명',
+      'AI 시대의 필수불가결한 인프라 파트너로 부상',
+    ],
+    outlook: '긍정적 성장 기대',
+    outlookColor: 'emerald',
+  },
+  {
+    id: 10,
+    type: 'ticker-analysis',
+    turnId: 25,
+    ticker: 'VRT',
+    title: '약세 요인: 수주 잔고의 불확실성',
+    points: [
+      '10-K 보고서에 명시된 수주 잔고의 법적 구속력 약함',
+      '고객이 특정 상황에서 주문을 연기하거나 취소할 권리 보유',
+      '매출이 소수의 대형 데이터센터 고객사에 집중',
+      '주요 고객의 투자 계획 변경 시 실적에 심각한 타격 가능',
+    ],
+    outlook: '구조적 취약점 내포',
+    outlookColor: 'amber',
+  },
+  {
+    id: 11,
+    type: 'ticker-analysis',
+    turnId: 27,
+    ticker: 'VRT',
+    title: '약세 요인: 극단적인 고평가',
+    points: [
+      '후행 PER 77배, 업계 평균(20-30배)을 크게 상회',
+      '현재 주가는 향후 완벽한 성장을 모두 반영한 수준',
+      '단 한 번의 실수도 용납되지 않는 높은 기대치 형성',
+      '시장의 과도한 낙관론이 반영되어 리스크 관리 필요',
+    ],
+    outlook: '밸류에이션 경고등',
+    outlookColor: 'rose',
+  },
+  {
+    id: 12,
+    type: 'ticker-analysis',
+    turnId: 29,
+    ticker: 'VRT',
+    title: '약세 요인: 내부자의 신호',
+    points: [
+      '2025년 한 해 동안 자사주 매입 프로그램 미실행',
+      '승인된 프로그램에도 불구하고 단 한 주도 매입하지 않음',
+      '주가 급등 기간 동안 자사주 매입을 중단',
+      '경영진조차 현재 주가 수준이 비싸다고 판단하는 신호로 해석 가능',
+    ],
+    outlook: '내재가치 초과 우려',
+    outlookColor: 'rose',
+  },
+  {
+    id: 13,
+    type: 'headline',
+    turnId: 30,
+    title: '시장의 숨 고르기와 다음 변수',
+    subtitle: '주요 경제 지표 발표를 앞둔 관망세',
+    description:
+      '최근 랠리 이후 차익 실현 매물이 출회되며 시장이 전반적으로 쉬어가는 모습을 보였습니다. 투자자들은 연준의 금리 인하 시점에 대한 단서를 찾기 위해 이번 주 발표될 주요 경제 지표를 기다리고 있습니다.',
+    bullets: [
+      '기술주 중심 랠리 이후 차익 실현 압력 증가',
+      '엔비디아 등 일부 기술주 하락이 지수에 부담으로 작용',
+      '연준 금리 인하 시점에 대한 불확실성 여전',
+      '투자자들, CPI 등 주요 데이터 확인 전까지 관망세',
+    ],
+    theme: 'purple',
+  },
+  {
+    id: 14,
+    type: 'events',
+    turnId: 33,
+    title: '이번 주 주목해야 할 주요 경제 이벤트',
+    description:
+      '이번 주 발표될 물가 지표와 국채 입찰 결과는 향후 시장의 방향성을 결정할 중요한 분수령이 될 전망입니다.',
+    events: [
+      {
+        date: '03-11',
+        label: '2월 소비자물가지수(CPI) 발표',
+        description: '연준의 통화정책 경로를 가늠할 핵심 지표.',
+      },
+      {
+        date: '03-11',
+        label: '10년물 국채 입찰',
+        description: '시장의 장기 금리 전망과 위험 선호 심리 반영.',
+      },
+      {
+        date: '03-12',
+        label: '30년물 국채 입찰',
+        description: '장기물 수요를 통해 인플레이션 우려 확인.',
+      },
+    ],
+  },
+  {
+    id: 15,
+    type: 'closing',
+    turnId: 37,
+    headline: '중요한 변곡점, 확인하고 대응하는 자세 필요',
+    tagline: '단기 변동성보다 큰 흐름을 읽는 지혜',
+    description:
+      'CPI 결과에 따라 시장의 단기 변동성이 커질 수 있지만, 연준은 여러 지표를 종합적으로 판단합니다. 단기적인 변동에 일희일비하기보다는 긴 호흡으로 시장의 큰 흐름을 읽는 지혜가 필요한 시점입니다.',
+  },
+];

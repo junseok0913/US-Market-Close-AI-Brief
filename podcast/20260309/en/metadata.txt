@@ -1,0 +1,26 @@
+Title:
+2026.3.10 US Market Close | Tech stocks rally as oil prices plunge on easing geopolitical tensions
+
+Description:
+On March 10th, the New York stock market closed higher across the board as easing geopolitical tensions with Iran caused international oil prices to plunge, fueling a rally in technology stocks. It was a day of dramatic rebound, overcoming early session anxiety.
+
+- Dow Jones: +0.5% - Boosted by easing Iran war concerns and stabilizing oil prices.
+- S&P 500: +0.83% - A broad market rally led by technology stocks.
+- Nasdaq: Surged 1.38% - Driven by expectations of stable interest rates due to lower oil prices and strong AI momentum.
+
+Key Issues
+- Oil Price Plunge & Market Rebound: Oil prices, which had soared to $119 per barrel overnight, closed down over 8% as fears of an all-out war with Iran subsided. This eased inflation concerns and triggered a strong rebound led by tech stocks.
+- Strong AI Momentum: Growth expectations for the entire AI industry increased following news that Microsoft will enhance its 'AI agent' services, which autonomously handle complex tasks, by incorporating technology from AI startup Anthropic.
+- Semiconductor Sector Surge: Expectations of increased demand for AI chips, driven by the advancement of AI services, caused major semiconductor stocks like NVIDIA (2.7%) and AMD (5.3%) to surge. The semiconductor ETF (SOXX) also rose nearly 4%.
+- Vertiv (VRT) Overvaluation Debate: Vertiv (VRT), highlighted as a beneficiary of AI data centers, jumped over 9%. However, several risk factors were noted, including questions about the legally binding nature of its $15 billion order backlog, a high P/E ratio of 77, and a lack of insider stock purchases.
+- Awaiting Key Economic Data: The market is now looking ahead to the Consumer Price Index (CPI) and the results of the 10-year and 30-year Treasury auctions, set to be released on March 11th, for clues on its next direction.
+
+Key Stocks
+- NVIDIA (NVDA): +2.7% - Continued optimism over AI chip demand.
+- AMD (AMD): Surged 5.3% - Rallied in tandem with NVIDIA.
+- Microsoft (MSFT): +0.1% - On news of enhancing its AI agent services in collaboration with Anthropic.
+- Alphabet (GOOGL): +2.6% - Amid expectations of intensifying competition in AI services.
+- Vertiv (VRT): Jumped 9% - Highlighted by its $15 billion order backlog driven by AI data center demand.
+
+Keywords:
+미국주식,주식,재테크,시황,AI,인공지능,기술주,반도체,엔비디아,NVDA,AMD,마이크로소프트,MSFT,유가,금리
