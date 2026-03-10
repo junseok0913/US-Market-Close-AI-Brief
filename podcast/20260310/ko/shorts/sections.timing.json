@@ -1,0 +1,58 @@
+{
+  "date": "20260310",
+  "lang": "ko",
+  "audioFile": "shorts20260310.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 77.524,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.131,
+      "endSec": 4.131,
+      "speechDurationSec": 4.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 32,
+      "text": "AI는 폭등, 유가는 폭락. 시장은 왜 방향을 잃었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.131,
+      "speechEndSec": 20.462,
+      "endSec": 20.462,
+      "speechDurationSec": 16.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 117,
+      "text": "3월 11일 미국 증시는 오라클 호실적과 유가 급락이라는 상반된 재료가 충돌하며 혼조세로 마감했습니다. 다우존스는 0.07%, S&P 500은 0.21% 하락했고, 기술주 중심의 나스닥은 강보합을 기록했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 20.462,
+      "speechEndSec": 75.673,
+      "endSec": 75.673,
+      "speechDurationSec": 55.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 477,
+      "text": "시장을 움직인 첫 번째 힘은 인공지능이었습니다. 오라클은 시장 예상을 뛰어넘는 분기 매출 171억 9천만 달러, 주당 순이익 1.79달러를 기록하며 시간 외 거래에서 6% 넘게 급등했습니다. 핵심 성장 동력인 클라우드 인프라 매출이 예상을 상회했고, 특히 미래 수익의 가늠자인 잔여이행의무는 전년 대비 300% 넘게 급증하며 폭발적인 AI 수요를 입증했습니다. 하지만 이 강력한 호재를 지정학적 변수가 덮었습니다. 이란과의 분쟁이 곧 끝날 수 있다는 소식에 공급망 불안 우려가 해소되며 국제 유가가 폭락한 것입니다. 서부 텍사스산 원유는 8.2% 급락했고, 브렌트유는 11% 이상 폭락했습니다. 이 충격으로 에너지 섹터 ETF는 1.3% 하락했고, 엑슨모빌과 쉐브론 같은 대형주들도 1.5% 넘게 밀려나며 다우와 S&P 500 지수의 발목을 잡았습니다. 결국 기술주의 강세와 에너지주의 급락이라는 두 거대한 힘이 충돌하며 시장은 방향을 잡지 못했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 75.673,
+      "speechEndSec": 77.524,
+      "endSec": 77.524,
+      "speechDurationSec": 1.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

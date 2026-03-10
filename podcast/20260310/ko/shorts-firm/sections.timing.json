@@ -1,0 +1,67 @@
+{
+  "date": "20260310",
+  "lang": "ko",
+  "audioFile": "shorts20260310.mp3",
+  "sectionOrder": [
+    "orcl",
+    "vrtx",
+    "msft",
+    "amzn"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 118.044,
+  "sections": [
+    {
+      "id": 0,
+      "name": "orcl",
+      "ticker": "ORCL",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 37.531,
+      "endSec": 37.531,
+      "speechDurationSec": 37.531,
+      "pauseAfterSec": 0.0,
+      "charCount": 320,
+      "text": "AI 훈풍에 실적 파티를 연 기업과, 신약 대박에 환호한 기업. 먼저 오라클입니다. 정규장에선 1.4% 하락했지만, 장 마감 후 AI 수요에 힘입은 깜짝 실적을 발표하며 시간 외 거래에서 6% 넘게 급등했습니다. 특히 핵심 성장 동력인 클라우드 인프라(OCI) 매출이 시장 예상을 훌쩍 뛰어넘었는데요. 아마존, 마이크로소프트 등 거대 경쟁사들 사이에서 자신만의 영역을 구축했음을 증명했습니다. 여기에 미래 수익의 가늠자인 잔여이행의무(RPO)가 300% 넘게 급증했다는 소식은, 대규모 AI 계약이 계속되고 있다는 명백한 증거로 작용하며 시장의 우려를 완전히 씻어냈습니다."
+    },
+    {
+      "id": 1,
+      "name": "vrtx",
+      "ticker": "VRTX",
+      "kind": "company",
+      "startSec": 37.531,
+      "speechEndSec": 67.422,
+      "endSec": 67.422,
+      "speechDurationSec": 29.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 268,
+      "text": "다음은 8% 넘게 급등한 버텍스 파마슈티컬스입니다. 오늘 급등은 신장 질환 치료제 후보물질 '포베타셉트'의 3상 임상시험 결과가 시장 기대를 뛰어넘는 '놀라운' 수준으로 발표됐기 때문입니다. 이는 버텍스가 주력 사업인 낭포성 섬유증에 대한 높은 의존도를 낮추고, 성공적으로 파이프라인을 다각화하고 있음을 증명한 중요한 사건인데요. 50억 달러를 들여 인수한 기업의 기술이 빛을 발하면서, M&A 전략이 적중했다는 평가와 함께 새로운 성장 동력에 대한 기대감을 한껏 끌어올렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "msft",
+      "ticker": "MSFT",
+      "kind": "company",
+      "startSec": 67.422,
+      "speechEndSec": 91.593,
+      "endSec": 91.593,
+      "speechDurationSec": 24.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 203,
+      "text": "Microsoft Corporation는 하루 -0.89% / 한 달 -1.90% 움직였습니다. 이번 실적의 핵심은 단연 클라우드 인프라, 즉 OCI 부문의 괄목할 만한 성장이었습니다. 오라클의 전체 클라우드 부문 매출은 89억 달러를 기록했고, 그중에서도 핵심 성장 동력인 클라우드 인프라 매출이 49억 달러로 시장 예상치였던 47억 4천만 달러를 상회했습니다."
+    },
+    {
+      "id": 3,
+      "name": "amzn",
+      "ticker": "AMZN",
+      "kind": "company",
+      "startSec": 91.593,
+      "speechEndSec": 118.044,
+      "endSec": 118.044,
+      "speechDurationSec": 26.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 214,
+      "text": "Amazon.com, Inc.는 하루 +0.39% / 한 달 +2.69% 움직였습니다. 이번 실적의 핵심은 단연 클라우드 인프라, 즉 OCI 부문의 괄목할 만한 성장이었습니다. 오라클의 전체 클라우드 부문 매출은 89억 달러를 기록했고, 그중에서도 핵심 성장 동력인 클라우드 인프라 매출이 49억 달러로 시장 예상치였던 47억 4천만 달러를 상회했습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

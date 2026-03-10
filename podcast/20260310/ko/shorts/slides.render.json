@@ -1,0 +1,229 @@
+{
+  "date": "20260311",
+  "lang": "ko",
+  "title": "오라클 6% 급등에도 증시가 하락한 이유",
+  "hook": "AI는 폭등, 유가는 폭락. 시장은 왜 방향을 잃었을까요.",
+  "durationSeconds": 77.524,
+  "audioFile": "shorts20260310.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.131,
+      "eyebrow": "오늘의 질문",
+      "headline": "AI 폭등 vs 유가 폭락",
+      "subheadline": "시장은 왜 방향을 잃었을까요?",
+      "body": "AI는 폭등, 유가는 폭락. 시장은 왜 방향을 잃었을까요.",
+      "bullets": [
+        "AI는 폭등, 유가는 폭락.",
+        "시장은 왜 방향을 잃었을까요."
+      ],
+      "tickers": [
+        "ORCL",
+        "XOM",
+        "CVX",
+        "^DJI"
+      ],
+      "highlights": [
+        "78초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 4.131,
+      "endSec": 20.462,
+      "eyebrow": "마감 시황",
+      "headline": "주요 지수 혼조 마감",
+      "subheadline": "다우 -0.07% | S&P 500 -0.21%",
+      "body": "3월 11일 미국 증시는 오라클 호실적과 유가 급락이라는 상반된 재료가 충돌하며 혼조세로 마감했습니다. 다우존스는 0.07%, S&P 500은 0.21% 하락했고, 기술주 중심의 나스닥은 강보합을 기록했습니다.",
+      "bullets": [
+        "다우존스: -0.07%",
+        "S&P 500: -0.21%"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "ORCL"
+      ],
+      "highlights": [
+        "-0.07%",
+        "-0.21%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 20.462,
+      "endSec": 75.673,
+      "eyebrow": "핵심 요약",
+      "headline": "AI 호재 vs 유가 악재",
+      "subheadline": "두 거대 동력의 충돌",
+      "body": "시장을 움직인 첫 번째 힘은 인공지능이었습니다. 오라클은 시장 예상을 뛰어넘는 분기 매출 171억 9천만 달러, 주당 순이익 1.79달러를 기록하며 시간 외 거래에서 6% 넘게 급등했습니다. 핵심 성장 동력인 클라우드 인프라 매출이 예상을 상회했고, 특히 미래 수익의 가늠자인 잔여이행의무는 전년 대비 300% 넘게 급증하며 폭발적인 AI 수요를 입증했습니다. 하지만 이 강력한 호재를 지정학적 변수가 덮었습니다. 이란과의 분쟁…",
+      "bullets": [
+        "오라클(ORCL) 실적 호조로 AI 기대감 상승",
+        "지정학적 긴장 완화에 유가 급락, 에너지주 하락"
+      ],
+      "tickers": [
+        "ORCL",
+        "XOM",
+        "CVX",
+        "^DJI"
+      ],
+      "highlights": [
+        "ORCL +6%",
+        "WTI 유가 -8.2%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 75.673,
+      "endSec": 77.524,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "ORCL",
+        "XOM",
+        "CVX",
+        "^DJI"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.131,
+      "text": "AI는 폭등, 유가는 폭락. 시장은 왜 방향을 잃었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.131,
+      "endSec": 20.462,
+      "text": "3월 11일 미국 증시는 오라클 호실적과 유가 급락이라는 상반된 재료가 충돌하며 혼조세로 마감했습니다. 다우존스는 0.07%, S&P 500은 0.21% 하락했고, 기술주 중심의 나스닥은 강보합을 기록했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 20.462,
+      "endSec": 75.673,
+      "text": "시장을 움직인 첫 번째 힘은 인공지능이었습니다. 오라클은 시장 예상을 뛰어넘는 분기 매출 171억 9천만 달러, 주당 순이익 1.79달러를 기록하며 시간 외 거래에서 6% 넘게 급등했습니다. 핵심 성장 동력인 클라우드 인프라 매출이 예상을 상회했고, 특히 미래 수익의 가늠자인 잔여이행…"
+    },
+    {
+      "id": 3,
+      "startSec": 75.673,
+      "endSec": 77.524,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "article",
+      "label": "Oracle beats Q3 expectations, raises 2027 revenue outlo…",
+      "detail": "id#4d2593fa47b4204e"
+    },
+    {
+      "type": "chart",
+      "label": "ORCL",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "article",
+      "label": "Oracle beats quarterly revenue estimates on AI-driven d…",
+      "detail": "id#f810826163e08654"
+    },
+    {
+      "type": "article",
+      "label": "Oil Prices Tumble After Trump Signals Iran War Could En…",
+      "detail": "id#f77067cb5e5a00b7"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "BZ=F",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "CVX",
+      "detail": "2026-03-11"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 혼조 마감",
+      "오라클, AI 수요 힘입어 호실적 발표 후 시간 외 급등",
+      "지정학적 긴장 완화 기대로 국제 유가 8%대 폭락",
+      "기술주 강세와 에너지주 약세 충돌"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "ORCL",
+        "label": "오라클",
+        "tag": "실적 서프라이즈"
+      },
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 급락에 하락"
+      },
+      {
+        "ticker": "CVX",
+        "label": "쉐브론",
+        "tag": "에너지주 약세"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
