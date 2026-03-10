@@ -1,0 +1,22 @@
+Title:
+2026.3.11 US Market Close | A mixed session as strong Oracle earnings clash with tumbling oil prices
+
+Description:
+The New York stock market closed mixed on March 11th, caught between the positive news of Oracle's strong earnings and the negative pressure from a sharp drop in international oil prices. While tech stocks performed well, weakness in the energy sector weighed on the broader indices as investors remained on the sidelines ahead of key inflation data releases.
+
+- Dow Jones: Down 0.07% - Weighed down by weakness in the energy sector following the plunge in oil prices.
+- S&P 500: Down 0.21% - Ended slightly lower as gains in tech were offset by losses in energy.
+- Nasdaq: Closed slightly higher - Supported by positive sentiment in tech following Oracle's strong earnings report.
+
+- Oracle's Surprise Earnings Beat on AI Demand: After the bell, Oracle reported earnings and a positive outlook that surpassed market expectations, causing its stock to surge over 6% in after-hours trading and boosting sentiment across the tech sector.
+- Oil Prices Plunge Over 8%: West Texas Intermediate (WTI) crude oil tumbled more than 8.2% amid expectations of easing geopolitical tensions related to Iran, leading to a broad decline across the energy sector.
+- Vertex Pharmaceuticals Surges: The company's stock jumped over 8% after announcing positive results from a Phase 3 clinical trial for its kidney disease drug candidate.
+- Awaiting CPI Data: Market volatility was limited as investors adopted a wait-and-see approach ahead of the release of key inflation data, including the February Consumer Price Index (CPI).
+
+- Oracle (ORCL): Surged over 6% in after-hours trading after reporting earnings that beat market expectations, driven by cloud segment growth fueled by AI demand.
+- Vertex Pharmaceuticals (VRTX): Jumped more than 8% following the announcement of positive Phase 3 clinical trial results for its kidney disease drug candidate.
+- ExxonMobil (XOM): Fell over 1.5% as the energy sector weakened due to the sharp drop in oil prices.
+- Chevron (CVX): Dropped more than 1.5%, also impacted by the decline in crude oil prices.
+
+Keywords:
+미국주식,주식,재테크,시황,오라클,ORCL,AI,클라우드,유가,에너지,버텍스,VRTX,CPI,금리,실적
