@@ -1,0 +1,228 @@
+{
+  "date": "20260312",
+  "lang": "ko",
+  "title": "유가 6% 폭등 vs 오라클 9% 급등, 혼돈의 증시",
+  "hook": "유가는 6% 폭등했는데, 왜 나스닥만 홀로 상승했을까요.",
+  "durationSeconds": 84.564,
+  "audioFile": "shorts20260311.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 4.331,
+      "eyebrow": "3월 12일 마감",
+      "headline": "유가 폭등 vs 나스닥 상승",
+      "subheadline": "왜 나스닥만 홀로 올랐을까요?",
+      "body": "유가는 6% 폭등했는데, 왜 나스닥만 홀로 상승했을까요.",
+      "bullets": [
+        "유가는 6% 폭등했는데, 왜 나스닥만 홀로 상승했을까요."
+      ],
+      "tickers": [
+        "^IXIC",
+        "CLF",
+        "ORCL",
+        "XLE"
+      ],
+      "highlights": [
+        "유가 6% 폭등"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 4.331,
+      "endSec": 16.862,
+      "eyebrow": "시장 지표",
+      "headline": "3대 지수 혼조 마감",
+      "subheadline": "나스닥 +0.08% | 다우 -0.6% | S&P500 -0.08%",
+      "body": "3월 12일 미국 증시는 오라클 호실적과 유가 급등 속 혼조세로 마감했습니다. 다우는 0.6%, S&P 500은 0.08% 하락했지만, 기술주 중심의 나스닥은 0.08% 상승했습니다.",
+      "bullets": [
+        "3월 12일 미국 증시는 오라클 호실적과 유가 급등 속 혼조세로 마감했습니다.",
+        "다우는 0.6%, S&P 500은 0.08% 하락했지만, 기술주 중심의 나스닥은 0.08% 상승했습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^DJI",
+        "^GSPC",
+        "ORCL"
+      ],
+      "highlights": [
+        "나스닥 +0.08%",
+        "다우 -0.6%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 16.862,
+      "endSec": 82.833,
+      "eyebrow": "핵심 동력",
+      "headline": "AI 기대감 vs 유가 공포",
+      "subheadline": "시장을 움직인 두 가지 힘의 정면 충돌",
+      "body": "시장을 움직인 두 가지 힘이 정면으로 충돌했습니다. 먼저 소프트웨어 기업 오라클이 예상을 뛰어넘는 AI 관련 실적 전망을 내놓자 주가가 9% 이상 폭등하며 나스닥 지수를 홀로 끌어올렸습니다. 하지만 다른 한편에선 이란 분쟁 격화로 원유 수송의 핵심 길목인 호르무즈 해협의 긴장감이 최고조에 달하며 서부 텍사스산 원유가 6% 넘게 급등, 배럴당 88달러를 돌파했습니다. 이 유가 급등은 운송, 제조 등 경제 전반의 비용 부담을 높…",
+      "bullets": [
+        "오라클(ORCL), AI 실적 기대로 9% 폭등하며 기술주 견인",
+        "이란 분쟁 격화로 유가 6% 급등, 인플레이션 우려 자극"
+      ],
+      "tickers": [
+        "ORCL",
+        "CLF",
+        "XLE",
+        "^DJI"
+      ],
+      "highlights": [
+        "ORCL +9%",
+        "WTI 유가 +6%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 82.833,
+      "endSec": 84.564,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "ORCL",
+        "XLE",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.331,
+      "text": "유가는 6% 폭등했는데, 왜 나스닥만 홀로 상승했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.331,
+      "endSec": 16.862,
+      "text": "3월 12일 미국 증시는 오라클 호실적과 유가 급등 속 혼조세로 마감했습니다. 다우는 0.6%, S&P 500은 0.08% 하락했지만, 기술주 중심의 나스닥은 0.08% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 16.862,
+      "endSec": 82.833,
+      "text": "시장을 움직인 두 가지 힘이 정면으로 충돌했습니다. 먼저 소프트웨어 기업 오라클이 예상을 뛰어넘는 AI 관련 실적 전망을 내놓자 주가가 9% 이상 폭등하며 나스닥 지수를 홀로 끌어올렸습니다. 하지만 다른 한편에선 이란 분쟁 격화로 원유 수송의 핵심 길목인 호르무즈 해협의 긴장감이 최고…"
+    },
+    {
+      "id": 3,
+      "startSec": 82.833,
+      "endSec": 84.564,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "article",
+      "label": "Oracle stock soars 12% after earnings beat, big AI reve…",
+      "detail": "id#0ad0eddf76b5c68a"
+    },
+    {
+      "type": "chart",
+      "label": "ORCL",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices rise again as more vessels attacked near the…",
+      "detail": "id#4196501a301c1528"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "event",
+      "label": "inflation rate yoy",
+      "detail": "2026-03-11"
+    },
+    {
+      "type": "article",
+      "label": "Inflation was elevated last month in a snapshot of cons…",
+      "detail": "id#0dd3398de84ad6c6"
+    },
+    {
+      "type": "article",
+      "label": "February CPI inflation report shows stable inflation be…",
+      "detail": "id#610cd54414f82eea"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 혼조 마감 (나스닥 상승, 다우/S&P 하락)",
+      "오라클, AI 실적 기대로 9% 이상 폭등하며 기술주 견인",
+      "이란 분쟁 격화로 WTI 유가 6% 급등, 인플레이션 우려 재점화",
+      "예상 부합한 2월 CPI, 유가 급등세 미반영으로 시장 영향력 미미"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "ORCL",
+        "label": "오라클",
+        "tag": "AI 실적 기대감"
+      },
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "유가 급등 속 강세"
+      },
+      {
+        "ticker": "JETS",
+        "label": "항공주 ETF",
+        "tag": "유류비 부담 우려"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
