@@ -1,0 +1,610 @@
+{
+  "date": "20260312",
+  "nutshell": "오라클 호실적과 유가 급등 속 시장 혼조",
+  "user_tickers": [
+    "CEG"
+  ],
+  "news_tickers": [
+    "XLE",
+    "UUP",
+    "JETS"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "3월 12일 장마감 브리핑입니다. 오늘 시장은 지수별로 방향이 엇갈리는 모습을 보였는데, 특히 나스닥 지수만 홀로 상승 마감한 점이 눈에 띕니다.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "네, 오늘은 오라클 호실적과 유가 급등 속 시장 혼조라는 한마디로 요약할 수 있겠습니다. 다우 존스 산업평균지수는 0.6% 하락한 47,417.27에 마감했고, S&P 500 지수도 0.08% 소폭 내린 6,775.80을 기록했습니다. 반면 기술주 중심의 나스닥 종합 지수는 오라클의 실적 호조에 힘입어 0.08% 상승한 22,716.14로 거래를 마쳤습니다. 한편 지정학적 리스크가 부각되며 서부 텍사스산 원유는 5% 넘게 급등하며 배럴당 88달러 선을 넘어섰습니다.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "결국 특정 기업의 좋은 소식과 시장 전체를 누르는 악재가 충돌한 셈이군요. 왜 이렇게 지수별로 다른 흐름이 나타난 건가요?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "정확합니다. 시장을 움직이는 두 가지의 매우 다른 힘이 맞섰기 때문입니다. 먼저, 소프트웨어 기업 오라클이 예상을 뛰어넘는 실적과 함께 강력한 인공지능 관련 매출 전망을 내놓자 주가가 9% 이상 폭등했습니다. 이 소식이 전체 기술주에 대한 투자 심리를 개선시키며 나스닥 지수를 끌어올리는 역할을 했습니다. 하지만 다른 한편에서는 이란 관련 분쟁으로 국제 유가가 급등하면서 인플레이션에 대한 우려가 다시 커졌습니다. 이는 경제 전반에 비용 부담을 줄 수 있기 때문에 다우와 S&P 500 지수에는 악재로 작용했습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#0ad0eddf76b5c68a",
+          "title": "Oracle stock soars 12% after earnings beat, big AI revenue forecast"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        },
+        {
+          "type": "chart",
+          "ticker": "ORCL",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "그렇군요. 그럼 오늘 시장을 움직인 핵심 동력들을 정리해주시죠.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "네, 결국 시장은 오라클이 불붙인 AI에 대한 기대감과, 지정학적 긴장이 불러온 유가 급등이라는 두 가지 거대한 힘 사이에서 방향을 정하지 못한 셈입니다. 여기에 유가 불안에 가려지긴 했지만 2월 소비자물가지수 결과라는 변수도 있었습니다.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "말씀하신 요인들 중에서 역시 가장 시장을 크게 흔든 건 유가 급등 문제인 것 같습니다. 지정학적 리스크가 부각됐다고 하셨는데, 구체적으로 어떤 상황입니까?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "네, 이란과의 분쟁이 격화되면서 원유 수송의 핵심 길목인 호르무즈 해협의 긴장감이 최고조에 달한 것이 시장을 덮쳤습니다. 해협 인근에서 상선 세 척이 피격되었다는 소식이 전해지자 공급망 마비에 대한 공포가 유가를 끌어올렸습니다. 이 여파로 서부 텍사스산 원유는 전일 대비 6퍼센트 넘게 급등하며 배럴당 88달러 선을 넘어섰고, 브렌트유 역시 90달러를 돌파했습니다. 이러한 유가 급등은 즉각적인 인플레이션 우려를 자극하며 채권 시장을 흔들었고, 10년물 국채 금리는 4.2퍼센트대로 올라섰습니다. 증시에서는 다우 존스 산업평균지수와 S&P 500 지수가 각각 0.6퍼센트, 0.2퍼센트가량 하락하며 부담을 고스란히 떠안았습니다. 반면 에너지 섹터는 유일하게 강세를 보이며 2.4퍼센트 이상 상승했고, 달러는 안전자산 선호 심리가 강해지며 상승 압력을 받았습니다. 시장이 전반적으로 지정학적 리스크라는 새로운 변수에 매우 민감하게 반응하는 하루였습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#4196501a301c1528",
+          "title": "Oil prices rise again as more vessels attacked near the Strait of Hormuz"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "UUP",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "유가 급등이 구체적으로 시장에 어떤 경로로 충격을 주는지, 그리고 왜 다우와 S&P 500 지수가 더 민감하게 반응했는지 궁금합니다.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "유가 상승은 경제 전반에 비용 인상이라는 직접적인 충격을 가합니다. 특히 운송, 제조, 농업 등 경제의 근간을 이루는 산업들은 디젤과 같은 연료유 가격에 매우 민감합니다. 실제로 분쟁 이후 디젤 가격이 급등하면서 글로벌 경제 둔화 우려까지 제기되는 상황입니다. 이는 다우와 S&P 500에 편입된 전통 산업 기업들의 수익성 악화로 직결됩니다. 예를 들어 항공주들은 유류비 부담 증가 우려에 오늘 일제히 하락했습니다. 더 큰 문제는 소비자에게 미치는 영향입니다. 휘발유 가격 상승은 가처분 소득을 줄여 소비 여력을 위축시키고, 이는 소매, 외식 등 내수 중심 기업들에 연쇄적으로 타격을 줍니다. 결국 시장은 이 모든 비용 증가가 인플레이션을 다시 자극해 연준의 금리 인하 기대를 꺾을 수 있다는 점을 가장 우려하고 있으며, 이것이 광범위한 투자 심리 위축으로 이어진 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#51958192bce89ddb",
+          "title": "Diesel markets, upended by Middle East conflict, threaten global economic slowdown"
+        },
+        {
+          "type": "article",
+          "pk": "id#e6c86c41fea11f94",
+          "title": "Richard Haass warns the geopolitical risk tax will burden markets for years to come"
+        },
+        {
+          "type": "article",
+          "pk": "id#83c975bc4a7af5e2",
+          "title": "Bond Yields Jump as Oil Prices Rise, Middle East War Outlook Uncertain"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "말씀하신 인플레이션 우려가 커진 상황에서, 오늘 유가에 가려지긴 했지만 어제 발표된 2월 소비자물가지수 결과도 있었죠. 이 지표는 어땠나요?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "네, 시장의 관심이 온통 유가에 쏠리면서 2월 소비자물가지수는 사실상 '과거의 데이터'가 되어버렸습니다. 수치 자체만 놓고 보면 시장 예상에 정확히 부합하는 결과였습니다. 전년 대비 헤드라인 물가상승률은 2.4퍼센트, 변동성이 큰 음식과 에너지를 제외한 근원 물가상승률은 2.5퍼센트로 모두 전망치와 동일하게 나왔습니다. 월간 상승률 역시 예상대로였습니다. 만약 지정학적 위기가 없었다면 시장은 인플레이션이 통제되고 있다는 안도감을 느꼈을지도 모릅니다. 하지만 이 데이터는 이란과의 분쟁으로 인한 유가 급등세가 전혀 반영되지 않은, 말 그대로 전쟁 이전의 상황을 보여주는 스냅샷에 불과했습니다. 따라서 투자자들은 이 과거 지표의 안정성보다는 앞으로 다가올 에너지 가격발 인플레이션 충격이라는 새로운 위험에 훨씬 더 무게를 두며 반응한 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#0dd3398de84ad6c6",
+          "title": "Inflation was elevated last month in a snapshot of consumer prices before the Iran war sent energy costs soaring"
+        },
+        {
+          "type": "article",
+          "pk": "id#aa787ab114cf4d93",
+          "title": "Inflation held firm last month — but the war with Iran could change that"
+        },
+        {
+          "type": "event",
+          "id": "398710",
+          "title": "inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "event",
+          "id": "398677",
+          "title": "core inflation rate yoy",
+          "date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "그렇다면 시장은 당분간 이 유가 변동성에 계속 끌려다닐 수밖에 없겠군요. 국제에너지기구의 비축유 방출 소식도 있었는데, 효과가 없었나요?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "효과가 매우 제한적이었습니다. 국제에너지기구, IEA가 사상 최대 규모인 4억 배럴의 전략 비축유를 방출하기로 합의했지만, 유가를 잡기에는 역부족이었습니다. 발표 직후 유가가 잠시 주춤하는 듯했지만 이내 다시 상승세로 돌아섰습니다. 시장은 비축유 방출을 근본적인 해결책이 아닌 일시적인 조치로 판단하고 있기 때문입니다. 호르무즈 해협의 봉쇄가 장기화될 경우 하루에만 수백만 배럴의 공급 차질이 발생할 수 있는데, 비축유만으로는 이를 감당할 수 없다는 인식이 지배적입니다. 결국 시장의 관심은 다시 중동의 지정학적 상황으로 돌아가고 있습니다. 분쟁의 격화 여부, 그리고 공급망을 정상화하려는 외교적 노력이 어떻게 진행되는지에 따라 유가와 시장 전체의 방향성이 결정될 것으로 보입니다. 이는 연준의 통화정책 결정에도 상당한 부담으로 작용할 수밖에 없는 상황입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a6b4de7d73de82e3",
+          "title": "International Energy Agency makes 400 million barrels of oil from emergency reserves available in largest ever release"
+        },
+        {
+          "type": "article",
+          "pk": "id#9ce81419f5881a7c",
+          "title": "A Move to Release Millions of Barrels of Oil Hasn't Kept Oil Prices Down"
+        },
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        },
+        {
+          "type": "article",
+          "pk": "id#c1ccb650e61f3d5b",
+          "title": "Central Banks Scramble as War Drives Up Inflation Expectations"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "연준의 부담을 말씀하시니, 아까 잠시 언급했던 소비자물가지수 결과가 다시 궁금해지네요. 분명 지표 자체는 예상에 부합하며 긍정적으로 나왔는데도, 왜 시장의 불안감을 해소하지 못했는지 좀 더 자세히 짚어주시죠.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "네, 이번 소비자물가지수 발표는 시장이 왜 과거가 아닌 미래를 보고 움직이는지를 명확히 보여준 사례였습니다. 발표된 2월 헤드라인 소비자물가지수는 전년 대비 2.4퍼센트, 근원물가지수는 2.5퍼센트로 모두 시장 예상치와 정확히 일치했습니다. 숫자만 보면 안도해야 할 상황이었지만, 시장의 반응은 정반대였습니다. S&P 500 지수와 다우존스 산업평균지수는 하락 마감했고, 투자자들의 불안 심리는 다른 자산 시장에서 더욱 명확하게 나타났습니다. 서부 텍사스산 원유 가격이 지정학적 리스크로 하루 만에 6퍼센트 넘게 폭등하며 배럴당 88달러를 넘어섰고, 인플레이션 우려를 직접적으로 반영하는 미국 10년물 국채 금리는 7베이시스포인트 이상 급등하며 4.2퍼센트를 돌파했습니다. 여기에 안전자산 선호 심리가 더해지며 미국 달러 인덱스까지 강세를 보였고, 주식시장 내부에서도 에너지 섹터만 유일하게 강한 모습을 보였습니다. 결국 시장은 예상에 부합한 물가 지표라는 호재성 재료를 완전히 무시하고, 유가 급등이 불러올 미래의 인플레이션이라는 그림자에 온통 집중하는 모습을 보인 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398710",
+          "title": "inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "event",
+          "id": "398677",
+          "title": "core inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "결국 이미 과거의 데이터가 되어버린 2월 물가 지표보다는, 당장 눈앞에 닥친 유가 급등이라는 변수가 훨씬 중요하게 작용했다는 말씀이시군요.",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "정확합니다. 시장에서는 이번 2월 소비자물가지수 보고서를 사실상 '유효기간이 지난 데이터'로 취급하는 분위기가 역력했습니다. 이란 관련 분쟁이 2월 말에 시작되면서 유가 급등세가 본격화되었는데, 이번 지표에는 그 영향이 거의 반영되지 않았기 때문입니다. 실제로 보고서 세부 항목을 보면 2월 휘발유 가격은 전월 대비 0.8퍼센트 상승에 그쳤지만, 분쟁 이후 실제 주유소 가격은 한 달 만에 20퍼센트 가까이 급등한 것으로 나타났습니다. 월가에서는 만약 현재의 고유가 상황이 몇 달간 지속될 경우, 헤드라인 인플레이션이 다시 3퍼센트대로 올라설 수 있다는 비관적인 전망까지 나오고 있습니다. 이는 연방준비제도가 수년간 노력해온 물가 안정 목표를 다시 위협할 수 있는 수준이기에, 투자자들이 안도감보다는 불안감을 먼저 느낀 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#610cd54414f82eea",
+          "title": "February CPI inflation report shows stable inflation before Iran war shock"
+        },
+        {
+          "type": "article",
+          "pk": "id#d4fe4bde30864cfe",
+          "title": "CPI report shows inflation held steady at 2.4% in February"
+        },
+        {
+          "type": "article",
+          "pk": "id#b4eb0027c04686e2",
+          "title": "Stock market today: S&P 500 and Nasdaq rise, Dow slips amid fresh inflation data, continued Iran fallout"
+        },
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "그렇다면 이번 유가 급등이 구체적으로 경제에 어떤 영향을 미칠 것으로 예상되나요?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "단순히 주유 비용이 오르는 것 이상의 파급 효과를 우려해야 합니다. 특히 산업의 혈액이라고 불리는 디젤 가격의 급등은 경제 전반의 비용 압박으로 이어질 수 있습니다. 운송, 농업, 광업, 제조업 등 거의 모든 산업 활동의 원가 부담을 높이기 때문입니다. 이는 결국 상품과 서비스 가격 인상으로 전가되어 인플레이션을 더욱 자극하는 2차 효과를 낳을 수 있습니다. 일부에서는 현재의 디젤 가격 상승세가 지속될 경우, 이는 소비를 위축시키면서도 물가는 올리는 스태그플레이션, 즉 경기 침체 속 물가 상승이라는 최악의 시나리오에 대한 우려를 키울 수 있다고 경고하고 있습니다. 이처럼 시장은 이미 다음 달, 그리고 그다음 분기의 인플레이션 경로를 다시 계산하기 시작한 것입니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#51958192bce89ddb",
+          "title": "Diesel markets, upended by Middle East conflict, threaten global economic slowdown"
+        },
+        {
+          "type": "article",
+          "pk": "id#e9d91a44aa80f9d5",
+          "title": "Crude Oil Jumps 4% as Traders Price In Supply Disruption"
+        },
+        {
+          "type": "article",
+          "pk": "id#e6c86c41fea11f94",
+          "title": "Richard Haass warns the geopolitical risk tax will burden markets for years to come"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "이런 상황이 연방준비제도의 통화정책 결정에도 상당한 부담을 주겠군요.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "맞습니다. 연준은 매우 곤란한 상황에 처했습니다. 2월 물가 데이터는 금리 인하를 고려할 수 있는 긍정적인 신호를 보냈지만, 갑작스러운 유가 쇼크는 섣부른 정책 전환에 대한 강력한 경고등을 켠 셈입니다. 뉴욕 연방준비은행의 존 윌리엄스 총재나 보스턴 연은의 수잔 콜린스 총재 등 주요 인사들도 최근 이란과의 분쟁이 단기 인플레이션 전망에 불확실성을 더하고 있다고 인정했습니다. 결국 다음 주에 있을 연방공개시장위원회 회의에서 연준은 금리를 동결하고, 유가 충격이 경제 전반에 미치는 영향을 신중하게 지켜보겠다는 원론적인 입장을 되풀이할 가능성이 매우 커졌습니다. 시장의 기대는 이제 금리 인하 시점이 언제가 될 것인가에서, 인플레이션이 다시 고개를 드는 것을 막기 위해 연준이 얼마나 더 오래 긴축 기조를 유지할 것인가로 옮겨가고 있습니다.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        },
+        {
+          "type": "article",
+          "pk": "id#610cd54414f82eea",
+          "title": "February CPI inflation report shows stable inflation before Iran war shock"
+        },
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        },
+        {
+          "type": "article",
+          "pk": "id#f0d27ee09ee482a6",
+          "title": "5 Things to Know Before the Stock Market Opens"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "네, 이런 시장 흐름 속에서 투자자들의 관심이 쏠렸던 개별 기업도 살펴보겠습니다. 오늘 5% 넘게 급락한 콘스텔레이션 에너지에 대한 문의가 많았는데요. 장 초반부터 계속 밀리는 모습을 보였는데, 어떤 배경이 있었나요?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CEG",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "네, 콘스텔레이션 에너지는 오늘 시장에서 가장 첨예한 논쟁의 중심에 선 종목이라고 할 수 있습니다. 주가 하락의 배경에는 하나의 사건, 즉 최근 완료된 칼파인 인수를 두고 'AI 시대를 여는 전략적 확장'이라는 성장 서사와 '감당하기 힘든 부채 리스크'라는 현실적 우려가 정면으로 충돌하고 있기 때문입니다. 시장은 이 기업이 AI 데이터센터에 전력을 독점 공급하는 혁신 기업으로 거듭날 것이라는 기대감과, 인수를 위해 떠안은 126억 달러에 달하는 막대한 부채와 향후 발생할 막대한 현금 지출 부담 사이에서 방향성을 잃고 변동성이 커진 것으로 관찰됩니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "AI 데이터센터 전력 공급이라는 성장 스토리는 매우 흥미롭게 들립니다. 이 긍정적인 관점에 대해 좀 더 자세히 설명해주시죠.",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "긍정적으로 보는 측에서는 이번 칼파인 인수를 단순한 부채 증가가 아닌, AI 혁명을 뒷받침할 에너지 영토를 선점하기 위한 전략적 투자로 해석합니다. 콘스텔레이션의 핵심 자산인 원자력은 24시간 안정적인 기저부하 전력을 공급하고, 인수한 칼파인의 천연가스 발전은 전력 수요가 급증할 때 유연하게 대응하는 역할을 합니다. 이 둘의 결합은 마이크로소프트와 같은 빅테크 데이터센터가 요구하는 '24시간 무탄소 전력'을 안정적으로 공급할 수 있는, 사실상 유일한 대안이 될 수 있다는 것입니다. 실제로 2025년 회계연도에 42억 달러가 넘는 강력한 영업 현금흐름을 창출한 점을 들어, 늘어난 부채를 충분히 감당할 재무적 체력이 있다는 점을 강조하고 있습니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "성장 잠재력은 분명해 보입니다만, 오늘 주가는 그 반대로 움직였습니다. 시장이 우려하는 재무 리스크는 구체적으로 어떤 것들인가요?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "반대편의 우려는 매우 현실적인 숫자에 기반합니다. 10-K 보고서에 따르면, 칼파인 인수로 126억 달러의 부채를 떠안았고, 2026년 한 해에만 인수 대금을 포함해 총 96억 달러 이상의 막대한 현금 지출이 예정되어 있습니다. 가장 심각하게 보는 위험은 신용등급 강등 가능성입니다. 만약 신용등급이 투자부적격으로 떨어질 경우, 약 27억 달러의 추가 담보를 즉시 제공해야 하는 조항이 있는데, 이는 현금 흐름이 빠듯한 상황에서 유동성 위기를 촉발할 수 있는 매우 구체적인 위협입니다. 또한 인플레이션 감축법에 따른 세액공제 혜택이 정치적 상황에 따라 축소될 수 있다는 규제 리스크와, 원자력 발전소의 운영 및 폐로 관련 비용이라는 잠재적 부담도 주가를 누르는 요인으로 지목됩니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "결국 장기적인 성장 가능성과 단기적인 재무 부담이 팽팽하게 맞서고 있는 형국이군요. 이 상반된 신호들을 어떻게 종합적으로 판단해야 할까요?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "정확합니다. 현재 콘스텔레이션 에너지는 높은 잠재 수익률과 그에 상응하는 높은 리스크를 동시에 지닌, 전형적인 '고위험 고수익' 투자처의 특성을 보이고 있습니다. 성장 시나리오가 현실화된다면 AI 인프라의 핵심 기업으로 재평가받으며 상당한 주가 상승을 기대할 수 있지만, 반대로 리스크 시나리오가 현실화될 경우 심각한 자본 손실에 직면할 수도 있습니다. 양측 모두 동일한 공시 자료를 근거로 정반대의 결론을 내리고 있다는 점은, 현재 상황이 해석의 영역에 있으며 불확실성이 매우 크다는 것을 의미합니다. 따라서 칼파인 인수 이후 통합 과정의 효율성, 부채 관리 능력, 그리고 AI 데이터센터향 추가 계약 여부 등 불확실성이 해소되는 과정을 지켜보는 신중한 접근이 필요한 시점으로 판단됩니다.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "오늘 뜨거운 CPI 데이터에도 불구하고 S&P 500 지수와 나스닥 지수가 사상 최고치를 경신하는 저력을 보여줬습니다. 이제 시장의 관심은 어디로 향하게 될까요?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2024-03-12",
+          "end_date": "2024-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2024-03-12",
+          "end_date": "2024-03-12"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "네, 시장이 예상보다 높은 인플레이션 충격을 잘 흡수하며 강한 모습을 보였습니다. 이제 투자자들은 인플레이션의 다음 단서를 찾기 위해 생산자물가지수, 즉 PPI 발표를 주목하고 있습니다. CPI가 소비자 관점의 물가라면, PPI는 기업의 비용 측면에서 인플레이션 압력을 보여주기 때문에 향후 CPI의 방향성을 예측하는 중요한 선행 지표가 될 수 있습니다. 특히 지난달 수치가 예상보다 높았던 만큼, 이번에도 시장의 예상을 웃돌 경우 인플레이션 고착화에 대한 우려가 다시 커질 수 있습니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398918",
+          "title": "ppi mom",
+          "date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "생산자물가지수가 또 다른 분수령이 되겠군요. 그 외에 또 어떤 이벤트를 눈여겨봐야 할까요?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "가장 중요한 이벤트는 바로 다음 주로 예정된 연방공개시장위원회, FOMC 정례회의입니다. 이번 회의에서 금리 동결은 거의 확실시되고 있지만, 시장의 모든 관심은 함께 발표될 경제 전망 요약과 점도표에 쏠려 있습니다. 오늘 발표된 CPI 데이터가 연준 위원들의 생각에 어떤 영향을 미쳤을지, 그리고 연내 세 차례 금리 인하 전망이 유지될 것인지가 이번 FOMC의 핵심 관전 포인트가 될 것입니다. 파월 의장의 기자회견 발언 하나하나에 시장이 민감하게 반응할 것으로 보입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "말씀하신 경제 전망 요약에 연준 위원들의 금리 전망을 담은 점도표가 포함되는 것이죠?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "맞습니다. 점도표는 연준의 정책 방향에 대한 가장 명확한 신호를 제공합니다. 만약 점도표의 중간값이 기존의 3회 인하 전망을 유지한다면 시장은 안도하겠지만, 만약 2회 인하로 후퇴하는 모습이 나타난다면 금리 인하 기대감이 후퇴하며 시장에 상당한 충격을 줄 수 있습니다. 따라서 투자자들은 이번 점도표 변화를 통해 연준의 인플레이션 진단과 향후 금리 경로에 대한 확신을 얻고자 할 것이며, 이는 향후 몇 달간의 시장 방향성을 결정지을 중요한 변수가 될 것입니다.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390616",
+          "title": "fomc economic projections",
+          "date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "결국 PPI 데이터와 FOMC 회의 결과가 단기적인 시장의 향방을 결정하겠군요. 오늘 자세한 설명 감사드립니다.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "그렇습니다. 시장은 사상 최고치 경신으로 강한 상승 동력을 보여주고 있지만, 인플레이션이라는 과제는 여전히 남아있습니다. 중요한 경제 지표 발표와 연준의 결정을 앞두고 있는 만큼, 시장의 변동성이 다시 확대될 수 있다는 점을 염두에 두시고 신중한 투자 전략을 유지하시는 것이 좋겠습니다.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "지금까지 3월 12일 장마감 브리핑이었습니다. 감사합니다.",
+      "sources": []
+    }
+  ]
+}
