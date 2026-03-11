@@ -1,0 +1,761 @@
+{
+  "date": "20260311",
+  "nutshell": "Market mixed amid strong Oracle earnings and a surge in oil prices.",
+  "user_tickers": [
+    "CEG"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's your closing bell briefing for March 12th. We saw a split market today, with the indices heading in different directions. What really stands out is that the Nasdaq was the only one to finish in the green.",
+      "sources": [],
+      "time": [
+        0,
+        12651
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's session can really be summed up as a mixed market caught between strong earnings from Oracle and a spike in oil prices. The Dow Jones Industrial Average fell 0.6% to close at 47,417.27, and the S&P 500 also slipped a slight 0.08% to 6,775.80. On the other hand, the tech-heavy Nasdaq Composite, buoyed by Oracle's strong results, gained 0.08% to finish at 22,716.14. Meanwhile, with geopolitical risks coming into focus, West Texas Intermediate crude surged over 5% to climb above the $88 a barrel mark.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ],
+      "time": [
+        13151,
+        55282
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So it was basically a collision between good news from a specific company and headwinds weighing on the broader market. Why did we see such a divergence among the indices?",
+      "sources": [],
+      "time": [
+        55782,
+        65793
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. It's because two very different forces were pulling the market in opposite directions. First, software giant Oracle saw its stock soar more than 9% after reporting better-than-expected earnings and a strong forecast for AI-related revenue. That news lifted sentiment for the entire tech sector, helping to pull the Nasdaq higher. But on the other side of the coin, rising tensions related to Iran caused a spike in global oil prices, reigniting inflation fears. That acted as a headwind for the Dow and S&P 500, as it could increase costs across the economy.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#0ad0eddf76b5c68a",
+          "title": "Oracle stock soars 12% after earnings beat, big AI revenue forecast"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        },
+        {
+          "type": "chart",
+          "ticker": "ORCL",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        }
+      ],
+      "time": [
+        66293,
+        102144
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So could you break down the key drivers for us today?",
+      "sources": [],
+      "time": [
+        102644,
+        107055
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Right. The market was essentially caught in a tug-of-war between two major forces: the AI optimism sparked by Oracle, and the oil price surge driven by geopolitical tensions. And while it was overshadowed by the oil volatility, we also had the February Consumer Price Index data as another factor in the mix.",
+      "sources": [],
+      "time": [
+        107555,
+        126246
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Of all the factors you mentioned, it seems the surge in oil prices was the biggest market mover. You said geopolitical risks came into focus—what's the situation specifically?",
+      "sources": [],
+      "time": [
+        127246,
+        138737
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, escalating conflict with Iran has brought tensions in the Strait of Hormuz, a critical chokepoint for oil transport, to a boiling point. News that three commercial vessels were attacked near the strait sent oil prices soaring on fears of a supply chain paralysis. As a result, West Texas Intermediate crude jumped more than 6% from the previous day, crossing the $88 a barrel mark, while Brent crude topped $90. This spike in oil immediately stoked inflation fears, rattling the bond market and sending the 10-year Treasury yield up to the 4.2% range. In the stock market, the Dow and the S&P 500 bore the brunt of the pressure, falling about 0.6% and 0.2% respectively. In contrast, the energy sector was the only bright spot, rallying over 2.4%, and the dollar gained strength on a flight-to-safety bid. It was a day where the market was reacting very sensitively to this new variable of geopolitical risk.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#4196501a301c1528",
+          "title": "Oil prices rise again as more vessels attacked near the Strait of Hormuz"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "UUP",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ],
+      "time": [
+        139237,
+        195808
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "I'm curious about the specific channels through which surging oil prices impact the market, and why the Dow and S&P 500 reacted more sensitively.",
+      "sources": [],
+      "time": [
+        196308,
+        205879
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "A rise in oil prices delivers a direct shock to the entire economy in the form of higher costs. Industries that form the backbone of the economy, like transportation, manufacturing, and agriculture, are especially sensitive to the price of fuels like diesel. In fact, with diesel prices jumping since the conflict began, there are now concerns about a global economic slowdown. This directly translates to lower profitability for the traditional industrial companies in the Dow and S&P 500. For example, airline stocks fell across the board today on worries about higher fuel costs. The bigger problem is the impact on consumers. Higher gasoline prices reduce disposable income, squeezing consumer spending, which then creates a ripple effect on retail, dining, and other domestic-focused businesses. Ultimately, the market's biggest fear is that all these rising costs will reignite inflation and dash hopes for Fed rate cuts, and that's what led to the broad-based hit to investor sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#51958192bce89ddb",
+          "title": "Diesel markets, upended by Middle East conflict, threaten global economic slowdown"
+        },
+        {
+          "type": "article",
+          "pk": "id#e6c86c41fea11f94",
+          "title": "Richard Haass warns the geopolitical risk tax will burden markets for years to come"
+        },
+        {
+          "type": "article",
+          "pk": "id#83c975bc4a7af5e2",
+          "title": "Bond Yields Jump as Oil Prices Rise, Middle East War Outlook Uncertain"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ],
+      "time": [
+        206379,
+        268550
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "With those inflation fears mounting, you mentioned the February Consumer Price Index report, which was a bit overshadowed by the oil news. How did that data come in?",
+      "sources": [],
+      "time": [
+        269050,
+        278661
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Right, with all eyes on oil prices, the February CPI report effectively became 'old news.' The numbers themselves came in exactly in line with market expectations. The year-over-year headline inflation rate was 2.4%, and the core rate, which excludes volatile food and energy, was 2.5%—both matching forecasts. The monthly gains were also as expected. If it weren't for the geopolitical crisis, the market might have felt a sense of relief that inflation was under control. But this data was just a snapshot of the pre-war situation, with none of the impact from the Iran conflict's oil surge reflected. So, investors largely ignored the stability of this backward-looking indicator and focused much more heavily on the new risk of an energy-driven inflation shock to come.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#0dd3398de84ad6c6",
+          "title": "Inflation was elevated last month in a snapshot of consumer prices before the Iran war sent energy costs soaring"
+        },
+        {
+          "type": "article",
+          "pk": "id#aa787ab114cf4d93",
+          "title": "Inflation held firm last month — but the war with Iran could change that"
+        },
+        {
+          "type": "event",
+          "id": "398710",
+          "title": "inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "event",
+          "id": "398677",
+          "title": "core inflation rate yoy",
+          "date": "2026-03-11"
+        }
+      ],
+      "time": [
+        279161,
+        319812
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So it sounds like the market is going to be at the mercy of this oil volatility for a while. There was also news about the International Energy Agency releasing strategic reserves. Did that have any effect?",
+      "sources": [],
+      "time": [
+        320312,
+        332722
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "The effect was very limited. The International Energy Agency, or IEA, agreed to release a record 400 million barrels from its strategic reserves, but it wasn't nearly enough to tame oil prices. Prices did dip briefly right after the announcement, but they quickly resumed their upward trend. The market sees the reserve release as a temporary fix, not a fundamental solution. The prevailing view is that if the blockade of the Strait of Hormuz becomes prolonged, it could disrupt millions of barrels of supply per day, and strategic reserves alone can't cover that shortfall. So, the market's focus is shifting right back to the geopolitical situation in the Middle East. The direction of oil prices, and the market as a whole, will likely depend on whether the conflict escalates and how diplomatic efforts to normalize the supply chain progress. This situation inevitably puts significant pressure on the Fed's monetary policy decisions as well.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a6b4de7d73de82e3",
+          "title": "International Energy Agency makes 400 million barrels of oil from emergency reserves available in largest ever release"
+        },
+        {
+          "type": "article",
+          "pk": "id#9ce81419f5881a7c",
+          "title": "A Move to Release Millions of Barrels of Oil Hasn't Kept Oil Prices Down"
+        },
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        },
+        {
+          "type": "article",
+          "pk": "id#c1ccb650e61f3d5b",
+          "title": "Central Banks Scramble as War Drives Up Inflation Expectations"
+        }
+      ],
+      "time": [
+        333222,
+        385073
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "You mentioned the pressure on the Fed, which brings me back to the CPI report. The data itself was positive, coming in right on target. Could you elaborate on why it failed to calm the market's nerves?",
+      "sources": [],
+      "time": [
+        385573,
+        397824
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, this CPI release was a classic example of why the market is always forward-looking, not backward-looking. The February headline CPI came in at 2.4% year-over-year, and core CPI was 2.5%, both perfectly matching consensus. On paper, that should have been a relief, but the market's reaction was the opposite. The S&P 500 and the Dow both closed lower, and investor anxiety was even clearer in other asset markets. WTI crude oil shot up over 6% in a single day to over $88 a barrel on geopolitical risk. The 10-year Treasury yield, which directly reflects inflation fears, jumped more than 7 basis points to break through 4.2%. On top of that, a flight-to-safety sentiment pushed the U.S. Dollar Index higher, and within the stock market, the energy sector was the only one showing any real strength. In the end, the market completely ignored the positive news of an in-line inflation report and was entirely focused on the shadow of future inflation cast by surging oil prices.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398710",
+          "title": "inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "event",
+          "id": "398677",
+          "title": "core inflation rate yoy",
+          "date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-10",
+          "end_date": "2026-03-11"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        }
+      ],
+      "time": [
+        398324,
+        461655
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So what you're saying is the immediate variable of surging oil prices was far more important than the February inflation data, which was already old news.",
+      "sources": [],
+      "time": [
+        462155,
+        472166
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Exactly. The sentiment on the street was that this February CPI report was effectively 'expired data.' The conflict with Iran and the subsequent oil price surge really took off at the end of February, so its impact was barely reflected in this report. If you look at the details, the report shows gasoline prices rose just 0.8% month-over-month in February. But in reality, prices at the pump have jumped nearly 20% in the month since the conflict began. Some on Wall Street are now forecasting that if current high oil prices persist for a few months, headline inflation could climb back into the 3% range. That's a level that could threaten the Fed's hard-won progress on price stability, which is why investors felt more anxiety than relief.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#610cd54414f82eea",
+          "title": "February CPI inflation report shows stable inflation before Iran war shock"
+        },
+        {
+          "type": "article",
+          "pk": "id#d4fe4bde30864cfe",
+          "title": "CPI report shows inflation held steady at 2.4% in February"
+        },
+        {
+          "type": "article",
+          "pk": "id#b4eb0027c04686e2",
+          "title": "Stock market today: S&P 500 and Nasdaq rise, Dow slips amid fresh inflation data, continued Iran fallout"
+        },
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        }
+      ],
+      "time": [
+        472666,
+        516717
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, what are the specific economic impacts we can expect from this oil price surge?",
+      "sources": [],
+      "time": [
+        517217,
+        522628
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "We have to be concerned about ripple effects that go far beyond just the cost of filling up your tank. The spike in diesel prices, often called the lifeblood of industry, could lead to cost pressures across the entire economy. It raises the cost of doing business for almost every sector—transportation, agriculture, mining, manufacturing. This could eventually be passed on to consumers in the form of higher prices for goods and services, creating a secondary effect that further fuels inflation. Some are warning that if the current rise in diesel prices continues, it could increase the risk of the worst-case scenario: stagflation, where you have slowing economic growth combined with rising prices. So the market has already started to recalculate the inflation path for the next month and the next quarter.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#51958192bce89ddb",
+          "title": "Diesel markets, upended by Middle East conflict, threaten global economic slowdown"
+        },
+        {
+          "type": "article",
+          "pk": "id#e9d91a44aa80f9d5",
+          "title": "Crude Oil Jumps 4% as Traders Price In Supply Disruption"
+        },
+        {
+          "type": "article",
+          "pk": "id#e6c86c41fea11f94",
+          "title": "Richard Haass warns the geopolitical risk tax will burden markets for years to come"
+        },
+        {
+          "type": "article",
+          "pk": "id#8233cf27081c4877",
+          "title": "Stock market today: Dow, S&P 500 slip for second day, oil jumps as Iran war rages on"
+        }
+      ],
+      "time": [
+        523128,
+        570539
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "This situation must be putting a lot of pressure on the Federal Reserve's policy decisions.",
+      "sources": [],
+      "time": [
+        571039,
+        577050
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's right. The Fed is in a very tough spot. The February inflation data sent a positive signal that might have supported considering a rate cut, but this sudden oil shock has flashed a major warning sign against any premature policy shift. Key officials like New York Fed President John Williams and Boston Fed President Susan Collins have recently acknowledged that the conflict with Iran adds uncertainty to the short-term inflation outlook. Ultimately, at next week's FOMC meeting, it's now highly likely the Fed will hold rates steady and reiterate its standard line about carefully watching the economic impact of the oil shock. The market's focus is shifting from 'when will they cut rates?' to 'how much longer will the Fed have to stay tight to prevent inflation from flaring up again?'",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bdb64d68a8bac48a",
+          "title": "With a cautious eye on oil prices, Fed likely to hold rates next week following February's inflation reading"
+        },
+        {
+          "type": "article",
+          "pk": "id#610cd54414f82eea",
+          "title": "February CPI inflation report shows stable inflation before Iran war shock"
+        },
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        },
+        {
+          "type": "article",
+          "pk": "id#f0d27ee09ee482a6",
+          "title": "5 Things to Know Before the Stock Market Opens"
+        }
+      ],
+      "time": [
+        577550,
+        621361
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, amid these market currents, let's look at an individual company that caught investors' attention. We got a lot of questions about Constellation Energy, which plunged more than 5% today. It was under pressure right from the opening bell—what was the story there?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CEG",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-11"
+        }
+      ],
+      "time": [
+        622361,
+        638332
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, Constellation Energy was arguably at the center of one of the sharpest debates in the market today. The reason for the stock's decline is a clash between two competing narratives surrounding its recent acquisition of Calpine. On one hand, you have the growth story of a 'strategic expansion for the AI era,' and on the other, you have the very real concern of an 'unmanageable debt risk.' The market seems to be caught between the hope that the company will become a key power supplier to AI data centers, and the burden of the massive $12.6 billion in debt it took on for the acquisition, plus significant future cash outlays. This uncertainty appears to be driving the increased volatility.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ],
+      "time": [
+        638832,
+        680203
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That growth story about supplying power to AI data centers sounds very compelling. Can you tell us more about that positive perspective?",
+      "sources": [],
+      "time": [
+        680703,
+        688794
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Those on the bullish side see the Calpine acquisition not as a simple increase in debt, but as a strategic investment to secure a dominant position in powering the AI revolution. Constellation's core asset, nuclear power, provides stable, 24/7 baseload electricity. The natural gas plants from Calpine can flexibly respond to sudden surges in demand. The combination of these two could become the only viable option for supplying the '24/7 carbon-free energy' that big tech data centers, like Microsoft's, require. They also point to the company's strong operating cash flow, which exceeded $4.2 billion in fiscal year 2025, as evidence that it has the financial muscle to handle the increased debt.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ],
+      "time": [
+        689294,
+        731625
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "The growth potential seems clear, but the stock moved in the opposite direction today. What are the specific financial risks that have the market worried?",
+      "sources": [],
+      "time": [
+        732125,
+        741176
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The concerns on the other side are based on some very real numbers. According to their 10-K filing, the Calpine acquisition added $12.6 billion in debt, and for 2026 alone, the company has scheduled massive cash outlays of over $9.6 billion, including payments for the acquisition. The most serious risk they're watching is a potential credit rating downgrade. If their rating falls to non-investment grade, or 'junk' status, a clause would require them to immediately post about $2.7 billion in additional collateral. In a tight cash flow situation, that could trigger a liquidity crisis. Other factors weighing on the stock include regulatory risk—that tax credits from the Inflation Reduction Act could be reduced depending on the political climate—and the potential long-term costs associated with operating and decommissioning nuclear power plants.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ],
+      "time": [
+        741676,
+        791967
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So it's a classic standoff between long-term growth potential and short-term financial strain. How should we make sense of these conflicting signals?",
+      "sources": [],
+      "time": [
+        792467,
+        803078
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's exactly right. Right now, Constellation Energy is showing the classic characteristics of a 'high-risk, high-reward' situation. If the growth scenario plays out, it could be re-rated as a key player in AI infrastructure, leading to significant stock appreciation. But if the risk scenario materializes, it could face serious capital losses. The fact that both bulls and bears are using the same public filings to draw opposite conclusions means this is very much in the realm of interpretation, and uncertainty is extremely high. Therefore, it seems like a time for a cautious approach, watching to see how some of these uncertainties resolve—things like the efficiency of the Calpine integration, the company's ability to manage its debt, and whether it can land additional contracts for AI data centers.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CEG",
+          "form": "10-K",
+          "filed_date": "2026-02-24",
+          "accession_number": "0001868275-26-000032"
+        }
+      ],
+      "time": [
+        803578,
+        849189
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Despite today's hot CPI data, the S&P 500 and Nasdaq showed resilience, hitting new all-time highs. So where does the market's attention turn to next?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2024-03-12",
+          "end_date": "2024-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2024-03-12",
+          "end_date": "2024-03-12"
+        }
+      ],
+      "time": [
+        850189,
+        860880
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "That's right, the market did show strength by absorbing that hotter-than-expected inflation shock. Now, investors are turning their attention to the Producer Price Index, or PPI, for the next clue on inflation. While CPI measures prices from the consumer's perspective, PPI shows inflationary pressures from the corporate cost side, so it can be an important leading indicator for where CPI is headed. Since last month's PPI number was also higher than expected, another hot reading this time could amplify concerns that inflation is becoming sticky.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398918",
+          "title": "ppi mom",
+          "date": "2026-03-18"
+        }
+      ],
+      "time": [
+        861380,
+        891791
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So the Producer Price Index will be the next major catalyst. What other events should we be watching?",
+      "sources": [],
+      "time": [
+        892291,
+        898382
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "The most important event is next week's Federal Open Market Committee, or FOMC, meeting. It's almost certain they'll hold interest rates steady, but all eyes will be on the accompanying Summary of Economic Projections and the 'dot plot.' The key thing to watch will be how today's CPI data might have influenced the committee members' thinking, and whether they'll stick with their forecast for three rate cuts this year. The market will be hanging on every word from Chair Powell's press conference.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390600",
+          "title": "fed interest rate decision",
+          "date": "2026-03-18"
+        }
+      ],
+      "time": [
+        898882,
+        929733
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "And that Summary of Economic Projections includes the dot plot, which shows where Fed officials see rates heading, correct?",
+      "sources": [],
+      "time": [
+        930233,
+        938324
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's right. The dot plot provides the clearest signal of the Fed's policy direction. If the median dot stays at the current projection of three cuts, the market will likely breathe a sigh of relief. But if it shifts to only two cuts, that could deal a significant blow to rate cut expectations and shock the market. So investors will be looking to the dot plot for confirmation on the Fed's inflation diagnosis and its future rate path, and that will be a major factor in setting the market's direction for the next few months.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390616",
+          "title": "fomc economic projections",
+          "date": "2026-03-18"
+        }
+      ],
+      "time": [
+        938824,
+        965674
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So it all comes down to the PPI data and the FOMC meeting to determine the market's short-term direction. Thanks for the detailed breakdown today.",
+      "sources": [],
+      "time": [
+        966174,
+        975465
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "That's right. The market has shown strong upward momentum by hitting new all-time highs, but the challenge of inflation still remains. With key economic data releases and the Fed's decision just ahead, it's worth remembering that market volatility could pick up again, suggesting a cautious approach is warranted.",
+      "sources": [],
+      "time": [
+        975965,
+        993696
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "That wraps up our closing bell briefing for March 12th. Thank you.",
+      "sources": [],
+      "time": [
+        994196,
+        998207
+      ]
+    }
+  ]
+}
