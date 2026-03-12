@@ -616,9 +616,6 @@ const CompanySection: FC<{ company: CompanyMove; index: number; total: number; v
           <p style={{ margin: 0, fontSize: 36, fontWeight: 700, lineHeight: 1.4, color: summaryColor }}>
             {compactTextWithLimit(company.move_summary, compactText(company.reason, "핵심 변동 요인"), 48)}
           </p>
-          <p style={{ margin: "12px 0 0", fontSize: 24, lineHeight: 1.5, color: companyNameColor, fontWeight: 500 }}>
-            {compactTextWithLimit(company.reason, company.move_summary, 56)}
-          </p>
         </motion.div>
 
         <motion.div

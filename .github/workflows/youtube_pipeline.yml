@@ -2,8 +2,8 @@ name: YouTube Automation
 
 on:
   schedule:
-    # Vancouver 14:00 after BC's final DST change on March 8, 2026.
-    - cron: "0 21 * * 1-5"
+    # Vancouver 13:50 on March 12, 2026 (PDT, UTC-7).
+    - cron: "50 20 * * 1-5"
   workflow_dispatch:
     inputs:
       date:

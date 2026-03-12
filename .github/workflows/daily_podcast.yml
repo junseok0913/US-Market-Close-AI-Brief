@@ -2,8 +2,8 @@ name: Daily Stock Podcast Automation
 
 on:
   schedule:
-    # Vancouver 13:10 after BC's final DST change on March 8, 2026.
-    - cron: "10 20 * * 1-5"
+    # Vancouver 13:00 on March 12, 2026 (PDT, UTC-7).
+    - cron: "0 20 * * 1-5"
   workflow_dispatch:
     inputs:
       date:
