@@ -559,6 +559,153 @@ def build_company_slide_points(move: dict[str, Any], *, lang: str) -> list[str]:
     return merged[:MAX_SLIDE_POINTS_PER_COMPANY]
 
 
+def needs_llm_company_text_refine(move: dict[str, Any], *, lang: str) -> dict[str, bool]:
+    reason_text = compact_text(move.get("reason"))
+    spoken_text = compact_text(move.get("spoken_text"))
+    summary_text = compact_text(move.get("move_summary"))
+    slide_points = normalize_string_list(move.get("slide_points"), MAX_SLIDE_POINTS_PER_COMPANY)
+    default_spoken = build_company_spoken_text(move, lang=lang)
+    default_summary = compact_with_limit(reason_text, 120)
+    default_tail_candidates = {
+        compact_text(reason_text),
+        compact_text(default_summary),
+        "Track the core catalyst" if lang == "en" else "주가 변동 핵심 이유 추적",
+    }
+    last_point = compact_text(slide_points[-1]) if slide_points else ""
+    return {
+        "spoken_text": not spoken_text or spoken_text == default_spoken,
+        "move_summary": not summary_text or summary_text == default_summary,
+        "tail_point": not last_point or last_point in default_tail_candidates,
+    }
+
+
+def build_refiner_company_snapshot(move: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "ticker": compact_text(move.get("ticker")),
+        "name": compact_text(move.get("name")),
+        "day_change_display": compact_text(move.get("day_change_display")),
+        "month_change_display": compact_text(move.get("month_change_display")),
+        "market_cap_display": compact_text(move.get("market_cap_display")),
+        "pe_ratio_display": compact_text(move.get("pe_ratio_display")),
+        "pbr_display": compact_text(move.get("pbr_display")),
+        "roe_display": compact_text(move.get("roe_display")),
+        "reason": compact_text(move.get("reason")),
+        "spoken_text": compact_text(move.get("spoken_text")),
+        "move_summary": compact_text(move.get("move_summary")),
+        "slide_points": normalize_string_list(move.get("slide_points"), MAX_SLIDE_POINTS_PER_COMPANY),
+    }
+
+
+def contains_other_company_reference(text: str, previous_move: dict[str, Any] | None) -> bool:
+    if not previous_move:
+        return False
+    haystack = compact_text(text).lower()
+    if not haystack:
+        return False
+    for token in (
+        compact_text(previous_move.get("ticker")),
+        compact_text(previous_move.get("name")),
+    ):
+        normalized = token.lower()
+        if normalized and normalized in haystack:
+            return True
+    return False
+
+
+def refine_company_move_with_llm(
+    move: dict[str, Any],
+    *,
+    previous_move: dict[str, Any] | None,
+    llm: Any,
+    prompt_config: dict[str, Any],
+    lang: str,
+) -> dict[str, Any]:
+    flags = needs_llm_company_text_refine(move, lang=lang)
+    if not any(flags.values()):
+        return move
+
+    script_cfg = prompt_config.get("script")
+    if not isinstance(script_cfg, dict):
+        return move
+    refiner_cfg = script_cfg.get("fallback_refiner")
+    if not isinstance(refiner_cfg, dict):
+        return move
+    system_prompt = compact_text(refiner_cfg.get("system"))
+    user_template = refiner_cfg.get("user_template")
+    if not isinstance(user_template, str) or not user_template.strip():
+        return move
+
+    user_prompt = user_template.format(
+        lang=lang,
+        previous_move_json=json.dumps(
+            build_refiner_company_snapshot(previous_move) if previous_move else None,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        move_json=json.dumps(build_refiner_company_snapshot(move), ensure_ascii=False, indent=2),
+    )
+    full_prompt = f"{system_prompt}\n\n{user_prompt}" if system_prompt else user_prompt
+
+    try:
+        response = llm.invoke(full_prompt)
+        response_text = response_to_text(response.content)
+        raw_payload = extract_json_object(response_text)
+    except Exception as exc:
+        logger.warning(
+            "Failed to refine fallback company text for %s: %s",
+            compact_text(move.get("ticker")) or "UNKNOWN",
+            exc,
+        )
+        return move
+
+    refined = dict(move)
+    if flags["spoken_text"]:
+        candidate_spoken = compact_text(raw_payload.get("spoken_text"))
+        if candidate_spoken and not contains_other_company_reference(candidate_spoken, previous_move):
+            refined["spoken_text"] = candidate_spoken
+    if flags["move_summary"]:
+        candidate_summary = compact_with_limit(raw_payload.get("move_summary"), 120)
+        if candidate_summary and not contains_other_company_reference(candidate_summary, previous_move):
+            refined["move_summary"] = candidate_summary
+    if flags["tail_point"]:
+        candidate_tail = compact_with_limit(raw_payload.get("tail_point"), 90)
+        if candidate_tail and not contains_other_company_reference(candidate_tail, previous_move):
+            slide_points = normalize_string_list(refined.get("slide_points"), MAX_SLIDE_POINTS_PER_COMPANY)
+            if not slide_points:
+                slide_points = build_company_slide_points(refined, lang=lang)
+            slide_points = slide_points[:MAX_SLIDE_POINTS_PER_COMPANY]
+            if not slide_points:
+                slide_points = [candidate_tail]
+            while len(slide_points) < MAX_SLIDE_POINTS_PER_COMPANY:
+                slide_points.append(candidate_tail)
+            slide_points[-1] = candidate_tail
+            refined["slide_points"] = normalize_string_list(slide_points, MAX_SLIDE_POINTS_PER_COMPANY)
+
+    return refined
+
+
+def refine_company_moves_with_llm(
+    company_moves: list[dict[str, Any]],
+    *,
+    llm: Any,
+    prompt_config: dict[str, Any],
+    lang: str,
+) -> list[dict[str, Any]]:
+    refined_moves: list[dict[str, Any]] = []
+    previous_move: dict[str, Any] | None = None
+    for move in company_moves:
+        refined_move = refine_company_move_with_llm(
+            move,
+            previous_move=previous_move,
+            llm=llm,
+            prompt_config=prompt_config,
+            lang=lang,
+        )
+        refined_moves.append(refined_move)
+        previous_move = refined_move
+    return refined_moves
+
+
 def normalize_section_name(value: Any) -> str:
     key = compact_text(value).lower()
     return SECTION_NAME_ALIASES.get(key, "")
@@ -784,6 +931,106 @@ def turn_mentions_ticker(turn: dict[str, Any], ticker: str) -> bool:
     return False
 
 
+def collect_turn_source_tickers(turn: dict[str, Any]) -> list[str]:
+    sources = turn.get("sources")
+    if not isinstance(sources, list):
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for source in sources:
+        if not isinstance(source, dict):
+            continue
+        ticker = normalize_ticker(source.get("ticker"))
+        if not ticker or ticker in seen or not is_company_ticker(ticker):
+            continue
+        seen.add(ticker)
+        out.append(ticker)
+    return out
+
+
+def split_turn_clauses(text: str) -> list[tuple[str, int]]:
+    clauses: list[tuple[str, int]] = []
+    for sentence_idx, sentence in enumerate(split_sentences(text)):
+        parts = [compact_text(part) for part in re.split(r"(?<=[,;])\s+", sentence) if compact_text(part)]
+        if not parts:
+            continue
+        for part in parts:
+            clauses.append((part, sentence_idx))
+    return clauses
+
+
+def is_company_move_clause(text: str) -> bool:
+    clause = compact_text(text)
+    if not clause:
+        return False
+    if re.search(r"(이들 기업|기업들은|섹터|ETF|지수|시장 전반)", clause):
+        return False
+    return bool(re.search(r"(퍼센트|%)", clause))
+
+
+def finalize_reason_clause(text: str) -> str:
+    clause = compact_text(text).rstrip(",;")
+    clause = re.sub(r"^(그리고|또한|특히)\s+", "", clause)
+    replacements = (
+        (r"상승했고$", "상승했습니다"),
+        (r"하락했고$", "하락했습니다"),
+        (r"올랐고$", "올랐습니다"),
+        (r"내렸고$", "내렸습니다"),
+        (r"급등했고$", "급등했습니다"),
+        (r"급락했고$", "급락했습니다"),
+        (r"보였고$", "보였습니다"),
+    )
+    for pattern, replacement in replacements:
+        updated = re.sub(pattern, replacement, clause)
+        if updated != clause:
+            clause = updated
+            break
+    return ensure_sentence_end(clause)
+
+
+def extract_shared_catalyst_sentences(sentences: list[str], start_idx: int, source_tickers: list[str], limit: int = 2) -> list[str]:
+    out: list[str] = []
+    for sentence in sentences[start_idx + 1 :]:
+        cleaned = compact_text(sentence)
+        if not cleaned:
+            continue
+        if re.search(r"(퍼센트|%)", cleaned):
+            continue
+        upper = cleaned.upper()
+        if any(re.search(rf"(?<![A-Z0-9]){re.escape(ticker)}(?![A-Z0-9])", upper) for ticker in source_tickers):
+            continue
+        if re.search(r"(이들 기업|유가|지정학적|공급망|프리미엄|수혜|기대감|재평가|리스크|실적|수요)", cleaned):
+            out.append(cleaned)
+            if len(out) >= limit:
+                break
+        elif out:
+            break
+    return out
+
+
+def extract_ticker_reason_from_turn(turn: dict[str, Any], ticker: str, max_len: int) -> str:
+    text = compact_text(turn.get("text"))
+    if not text:
+        return ""
+    source_tickers = collect_turn_source_tickers(turn)
+    if ticker in source_tickers and len(source_tickers) > 1:
+        sentences = split_sentences(text)
+        company_clauses = [(clause, sentence_idx) for clause, sentence_idx in split_turn_clauses(text) if is_company_move_clause(clause)]
+        if company_clauses:
+            aligned_tickers = source_tickers[: len(company_clauses)]
+            if ticker in aligned_tickers:
+                clause_index = aligned_tickers.index(ticker)
+                clause_text, sentence_idx = company_clauses[clause_index]
+                parts = [finalize_reason_clause(clause_text)]
+                parts.extend(extract_shared_catalyst_sentences(sentences, sentence_idx, source_tickers))
+                merged = compact_text(" ".join(parts))
+                if merged:
+                    return compact_with_limit(merged, max_len)
+
+    merged = compact_text(" ".join(split_sentences(text)[:2]))
+    return compact_with_limit(merged, max_len)
+
+
 def extract_ticker_reason(script_json: dict[str, Any], ticker: str, max_len: int = 220) -> str:
     turns = iter_script_turns(script_json)
     ticker_chapter = resolve_chapter_range(script_json, "ticker")
@@ -806,9 +1053,18 @@ def extract_ticker_reason(script_json: dict[str, Any], ticker: str, max_len: int
     if analyst_turns:
         candidate_turns = analyst_turns
 
-    merged = compact_text(" ".join(compact_text(turn.get("text")) for turn in candidate_turns[:2]))
-    summary = compact_text(" ".join(split_sentences(merged)[:2]))
-    return compact_with_limit(summary, max_len)
+    snippets: list[str] = []
+    for turn in candidate_turns[:2]:
+        snippet = extract_ticker_reason_from_turn(turn, ticker, max_len)
+        if snippet:
+            snippets.append(snippet)
+        if len(snippets) >= 2:
+            break
+
+    merged = compact_text(" ".join(snippets))
+    if merged:
+        return compact_with_limit(merged, max_len)
+    return ""
 
 
 def extract_history_points(frame: Any) -> list[tuple[dt.date, float]]:
@@ -1170,6 +1426,8 @@ def normalize_result(
     company_context: list[dict[str, Any]],
     final_cta: str,
     title_prefix: str,
+    llm: Any,
+    prompt_config: dict[str, Any],
 ) -> dict[str, Any]:
     raw_script = compact_text(raw_payload.get("script"))
     base_sections = normalize_sections(raw_payload, raw_script)
@@ -1207,6 +1465,13 @@ def normalize_result(
                 break
     if not company_moves:
         logger.warning("No company moves found from LLM. Falling back to company context only.")
+    else:
+        company_moves = refine_company_moves_with_llm(
+            company_moves,
+            llm=llm,
+            prompt_config=prompt_config,
+            lang=lang,
+        )
 
     company_sections: list[dict[str, Any]] = []
     for idx, move in enumerate(company_moves):
@@ -1393,6 +1658,8 @@ def generate_shorts_firm_script(
         company_context=company_context,
         final_cta=final_cta,
         title_prefix=title_prefix,
+        llm=llm,
+        prompt_config=prompt_config,
     )
     return normalized
 

@@ -42,6 +42,10 @@ def compact_text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
+def default_audio_file_name(date: str) -> str:
+    return f"shortsfirm{date}.mp3"
+
+
 def resolve_phase(section_name: Any) -> str:
     key = compact_text(section_name).lower().replace("-", "_")
     if key == "company" or key.startswith("company_") or re.match(r"^company\d+$", key):
@@ -145,7 +149,7 @@ def normalize_from_script_payload(payload: dict[str, Any], *, date: str, lang: s
 
     metadata = payload.get("metadata") if isinstance(payload.get("metadata"), dict) else {}
     featured_tickers = metadata.get("featured_tickers") if isinstance(metadata.get("featured_tickers"), list) else []
-    audio_file = compact_text(payload.get("audioFile")) or f"shorts{date}.mp3"
+    audio_file = compact_text(payload.get("audioFile")) or default_audio_file_name(date)
 
     return {
         "date": episode_date,

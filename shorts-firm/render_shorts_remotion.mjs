@@ -133,7 +133,7 @@ function main() {
   const frameRange = `0-${frameCount - 1}`;
 
   const date = String(episode?.date || "").replace(/[^0-9]/g, "");
-  const audioSrc = args["audio-src"] || `audio/shorts-firm/${date || "episode"}.mp3`;
+  const audioSrc = args["audio-src"] || `audio/shorts-firm/shortsfirm${date || "episode"}.mp3`;
   const props = { episode, sectionTiming, audioSrc, includeAudio };
 
   const outputDir = path.dirname(outputPath);

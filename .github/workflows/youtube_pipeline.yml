@@ -301,7 +301,7 @@ jobs:
             "web/public/data/shorts/$TARGET_DATE.json"
             "web/public/audio/shorts/$TARGET_DATE.mp3"
             "web/public/data/shorts-firm/$TARGET_DATE.json"
-            "web/public/audio/shorts-firm/$TARGET_DATE.mp3"
+            "web/public/audio/shorts-firm/shortsfirm$TARGET_DATE.mp3"
             "web/src/generated/shorts-firm/${TARGET_DATE}_${LANG}.generated.tsx"
             "$EPISODE_THUMBNAIL"
             "$SHORTS_THUMBNAIL"
@@ -329,5 +329,14 @@ jobs:
           fi
 
           git commit -m "chore(youtube): ${TARGET_DATE} ${LANG} artifacts"
+          # git pull --rebase may temporarily check out remote commits. Drop untracked
+          # generated intermediates first so remote tracked files can be checked out safely.
+          for cleanup_path in \
+            "podcast/$TARGET_DATE/$LANG/shorts" \
+            "podcast/$TARGET_DATE/$LANG/shorts-firm"; do
+            if [[ -d "$cleanup_path" ]]; then
+              git clean -fd -- "$cleanup_path"
+            fi
+          done
           git pull --rebase --autostash origin "$BRANCH_NAME"
           git push origin HEAD:"$BRANCH_NAME"

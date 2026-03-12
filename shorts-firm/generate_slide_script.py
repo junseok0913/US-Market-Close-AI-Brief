@@ -60,6 +60,10 @@ def parse_date_arg(value: str) -> str:
     return token
 
 
+def default_audio_file_name(date: str) -> str:
+    return f"shortsfirm{date}.mp3"
+
+
 def resolve_display_date(script_payload: dict[str, Any], fallback_date: str) -> str:
     try:
         return parse_date_arg(str(script_payload.get("date") or ""))
@@ -974,7 +978,7 @@ def main(argv: list[str] | None = None) -> int:
         for section in sections:
             if normalize_section_name(section.get("name")) == "closing":
                 section["text"] = default_cta_text(args.lang)
-        audio_file = compact_text((timing_payload or {}).get("audioFile")) or f"shorts{date}.mp3"
+        audio_file = compact_text((timing_payload or {}).get("audioFile")) or default_audio_file_name(date)
 
         slide_script_payload = build_slide_script_payload(
             date=display_date,

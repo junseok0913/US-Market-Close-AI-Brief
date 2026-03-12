@@ -328,7 +328,7 @@ jobs:
               ! -path "$KO_DIR/shorts-firm/slides.script.json" \
               ! -path "$KO_DIR/shorts-firm/slides.render.template.json" \
               ! -path "$KO_DIR/shorts-firm/slides.render.json" \
-              ! -path "$KO_DIR/shorts-firm/shorts$TARGET_DATE.mp3" \
+              ! -path "$KO_DIR/shorts-firm/shortsfirm$TARGET_DATE.mp3" \
               ! -path "$KO_DIR/shorts-firm/youtube/*" \
               -delete
             find "$KO_DIR" -depth -type d -empty -delete

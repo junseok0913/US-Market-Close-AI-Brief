@@ -78,6 +78,11 @@ def parse_date_arg(date_str: str) -> str:
     return token
 
 
+def shorts_firm_audio_basename(date: str, *, ext: str = ".mp3") -> str:
+    suffix = ext if ext.startswith(".") else f".{ext}"
+    return f"shortsfirm{date}{suffix}"
+
+
 def normalize_section_name(value: Any) -> str:
     key = compact_text(value).lower().replace("-", "_")
     aliased = SECTION_NAME_ALIASES.get(key)
@@ -699,8 +704,8 @@ def main(argv: list[str] | None = None) -> int:
 
     base_dir = ROOT_DIR / "podcast" / date / args.lang / "shorts-firm"
     script_path = base_dir / "script.json"
-    wav_path = base_dir / f"shorts{date}.wav"
-    mp3_path = base_dir / f"shorts{date}.mp3"
+    wav_path = base_dir / shorts_firm_audio_basename(date, ext=".wav")
+    mp3_path = base_dir / shorts_firm_audio_basename(date, ext=".mp3")
     timing_path = base_dir / "sections.timing.json"
     base_dir.mkdir(parents=True, exist_ok=True)
 

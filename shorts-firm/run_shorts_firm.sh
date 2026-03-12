@@ -289,7 +289,7 @@ render_video() {
         --episode-json "${SHORTS_RENDER_JSON}"
         --section-timing-json "${SHORTS_SECTION_TIMING_PATH}"
         --output "${SHORTS_OUTPUT_MP4}"
-        --audio-src "audio/shorts-firm/${DATE}.mp3"
+        --audio-src "audio/shorts-firm/shortsfirm${DATE}.mp3"
         --timeout "${REMOTION_TIMEOUT_MS}"
         --concurrency "${REMOTION_CONCURRENCY}"
     )
@@ -491,7 +491,7 @@ fi
 EPISODE_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}"
 SHORTS_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}/shorts-firm"
 SHORTS_SCRIPT_PATH="${SHORTS_BASE}/script.json"
-SHORTS_MP3="${SHORTS_BASE}/shorts${DATE}.mp3"
+SHORTS_MP3="${SHORTS_BASE}/shortsfirm${DATE}.mp3"
 SHORTS_SECTION_TIMING_PATH="${SHORTS_BASE}/sections.timing.json"
 SHORTS_SLIDE_SCRIPT_PATH="${SHORTS_BASE}/slides.script.json"
 SHORTS_RENDER_TEMPLATE_PATH="${SHORTS_BASE}/slides.render.template.json"
@@ -511,7 +511,7 @@ SHORTS_OUTPUT_WEBM="${SHORTS_OUTPUT_DIR}/${SHORTS_BASENAME}.webm"
 SHORTS_OUTPUT_MP4="${SHORTS_OUTPUT_DIR}/${SHORTS_BASENAME}.mp4"
 SHORTS_THUMBNAIL_PNG="${SHORTS_OUTPUT_DIR}/${SHORTS_THUMBNAIL_BASENAME}.png"
 SHORTS_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts-firm/${DATE}.json"
-SHORTS_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-firm/${DATE}.mp3"
+SHORTS_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-firm/shortsfirm${DATE}.mp3"
 
 if [ ! -d "${EPISODE_BASE}" ]; then
     echo "❌ Episode directory not found: ${EPISODE_BASE}"

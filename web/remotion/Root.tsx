@@ -50,7 +50,7 @@ const defaultShortsFirmEpisode: ShortsFirmCompositionProps["episode"] = {
   title: "소매주 XRT 급등, 블랙록은 어디로?",
   hook: "경기 둔화와 물가 상승, 두 가지 악재에도 시장이 급등한 이유는?",
   durationSeconds: 59,
-  audioFile: "shorts20260220.mp3",
+  audioFile: "shortsfirm20260220.mp3",
   slides: [
     {
       id: 0,
@@ -192,7 +192,7 @@ export const RemotionRoot = () => {
         durationInFrames={18000}
         defaultProps={{
           episode: defaultShortsFirmEpisode,
-          audioSrc: "audio/shorts-firm/20260220.mp3",
+          audioSrc: "audio/shorts-firm/shortsfirm20260220.mp3",
           includeAudio: true,
         }}
       />
