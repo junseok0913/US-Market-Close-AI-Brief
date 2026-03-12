@@ -1,0 +1,217 @@
+{
+  "date": "20260313",
+  "lang": "ko",
+  "title": "유가 10% 폭등, 증시 급락 속 나홀로 5% 급등한 섹터는?",
+  "hook": "증시가 1.5% 넘게 급락하는 동안 5% 넘게 폭등한 종목이 있습니다.",
+  "durationSeconds": 69.244,
+  "audioFile": "shorts20260312.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.091,
+      "eyebrow": "3월 13일 마감",
+      "headline": "증시 급락 속 폭등 종목?",
+      "subheadline": "1.5% 하락장에도 5% 넘게 오른 섹터는?",
+      "body": "증시가 1.5% 넘게 급락하는 동안 5% 넘게 폭등한 종목이 있습니다.",
+      "bullets": [
+        "증시가 1.5% 넘게 급락하는 동안 5% 넘게 폭등한 종목이 있습니다."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "OXY",
+        "XLE"
+      ],
+      "highlights": [
+        "1.5%",
+        "5%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.091,
+      "endSec": 24.422,
+      "eyebrow": "시장 요약",
+      "headline": "3대 지수 동반 급락",
+      "subheadline": "유가 10.5% 폭등, 시장 강타",
+      "body": "3월 13일 미국 증시는 이란 리스크에 따른 유가 급등과 시장 전반의 하락으로 마감했습니다. 다우는 1.56%, S&P 500은 1.52%, 나스닥은 1.78% 급락했습니다. 이 모든 혼란의 중심에는 유가가 있었습니다. 서부 텍사스산 원유는 무려 10.5% 폭등하며 배럴당 96달러를 넘어섰습니다.",
+      "bullets": [
+        "다우 -1.56%",
+        "S&P 500 -1.52%"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "XOM"
+      ],
+      "highlights": [
+        "WTI 유가 +10.5%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 24.422,
+      "endSec": 67.353,
+      "eyebrow": "핵심 원인",
+      "headline": "이란 리스크, 스태그플레이션 공포",
+      "subheadline": "공급 차질 우려에 에너지 섹터만 강세",
+      "body": "국제에너지기구, IEA는 이번 사태를 '역사상 최대 규모의 공급 차질'이라고 경고했습니다. 이란의 호르무즈 해협 봉쇄 위협이 현실화되면서 전 세계 공급량의 7.5%가 타격을 입었고, 시장은 스태그플레이션 공포에 휩싸였습니다. 공포지수 VIX는 12% 넘게 치솟았고, 항공, 기술, 금융 등 에너지를 제외한 S&P 500의 10개 섹터가 모두 하락했습니다. 하지만 이런 아비규환 속에서 유일하게 에너지 섹터만이 빛났습니다. 에너지…",
+      "bullets": [
+        "이란발 공급 충격 → 유가 폭등",
+        "시장 전반 하락 vs 에너지주 나홀로 상승"
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "OXY",
+        "XLE"
+      ],
+      "highlights": [
+        "VIX 지수 +12%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 67.353,
+      "endSec": 69.244,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "OXY",
+        "XLE"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.091,
+      "text": "증시가 1.5% 넘게 급락하는 동안 5% 넘게 폭등한 종목이 있습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 5.091,
+      "endSec": 24.422,
+      "text": "3월 13일 미국 증시는 이란 리스크에 따른 유가 급등과 시장 전반의 하락으로 마감했습니다. 다우는 1.56%, S&P 500은 1.52%, 나스닥은 1.78% 급락했습니다. 이 모든 혼란의 중심에는 유가가 있었습니다. 서부 텍사스산 원유는 무려 10.5% 폭등하며 배럴당 96달러를…"
+    },
+    {
+      "id": 2,
+      "startSec": 24.422,
+      "endSec": 67.353,
+      "text": "국제에너지기구, IEA는 이번 사태를 '역사상 최대 규모의 공급 차질'이라고 경고했습니다. 이란의 호르무즈 해협 봉쇄 위협이 현실화되면서 전 세계 공급량의 7.5%가 타격을 입었고, 시장은 스태그플레이션 공포에 휩싸였습니다. 공포지수 VIX는 12% 넘게 치솟았고, 항공, 기술, 금융…"
+    },
+    {
+      "id": 3,
+      "startSec": 67.353,
+      "endSec": 69.244,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "article",
+      "label": "Iran War Is Causing Biggest-Ever Oil Market Disruption,…",
+      "detail": "id#6fe146869e844547"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-12"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-03-12"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-03-12"
+    },
+    {
+      "type": "chart",
+      "label": "CVX",
+      "detail": "2026-03-12"
+    },
+    {
+      "type": "chart",
+      "label": "OXY",
+      "detail": "2026-03-12"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "이란 리스크로 유가 10.5% 폭등",
+      "3대 지수 1.5% 이상 동반 급락",
+      "에너지 섹터만 유일하게 강세",
+      "스태그플레이션 공포 확산"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "OXY",
+        "label": "옥시덴탈 페트롤리움",
+        "tag": "5% 이상 급등"
+      },
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 상승 수혜"
+      },
+      {
+        "ticker": "CVX",
+        "label": "셰브론",
+        "tag": "에너지주 강세"
+      },
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "유일한 상승 섹터"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
