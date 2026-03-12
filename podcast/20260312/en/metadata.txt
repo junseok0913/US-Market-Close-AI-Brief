@@ -1,0 +1,25 @@
+Title:
+2026.3.13 US Market Close | Market tumbles as oil prices surge on Iran risk
+
+Description:
+On March 13, the New York stock market saw all three major indices fall sharply, shocked by a surge in oil prices driven by geopolitical risks from Iran. While fear gripped the broader market, a clear divergence emerged as the energy sector was the sole gainer, benefiting from the rise in oil prices.
+
+- Dow Jones: Down 1.56% - Weighed down by surging oil prices from Iran risk and heightened inflation concerns.
+- S&P 500: Down 1.52% - Risk-off sentiment spread across the market.
+- Nasdaq: Down 1.78% - A sell-off centered on technology stocks.
+
+Key Issues
+- Oil Price Spike Shocks the Market: International oil prices surged, with West Texas Intermediate (WTI) jumping 10.5% as geopolitical tensions with Iran escalated. The IEA intensified market fears by labeling it the 'largest supply disruption in history.'
+- Energy Sector's Lone Rally: While the broader market plunged, the Energy Select Sector SPDR Fund (XLE) rose nearly 1%. The sector's clear divergence was driven by direct benefits from soaring oil prices and a heightened energy security premium.
+- Stagflation Fears Reignited: The surge in oil prices intensified inflationary pressures, leading to dominant market concerns about stagflation—a scenario of rising prices and economic stagnation.
+- Southern Copper's (SCCO) Geopolitical Risk: Despite solid earnings, the company's stock fell nearly 5% due to political uncertainty, as its assets are 100% concentrated in Peru and Mexico.
+
+Key Stocks
+- ExxonMobil (XOM): Up 1.29% - Benefiting from expectations related to the oil price surge.
+- Chevron (CVX): Up 2.7% - Gaining from the heightened energy security premium.
+- ConocoPhillips (COP): Up 2.76% - Rallied in line with the rise in oil prices.
+- Occidental Petroleum (OXY): Surged over 5% - A standout performer even among energy stocks.
+- Southern Copper (SCCO): Down nearly 5% - Weighed down by political risks in Peru and Mexico.
+
+Keywords:
+미국주식,주식,재테크,시황,이란,유가,인플레이션,에너지,엑슨모빌,XOM,셰브론,CVX,나스닥,S&P500

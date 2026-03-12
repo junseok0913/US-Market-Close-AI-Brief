@@ -1,0 +1,563 @@
+{
+  "date": "20260312",
+  "nutshell": "Oil prices surge on Iran risk, dragging down the broader market.",
+  "user_tickers": [
+    "SCCO"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's the closing bell briefing for March 13th. The market closed with all three major indices down sharply today. What was the story behind the sell-off?",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right, today's session can be summed up by a surge in oil prices due to risks from Iran, which led to a broad market decline. As geopolitical tensions in the Middle East escalated, global oil prices skyrocketed by over 10%, sending a shockwave through the entire market. The S&P 500 fell 1.52% to close at 6,672, and the tech-heavy Nasdaq Composite also dropped 1.78% to finish at 22,311. The sharp jump in West Texas Intermediate crude prices, in particular, reignited inflation concerns and maximized risk-off sentiment.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "article",
+          "pk": "id#6fe146869e844547",
+          "title": "Iran War Is Causing Biggest-Ever Oil Market Disruption, IEA Says"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the oil spike acted as a major headwind for the market. Did all sectors fall, or were there any that showed a different trend?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's a great question. Even as the broader market declined, the energy sector was a clear standout, showing remarkable strength. With the direct benefits of surging oil prices expected, shares of related companies actually rose. For example, a major energy player like ExxonMobil gained 1.29% today, and Chevron also climbed 2.7%, moving in the complete opposite direction of the market downturn. So it was a day where geopolitical risk weighed on the market as a whole, but acted as an opportunity for the energy sector, highlighting a clear divergence among sectors.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "To sum it up, the risk from Iran drove up oil prices and pulled the market down, but energy stocks managed to rally. It seems those two currents were the core story of the market today.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, that's correct. We'll first look at the background of how the geopolitical crisis stemming from Iran caused the surge in global oil prices, and then we'll analyze how energy stocks managed to rally on their own amidst this market decline.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the oil price surge. The shock to the market must have been substantial. Could you walk us through the specifics?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, the market was gripped by fear today after the International Energy Agency, or IEA, warned of the largest supply disruption in history. West Texas Intermediate crude shot up nearly 8 percent in a single day, crossing $96 a barrel, while Brent crude, the international benchmark, also jumped over 7 percent to break the $97 mark. This shock hit the stock market directly. The Dow Jones Industrial Average fell 1.2 percent, and the S&P 500 and Nasdaq Composite also slid by over 1.5 percent and 1.7 percent, respectively. The spike in oil prices reignited inflationary pressures, which maximized the flight to safety and led to a sell-off in risk assets like stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "article",
+          "pk": "id#6fe146869e844547",
+          "title": "Iran War Is Causing Biggest-Ever Oil Market Disruption, IEA Says"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "The IEA's comment about this being the largest supply disruption in history is the most alarming part. Specifically, how much volume should we consider to have disappeared from the market?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The situation is extremely serious. According to the IEA's report, this event has directly impacted about 7.5 percent of the world's oil supply. In particular, traffic through the Strait of Hormuz, which handles about a fifth of the world's crude oil, has plummeted by over 90 percent, effectively putting it under a blockade. As a result, oil-producing countries along the Gulf have had to halt production of about 10 million barrels per day. The IEA estimates that global oil supply will decrease by 8 million barrels per day this month alone. In response, IEA member countries decided to release a record 400 million barrels from their strategic reserves, but with Iran launching further provocations, such as striking oil storage facilities in Oman, the release has been insufficient to calm market anxiety.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6fe146869e844547",
+          "title": "Iran War Is Causing Biggest-Ever Oil Market Disruption, IEA Says"
+        },
+        {
+          "type": "article",
+          "pk": "id#18cc686b85196819",
+          "title": "Iran war is largest global oil market disruption ever, IEA says"
+        },
+        {
+          "type": "article",
+          "pk": "id#f371254c44c167c0",
+          "title": "Iran strikes neutralise record IEA reserves release as oil tops $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#438e3f00aafb30c2",
+          "title": "Oil Prices Surge Despite Record-Breaking Strategic Reserve Release"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "The scale of the supply shock is beyond imagination. This kind of oil price surge inevitably leads to concerns that go beyond inflation to a potential recession. What scenario is the market most worried about?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "It's the fear of stagflation—the worst-case scenario where prices rise while the economy stagnates. Oxford Economics has warned that if oil prices soar to $140 a barrel, the global economy could fall into a mild recession. The IMF has also analyzed that for every 10 percent increase in oil prices, global inflation rises by 0.4 percentage points and economic growth decreases by 0.2 percentage points. Pessimistic forecasts are pouring out of Wall Street as well. Goldman Sachs projected that if the conflict lasts for 60 days, Brent crude could reach $93 a barrel, while Macquarie predicted that even a few weeks of a Strait of Hormuz closure could send oil prices soaring above $150.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f371254c44c167c0",
+          "title": "Iran strikes neutralise record IEA reserves release as oil tops $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#5b8c44701531fc09",
+          "title": "Oil prices surge toward $100 as IEA calls war in Iran 'the largest supply disruption' in history"
+        },
+        {
+          "type": "article",
+          "pk": "id#b74222aebb76f471",
+          "title": "Oil prices surge and stocks fall as Iran escalates shipping attacks"
+        },
+        {
+          "type": "article",
+          "pk": "id#18cc686b85196819",
+          "title": "Iran war is largest global oil market disruption ever, IEA says"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So ultimately, the oil price surge is increasing cost burdens across the entire economy. Which sectors were hit particularly hard in the market today?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, the sectors most sensitive to energy costs took a direct hit. The airline industry was a prime example. Since fuel costs make up a significant portion of an airline's operating expenses, a spike in oil prices immediately translates into concerns about profitability. In fact, the IEA stated that flight cancellations and economic uncertainty from this crisis have slashed its forecast for this year's oil demand growth by 25 percent. Additionally, rising oil prices have a direct impact on consumer sentiment. With the national average gasoline price in the U.S. jumping from $2.94 a gallon a month ago to around $3.60 today, consumers' disposable income is shrinking. This, in turn, has led to concerns about slowing earnings for consumer discretionary companies, driving down stocks in that sector.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6fe146869e844547",
+          "title": "Iran War Is Causing Biggest-Ever Oil Market Disruption, IEA Says"
+        },
+        {
+          "type": "article",
+          "pk": "id#b74222aebb76f471",
+          "title": "Oil prices surge and stocks fall as Iran escalates shipping attacks"
+        },
+        {
+          "type": "article",
+          "pk": "id#18cc686b85196819",
+          "title": "Iran war is largest global oil market disruption ever, IEA says"
+        },
+        {
+          "type": "article",
+          "pk": "id#5b8c44701531fc09",
+          "title": "Oil prices surge toward $100 as IEA calls war in Iran 'the largest supply disruption' in history"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "And while most sectors were taking a major hit, the one place that showed strength was the energy sector. Could you explain with specific indicators just how pronounced this decoupling was?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today was a 'Black Thursday' for the market. As Iran's threat to blockade the Strait of Hormuz became a reality, the entire market was gripped by fear. The S&P 500 fell 1.52%, the Dow dropped 1.56%, the tech-heavy Nasdaq sank 1.78%, and the Russell 2000, which represents small-cap stocks, plunged 2.12%, reflecting the deep anxiety in the market. The VIX, known as the fear index, spiked over 12% in a single day, and the value of the U.S. dollar, a safe-haven asset, also rose. At the center of all this chaos was oil. West Texas Intermediate crude skyrocketed a staggering 10.5% to over $96 a barrel, and Brent crude also jumped over 6%, approaching the $100 mark. Amid this pandemonium, the energy sector ETF, XLE, was the only one to rise, gaining nearly 1% and standing in perfect contrast to the惨淡 market conditions.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "article",
+          "pk": "id#d1ec40ce603cdeb7",
+          "title": "Stock market today: Dow drops 700 points, S&P 500, Nasdaq sink as oil soars back toward $100"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Right, the fact that the energy sector was the only one to rise really shows a dramatic contrast. The IEA described the oil surge that started all this chaos as the 'largest supply disruption in history.' Could you once again emphasize its severity?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's right. In its monthly report, the IEA officially stated that the Iran-related crisis is causing the biggest shock to global crude supply in history. With the Strait of Hormuz, which handles about 20% of global oil traffic, effectively paralyzed, they estimated a production shortfall of 10 million barrels per day from the Gulf region alone. That's a massive 7.5% of the world's total supply. Market fear reached a fever pitch as Iran's new supreme leader threatened to maintain the blockade and open other fronts, even warning that oil could reach $200 a barrel. Investment banks like Goldman Sachs have raised their oil price forecasts three times in just a few days, reflecting the gravity of the situation.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#4c2a3df27867a82c",
+          "title": "Middle East War Is Causing Largest Oil Supply Disruption in History, IEA Says"
+        },
+        {
+          "type": "article",
+          "pk": "id#5b8c44701531fc09",
+          "title": "Oil prices surge toward $100 as IEA calls war in Iran 'the largest supply disruption' in history"
+        },
+        {
+          "type": "article",
+          "pk": "id#6c2a494feedb3f14",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq resume sell-off, oil surges as Middle East conflict escalates"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "The situation is truly dire. So, how much did the stocks of the energy companies benefiting from this oil surge actually rise?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, while the broader market was in a sell-off, energy companies were celebrating. The sector leader, ExxonMobil, rose 1.29%, and Chevron gained 2.7%. ConocoPhillips also showed strength, up 2.76%, and Occidental Petroleum was particularly outstanding, surging over 5%. The rise in these stocks isn't just due to expectations of increased profits from higher oil prices. It's also analyzed as a result of an 'energy security premium' being priced in, where the value of U.S. companies with stable energy supply chains is re-evaluated as geopolitical risks escalate. In fact, the energy sector ETF, XLE, rallied for a second consecutive day, hitting a new all-time high.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "COP",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "OXY",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "article",
+          "pk": "id#d1ec40ce603cdeb7",
+          "title": "Stock market today: Dow drops 700 points, S&P 500, Nasdaq sink as oil soars back toward $100"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Did all other sectors besides energy fall? Which areas were particularly vulnerable to this oil shock?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, all 10 other sectors in the S&P 500, excluding energy, were down. Industries where rising oil prices directly translate to increased costs were hit especially hard. Airline and cruise line stocks took a direct hit, and the tech sector ETF, XLK, and the financial sector ETF, XLF, also fell 1.84% and 1.63% respectively, leading the market's overall weakness. One unusual point was the reaction in the bond market. Typically in a crisis like this, money flows into safe-haven assets like Treasury bonds, causing yields to fall. But today, the 10-year Treasury yield actually rose. This can be interpreted as a sign that the market is more seriously concerned about the possibility of prolonged inflation due to the oil spike than it is about simple risk aversion.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLF",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-11",
+          "end_date": "2026-03-12"
+        },
+        {
+          "type": "article",
+          "pk": "id#6c2a494feedb3f14",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq resume sell-off, oil surges as Middle East conflict escalates"
+        },
+        {
+          "type": "article",
+          "pk": "id#e91019d8a7e7ee69",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures slide, oil climbs as volatility continues amid Iran war"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the two major themes of the oil surge and the energy sector's strength. Now, let's look at some individual companies that made notable moves. First, Southern Copper closed down nearly 5% today. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SCCO",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-12"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, the stock's move today was very sharp. What's interesting is that if you look at the annual report filed just two weeks ago, its fundamentals appear very solid. In 2025, net sales grew by over 17% and net income by over 28%, achieving record results. In particular, a high operating margin of 52% demonstrates the company's strong cost competitiveness. When you add in the positive outlook for copper, which is essential for EVs and AI data center expansion, the recent decline might seem hard to understand on the surface.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Posting record earnings and yet the stock plunged... that seems like a signal the market is worried about something else. What risk factors are being highlighted?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's the key point. The market's concern is not focused on the company's performance, but on the 'location' where that performance is generated. According to the 10-K report, 100% of SCCO's assets are concentrated in just two countries: Peru and Mexico. Peru is experiencing extreme political instability, and Mexico recently amended its mining laws to shorten concession periods, increasing business uncertainty. Investors seem to be starting to price in the fact that no matter how good the performance is, the company's value could be severely damaged if uncontrollable political risks, like asset nationalization or sudden tax hikes, become a reality.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "How is this political risk specifically affecting the business, for instance, in areas like the progress of new projects?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "It's having a very concrete impact. A prime example is the Tia Maria project in Peru, which is considered a key growth driver. This project is facing seven lawsuits, including one to nullify its environmental impact assessment, and the company has disclosed that it cannot reasonably estimate the scale of related contingent liabilities. This means the project could be delayed indefinitely or, in the worst case, halted. Furthermore, in Mexico, legal liabilities related to a mine spill that occurred in 2014 are still ongoing a decade later, remaining a potential source of unpredictable financial shocks.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, we can see today's stock decline as these potential risks starting to be seriously priced in. It sounds like the immediate uncertainty is weighing more heavily than the long-term growth potential.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's an accurate observation. It's a clear fact that copper is being called 'the new oil' and is emerging as a key resource for the AI and EV era. However, investors are taking the risk of asset values being permanently impaired by a single policy from the Peruvian or Mexican government more seriously than the realization of that rosy future. The concern is amplified by the fact that the 10-K report explicitly states that risks like nationalization are not covered by insurance. Ultimately, today's market reaction is interpreted as the result of a growing consensus that even if a company holds world-class assets, it's difficult to secure a sufficient margin of safety if the foundation on which those assets rest is unstable.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "It seems like it was a very difficult day to define in a single sentence. Could you summarize today's market action for us?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, as you said, the market was shaken by the hot Consumer Price Index results, but you could say that in the end, tech stocks saved the day. The market opened lower on inflation concerns, but a strong rebound in semiconductor stocks led by Nvidia, along with big tech names like Oracle, helped the Nasdaq and S&P 500 manage to close higher. However, the Dow couldn't shake off its weakness, dragged down by Boeing's continued slide, resulting in a mixed performance across the indices. Ultimately, the market remains in a tight tug-of-war between the headwind of higher-than-expected inflation and the tailwind of growth in Big Tech, led by artificial intelligence.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So this tug-of-war between tech and inflation continues. In that case, what economic indicators should investors be watching going forward?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Yes, the economic data set to be released for the rest of this week will be crucial clues for gauging the Fed's next move. Market attention is particularly focused on tomorrow's Producer Price Index (PPI) and retail sales data. If the PPI also comes in hot, following today's CPI, concerns that inflation could become entrenched again will inevitably grow. Also, since retail sales reflect the health of consumption, which accounts for 70% of the U.S. economy, it will be a key reference for the Fed in deciding the timing of a rate cut. If these two indicators deviate significantly from market expectations, we could see another spike in market volatility.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So ultimately, all this data is pointing toward next week's Federal Open Market Committee, or FOMC, meeting.",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's right. All the inflation and consumption data released this week will be inputs for next week's FOMC. The market has already priced in a rate hold at this meeting, but the real focus is on the dot plot, which shows the Fed members' interest rate projections. With recent inflation data coming in hotter than expected, uncertainty has grown over whether the Fed will stick to its previous forecast of 'three rate cuts this year.' If the dot plot reduces the number of rate cuts to two, the market could interpret this as a hawkish signal, potentially leading to a correction due to disappointment. Every word from Fed Chair Jerome Powell's press conference will also be closely scrutinized.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Right, whether the Fed's dot plot changes will be the biggest thing to watch. Finally, do you have a closing thought for investors?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market is moving near all-time highs, but as we confirmed today, the wildcard of inflation still remains. While a powerful growth engine like artificial intelligence is clearly driving the market, the mood can change at any time if uncertainty about the Fed's monetary policy direction increases. Therefore, during a time like this, it seems important to maintain a balanced perspective by focusing on companies with solid fundamentals while always preparing for the possibility of increased market volatility. Rather than chasing the rally, it would be prudent to calmly review the upcoming economic data and the Fed's signals to formulate a response strategy.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Prepare for volatility, but focus on the fundamentals. Thank you for your insights today. That's all for the March 13th closing bell briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}
