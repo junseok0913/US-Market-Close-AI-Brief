@@ -1,0 +1,23 @@
+Title:
+2026.3.14 US Market Close | Stocks Fall Amid Geopolitical Tensions and Earnings Worries
+
+Description:
+On March 14, the New York stock market closed lower as a combination of geopolitical risks in the Middle East and concerns over corporate earnings weighed on investor sentiment. A surge in oil prices fueled inflation fears, pressuring the broader market, with the tech-heavy Nasdaq Composite experiencing the steepest decline.
+
+- Dow Jones: -0.26% on geopolitical risks and corporate earnings concerns.
+- S&P 500: -0.61% as inflation fears spread due to surging oil prices.
+- Nasdaq: -0.93% amid intensified selling pressure in tech stocks.
+
+Key Issues
+- Heightened Middle East Geopolitical Risk: Escalating military tensions between the U.S. and Iran caused West Texas Intermediate (WTI) crude oil prices to jump over 3%, surpassing the $98 per barrel mark and stoking inflation fears.
+- Stocks Plunge Despite Strong Earnings: Adobe's stock plunged over 7% on news of its CEO's resignation, while Ulta Beauty tumbled more than 14% after lowering its future profitability outlook, despite both companies reporting strong results.
+- A Mixed Picture for Western Digital: The company's cloud segment revenue surged 28%, driven by expectations of rising AI data demand. However, concerns were also raised about the risk of customer concentration, with 43% of total revenue coming from just three clients.
+- Mixed Economic Data and FOMC Caution: The Producer Price Index (PPI) came in hot, while retail sales showed weakness. This has led to a cautious, wait-and-see approach in the market ahead of the Fed's dot plot release at next week's FOMC meeting.
+
+Key Stocks
+- Adobe (ADBE): Plunged over 7%. Despite beating earnings expectations, the announcement of the CEO's resignation after 18 years at the helm created significant uncertainty.
+- Ulta Beauty (ULTA): Tumbled more than 14%. Despite solid Q4 results, investor sentiment soured after the company issued a 2026 annual profitability forecast that fell below market expectations.
+- Western Digital (WDC): Rose over 2%. The stock gained as its strong growth trajectory was highlighted, with cloud revenue surging 28% as the company positions itself as a key infrastructure provider for the AI era.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,지정학적리스크,유가,인플레이션,금리,FOMC,어도비,ADBE,울타뷰티,ULTA
