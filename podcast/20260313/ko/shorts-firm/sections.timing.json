@@ -1,0 +1,67 @@
+{
+  "date": "20260313",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260313.mp3",
+  "sectionOrder": [
+    "adbe",
+    "ulta",
+    "wdc",
+    "xom"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 53.284,
+  "sections": [
+    {
+      "id": 0,
+      "name": "adbe",
+      "ticker": "ADBE",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 15.971,
+      "endSec": 15.971,
+      "speechDurationSec": 15.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 125,
+      "text": "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다. 어도비는 1분기 호실적에도 불구하고 18년간 재임한 CEO의 갑작스러운 사임 발표로 7.58% 급락했습니다. AI 경쟁 심화 속 리더십 공백 우려가 불확실성을 키웠습니다."
+    },
+    {
+      "id": 1,
+      "name": "ulta",
+      "ticker": "ULTA",
+      "kind": "company",
+      "startSec": 15.971,
+      "speechEndSec": 26.822,
+      "endSec": 26.822,
+      "speechDurationSec": 10.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 93,
+      "text": "울타 뷰티는 4분기 실적이 양호했음에도 불구하고, 시장 기대치를 밑도는 연간 수익성 전망을 제시하며 14.24% 폭락했습니다. 성장 둔화 우려가 주가를 끌어내렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "wdc",
+      "ticker": "WDC",
+      "kind": "company",
+      "startSec": 26.822,
+      "speechEndSec": 40.553,
+      "endSec": 40.553,
+      "speechDurationSec": 13.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 108,
+      "text": "웨스턴 디지털은 AI 인프라 수요 기대로 4.25% 상승했습니다. 클라우드 부문 매출이 28% 급증하며 성장성을 증명했지만, 단 3개 고객사가 매출의 43%를 차지하는 집중 리스크도 존재합니다."
+    },
+    {
+      "id": 3,
+      "name": "xom",
+      "ticker": "XOM",
+      "kind": "company",
+      "startSec": 40.553,
+      "speechEndSec": 53.284,
+      "endSec": 53.284,
+      "speechDurationSec": 12.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 106,
+      "text": "엑슨모빌은 지정학적 리스크가 부각되며 1.69% 상승했습니다. 주요 해협의 선박 통행량이 급감하면서 국제 유가 상승에 대한 우려가 주가에 반영된 것으로 보입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

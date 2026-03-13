@@ -1,0 +1,58 @@
+{
+  "date": "20260313",
+  "lang": "ko",
+  "audioFile": "shorts20260313.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 75.884,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 6.491,
+      "endSec": 6.491,
+      "speechDurationSec": 6.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 47,
+      "text": "실적이 좋은데 주가는 14% 폭락, 어도비는 7% 급락. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 6.491,
+      "speechEndSec": 22.182,
+      "endSec": 22.182,
+      "speechDurationSec": 15.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 123,
+      "text": "3월 14일 미국 증시는 지정학적 리스크와 기업 실적 우려라는 두 가지 악재에 하락했습니다. 다우는 0.26%, S&P 500은 0.61% 내렸고, 기술주 중심의 나스닥은 0.93% 하락하며 가장 큰 낙폭을 기록했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.182,
+      "speechEndSec": 73.633,
+      "endSec": 73.633,
+      "speechDurationSec": 51.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 457,
+      "text": "먼저, 미국과 이란의 군사적 긴장이 최고조에 달하며 국제 유가가 3% 넘게 급등, 배럴당 98달러 선을 넘어섰습니다. 이는 2022년 이후 최고 수준으로, 전 세계 원유 수송량의 20%가 지나는 호르무즈 해협 봉쇄 우려가 커지면서 인플레이션 공포를 다시 불러왔습니다. 이 여파로 시장 변동성을 나타내는 VIX 지수는 27을 넘어섰습니다. 여기에 개별 기업들의 실망스러운 소식이 더해졌습니다. 화장품 유통업체 울타 뷰티는 4분기 실적이 양호했음에도, 올해 연간 수익성 전망치를 시장 예상보다 낮게 제시하며 주가가 14% 이상 폭락했습니다. 소프트웨어 대기업 어도비 역시 예상치를 뛰어넘는 호실적을 발표했지만, 18년간 회사를 이끌어온 CEO의 갑작스러운 사임 소식이 AI 시대의 불확실성을 키우며 주가가 7% 넘게 급락했습니다. 결국 시장은 현재의 성과보다 미래 성장 경로에 대한 의구심에 더 크게 반응한 하루였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 73.633,
+      "speechEndSec": 75.884,
+      "endSec": 75.884,
+      "speechDurationSec": 2.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
