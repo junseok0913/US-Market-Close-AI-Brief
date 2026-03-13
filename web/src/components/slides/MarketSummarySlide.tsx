@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import type { MarketSummarySlide as MarketSummarySlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';

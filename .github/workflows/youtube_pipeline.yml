@@ -59,10 +59,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: "1"
-      LANGSMITH_TRACING_V2: "false"
-      LANGCHAIN_TRACING_V2: "false"
-      LANGSMITH_API_KEY: ""
-      LANGCHAIN_API_KEY: ""
+      LANGSMITH_TRACING: "true"
+      LANGSMITH_TRACING_V2: "true"
+      LANGCHAIN_TRACING_V2: "true"
+      LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
+      LANGCHAIN_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
+      LANGSMITH_PROJECT: ${{ vars.LANGSMITH_PROJECT || 'kubig' }}
+      LANGSMITH_ENDPOINT: ${{ vars.LANGSMITH_ENDPOINT || '' }}
+      LANGSMITH_WORKSPACE_ID: ${{ vars.LANGSMITH_WORKSPACE_ID || '' }}
 
     steps:
       - name: Checkout repository

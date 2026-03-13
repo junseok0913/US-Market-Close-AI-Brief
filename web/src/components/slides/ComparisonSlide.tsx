@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import type { ComparisonSlide as ComparisonSlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';
 

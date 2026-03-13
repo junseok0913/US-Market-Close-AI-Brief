@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import type { TickerIntroSlide as TickerIntroSlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';

@@ -41,6 +41,7 @@ export interface EpisodeCompositionProps {
   audioSrc?: string;
   includeAudio?: boolean;
   turnLeadMs?: number;
+  storageDate?: string;
   chartDataMap?: Record<string, MarketChartData>;
 }
 
@@ -167,6 +168,7 @@ export const EpisodeComposition: FC<EpisodeCompositionProps> = ({
   audioSrc,
   includeAudio = true,
   turnLeadMs = 550,
+  storageDate,
   chartDataMap = {},
 }) => {
   const frame = useCurrentFrame();
@@ -185,7 +187,7 @@ export const EpisodeComposition: FC<EpisodeCompositionProps> = ({
       <RenderChartDataProvider value={chartDataMap}>
         <YouTubeEpisodePlayer
           episode={playerEpisode}
-          storageDate={episode.date}
+          storageDate={storageDate || episode.date}
           renderMode
           renderCurrentTimeSec={frame / fps}
           renderDurationSec={totalDurationMs / 1000}

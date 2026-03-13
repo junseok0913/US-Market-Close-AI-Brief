@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import type { TitleSlide as TitleSlideType } from '@/types/slide';
 
 interface Props {

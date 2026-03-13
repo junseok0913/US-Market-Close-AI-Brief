@@ -23,6 +23,7 @@ import {
   EventsSlide,
   ClosingSlide,
 } from './slides';
+import { EpisodeRenderProvider } from './EpisodeRenderContext';
 
 interface YouTubeEpisodePlayerProps {
   episode: Episode;
@@ -209,8 +210,8 @@ function buildFallbackSlides(episode: Episode, slideDate: string): Slide[] {
       indices: buildFallbackIndices(episode),
       commodities: [],
       charts: [
-        { ticker: '^GSPC', title: 'S&P 500' },
-        { ticker: '^IXIC', title: 'NASDAQ' },
+        { ticker: 'SP:SPX', title: 'S&P 500' },
+        { ticker: 'NASDAQ:IXIC', title: 'NASDAQ' },
       ],
     },
   ];
@@ -495,8 +496,7 @@ export default function YouTubeEpisodePlayer({
   }, [autoSlideIndex, effectiveForcedSlideIndex, effectiveRenderMode, slides.length]);
 
   const activeSlide = slides[currentSlideIndex];
-  const displayedTurnId =
-    effectiveRenderMode && activeSlide ? activeSlide.turnId : currentTurnId;
+  const displayedTurnId = currentTurnId;
 
   const currentScript = useMemo(
     () => episode.scripts.find((s) => s.id === displayedTurnId),
@@ -551,6 +551,18 @@ export default function YouTubeEpisodePlayer({
     [marketSummary],
   );
 
+  const activeSlideStartSec = useMemo(() => {
+    if (!activeSlide) return 0;
+    const sourceScript = episode.scripts.find((script) => script.id === activeSlide.turnId);
+    if (!sourceScript || !Array.isArray(sourceScript.time)) return 0;
+    return Math.max(0, sourceScript.time[0] / 1000 - effectiveLeadMs / 1000);
+  }, [activeSlide, effectiveLeadMs, episode.scripts]);
+
+  const activeSlideElapsedSec = useMemo(
+    () => Math.max(0, effectivePlaybackTime - activeSlideStartSec),
+    [activeSlideStartSec, effectivePlaybackTime],
+  );
+
   const sourceSignals = useMemo(
     () => buildSourceSignals(currentScriptWindow),
     [currentScriptWindow],
@@ -572,11 +584,12 @@ export default function YouTubeEpisodePlayer({
     effectiveDuration > 0 ? Math.min((displayTime / effectiveDuration) * 100, 100) : 0;
 
   useEffect(() => {
+    if (!effectiveRenderMode) return;
     document.documentElement.dataset.videoRender = '1';
     return () => {
       delete document.documentElement.dataset.videoRender;
     };
-  }, []);
+  }, [effectiveRenderMode]);
 
   useEffect(() => {
     if (!effectiveRenderMode || typeof window === 'undefined') return;
@@ -748,7 +761,15 @@ export default function YouTubeEpisodePlayer({
                 >
                   {activeSlide ? (
                     <FitSlideCanvas slideKey={activeSlide.id}>
-                      <div className="mx-auto w-full max-w-[1320px]">{renderSlide(activeSlide)}</div>
+                      <EpisodeRenderProvider
+                        key={activeSlide.id}
+                        value={{
+                          renderMode: effectiveRenderMode,
+                          slideElapsedSec: activeSlideElapsedSec,
+                        }}
+                      >
+                        <div className="mx-auto w-full max-w-[1320px]">{renderSlide(activeSlide)}</div>
+                      </EpisodeRenderProvider>
                     </FitSlideCanvas>
                   ) : (
                     <div className="flex h-full items-center justify-center rounded-xl bg-white text-slate-600">

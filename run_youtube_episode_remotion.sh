@@ -143,6 +143,7 @@ ARGS=(
     "${ROOT_DIR}/web/scripts/render_episode_remotion.mjs"
     --episode-json "${EPISODE_JSON}"
     --output "${OUTPUT_MP4}"
+    --storage-date "${DATE}"
     --audio-src "audio/${DATE}.mp3"
     --chart-data-json "${CHART_DATA_JSON}"
     --duration-seconds "${AUDIO_DURATION}"

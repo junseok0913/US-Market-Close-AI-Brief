@@ -36,6 +36,16 @@ function toInteger(raw, fallback = 0) {
   return Math.trunc(value);
 }
 
+function extractStorageDateFromEpisodeJsonPath(rawPath) {
+  const normalized = String(rawPath || "").replace(/\\/g, "/");
+  const podcastMatch = normalized.match(/\/podcast\/(\d{8})(?:\/|$)/);
+  if (podcastMatch) {
+    return podcastMatch[1];
+  }
+  const anyMatch = normalized.match(/(?:^|\/)(\d{8})(?:\/|$)/);
+  return anyMatch ? anyMatch[1] : "";
+}
+
 function resolveDurationSeconds(episode, explicitDurationSeconds = 0) {
   if (Number.isFinite(explicitDurationSeconds) && explicitDurationSeconds > 0) {
     return explicitDurationSeconds;
@@ -100,6 +110,9 @@ function main() {
   const compositionId = args["composition-id"] || "EpisodeComposition";
   const includeAudio = args["no-audio"] ? false : true;
   const chartDataJsonPath = args["chart-data-json"] ? path.resolve(args["chart-data-json"]) : "";
+  const storageDate =
+    String(args["storage-date"] || "").trim()
+    || extractStorageDateFromEpisodeJsonPath(episodeJsonPath);
   const logLevel = String(args.log || process.env.REMOTION_LOG_LEVEL || "info").trim();
   const browserExecutable = args["browser-executable"] || detectBrowserExecutable();
 
@@ -137,6 +150,7 @@ function main() {
 
   const props = {
     episode,
+    storageDate,
     audioSrc,
     includeAudio,
     turnLeadMs,

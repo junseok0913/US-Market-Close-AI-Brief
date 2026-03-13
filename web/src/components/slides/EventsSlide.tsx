@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import { Calendar } from 'lucide-react';
 import type { EventsSlide as EventsSlideType } from '@/types/slide';
 

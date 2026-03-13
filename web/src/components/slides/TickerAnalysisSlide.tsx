@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import type { TickerAnalysisSlide as TickerAnalysisSlideType } from '@/types/slide';
 import { TradingViewWidget } from '../TradingViewWidget';
 

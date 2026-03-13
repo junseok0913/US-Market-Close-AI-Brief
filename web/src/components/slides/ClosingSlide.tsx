@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from '../RenderMotion';
 import type { ClosingSlide as ClosingSlideType } from '@/types/slide';
 
 interface Props {

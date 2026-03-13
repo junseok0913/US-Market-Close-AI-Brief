@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useRef, useState, memo } from 'react';
 import { useRenderChartDataMap } from './RenderChartDataContext';
+import { useEpisodeRenderState } from './EpisodeRenderContext';
 import type { MarketChartData, MarketChartPoint } from '@/types/market-chart';
+import { normalizeMarketChartSymbol } from '@/lib/market-chart';
 
 interface TradingViewWidgetProps {
   symbol: string;
@@ -38,10 +40,6 @@ const API_ONLY_SYMBOLS = new Set([
 // are not reliable in exported static hosting. Keep API chart fetching opt-in,
 // but allow it automatically on localhost/127.0.0.1 for development/capture.
 const ENABLE_MARKET_CHART_API = process.env.NEXT_PUBLIC_ENABLE_MARKET_CHART_API === '1';
-
-function normalizeRequestedSymbol(rawSymbol: string): string {
-  return (rawSymbol || '').trim().toUpperCase();
-}
 
 function normalizeEmbedSymbol(symbol: string): string {
   return EMBED_SYMBOL_FALLBACK_MAP[symbol] || symbol;
@@ -94,22 +92,14 @@ function TradingViewWidgetComponent({
   onMarketData,
 }: TradingViewWidgetProps) {
   const container = useRef<HTMLDivElement>(null);
+  const renderState = useEpisodeRenderState();
   const [pathname] = useState(() => {
     if (typeof window === 'undefined') {
       return null;
     }
     return window.location.pathname || null;
   });
-  const normalizedSymbol = useMemo(() => normalizeRequestedSymbol(symbol), [symbol]);
-  const renderChartDataMap = useRenderChartDataMap();
-  const embedSymbol = useMemo(() => normalizeEmbedSymbol(normalizedSymbol), [normalizedSymbol]);
-  const episodeAsOf = useMemo(() => extractEpisodeAsOf(pathname), [pathname]);
-  const isDateFixedMode = Boolean(episodeAsOf);
-  const preloadedChartData = renderChartDataMap[normalizedSymbol] || null;
-  const [chartData, setChartData] = useState<MarketChartData | null>(preloadedChartData);
-  const [chartError, setChartError] = useState<string | null>(null);
-  const [useApiFallback, setUseApiFallback] = useState(false);
-  const [renderMode] = useState(
+  const [queryRenderMode] = useState(
     () => {
       if (typeof window === 'undefined' || typeof document === 'undefined') {
         return false;
@@ -123,6 +113,16 @@ function TradingViewWidgetComponent({
       );
     },
   );
+  const renderMode = renderState.renderMode || queryRenderMode;
+  const normalizedSymbol = useMemo(() => normalizeMarketChartSymbol(symbol), [symbol]);
+  const renderChartDataMap = useRenderChartDataMap();
+  const embedSymbol = useMemo(() => normalizeEmbedSymbol(normalizedSymbol), [normalizedSymbol]);
+  const episodeAsOf = useMemo(() => extractEpisodeAsOf(pathname), [pathname]);
+  const isDateFixedMode = Boolean(episodeAsOf);
+  const preloadedChartData = renderChartDataMap[normalizedSymbol] || null;
+  const [chartData, setChartData] = useState<MarketChartData | null>(preloadedChartData);
+  const [chartError, setChartError] = useState<string | null>(null);
+  const [useApiFallback, setUseApiFallback] = useState(false);
   const [apiRuntimeEnabled] = useState(() => {
     if (ENABLE_MARKET_CHART_API) return true;
     if (typeof window === 'undefined') return false;
@@ -257,7 +257,7 @@ function TradingViewWidgetComponent({
   }, [normalizedSymbol, shouldUseApiChart, episodeAsOf, onMarketData, preloadedChartData, renderMode]);
 
   if (shouldUseApiChart) {
-    const renderMinHeight = Math.max(110, Math.min(minHeight, 170));
+    const renderMinHeight = Math.max(110, minHeight);
     const chartHeightClass =
       renderMinHeight <= 120 ? 'h-24' : renderMinHeight <= 150 ? 'h-28' : 'h-32';
     const trendTextClass =
@@ -269,7 +269,7 @@ function TradingViewWidgetComponent({
 
     const hasChartData = Boolean(chartData && chartData.points.length >= 2);
     const trendLabel = hasChartData
-      ? `${chartData.changePercent >= 0 ? '+' : ''}${chartData.changePercent.toFixed(2)}%`
+      ? `${chartData!.changePercent >= 0 ? '+' : ''}${chartData!.changePercent.toFixed(2)}%`
       : '';
     const trendDeltaLabel = chartData
       ? `${chartData.change >= 0 ? '+' : ''}${formatMarketNumber(chartData.change)}`
