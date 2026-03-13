@@ -19,9 +19,9 @@ on:
           - ko
           - en
       start_from:
-        description: "Start from pipeline step (1-5)"
+        description: "Start from shorts pipeline step (1-3)"
         required: false
-        default: "3"
+        default: "1"
         type: string
       overwrite:
         description: "Overwrite existing outputs"
@@ -46,6 +46,11 @@ on:
         description: "Optional preview render length in seconds"
         required: false
         type: string
+      remotion_only:
+        description: "Skip shorts pipeline/push and run only full-episode Remotion"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -119,6 +124,7 @@ jobs:
           INPUT_UPLOAD: ${{ github.event.inputs.upload }}
           INPUT_PRIVACY: ${{ github.event.inputs.privacy }}
           INPUT_PREVIEW_SECONDS: ${{ github.event.inputs.preview_seconds }}
+          INPUT_REMOTION_ONLY: ${{ github.event.inputs.remotion_only }}
         run: |
           set -euo pipefail
 
@@ -145,11 +151,17 @@ jobs:
             exit 1
           fi
 
-          START_FROM="${INPUT_START_FROM:-3}"
-          if ! [[ "$START_FROM" =~ ^[1-5]$ ]]; then
-            echo "Invalid --start-from value: $START_FROM (expected 1-5)" >&2
+          START_FROM="${INPUT_START_FROM:-1}"
+          if ! [[ "$START_FROM" =~ ^[1-3]$ ]]; then
+            echo "Invalid --start-from value: $START_FROM (expected 1-3)" >&2
             exit 1
           fi
+
+          case "$START_FROM" in
+            1) RUN_YOUTUBE_START_FROM="3" ;;
+            2) RUN_YOUTUBE_START_FROM="4" ;;
+            3) RUN_YOUTUBE_START_FROM="5" ;;
+          esac
 
           OVERWRITE="$(normalize_bool "${INPUT_OVERWRITE:-false}")" || {
             echo "Invalid overwrite flag: ${INPUT_OVERWRITE:-}" >&2
@@ -174,13 +186,16 @@ jobs:
             fi
           fi
 
-          EPISODE_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_thumbnail"
+          REMOTION_ONLY="$(normalize_bool "${INPUT_REMOTION_ONLY:-false}")" || {
+            echo "Invalid remotion_only flag: ${INPUT_REMOTION_ONLY:-}" >&2
+            exit 1
+          }
+
           SHORTS_BASENAME="${TARGET_DATE}_${LANG}_shorts"
           SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
           SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts"
           SHORTS_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
           if [[ -n "$PREVIEW_SECONDS" ]]; then
-            EPISODE_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_episode_preview_${PREVIEW_SECONDS}s_thumbnail"
             SHORTS_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
             SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
             SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
@@ -190,11 +205,12 @@ jobs:
           echo "target_date=$TARGET_DATE" >> "$GITHUB_OUTPUT"
           echo "lang=$LANG" >> "$GITHUB_OUTPUT"
           echo "start_from=$START_FROM" >> "$GITHUB_OUTPUT"
+          echo "run_youtube_start_from=$RUN_YOUTUBE_START_FROM" >> "$GITHUB_OUTPUT"
           echo "overwrite=$OVERWRITE" >> "$GITHUB_OUTPUT"
           echo "upload=$UPLOAD" >> "$GITHUB_OUTPUT"
           echo "privacy=$PRIVACY" >> "$GITHUB_OUTPUT"
           echo "preview_seconds=$PREVIEW_SECONDS" >> "$GITHUB_OUTPUT"
-          echo "episode_thumbnail=podcast/$TARGET_DATE/$LANG/youtube/${EPISODE_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+          echo "remotion_only=$REMOTION_ONLY" >> "$GITHUB_OUTPUT"
           echo "shorts_mp4=podcast/$TARGET_DATE/$LANG/shorts/youtube/${SHORTS_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
           echo "shorts_thumbnail=podcast/$TARGET_DATE/$LANG/shorts/youtube/${SHORTS_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
           echo "shorts_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
@@ -202,9 +218,10 @@ jobs:
 
           echo "TARGET_DATE=$TARGET_DATE"
           echo "LANG=$LANG"
-          echo "START_FROM=$START_FROM"
+          echo "START_FROM=$START_FROM (mapped to run_youtube.sh --start-from ${RUN_YOUTUBE_START_FROM})"
           echo "OVERWRITE=$OVERWRITE"
           echo "UPLOAD=$UPLOAD ($PRIVACY)"
+          echo "REMOTION_ONLY=$REMOTION_ONLY"
           if [[ -n "$PREVIEW_SECONDS" ]]; then
             echo "PREVIEW_SECONDS=$PREVIEW_SECONDS"
           fi
@@ -239,11 +256,12 @@ jobs:
 
           chmod 600 shared/runtime/secrets/youtube/client_secret.json shared/runtime/cache/youtube/token.json
 
-      - name: Run YouTube pipeline
+      - name: Run Shorts YouTube pipeline
+        if: steps.params.outputs.remotion_only != 'true'
         env:
           TARGET_DATE: ${{ steps.params.outputs.target_date }}
           LANG: ${{ steps.params.outputs.lang }}
-          START_FROM: ${{ steps.params.outputs.start_from }}
+          START_FROM: ${{ steps.params.outputs.run_youtube_start_from }}
           OVERWRITE: ${{ steps.params.outputs.overwrite }}
           UPLOAD: ${{ steps.params.outputs.upload }}
           PRIVACY: ${{ steps.params.outputs.privacy }}
@@ -271,23 +289,21 @@ jobs:
           ./run_youtube.sh "${ARGS[@]}"
 
       - name: Upload YouTube artifacts
-        if: success()
+        if: success() && steps.params.outputs.remotion_only != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: youtube-${{ steps.params.outputs.target_date }}-${{ steps.params.outputs.lang }}
           path: |
-            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/youtube
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts/youtube
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-firm/youtube
           if-no-files-found: warn
 
-      - name: Commit and push generated YouTube outputs
-        if: success()
+      - name: Commit and push generated shorts outputs
+        if: success() && steps.params.outputs.remotion_only != 'true'
         env:
           TARGET_DATE: ${{ steps.params.outputs.target_date }}
           LANG: ${{ steps.params.outputs.lang }}
           BRANCH_NAME: ${{ github.ref_name }}
-          EPISODE_THUMBNAIL: ${{ steps.params.outputs.episode_thumbnail }}
           SHORTS_MP4: ${{ steps.params.outputs.shorts_mp4 }}
           SHORTS_THUMBNAIL: ${{ steps.params.outputs.shorts_thumbnail }}
           SHORTS_FIRM_MP4: ${{ steps.params.outputs.shorts_firm_mp4 }}
@@ -307,7 +323,6 @@ jobs:
             "web/public/data/shorts-firm/$TARGET_DATE.json"
             "web/public/audio/shorts-firm/shortsfirm$TARGET_DATE.mp3"
             "web/src/generated/shorts-firm/${TARGET_DATE}_${LANG}.generated.tsx"
-            "$EPISODE_THUMBNAIL"
             "$SHORTS_THUMBNAIL"
             "$SHORTS_FIRM_THUMBNAIL"
           )
@@ -344,3 +359,93 @@ jobs:
           done
           git pull --rebase --autostash origin "$BRANCH_NAME"
           git push origin HEAD:"$BRANCH_NAME"
+
+      - name: Render episode via Remotion
+        if: success() && (steps.params.outputs.remotion_only == 'true' || steps.params.outputs.upload == 'true')
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          OVERWRITE: ${{ steps.params.outputs.overwrite }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          PREVIEW_SECONDS: ${{ steps.params.outputs.preview_seconds }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+          YOUTUBE_REMOTION_CONCURRENCY: ${{ vars.YOUTUBE_REMOTION_CONCURRENCY || '2' }}
+        run: |
+          set -euo pipefail
+          chmod +x ./run_youtube_episode_remotion.sh
+
+          RENDER_ARGS=("$TARGET_DATE" "--lang" "$LANG")
+          if [[ "$OVERWRITE" == "true" ]]; then
+            RENDER_ARGS+=(--overwrite)
+          fi
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            RENDER_ARGS+=(--preview-seconds "$PREVIEW_SECONDS")
+          fi
+
+          echo "Running: YOUTUBE_REMOTION_CONCURRENCY=${YOUTUBE_REMOTION_CONCURRENCY} ./run_youtube_episode_remotion.sh ${RENDER_ARGS[*]}"
+          YOUTUBE_REMOTION_CONCURRENCY="${YOUTUBE_REMOTION_CONCURRENCY}" \
+            ./run_youtube_episode_remotion.sh "${RENDER_ARGS[@]}"
+
+          EPISODE_BASENAME="${TARGET_DATE}_${LANG}_episode_remotion"
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            EPISODE_BASENAME="${EPISODE_BASENAME}_preview_${PREVIEW_SECONDS}s"
+          fi
+          EPISODE_MP4="podcast/$TARGET_DATE/$LANG/youtube-remotion/${EPISODE_BASENAME}.mp4"
+          if [[ ! -f "$EPISODE_MP4" ]]; then
+            echo "Rendered episode MP4 not found: $EPISODE_MP4" >&2
+            exit 1
+          fi
+
+      - name: Generate episode thumbnail for Remotion upload
+        if: success() && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          OVERWRITE: ${{ steps.params.outputs.overwrite }}
+        run: |
+          set -euo pipefail
+          chmod +x ./shared/ops/scripts/youtube/generate_episode_thumbnail.sh
+
+          THUMBNAIL_ARGS=("$TARGET_DATE" "--lang" "$LANG")
+          if [[ "$OVERWRITE" == "true" ]]; then
+            THUMBNAIL_ARGS+=(--overwrite)
+          fi
+
+          echo "Running: ./shared/ops/scripts/youtube/generate_episode_thumbnail.sh ${THUMBNAIL_ARGS[*]}"
+          ./shared/ops/scripts/youtube/generate_episode_thumbnail.sh "${THUMBNAIL_ARGS[@]}"
+
+      - name: Upload episode Remotion video to YouTube
+        if: success() && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          PREVIEW_SECONDS: ${{ steps.params.outputs.preview_seconds }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+
+          EPISODE_BASENAME="${TARGET_DATE}_${LANG}_episode_remotion"
+          if [[ -n "$PREVIEW_SECONDS" ]]; then
+            EPISODE_BASENAME="${EPISODE_BASENAME}_preview_${PREVIEW_SECONDS}s"
+          fi
+          EPISODE_MP4="podcast/$TARGET_DATE/$LANG/youtube-remotion/${EPISODE_BASENAME}.mp4"
+          if [[ ! -f "$EPISODE_MP4" ]]; then
+            echo "Rendered episode MP4 not found: $EPISODE_MP4" >&2
+            exit 1
+          fi
+
+          UPLOAD_ARGS=(
+            --file "$EPISODE_MP4"
+            --date "$TARGET_DATE"
+            --lang "$LANG"
+            --privacy "$PRIVACY"
+          )
+          THUMBNAIL_PATH="podcast/$TARGET_DATE/$LANG/youtube/${TARGET_DATE}_${LANG}_thumbnail.png"
+          if [[ -f "$THUMBNAIL_PATH" ]]; then
+            UPLOAD_ARGS+=(--thumbnail "$THUMBNAIL_PATH")
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
