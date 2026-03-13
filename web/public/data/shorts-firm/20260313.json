@@ -1,0 +1,304 @@
+{
+  "date": "20260314",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 어도비, 울타 뷰티, 웨스턴 디지털",
+  "hook": "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다.",
+  "durationSeconds": 53.284,
+  "audioFile": "shortsfirm20260313.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "neutral",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.03.14 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, 어도비, 울타 뷰티, 웨스턴 디지털",
+      "subheadline": "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다.",
+      "body": "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다.",
+      "bullets": [
+        "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다."
+      ],
+      "tickers": [],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 3.0,
+      "endSec": 15.971,
+      "eyebrow": "PICK 1",
+      "headline": "ADBE",
+      "subheadline": "호실적에도 CEO 사임 소식에 불확실성 커지며 급락",
+      "body": "AI 경쟁 심화 속 리더십 공백 우려가 불확실성을 키우며 주가를 7.58% 끌어내렸습니다.",
+      "bullets": [
+        "18년간 재임한 CEO의 갑작스러운 사임",
+        "AI 경쟁 속 리더십 공백 우려 부각"
+      ],
+      "tickers": [
+        "ADBE"
+      ],
+      "highlights": [
+        "-7.58%",
+        "-5.02%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 15.971,
+      "endSec": 26.822,
+      "eyebrow": "PICK 2",
+      "headline": "ULTA",
+      "subheadline": "미래 수익성 전망 하향 조정에 투자 심리 급랭하며 폭락",
+      "body": "기대치를 밑도는 연간 수익성 전망을 제시하며 성장 둔화 우려가 확산, 주가는 14.24% 폭락했습니다.",
+      "bullets": [
+        "기대 이하의 연간 수익성 가이던스 제시",
+        "성장 둔화 및 비용 증가 우려 확산"
+      ],
+      "tickers": [
+        "ULTA"
+      ],
+      "highlights": [
+        "-14.24%",
+        "-19.70%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 26.822,
+      "endSec": 40.553,
+      "eyebrow": "PICK 3",
+      "headline": "WDC",
+      "subheadline": "AI 성장 기대감과 소수 고객 집중 리스크가 공존하며 상승",
+      "body": "클라우드 부문 매출이 28% 급증하며 AI 수요 기대감을 증명했지만, 리스크도 존재합니다.",
+      "bullets": [
+        "AI 수요 기대로 클라우드 매출 28% 급증",
+        "소수 고객에 매출 43% 집중 리스크 공존"
+      ],
+      "tickers": [
+        "WDC"
+      ],
+      "highlights": [
+        "+4.25%",
+        "-4.16%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 40.553,
+      "endSec": 50.284,
+      "eyebrow": "PICK 1",
+      "headline": "XOM",
+      "subheadline": "지정학적 리스크에 따른 유가 상승 우려로 강세",
+      "body": "주요 해협의 선박 통행량 급감이 국제 유가 상승 우려를 키우며 주가에 반영되었습니다.",
+      "bullets": [
+        "지정학적 리스크 부각",
+        "국제 유가 상승 우려 주가에 반영"
+      ],
+      "tickers": [
+        "XOM"
+      ],
+      "highlights": [
+        "+1.69%",
+        "+4.13%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 50.284,
+      "endSec": 53.284,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "좋은 실적을 내고도 주가가 급락한 기업들이 있습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 15.971,
+      "text": "호실적에도 CEO 사임 소식에 불확실성 커지며 급락"
+    },
+    {
+      "id": 2,
+      "startSec": 15.971,
+      "endSec": 26.822,
+      "text": "미래 수익성 전망 하향 조정에 투자 심리 급랭하며 폭락"
+    },
+    {
+      "id": 3,
+      "startSec": 26.822,
+      "endSec": 40.553,
+      "text": "AI 성장 기대감과 소수 고객 집중 리스크가 공존하며 상승"
+    },
+    {
+      "id": 4,
+      "startSec": 40.553,
+      "endSec": 50.284,
+      "text": "지정학적 리스크에 따른 유가 상승 우려로 강세"
+    },
+    {
+      "id": 5,
+      "startSec": 50.284,
+      "endSec": 53.284,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "어도비, 호실적에도 CEO 사임 소식에 7.58% 급락",
+      "울타 뷰티, 부진한 연간 가이던스 제시 후 14.24% 폭락",
+      "웨스턴 디지털, AI 성장 기대감에 4.25% 상승했으나 고객 집중 리스크 부각",
+      "미래 성장성에 대한 불확실성이 현재 실적을 압도하는 시장 분위기"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "ADBE",
+        "label": "어도비",
+        "tag": "급락"
+      },
+      {
+        "ticker": "ULTA",
+        "label": "울타 뷰티",
+        "tag": "폭락"
+      },
+      {
+        "ticker": "WDC",
+        "label": "웨스턴 디지털",
+        "tag": "상승"
+      },
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "상승"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "ADBE",
+        "name": "Adobe Inc.",
+        "as_of": "2026-03-13",
+        "day_change_pct": -7.583954165488804,
+        "day_change_display": "-7.58%",
+        "month_change_pct": -5.020949590773805,
+        "month_change_display": "-5.02%",
+        "market_cap": 102345859072.0,
+        "market_cap_display": "$102.35B",
+        "pe_ratio": 14.929341,
+        "pe_ratio_display": "14.93",
+        "pbr": 8.941008,
+        "pbr_display": "8.94",
+        "roe": 58.774,
+        "roe_display": "58.77%",
+        "reason": "18년간 회사를 이끌어온 최고경영자가 물러난다는 소식에 주가가 7% 넘게 급락했습니다. 이처럼 괜찮은 실적에도 불구하고 미래에 대한 불확실성이나 비관적 전망이 나오자 투자자들이 주식을 내던진 것입니다.",
+        "spoken_text": "어도비는 1분기 호실적에도 불구하고 18년간 재임한 CEO의 갑작스러운 사임 발표로 7.58% 급락했습니다. AI 경쟁 심화 속 리더십 공백 우려가 불확실성을 키웠습니다.",
+        "slide_points": [
+          "1D: -7.58% / 1M: -5.02%",
+          "호실적에도 CEO 사임 발표",
+          "AI 경쟁 속 리더십 불확실성 부각"
+        ],
+        "valuation_note": "시총 $102.35B, PER 14.93, PBR 8.94, ROE 58.77%",
+        "move_summary": "호실적에도 CEO 사임 소식에 불확실성 커지며 급락"
+      },
+      {
+        "ticker": "ULTA",
+        "name": "Ulta Beauty, Inc.",
+        "as_of": "2026-03-13",
+        "day_change_pct": -14.243643311218223,
+        "day_change_display": "-14.24%",
+        "month_change_pct": -19.70383156206841,
+        "month_change_display": "-19.70%",
+        "market_cap": 24020807680.0,
+        "market_cap_display": "$24.02B",
+        "pe_ratio": 20.565067,
+        "pe_ratio_display": "20.57",
+        "pbr": 8.469212,
+        "pbr_display": "8.47",
+        "roe": 43.595,
+        "roe_display": "43.59%",
+        "reason": "앞으로의 수익성 전망을 낮춰 잡으면서 주가가 14% 이상 폭락했습니다. 이처럼 괜찮은 실적에도 불구하고 미래에 대한 불확실성이나 비관적 전망이 나오자 투자자들이 주식을 내던진 것입니다.",
+        "spoken_text": "울타 뷰티는 4분기 실적이 양호했음에도 불구하고, 시장 기대치를 밑도는 연간 수익성 전망을 제시하며 14.24% 폭락했습니다. 성장 둔화 우려가 주가를 끌어내렸습니다.",
+        "slide_points": [
+          "1D: -14.24% / 1M: -19.70%",
+          "기대 이하의 연간 수익성 가이던스",
+          "성장 둔화 및 비용 증가 우려 확산"
+        ],
+        "valuation_note": "시총 $24.02B, PER 20.57, PBR 8.47, ROE 43.59%",
+        "move_summary": "미래 수익성 전망 하향 조정에 투자 심리 급랭하며 폭락"
+      },
+      {
+        "ticker": "WDC",
+        "name": "Western Digital Corporation",
+        "as_of": "2026-03-13",
+        "day_change_pct": 4.2537775406603195,
+        "day_change_display": "+4.25%",
+        "month_change_pct": -4.156986027761866,
+        "month_change_display": "-4.16%",
+        "market_cap": 93095763968.0,
+        "market_cap_display": "$93.10B",
+        "pe_ratio": 25.736296,
+        "pe_ratio_display": "25.74",
+        "pbr": 13.018886,
+        "pbr_display": "13.02",
+        "roe": 41.126000000000005,
+        "roe_display": "41.13%",
+        "reason": "긍정적인 측면을 보면, 이 기업은 인공지능 시대의 핵심 인프라 공급자로 부상하고 있습니다. 화려한 성장세의 이면에는 극심한 고객 집중 리스크가 자리 잡고 있습니다.",
+        "spoken_text": "웨스턴 디지털은 AI 인프라 수요 기대로 4.25% 상승했습니다. 클라우드 부문 매출이 28% 급증하며 성장성을 증명했지만, 단 3개 고객사가 매출의 43%를 차지하는 집중 리스크도 존재합니다.",
+        "slide_points": [
+          "1D: +4.25% / 1M: -4.16%",
+          "AI 수요 기대로 클라우드 매출 28% 급증",
+          "소수 고객에 매출 43% 집중 리스크 공존"
+        ],
+        "valuation_note": "시총 $93.10B, PER 25.74, PBR 13.02, ROE 41.13%",
+        "move_summary": "AI 성장 기대감과 소수 고객 집중 리스크가 공존하며 상승"
+      },
+      {
+        "ticker": "XOM",
+        "name": "Exxon Mobil Corporation",
+        "as_of": "2026-03-13",
+        "day_change_pct": 1.6869643447426919,
+        "day_change_display": "+1.69%",
+        "month_change_pct": 4.128595173610083,
+        "month_change_display": "+4.13%",
+        "market_cap": 650515120128.0,
+        "market_cap_display": "$650.52B",
+        "pe_ratio": 23.336323,
+        "pe_ratio_display": "23.34",
+        "pbr": 2.5152652,
+        "pbr_display": "2.52",
+        "roe": 11.0810004,
+        "roe_display": "11.08%",
+        "reason": "실제로 분쟁 시작 이후 해협의 선박 통행량은 90퍼센트 이상 급감한 것으로 알려졌습니다.",
+        "spoken_text": "엑슨모빌은 지정학적 리스크가 부각되며 1.69% 상승했습니다. 주요 해협의 선박 통행량이 급감하면서 국제 유가 상승에 대한 우려가 주가에 반영된 것으로 보입니다.",
+        "slide_points": [
+          "1일 +1.69% / 1개월 +4.13%",
+          "시총 $650.52B, PER 23.34, PBR 2.52, ROE 11.08%",
+          "지정학적 리스크 부각, 유가 상승 우려"
+        ],
+        "valuation_note": "시총 $650.52B, PER 23.34, PBR 2.52, ROE 11.08%",
+        "move_summary": "지정학적 리스크에 따른 유가 상승 우려로 강세"
+      }
+    ]
+  }
+}

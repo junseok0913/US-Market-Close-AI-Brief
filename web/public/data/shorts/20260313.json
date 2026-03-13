@@ -1,0 +1,225 @@
+{
+  "date": "20260314",
+  "lang": "ko",
+  "title": "실적 좋아도 14% 폭락? 유가 급등과 CEO 사임에 무너진 시장",
+  "hook": "실적이 좋은데 주가는 14% 폭락, 어도비는 7% 급락. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 75.884,
+  "audioFile": "shorts20260313.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 6.491,
+      "eyebrow": "3월 14일 마감",
+      "headline": "실적 좋아도 14% 폭락?",
+      "subheadline": "어도비 7% 급락, 대체 무슨 일?",
+      "body": "실적이 좋은데 주가는 14% 폭락, 어도비는 7% 급락. 대체 무슨 일이 있었을까요.",
+      "bullets": [
+        "실적이 좋은데 주가는 14% 폭락, 어도비는 7% 급락.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "ULTA",
+        "ADBE",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "-14%",
+        "-7%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 6.491,
+      "endSec": 22.182,
+      "eyebrow": "시장 요약",
+      "headline": "악재에 하락한 미국 증시",
+      "subheadline": "S&P 500 -0.61% | 나스닥 -0.93%",
+      "body": "지정학적 리스크와 기업 실적 우려가 시장을 짓눌렀습니다.",
+      "bullets": [
+        "다우 -0.26%",
+        "S&P 500 -0.61%"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "ULTA"
+      ],
+      "highlights": [
+        "-0.61%",
+        "-0.93%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 22.182,
+      "endSec": 73.633,
+      "eyebrow": "핵심 원인",
+      "headline": "유가 급등 & 기업 악재",
+      "subheadline": "시장은 현재의 성과보다 미래의 불확실성에 더 크게 반응했습니다.",
+      "body": "먼저, 미국과 이란의 군사적 긴장이 최고조에 달하며 국제 유가가 3% 넘게 급등, 배럴당 98달러 선을 넘어섰습니다. 이는 2022년 이후 최고 수준으로, 전 세계 원유 수송량의 20%가 지나는 호르무즈 해협 봉쇄 우려가 커지면서 인플레이션 공포를 다시 불러왔습니다. 이 여파로 시장 변동성을 나타내는 VIX 지수는 27을 넘어섰습니다. 여기에 개별 기업들의 실망스러운 소식이 더해졌습니다. 화장품 유통업체 울타 뷰티는 4분기…",
+      "bullets": [
+        "중동 긴장 고조 → 유가 3% 급등, 인플레이션 공포 자극",
+        "ULTA, ADBE → 호실적에도 미래 불확실성에 주가 급락"
+      ],
+      "tickers": [
+        "CLF",
+        "ULTA",
+        "ADBE",
+        "^DJI"
+      ],
+      "highlights": [
+        "유가 +3%",
+        "VIX > 27"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 73.633,
+      "endSec": 75.884,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "ULTA",
+        "ADBE",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 6.491,
+      "text": "실적이 좋은데 주가는 14% 폭락, 어도비는 7% 급락. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 6.491,
+      "endSec": 22.182,
+      "text": "3월 14일 미국 증시는 지정학적 리스크와 기업 실적 우려라는 두 가지 악재에 하락했습니다. 다우는 0.26%, S&P 500은 0.61% 내렸고, 기술주 중심의 나스닥은 0.93% 하락하며 가장 큰 낙폭을 기록했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 22.182,
+      "endSec": 73.633,
+      "text": "먼저, 미국과 이란의 군사적 긴장이 최고조에 달하며 국제 유가가 3% 넘게 급등, 배럴당 98달러 선을 넘어섰습니다. 이는 2022년 이후 최고 수준으로, 전 세계 원유 수송량의 20%가 지나는 호르무즈 해협 봉쇄 우려가 커지면서 인플레이션 공포를 다시 불러왔습니다. 이 여파로 시장…"
+    },
+    {
+      "id": 3,
+      "startSec": 73.633,
+      "endSec": 75.884,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-13"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-14"
+    },
+    {
+      "type": "article",
+      "label": "Oil tops $100 per barrel as Trump says US will strike I…",
+      "detail": "id#c794a0fdc6193037"
+    },
+    {
+      "type": "article",
+      "label": "The Strait of Hormuz Is Closed, and Why That's a Huge P…",
+      "detail": "id#a8a617799aab2ebf"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-14"
+    },
+    {
+      "type": "article",
+      "label": "Why Ulta (ULTA) Shares Are Plunging Today",
+      "detail": "id#a32a8bf55462c88c"
+    },
+    {
+      "type": "chart",
+      "label": "ULTA",
+      "detail": "2026-03-14"
+    },
+    {
+      "type": "article",
+      "label": "Adobe shares drop after CEO exit adds to AI-disruption…",
+      "detail": "id#522d170505da9a51"
+    },
+    {
+      "type": "chart",
+      "label": "ADBE",
+      "detail": "2026-03-14"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 모두 하락, 나스닥 0.93% 하락",
+      "중동 리스크로 국제 유가 3% 급등, 98달러 돌파",
+      "어도비, 호실적에도 CEO 사임 소식에 7% 급락",
+      "울타 뷰티, 수익성 전망 하향에 14% 폭락"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "ULTA",
+        "label": "울타 뷰티",
+        "tag": "전망 하향"
+      },
+      {
+        "ticker": "ADBE",
+        "label": "어도비",
+        "tag": "CEO 사임"
+      },
+      {
+        "ticker": "CLF",
+        "label": "WTI 유가",
+        "tag": "중동 리스크"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
