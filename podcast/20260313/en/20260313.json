@@ -1,0 +1,763 @@
+{
+  "date": "20260313",
+  "nutshell": "Market Declines on Geopolitical Risks and Corporate Earnings Concerns",
+  "user_tickers": [
+    "WDC"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's the closing bell briefing for March 14th. The market finished lower across the board today, with the tech-heavy Nasdaq Composite seeing the most significant drop.",
+      "sources": [],
+      "time": [
+        0,
+        10011
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right, the market fell today on a combination of geopolitical risks and concerns over corporate earnings. The Dow Jones Industrial Average slipped 0.26%, and the S&P 500 was down 0.61%. The tech-focused Nasdaq Composite fell the most among the major indexes, dropping 0.93%. Rising tensions in the Middle East pushed West Texas Intermediate crude oil prices up over 3% to surpass the $98 per barrel mark, which weighed on the entire market. On top of that, disappointing news from some major companies drove declines in specific sectors.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        }
+      ],
+      "time": [
+        10511,
+        45922
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So it was a day of compounding bad news. You mentioned disappointing news from some companies—which ones specifically impacted the market?",
+      "sources": [],
+      "time": [
+        46422,
+        55913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The main ones were software giant Adobe and cosmetics retailer Ulta Beauty. Adobe actually reported quarterly earnings that beat expectations, but its stock plunged over 7% on news that its CEO of 18 years is stepping down. Ulta Beauty also had solid earnings, but its shares plummeted more than 14% after the company lowered its future profitability outlook. So, in both cases, investors dumped the stock due to uncertainty or a pessimistic outlook, despite decent current results.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#522d170505da9a51",
+          "title": "Adobe shares drop after CEO exit adds to AI-disruption concerns"
+        },
+        {
+          "type": "article",
+          "pk": "id#2fc7210f7afc160c",
+          "title": "Ulta’s (NASDAQ:ULTA) Q4 CY2025: Beats On Revenue But Stock Drops"
+        },
+        {
+          "type": "chart",
+          "ticker": "ADBE",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "ULTA",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        }
+      ],
+      "time": [
+        56413,
+        86904
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, it seems the key drivers for the market today can be boiled down to two things: geopolitical risk in the Middle East and negative news from individual companies.",
+      "sources": [],
+      "time": [
+        87404,
+        98535
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "That's exactly right. The geopolitical issues that sparked the surge in oil prices, combined with concerns about future growth prospects—as seen with Adobe and Ulta Beauty—were the core themes for the market today.",
+      "sources": [],
+      "time": [
+        99035,
+        111326
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start by taking a closer look at the biggest factor that shook the market today: geopolitical risk in the Middle East. It seems the situation was serious enough to threaten the $100 per barrel mark for oil. Can you walk us through the specific background?",
+      "sources": [],
+      "time": [
+        112326,
+        129137
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, this surge in oil prices was triggered by military tensions between the U.S. and Iran reaching a boiling point. Market fears peaked after U.S. President Donald Trump hinted at a tough military response against Iran, and Iran's new Supreme Leader, Mojtaba Khamenei, vowed to continue blockading the Strait of Hormuz, a key global oil supply route. As a result, Brent crude, the international benchmark, surpassed $103 a barrel during the session, and West Texas Intermediate neared $99, hitting its highest level since 2022. The spike in oil immediately fueled inflation fears, dealing a direct blow to the stock market. The S&P 500 and Nasdaq indexes closed lower, and the VIX index, which measures market volatility, jumped above 27, showing heightened investor anxiety. At the same time, the 10-year Treasury yield also rose above 4.28 percent, indicating that the bond market wasn't immune to the inflationary pressure either.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c794a0fdc6193037",
+          "title": "Oil tops $100 per barrel as Trump says US will strike Iran 'very hard' over next week"
+        },
+        {
+          "type": "article",
+          "pk": "id#b3e71d1bcc041674",
+          "title": "Brent Oil Trades Above $100 as Iran Vows to Keep Hormuz Closed"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        129637,
+        187448
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "Why is the market reacting so sensitively to Iran's threat to blockade the Strait of Hormuz? What are the specific potential consequences?",
+      "sources": [],
+      "time": [
+        187948,
+        196439
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "It's because the Strait of Hormuz is an irreplaceable artery for energy transport, with about 20 percent of the world's seaborne oil passing through it. If traffic in this area is blocked, it would cause a supply disruption of about 16 million barrels of oil per day. The International Energy Agency has warned this could be the largest supply shock in history. In fact, ship traffic through the strait has reportedly plummeted by over 90 percent since the conflict began. These supply shock fears created a clear divergence in the market. While energy companies like ExxonMobil saw their stocks rise, making the energy sector the only one in the green, transportation and consumer-related stocks, like United Airlines, fell sharply on concerns about rising fuel costs and a potential slowdown in consumer spending.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a8a617799aab2ebf",
+          "title": "The Strait of Hormuz Is Closed, and Why That's a Huge Problem for the Price of Oil and the S&P 500"
+        },
+        {
+          "type": "article",
+          "pk": "id#c31a4f4bc9792e39",
+          "title": "Trump is scrambling to quell the rise of $100 oil. But the market keeps circling one cure."
+        },
+        {
+          "type": "article",
+          "pk": "id#d512e17458502345",
+          "title": "Analysis-Iran unleashes oil shock to blunt US firepower"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "UAL",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        196939,
+        242830
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "The biggest concern seems to be that this oil price surge could reignite inflation. Couldn't that also affect the Federal Reserve's monetary policy path?",
+      "sources": [],
+      "time": [
+        243330,
+        252781
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's an excellent point. This situation is essentially pouring fuel on an already hot inflation fire. The Personal Consumption Expenditures price index for January, released before the conflict began, was already in the 3-percent range, well above the Fed's 2 percent target, showing that inflationary pressures were still present. The surge in oil prices on top of that has put the Fed in a very difficult dilemma. They need to maintain a tight policy to control inflation, but at the same time, they have to defend against a potential recession caused by the oil shock. This uncertainty has pushed back market expectations for rate cuts, which in turn led to the 10-year Treasury yield rising again. Right now, the market is pricing in a nearly 100 percent probability that the Fed will hold rates steady at next week's FOMC meeting, but uncertainty about the future policy direction is higher than ever.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1956740c95fd3bbb",
+          "title": "Inflation was already hot before Iran war sent oil and gas prices soaring"
+        },
+        {
+          "type": "article",
+          "pk": "id#eb970c663f853cb8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide to cap 3rd week of losses as $100 oil sparks inflation fears"
+        },
+        {
+          "type": "article",
+          "pk": "id#77f77a1f881f88b0",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq give up gains as oil rises, GDP growth slows more than expected"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        253281,
+        305972
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, it sounds like whether or not tensions in the Middle East de-escalate will be the most critical variable for the market's direction for the time being.",
+      "sources": [],
+      "time": [
+        306472,
+        315202
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's right. The market's focus has now shifted entirely from economic data and corporate earnings to geopolitical news from the Middle East. A rise in oil prices isn't just about higher prices at the pump; it's a factor that directly impacts corporate production costs and consumers' real purchasing power, dampening overall economic vitality. The fact that the VIX index remains at an elevated level means market participants are still wary of potential further shocks. For the foreseeable future, diplomatic and military developments surrounding the Strait of Hormuz will likely dictate the short-term direction of oil prices and the financial markets as a whole.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6a1cd896b4a7d11e",
+          "title": "Dow Slips as Oil Prices Climb Amid Escalating Iran Conflict"
+        },
+        {
+          "type": "article",
+          "pk": "id#817a87e898a2b34d",
+          "title": "Trump’s oil goal slips away as Iran war sends crude soaring"
+        },
+        {
+          "type": "article",
+          "pk": "id#b447bd4b128102ee",
+          "title": "Trump and Iran Strike Defiant Tone as Oil Markets See Little Relief"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        315702,
+        355473
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Along with these macroeconomic anxieties, news from individual companies also had a major impact. Let's take a closer look at the sharp stock declines for Adobe and Ulta Beauty that you mentioned earlier. Both companies had pretty decent earnings, but the market's reaction was very cold. Let's start with your analysis of Adobe.",
+      "sources": [],
+      "time": [
+        355973,
+        376784
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today's market clearly showed it has zero tolerance for even the slightest uncertainty about the future. With the tech-heavy Nasdaq down nearly 1 percent and the S&P 500 also in the red, investor sentiment soured significantly, especially in the software sector, where Adobe belongs, and the consumer discretionary sector, home to Ulta Beauty. In Adobe's case, its first-quarter revenue and profit both beat Wall Street estimates. Revenue came in at $6.4 billion, topping the expected $6.28 billion, and earnings per share were $6.06, ahead of the $5.87 consensus. Despite this, the stock, which had already plunged over 7% yesterday, continued to show weakness today. This was because the sudden resignation announcement of CEO Shantanu Narayen, who has led the company for 18 years, fueled concerns about intensifying competition in the age of AI.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#522d170505da9a51",
+          "title": "Adobe shares drop after CEO exit adds to AI-disruption concerns"
+        },
+        {
+          "type": "article",
+          "pk": "id#40e29f4148f0d56b",
+          "title": "Adobe stock drops after CEO Narayen announces he will step down after 18 years"
+        },
+        {
+          "type": "article",
+          "pk": "id#eb967f560752d808",
+          "title": "Adobe’s (NASDAQ:ADBE) Q1 CY2026 Sales Beat Estimates But Stock Drops"
+        },
+        {
+          "type": "article",
+          "pk": "id#a912ec90a762ade6",
+          "title": "ADBE Q1 Deep Dive: AI Transition, CEO Succession, and Freemium Push Shape Outlook"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "ADBE",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        377284,
+        434415
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So the earnings were good, but the news of a symbolic leader's departure acted as a bigger headwind.",
+      "sources": [],
+      "time": [
+        434915,
+        441766
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Exactly. Shantanu Narayen is a legendary figure who successfully transformed Adobe from a traditional software seller into a cloud-based subscription powerhouse. His departure, coming just as the company faces the massive wave of generative AI, has sparked fundamental anxiety about who will steer the ship. Analysts at Citigroup noted that the CEO change adds another layer of uncertainty at a 'delicate moment in the narrative.' Investors were already questioning whether Adobe could maintain its edge against new AI-powered design tool startups, and now, with concerns about a leadership vacuum at this critical juncture, the positive earnings news was completely overshadowed.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c90a201ee9453315",
+          "title": "Adobe CEO Narayen Plans Exit as Tech Firms Restructure Around AI"
+        },
+        {
+          "type": "article",
+          "pk": "id#e873bab425758b06",
+          "title": "Adobe's Stock Has Slumped for Two Years. Fixing That Is Someone New's Job Now."
+        },
+        {
+          "type": "article",
+          "pk": "id#d2e657df6f6beb9a",
+          "title": "Adobe CEO Narayen stepping down after 18 years, stock slides"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        442266,
+        483557
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "A classic case of anxiety about the future overwhelming strong current results. Ulta Beauty's situation looks even more severe, with the stock down over 14 percent.",
+      "sources": [],
+      "time": [
+        484057,
+        495468
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Ulta Beauty raised a more direct red flag about its future profitability than Adobe did. Its fourth-quarter revenue of $3.9 billion beat market expectations, and its earnings per share of $8.01 met consensus, so the report card wasn't bad. The problem was its full-year guidance for the year ahead. The company's forecast for 2026 annual EPS was between $28.05 and $28.55, which was below the Wall Street consensus of $28.57. This was interpreted as a signal that growth in the beauty market is gradually slowing down and that profitability will be squeezed by rising marketing costs from intense competition and various investment burdens. In the end, investors bet on the possibility of declining future profits and sold off the stock in droves, causing it to plummet over 14% yesterday.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a32a8bf55462c88c",
+          "title": "Why Ulta (ULTA) Shares Are Plunging Today"
+        },
+        {
+          "type": "article",
+          "pk": "id#49d578ef92615d57",
+          "title": "ULTA Q4 Deep Dive: Margin Contraction and Strategic Investments Temper Positive Sales Growth"
+        },
+        {
+          "type": "article",
+          "pk": "id#2fc7210f7afc160c",
+          "title": "Ulta’s (NASDAQ:ULTA) Q4 CY2025: Beats On Revenue But Stock Drops"
+        },
+        {
+          "type": "article",
+          "pk": "id#be42f3862648c203",
+          "title": "Ulta Beauty’s Blistering Rally to Start the Year Just Lost Momentum. What Happened?"
+        },
+        {
+          "type": "chart",
+          "ticker": "ULTA",
+          "start_date": "2026-03-12",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        495968,
+        544099
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So for both companies, the stocks fell sharply not because of their current performance, but because of doubts about their future growth path.",
+      "sources": [],
+      "time": [
+        544599,
+        553330
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Precisely. For Adobe, it was external factors like the leadership change and AI competition. For Ulta Beauty, it was internal factors like a consumer slowdown and rising costs that shook their future growth stories. This is a clear example of how much the current market values future growth visibility over past performance or even current earnings. It was a day that revealed the cold reality that no matter how good your earnings report is, if you can't provide confidence in future growth, you can be abandoned by the market at any time. This has important implications not just for these two companies, but for other tech and consumer stocks as well.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#82ec81cf27ea09cd",
+          "title": "5 Things to Know Before the Stock Market Opens"
+        },
+        {
+          "type": "article",
+          "pk": "id#da3426ca1c1acc21",
+          "title": "Trending stocks premarket: Dick's Sporting Goods, Adobe, Ulta, Coinbase"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLY",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-14"
+        }
+      ],
+      "time": [
+        553830,
+        592881
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "You've highlighted the importance of future growth visibility. From that perspective, there's another company that caught the market's attention today: Western Digital. The stock closed up over 2 percent, but it was a volatile day, surging to around $278 early in the session before giving back some of those gains.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "WDC",
+          "start_date": "2026-03-13",
+          "end_date": "2026-03-13"
+        }
+      ],
+      "time": [
+        593881,
+        613612
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, that seems to be a reflection of the starkly divided hopes and concerns surrounding Western Digital. On the positive side, the company is emerging as a key infrastructure provider for the AI era. Its latest earnings report showed that cloud segment revenue surged 28%, contributing to a 25% year-over-year increase in total revenue, while operating income jumped an incredible 90%. This explosive performance has been the driving force behind the stock's 155% rally over the past six months, as the market anticipates it will be a direct beneficiary of the AI data explosion.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        },
+        {
+          "type": "chart",
+          "ticker": "WDC",
+          "start_date": "2026-02-11",
+          "end_date": "2026-03-13"
+        }
+      ],
+      "time": [
+        614112,
+        649963
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So the growth story of being a core part of AI infrastructure is clearly very powerful. But are there any hidden risks behind this narrative?",
+      "sources": [],
+      "time": [
+        650463,
+        660474
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's the biggest point of contention right now for Western Digital. Behind the spectacular growth lies a significant customer concentration risk. According to their latest filing, just three customers account for 43% of total revenue. This means the company's fate is almost entirely dependent on the capital expenditure plans of a few giant cloud companies. Proponents of the growth story might call this a strong partnership with AI leaders—a 'lock-in effect'—but from another perspective, it's a very risky structure that could become a single point of failure, capable of determining the company's destiny.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        }
+      ],
+      "time": [
+        660974,
+        696705
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Nearly half of their revenue from just three companies... if this risk were to materialize, what kind of specific impact are we talking about?",
+      "sources": [],
+      "time": [
+        697205,
+        705256
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "It could lead to a very specific hit. For example, let's assume one customer, who accounts for 14% of revenue, decides to moderate their AI investment pace and cuts their orders by just 30%. In that scenario, the company's total quarterly revenue would fall by about 4.2%, which would flow directly to the bottom line, potentially wiping out over 4% of total operating income instantly. It's a fragile structure where a small change of heart from a single customer can significantly shake the company's overall profitability. It appears the current stock price isn't fully pricing in this risk and is instead focused on the rosy outlook from AI.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        }
+      ],
+      "time": [
+        705756,
+        744487
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "I see. In that case, could an event like the spin-off of the SanDisk flash business act as a catalyst to offset this risk and further boost the company's value?",
+      "sources": [],
+      "time": [
+        744987,
+        756078
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "There are certainly hopes that the business separation will enhance the focus of each unit and lead to a re-evaluation of their value. However, this also carries execution risk; the process could incur unexpected costs or fail to realize synergies, contrary to market expectations. In conclusion, while Western Digital clearly has a powerful growth engine in AI, that engine is running on a very narrow track built by just a few customers. The current stock price seems to be based on the most optimistic scenario where this track continues indefinitely, and it appears to lack a sufficient margin of safety for potential shocks, suggesting a need for risk management at this point.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-K",
+          "filed_date": "2025-08-14",
+          "accession_number": "0000106040-25-000038"
+        },
+        {
+          "type": "article",
+          "pk": "id#b48f7dbd7d38acb8",
+          "title": "2 Reasons to Like WDC and 1 to Stay Skeptical"
+        }
+      ],
+      "time": [
+        756578,
+        794589
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Today's market seemed to struggle for direction, caught between a hot Producer Price Index and weak retail sales data. If you had to sum up today's market action in one sentence, what would it be?",
+      "sources": [],
+      "time": [
+        795589,
+        807600
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "I'd summarize it as a market lost in the fog, with concerns about inflation and a potential economic slowdown coexisting. The higher-than-expected Producer Price Index weighed on the market with fears that the Fed might delay rate cuts. But at the same time, retail sales, a key barometer of consumption, came in below expectations, raising worries about an economic contraction. In the end, the market couldn't make a clear bet in either direction, closing mixed, with the Dow and S&P 500 down, while the Nasdaq managed to eke out a gain thanks to strength in a few tech stocks.",
+      "sources": [],
+      "time": [
+        808100,
+        842031
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "Amid these conflicting signals, what should investors be paying attention to going forward?",
+      "sources": [],
+      "time": [
+        842531,
+        847982
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "The immediate focus should be on the University of Michigan Consumer Sentiment index, which comes out tomorrow. This report shows how consumers are feeling about the economy, and it's become even more important given the recent hot inflation data. The key will be the short-term and long-term inflation expectations embedded within the index. If those inflation expectations start to rise again, it will deepen the Fed's dilemma and act as a headwind for the market. That's because it could be the worst possible combination: weakening consumer sentiment alongside unanchored inflation expectations.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417230",
+          "title": "US Michigan Consumer Sentiment (Mar) - Prel",
+          "date": "2024-03-15"
+        }
+      ],
+      "time": [
+        848482,
+        882813
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So consumer inflation expectations will be key. And next week, there's a major event that everyone is waiting for, right?",
+      "sources": [],
+      "time": [
+        883313,
+        891644
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, that's right. It's the March Federal Open Market Committee, or FOMC, decision on the 20th. Almost no expert expects a change in interest rates at this meeting. All eyes will be on the new Summary of Economic Projections released alongside the statement, especially the 'dot plot,' which shows the Fed officials' rate forecasts. The biggest question is whether the Fed will stick to its previous projection of three rate cuts this year, despite the recent string of hot inflation reports. If the dot plot is revised to show only two cuts, the market could take that as a hawkish signal and react with a significant shock.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417232",
+          "title": "US FOMC Rate Decision (Mar)",
+          "date": "2024-03-20"
+        }
+      ],
+      "time": [
+        892144,
+        925354
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So it seems volatility could continue until we get more clarity from the Fed. Finally, do you have any closing thoughts for our investors?",
+      "sources": [],
+      "time": [
+        925854,
+        935265
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market is currently in a tight tug-of-war between the hope for Fed rate cuts and the reality of stubborn inflation. In times like these, it's wise to avoid hasty predictions and instead carefully analyze the meaning of each new piece of economic data. It's crucial to wait and see what signals the Fed sends at next week's FOMC meeting and respond calmly. Rather than being swayed by short-term volatility, I'd suggest using this time to confirm the broader macroeconomic trends and the Fed's policy direction, and to review your own investment strategy.",
+      "sources": [],
+      "time": [
+        935765,
+        972456
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, thank you for that advice on the need for a cautious approach. That concludes our closing bell briefing for March 14th. Thank you.",
+      "sources": [],
+      "time": [
+        972956,
+        981807
+      ]
+    }
+  ]
+}
