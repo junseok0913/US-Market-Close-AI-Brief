@@ -1,0 +1,525 @@
+{
+  "date": "20260316",
+  "nutshell": "Oil prices plunge and stocks rally as Strait of Hormuz tensions ease.",
+  "user_tickers": [
+    "WDC"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the March 17th closing bell briefing. The New York stock market closed strong today with all major indices gaining ground, driven by a welcome tailwind from easing geopolitical risks.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up in one phrase: oil plunged and stocks rallied as tensions in the Strait of Hormuz eased. The Dow Jones Industrial Average gained 0.83%, and the S&P 500 was up 1.01%. The tech-heavy Nasdaq Composite showed the most strength, climbing 1.22%. What was particularly striking was the nearly 5% plunge in West Texas Intermediate crude oil prices in a single day. News that the U.S. government would allow some Iranian oil exports eased geopolitical tensions in the Middle East, stabilizing oil prices and significantly boosting overall investor sentiment.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#3104091bd94b2a64",
+          "title": "U.S. letting Iranian oil tankers through Strait of Hormuz, Bessent says"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the drop in oil prices was a major catalyst for the market. Was there another reason why the Nasdaq, in particular, showed such strong performance?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. Along with stable oil prices, positive news from the artificial intelligence sector fueled the rally in tech stocks. Nvidia's annual developer conference just kicked off, and anticipation for new AI chips and technologies is at a fever pitch. This lifted Nvidia and other semiconductor-related stocks, widening the Nasdaq's gains. So, the market had a powerful day, reacting to two pieces of good news at once: the easing of geopolitical risk and excitement over tech growth stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#27caa594ca6bd9a0",
+          "title": "Nvidia launches Groq 3 AI chip and CPU server aimed at Intel during GTC 2026"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it really came down to those two key drivers today: geopolitical stability and AI tech stocks. What are the main themes we'll be digging into?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, first we'll break down the oil price plunge and the market's relief rally brought on by easing tensions in the Middle East. Then, we'll take a closer look at the impact of the unrelenting AI investment frenzy on tech stocks.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point on easing geopolitical risk. Tensions around the Strait of Hormuz have cooled, causing oil to plunge and stocks to rally hard. Can you walk us through the background on that?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the whole story for the market today started with a single comment from U.S. Treasury Secretary Scott Bessent. In an interview with CNBC, Bessent revealed that the U.S. is effectively allowing Iranian oil tankers to pass through the Strait of Hormuz. That instantly dissolved the geopolitical uncertainty that had been weighing on the market. With the geopolitical risk premium gone, West Texas Intermediate crude prices plunged nearly 5% in a single day. The VIX, the market's fear gauge, tumbled more than 9% to the 23-level, showing a sharp stabilization in investor sentiment. Interestingly, despite the oil price drop, major energy companies like ExxonMobil and Chevron held up well, trading only slightly lower, because the overall buying pressure from hopes of easing inflation was so strong. On the other hand, Delta Air Lines stock clearly benefited, rising over 2% as a direct beneficiary of lower oil prices.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3104091bd94b2a64",
+          "title": "U.S. letting Iranian oil tankers through Strait of Hormuz, Bessent says"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "DAL",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "That's interesting that energy stocks held their ground even as oil plunged, while beneficiaries like airlines saw a bigger jump. Which specific sectors really led the market's celebration?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Yes, the impact of falling oil prices was clearly split by sector. The airline industry, which is expected to be the most direct beneficiary, is a prime example. Delta Air Lines gained nearly 2.5%, as expectations of lower fuel costs—a significant portion of their total revenue—were immediately priced into the stock. The energy sector, on the other hand, had a more complex reaction. The energy sector ETF, XLE, finished slightly up despite intraday volatility, and both ExxonMobil and Chevron also closed with small gains. This suggests that even with the direct headwind of falling oil prices, the strong recovery in overall risk appetite was enough to fend off a decline. Ultimately, the market staged a broad-based rally, focusing on the bigger picture: increased consumer spending power and lower corporate costs due to reduced energy expenses.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "DAL",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So, the expectation that lower oil prices will ease inflationary pressures is what lifted the entire market. What kind of impact could this have on the Fed's monetary policy?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's a very important point. This stabilization in oil prices could give the Fed significant policy flexibility. Secretary Bessent's comments are being interpreted as more than just allowing tanker passage; they signal the U.S. administration's intent to increase oil supply to help stabilize inflation. Since energy prices have an immediate impact on headline CPI figures, a sustained downtrend in oil strengthens the case for the Fed not to rush into more rate hikes. Of course, the Fed focuses more on core inflation, which excludes volatile food and energy, but a slowdown in headline inflation plays a crucial role in shifting market expectations. The reason the market reacted so strongly today, despite a lack of major economic data, is because investors took this as a sign that the Fed's burden in fighting inflation has been lightened.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3104091bd94b2a64",
+          "title": "U.S. letting Iranian oil tankers through Strait of Hormuz, Bessent says"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, could today's relief rally continue? I'm wondering if we can really trust that this geopolitical easing will last.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "In the short term, there's a good chance the positive momentum will continue. The market's volatility index has dropped significantly, risk appetite has returned, and most importantly, there's now hope that the biggest hurdle—inflation—could be lowered. However, we can't forget that the root of this issue is still geopolitical. Secretary Bessent's comment isn't an official lifting of sanctions or a policy change; it's more of a temporary allowance for the current situation. The political landscape in the Middle East can change at any moment, and with it, oil prices carry the potential risk of surging again. Therefore, it's best to view today's rally as a release of an excessive risk premium, while remaining cautious and continuing to verify the market's fundamentals through upcoming economic data and corporate earnings.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3104091bd94b2a64",
+          "title": "U.S. letting Iranian oil tankers through Strait of Hormuz, Bessent says"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, we'll have to keep a cautious eye on the geopolitical front. Now, let's turn to the other engine of today's rally: tech stocks. Nvidia's annual developer conference, GTC, was at the center of it all, wasn't it?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today's market saw a powerful synergy as the macro tailwind from easing Middle East tensions combined with excitement over AI technology. The Nasdaq led the gains, up 1.22%, and the S&P 500 also climbed over 1%. This positive mood was telegraphed even before the market opened, with tech-heavy futures contracts showing strength. The kickoff of Nvidia's GTC 2026 conference, in particular, was more than just a corporate event; it was a key driver of overall market sentiment. Investors, anticipating the next-generation chips and software CEO Jensen Huang would unveil, bought up related stocks, which in turn fueled a rally across the entire semiconductor sector. On top of that, the nearly 5% drop in WTI crude and stable 10-year Treasury yields created a favorable environment for growth stocks, further supporting the tech rally.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "article",
+          "pk": "id#ca4f9b0d973dbbb1",
+          "title": "Futures rise as tech stocks gain; Middle East conflict in focus"
+        },
+        {
+          "type": "article",
+          "pk": "id#12c52b7295c16d58",
+          "title": "Nvidia CEO set to reveal new chips and software at AI megaconference GTC"
+        },
+        {
+          "type": "article",
+          "pk": "id#cfe91cd9e441c9a6",
+          "title": "Oil prices dip below $100, stocks rise and Trump pushes on Strait of Hormuz"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "I heard several new technologies were unveiled at the conference. What were the announcements that the market paid closest attention to?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "The biggest headline was definitely the unveiling of the Groq 3 chip, a new language processing unit specialized for AI inference tasks. While existing graphics processing units handle both the training and execution of AI models, the Groq 3 is designed to focus specifically on inference—the process of running an already-trained model to generate answers, like with ChatGPT—making it much faster and more efficient. According to market research, the AI inference market is projected to grow to $250 billion by 2030, and Nvidia has made its intention to dominate this market clear. They also unveiled the Vera CPU server rack, targeting the data center CPU market currently dominated by Intel and Advanced Micro Devices. This signals their vision to evolve from a mere chipmaker into a comprehensive AI platform company.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#27caa594ca6bd9a0",
+          "title": "Nvidia launches Groq 3 AI chip and CPU server aimed at Intel during GTC 2026"
+        },
+        {
+          "type": "article",
+          "pk": "id#d32b1a0d4e537478",
+          "title": "The Artificial Intelligence (AI) Inference Market Could Reach $255 Billion by 2030. This Stock Is Best Positioned to Win."
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "article",
+          "pk": "id#12c52b7295c16d58",
+          "title": "Nvidia CEO set to reveal new chips and software at AI megaconference GTC"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "How did Nvidia's moves affect other related companies? Was there a so-called 'trickle-down' effect?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Absolutely. As Nvidia's tech roadmap was revealed, a wave of optimism spread throughout the AI ecosystem. Super Micro Computer, which supplies high-performance servers equipped with Nvidia's chips, saw its stock rise over 1% in anticipation. And on expectations of increased demand for high-bandwidth memory, which is essential for AI computing, Micron Technology's stock surged more than 5%. This coincided with news that tech giants like Meta plan to invest hundreds of billions in AI infrastructure this year, which acted as a positive signal for all companies involved in building data centers. Ultimately, Nvidia's announcements reaffirmed that the growth of the AI industry isn't confined to one company, but is driving the parallel growth of a massive industrial ecosystem spanning hardware, software, and data centers.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-17"
+        },
+        {
+          "type": "article",
+          "pk": "id#3fe8460e6ec92c8a",
+          "title": "Micron stock surges on new Taiwan factory investment, strong earnings expected on Wednesday"
+        },
+        {
+          "type": "article",
+          "pk": "id#2140c923675a26f0",
+          "title": "Meta Just Signed a $27 Billion Artificial Intelligence (AI) Deal With This Under-the-Radar Stock. Is Nebius a Buy for 2026?"
+        },
+        {
+          "type": "article",
+          "pk": "id#8432f7a3514f19f9",
+          "title": "1 Incredible AI Stock that Wall Street Thinks Can Soar 59% Over The Next Year"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "I see. So the strategy is to encompass the entire AI ecosystem, not just the chips. To wrap this up, could you summarize Nvidia's long-term vision as revealed at GTC?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "At this GTC, Nvidia once again emphasized the importance of its CUDA platform, a powerful software ecosystem for developers that goes beyond just selling hardware. This is Nvidia's key competitive advantage that rivals find hard to replicate, and it serves to lock in customers once they're in the ecosystem. We also saw a partnership strategy aimed at expanding their technology into various industries like data centers, consumer electronics, and telecommunications. In the end, Nvidia is making its vision clear: to become more than just the maker of the best AI chips, but a comprehensive solutions provider offering all the tools and platforms needed for AI development and operation. This integrated approach, covering both hardware and software, is seen as an expression of their confidence in setting the standard for the coming AI era.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#12cad6ea2eec49d2",
+          "title": "A Once-in-a-Decade Investment Opportunity: The Best Artificial Intelligence (AI) Stock to Buy in March"
+        },
+        {
+          "type": "article",
+          "pk": "id#e4fbfd9a52d00dfd",
+          "title": "The Smartest Artificial Intelligence (AI) Stock to Buy Before March Ends"
+        },
+        {
+          "type": "article",
+          "pk": "id#c608af019f1469e8",
+          "title": "Should You Forget Nvidia and Buy 2 Artificial Intelligence (AI) Stocks Instead?"
+        },
+        {
+          "type": "article",
+          "pk": "id#422461c7ae39baa0",
+          "title": "Best Artificial Intelligence (AI) Stock to Buy Now: Nvidia vs. Palantir"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Now that we've looked at the big picture of the AI ecosystem, let's zoom in on a notable individual company. First up is Western Digital. It had a volatile day but ended up closing strong, up nearly 1.5%. What is the market focusing on with this stock?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "WDC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-03-16"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, it seems the market is re-evaluating Western Digital not just as a storage device manufacturer, but as a key beneficiary of AI data infrastructure. According to a recent filing, their cloud segment revenue surged by 28% year-over-year, which is clear evidence of the explosive demand for large-scale data storage needed for AI training. The spin-off of its flash business, completed last year, has also been viewed positively, as it allows the company to focus on its high-margin HDD business. On top of that, the company has shown strong confidence by repurchasing over $1.1 billion of its own stock in six months, which further boosted investor sentiment and likely contributed to today's strong stock performance.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "The narrative of being a key part of AI infrastructure sounds very powerful, but are there any risks investors should be aware of behind this rapid growth?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's a crucial point. Behind the impressive growth story lies a structural risk: extreme customer concentration. A filing from January 30th, 2026, shows that just three customers account for 46% of total revenue. That's a serious level of dependency. This isn't so much a stable partnership as it is an unstable structure where the company's entire fate could hinge on the investment plans of a few giant cloud companies. In fact, the company itself states in its annual report the risk that major customers could develop their own storage solutions, so this isn't just a concern—it's a realistic threat.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-K",
+          "filed_date": "2025-08-14",
+          "accession_number": "0000106040-25-000038"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Having nearly half of your revenue tied to just three customers is definitely a concern. So how should we evaluate its recent earnings and current stock price?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "From a valuation perspective, a cautious approach seems warranted. While recently reported net income appears to have increased significantly, there's an accounting illusion at play. The net income figure includes a one-time, non-cash gain of $1.7 billion from the revaluation of its remaining stake after the SanDisk spin-off. This isn't cash earned from actual operations. If you exclude this one-time item, the adjusted price-to-earnings ratio is well over 41. That's quite high for a traditional hardware manufacturer, which is why some analysts argue the current stock price may be excessively pricing in the AI hype.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004207"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So to sum it up, we have a powerful growth driver in AI colliding head-on with extreme customer risk and valuation concerns.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Exactly. The expectation of benefiting from the AI data explosion is certainly a valid investment thesis. But it must be weighed against the fact that this growth is entirely dependent on a handful of customers, and that the valuation is quite steep once you strip out one-time gains. The current stock price seems to have priced in most of the positive growth narrative, while the potential risks, like the customer churn the company itself has acknowledged, could lead to a significant price correction if they materialize. This creates an asymmetric risk profile, suggesting that risk management is key at this point.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WDC",
+          "form": "10-K",
+          "filed_date": "2025-08-14",
+          "accession_number": "0000106040-25-000038"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So, how can we sum up today's market in a nutshell?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Well, today was a day for the market to catch its breath without any clear direction. While the major tech stocks that had been leading the market saw a slight pullback on profit-taking, previously overlooked cyclical value stocks bounced back, providing a floor for the indices. Ultimately, market participants took a wait-and-see approach ahead of key economic events next week, leading to a mixed close with the Dow up slightly and the Nasdaq finishing down.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So looking ahead to next week, what should investors be watching for?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Next week will be crucial for gauging the direction of the Fed's monetary policy. Towards the end of the week, we'll get housing market data and flash PMI numbers for both manufacturing and services. These indicators provide a direct look at the health of the U.S. economy, so the market will be searching for clues as to whether the Fed will continue its tightening stance or consider a change of pace. Depending on the results, we could see increased market volatility, so it's something to watch closely.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So in the end, it all comes back to the Fed's decision.",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's right. The biggest topic in the market right now is, without a doubt, interest rates. If this week's economic data comes in stronger than expected, it could increase concerns that the Fed will keep rates higher for longer to fight inflation, which would weigh on the market. On the other hand, if we see clear signs of an economic slowdown, it could spread relief that the Fed's tightening cycle is nearing its end, which could be a positive for stocks. Therefore, it's important to track both the data releases and any subsequent changes in commentary from Fed officials.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "And finally, do you have any advice for investors?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "In a period of high macroeconomic uncertainty, a strategy focused on confirmed data and corporate fundamentals is more important than investing based on hasty predictions. It seems advisable to maintain a long-term perspective of buying quality assets in stages, rather than being swayed by short-term market fluctuations. Also, maintaining a certain level of cash to prepare for the next opportunity while the market's direction is still uncertain can be a good risk management technique.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Yes, it sounds like a time for a cautious approach. Thank you for your insights today. That was the closing bell briefing for March 17th.",
+      "sources": []
+    }
+  ]
+}
