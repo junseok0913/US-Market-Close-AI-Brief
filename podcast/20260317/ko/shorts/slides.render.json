@@ -1,0 +1,227 @@
+{
+  "date": "20260318",
+  "lang": "ko",
+  "title": "엔비디아 1조 달러 비전 발표, 주가는 왜 하락했을까?",
+  "hook": "엔비디아가 1조 달러 비전을 발표했는데, 주가는 왜 0.7% 하락했을까요.",
+  "durationSeconds": 78.524,
+  "audioFile": "shorts20260317.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.371,
+      "eyebrow": "3월 18일 마감",
+      "headline": "NVDA 1조 달러 비전 발표",
+      "subheadline": "그런데 주가는 왜 하락했을까?",
+      "body": "엔비디아가 1조 달러 비전을 발표했는데, 주가는 왜 0.7% 하락했을까요.",
+      "bullets": [
+        "엔비디아가 1조 달러 비전을 발표했는데, 주가는 왜 0.7% 하락했을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "SOUN",
+        "UBER",
+        "^GSPC"
+      ],
+      "highlights": [
+        "NVDA -0.7%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 5.371,
+      "endSec": 27.822,
+      "eyebrow": "시장 요약",
+      "headline": "AI 모멘텀 속 증시 상승",
+      "subheadline": "S&P 500 +0.25% | NASDAQ +0.47%",
+      "body": "유가 급등 우려와 AI 기술주 기대감이 공존한 하루였습니다.",
+      "bullets": [
+        "3월 18일 미국 증시는 연준 회의 경계감 속 AI 모멘텀이 지속되며 상승 마감했습니다.",
+        "S&P 500은 0.25% 오른 6,716, 나스닥은 0.47% 상승한 22,479를 기록했고, 다우도 0.1% 올랐습니다."
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "S&P 500 6,716 (+0.25%)",
+        "NASDAQ 22,479 (+0.47%)"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 27.822,
+      "endSec": 76.673,
+      "eyebrow": "핵심 동인",
+      "headline": "유가 급등 vs AI 모멘텀",
+      "subheadline": "거시 불안감을 상쇄한 엔비디아발 AI 온기",
+      "body": "먼저 이란 분쟁으로 WTI 유가가 1.8% 넘게 올라 배럴당 95달러를 넘어서면서 인플레이션 우려가 커졌습니다. 이는 채권시장에 즉각 반영돼 10년물 국채금리가 4.2% 수준까지 올랐고, 연내 금리 인하 확률은 한 달 전 97%에서 68%까지 급락했습니다. 하지만 이런 거시적 불안감을 엔비디아발 AI 모멘텀이 상쇄했습니다. 엔비디아는 GTC 컨퍼런스에서 2027년까지 누적 매출 1조 달러라는 엄청난 청사진을 제시했습니다. 정…",
+      "bullets": [
+        "WTI 유가 1.8% 급등, 금리 인하 기대감 후퇴",
+        "NVDA는 하락했지만 AI 생태계 전반으로 온기 확산"
+      ],
+      "tickers": [
+        "NVDA",
+        "SOUN",
+        "CLF",
+        "UBER"
+      ],
+      "highlights": [
+        "1.8%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 76.673,
+      "endSec": 78.524,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "다음 마감 시황에서 뵙겠습니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "SOUN",
+        "UBER",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.371,
+      "text": "엔비디아가 1조 달러 비전을 발표했는데, 주가는 왜 0.7% 하락했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.371,
+      "endSec": 27.822,
+      "text": "3월 18일 미국 증시는 연준 회의 경계감 속 AI 모멘텀이 지속되며 상승 마감했습니다. S&P 500은 0.25% 오른 6,716, 나스닥은 0.47% 상승한 22,479를 기록했고, 다우도 0.1% 올랐습니다. 시장은 유가 급등으로 인한 인플레이션 우려와 AI 기술주에 대한 기대감…"
+    },
+    {
+      "id": 2,
+      "startSec": 27.822,
+      "endSec": 76.673,
+      "text": "먼저 이란 분쟁으로 WTI 유가가 1.8% 넘게 올라 배럴당 95달러를 넘어서면서 인플레이션 우려가 커졌습니다. 이는 채권시장에 즉각 반영돼 10년물 국채금리가 4.2% 수준까지 올랐고, 연내 금리 인하 확률은 한 달 전 97%에서 68%까지 급락했습니다. 하지만 이런 거시적 불안감을…"
+    },
+    {
+      "id": 3,
+      "startSec": 76.673,
+      "endSec": 78.524,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "article",
+      "label": "Oil climbs over 2% as Iran war halts supply",
+      "detail": "id#d0a01630da88987a"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "article",
+      "label": "How many rate cuts? Iran war upends Federal Reserve's n…",
+      "detail": "id#05b4398dba1b05b7"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia Makes Trillion-Dollar Forecast at Annual Product…",
+      "detail": "id#cbf0db5ee8e0e53a"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "article",
+      "label": "Why Nvidia Stock Just Dropped After Jumping Nearly 5%",
+      "detail": "id#24af2c33a0a9ce9c"
+    },
+    {
+      "type": "article",
+      "label": "Stock Market Today, March 16: SoundHound AI Rises After…",
+      "detail": "id#7269e74cf317de45"
+    },
+    {
+      "type": "article",
+      "label": "Uber, Nvidia plan robotaxi rollout in 28 cities startin…",
+      "detail": "id#1824f54eac6fd723"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 소폭 상승 마감",
+      "유가 급등으로 연준 금리 인하 기대감 후퇴",
+      "엔비디아, 1조 달러 비전 제시했으나 주가는 차익실현으로 하락",
+      "AI 생태계 전반으로 긍정적 모멘텀 확산"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "1조 달러 비전 발표"
+      },
+      {
+        "ticker": "SOUN",
+        "label": "사운드하운드",
+        "tag": "AI 생태계 확장 수혜"
+      },
+      {
+        "ticker": "UBER",
+        "label": "우버",
+        "tag": "로보택시 협력"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

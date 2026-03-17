@@ -1,0 +1,58 @@
+{
+  "date": "20260317",
+  "lang": "ko",
+  "audioFile": "shorts20260317.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 78.524,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.371,
+      "endSec": 5.371,
+      "speechDurationSec": 5.371,
+      "pauseAfterSec": 0.0,
+      "charCount": 41,
+      "text": "엔비디아가 1조 달러 비전을 발표했는데, 주가는 왜 0.7% 하락했을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.371,
+      "speechEndSec": 27.822,
+      "endSec": 27.822,
+      "speechDurationSec": 22.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 173,
+      "text": "3월 18일 미국 증시는 연준 회의 경계감 속 AI 모멘텀이 지속되며 상승 마감했습니다. S&P 500은 0.25% 오른 6,716, 나스닥은 0.47% 상승한 22,479를 기록했고, 다우도 0.1% 올랐습니다. 시장은 유가 급등으로 인한 인플레이션 우려와 AI 기술주에 대한 기대감이 공존하는 하루였습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 27.822,
+      "speechEndSec": 76.673,
+      "endSec": 76.673,
+      "speechDurationSec": 48.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 408,
+      "text": "먼저 이란 분쟁으로 WTI 유가가 1.8% 넘게 올라 배럴당 95달러를 넘어서면서 인플레이션 우려가 커졌습니다. 이는 채권시장에 즉각 반영돼 10년물 국채금리가 4.2% 수준까지 올랐고, 연내 금리 인하 확률은 한 달 전 97%에서 68%까지 급락했습니다. 하지만 이런 거시적 불안감을 엔비디아발 AI 모멘텀이 상쇄했습니다. 엔비디아는 GTC 컨퍼런스에서 2027년까지 누적 매출 1조 달러라는 엄청난 청사진을 제시했습니다. 정작 엔비디아 주가는 기대감 선반영에 따른 차익실현 매물로 0.7% 하락했지만, 그 온기는 AI 생태계 전반으로 퍼져나갔습니다. 차량용 음성 AI 플랫폼을 선보인 사운드하운드는 3% 넘게 상승했고, 우버와의 로보택시 협력 소식 등 AI 기술이 산업 전반으로 확산된다는 기대감이 기술주 상승을 이끌었습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 76.673,
+      "speechEndSec": 78.524,
+      "endSec": 78.524,
+      "speechDurationSec": 1.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

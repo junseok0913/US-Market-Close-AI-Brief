@@ -1,0 +1,112 @@
+{
+  "date": "20260318",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 엔비디아, 부킹 홀딩스",
+  "hook": "AI 잔치는 계속되는데, 정작 주인공 주가는 왜 빠졌을까요?",
+  "durationSeconds": 35.342,
+  "audioFile": "shortsfirm20260317.mp3",
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "AI 잔치는 계속되는데, 정작 주인공 주가는 왜 빠졌을까요?"
+    },
+    {
+      "id": 1,
+      "name": "company_1",
+      "startSec": 3.0,
+      "endSec": 20.771,
+      "text": "엔비디아는 연례 개발자 컨퍼런스 GTC에서 2027년까지 1조 달러 매출 기회라는 엄청난 청사진을 제시했습니다. 하지만 주가는 기대감 선반영과 차익실현 매물에 '뉴스에 파는' 전형적인 모습을 보이며 0.7% 하락 마감했습니다."
+    },
+    {
+      "id": 2,
+      "name": "company_2",
+      "startSec": 20.771,
+      "endSec": 32.342,
+      "text": "부킹 홀딩스는 AI 기반 '커넥티드 트립' 생태계로의 진화 기대감에 3.48% 상승했습니다. 하지만 유럽연합의 디지털 시장법 규제와 스페인의 거액 벌금 등 구조적 리스크가 명확한 위협으로 부상하고 있습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 32.342,
+      "endSec": 35.342,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "엔비디아, GTC에서 1조 달러 매출 비전 제시",
+      "기대감 선반영 및 차익실현으로 엔비디아 주가는 0.7% 하락",
+      "부킹 홀딩스, '커넥티드 트립' 성장 기대감에 3.48% 상승",
+      "부킹 홀딩스, 유럽의 DMA 규제 및 거액 벌금 등 리스크 부각"
+    ],
+    "featuredTickers": [
+      "NVDA",
+      "BKNG"
+    ],
+    "companyMoves": [
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA Corporation",
+        "as_of": "2026-03-17",
+        "day_change_pct": -0.704076266961684,
+        "day_change_display": "-0.70%",
+        "month_change_pct": -0.48137678166668696,
+        "month_change_display": "-0.48%",
+        "market_cap": 4421808291840.0,
+        "market_cap_display": "$4.42T",
+        "pe_ratio": 37.2045,
+        "pe_ratio_display": "37.20",
+        "pbr": 28.11032,
+        "pbr_display": "28.11",
+        "roe": 101.485,
+        "roe_display": "101.48%",
+        "reason": "젠슨 황 최고경영자는 현재 주력 제품인 블랙웰과 차세대 아키텍처인 베라 루빈을 통해 2027년까지 누적 매출 기회가 1조 달러에 달할 것이라는 엄청난 청사진을 제시했으나, 주가는 기대감 선반영에 따른 차익실현 매물로 하락 마감했습니다.",
+        "spoken_text": "엔비디아는 연례 개발자 컨퍼런스 GTC에서 2027년까지 1조 달러 매출 기회라는 엄청난 청사진을 제시했습니다. 하지만 주가는 기대감 선반영과 차익실현 매물에 '뉴스에 파는' 전형적인 모습을 보이며 0.7% 하락 마감했습니다.",
+        "slide_points": [
+          "1D -0.70% / 1M -0.48%",
+          "GTC 컨퍼런스서 1조 달러 매출 비전 제시",
+          "기대감 선반영 및 차익실현 매물로 주가 하락"
+        ],
+        "valuation_note": "시총 $4.42T, PER 37.20, PBR 28.11, ROE 101.48%",
+        "move_summary": "GTC의 장밋빛 전망에도 불구, 차익실현 매물에 하락"
+      },
+      {
+        "ticker": "BKNG",
+        "name": "Booking Holdings Inc. Common St",
+        "as_of": "2026-03-17",
+        "day_change_pct": 3.4779725674340733,
+        "day_change_display": "+3.48%",
+        "month_change_pct": 7.28710750500976,
+        "month_change_display": "+7.29%",
+        "market_cap": 143193243648.0,
+        "market_cap_display": "$143.19B",
+        "pe_ratio": 26.807856,
+        "pe_ratio_display": "26.81",
+        "pbr": -25.400564,
+        "pbr_display": "-25.40",
+        "roe": null,
+        "roe_display": "N/A",
+        "reason": "AI 기술 기반의 '커넥티드 트립' 생태계로 진화하는 성장성에 대한 기대감으로 주가가 상승했으나, 유럽연합의 디지털 시장법(DMA) 규제와 스페인의 거액 벌금 등 구조적 리스크 또한 부각되었습니다.",
+        "spoken_text": "부킹 홀딩스는 AI 기반 '커넥티드 트립' 생태계로의 진화 기대감에 3.48% 상승했습니다. 하지만 유럽연합의 디지털 시장법 규제와 스페인의 거액 벌금 등 구조적 리스크가 명확한 위협으로 부상하고 있습니다.",
+        "slide_points": [
+          "1D +3.48% / 1M +7.29%",
+          "AI 기반 '커넥티드 트립' 성장 기대감",
+          "EU 디지털 시장법(DMA) 규제 리스크 부각"
+        ],
+        "valuation_note": "시총 $143.19B, PER 26.81, PBR -25.40, ROE N/A",
+        "move_summary": "'커넥티드 트립' 성장 기대감과 유럽 규제 리스크 공존"
+      }
+    ]
+  },
+  "notes": {
+    "description": "Replace slides.render.json with your custom slide design payload when ready.",
+    "requiredSchema": [
+      "slides[]: phase/theme/startSec/endSec/eyebrow/headline/subheadline/body/bullets/tickers/highlights",
+      "captions[]: id/startSec/endSec/text",
+      "meta.keyPoints/meta.featuredTickers/meta.sceneCount"
+    ]
+  }
+}

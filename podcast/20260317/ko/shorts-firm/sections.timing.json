@@ -1,0 +1,39 @@
+{
+  "date": "20260317",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260317.mp3",
+  "sectionOrder": [
+    "nvda",
+    "bkng"
+  ],
+  "ttsCallCount": 2,
+  "totalDurationSeconds": 35.342,
+  "sections": [
+    {
+      "id": 0,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 20.771,
+      "endSec": 20.771,
+      "speechDurationSec": 20.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 160,
+      "text": "AI 잔치는 계속되는데, 정작 주인공 주가는 왜 빠졌을까요? 엔비디아는 연례 개발자 컨퍼런스 GTC에서 2027년까지 1조 달러 매출 기회라는 엄청난 청사진을 제시했습니다. 하지만 주가는 기대감 선반영과 차익실현 매물에 '뉴스에 파는' 전형적인 모습을 보이며 0.7% 하락 마감했습니다."
+    },
+    {
+      "id": 1,
+      "name": "bkng",
+      "ticker": "BKNG",
+      "kind": "company",
+      "startSec": 20.771,
+      "speechEndSec": 35.342,
+      "endSec": 35.342,
+      "speechDurationSec": 14.571,
+      "pauseAfterSec": 0.0,
+      "charCount": 131,
+      "text": "부킹 홀딩스는 AI 기반 '커넥티드 트립' 생태계로의 진화 기대감에 3.48% 상승했습니다. 하지만 유럽연합의 디지털 시장법 규제와 스페인의 거액 벌금 등 구조적 리스크가 명확한 위협으로 부상하고 있습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
