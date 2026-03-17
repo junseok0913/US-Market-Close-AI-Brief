@@ -1,0 +1,579 @@
+{
+  "date": "20260317",
+  "nutshell": "AI momentum continues amid caution ahead of the Fed meeting.",
+  "user_tickers": [
+    "BKNG"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for March 18th. The market finished higher again today. How would you sum up the overall mood?",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, today's market can be summed up as 'AI momentum continues amid caution ahead of the Fed meeting.' The major indices extended their gains for a second straight day. The S&P 500 rose 0.25% to close at 6,716, while the tech-heavy Nasdaq Composite gained 0.47% to finish at 22,479. The Dow Jones Industrial Average also edged up about 0.1% to end the day at 46,993. With the Federal Open Market Committee, or FOMC, meeting kicking off today, investors were largely in a wait-and-see mode, but positive news from Nvidia's annual conference breathed life into the market, especially among tech stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "article",
+          "pk": "id#63b87c1676b6db9e",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise for second day in a row with Fed decision on deck"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So we have these two opposing forces clashing: caution over the Fed meeting and the AI momentum. What specifically should we be watching?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's right. On the macro side, concerns about inflation are growing as oil prices rise again due to the conflict with Iran. West Texas Intermediate crude jumped over 1.8%, crossing the $95 per barrel mark. This is a factor that could make the Fed more cautious about cutting rates. On the other hand, at the micro level, Nvidia sparked investor enthusiasm for related tech stocks by unveiling its next-generation AI chip and a rosy future outlook at its developer conference. However, Nvidia's own stock, which had high expectations, actually fell 0.7% as some profit-taking set in.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d0a01630da88987a",
+          "title": "Oil climbs over 2% as Iran war halts supply"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, let's get into the details of the key factors that moved the market today.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. We'll look at the market through two main themes today. First, we'll analyze how the caution ahead of the Fed's policy meeting and geopolitical risks impacted the market. And then, we'll dive into the excitement around AI tech stocks sparked by Nvidia's GTC conference and the actual stock price reactions.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first theme you mentioned: the Fed's policy meeting and geopolitical risks. Please break that down for us.",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, the market showed extreme caution just a day before the Fed's decision. The wild card here is the conflict with Iran, which is completely shaking up the Fed's policy path. With WTI crude back above $95 a barrel, inflation fears were reignited. This was immediately reflected in the bond market, with the 10-year Treasury yield climbing to around 4.2 percent. This situation also fueled a flight to safety, pushing the U.S. Dollar Index to a level approaching 100. Although the S&P 500 managed to close slightly higher, a look inside the market reveals a strong wait-and-see attitude among investors, with the energy sector being the only standout performer, benefiting from the rise in oil prices.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b27b3b3910ed387b",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise as oil tops $100 again, Fed meeting kicks off"
+        },
+        {
+          "type": "article",
+          "pk": "id#ff6c71c8359791e3",
+          "title": "Why oil shocks turn markets into a game of whack-a-mole"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "How exactly is the rise in oil prices expected to affect the Fed's rate cut path? It seems like market expectations have shifted significantly.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's right. The market sentiment, which just a few weeks ago was anticipating a mid-year rate cut, has completely reversed. According to the CME FedWatch Tool, the probability of a rate cut this year has dropped from 97 percent a month ago to around 68 percent now, with the timing pushed back to October or December. All eyes are now on the dot plot to be released tomorrow. There's even talk that Fed officials might revise their forecast from one rate cut this year to none at all. The surge in oil prices due to the Iran situation is reviving the specter of stagflation for the Fed—a worst-case scenario where they have to worry about both inflation and a recession simultaneously, making their rate decision even more difficult.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#34e1918f8b199d5e",
+          "title": "The Federal Reserve's Two-Day Policy Meeting Starts Today. Here's What You Need to Know"
+        },
+        {
+          "type": "article",
+          "pk": "id#05b4398dba1b05b7",
+          "title": "How many rate cuts? Iran war upends Federal Reserve's next steps"
+        },
+        {
+          "type": "article",
+          "pk": "id#587abb2e6dd67014",
+          "title": "Federal Reserve live coverage: Fed expected to hold rates steady, offer updated outlook amid Iran war"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "Amid all this uncertainty, what moves did investors make? Did we see a flight to safety?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, while the indices were quiet, the flow of money showed a clear direction. The most notable move was the strength in the energy sector. The energy sector ETF rose again today, hitting a new yearly high, as capital flowed into direct beneficiaries of the oil price surge. Gold, a traditional safe-haven asset, also held steady around the $5,000 per ounce level, absorbing demand for both geopolitical risk and inflation hedging. Additionally, the volatility index, which spiked above 24 early in the session before closing around 22, remains elevated, showing that investors are still on guard against downside risk. Overall, beneath the market's surface, a clear asset reallocation was taking place, centered on the twin themes of risk aversion and inflation protection.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b71c8dc3c5e8931e",
+          "title": "Energy sector keeps asserting itself as a market leader: Chart of the Day"
+        },
+        {
+          "type": "article",
+          "pk": "id#6d206df695b03529",
+          "title": "Stock-Market Euphoria Fades as Investors Turn Bearish, BofA Says"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, it really comes down to the Fed's dot plot and Chair Powell's comments on Wednesday. Those will be the most critical variables for the market's short-term direction.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Exactly. The market is essentially holding its breath, waiting for the Fed's official statement. Investment banks like Goldman Sachs are warning that this oil shock could have a greater impact on the real economy by hitting refined products like diesel even harder than crude itself. Therefore, the market will be hanging on every word from Chair Powell at the press conference, listening for how he assesses the impact of rising oil prices on the inflation outlook and what that implies for future rate policy. The market's direction will likely be determined by tomorrow's announcement.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c9a76c63f760659e",
+          "title": "Goldman Sachs Warns Oil’s Biggest Shock Will Hurt Fuels Most"
+        },
+        {
+          "type": "article",
+          "pk": "id#5fcc3dddbac5100c",
+          "title": "Futures slip as oil prices fuel inflation worries ahead of Fed meeting"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, even with all this caution hanging over the market, there was a force driving tech stocks higher: news from Nvidia's GTC conference. Let's dive into the specifics of what was announced that captured so much market attention.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "This GTC conference really cemented Nvidia's status as the dominant player in the AI era. CEO Jensen Huang laid out a massive blueprint, forecasting a cumulative revenue opportunity of $1 trillion by 2027 through its current Blackwell and next-generation Vera Rubin architectures. This doubles the $500 billion forecast for 2026 that was presented just a few months ago, suggesting an explosive acceleration in AI infrastructure investment. This optimism was the backdrop for the S&P 500's 0.25% and the Nasdaq's 0.47% gains. The company captured the market's imagination by not just improving chip performance, but also by announcing plans to build an AI ecosystem that expands across all industries, including robotics, autonomous driving, and healthcare.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#cbf0db5ee8e0e53a",
+          "title": "Nvidia Makes Trillion-Dollar Forecast at Annual Product Expo"
+        },
+        {
+          "type": "article",
+          "pk": "id#08a125933130d590",
+          "title": "Jensen just put Nvidia’s Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere"
+        },
+        {
+          "type": "article",
+          "pk": "id#c621add93441b3c0",
+          "title": "Nvidia Investors Just Got Incredible News from CEO Jensen Huang: 2 Highlights from GTC"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-01",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "A trillion dollars is a truly staggering number. But despite that rosy outlook, Nvidia's stock actually closed down. How should we interpret that?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "It can be seen as a classic case of 'buy the rumor, sell the news.' Nvidia's stock has seen a tremendous run-up over the past year, pricing in a lot of this optimism. In fact, the stock surged nearly 4.8% in early trading right after the GTC announcement, but a wave of profit-taking quickly followed, leading to a 0.7% loss at the close. This suggests that while the GTC announcements were impressive, market participants felt they weren't enough of a 'surprise' to push the already high-flying stock even further. Some analysts also believe that a sense of caution about the sustainability of massive AI investments, or the so-called AI bubble, also played a role.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#24af2c33a0a9ce9c",
+          "title": "Why Nvidia Stock Just Dropped After Jumping Nearly 5%"
+        },
+        {
+          "type": "article",
+          "pk": "id#86fde28379d80204",
+          "title": "Why Nvidia (NVDA) Stock Is Up Today"
+        },
+        {
+          "type": "article",
+          "pk": "id#6c503594440fb0dd",
+          "title": "Billionaire Philippe Laffont Has Sold Shares of Nvidia in 10 of the Last 11 Quarters -- What Does He Know That Wall Street Doesn't?"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So Nvidia itself took a breather, but it seems like the positive energy from GTC must have had an impact on other related companies.",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, that's right. Nvidia's vision created a positive ripple effect across the entire AI ecosystem. For example, SoundHound AI, which showcased its in-vehicle voice AI platform at GTC, saw its stock jump over 3%, grabbing the market's attention. Furthermore, news that Nvidia is partnering with Uber to deploy robotaxis in 28 cities by 2028, and that Swiss pharmaceutical giant Roche is adopting Nvidia chips on a large scale for drug discovery, are examples of how AI technology is spreading across all sectors, not just a specific industry. This has the effect of boosting the growth potential of countless software and service companies that build their businesses on Nvidia's chips.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7269e74cf317de45",
+          "title": "Stock Market Today, March 16: SoundHound AI Rises After Debuting On-Device Car Assistant at Nvidia GTC"
+        },
+        {
+          "type": "article",
+          "pk": "id#1824f54eac6fd723",
+          "title": "Uber, Nvidia plan robotaxi rollout in 28 cities starting next year"
+        },
+        {
+          "type": "article",
+          "pk": "id#f35a56e12aade076",
+          "title": "Roche ramps up AI computing capacity with Nvidia chip expansion"
+        },
+        {
+          "type": "article",
+          "pk": "id#fa305b12ec515b0c",
+          "title": "This Artificial Intelligence (AI) Stock Has a $19.4 Billion Microsoft Deal, a $3 Billion Meta Deal, and Now a $2 Billion Nvidia Investment -- Is It a Buy for 2026?"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Okay, so we've covered the macro trends and the major theme of AI that moved the market. Now let's zoom in on some individual stocks that caught investors' attention. Booking Holdings had a notable rally today, closing up over 3%. What were the positive factors at play?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BKNG",
+          "start_date": "2026-03-17",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, today's stock gain is a sign that the market is focusing on Booking Holdings' future growth potential. Investors are starting to see the company not just as a simple accommodation booking platform, but as an innovative company evolving into a 'Connected Trip' ecosystem powered by AI, encompassing flights, rental cars, and local attractions. In fact, its 2025 results showed it's successfully transforming its business, with flight bookings growing explosively by 37% and attractions bookings by 80%. Additionally, the fact that gross bookings for its 'merchant model,' where it controls the payment process directly, increased by 24.8% was another factor that led to a positive assessment of the company's strengthening market dominance.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "That evolution into an AI-powered, all-in-one travel platform certainly sounds like a compelling growth driver. But are there any hidden risks behind this rosy outlook? There's been some talk about troubling regulatory moves in Europe.",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "That's a sharp point. The biggest structural risk Booking Holdings faces right now is regulation from the European Union. Specifically, the Digital Markets Act, or DMA, directly threatens its key competitive advantage: the 'price parity' clause. This clause was a powerful tool that prevented hotels from offering cheaper rooms on other platforms, but its power is being weakened by the DMA. This is more than just a fine; it's a fundamental threat that could erode the company's pricing power and long-term profitability. In fact, the company acknowledged in its 10-K report that it has changed its business practices to comply with the DMA and that this could adversely affect its business.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So you're saying the regulation could shake the very foundation of their business model. Should we see the massive fine imposed in Spain as part of this trend?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Yes, the roughly 485 million euro fine from Spain's competition authority is a clear signal that this regulatory risk is becoming a reality. But the more serious issue is that this isn't a one-off event. According to the 10-K report, similar investigations are happening simultaneously across Europe, including in Switzerland, France, Greece, and Hungary. This signifies the beginning of a systemic risk across the entire continent, which could lead to unpredictable legal costs and additional fines for years to come. While its massive annual cash generation of $9.4 billion is significant, this structural threat could permanently damage the company's long-term earnings power, suggesting a time for risk management.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So, it seems the market is cheering for the future growth potential of the 'Connected Trip,' but lurking behind that is the clear and present danger of tightening regulation in Europe.",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's right. The current stock movement suggests that optimism about the future growth story is outweighing concerns about regulatory risk. While the growth vision is very compelling, it's still a future possibility that hasn't been fully realized. On the other hand, the regulatory risk is a clear threat, stated in the company's own filings, that has already materialized and is likely to intensify. Therefore, a careful analysis is needed to determine if the current stock price fully reflects this structural risk to its core business model.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        },
+        {
+          "type": "chart",
+          "ticker": "BKNG",
+          "start_date": "2026-02-15",
+          "end_date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Alright, so today, ahead of the Fed's FOMC meeting, tech stocks showed strength, leading all three major indices to close higher. Now, all eyes are on the economic events scheduled for this week.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2024-03-18",
+          "end_date": "2024-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2024-03-18",
+          "end_date": "2024-03-18"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's right. This is a pivotal week. The most important event is the FOMC outcome on Wednesday, the 20th. While the market expects rates to be held steady, investors are more focused on the Fed's guidance for the path of future rate cuts. The biggest point of interest is whether the dot plot, which shows the rate forecasts of Fed officials, will maintain the projection for three rate cuts this year. If the median of the dot plot is revised upward, the chances of a June rate cut, which the market has been hoping for, could diminish significantly.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417233",
+          "title": "Fed Interest Rate Decision",
+          "date": "2024-03-20"
+        },
+        {
+          "type": "event",
+          "id": "417231",
+          "title": "FOMC Economic Projections",
+          "date": "2024-03-20"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So it's less about the rate decision itself and more about the dot plot and Chair Powell's comments that will set the market's direction. Besides the FOMC, are there any other indicators to watch?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417234",
+          "title": "FOMC Press Conference",
+          "date": "2024-03-20"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, it's also important to watch the economic data coming out before and after the FOMC meeting. First, on Tuesday the 19th, we get the February Housing Starts report. The housing market is one of the most sensitive sectors to interest rates, and this report will give us a look at how the recent rise in mortgage rates has affected the market. This could serve as a reference for the Fed as it assesses other parts of the economy. A result that significantly deviates from market expectations could increase market volatility.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417228",
+          "title": "US Housing Starts (MoM)",
+          "date": "2024-03-19"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So the housing data will give us a temperature check on the economy. And there's another important report scheduled for Thursday, right?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's right. On Thursday the 21st, we'll get the preliminary March Manufacturing and Services PMI data from S&P Global. This is considered a leading indicator because it's based on surveys of corporate purchasing managers, providing one of the earliest snapshots of the economy's health. It will give us a glimpse into whether the U.S. economy's recent solid momentum continued into March or if signs of a slowdown are emerging. A key point to watch will be whether the Manufacturing PMI can remain above 50, the line that separates expansion from contraction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417238",
+          "title": "S&P Global US Manufacturing PMI (Flash)",
+          "date": "2024-03-21"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So it's going to be a busy week, checking both the Fed's policy direction and key economic data. Do you have any final thoughts for our listeners?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "The market has been rallying recently, pricing in expectations of Fed rate cuts. However, with recent inflation data still coming in hot, uncertainty is creeping back in. It's important to keep in mind that if the Fed sends a more hawkish signal than expected at this FOMC meeting, market volatility could increase. Therefore, rather than focusing on short-term predictions, it's a time to consistently monitor the trends in key economic data and adopt a strategy that responds to the market's broader direction.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Those are some important points to consider. That's all for our March 18th closing bell briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}
