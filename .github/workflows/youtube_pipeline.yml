@@ -275,11 +275,9 @@ jobs:
           chmod +x ./run_youtube.sh
 
           ARGS=("$TARGET_DATE" "--lang" "$LANG" "--start-from" "$START_FROM" "--privacy" "$PRIVACY")
+          ARGS+=(--no-upload)
           if [[ "$OVERWRITE" == "true" ]]; then
             ARGS+=(--overwrite)
-          fi
-          if [[ "$UPLOAD" == "false" ]]; then
-            ARGS+=(--no-upload)
           fi
           if [[ -n "$PREVIEW_SECONDS" ]]; then
             ARGS+=(--preview-seconds "$PREVIEW_SECONDS")
@@ -287,6 +285,80 @@ jobs:
 
           echo "Running: ./run_youtube.sh ${ARGS[*]}"
           ./run_youtube.sh "${ARGS[@]}"
+
+      - name: Upload shorts video to YouTube
+        if: success() && steps.params.outputs.remotion_only != 'true' && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          SHORTS_MP4: ${{ steps.params.outputs.shorts_mp4 }}
+          SHORTS_THUMBNAIL: ${{ steps.params.outputs.shorts_thumbnail }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f "$SHORTS_MP4" ]]; then
+            echo "Rendered shorts MP4 not found: $SHORTS_MP4" >&2
+            exit 1
+          fi
+
+          UPLOAD_ARGS=(
+            --file "$SHORTS_MP4"
+            --date "$TARGET_DATE"
+            --lang "$LANG"
+            --privacy "$PRIVACY"
+          )
+          if [[ -f "$SHORTS_THUMBNAIL" ]]; then
+            UPLOAD_ARGS+=(--thumbnail "$SHORTS_THUMBNAIL")
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
+
+      - name: Upload shorts-firm video to YouTube
+        if: success() && steps.params.outputs.remotion_only != 'true' && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          SHORTS_FIRM_MP4: ${{ steps.params.outputs.shorts_firm_mp4 }}
+          SHORTS_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_firm_thumbnail }}
+          SHORTS_FIRM_DELAY_SECONDS: ${{ vars.YOUTUBE_SHORTS_FIRM_DELAY_SECONDS || '3600' }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f "$SHORTS_FIRM_MP4" ]]; then
+            echo "Rendered shorts-firm MP4 not found: $SHORTS_FIRM_MP4" >&2
+            exit 1
+          fi
+          if ! [[ "$SHORTS_FIRM_DELAY_SECONDS" =~ ^[0-9]+$ ]]; then
+            echo "Invalid SHORTS_FIRM_DELAY_SECONDS: $SHORTS_FIRM_DELAY_SECONDS" >&2
+            exit 1
+          fi
+
+          UPLOAD_ARGS=(
+            --file "$SHORTS_FIRM_MP4"
+            --date "$TARGET_DATE"
+            --lang "$LANG"
+          )
+          if [[ -f "$SHORTS_FIRM_THUMBNAIL" ]]; then
+            UPLOAD_ARGS+=(--thumbnail "$SHORTS_FIRM_THUMBNAIL")
+          fi
+
+          if [[ "$PRIVACY" == "public" ]]; then
+            SHORTS_FIRM_MTIME="$(stat -c %Y "$SHORTS_FIRM_MP4")"
+            SHORTS_FIRM_PUBLISH_AT="$(date -u -d "@$((SHORTS_FIRM_MTIME + SHORTS_FIRM_DELAY_SECONDS))" +"%Y-%m-%dT%H:%M:%SZ")"
+            echo "Scheduling shorts-firm publish at ${SHORTS_FIRM_PUBLISH_AT} UTC (delay=${SHORTS_FIRM_DELAY_SECONDS}s)"
+            UPLOAD_ARGS+=(--privacy private --publish-at "$SHORTS_FIRM_PUBLISH_AT")
+          else
+            echo "PRIVACY=${PRIVACY}; uploading shorts-firm without delayed public schedule."
+            UPLOAD_ARGS+=(--privacy "$PRIVACY")
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
 
       - name: Upload YouTube artifacts
         if: success() && steps.params.outputs.remotion_only != 'true'

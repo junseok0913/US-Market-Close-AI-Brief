@@ -53,11 +53,21 @@ function resolveDurationSeconds(episode) {
 }
 
 function detectBrowserExecutable() {
-  // Prefer Remotion's default browser unless the user explicitly pins one.
-  const pinned = process.env.REMOTION_BROWSER_EXECUTABLE;
-  if (pinned && fs.existsSync(pinned)) {
-    return pinned;
+  const candidates = [
+    process.env.SHORTS_THEME_FIRM_REMOTION_BROWSER_EXECUTABLE,
+    process.env.REMOTION_BROWSER_EXECUTABLE,
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+  ];
+
+  for (const candidate of candidates) {
+    if (candidate && fs.existsSync(candidate)) {
+      return candidate;
+    }
   }
+
   return "";
 }
 
@@ -94,7 +104,7 @@ function main() {
     ),
   );
   const entryPoint = args["entry-point"] || "remotion/index.ts";
-  const compositionId = args["composition-id"] || "ShortsFirmComposition";
+  const compositionId = args["composition-id"] || "ShortsThemeFirmComposition";
   const includeAudio = args["no-audio"] ? false : true;
   const logLevel = String(args.log || process.env.REMOTION_LOG_LEVEL || "info").trim();
   const browserExecutable = args["browser-executable"] || detectBrowserExecutable();

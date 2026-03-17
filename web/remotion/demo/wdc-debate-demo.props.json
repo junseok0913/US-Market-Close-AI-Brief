@@ -1,0 +1,94 @@
+{
+  "date": "20260313",
+  "ticker": "WDC",
+  "durationSeconds": 60,
+  "audioSrc": "audio/demo/wdc-debate-20260313.mp3",
+  "hook": {
+    "eyebrow": "WDC / 60s Debate",
+    "headlineTop": "AI HERO",
+    "headlineBottom": "OR BUBBLE?",
+    "subheadline": "클라우드 성장 28%와 고객 집중 43%가 정면 충돌했습니다."
+  },
+  "marketPulse": {
+    "headline": "시장 전체는 하락, 공포와 유가가 튀었습니다",
+    "metrics": [
+      {
+        "label": "NASDAQ",
+        "value": "-0.93%",
+        "detail": "기술주 압박",
+        "tone": "down"
+      },
+      {
+        "label": "OIL",
+        "value": "$98+",
+        "detail": "유가 급등",
+        "tone": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "27+",
+        "detail": "공포 확대",
+        "tone": "up"
+      }
+    ]
+  },
+  "debateBoard": {
+    "headline": "3라운드 12개 의견 중 7개가 SELL",
+    "verdict": "SELL",
+    "confidence": 0.8,
+    "counts": {
+      "buy": 4,
+      "hold": 1,
+      "sell": 7
+    },
+    "signals": [
+      {
+        "label": "FUNDAMENTAL",
+        "action": "SELL",
+        "confidence": 0.9
+      },
+      {
+        "label": "GROWTH",
+        "action": "BUY",
+        "confidence": 0.9
+      },
+      {
+        "label": "RISK",
+        "action": "HOLD",
+        "confidence": 0.5
+      },
+      {
+        "label": "SENTIMENT",
+        "action": "SELL",
+        "confidence": 0.85
+      }
+    ]
+  },
+  "storySplit": {
+    "leftTitle": "WHY BULLS BUY",
+    "leftValue": "28%",
+    "leftSubtitle": "클라우드 매출 급증",
+    "leftBullets": [
+      "AI 인프라 수요가 WDC를 직접 밀어올렸습니다.",
+      "최근 분기 매출은 전년 대비 25% 증가했습니다.",
+      "약한 시장에서도 WDC는 +4.25% 상승했습니다."
+    ],
+    "rightTitle": "WHY BEARS SELL",
+    "rightValue": "43%",
+    "rightSubtitle": "상위 3개 고객 매출 비중",
+    "rightBullets": [
+      "소수 고객의 CAPEX 조정이 실적에 직격탄이 됩니다.",
+      "토론 결론은 안전마진 부족, 하방 리스크 우세였습니다.",
+      "성장은 강하지만 구조는 취약하다는 평가입니다."
+    ]
+  },
+  "finale": {
+    "headline": "WDC는 강한 성장주지만\n토론의 최종 결론은 SELL",
+    "bullets": [
+      "AI 수요는 진짜지만",
+      "고객 집중도는 너무 높고",
+      "현재 가격은 낙관을 과하게 반영했습니다"
+    ],
+    "cta": "Debate demo / 2026-03-13"
+  }
+}

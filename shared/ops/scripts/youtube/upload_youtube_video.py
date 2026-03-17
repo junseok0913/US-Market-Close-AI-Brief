@@ -15,7 +15,7 @@ import mimetypes
 import os
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -77,6 +77,25 @@ def _format_dotted_date(date_yyyymmdd: str) -> str:
     """Convert YYYYMMDD -> YYYY.M.D (no zero padding for month/day)."""
     dt = datetime.strptime(date_yyyymmdd, "%Y%m%d")
     return f"{dt.year}.{dt.month}.{dt.day}"
+
+
+def _normalize_publish_at(raw_value: str) -> str:
+    publish_at = raw_value.strip()
+    if not publish_at:
+        raise ValueError("publishAt must not be empty.")
+
+    iso_value = f"{publish_at[:-1]}+00:00" if publish_at.endswith("Z") else publish_at
+    try:
+        parsed = datetime.fromisoformat(iso_value)
+    except ValueError as exc:
+        raise ValueError(
+            "Invalid publishAt format. Use ISO 8601 with timezone, for example 2026-03-18T16:00:00Z."
+        ) from exc
+
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise ValueError("publishAt must include a timezone offset or trailing Z.")
+
+    return parsed.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def _dedupe_keep_order(items: list[str]) -> list[str]:
@@ -383,6 +402,7 @@ def upload_video(
     description: str,
     tags: list[str],
     privacy: str,
+    publish_at: str | None,
     category_id: str,
     credentials: Credentials,
     thumbnail_file: Path | None = None,
@@ -401,11 +421,15 @@ def upload_video(
             "selfDeclaredMadeForKids": False,
         },
     }
+    if publish_at:
+        body["status"]["publishAt"] = publish_at
 
     media = MediaFileUpload(str(file_path), chunksize=-1, resumable=True, mimetype="video/mp4")
     request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
 
     logger.info("Uploading video to YouTube...")
+    if publish_at:
+        logger.info("Scheduled publishAt=%s (video will remain private until then)", publish_at)
     response: dict[str, Any] | None = None
     while response is None:
         status, response = request.next_chunk()
@@ -454,6 +478,12 @@ def main(argv: list[str] | None = None) -> int:
         default=os.getenv("YOUTUBE_PRIVACY_STATUS", "private"),
         choices=["private", "unlisted", "public"],
         help="YouTube privacy status",
+    )
+    parser.add_argument(
+        "--publish-at",
+        type=str,
+        default=None,
+        help="Optional scheduled publish time in ISO 8601 format. Requires --privacy private.",
     )
     parser.add_argument(
         "--client-secrets",
@@ -509,6 +539,17 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 2
 
+    publish_at: str | None = None
+    if args.publish_at:
+        if args.privacy != "private":
+            logger.error("--publish-at requires --privacy private.")
+            return 2
+        try:
+            publish_at = _normalize_publish_at(args.publish_at)
+        except ValueError as exc:
+            logger.error("publishAt parsing failed: %s", exc)
+            return 2
+
     try:
         metadata = load_upload_metadata(date_yyyymmdd, args.lang)
         is_shorts = _is_shorts_upload(file_path)
@@ -546,6 +587,7 @@ def main(argv: list[str] | None = None) -> int:
             description=metadata["description"],
             tags=metadata["tags"],
             privacy=args.privacy,
+            publish_at=publish_at,
             category_id=args.category_id,
             credentials=creds,
             thumbnail_file=thumbnail_path,
