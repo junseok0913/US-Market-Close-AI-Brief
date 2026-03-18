@@ -1,0 +1,214 @@
+{
+  "date": "20260319",
+  "lang": "ko",
+  "title": "엔비디아 역대급 칩 공개에도 증시가 급락한 이유",
+  "hook": "엔비디아가 역대급 AI 칩을 공개했는데 주가는 왜 급락했을까요.",
+  "durationSeconds": 83.484,
+  "audioFile": "shorts20260318.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.051,
+      "eyebrow": "2026년 3월 19일",
+      "headline": "엔비디아 역대급 칩 공개",
+      "subheadline": "그런데 주가는 왜 급락했을까?",
+      "body": "엔비디아가 역대급 AI 칩을 공개했는데 주가는 왜 급락했을까요.",
+      "bullets": [
+        "엔비디아가 역대급 AI 칩을 공개했는데 주가는 왜 급락했을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "SMCI",
+        "^GSPC",
+        "^IXIC"
+      ],
+      "highlights": [
+        "83초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.051,
+      "endSec": 19.822,
+      "eyebrow": "시장 요약",
+      "headline": "3대 지수 일제히 하락",
+      "subheadline": "FOMC 경계감 속 기술주 중심 차익 실현",
+      "body": "3월 19일 미국 증시는 FOMC 경계감 속 기술주 중심의 차익 실현이 나타나며 3대 지수 모두 하락했습니다. 다우는 1.63%, S&P 500은 1.36%, 나스닥은 1.45% 하락 마감했습니다.",
+      "bullets": [
+        "3월 19일 미국 증시는 FOMC 경계감 속 기술주 중심의 차익 실현이 나타나며 3대 지수 모두 하락했습니다.",
+        "다우는 1.63%, S&P 500은 1.36%, 나스닥은 1.45% 하락 마감했습니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "NVDA"
+      ],
+      "highlights": [
+        "다우 -1.63%",
+        "S&P 500 -1.36%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 19.822,
+      "endSec": 81.593,
+      "eyebrow": "하락 원인",
+      "headline": "AI 호재도 막지 못한 조정",
+      "subheadline": "금리 우려와 차익 실현 압력이 시장을 짓누르다",
+      "body": "시장 하락의 가장 큰 원인은 FOMC 회의를 앞둔 경계감이었습니다. 특히 예상치를 두 배 이상 웃돈 2월 생산자물가지수 상승률은 인플레이션이 다시 고개를 들고 있다는 공포를 자극했습니다. 이로 인해 10년물 국채금리는 4.2%대로 다시 올라섰고, 시장은 연준이 올해 금리 인하 횟수 전망을 기존 3회에서 2회나 그 이하로 줄일 것이라는 두려움에 휩싸였습니다. 이러한 고금리 환경은 미래 성장 가치가 중요한 기술주에 특히 불리하게…",
+      "bullets": [
+        "인플레이션 공포가 국채금리 상승을 부추기며 기술주 부담 가중",
+        "NVDA, 기대감 선반영 인식에 신제품 발표가 차익 실현 기회로"
+      ],
+      "tickers": [
+        "NVDA",
+        "SMCI",
+        "^SOX",
+        "^GSPC"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 81.593,
+      "endSec": 83.484,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "SMCI",
+        "^GSPC",
+        "^IXIC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.051,
+      "text": "엔비디아가 역대급 AI 칩을 공개했는데 주가는 왜 급락했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.051,
+      "endSec": 19.822,
+      "text": "3월 19일 미국 증시는 FOMC 경계감 속 기술주 중심의 차익 실현이 나타나며 3대 지수 모두 하락했습니다. 다우는 1.63%, S&P 500은 1.36%, 나스닥은 1.45% 하락 마감했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 19.822,
+      "endSec": 81.593,
+      "text": "시장 하락의 가장 큰 원인은 FOMC 회의를 앞둔 경계감이었습니다. 특히 예상치를 두 배 이상 웃돈 2월 생산자물가지수 상승률은 인플레이션이 다시 고개를 들고 있다는 공포를 자극했습니다. 이로 인해 10년물 국채금리는 4.2%대로 다시 올라섰고, 시장은 연준이 올해 금리 인하 횟수 전…"
+    },
+    {
+      "id": 3,
+      "startSec": 81.593,
+      "endSec": 83.484,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-18"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq fall after PPI…",
+      "detail": "id#5fdb6208c4c11ea5"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia's new Blackwell chip is here, but the stock is u…",
+      "detail": "h#1258353"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia's changing its strategic approach to AI, going a…",
+      "detail": "id#1af67c40339829ee"
+    },
+    {
+      "type": "chart",
+      "label": "SMCI",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "chart",
+      "label": "^SOX",
+      "detail": "2026-03-19"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 모두 1% 이상 하락",
+      "FOMC 경계감 고조 및 국채금리 상승",
+      "엔비디아, 신제품 공개에도 '뉴스에 파는' 현상으로 하락"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "신제품 공개 후 하락"
+      },
+      {
+        "ticker": "SMCI",
+        "label": "슈퍼마이크로컴퓨터",
+        "tag": "9% 가까이 급락"
+      },
+      {
+        "ticker": "AVGO",
+        "label": "브로드컴",
+        "tag": "반도체주 동반 약세"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
