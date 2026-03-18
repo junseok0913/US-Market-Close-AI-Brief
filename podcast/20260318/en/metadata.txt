@@ -1,0 +1,23 @@
+Title:
+2026.3.19 US Market Close | Profit-taking in tech stocks ahead of FOMC decision
+
+Description:
+On March 19, the New York stock market closed lower across all three major indices, pressured by caution ahead of the FOMC meeting and a wave of profit-taking centered on technology stocks. Despite the unveiling of Nvidia's next-generation AI chip at its GTC conference, investor sentiment weakened as expectations for interest rate cuts receded.
+
+- Dow Jones: Dropped 1.63%, hitting a four-month low amid FOMC jitters.
+- S&P 500: Fell 1.36% as profit-taking pressure mounted on tech stocks.
+- Nasdaq: Declined 1.45%, with tech stocks weakening under the weight of a higher interest rate environment.
+
+Key Issues
+- Heightened FOMC Caution: The market grew concerned that the Fed's dot plot might be revised from three rate cuts to two, leading investors to reduce exposure to risk assets. The 10-year Treasury yield climbed to the 4.2% range following a rise in the February Producer Price Index.
+- Nvidia GTC and 'Sell the News' Event: Despite the positive news of the 'Blackwell' next-gen AI chip reveal, the stock fell as investors took profits, believing the high expectations were already priced in.
+- Higher Rate Fears and Tech Correction: The pressure from rising interest rates disproportionately affects growth-oriented tech stocks, triggering a broad decline in AI and semiconductor-related names, including Nvidia.
+- Starbucks' Cost Structure Concerns: Worries over structural cost increases came to the forefront as Starbucks' North American operating margin plunged to 11.9% from 16.7% year-over-year, driven by rising labor costs.
+
+Key Stocks
+- Nvidia (NVDA): Down over 1% on profit-taking following the GTC conference.
+- Super Micro Computer (SMCI): Plunged nearly 9% amid a broader sell-off in AI-related stocks, triggered by Nvidia's decline.
+- Starbucks (SBUX): Fell more than 3.6% due to the sharp drop in its North American operating margin and concerns over its cost structure.
+
+Keywords:
+미국주식,주식,재테크,시황,FOMC,금리,엔비디아,NVDA,AI,반도체,기술주,스타벅스,SBUX,인플레이션

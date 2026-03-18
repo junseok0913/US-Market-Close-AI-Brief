@@ -1,0 +1,537 @@
+{
+  "date": "20260318",
+  "nutshell": "Profit-taking in tech stocks amid caution ahead of the FOMC.",
+  "user_tickers": [
+    "SBUX"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 34
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell report for March 19th. All three major indices finished lower today, with a particularly sharp decline in tech stocks. How can we sum up today's market action?",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, today was all about profit-taking in the tech sector amid anxiety over the upcoming FOMC meeting. The S&P 500 fell 1.36% to close at 6624, while the Nasdaq dropped 1.45% to 22152. The Dow Jones Industrial Average also slid 1.63%, finishing the day at 46225. Ahead of tomorrow's Federal Open Market Committee announcement, the market appeared to be de-risking as it digested the latest inflation data.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-18"
+        },
+        {
+          "type": "article",
+          "pk": "h#1258349",
+          "title": "Stock Market Today: Dow, S&P 500, and Nasdaq All Tumble Ahead of Fed Meeting"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It's interesting that tech stocks fell even with Nvidia's highly anticipated GTC conference taking place.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's right. Even though Nvidia unveiled its next-generation AI chip, Blackwell, which has monstrous performance, the stock actually fell over 1%. This looks like a classic 'sell the news' event, where anticipation was already priced in, and the actual announcement triggered a wave of profit-taking. With the leader, Nvidia, faltering, other AI and semiconductor-related stocks followed suit, with Super Micro Computer plunging nearly 9%, weighing on the broader indices.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "h#1258353",
+          "title": "Nvidia's new Blackwell chip is here, but the stock is unimpressed"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it was a market where caution about the Fed and a tech pullback converged. Let's break down the key themes that moved the market today.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Right, the biggest factor was anxiety over the Fed's monetary policy, and the other was the wave of profit-taking that followed Nvidia's GTC conference.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Okay, let's start with the Fed. All eyes are on the Federal Open Market Committee, or FOMC, but can you explain in more detail what specifically has the market so on edge?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, this was a day where the market showed clear risk-off sentiment, moving beyond simple caution. The Dow dropped over 1.6%, falling to its lowest level in four months, while the S&P 500 and Nasdaq also fell more than 1.3% and 1.4% respectively. The backdrop for this broad-based sell-off is that recent inflation data has completely upended expectations for the Fed's rate-cut path. In particular, the February Producer Price Index, which came in at more than double the estimate, was enough to spark fears that inflation was re-accelerating. The bond market reacted immediately, with the 10-year Treasury yield climbing back to the 4.2% range, and the Dollar Index also strengthened, moving above 100. On top of that, geopolitical tensions pushed WTI crude oil to nearly $98 a barrel, adding to energy price concerns. All this led investors to believe that an environment was forming where the Fed would have no choice but to turn more hawkish.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#5fdb6208c4c11ea5",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq fall after PPI inflation comes in hot ahead of Fed decision"
+        },
+        {
+          "type": "article",
+          "pk": "id#5f2a194e6396fc73",
+          "title": "Stock market today: Dow sinks 750 points, S&P 500, Nasdaq slide after Fed decision as Powell touts inflation worries"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So the biggest question is how the dot plot, which shows the Fed officials' rate projections, will be revised.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Exactly. The market's biggest fear is that the Fed will reduce its forecast for rate cuts this year from the current three to just two, or even fewer. With sticky inflation data coming in one after another, the prevailing view is that it will be difficult for the Fed to send any dovish signals. The market's decline accelerated when Fed Chair Jerome Powell mentioned in his press conference that progress on inflation had not met expectations, which heightened concerns that rate cuts could be delayed even further. Ultimately, investors were looking less at the rate decision itself and more at the changes in the dot plot and the tone of Powell's remarks to gauge the future direction of monetary policy. And in the process, they sold assets to reduce uncertainty.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#75a150a6fba835b6",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq losses accelerate after Fed decision as Powell touts inflation worries"
+        },
+        {
+          "type": "article",
+          "pk": "id#5f2a194e6396fc73",
+          "title": "Stock market today: Dow sinks 750 points, S&P 500, Nasdaq slide after Fed decision as Powell touts inflation worries"
+        },
+        {
+          "type": "article",
+          "pk": "id#0e2047094f1021d0",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures waver with Fed decision on deck"
+        },
+        {
+          "type": "article",
+          "pk": "id#54cddd6239222333",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Federal Reserve holds rates steady"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "It seems these rate concerns hit tech stocks particularly hard. Why is that?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, a high-rate environment is especially tough on tech stocks, which are valued more on future growth potential than on immediate profits, because higher rates discount the value of future cash flows. The fact that the Nasdaq fell over 1.4% today is clear evidence of this. When rates rise, it not only increases a company's borrowing costs but also makes safer assets like bonds more attractive to investors compared to riskier assets like stocks. In the case of Nvidia, which has led the AI rally, the stock closed down despite the major positive catalyst of the GTC conference. This is a clear example of how macroeconomic pressure from interest rates can overwhelm company-specific good news.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "h#1258349",
+          "title": "Stock Market Today: Dow, S&P 500, and Nasdaq All Tumble Ahead of Fed Meeting"
+        },
+        {
+          "type": "article",
+          "pk": "id#5fdb6208c4c11ea5",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq fall after PPI inflation comes in hot ahead of Fed decision"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "I see. So the market's direction will likely become clearer only after tomorrow's FOMC announcement.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's right. The market is holding its breath, waiting for the Fed's final word. If the dot plot shows fewer rate cuts as expected and Powell maintains a hawkish tone, we could see a period of short-term correction. On the other hand, if the Fed sticks to its previous dovish stance despite the recent data, the market could see a relief rally. In the end, every single dot on that plot and every word from Chair Powell will be the most critical variables determining the market's next move.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#0e2047094f1021d0",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures waver with Fed decision on deck"
+        },
+        {
+          "type": "article",
+          "pk": "id#75a150a6fba835b6",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq losses accelerate after Fed decision as Powell touts inflation worries"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "A moment ago, you used Nvidia as an example when explaining how rate fears affect tech stocks. And it turns out that Nvidia's GTC conference, which had all the market's attention, actually became a catalyst for the tech sell-off. You summed it up as a classic 'sell the news' event.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, an event that had captured all the market's hopes instead became the starting gun for profit-taking. Last night, CEO Jensen Huang unveiled the next-gen AI chip 'Blackwell,' but Nvidia's stock fell further in today's session. The ripple effect sent the Philadelphia Semiconductor Index down over 1.5%, and related AI stocks like Super Micro Computer plunged nearly 9%, causing a sharp downturn in investor sentiment. This isn't just about Nvidia; it's a result of the broader risk-off mood in the market, fueled by the 10-year Treasury yield threatening the 4.3% level and a strong Dollar Index, all just a day before the Fed's decision.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "h#1258353",
+          "title": "Nvidia's new Blackwell chip is here, but the stock is unimpressed"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^SOX",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "It's a bit hard to understand why there was a sell-off, especially since the new Blackwell chip's performance was said to have exceeded expectations. What were the specific details of the announcement?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "From a purely technical standpoint, the announcement was far beyond expectations. The Blackwell B200 chip is an absolute monster, with up to four times the training performance and up to 30 times the inference performance of the current flagship, the Hopper H100. But Nvidia didn't stop at just chip improvements. They also acquired technology from the inference-chip startup Groq for $20 billion and unveiled a new processor called 'Groq 3.' This shows their commitment to fully address the strategic shift in the AI market from 'training' models to 'inferencing' with them. Based on this, Jensen Huang even presented a massive vision of reaching $1 trillion in data center-related revenue by 2027.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1af67c40339829ee",
+          "title": "Nvidia's changing its strategic approach to AI, going all in on inferencing and agents"
+        },
+        {
+          "type": "article",
+          "pk": "id#8770132908cf9aaa",
+          "title": "Nvidia CEO Huang says company sees more than $1 trillion in sales through 2027"
+        },
+        {
+          "type": "article",
+          "pk": "id#fedf9eb9aa3e7854",
+          "title": "Nvidia Prepares for a Triumphant Return to China's Artificial Intelligence (AI) Chip Market"
+        },
+        {
+          "type": "article",
+          "pk": "id#9a5c0246d16841c1",
+          "title": "What Is One of the Best Artificial Intelligence (AI) Stocks to Buy Right Now?"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So even though the announcement reinforced confidence in its long-term growth, the stock fell. It seems we have to conclude it was a combination of the stock being overextended and the broader market anxiety.",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's an accurate analysis. Nvidia's stock had already surged nearly 80% this year alone on anticipation for the GTC conference. In other words, any reasonably good news was already priced in. In that environment, as concerns grew that the Fed might take a more hawkish stance, investors used the announcement as an opportunity to take profits. Notably, Nvidia's decline also put pressure on the stocks of other companies in the AI server market, like Marvell Technology and Broadcom, providing a reason for a broader correction in the semiconductor sector. So, while the grand narrative of the AI revolution remains intact, for today, the macroeconomic variable of the Fed's monetary policy exerted a much stronger influence.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#6b71d3d4c57dae6d",
+          "title": "Market Indexes Dip as the Fed Takes Center Stage"
+        },
+        {
+          "type": "article",
+          "pk": "id#adbfde7296d3886a",
+          "title": "1 Can't-Miss Artificial Intelligence (AI) Stock to Buy With $100 Right Now"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-01-01",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "MRVL",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the broad market trends. Now let's look at some individual companies that made notable moves today. First up is Starbucks, which fell over 3.6% to close around the $92 level. The stock was actually above $96 at one point during the day but widened its losses into the close. What was the story there?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SBUX",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, today's decline seems to reflect the market's fundamental concerns about Starbucks' cost structure. Looking at recent filings, the biggest drag is the operating margin in its key North America segment, which plunged a massive 480 basis points year-over-year, from 16.7% to 11.9%. What's more concerning is the reason for this drop. According to the filing, about 260 basis points of that margin decline came from investments in labor costs. This is being interpreted not as a one-time expense, but as a signal of a structural and permanent increase in costs. The market seems to be starting to price in the possibility that price hikes alone may no longer be enough to offset this cost pressure.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SBUX",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0000829224-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "A structural cost increase sounds pretty serious. But isn't there also a more positive view that these investments are part of the 'Back to Starbucks' turnaround strategy and a foundation for long-term growth?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Absolutely, and that's the heart of the debate surrounding Starbucks right now. From a positive perspective, the current cost increases and restructuring are seen as a 'J-curve' investment phase for future growth. The $88.1 million in restructuring charges from the first quarter is viewed as a kind of R&D investment to transition from a labor-intensive to a tech-intensive model. There's optimism that automation technologies like the 'Siren System' can reduce beverage prep times, and that AI like 'Deep Brew' can optimize labor, eventually leading to margin expansion that more than offsets the current wage pressures. In this scenario, Starbucks transforms from a simple coffee chain into a global beverage platform company powered by AI and automation.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SBUX",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0000829224-26-000011"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "SBUX",
+          "form": "10-K",
+          "filed_date": "2025-11-14",
+          "accession_number": "0000829224-25-000114"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That vision of evolving into a tech company is quite compelling. But it will take time for the effects of this tech adoption to actually show up on the financial statements, so I imagine there are significant concerns about that uncertainty.",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's a sharp point. From a risk management perspective, this growth story is seen as more of a hope than something proven by concrete numbers. In fact, nowhere in the SEC filings is there a specific plan or timeline for the return on investment from adopting these automation technologies. This is why the counterargument is that this is a risky situation where current profitability is being clearly eroded for a future reward that hasn't been proven. So, Starbucks is currently seen as being in a tug-of-war between the clear reality of structurally higher labor costs and the uncertain future of a tech-driven turnaround.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SBUX",
+          "form": "10-K",
+          "filed_date": "2025-11-14",
+          "accession_number": "0000829224-25-000114"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So it's a conflict between a clear reality and an uncertain future. How should investors interpret this situation at this point?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Right now, it seems very difficult to make a definitive judgment either way. Starbucks' powerful brand and its global same-store sales, which are still growing at 4%, can act as a safety net preventing a sharp collapse in the stock price. However, the structurally weakened cost structure and the uncertainty of the turnaround strategy are likely to act as strong resistance, limiting the stock's upside. The current stock price appears to be near an equilibrium point where these positive and negative factors are in a tense balance. It seems to be a time for a cautious approach, watching to see if the 'Back to Starbucks' strategy is actually proven out in the numbers.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SBUX",
+          "form": "10-Q",
+          "filed_date": "2026-01-28",
+          "accession_number": "0000829224-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, the market was in a wait-and-see mode a day ahead of the Fed's policy decision, and yet all three major indices managed to close higher. Now all attention is turning to tomorrow's FOMC results.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, that's right. The market is holding its breath, waiting for clues on the Fed's rate decision and its future policy direction. The key things to watch for at this FOMC meeting are not so much the rate decision itself, but the accompanying Summary of Economic Projections, or SEP, and the dot plot. Whether Fed officials maintain their existing stance on the number of rate cuts for this year, or revise their outlook to reflect recent strong inflation data, will be the most critical variable for the market's short-term direction. Also, the market is expected to react sensitively to every word from Fed Chair Jerome Powell's press conference.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417228",
+          "title": "Fed Interest Rate Decision",
+          "date": "2024-03-20"
+        },
+        {
+          "type": "event",
+          "id": "417229",
+          "title": "FOMC Press Conference",
+          "date": "2024-03-20"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Besides the FOMC, are there any other economic indicators to watch this week?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Of course. Even after the Fed's announcement, there are other indicators scheduled that could move the market. On Thursday, we'll get another check on the health of the labor market with the weekly initial jobless claims, and the preliminary S&P Global Manufacturing and Services PMI figures, also out on the same day, are important. These indicators provide a crucial snapshot of the current state of the U.S. economy. If the economy still shows strong signs of expansion, it could push back expectations for Fed rate cuts, which could weigh on the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417230",
+          "title": "Initial Jobless Claims",
+          "date": "2024-03-21"
+        },
+        {
+          "type": "event",
+          "id": "417231",
+          "title": "S&P Global US Manufacturing PMI (Flash)",
+          "date": "2024-03-21"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. And finally, do you have a closing thought for our investors?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "With a major event like the Fed's policy decision ahead, market volatility could increase. Rather than getting caught up in the short-term results, it's important to use this as an opportunity to understand the big picture of the Fed's macroeconomic outlook and policy, and to review your own investment strategy. This is a time when the wisdom to calmly interpret and respond to market signals, rather than making hasty predictions, is needed.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "That concludes our closing bell report for March 19th. Thank you.",
+      "sources": []
+    }
+  ]
+}
