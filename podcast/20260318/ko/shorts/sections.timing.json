@@ -1,0 +1,58 @@
+{
+  "date": "20260318",
+  "lang": "ko",
+  "audioFile": "shorts20260318.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 83.484,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.051,
+      "endSec": 5.051,
+      "speechDurationSec": 5.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 35,
+      "text": "엔비디아가 역대급 AI 칩을 공개했는데 주가는 왜 급락했을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.051,
+      "speechEndSec": 19.822,
+      "endSec": 19.822,
+      "speechDurationSec": 14.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 110,
+      "text": "3월 19일 미국 증시는 FOMC 경계감 속 기술주 중심의 차익 실현이 나타나며 3대 지수 모두 하락했습니다. 다우는 1.63%, S&P 500은 1.36%, 나스닥은 1.45% 하락 마감했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 19.822,
+      "speechEndSec": 81.593,
+      "endSec": 81.593,
+      "speechDurationSec": 61.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 529,
+      "text": "시장 하락의 가장 큰 원인은 FOMC 회의를 앞둔 경계감이었습니다. 특히 예상치를 두 배 이상 웃돈 2월 생산자물가지수 상승률은 인플레이션이 다시 고개를 들고 있다는 공포를 자극했습니다. 이로 인해 10년물 국채금리는 4.2%대로 다시 올라섰고, 시장은 연준이 올해 금리 인하 횟수 전망을 기존 3회에서 2회나 그 이하로 줄일 것이라는 두려움에 휩싸였습니다. 이러한 고금리 환경은 미래 성장 가치가 중요한 기술주에 특히 불리하게 작용했습니다. 시장의 모든 기대를 모았던 엔비디아의 GTC 컨퍼런스가 대표적인 사례입니다. 엔비디아는 기존 칩보다 추론 성능이 최대 30배 향상된 괴물같은 차세대 AI 칩 '블랙웰'을 공개했지만, 주가는 오히려 1% 넘게 하락했습니다. 올해 들어 주가가 80% 가까이 급등하며 기대감이 이미 주가에 모두 반영됐다는 인식에, 투자자들이 발표를 이익 실현의 기회로 삼은 것입니다. 대장주가 흔들리자 슈퍼마이크로컴퓨터는 9% 가까이 급락했고 필라델피아 반도체 지수도 1.5% 넘게 하락하며 섹터 전반의 조정을 이끌었습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 81.593,
+      "speechEndSec": 83.484,
+      "endSec": 83.484,
+      "speechDurationSec": 1.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

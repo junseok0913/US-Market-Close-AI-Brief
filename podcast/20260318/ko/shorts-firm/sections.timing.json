@@ -1,0 +1,67 @@
+{
+  "date": "20260318",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260318.mp3",
+  "sectionOrder": [
+    "nvda",
+    "sbux",
+    "smci",
+    "mrvl"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 93.644,
+  "sections": [
+    {
+      "id": 0,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 36.971,
+      "endSec": 36.971,
+      "speechDurationSec": 36.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 316,
+      "text": "기대를 모았던 엔비디아의 GTC 컨퍼런스, 하지만 시장은 왜 차갑게 반응했을까요? 엔비디아는 오늘 0.84% 하락했습니다. GTC 컨퍼런스에서 기존 H100 칩보다 추론 성능이 최대 30배 향상된 차세대 AI 칩 '블랙웰'을 공개하는 등 엄청난 기술력을 과시했지만, 주가는 힘을 쓰지 못했습니다. 이는 컨퍼런스에 대한 기대감으로 올해 들어서만 주가가 80% 가까이 급등하며 호재가 이미 충분히 반영되었기 때문입니다. 여기에 FOMC를 앞둔 시장의 경계심리까지 겹치자, 투자자들이 이번 발표를 이익 실현의 기회로 삼은 전형적인 '뉴스에 파는' 현상이 나타난 것입니다."
+    },
+    {
+      "id": 1,
+      "name": "sbux",
+      "ticker": "SBUX",
+      "kind": "company",
+      "startSec": 36.971,
+      "speechEndSec": 66.782,
+      "endSec": 66.782,
+      "speechDurationSec": 29.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 277,
+      "text": "스타벅스는 오늘 5% 넘게 하락하며 비용 구조에 대한 우려를 드러냈습니다. 최근 공시에 따르면 핵심인 북미 사업부의 영업이익률이 인건비 상승 등의 여파로 전년 동기 16.7%에서 11.9%로 급락한 점이 부담으로 작용했습니다. 시장은 이를 구조적이고 영구적인 비용 증가 신호로 해석하며 우려하고 있습니다. 물론 회사는 자동화 기술 투자 등 장기 성장을 위한 과정이라고 설명하지만, 아직 숫자로 증명되지 않은 미래 비전과 명확해진 현재의 수익성 악화 사이에서 투자자들의 고민이 깊어지는 모습입니다."
+    },
+    {
+      "id": 2,
+      "name": "smci",
+      "ticker": "SMCI",
+      "kind": "company",
+      "startSec": 66.782,
+      "speechEndSec": 79.113,
+      "endSec": 79.113,
+      "speechDurationSec": 12.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 106,
+      "text": "슈퍼마이크로 컴퓨터는 오늘 3.68% 하락했습니다. 시장의 기대를 모았던 엔비디아의 차세대 AI 칩 공개가 오히려 '뉴스에 파는' 차익실현 이벤트로 작용하며 관련주 전반에 영향을 미쳤습니다."
+    },
+    {
+      "id": 3,
+      "name": "mrvl",
+      "ticker": "MRVL",
+      "kind": "company",
+      "startSec": 79.113,
+      "speechEndSec": 93.644,
+      "endSec": 93.644,
+      "speechDurationSec": 14.531,
+      "pauseAfterSec": 0.0,
+      "charCount": 104,
+      "text": "마블 테크놀로지 역시 3.49% 하락하며 같은 흐름을 보였습니다. 시장의 기대를 모았던 AI 칩 공개가 끝나자 관련주 전반에 차익실현 매물이 나온 영향입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
