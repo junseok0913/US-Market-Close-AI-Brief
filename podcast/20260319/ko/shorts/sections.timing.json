@@ -1,0 +1,58 @@
+{
+  "date": "20260319",
+  "lang": "ko",
+  "audioFile": "shorts20260319.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 74.524,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 3.971,
+      "endSec": 3.971,
+      "speechDurationSec": 3.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 31,
+      "text": "에너지주는 폭등했는데 왜 3대 지수는 모두 하락했을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 3.971,
+      "speechEndSec": 21.982,
+      "endSec": 21.982,
+      "speechDurationSec": 18.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 137,
+      "text": "3월 20일 미국 증시는 중동 지정학적 긴장 고조 속 혼조세로 마감했습니다. 다우 -0.44%, S&P 500 -0.27%, 나스닥 -0.28%로 3대 지수는 모두 하락했지만, 중소형주 중심의 러셀 2000 지수는 오히려 0.65% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 21.982,
+      "speechEndSec": 72.553,
+      "endSec": 72.553,
+      "speechDurationSec": 50.571,
+      "pauseAfterSec": 0.0,
+      "charCount": 423,
+      "text": "시장을 뒤흔든 건 이스라엘과 이란의 전면전 양상이었습니다. 양측이 사우디, 카타르 등 주요국의 정유 및 가스 시설을 타격했다는 소식에 국제 유가인 브렌트유는 장중 배럴당 112달러를 돌파하며 폭등했습니다. 이는 공급망 충격발 스태그플레이션 우려를 키우며 인플레이션 공포를 자극했고, 10년물 국채 금리는 4.32%까지 치솟았습니다. 시장의 불확실성이 커지자 공포지수 VIX는 10% 가까이 급등하며 27.5를 기록했습니다. 이 유가 급등은 에너지 섹터에는 유일한 호재였습니다. 에너지 ETF인 XLE는 1.6% 가까이 상승하며 시장 하락과 정반대의 모습을 보였습니다. 하지만 에너지 섹터의 비중은 시장 전체를 이끌기엔 역부족이었고, 유가 상승으로 인한 비용 부담과 연준의 긴축 장기화 우려가 기술주 등 다른 섹터를 짓누르면서 지수 전체를 끌어내린 것입니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 72.553,
+      "speechEndSec": 74.524,
+      "endSec": 74.524,
+      "speechDurationSec": 1.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

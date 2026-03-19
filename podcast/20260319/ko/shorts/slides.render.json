@@ -1,0 +1,218 @@
+{
+  "date": "20260320",
+  "lang": "ko",
+  "title": "유가 112달러 돌파! 에너지주 폭등에도 증시가 하락한 이유",
+  "hook": "에너지주는 폭등했는데 왜 3대 지수는 모두 하락했을까요.",
+  "durationSeconds": 74.524,
+  "audioFile": "shorts20260319.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.971,
+      "eyebrow": "2026년 3월 20일",
+      "headline": "에너지주 폭등, 증시는 하락?",
+      "subheadline": "유가 급등에도 3대 지수가 하락한 이유",
+      "body": "에너지주는 폭등했는데 왜 3대 지수는 모두 하락했을까요.",
+      "bullets": [
+        "에너지주는 폭등했는데 왜 3대 지수는 모두 하락했을까요."
+      ],
+      "tickers": [
+        "XLE",
+        "^GSPC",
+        "XOM",
+        "CVX"
+      ],
+      "highlights": [
+        "75초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 3.971,
+      "endSec": 21.982,
+      "eyebrow": "시장 마감",
+      "headline": "3대 지수 동반 하락",
+      "subheadline": "S&P 500 -0.27% | NASDAQ -0.28%",
+      "body": "중동 지정학적 긴장 고조 속 혼조세로 마감했습니다.",
+      "bullets": [
+        "다우 -0.44%",
+        "러셀 2000 +0.65%"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "^RUT"
+      ],
+      "highlights": [
+        "S&P 500 -0.27%",
+        "NASDAQ -0.28%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 21.982,
+      "endSec": 72.553,
+      "eyebrow": "핵심 분석",
+      "headline": "유가 쇼크, 시장 덮치다",
+      "subheadline": "브렌트유가 배럴당 112달러를 돌파하며 인플레이션 공포를 자극했습니다.",
+      "body": "시장을 뒤흔든 건 이스라엘과 이란의 전면전 양상이었습니다. 양측이 사우디, 카타르 등 주요국의 정유 및 가스 시설을 타격했다는 소식에 국제 유가인 브렌트유는 장중 배럴당 112달러를 돌파하며 폭등했습니다. 이는 공급망 충격발 스태그플레이션 우려를 키우며 인플레이션 공포를 자극했고, 10년물 국채 금리는 4.32%까지 치솟았습니다. 시장의 불확실성이 커지자 공포지수 VIX는 10% 가까이 급등하며 27.5를 기록했습니다. 이…",
+      "bullets": [
+        "중동 분쟁 격화로 국제 유가 급등",
+        "비용 부담과 긴축 우려가 기술주를 압박하며 지수 하락 견인"
+      ],
+      "tickers": [
+        "BZF",
+        "^VIX",
+        "^TNX",
+        "XLE"
+      ],
+      "highlights": [
+        "브렌트유 $112 돌파",
+        "10년물 국채 금리 4.32%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 72.553,
+      "endSec": 74.524,
+      "eyebrow": "콘텐츠 더보기",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 장 마감 정보를 가장 빠르게 받아보세요.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XLE",
+        "XOM",
+        "CVX",
+        "^DJI"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.971,
+      "text": "에너지주는 폭등했는데 왜 3대 지수는 모두 하락했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 3.971,
+      "endSec": 21.982,
+      "text": "3월 20일 미국 증시는 중동 지정학적 긴장 고조 속 혼조세로 마감했습니다. 다우 -0.44%, S&P 500 -0.27%, 나스닥 -0.28%로 3대 지수는 모두 하락했지만, 중소형주 중심의 러셀 2000 지수는 오히려 0.65% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 21.982,
+      "endSec": 72.553,
+      "text": "시장을 뒤흔든 건 이스라엘과 이란의 전면전 양상이었습니다. 양측이 사우디, 카타르 등 주요국의 정유 및 가스 시설을 타격했다는 소식에 국제 유가인 브렌트유는 장중 배럴당 112달러를 돌파하며 폭등했습니다. 이는 공급망 충격발 스태그플레이션 우려를 키우며 인플레이션 공포를 자극했고, 1…"
+    },
+    {
+      "id": 3,
+      "startSec": 72.553,
+      "endSec": 74.524,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "chart",
+      "label": "^RUT",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices hold above $110 as Israel, Iran target major…",
+      "detail": "id#935eb6c5392256af"
+    },
+    {
+      "type": "chart",
+      "label": "BZ=F",
+      "detail": "2026-03-20"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-03-20"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-03-19"
+    },
+    {
+      "type": "article",
+      "label": "Energy stocks can’t carry the entire market alone: Char…",
+      "detail": "id#a8f97687f13638e8"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "중동 리스크로 3대 지수 하락, 중소형주 상승 혼조세",
+      "국제 유가 112달러 돌파 및 국채 금리 급등",
+      "에너지 섹터 나홀로 강세, 시장과 디커플링 현상",
+      "공포지수 VIX 10% 가까이 급등"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "시장 역행 강세"
+      },
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 급등 수혜주"
+      },
+      {
+        "ticker": "CVX",
+        "label": "쉐브론",
+        "tag": "유가 급등 수혜주"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
