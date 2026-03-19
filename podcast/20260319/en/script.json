@@ -1,0 +1,529 @@
+{
+  "date": "20260319",
+  "nutshell": "Market closes mixed amid heightened geopolitical tensions in the Middle East.",
+  "user_tickers": [
+    "NEM"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the March 20th closing bell briefing. The market had a tough time finding direction today. The major indices fell, but the losses weren't steep, and in fact, small-cap stocks finished higher.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right, we can sum it up as a mixed close amid rising geopolitical tensions in the Middle East. The Dow Jones Industrial Average fell 0.44%, while the S&P 500 and Nasdaq Composite also slipped 0.27% and 0.28%, respectively. On the other hand, the small-cap focused Russell 2000 index bucked the trend, gaining 0.65%. The main driver was a surge in international oil prices after news broke that energy facilities were hit as the conflict between Israel and Iran escalated, which in turn stoked broader inflation fears across the market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It's interesting that the same news—the oil price surge—led to such different reactions across the indices. Why did that happen?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "It's because we saw a classic case of sector rotation. A rise in oil prices is a major tailwind for energy stocks, boosting expectations for their profitability. But for most other industries, including airlines and transportation, it means higher costs. It also fuels consumer price inflation, raising concerns about tighter monetary policy. So, while the energy sector rallied strongly, other sectors that make up a larger part of the market, like tech, came under pressure and dragged the overall indices down. Energy stocks just weren't enough to carry the entire market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a8f97687f13638e8",
+          "title": "Energy stocks can’t carry the entire market alone: Chart of the Day"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key themes that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there were two main currents to watch today. First, the impact of geopolitical risk in the Middle East on oil prices and inflation expectations. And second, the resulting strength in the energy sector and its decoupling from the rest of the market. We'll dive into both of these topics in more detail shortly.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the first point you mentioned: the geopolitical risk in the Middle East. How exactly did the conflict between Israel and Iran unfold, and why did the market react so sensitively?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, this situation sent a major shock through the markets because it went beyond a simple show of force and directly struck the heart of the global energy supply chain. After Israel first attacked Iran's South Pars gas field, the situation escalated into a full-blown conflict with Iran retaliating against oil and gas facilities in Saudi Arabia, the UAE, and Kuwait. News that Qatar's Ras Laffan facility, the world's largest LNG export terminal, was severely damaged poured fuel on the fire of supply anxiety. As this news broke, Brent crude, the international oil benchmark, surged past $112 a barrel, which immediately sparked inflation fears and shook the bond market. The 10-year U.S. Treasury yield shot up to 4.32% at one point, fueling worries that the Fed might keep its policy tight for longer, and this put early pressure on major indices like the S&P 500. In contrast, the energy sector was the only one showing strength, clearly illustrating the extreme divergence in the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#935eb6c5392256af",
+          "title": "Oil prices hold above $110 as Israel, Iran target major energy infrastructure throughout the Gulf"
+        },
+        {
+          "type": "article",
+          "pk": "id#7401e5e8b31ba5a2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "You mentioned the oil surge reignited inflation fears. How specifically does that affect the outlook for the Fed's monetary policy?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "This is essentially one of the worst-case scenarios for the Fed, putting them in a very difficult position. That's because this oil price hike stems from a supply chain shock, not demand, which is a classic precursor to cost-push inflation, or stagflation. The Fed had already shown a hawkish stance just yesterday, remaining vigilant on inflation, and now this uncontrollable external variable—oil prices—has been thrown into the mix. The market began to price in the possibility that the Fed might delay rate cuts further, or even consider another hike, to fight inflation even at the risk of a slowing economy. In fact, some investment banks like Macquarie even put out forecasts that the next policy move could be a rate hike in the first half of 2027. The fact that the 10-year Treasury yield remained elevated is evidence of this market anxiety.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a6cb681a4bdbbad6",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "article",
+          "pk": "id#5db8558a2cbe1b9f",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "article",
+          "pk": "id#3706a07268e9b344",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall, oil surges after Iran, inflation worries sink stocks"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "As you said, the energy sector was the lone bright spot. What was the backdrop for that trend?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, the energy sector moved in the complete opposite direction of the broader market decline. Energy company stocks are directly linked to oil prices, so a surge in crude immediately translates into expectations of higher profits. The Energy Select Sector SPDR Fund, or XLE, outperformed the market today, gaining nearly 1.6%. It's also worth noting that the price spread between Brent crude, the international benchmark, and West Texas Intermediate, the U.S. benchmark, widened to its largest gap since 2013. This signifies that the geopolitical risk in the Middle East is having a greater impact on Brent and shows just how severe the supply-demand imbalance in the global energy market is. However, market experts analyze that because the energy sector's weight in the overall market isn't that large, its solo rally has its limits when it comes to lifting the entire index.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "article",
+          "pk": "id#a6cb681a4bdbbad6",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "article",
+          "pk": "id#5db8558a2cbe1b9f",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, how should investors be thinking about this geopolitical risk going forward?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "I want to emphasize that everyone should be prepared for extreme volatility. The VIX, the market's fear gauge, shot up to 27.5 during the session, a jump of nearly 10% from the previous day. This shows just how much uncertainty market participants are feeling. In fact, late in the session, when Israeli Prime Minister Benjamin Netanyahu made comments about helping to keep the Strait of Hormuz open, oil prices pared some of their gains and stock indices narrowed their losses, showing how the market is reacting with extreme sensitivity to every single headline out of the Middle East. For the time being, it looks like the market will continue on this unstable path, juggling not only the existing variables of Fed policy and economic data, but also this huge, unpredictable new variable of geopolitical risk.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-18",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "article",
+          "pk": "id#6ec64d66a2a7bd04",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq cut losses as oil trims gains"
+        },
+        {
+          "type": "article",
+          "pk": "id#34a438f183c32a53",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq recover from steep losses as oil's surge eases"
+        },
+        {
+          "type": "article",
+          "pk": "id#ae60ef8f769bd4bd",
+          "title": "Oil prices hold above $110 as Israel, Iran target major energy infrastructure throughout Gulf"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "It's really striking that in this unstable environment, only the energy sector showed strength. Could you elaborate on this decoupling phenomenon, where it moved so differently from the rest of the market?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today's market was completely dominated by the news that Israel and Iran had struck each other's key energy infrastructure. When that news hit, Brent crude futures, the global benchmark, skyrocketed over 10% at one point, nearing $119 a barrel. As a result, the energy sector was the only one of the S&P 500's 11 sectors to post solid gains. The energy ETF, XLE, rose over 0.8% today alone. Shares of major energy companies like ExxonMobil and Chevron also rallied. But at the same time, the oil surge was poison for the broader market, dramatically fueling fears of resurgent inflation. Ultimately, the S&P 500 and the Nasdaq finished lower, creating a clear decoupling where strength in the energy sector was driving weakness in the rest of the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7401e5e8b31ba5a2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide amid inflation worries as Iran war sends oil surging"
+        },
+        {
+          "type": "article",
+          "pk": "id#34a438f183c32a53",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq recover from steep losses as oil's surge eases"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So even with the energy sector being so strong, why couldn't it lift the entire market?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Fundamentally, it's because the energy sector's weighting in the S&P 500 isn't that large. When a massive sector like technology comes under pressure from rising costs and fears of tighter policy due to surging oil, the gains in the energy sector just aren't enough to offset those losses. And indeed, the tech-focused ETF, XLK, was down today. Furthermore, rising oil prices act as a direct cost burden for most other industries like airlines, transportation, and manufacturing, darkening their profit outlooks, which in turn leads to a drop in their stock prices. So, what was a positive for energy companies—the oil price surge—acted as a negative for a much broader swath of the market, pulling the overall indices down.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a8f97687f13638e8",
+          "title": "Energy stocks can’t carry the entire market alone: Chart of the Day"
+        },
+        {
+          "type": "article",
+          "pk": "id#3706a07268e9b344",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall, oil surges after Iran, inflation worries sink stocks"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, is it possible this sector divergence, this decoupling, will continue?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "In the short term, we can't rule it out. Some analysts predict that if instability in the Strait of Hormuz continues, oil prices could remain at elevated levels above $90 a barrel through 2026. Since about 20% of the world's oil supply passes through this chokepoint, the tensions there are a structural problem that's unlikely to be resolved quickly. In that scenario, positive earnings expectations for energy companies could continue to support their stocks. However, from a broader market perspective, a healthy bull market isn't built on just one sector; it relies on a rotation where different sectors take turns leading the way. So, it's worth noting that the longer the energy sector's solo run continues, the more the lack of leadership from other sectors could hold the market back.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#05386a3bf7b83bab",
+          "title": "Prediction-Oil Will Stay Above $90 Through 2026 and These 2 Stocks Will Profit Most"
+        },
+        {
+          "type": "article",
+          "pk": "id#a8f97687f13638e8",
+          "title": "Energy stocks can’t carry the entire market alone: Chart of the Day"
+        },
+        {
+          "type": "article",
+          "pk": "id#34a438f183c32a53",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq recover from steep losses as oil's surge eases"
+        },
+        {
+          "type": "article",
+          "pk": "id#7401e5e8b31ba5a2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide amid inflation worries as Iran war sends oil surging"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Right, and while the broader market was choppy, we also saw some notable moves in individual stocks. Newmont, the major gold mining company, saw significant volatility today, opening sharply lower before recovering a good portion of its losses by the close.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NEM",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, Newmont's trading today was like a microcosm of the broader market. The stock started around the $96 level, dipped to the $95 range, and then saw strong buying interest come in, which narrowed the losses to close around the $99 mark. This movement really highlights the starkly different views the market has on Newmont. On one hand, you have the view that it's a growth stock changing the paradigm of the mining industry through technological innovation. On the other, there's the view that it's a traditional commodities company held back by uncontrollable gold prices and geopolitical risk. The strong rebound we saw today can be interpreted as the result of investors, who believe the stock is disconnected from its fundamentals, stepping in to buy on the dip.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NEM",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-19"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "That perspective of it being a growth stock leading technological innovation is interesting. What's the specific evidence for that?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "The bullish case argues that Newmont should no longer be valued as a simple gold miner, but rather as a 'resource tech' company. They point to its partnership with Caterpillar to deploy the industry's largest fleet of autonomous mining trucks and its use of AI-driven geological data analysis to improve exploration success rates, all of which are revolutionizing its cost structure. In fact, through the Newcrest acquisition, the company expects over $500 million in annual synergies, which should be a powerful driver for lowering production costs. Their massive projected free cash flow of $7.3 billion for fiscal year 2025 and a $2.3 billion share buyback plan are seen as expressions of this confidence. The logic is that its technological moat enables sustainable growth.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "The technological innovation is impressive, but it does raise the question of whether it can offset all the inherent risks of the mining industry. What are the main concerns on the other side of the argument?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's a sharp point. The bearish side counters that no matter how advanced the technology, it can't overcome the two fundamental vulnerabilities of the mining business: its dependence on gold prices and geopolitical risk. A quantitative analysis suggests that a 20% drop in the price of gold could lead to a more than 30% decline in Newmont's core cash-generating ability. This highlights just how vulnerable its business structure is to external variables. Furthermore, as stated in their 10-K filing, events like a four-month operational shutdown at a Mexican mine due to labor issues or production disruptions at an Australian mine because of environmental regulations are real-world occurrences. The core of the bearish argument is that these political and social risks are in a realm that autonomous trucks simply can't solve.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So it's a tug-of-war between the growth potential from tech innovation and these uncontrollable external risks. How should investors interpret this situation?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "In conclusion, while it's clear Newmont is a quality company leading technological innovation, it seems the jury is still out on whether that innovation has fully overcome the industry's fundamental weaknesses of gold price volatility and geopolitical risk. The optimism about its growth potential is valid, but as the Mexico strike shows, the weight of real, uncontrollable threats is also significant. The strong cash flow based on current high gold prices is a factor supporting the stock's downside, but it's also a double-edged sword that amplifies the potential shock if gold prices fall. Therefore, for now, it seems to be a time for a cautious approach, watching for the results of this tech innovation to be concretely reflected in the financial statements and for geopolitical uncertainties to ease.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Okay, so the market reacted enthusiastically to the Fed's announcement, with all three major indices hitting new all-time highs. Could you recap the key driver for the market today?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "In short, it was a dovish FOMC that calmed the market's fears. The Fed maintained its projection for three rate cuts this year, which resolved a lot of uncertainty and triggered a powerful rally. The decisive factor was Chair Powell's comments, where he attributed recent high inflation readings to seasonal factors and noted that a strong labor market wouldn't prevent rate cuts. With rate cut expectations firmly in place, the Dow, S&P 500, and Nasdaq all soared to new record closing highs.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2024-03-20",
+          "end_date": "2024-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2024-03-20",
+          "end_date": "2024-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2024-03-20",
+          "end_date": "2024-03-20"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Now that the big FOMC event is behind us, what economic indicators should investors be watching next?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Right, the market's focus now shifts to the economic data that will either support or challenge the Fed's policy expectations. First up, tomorrow morning's preliminary S&P Global Manufacturing and Services PMI for March will be important. This is a survey of corporate purchasing managers and serves as a leading indicator, giving us the earliest look at whether the real economy is in an expansion or contraction phase. We'll also get the weekly initial jobless claims and existing home sales data, which will provide the latest pulse on the labor and housing markets.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "Among those indicators, why is the PMI data particularly important?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Because the PMI is a barometer for the health of the economy. A reading above the baseline of 50 indicates expansion, while below 50 signals contraction. Right now, the market is pricing in a 'Goldilocks' scenario of solid growth without a recession. If the PMI comes in much hotter than expected, it could be seen as a sign the economy is overheating, which might delay Fed rate cuts. Conversely, if it comes in too low, it could spark recession fears. So, it's crucial to see confirmation of a moderate level of economic growth that aligns with the Fed's outlook.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "I see. And looking ahead to next week, what's the most important indicator we should be watching?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Without a doubt, it's the February Personal Consumption Expenditures, or PCE, price index, which comes out on the 29th. The PCE is the inflation gauge the Fed watches more closely than the CPI when making policy decisions. Since the January reading came in hotter than expected, it's critical that the February PCE data shows a return to a cooling trend. The market's expectation for a June rate cut can only be justified if this report provides confidence that inflation is being tamed. The outcome of this single report could set the market's direction until the next FOMC meeting.",
+      "sources": []
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Thank you for the detailed analysis today. That wraps up our March 20th market close briefing. Thanks for listening.",
+      "sources": []
+    }
+  ]
+}
