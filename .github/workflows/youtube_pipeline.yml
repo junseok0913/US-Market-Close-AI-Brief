@@ -221,6 +221,9 @@ jobs:
           echo "shorts_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
           echo "shorts_theme_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
           echo "shorts_theme_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+          echo "podcast_video_llm_mp4=podcast/$TARGET_DATE/$LANG/podcast-video-llm/youtube/${TARGET_DATE}_${LANG}_podcast_video_llm.mp4" >> "$GITHUB_OUTPUT"
+          echo "podcast_video_llm_render_json=podcast/$TARGET_DATE/$LANG/podcast-video-llm/render.json" >> "$GITHUB_OUTPUT"
+          echo "podcast_video_llm_chart_data=podcast/$TARGET_DATE/$LANG/podcast-video-llm/${TARGET_DATE}_${LANG}_chart_data.json" >> "$GITHUB_OUTPUT"
 
           echo "TARGET_DATE=$TARGET_DATE"
           echo "LANG=$LANG"
@@ -410,6 +413,29 @@ jobs:
 
           uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
 
+      - name: Upload podcast-video-llm video to YouTube
+        if: success() && steps.params.outputs.remotion_only != 'true' && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          PODCAST_VIDEO_LLM_MP4: ${{ steps.params.outputs.podcast_video_llm_mp4 }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f "$PODCAST_VIDEO_LLM_MP4" ]]; then
+            echo "Rendered podcast-video-llm MP4 not found: $PODCAST_VIDEO_LLM_MP4" >&2
+            exit 1
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py \
+            --file "$PODCAST_VIDEO_LLM_MP4" \
+            --date "$TARGET_DATE" \
+            --lang "$LANG" \
+            --privacy "$PRIVACY"
+
       - name: Upload YouTube artifacts
         if: success() && steps.params.outputs.remotion_only != 'true'
         uses: actions/upload-artifact@v4
@@ -420,6 +446,7 @@ jobs:
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-firm/youtube
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-theme-firm/youtube
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-theme-firm/upload.metadata.json
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/podcast-video-llm
           if-no-files-found: warn
 
       - name: Commit and push generated shorts outputs
@@ -434,6 +461,7 @@ jobs:
           SHORTS_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_firm_thumbnail }}
           SHORTS_THEME_FIRM_MP4: ${{ steps.params.outputs.shorts_theme_firm_mp4 }}
           SHORTS_THEME_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_theme_firm_thumbnail }}
+          PODCAST_VIDEO_LLM_MP4: ${{ steps.params.outputs.podcast_video_llm_mp4 }}
         run: |
           set -euo pipefail
 
@@ -450,7 +478,11 @@ jobs:
             "web/public/audio/shorts-firm/shortsfirm$TARGET_DATE.mp3"
             "web/public/data/shorts-theme-firm/$TARGET_DATE.json"
             "web/public/audio/shorts-theme-firm/$TARGET_DATE.mp3"
+            "web/public/data/podcast-video-llm/$TARGET_DATE.json"
+            "web/public/audio/podcast-video-llm/$TARGET_DATE.mp3"
             "podcast/$TARGET_DATE/$LANG/shorts-theme-firm/upload.metadata.json"
+            "podcast/$TARGET_DATE/$LANG/podcast-video-llm/render.json"
+            "podcast/$TARGET_DATE/$LANG/podcast-video-llm/${TARGET_DATE}_${LANG}_chart_data.json"
             "web/src/generated/shorts-firm/${TARGET_DATE}_${LANG}.generated.tsx"
             "$SHORTS_THUMBNAIL"
             "$SHORTS_FIRM_THUMBNAIL"
@@ -466,6 +498,7 @@ jobs:
             "$SHORTS_MP4"
             "$SHORTS_FIRM_MP4"
             "$SHORTS_THEME_FIRM_MP4"
+            "$PODCAST_VIDEO_LLM_MP4"
           )
           for path in "${force_paths[@]}"; do
             if [[ -e "$path" ]]; then
@@ -484,7 +517,8 @@ jobs:
           for cleanup_path in \
             "podcast/$TARGET_DATE/$LANG/shorts" \
             "podcast/$TARGET_DATE/$LANG/shorts-firm" \
-            "podcast/$TARGET_DATE/$LANG/shorts-theme-firm"; do
+            "podcast/$TARGET_DATE/$LANG/shorts-theme-firm" \
+            "podcast/$TARGET_DATE/$LANG/podcast-video-llm"; do
             if [[ -d "$cleanup_path" ]]; then
               git clean -fd -- "$cleanup_path"
             fi

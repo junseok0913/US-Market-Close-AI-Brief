@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==============================================================================
-# YouTube Full Pipeline (Episode + Shorts)
+# YouTube Full Pipeline (Episode + Shorts + Podcast Video LLM)
 #
 # Default flow:
 #   1) Episode render (browser capture -> MP4)
@@ -9,6 +9,8 @@
 #   3) Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare (script/audio/slides as needed)
 #   4) Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)
 #   5) Shorts + Shorts-Firm + Shorts-Theme-Firm upload to YouTube (public by default)
+#   6) PodcastVideoComposition render (existing timed episode -> Remotion MP4)
+#   7) PodcastVideoComposition upload to YouTube (public by default)
 #
 # Usage:
 #   ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--overwrite]
@@ -19,6 +21,8 @@
 #   3 = shorts assets prepare
 #   4 = shorts render (+ shorts thumbnail first frame)
 #   5 = shorts upload
+#   6 = podcast-video-llm render
+#   7 = podcast-video-llm upload
 # ==============================================================================
 
 set -Eeuo pipefail
@@ -43,6 +47,7 @@ START_DELAY_SECONDS=1
 TRIM_START_SECONDS=1
 REMOTION_TIMEOUT_MS="${YOUTUBE_REMOTION_TIMEOUT_MS:-180000}"
 REMOTION_CONCURRENCY="${YOUTUBE_REMOTION_CONCURRENCY:-1}"
+PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY="${YOUTUBE_PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY:-2}"
 SHORTS_DURATION_SECONDS="${YOUTUBE_SHORTS_DURATION_SECONDS:-90}"
 SHORTS_TTS_VOICE="${YOUTUBE_SHORTS_TTS_VOICE:-Charon}"
 SHORTS_TTS_TEMPERATURE="${YOUTUBE_SHORTS_TTS_TEMPERATURE:-0.6}"
@@ -71,15 +76,17 @@ CURRENT_STEP="init"
 usage() {
     cat <<'EOF'
 Usage:
-  ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from 1..5] [--overwrite] [--no-upload]
+  ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from 1..7] [--overwrite] [--no-upload]
 
 Options:
   --lang ko|en              Language path to render (default: ko)
-  --start-from <n>          Resume from step n (1..5, default: 1)
+  --start-from <n>          Resume from step n (1..7, default: 1)
                             1=episode render, 2=episode upload,
                             3=shorts+shorts-firm+shorts-theme-firm assets
                             4=shorts+shorts-firm+shorts-theme-firm render
                             5=shorts+shorts-firm+shorts-theme-firm upload
+                            6=podcast-video-llm render
+                            7=podcast-video-llm upload
   --overwrite               Overwrite existing output files
   --privacy <value>         YouTube privacy status: private|unlisted|public (default: public)
   --no-upload               Render only, skip YouTube uploads
@@ -869,6 +876,55 @@ upload_shorts_theme_firm_video() {
     fi
 }
 
+render_podcast_video_llm_video() {
+    require_cmd bash
+    require_cmd ffprobe
+    require_file "${ROOT_DIR}/podcast-video-llm/run_podcast_video_llm.sh"
+
+    if [ -f "${PODCAST_VIDEO_LLM_OUTPUT_MP4}" ] && [ "${OVERWRITE}" -ne 1 ]; then
+        echo "♻️  Reusing existing podcast-video-llm MP4: ${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+        return 0
+    fi
+
+    echo "🎬 Rendering podcast-video-llm via Remotion..."
+    local render_args=(
+        "${DATE}"
+        --lang "${LANG}"
+    )
+    if [ "${OVERWRITE}" -eq 1 ]; then
+        render_args+=(--overwrite)
+    fi
+    if [ -n "${PREVIEW_SECONDS}" ]; then
+        render_args+=(--preview-seconds "${PREVIEW_SECONDS}")
+    fi
+
+    YOUTUBE_REMOTION_CONCURRENCY="${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}" \
+        bash "${ROOT_DIR}/podcast-video-llm/run_podcast_video_llm.sh" "${render_args[@]}"
+
+    require_file "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+    validate_mp4_streams "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+}
+
+upload_podcast_video_llm_video() {
+    if [ "${UPLOAD}" -ne 1 ]; then
+        echo "⏭️  Upload disabled. Skipping podcast-video-llm upload."
+        return 0
+    fi
+
+    require_file "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+    require_cmd uv
+    require_file "${YOUTUBE_UPLOAD_SCRIPT}"
+
+    echo "☁️  Uploading podcast-video-llm MP4 to YouTube..."
+    local upload_args=(
+        --file "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+        --date "${DATE}"
+        --lang "${LANG}"
+        --privacy "${PRIVACY}"
+    )
+    uv run python "${YOUTUBE_UPLOAD_SCRIPT}" "${upload_args[@]}"
+}
+
 trap on_error ERR
 trap cleanup EXIT INT TERM
 
@@ -955,8 +1011,8 @@ if ! [[ "${START_FROM}" =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-if [ "${START_FROM}" -lt 1 ] || [ "${START_FROM}" -gt 5 ]; then
-    echo "❌ --start-from must be within 1..5: ${START_FROM}"
+if [ "${START_FROM}" -lt 1 ] || [ "${START_FROM}" -gt 7 ]; then
+    echo "❌ --start-from must be within 1..7: ${START_FROM}"
     exit 1
 fi
 
@@ -1012,6 +1068,10 @@ fi
 
 if ! [[ "${REMOTION_CONCURRENCY}" =~ ^[0-9]+$ ]] || [ "${REMOTION_CONCURRENCY}" -le 0 ]; then
     echo "❌ --remotion-concurrency must be a positive integer: ${REMOTION_CONCURRENCY}"
+    exit 1
+fi
+if ! [[ "${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}" =~ ^[0-9]+$ ]] || [ "${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}" -le 0 ]; then
+    echo "❌ YOUTUBE_PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY must be a positive integer: ${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}"
     exit 1
 fi
 if [ "${REMOTION_CONCURRENCY}" -ne 1 ]; then
@@ -1108,6 +1168,12 @@ SHORTS_THEME_FIRM_THUMBNAIL_PNG="${SHORTS_THEME_FIRM_OUTPUT_DIR}/${SHORTS_THEME_
 SHORTS_THEME_FIRM_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts-theme-firm/${DATE}.json"
 SHORTS_THEME_FIRM_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-theme-firm/${DATE}.mp3"
 
+PODCAST_VIDEO_LLM_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}/podcast-video-llm"
+PODCAST_VIDEO_LLM_RENDER_JSON="${PODCAST_VIDEO_LLM_BASE}/render.json"
+PODCAST_VIDEO_LLM_CHART_DATA_JSON="${PODCAST_VIDEO_LLM_BASE}/${DATE}_${LANG}_chart_data.json"
+PODCAST_VIDEO_LLM_OUTPUT_DIR="${PODCAST_VIDEO_LLM_BASE}/youtube"
+PODCAST_VIDEO_LLM_OUTPUT_MP4="${PODCAST_VIDEO_LLM_OUTPUT_DIR}/${DATE}_${LANG}_podcast_video_llm.mp4"
+
 echo "========================================================"
 echo "🎬 YouTube Full Pipeline Start"
 echo "📅 Date: ${DATE}"
@@ -1119,57 +1185,77 @@ echo "========================================================"
 if [ "${START_FROM}" -le 1 ]; then
     CURRENT_STEP="step1_episode_render"
     echo ""
-    echo "[1/5] Episode render (browser capture -> MP4)"
+    echo "[1/7] Episode render (browser capture -> MP4)"
     run_step1_with_retry
 else
     echo ""
-    echo "[1/5] Episode render skipped (start-from ${START_FROM})"
+    echo "[1/7] Episode render skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 2 ]; then
     CURRENT_STEP="step2_episode_upload"
     echo ""
-    echo "[2/5] Episode upload"
+    echo "[2/7] Episode upload"
     upload_episode_video
 else
     echo ""
-    echo "[2/5] Episode upload skipped (start-from ${START_FROM})"
+    echo "[2/7] Episode upload skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 3 ]; then
     CURRENT_STEP="step3_shorts_assets"
     echo ""
-    echo "[3/5] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare"
+    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare"
     prepare_shorts_assets
     prepare_shorts_firm_assets
     prepare_shorts_theme_firm_assets
 else
     echo ""
-    echo "[3/5] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare skipped (start-from ${START_FROM})"
+    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 4 ]; then
     CURRENT_STEP="step4_shorts_render"
     echo ""
-    echo "[4/5] Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)"
+    echo "[4/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)"
     render_shorts_video
     render_shorts_firm_video
     render_shorts_theme_firm_video
 else
     echo ""
-    echo "[4/5] Shorts + Shorts-Firm + Shorts-Theme-Firm render skipped (start-from ${START_FROM})"
+    echo "[4/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 5 ]; then
     CURRENT_STEP="step5_shorts_upload"
     echo ""
-    echo "[5/5] Shorts + Shorts-Firm + Shorts-Theme-Firm upload"
+    echo "[5/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload"
     upload_shorts_video
     upload_shorts_firm_video
     upload_shorts_theme_firm_video
 else
     echo ""
-    echo "[5/5] Shorts + Shorts-Firm + Shorts-Theme-Firm upload skipped (start-from ${START_FROM})"
+    echo "[5/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload skipped (start-from ${START_FROM})"
+fi
+
+if [ "${START_FROM}" -le 6 ]; then
+    CURRENT_STEP="step6_podcast_video_llm_render"
+    echo ""
+    echo "[6/7] Podcast-video-llm render (existing timed episode -> Remotion MP4)"
+    render_podcast_video_llm_video
+else
+    echo ""
+    echo "[6/7] Podcast-video-llm render skipped (start-from ${START_FROM})"
+fi
+
+if [ "${START_FROM}" -le 7 ]; then
+    CURRENT_STEP="step7_podcast_video_llm_upload"
+    echo ""
+    echo "[7/7] Podcast-video-llm upload"
+    upload_podcast_video_llm_video
+else
+    echo ""
+    echo "[7/7] Podcast-video-llm upload skipped (start-from ${START_FROM})"
 fi
 
 CURRENT_STEP="done"
@@ -1184,3 +1270,6 @@ echo "🖼️  Shorts-Firm thumbnail: ${SHORTS_FIRM_THUMBNAIL_PNG}"
 echo "📹 Shorts-Theme-Firm MP4: ${SHORTS_THEME_FIRM_OUTPUT_MP4}"
 echo "🖼️  Shorts-Theme-Firm thumbnail: ${SHORTS_THEME_FIRM_THUMBNAIL_PNG}"
 echo "📝 Shorts-Theme-Firm upload metadata: ${SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH}"
+echo "📹 Podcast-Video-LLM MP4: ${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+echo "📝 Podcast-Video-LLM render plan: ${PODCAST_VIDEO_LLM_RENDER_JSON}"
+echo "📈 Podcast-Video-LLM chart data: ${PODCAST_VIDEO_LLM_CHART_DATA_JSON}"
