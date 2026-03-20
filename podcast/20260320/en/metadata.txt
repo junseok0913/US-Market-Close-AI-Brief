@@ -1,0 +1,24 @@
+Title:
+2026.3.21 US Market Close | Investor Sentiment Sours on Middle East Risks and AI Sector Headwinds
+
+Description:
+On March 21, the New York stock market saw a significant downturn, with all three major indices falling sharply. The decline was driven by a combination of escalating geopolitical risks in the Middle East and negative news hitting key AI-related stocks. A surge in oil prices stoked inflation fears, while a major development concerning Super Micro Computer rapidly dampened investor sentiment across the tech sector.
+
+- Dow Jones: Dropped 0.96% as investor sentiment weakened due to rising Middle East geopolitical risks.
+- S&P 500: Fell 1.51%, weighed down by surging oil prices and weakness in tech stocks.
+- Nasdaq: Plunged over 2% as the Super Micro incident triggered a sell-off in AI-related stocks.
+
+Key Issues
+- Middle East Geopolitical Risks and Surging Oil Prices: Fears of an escalating conflict involving Iran sent West Texas Intermediate (WTI) crude oil prices jumping over 1.8% to the high $97 per barrel range. This reignited inflation fears, putting significant pressure on the stock market.
+- Broad Sell-off in AI Stocks: Shares of AI server manufacturer Super Micro Computer (SMCI) plummeted 33% following news that its co-founder was indicted on charges of violating export controls to China. The shockwave from this news dragged down other related tech stocks, including Nvidia.
+- Retreat in Fed Rate Cut Expectations: The spike in oil prices renewed inflation concerns, leading to a market consensus that the Fed has less room to maneuver its monetary policy. As a result, expectations for a near-term interest rate cut have significantly diminished.
+- Welltower's Refinancing Risk in Focus: The healthcare REIT faced pressure as its refinancing risk came to the forefront, with approximately $7.9 billion in debt set to mature over the three years beginning in 2026. While this news caused the stock to fall, analysts also noted the company's strong fundamentals, including a robust 21% same-store Net Operating Income (NOI) growth rate.
+
+Key Stocks
+- Super Micro Computer (SMCI): Plunged 33% after its co-founder was indicted on charges of violating export controls to China.
+- Nvidia (NVDA): Fell nearly 4% due to the fallout from the Super Micro news and reports of a new antitrust investigation.
+- Welltower (WELL): Tumbled nearly 4.5% as refinancing risks from large upcoming debt maturities came into focus.
+- AMD (AMD): Declined approximately 2%, dragged down by the broader negative sentiment in the AI sector.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,지정학적리스크,유가,인플레이션,AI,반도체,엔비디아,NVDA,슈퍼마이크로,SMCI

@@ -1,0 +1,608 @@
+{
+  "date": "20260320",
+  "nutshell": "Investor sentiment weakens as Middle East geopolitical risks come into focus.",
+  "user_tickers": [
+    "WELL"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for March 21st. It was a tough day on Wall Street, with all three major indices falling sharply.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up by weakening investor sentiment due to rising geopolitical risks in the Middle East. The Dow Jones Industrial Average fell 0.96% to close at 45,577.47, and the S&P 500 dropped 1.51% to 6,506.48. The tech-heavy Nasdaq Composite slid more than 2%, finishing the day at 21,647.61. On the other hand, West Texas Intermediate crude oil prices surged over 1.8%, climbing to the high $97-per-barrel range.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, as you mentioned, geopolitical risk was the key factor shaking the market. But the tech sell-off was particularly severe. Was there a specific reason for that?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Yes. On top of the broad risk-off sentiment, a company-specific bombshell hit the AI sector, and that was decisive. News broke that a co-founder of Supermicro, a leading AI server manufacturer, was indicted for violating U.S. export controls to China, causing the stock to plunge 33%. The shockwave hit the AI chip leader, Nvidia, as well, with its shares falling nearly 4%, which froze investor sentiment across the entire tech sector.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46f2e2c7e4abd18e",
+          "title": "Supermicro stock plunges 33% after US charges co-founder with conspiracy to smuggle Nvidia chips to China"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it was a combination of external risks and internal bad news that really rattled the market. Can you break down the key drivers for us today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, we can really break it down into two main themes. First, the geopolitical risk stemming from Iran, which triggered a spike in oil prices and inflation concerns. Second, the simultaneous plunge in AI-related stocks, sparked by the Supermicro incident. We'll take a closer look at each of these points in a moment.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first theme. As you said, the dominant story today was clearly geopolitical risk in the Middle East. Can you explain exactly how that rippled through oil prices and the broader market?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "It was a classic risk-off session. As the conflict related to Iran intensified, concerns over oil supply disruptions dominated the market. Brent crude, the international benchmark, neared $105 a barrel, while WTI crude also shot up to the $97 level. The oil spike immediately reignited inflation fears, pushing back expectations for Fed rate cuts, which was a direct hit to the stock market. The S&P 500 fell over 1.5%, and the Nasdaq plunged 2%. The VIX, the market's fear gauge, surged, showing that investor sentiment had become extremely cautious. What's interesting is that gold, a traditional safe-haven asset, actually fell, hit by the double whammy of a stronger dollar and fading rate-cut hopes. The energy sector was the sole gainer, showing a steep rise that stood in stark contrast to the brutal market conditions.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e7b375f8bef69ea8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sell off to end another brutal week as Iran war rages"
+        },
+        {
+          "type": "article",
+          "pk": "id#2eca99dc5b988209",
+          "title": "Gasoline prices hit highest level since March 2022 as oil tops $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "The fact that surging oil is re-igniting inflation fears is the biggest concern here. How does the market see this affecting the Fed's policy path?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The market believes the Fed has much less room to maneuver now. Fed Chair Jerome Powell himself recently mentioned the ripple effects of oil and derivative prices on production and transportation across the economy. A rise in oil prices not only directly pushes up headline inflation but can also fuel core inflation pressure by increasing costs for nearly all goods and services. And indeed, we saw expectations for rate cuts this year retreat significantly in the market today. The bond market reflected this, with the 10-year Treasury yield facing upward pressure again. On Wall Street, there's a growing sense that the Fed's balancing act has become much harder, and if the oil price surge persists, warnings about a worst-case scenario of stagflation—that is, rising prices amid slowing growth—are starting to surface.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#2eca99dc5b988209",
+          "title": "Gasoline prices hit highest level since March 2022 as oil tops $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#e7b375f8bef69ea8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sell off to end another brutal week as Iran war rages"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "I imagine the spike in oil prices created some clear winners and losers among different sectors. How did the energy sector and airline stocks perform?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, the contrast was stark. While nearly every sector in the S&P 500 was down, the energy sector was the sole gainer, showing strong performance with a weekly gain of over 3%. Shares of major energy companies like ExxonMobil and Chevron held up well on expectations of direct benefits from higher oil prices. On the other hand, the airline industry took a direct hit. Shares of major carriers, including United Airlines, all fell more than 2%. For airlines, fuel is one of the largest operating costs, so a surge in oil prices immediately translates into concerns about profitability. The possibility of reduced travel demand due to heightened geopolitical tensions added to their woes, creating a double whammy.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e7b375f8bef69ea8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sell off to end another brutal week as Iran war rages"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "UAL",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-21"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, is this geopolitical risk likely to remain a drag on the market going forward? What's the view on Wall Street?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "It's bound to be the most critical variable in the short term. The market is on high alert for the possibility of a blockade of the Strait of Hormuz and the extent of actual damage to oil production facilities. Some investment banks are even putting out bearish forecasts, suggesting that if the conflict lasts for weeks, oil could surpass the $128 mark seen during Russia's invasion of Ukraine. If it drags on for months, it could even break the 2008 all-time high of $146. Ultimately, the market's direction will be determined by whether the conflict escalates, how major oil-producing nations respond, and how policy tools like the release of strategic petroleum reserves are used. For the time being, we can expect the market to react sensitively to every single related news headline.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#2eca99dc5b988209",
+          "title": "Gasoline prices hit highest level since March 2022 as oil tops $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#e7b375f8bef69ea8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sell off to end another brutal week as Iran war rages"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-01-01",
+          "end_date": "2026-03-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-01-01",
+          "end_date": "2026-03-21"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Along with the external variable of Middle East risk, let's look at the other factor that dragged the market down: the internal bad news. I'm talking about the sharp sell-off in AI leaders. Let's start with Supermicro, where the news was particularly shocking.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today was a day where investor faith in the AI sector was shaken to its core. The tech-heavy Nasdaq's 2% plunge and the S&P 500's 1.5% drop were driven not just by geopolitical risk, but decisively by bad news that undermined trust within the AI industry itself. Supermicro, a key player in the AI server market, shocked the market by plummeting over 33%. The bellwether, Nvidia, also fell more than 3%, dragging the Philadelphia Semiconductor Index down over 2.2%. This situation caused the VIX, the market's fear gauge, to spike over 11% in a single day. Faced with this, combined with oil prices surging past $97 a barrel due to Middle East risks, investors began to dump AI stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#46f2e2c7e4abd18e",
+          "title": "Supermicro stock plunges 33% after US charges co-founder with conspiracy to smuggle Nvidia chips to China"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "A 33 percent plunge for Supermicro is just a massive shock. The news is about its co-founder being indicted—what are the specific charges?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "According to the indictment released by U.S. prosecutors, Supermicro's co-founder and board member, Wally Liao, along with two other employees and an external collaborator, are accused of conspiring to smuggle servers equipped with Nvidia chips to China, in violation of U.S. export controls. They allegedly set up shell companies in Southeast Asia and reportedly showed meticulous planning, sending the actual servers to blacklisted Chinese companies while placing fake servers on-site for inspection. The indictment also mentioned that the scale of these illegal exports could reach $2.5 billion between 2024 and 2025. This has escalated from a case of individual misconduct to a major risk for the entire company. The market impact was magnified because this happened to a key partner that accounts for about 9% of Nvidia's total revenue.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46f2e2c7e4abd18e",
+          "title": "Supermicro stock plunges 33% after US charges co-founder with conspiracy to smuggle Nvidia chips to China"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So this has escalated into a national security issue tied directly to the U.S.-China tech war, not just an earnings problem. How did this situation impact Nvidia?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "To make matters worse for Nvidia, it was hit by another piece of bad news. News broke that Senator Elizabeth Warren and others have launched an inquiry into Nvidia's $20 billion licensing deal with Groq. The senators are questioning whether the deal was intentionally structured as a license instead of an acquisition to evade antitrust review. Nvidia clarified that it did not acquire Groq and that Groq operates independently, but this was read as a signal that political pressure on its AI market dominance is beginning, which dampened investor sentiment. With supply chain risks highlighted by the Supermicro incident and now regulatory risks added on top, the stock fell more than 3%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#fc113ff0ef82281a",
+          "title": "Nvidia’s $20 Billion Groq Deal Queried by Warren, Blumenthal"
+        },
+        {
+          "type": "article",
+          "pk": "id#46f2e2c7e4abd18e",
+          "title": "Supermicro stock plunges 33% after US charges co-founder with conspiracy to smuggle Nvidia chips to China"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So it seems the anxiety spread across the entire AI sector. How did other related stocks perform?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's right, most companies related to AI chips and servers couldn't escape the downdraft. Shares of Nvidia's competitor, AMD, fell nearly 2%, and Hewlett Packard Enterprise, a competitor in the server market, also dropped close to 2%. As these market leaders stumbled in unison, investors were seen reducing their exposure to AI-related assets. What's interesting, though, is that Dell Technologies' stock actually closed with a slight gain. This could be a sign that the market is moving beyond indiscriminate selling and starting to weigh the fundamentals and direct exposure of individual companies to this incident.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "HPE",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "DELL",
+          "start_date": "2026-03-19",
+          "end_date": "2026-03-20"
+        },
+        {
+          "type": "article",
+          "pk": "id#46f2e2c7e4abd18e",
+          "title": "Supermicro stock plunges 33% after US charges co-founder with conspiracy to smuggle Nvidia chips to China"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the major macroeconomic themes that moved the market. Let's shift to a specific company. The stock movement of healthcare REIT Welltower caught my eye today. After trading around $205 intraday, it plunged nearly 4.5% to close around $195. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "WELL",
+          "start_date": "2026-03-20",
+          "end_date": "2026-03-20"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, today's decline seems to be less about specific news and more a result of underlying risk factors coming into focus, which weakened investor sentiment. The market's concerns can be summarized in two main points. First is the massive debt load and refinancing risk. According to its 10-K report, about $7.9 billion in debt is set to mature in the three years from 2026 to 2028. The fear that interest expenses could surge if a high-rate environment persists appears to be pressuring the stock. Second is the heavy reliance on key operators. The top five operators account for 26% of the total net operating income, which highlighted a structural vulnerability: if even one of them faces financial trouble, it could directly impact Welltower's cash flow.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WELL",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000766704-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Upcoming debt maturities and a reliance on specific tenants—those certainly sound like serious risks. But on the flip side, haven't Welltower's recent earnings been very strong?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Exactly, and that's the core of the debate surrounding Welltower right now. Contrary to the skeptical view, the positive case focuses on its outstanding operational performance. The 2025 annual report shows that net operating income from its core Senior Housing Operating portfolio surged by 51% year-over-year. More importantly, its same-store net operating income growth, which shows the performance of existing assets excluding acquisitions, was a remarkable 21%. This figure proves the company's strong operational efficiency and pricing power amid the structural tailwind of an aging population. This powerful cash flow generation is the basis for the argument that it can comfortably handle the aforementioned debt risks.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WELL",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000766704-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So it's really a tug-of-war between that $7.9 billion debt risk and the phenomenal 21% earnings growth. The key question then is whether that earnings growth can actually offset the rising interest costs.",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's the right question. So let's break it down with some concrete numbers. Based on the 10-K report, let's assume the most pessimistic scenario. If we assume the entire $7.94 billion of maturing debt is refinanced at a rate 3 percentage points higher than today, the annual interest expense would increase by about $238 million. However, the company's total annual net operating income in 2025 was $4.35 billion. Based on this, the NOI growth needed to offset that increased interest cost is only about 5.5%. But the actual same-store NOI growth Welltower achieved in 2025 was 15.1%. In other words, its performance has already demonstrated a buffer nearly three times what's needed to cover a worst-case interest rate scenario.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "WELL",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000766704-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "Putting it in those numbers really clarifies the scale of the risk. So it seems today's stock drop could be seen as an overreaction to macroeconomic fears rather than a reflection of any real fundamental damage.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "There's a strong case to be made for that interpretation. The market currently appears to be reacting more sensitively to hard-to-measure future macroeconomic fears than to measurable operational strengths. The recent stock decline seems to be driven more by psychological investor retrenchment than by a deterioration in the company's intrinsic cash-generating ability. Of course, future interest rate volatility and the debt structure remain important variables to watch. However, given the outstanding operational performance shown so far, the prevailing analysis suggests the risks that have been raised are well within a manageable range.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Well, it was a hot day on Wall Street, with the Fed's dovish stance providing a tailwind that sent all three major indices to new record highs. How would you sum up today's market in one sentence?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "In a nutshell, it was a market where rate cut expectations trumped everything else. The market staged a relief rally after the Fed maintained its forecast for three rate cuts this year, and that momentum carried through to today. Positive economic data, like the Philly Fed Manufacturing Index and existing home sales, also boosted confidence in a soft landing. But it was a mixed picture for individual stocks. The fact that the indices hit new highs despite a sharp drop in Apple, which was hit by lawsuit risks from the Department of Justice, is a testament to just how strong the overall market sentiment is.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "With such strong investor sentiment confirmed, investors will need to prepare for next week. What economic events should be on their radar?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Next week also has some important economic data releases scheduled. First, on Thursday, we'll get the final reading for the fourth-quarter Gross Domestic Product, or GDP. If it doesn't deviate much from expectations, it should be a non-event, but it's significant as a final confirmation of U.S. economic growth. However, all eyes will undoubtedly be on Friday. That's when we get the February Personal Consumption Expenditures, or PCE, price index, which is the Fed's preferred inflation gauge.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417228",
+          "title": "US GDP Growth Rate QoQ Final (4Q)",
+          "date": "2024-03-28"
+        },
+        {
+          "type": "event",
+          "id": "417229",
+          "title": "US PCE Price Index MoM (Feb)",
+          "date": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "PCE data on Friday... but isn't next Friday Good Friday, when the U.S. stock market is closed?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417233",
+          "title": "US Good Friday",
+          "date": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's exactly right, and that's the biggest variable for the market next week. The stock market will be closed, but the PCE inflation data will be released as scheduled. On top of that, a speech by Fed Chair Jerome Powell is also scheduled for the same day. This means investors will be getting two key events that heavily influence the Fed's rate decisions while the market is shut. This means the market is likely to unleash its pent-up reaction all at once on the following Monday, so it's worth keeping in mind that volatility could increase.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417232",
+          "title": "Fed Chair Powell Speaks",
+          "date": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "A key event on a market holiday, right in the middle of a record-setting rally... that's certainly something for investors to think about. Do you have any final words of caution?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "When the market is this hot, it's more important than ever to maintain a level-headed perspective. It's important to remember that the Fed's rate cut expectations are already largely priced into stocks. If next week's PCE data comes in hotter than expected, the current optimism could quickly turn to caution. Especially considering the unusual timing of the release on a market holiday, this is a time when it would be wise to prepare for the upcoming volatility and calmly observe the market's reaction, rather than chasing the rally.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, thank you for your insights. That wraps up our closing bell briefing for March 21st. We'll be back next Monday. Thanks for listening.",
+      "sources": []
+    }
+  ]
+}
