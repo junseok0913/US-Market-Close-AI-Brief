@@ -1,0 +1,149 @@
+{
+  "date": "20260320",
+  "ticker": "NEM",
+  "durationSeconds": 60,
+  "audioSrc": "audio/shorts-theme-firm/20260320.mp3",
+  "sceneTiming": {
+    "fundamental": {
+      "startSec": 0.0,
+      "endSec": 24.931
+    },
+    "growth": {
+      "startSec": 24.931,
+      "endSec": 42.062
+    },
+    "risk": {
+      "startSec": 42.062,
+      "endSec": 57.593
+    },
+    "sentiment": {
+      "startSec": 57.593,
+      "endSec": 79.804
+    }
+  },
+  "hook": {
+    "eyebrow": "장마감 기업 분석",
+    "headlineTop": "안전자산 금광주 뉴몬트",
+    "headlineBottom": "장중 급등락 후 -6.89%",
+    "subheadline": "기대와 우려가 충돌한 하루",
+    "dayChange": "-6.89%"
+  },
+  "fundamental": {
+    "label": "펀더멘털",
+    "stance": "적정 수준",
+    "confidence": 0.6,
+    "summary": "견고한 실적, 금 가격 의존성은 부담",
+    "metrics": [
+      {
+        "label": "2025년 매출",
+        "value": "$227억",
+        "sub": "전년 대비 +21%",
+        "pct": 88
+      },
+      {
+        "label": "2025년 순이익",
+        "value": "$71억",
+        "sub": "전년 대비 +116%",
+        "pct": 92
+      },
+      {
+        "label": "잉여현금흐름",
+        "value": "$73억",
+        "sub": "강력한 현금 창출력",
+        "pct": 76
+      },
+      {
+        "label": "자사주 매입",
+        "value": "$23억",
+        "sub": "2025년 기준",
+        "pct": 64
+      }
+    ]
+  },
+  "growth": {
+    "label": "성장 포인트",
+    "stance": "강한 시각",
+    "confidence": 0.9,
+    "summary": "'자원 테크' 기업으로 진화, 효율성 극대화",
+    "columns": [
+      {
+        "label": "탐사 성공률",
+        "value": "2배",
+        "pct": 95
+      },
+      {
+        "label": "인수 시너지",
+        "value": "$5억",
+        "pct": 88
+      },
+      {
+        "label": "자율주행 효율",
+        "value": "+20%",
+        "pct": 70
+      },
+      {
+        "label": "이익률 개선",
+        "value": "+5%",
+        "pct": 50
+      }
+    ],
+    "footnote": "기술 혁신 성장 동력"
+  },
+  "risk": {
+    "label": "리스크",
+    "stance": "핵심 경계",
+    "confidence": 0.9,
+    "summary": "통제 불가능한 지정학적, 규제 리스크",
+    "totalExposure": "주가 충격 15-25% 가능성",
+    "items": [
+      {
+        "label": "멕시코 광산 파업",
+        "detail": "4개월 운영 중단 이력",
+        "highlight": "생산차질"
+      },
+      {
+        "label": "호주 환경 규제",
+        "detail": "분진 배출 유죄 인정",
+        "highlight": "조업중단"
+      },
+      {
+        "label": "가나 로열티 인상",
+        "detail": "최대 12% 상향 가능",
+        "highlight": "비용증가"
+      },
+      {
+        "label": "정치적 불안정 노출",
+        "detail": "페루, 가나, 아르헨티나 등",
+        "highlight": "4개국"
+      }
+    ]
+  },
+  "sentiment": {
+    "label": "시장 심리",
+    "stance": "긍정적 전환",
+    "confidence": 0.85,
+    "summary": "과매도 판단, 저가 매수세 유입 확인",
+    "priceRange": {
+      "low": 95.79,
+      "high": 99.16,
+      "close": 99.2,
+      "dayChangePct": -6.89
+    },
+    "keywords": [
+      "과매도",
+      "저가매수",
+      "변동성",
+      "반등"
+    ],
+    "insight": "펀더멘털 대비 과도한 주가 하락 판단"
+  },
+  "finale": {
+    "headline": "기술 혁신 vs 지정학적 리스크, 승자는?",
+    "bullets": [
+      "견고한 펀더멘털, 그러나 금 가격에 절대적 의존",
+      "AI, 자율주행 등 '자원 테크'로 성장성 부각",
+      "통제 불가능한 정치/규제 리스크가 핵심 변수"
+    ],
+    "cta": "구독과 좋아요 부탁드립니다"
+  }
+}

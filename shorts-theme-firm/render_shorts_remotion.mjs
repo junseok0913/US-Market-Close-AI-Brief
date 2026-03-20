@@ -52,6 +52,33 @@ function resolveDurationSeconds(episode) {
   return 60;
 }
 
+function toSceneTiming(sectionTiming) {
+  const sections = Array.isArray(sectionTiming?.sections) ? sectionTiming.sections : [];
+  const mapping = {
+    company_1: "fundamental",
+    company_2: "growth",
+    company_3: "risk",
+    company_4: "sentiment",
+  };
+  const sceneTiming = {};
+
+  for (const section of sections) {
+    const name = String(section?.name || "").trim().toLowerCase();
+    const key = mapping[name];
+    const startSec = Number(section?.startSec);
+    const endSec = Number(section?.endSec);
+    if (!key || !Number.isFinite(startSec) || !Number.isFinite(endSec) || endSec <= startSec) {
+      continue;
+    }
+    sceneTiming[key] = {
+      startSec,
+      endSec,
+    };
+  }
+
+  return Object.keys(sceneTiming).length > 0 ? sceneTiming : null;
+}
+
 function detectBrowserExecutable() {
   const candidates = [
     process.env.SHORTS_THEME_FIRM_REMOTION_BROWSER_EXECUTABLE,
@@ -97,14 +124,14 @@ function main() {
     Math.floor(
       toPositiveNumber(
         args.concurrency ??
-          process.env.SHORTS_THEME_FIRM_REMOTION_CONCURRENCY ??
-          process.env.REMOTION_CONCURRENCY,
+        process.env.SHORTS_THEME_FIRM_REMOTION_CONCURRENCY ??
+        process.env.REMOTION_CONCURRENCY,
         1,
       ),
     ),
   );
   const entryPoint = args["entry-point"] || "remotion/index.ts";
-  const compositionId = args["composition-id"] || "ShortsThemeFirmComposition";
+  const compositionId = args["composition-id"] || "BkngDebateShorts";
   const includeAudio = args["no-audio"] ? false : true;
   const logLevel = String(args.log || process.env.REMOTION_LOG_LEVEL || "info").trim();
   const browserExecutable = args["browser-executable"] || detectBrowserExecutable();
@@ -129,8 +156,7 @@ function main() {
       console.log(`[shorts-theme-firm] section-timing-json: ${sectionTimingJsonPath}`);
     } catch (error) {
       console.warn(
-        `[shorts-theme-firm] warning: failed to parse section timing JSON (${sectionTimingJsonPath}): ${
-          error instanceof Error ? error.message : String(error)
+        `[shorts-theme-firm] warning: failed to parse section timing JSON (${sectionTimingJsonPath}): ${error instanceof Error ? error.message : String(error)
         }`,
       );
     }
@@ -144,7 +170,14 @@ function main() {
 
   const date = String(episode?.date || "").replace(/[^0-9]/g, "");
   const audioSrc = args["audio-src"] || `audio/shorts-theme-firm/${date || "episode"}.mp3`;
-  const props = { episode, sectionTiming, audioSrc, includeAudio };
+
+  // BkngDebateShortsProps: episode JSON is the props directly.
+  // Inject audioSrc from CLI (if not already set in the episode JSON).
+  const props = {
+    ...episode,
+    audioSrc: episode.audioSrc || audioSrc,
+    sceneTiming: toSceneTiming(sectionTiming) || episode.sceneTiming || undefined,
+  };
 
   const outputDir = path.dirname(outputPath);
   fs.mkdirSync(outputDir, { recursive: true });

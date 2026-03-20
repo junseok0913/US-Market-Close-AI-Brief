@@ -1,0 +1,138 @@
+{
+  "date": "20260318",
+  "ticker": "BKNG",
+  "durationSeconds": 120.844,
+  "audioSrc": "audio/shorts-theme-firm/20260317.mp3",
+  "sceneTiming": {
+    "fundamental": {
+      "startSec": 0.0,
+      "endSec": 35.531
+    },
+    "growth": {
+      "startSec": 35.531,
+      "endSec": 64.502
+    },
+    "risk": {
+      "startSec": 64.502,
+      "endSec": 90.873
+    },
+    "sentiment": {
+      "startSec": 90.873,
+      "endSec": 120.844
+    }
+  },
+  "hook": {
+    "eyebrow": "AI DEBATE / BKNG",
+    "headlineTop": "부킹 홀딩스",
+    "headlineBottom": "$4,442",
+    "subheadline": "AI 여행 플랫폼으로의 진화와 유럽 규제 리스크 사이, 부킹 홀딩스의 현재와 미래를 4가지…",
+    "dayChange": "-1.37%"
+  },
+  "fundamental": {
+    "label": "펀더멘털",
+    "stance": "적정 수준",
+    "confidence": 0.74,
+    "summary": "전 세계 호텔, 항공권, 렌터카, 레스토랑, 액티비티 등 여행 관련 상…",
+    "metrics": [
+      {
+        "label": "2025년 매출",
+        "value": "269억 달러",
+        "sub": "YoY +13.4%",
+        "pct": 13.4
+      },
+      {
+        "label": "영업활동 현금흐름",
+        "value": "94억 달러",
+        "sub": "94억 달러",
+        "pct": 72.0
+      },
+      {
+        "label": "핵심 경쟁력",
+        "value": "압도적 네트워크 효과",
+        "sub": "압도적 네트워크 효과",
+        "pct": 58.0
+      }
+    ]
+  },
+  "growth": {
+    "label": "성장 포인트",
+    "stance": "긍정적 시각",
+    "confidence": 0.82,
+    "summary": "AI 기반 '커넥티드 트립' 생태계 + 항공권 +37%, 즐길 거리 +…",
+    "columns": [
+      {
+        "label": "항공권",
+        "value": "+37%",
+        "pct": 37.0
+      },
+      {
+        "label": "즐길 거리",
+        "value": "+80%",
+        "pct": 80.0
+      },
+      {
+        "label": "성장 동력",
+        "value": "AI 기반 '커넥티드 트립' 생…",
+        "pct": 90.0
+      },
+      {
+        "label": "2025년 성장률",
+        "value": "항공권 +37%, 즐길 거리 +…",
+        "pct": 76.0
+      }
+    ],
+    "footnote": "2025년 성장률: 항공권 +37%, 즐길 거리 +80%"
+  },
+  "risk": {
+    "label": "리스크",
+    "stance": "주의 필요",
+    "confidence": 0.84,
+    "summary": "핵심 리스크: EU 디지털 시장법(DMA)",
+    "items": [
+      {
+        "label": "핵심 리스크",
+        "detail": "EU 디지털 시장법(DMA)",
+        "highlight": "EU 디지털 시장…"
+      },
+      {
+        "label": "위협 요소",
+        "detail": "'가격 동등성 조항' 약화",
+        "highlight": "'가격 동등성 조…"
+      },
+      {
+        "label": "규제 현실화",
+        "detail": "스페인 벌금 및 유럽 전역 조사",
+        "highlight": "스페인 벌금 및…"
+      }
+    ],
+    "totalExposure": "시총 $141.23B, PER 26.45,…"
+  },
+  "sentiment": {
+    "label": "시장 해석",
+    "stance": "과열 경계",
+    "confidence": 0.8,
+    "summary": "시장 해석: 규제보다 성장에 주목",
+    "priceRange": {
+      "low": 4442.33,
+      "high": 4442.33,
+      "close": 4442.33,
+      "dayChangePct": -1.37
+    },
+    "keywords": [
+      "FOMO",
+      "반사성",
+      "낙관 우위",
+      "규제 무시"
+    ],
+    "insight": "현재 국면: 리스크보다 낙관론 우위"
+  },
+  "finale": {
+    "headline": "4명의 전문가가 분석한\nBKNG의 현재 위치",
+    "bullets": [
+      "펀더멘털: 2025년 매출 13.4% 성장 및 94억 달러의 막대한 현금흐름…",
+      "성장 동력: AI 기반 '커넥티드 트립' 생태계로 진화하며 항공/즐길 거리 예…",
+      "핵심 리스크: 유럽연합의 디지털 시장법(DMA) 규제와 유럽 전역의 반독점 조사"
+    ],
+    "cta": "구독과 좋아요 부탁드립니다"
+  }
+}

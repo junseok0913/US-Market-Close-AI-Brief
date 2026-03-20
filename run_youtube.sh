@@ -6,9 +6,9 @@
 # Default flow:
 #   1) Episode render (browser capture -> MP4)
 #   2) Episode upload to YouTube (public by default)
-#   3) Shorts + Shorts-Firm assets prepare (script/audio/slides as needed)
-#   4) Shorts + Shorts-Firm render (Remotion -> MP4 + first-frame thumbnail)
-#   5) Shorts + Shorts-Firm upload to YouTube (public by default)
+#   3) Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare (script/audio/slides as needed)
+#   4) Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)
+#   5) Shorts + Shorts-Firm + Shorts-Theme-Firm upload to YouTube (public by default)
 #
 # Usage:
 #   ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--overwrite]
@@ -51,6 +51,11 @@ SHORTS_FIRM_TTS_VOICE="${YOUTUBE_SHORTS_FIRM_TTS_VOICE:-Charon}"
 SHORTS_FIRM_TTS_TEMPERATURE="${YOUTUBE_SHORTS_FIRM_TTS_TEMPERATURE:-0.6}"
 SHORTS_FIRM_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_pipeline.yaml}"
 SHORTS_FIRM_SLIDES_PROMPT_CONFIG="${YOUTUBE_SHORTS_FIRM_SLIDES_PROMPT_CONFIG:-${ROOT_DIR}/shorts-firm/prompt/shorts_firm_slides.yaml}"
+SHORTS_THEME_FIRM_DURATION_SECONDS="${YOUTUBE_SHORTS_THEME_FIRM_DURATION_SECONDS:-90}"
+SHORTS_THEME_FIRM_TTS_VOICE="${YOUTUBE_SHORTS_THEME_FIRM_TTS_VOICE:-Charon}"
+SHORTS_THEME_FIRM_TTS_TEMPERATURE="${YOUTUBE_SHORTS_THEME_FIRM_TTS_TEMPERATURE:-0.6}"
+SHORTS_THEME_FIRM_PROMPT_CONFIG="${YOUTUBE_SHORTS_THEME_FIRM_PROMPT_CONFIG:-${ROOT_DIR}/shorts-theme-firm/prompt/shorts_theme_firm_pipeline.yaml}"
+SHORTS_THEME_FIRM_SLIDES_PROMPT_CONFIG="${YOUTUBE_SHORTS_THEME_FIRM_SLIDES_PROMPT_CONFIG:-${ROOT_DIR}/shorts-theme-firm/prompt/shorts_theme_firm_slides.yaml}"
 THUMBNAIL_SLIDE_INDEX="${YOUTUBE_THUMBNAIL_SLIDE_INDEX:-0}"
 THUMBNAIL_WIDTH="${YOUTUBE_THUMBNAIL_WIDTH:-1280}"
 THUMBNAIL_HEIGHT="${YOUTUBE_THUMBNAIL_HEIGHT:-720}"
@@ -72,7 +77,9 @@ Options:
   --lang ko|en              Language path to render (default: ko)
   --start-from <n>          Resume from step n (1..5, default: 1)
                             1=episode render, 2=episode upload,
-                            3=shorts+shorts-firm assets, 4=shorts+shorts-firm render, 5=shorts+shorts-firm upload
+                            3=shorts+shorts-firm+shorts-theme-firm assets
+                            4=shorts+shorts-firm+shorts-theme-firm render
+                            5=shorts+shorts-firm+shorts-theme-firm upload
   --overwrite               Overwrite existing output files
   --privacy <value>         YouTube privacy status: private|unlisted|public (default: public)
   --no-upload               Render only, skip YouTube uploads
@@ -567,6 +574,62 @@ prepare_shorts_firm_assets() {
     require_file "${SHORTS_FIRM_TSX_PATH}"
 }
 
+prepare_shorts_theme_firm_assets() {
+    require_cmd uv
+    mkdir -p "${SHORTS_THEME_FIRM_BASE}"
+
+    require_file "${SHORTS_THEME_FIRM_PROMPT_CONFIG}"
+    require_file "${SHORTS_THEME_FIRM_SLIDES_PROMPT_CONFIG}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_THEME_FIRM_SCRIPT_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-theme-firm/generate_script.py"
+        require_file "${EPISODE_BASE}/script.json"
+        require_file "${EPISODE_BASE}/metadata.txt"
+        echo "🧠 Generating shorts-theme-firm script..."
+        uv run python "${ROOT_DIR}/shorts-theme-firm/generate_script.py" \
+            "${EPISODE_BASE}" \
+            --duration "${SHORTS_THEME_FIRM_DURATION_SECONDS}" \
+            --prompt-config "${SHORTS_THEME_FIRM_PROMPT_CONFIG}"
+    else
+        echo "♻️  Reusing existing shorts-theme-firm script: ${SHORTS_THEME_FIRM_SCRIPT_PATH}"
+    fi
+    require_file "${SHORTS_THEME_FIRM_SCRIPT_PATH}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_THEME_FIRM_MP3}" ] || [ ! -f "${SHORTS_THEME_FIRM_SECTION_TIMING_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-theme-firm/generate_audio.py"
+        echo "🎙️  Generating shorts-theme-firm audio + section timings..."
+        uv run python "${ROOT_DIR}/shorts-theme-firm/generate_audio.py" \
+            "${DATE}" \
+            --lang "${LANG}" \
+            --voice "${SHORTS_THEME_FIRM_TTS_VOICE}" \
+            --temperature "${SHORTS_THEME_FIRM_TTS_TEMPERATURE}" \
+            --config "${SHORTS_THEME_FIRM_PROMPT_CONFIG}"
+    else
+        echo "♻️  Reusing existing shorts-theme-firm audio/timing: ${SHORTS_THEME_FIRM_MP3}"
+    fi
+    require_file "${SHORTS_THEME_FIRM_MP3}"
+    require_file "${SHORTS_THEME_FIRM_SECTION_TIMING_PATH}"
+
+    if [ "${OVERWRITE}" -eq 1 ] || [ ! -f "${SHORTS_THEME_FIRM_RENDER_JSON}" ] || [ ! -f "${SHORTS_THEME_FIRM_SLIDE_SCRIPT_PATH}" ] || [ ! -f "${SHORTS_THEME_FIRM_RENDER_TEMPLATE_PATH}" ] || [ ! -f "${SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH}" ]; then
+        require_file "${ROOT_DIR}/shorts-theme-firm/generate_slide_script.py"
+        echo "🧩 Generating shorts-theme-firm slides render JSON..."
+        uv run python "${ROOT_DIR}/shorts-theme-firm/generate_slide_script.py" \
+            "${DATE}" \
+            --lang "${LANG}" \
+            --script "${SHORTS_THEME_FIRM_SCRIPT_PATH}" \
+            --timing "${SHORTS_THEME_FIRM_SECTION_TIMING_PATH}" \
+            --script-output "${SHORTS_THEME_FIRM_SLIDE_SCRIPT_PATH}" \
+            --template-output "${SHORTS_THEME_FIRM_RENDER_TEMPLATE_PATH}" \
+            --render-output "${SHORTS_THEME_FIRM_RENDER_JSON}" \
+            --config "${SHORTS_THEME_FIRM_SLIDES_PROMPT_CONFIG}" \
+            --overwrite-render
+    else
+        echo "♻️  Reusing existing shorts-theme-firm render JSON: ${SHORTS_THEME_FIRM_RENDER_JSON}"
+    fi
+    require_file "${SHORTS_THEME_FIRM_RENDER_JSON}"
+    require_file "${SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH}"
+}
+
 render_shorts_video() {
     require_cmd ffmpeg
     require_cmd ffprobe
@@ -666,6 +729,56 @@ render_shorts_firm_video() {
         "${SHORTS_FIRM_THUMBNAIL_PNG}"
 }
 
+render_shorts_theme_firm_video() {
+    require_cmd ffmpeg
+    require_cmd ffprobe
+    require_cmd node
+    require_file "${ROOT_DIR}/shorts-theme-firm/render_shorts_remotion.mjs"
+    require_file "${SHORTS_THEME_FIRM_RENDER_JSON}"
+    require_file "${SHORTS_THEME_FIRM_MP3}"
+    require_file "${SHORTS_THEME_FIRM_SECTION_TIMING_PATH}"
+
+    mkdir -p "${SHORTS_THEME_FIRM_OUTPUT_DIR}"
+    mkdir -p "${ROOT_DIR}/web/public/data/shorts-theme-firm"
+    mkdir -p "${ROOT_DIR}/web/public/audio/shorts-theme-firm"
+
+    if [ -f "${SHORTS_THEME_FIRM_OUTPUT_MP4}" ] && [ "${OVERWRITE}" -ne 1 ]; then
+        echo "❌ Output already exists: ${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+        echo "   Use --overwrite to replace existing files."
+        exit 1
+    fi
+    if [ "${OVERWRITE}" -eq 1 ]; then
+        rm -f "${SHORTS_THEME_FIRM_OUTPUT_MP4}" "${SHORTS_THEME_FIRM_THUMBNAIL_PNG}" "${SHORTS_THEME_FIRM_OUTPUT_WEBM}"
+    fi
+
+    echo "📂 Syncing shorts-theme-firm assets into web/public..."
+    cp "${SHORTS_THEME_FIRM_RENDER_JSON}" "${SHORTS_THEME_FIRM_WEB_DATA_PATH}"
+    cp "${SHORTS_THEME_FIRM_MP3}" "${SHORTS_THEME_FIRM_WEB_AUDIO_PATH}"
+
+    echo "🎬 Rendering shorts-theme-firm via Remotion..."
+    local remotion_args=(
+        --episode-json "${SHORTS_THEME_FIRM_RENDER_JSON}"
+        --section-timing-json "${SHORTS_THEME_FIRM_SECTION_TIMING_PATH}"
+        --output "${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+        --audio-src "audio/shorts-theme-firm/${DATE}.mp3"
+        --timeout "${REMOTION_TIMEOUT_MS}"
+        --concurrency "${REMOTION_CONCURRENCY}"
+    )
+    if [ -n "${PREVIEW_SECONDS}" ]; then
+        remotion_args+=(--preview-seconds "${PREVIEW_SECONDS}")
+    fi
+    node "${ROOT_DIR}/shorts-theme-firm/render_shorts_remotion.mjs" "${remotion_args[@]}"
+
+    enforce_shorts_duration_limit "${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+    validate_mp4_streams "${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+
+    echo "🖼️  Creating shorts-theme-firm thumbnail from first frame..."
+    ffmpeg -hide_banner -loglevel error -y \
+        -i "${SHORTS_THEME_FIRM_OUTPUT_MP4}" \
+        -frames:v 1 \
+        "${SHORTS_THEME_FIRM_THUMBNAIL_PNG}"
+}
+
 upload_shorts_video() {
     if [ "${UPLOAD}" -ne 1 ]; then
         echo "⏭️  Upload disabled. Skipping shorts upload."
@@ -723,6 +836,36 @@ upload_shorts_firm_video() {
     if [ -f "${SHORTS_FIRM_OUTPUT_WEBM}" ]; then
         rm -f "${SHORTS_FIRM_OUTPUT_WEBM}"
         echo "🧹 Removed shorts-firm intermediate WEBM: ${SHORTS_FIRM_OUTPUT_WEBM}"
+    fi
+}
+
+upload_shorts_theme_firm_video() {
+    if [ "${UPLOAD}" -ne 1 ]; then
+        echo "⏭️  Upload disabled. Skipping shorts-theme-firm upload."
+        return 0
+    fi
+
+    require_file "${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+    require_cmd uv
+    require_file "${YOUTUBE_UPLOAD_SCRIPT}"
+
+    echo "☁️  Uploading shorts-theme-firm MP4 to YouTube..."
+    local upload_args=(
+        --file "${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+        --date "${DATE}"
+        --lang "${LANG}"
+        --privacy "${PRIVACY}"
+    )
+    if [ -f "${SHORTS_THEME_FIRM_THUMBNAIL_PNG}" ]; then
+        upload_args+=(--thumbnail "${SHORTS_THEME_FIRM_THUMBNAIL_PNG}")
+    else
+        echo "⚠️  Shorts-theme-firm thumbnail not found. Uploading without thumbnail."
+    fi
+    uv run python "${YOUTUBE_UPLOAD_SCRIPT}" "${upload_args[@]}"
+
+    if [ -f "${SHORTS_THEME_FIRM_OUTPUT_WEBM}" ]; then
+        rm -f "${SHORTS_THEME_FIRM_OUTPUT_WEBM}"
+        echo "🧹 Removed shorts-theme-firm intermediate WEBM: ${SHORTS_THEME_FIRM_OUTPUT_WEBM}"
     fi
 }
 
@@ -944,6 +1087,27 @@ SHORTS_FIRM_THUMBNAIL_PNG="${SHORTS_FIRM_OUTPUT_DIR}/${SHORTS_FIRM_THUMBNAIL_BAS
 SHORTS_FIRM_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts-firm/${DATE}.json"
 SHORTS_FIRM_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-firm/shortsfirm${DATE}.mp3"
 
+SHORTS_THEME_FIRM_BASE="${ROOT_DIR}/podcast/${DATE}/${LANG}/shorts-theme-firm"
+SHORTS_THEME_FIRM_SCRIPT_PATH="${SHORTS_THEME_FIRM_BASE}/script.json"
+SHORTS_THEME_FIRM_MP3="${SHORTS_THEME_FIRM_BASE}/shorts${DATE}.mp3"
+SHORTS_THEME_FIRM_SECTION_TIMING_PATH="${SHORTS_THEME_FIRM_BASE}/sections.timing.json"
+SHORTS_THEME_FIRM_SLIDE_SCRIPT_PATH="${SHORTS_THEME_FIRM_BASE}/slides.script.json"
+SHORTS_THEME_FIRM_RENDER_TEMPLATE_PATH="${SHORTS_THEME_FIRM_BASE}/slides.render.template.json"
+SHORTS_THEME_FIRM_RENDER_JSON="${SHORTS_THEME_FIRM_BASE}/slides.render.json"
+SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH="${SHORTS_THEME_FIRM_BASE}/upload.metadata.json"
+SHORTS_THEME_FIRM_OUTPUT_DIR="${SHORTS_THEME_FIRM_BASE}/youtube"
+SHORTS_THEME_FIRM_BASENAME="${DATE}_${LANG}_shorts"
+SHORTS_THEME_FIRM_THUMBNAIL_BASENAME="${DATE}_${LANG}_shorts_thumbnail"
+if [ -n "${PREVIEW_SECONDS}" ]; then
+    SHORTS_THEME_FIRM_BASENAME="${DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
+    SHORTS_THEME_FIRM_THUMBNAIL_BASENAME="${DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
+fi
+SHORTS_THEME_FIRM_OUTPUT_WEBM="${SHORTS_THEME_FIRM_OUTPUT_DIR}/${SHORTS_THEME_FIRM_BASENAME}.webm"
+SHORTS_THEME_FIRM_OUTPUT_MP4="${SHORTS_THEME_FIRM_OUTPUT_DIR}/${SHORTS_THEME_FIRM_BASENAME}.mp4"
+SHORTS_THEME_FIRM_THUMBNAIL_PNG="${SHORTS_THEME_FIRM_OUTPUT_DIR}/${SHORTS_THEME_FIRM_THUMBNAIL_BASENAME}.png"
+SHORTS_THEME_FIRM_WEB_DATA_PATH="${ROOT_DIR}/web/public/data/shorts-theme-firm/${DATE}.json"
+SHORTS_THEME_FIRM_WEB_AUDIO_PATH="${ROOT_DIR}/web/public/audio/shorts-theme-firm/${DATE}.mp3"
+
 echo "========================================================"
 echo "🎬 YouTube Full Pipeline Start"
 echo "📅 Date: ${DATE}"
@@ -975,34 +1139,37 @@ fi
 if [ "${START_FROM}" -le 3 ]; then
     CURRENT_STEP="step3_shorts_assets"
     echo ""
-    echo "[3/5] Shorts + Shorts-Firm assets prepare"
+    echo "[3/5] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare"
     prepare_shorts_assets
     prepare_shorts_firm_assets
+    prepare_shorts_theme_firm_assets
 else
     echo ""
-    echo "[3/5] Shorts + Shorts-Firm assets prepare skipped (start-from ${START_FROM})"
+    echo "[3/5] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 4 ]; then
     CURRENT_STEP="step4_shorts_render"
     echo ""
-    echo "[4/5] Shorts + Shorts-Firm render (Remotion -> MP4 + first-frame thumbnail)"
+    echo "[4/5] Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)"
     render_shorts_video
     render_shorts_firm_video
+    render_shorts_theme_firm_video
 else
     echo ""
-    echo "[4/5] Shorts + Shorts-Firm render skipped (start-from ${START_FROM})"
+    echo "[4/5] Shorts + Shorts-Firm + Shorts-Theme-Firm render skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 5 ]; then
     CURRENT_STEP="step5_shorts_upload"
     echo ""
-    echo "[5/5] Shorts + Shorts-Firm upload"
+    echo "[5/5] Shorts + Shorts-Firm + Shorts-Theme-Firm upload"
     upload_shorts_video
     upload_shorts_firm_video
+    upload_shorts_theme_firm_video
 else
     echo ""
-    echo "[5/5] Shorts + Shorts-Firm upload skipped (start-from ${START_FROM})"
+    echo "[5/5] Shorts + Shorts-Firm + Shorts-Theme-Firm upload skipped (start-from ${START_FROM})"
 fi
 
 CURRENT_STEP="done"
@@ -1014,3 +1181,6 @@ echo "📹 Shorts MP4: ${SHORTS_OUTPUT_MP4}"
 echo "🖼️  Shorts thumbnail: ${SHORTS_THUMBNAIL_PNG}"
 echo "📹 Shorts-Firm MP4: ${SHORTS_FIRM_OUTPUT_MP4}"
 echo "🖼️  Shorts-Firm thumbnail: ${SHORTS_FIRM_THUMBNAIL_PNG}"
+echo "📹 Shorts-Theme-Firm MP4: ${SHORTS_THEME_FIRM_OUTPUT_MP4}"
+echo "🖼️  Shorts-Theme-Firm thumbnail: ${SHORTS_THEME_FIRM_THUMBNAIL_PNG}"
+echo "📝 Shorts-Theme-Firm upload metadata: ${SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH}"

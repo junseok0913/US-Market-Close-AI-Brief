@@ -321,6 +321,35 @@ def _is_shorts_firm_upload(file_path: Path) -> bool:
     return "/shorts-firm/" in path_text or "shorts-firm" in file_path.name.lower()
 
 
+def _is_shorts_theme_firm_upload(file_path: Path) -> bool:
+    path_text = str(file_path).lower()
+    return "/shorts-theme-firm/" in path_text or "shorts-theme-firm" in file_path.name.lower()
+
+
+def _normalize_override_tags(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    if isinstance(value, str):
+        return [item.strip() for item in value.split(",") if item.strip()]
+    return []
+
+
+def load_variant_upload_metadata(file_path: Path) -> dict[str, Any]:
+    candidate = file_path.parent.parent / "upload.metadata.json"
+    if not candidate.exists():
+        return {}
+    try:
+        payload = json.loads(candidate.read_text(encoding="utf-8"))
+    except Exception as exc:
+        logger.warning("Failed to parse variant upload metadata: %s (%s)", candidate, exc)
+        return {}
+    if not isinstance(payload, dict):
+        logger.warning("Variant upload metadata must be a JSON object: %s", candidate)
+        return {}
+    logger.info("Loaded variant upload metadata: %s", candidate)
+    return payload
+
+
 def load_upload_metadata(date_yyyymmdd: str, lang: str) -> dict[str, Any]:
     episode_dir = ROOT_DIR / "podcast" / date_yyyymmdd / lang
     metadata_path = episode_dir / "metadata.json"
@@ -386,6 +415,11 @@ def load_credentials(client_secrets_file: Path, token_file: Path) -> Credentials
         logger.info("Refreshing YouTube OAuth token...")
         creds.refresh(Request())
     else:
+        if not client_secrets_file.exists():
+            raise FileNotFoundError(
+                f"YouTube OAuth client secrets file not found: {client_secrets_file}. "
+                "Set YOUTUBE_CLIENT_SECRETS_FILE or pass --client-secrets."
+            )
         logger.info("Starting OAuth browser flow for YouTube upload...")
         flow = InstalledAppFlow.from_client_secrets_file(str(client_secrets_file), SCOPES)
         creds = flow.run_local_server(port=0)
@@ -532,13 +566,6 @@ def main(argv: list[str] | None = None) -> int:
             logger.error("Thumbnail file not found: %s", thumbnail_path)
             return 2
 
-    if not args.client_secrets.exists():
-        logger.error(
-            "YouTube OAuth client secrets file not found: %s. Set YOUTUBE_CLIENT_SECRETS_FILE or pass --client-secrets.",
-            args.client_secrets,
-        )
-        return 2
-
     publish_at: str | None = None
     if args.publish_at:
         if args.privacy != "private":
@@ -554,6 +581,7 @@ def main(argv: list[str] | None = None) -> int:
         metadata = load_upload_metadata(date_yyyymmdd, args.lang)
         is_shorts = _is_shorts_upload(file_path)
         is_shorts_firm = _is_shorts_firm_upload(file_path)
+        is_shorts_theme_firm = _is_shorts_theme_firm_upload(file_path)
 
         if is_shorts_firm:
             display_date = _format_dotted_date(resolve_display_date(date_yyyymmdd, args.lang))
@@ -561,6 +589,23 @@ def main(argv: list[str] | None = None) -> int:
                 metadata["title"] = f"{display_date} 미국 증시 장마감 | 오늘의 화제 종목"
             else:
                 metadata["title"] = f"{display_date} US Market Close | Today's Focus Stocks"
+        elif is_shorts_theme_firm:
+            display_date = _format_dotted_date(resolve_display_date(date_yyyymmdd, args.lang))
+            if args.lang == "ko":
+                metadata["title"] = f"{display_date} 미국 증시 장마감 | 오늘의 AI 토론 종목"
+            else:
+                metadata["title"] = f"{display_date} US Market Close | Today's AI Debate Stock"
+
+        variant_metadata = load_variant_upload_metadata(file_path)
+        custom_title = str(variant_metadata.get("title") or "").strip()
+        if custom_title:
+            metadata["title"] = custom_title
+        custom_description = str(variant_metadata.get("description") or "").strip()
+        if custom_description:
+            metadata["description"] = custom_description
+        custom_tags = _normalize_override_tags(variant_metadata.get("tags") or variant_metadata.get("keywords"))
+        if custom_tags:
+            metadata["tags"] = _dedupe_keep_order([*custom_tags, *metadata["tags"]])
 
         if is_shorts:
             metadata["tags"] = _dedupe_keep_order([*metadata["tags"], "shorts"])

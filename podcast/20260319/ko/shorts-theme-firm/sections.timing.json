@@ -1,0 +1,67 @@
+{
+  "date": "20260319",
+  "lang": "ko",
+  "audioFile": "shorts20260319.mp3",
+  "sectionOrder": [
+    "company_1",
+    "company_2",
+    "company_3",
+    "company_4"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 79.804,
+  "sections": [
+    {
+      "id": 0,
+      "name": "company_1",
+      "ticker": "NEM",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 24.931,
+      "endSec": 24.931,
+      "speechDurationSec": 24.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 209,
+      "text": "중동 리스크로 시장이 흔들린 오늘, 대표 안전자산 금광주 뉴몬트는 왜 급등락했을까요? 펀더멘털 전문가는 숫자로 말합니다. 2025년 기준, 매출 227억 달러, 순이익 71억 달러로 전년 대비 폭발적으로 성장했습니다. 73억 달러에 달하는 막대한 잉여현금흐름은 회사의 강력한 현금 창출 능력을 증명하며, 이를 바탕으로 한 합리적인 자본 배분 전략이 돋보이는 우량 기업입니다."
+    },
+    {
+      "id": 1,
+      "name": "company_2",
+      "ticker": "NEM",
+      "kind": "company",
+      "startSec": 24.931,
+      "speechEndSec": 42.062,
+      "endSec": 42.062,
+      "speechDurationSec": 17.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 145,
+      "text": "성장 전문가는 뉴몬트를 '자원 테크' 기업으로 봅니다. 뉴크레스트 인수 시너지, 자율주행 채굴 트럭 도입, AI 기반 탐사 등 기술 혁신이 핵심 성장 동력입니다. 이를 통해 생산 단가를 낮추고 효율을 극대화하며 전통 광산업의 한계를 넘어서고 있다는 평가입니다."
+    },
+    {
+      "id": 2,
+      "name": "company_3",
+      "ticker": "NEM",
+      "kind": "company",
+      "startSec": 42.062,
+      "speechEndSec": 57.593,
+      "endSec": 57.593,
+      "speechDurationSec": 15.531,
+      "pauseAfterSec": 0.0,
+      "charCount": 133,
+      "text": "리스크 전문가는 통제 불가능한 변수를 경고합니다. 가장 큰 리스크는 사업을 운영하는 국가들의 정치적 불안정성입니다. 또한 사업 구조상 금 가격 변동에 절대적으로 의존하며, 강화되는 환경 규제 역시 수익성을 위협하는 핵심 요인으로 꼽힙니다."
+    },
+    {
+      "id": 3,
+      "name": "company_4",
+      "ticker": "NEM",
+      "kind": "company",
+      "startSec": 57.593,
+      "speechEndSec": 79.804,
+      "endSec": 79.804,
+      "speechDurationSec": 22.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 187,
+      "text": "센티멘트 전문가는 오늘 시장의 심리를 분석합니다. 주가는 장 초반 급락했지만, 저점을 찍고 강하게 반등했습니다. 이는 기술 성장주라는 기대와 원자재 리스크라는 우려가 팽팽히 맞선 결과입니다. 장중의 강한 반등은 펀더멘털 대비 주가가 과도하게 하락했다고 판단한 투자자들이 저가 매수에 나선 것으로 풀이됩니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

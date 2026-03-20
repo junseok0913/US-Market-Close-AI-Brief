@@ -1,0 +1,149 @@
+{
+    "date": "20260317",
+    "ticker": "BKNG",
+    "durationSeconds": 60,
+    "audioSrc": "",
+    "sceneTiming": {
+        "fundamental": {
+            "startSec": 0,
+            "endSec": 15
+        },
+        "growth": {
+            "startSec": 15,
+            "endSec": 30
+        },
+        "risk": {
+            "startSec": 30,
+            "endSec": 45
+        },
+        "sentiment": {
+            "startSec": 45,
+            "endSec": 60
+        }
+    },
+    "hook": {
+        "eyebrow": "AI DEBATE / BKNG",
+        "headlineTop": "부킹 홀딩스",
+        "headlineBottom": "$4,442",
+        "subheadline": "AI 커넥티드 트립의 꿈과 EU 규제의 현실이 정면 충돌합니다",
+        "dayChange": "+3.48%"
+    },
+    "fundamental": {
+        "label": "펀더멘털",
+        "stance": "적정 수준",
+        "confidence": 0.7,
+        "summary": "강력한 현금 창출력에도 안전마진은 부족",
+        "metrics": [
+            {
+                "label": "매출",
+                "value": "$269억",
+                "sub": "전년 대비 +13.4%",
+                "pct": 13.4
+            },
+            {
+                "label": "영업 현금흐름",
+                "value": "$94억",
+                "sub": "순이익 $54억 상회",
+                "pct": 35
+            },
+            {
+                "label": "영업이익률",
+                "value": "32.8%",
+                "sub": "영업이익 $88억",
+                "pct": 32.8
+            },
+            {
+                "label": "주주환원",
+                "value": "$76억",
+                "sub": "자사주 $64억 + 배당 $12억",
+                "pct": 28
+            }
+        ]
+    },
+    "growth": {
+        "label": "성장 포인트",
+        "stance": "긍정적 시각",
+        "confidence": 0.92,
+        "summary": "AI 커넥티드 트립으로 여행 산업의 OS를 노린다",
+        "columns": [
+            {
+                "label": "항공권",
+                "value": "+37%",
+                "pct": 37
+            },
+            {
+                "label": "액티비티",
+                "value": "+80%",
+                "pct": 80
+            },
+            {
+                "label": "머천트",
+                "value": "+24.8%",
+                "pct": 24.8
+            },
+            {
+                "label": "대안숙소",
+                "value": "390만",
+                "pct": 45
+            }
+        ],
+        "footnote": "항공권/액티비티 = 예약 성장률, 머천트 = 총 예약액 성장률, 대안숙소 = 인벤토리 규모"
+    },
+    "risk": {
+        "label": "리스크",
+        "stance": "주의 필요",
+        "confidence": 0.85,
+        "summary": "EU 규제가 핵심 비즈니스 모델을 직격",
+        "items": [
+            {
+                "label": "DMA 게이트키퍼 지정",
+                "detail": "가격 결정력 근본 훼손",
+                "highlight": "핵심 위협"
+            },
+            {
+                "label": "스페인 CNMC 벌금",
+                "detail": "$4.85억 유로 부채 기록",
+                "highlight": "EUR 485M"
+            },
+            {
+                "label": "이탈리아 세무 합의",
+                "detail": "과거 $3.32억 달러 지급",
+                "highlight": "$332M"
+            },
+            {
+                "label": "유럽 동시다발 조사",
+                "detail": "스위스/프랑스/그리스/헝가리",
+                "highlight": "4개국"
+            }
+        ],
+        "totalExposure": "EUR 485M + $332M"
+    },
+    "sentiment": {
+        "label": "시장 심리",
+        "stance": "과열 경계",
+        "confidence": 0.85,
+        "summary": "악재 부재를 호재로 오인하는 FOMO 국면",
+        "priceRange": {
+            "low": 4354,
+            "high": 4475,
+            "close": 4442,
+            "dayChangePct": 3.48
+        },
+        "keywords": [
+            "FOMO",
+            "반사성",
+            "오버슈팅",
+            "탐욕 초기"
+        ],
+        "insight": "뉴스 부재 속 급등 — 가격이 가격을 끌어올리는 반사성 국면"
+    },
+    "finale": {
+        "headline": "4명의 전문가가 분석한\nBKNG의 현재 위치",
+        "bullets": [
+            "AI 커넥티드 트립은 매력적이나",
+            "EU 규제가 핵심 비즈니스 모델을 위협하고",
+            "현재 가격은 리스크를 충분히 반영하지 못한 상태"
+        ],
+        "cta": "AI Debate / 2026-03-17"
+    }
+}

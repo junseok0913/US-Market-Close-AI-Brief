@@ -1,0 +1,155 @@
+{
+  "date": "20260317",
+  "ticker": "BKNG",
+  "durationSeconds": 60,
+  "audioSrc": "",
+  "includeAudio": false,
+  "hook": {
+    "eyebrow": "AI DEBATE / BKNG",
+    "headlineTop": "부킹 홀딩스",
+    "headlineBottom": "$4,442",
+    "subheadline": "커넥티드 트립의 미래와 EU 규제 리스크가 정면으로 충돌한 하루입니다.",
+    "dayChange": "+3.48%"
+  },
+  "marketPulse": {
+    "headline": "연준 회의 경계감 속에서도 시장은 AI 서사에 베팅했고, BKNG는 그 기대를 대표한 종목이었습니다.",
+    "metrics": [
+      {
+        "label": "S&P 500",
+        "value": "+0.25%",
+        "detail": "6,716선 마감",
+        "tone": "up"
+      },
+      {
+        "label": "NASDAQ",
+        "value": "+0.47%",
+        "detail": "22,479선 마감",
+        "tone": "up"
+      },
+      {
+        "label": "BKNG",
+        "value": "+3.48%",
+        "detail": "$4,442 종가",
+        "tone": "up"
+      }
+    ]
+  },
+  "fundamental": {
+    "label": "펀더멘털",
+    "stance": "보유 관점",
+    "confidence": 0.7,
+    "summary": "현금 창출력은 강력하지만, 지금 가격은 안전마진보다 프리미엄이 먼저 보이는 구간입니다.",
+    "metrics": [
+      {
+        "label": "매출",
+        "value": "$269억",
+        "sub": "전년 대비 +13.4%",
+        "pct": 13.4
+      },
+      {
+        "label": "영업 현금흐름",
+        "value": "$94억",
+        "sub": "순이익 $54억 상회",
+        "pct": 35
+      },
+      {
+        "label": "영업이익률",
+        "value": "32.8%",
+        "sub": "영업이익 $88억",
+        "pct": 32.8
+      },
+      {
+        "label": "주주환원",
+        "value": "$76억",
+        "sub": "자사주 $64억 + 배당 $12억",
+        "pct": 28
+      }
+    ]
+  },
+  "growth": {
+    "label": "성장 포인트",
+    "stance": "강한 서사",
+    "confidence": 0.92,
+    "summary": "AI 기반 커넥티드 트립과 머천트 모델 전환이 BKNG를 단순 예약 플랫폼에서 여행 OS로 끌어올린다는 논리입니다.",
+    "columns": [
+      {
+        "label": "항공권 예약",
+        "value": "+37%",
+        "pct": 37
+      },
+      {
+        "label": "액티비티 예약",
+        "value": "+80%",
+        "pct": 80
+      },
+      {
+        "label": "머천트 예약액",
+        "value": "+24.8%",
+        "pct": 24.8
+      },
+      {
+        "label": "대안숙소",
+        "value": "390만",
+        "pct": 45
+      }
+    ],
+    "footnote": "출처 요약: 2026-02-18 제출 10-K와 2026-03-17 한국어 방송 스크립트의 BKNG 구간"
+  },
+  "risk": {
+    "label": "리스크",
+    "stance": "재평가 필요",
+    "confidence": 0.85,
+    "summary": "문제는 벌금 한 번이 아니라, DMA가 가격 결정력 자체를 갉아먹을 수 있다는 점입니다.",
+    "items": [
+      {
+        "label": "DMA 게이트키퍼 지정",
+        "detail": "핵심 경쟁 우위였던 가격 동등성 조항을 직접 압박",
+        "highlight": "핵심 위협"
+      },
+      {
+        "label": "스페인 CNMC 벌금",
+        "detail": "약 4억 8,500만 유로 부채 인식",
+        "highlight": "EUR 485M"
+      },
+      {
+        "label": "이탈리아 세무 이력",
+        "detail": "과거 3억 3,200만 달러 지급 사례",
+        "highlight": "$332M"
+      },
+      {
+        "label": "유럽 동시 조사",
+        "detail": "스위스, 프랑스, 그리스, 헝가리까지 확산",
+        "highlight": "4개국"
+      }
+    ],
+    "totalExposure": "EUR 485M + $332M"
+  },
+  "sentiment": {
+    "label": "시장 심리",
+    "stance": "과열 경계",
+    "confidence": 0.85,
+    "summary": "시장은 규제보다 AI 서사를 먼저 가격에 반영했고, 그 결과 BKNG는 뉴스 부재 속에서도 오버슈팅 성격의 급등을 보였습니다.",
+    "priceRange": {
+      "low": 4354,
+      "high": 4475,
+      "close": 4442,
+      "dayChangePct": 3.48
+    },
+    "keywords": [
+      "FOMO",
+      "반사성",
+      "오버슈팅",
+      "탐욕 초기"
+    ],
+    "insight": "현재 급등은 성장 스토리의 시작일 수도 있지만, 동시에 구조적 리스크를 무시한 군중 심리의 과열일 수도 있습니다."
+  },
+  "finale": {
+    "headline": "4명의 전문가가 본\nBKNG의 현재 위치",
+    "bullets": [
+      "AI 커넥티드 트립 서사는 분명 강하다",
+      "하지만 EU 규제는 비즈니스 모델의 핵심을 겨냥한다",
+      "그래서 지금은 성장 기대와 규제 할인율을 함께 봐야 한다"
+    ],
+    "cta": "AI Debate / BKNG / 2026-03-17"
+  }
+}

@@ -6,8 +6,8 @@
 # Flow:
 #   1) Generate script.json (Gemini + company context)
 #   2) Generate TTS audio + sections.timing.json
-#   3) Prepare slide script/template + TSX payload
-#   4) Render shorts MP4 (Remotion) + thumbnail
+#   3) Prepare slide script/template + render payload
+#   4) Render shorts MP4 (Remotion) + first-frame thumbnail
 #   5) Upload to YouTube (optional)
 # ==============================================================================
 
@@ -47,7 +47,7 @@ Usage:
 Options:
   --lang ko|en               Language path (default: ko)
   --start-from <n>           Resume from step n (1..5, default: 1)
-                             1=script, 2=tts, 3=slide+tsx, 4=render, 5=upload
+                             1=script, 2=tts, 3=slide payload, 4=render, 5=upload
   --duration <seconds>       Target shorts script duration (default: 90)
   --voice <name>             TTS voice (default: Charon)
   --temperature <float>      TTS temperature (default: 0.6)
@@ -228,7 +228,6 @@ generate_audio() {
 prepare_slide_assets() {
     require_python_runner
     require_file "${ROOT_DIR}/shorts-theme-firm/generate_slide_script.py"
-    require_file "${ROOT_DIR}/shorts-theme-firm/generate_tsx.py"
     require_file "${SHORTS_SCRIPT_PATH}"
     require_file "${SLIDES_PROMPT_CONFIG_PATH}"
 
@@ -249,15 +248,8 @@ prepare_slide_assets() {
     echo "🧩 Preparing shorts-theme-firm slide script/template..."
     run_python "${ROOT_DIR}/shorts-theme-firm/generate_slide_script.py" "${slide_args[@]}"
 
-    echo "🧱 Generating shorts-theme-firm TSX payload..."
-    run_python "${ROOT_DIR}/shorts-theme-firm/generate_tsx.py" \
-        "${DATE}" \
-        --lang "${LANG}" \
-        --input "${SHORTS_RENDER_JSON}" \
-        --output "${SHORTS_TSX_PATH}"
-
     require_file "${SHORTS_RENDER_JSON}"
-    require_file "${SHORTS_TSX_PATH}"
+    require_file "${SHORTS_UPLOAD_METADATA_PATH}"
 }
 
 render_video() {
@@ -300,7 +292,11 @@ render_video() {
     echo "🎬 Rendering shorts-theme-firm via Remotion..."
     node "${ROOT_DIR}/shorts-theme-firm/render_shorts_remotion.mjs" "${remotion_args[@]}"
 
-    enforce_shorts_duration_limit "${SHORTS_OUTPUT_MP4}"
+    if [ -z "${PREVIEW_SECONDS}" ]; then
+        enforce_shorts_duration_limit "${SHORTS_OUTPUT_MP4}"
+    else
+        echo "⏭️  Preview render detected; skipping shorts retime."
+    fi
     validate_mp4_streams "${SHORTS_OUTPUT_MP4}"
 
     echo "🖼️  Creating shorts-theme-firm thumbnail from first frame..."
@@ -496,10 +492,10 @@ SHORTS_SECTION_TIMING_PATH="${SHORTS_BASE}/sections.timing.json"
 SHORTS_SLIDE_SCRIPT_PATH="${SHORTS_BASE}/slides.script.json"
 SHORTS_RENDER_TEMPLATE_PATH="${SHORTS_BASE}/slides.render.template.json"
 SHORTS_RENDER_JSON="${SHORTS_BASE}/slides.render.json"
+SHORTS_UPLOAD_METADATA_PATH="${SHORTS_BASE}/upload.metadata.json"
 if [ -n "${CUSTOM_RENDER_JSON}" ]; then
     SHORTS_RENDER_JSON="${CUSTOM_RENDER_JSON}"
 fi
-SHORTS_TSX_PATH="${ROOT_DIR}/web/src/generated/shorts-theme-firm/${DATE}_${LANG}.generated.tsx"
 SHORTS_OUTPUT_DIR="${SHORTS_BASE}/youtube"
 SHORTS_BASENAME="${DATE}_${LANG}_shorts"
 SHORTS_THUMBNAIL_BASENAME="${DATE}_${LANG}_shorts_thumbnail"
@@ -552,13 +548,13 @@ else
 fi
 
 if [ "${START_FROM}" -le 3 ]; then
-    CURRENT_STEP="step3_slide_and_tsx"
+    CURRENT_STEP="step3_slide_payload"
     echo ""
-    echo "[3/5] Prepare slide script/template + TSX"
+    echo "[3/5] Prepare slide script/template + render payload"
     prepare_slide_assets
 else
     echo ""
-    echo "[3/5] Prepare slide script/template + TSX skipped (start-from ${START_FROM})"
+    echo "[3/5] Prepare slide script/template + render payload skipped (start-from ${START_FROM})"
 fi
 
 if [ "${START_FROM}" -le 4 ]; then
@@ -583,10 +579,10 @@ fi
 
 CURRENT_STEP="done"
 echo ""
-echo "✅ Shorts-firm pipeline complete"
+echo "✅ Shorts-theme-firm pipeline complete"
 echo "🧠 Script: ${SHORTS_SCRIPT_PATH}"
 echo "🎵 Audio: ${SHORTS_MP3}"
 echo "🧩 Slides render: ${SHORTS_RENDER_JSON}"
-echo "🧱 TSX: ${SHORTS_TSX_PATH}"
+echo "📝 Upload metadata: ${SHORTS_UPLOAD_METADATA_PATH}"
 echo "📹 MP4: ${SHORTS_OUTPUT_MP4}"
 echo "🖼️  Thumbnail: ${SHORTS_THUMBNAIL_PNG}"

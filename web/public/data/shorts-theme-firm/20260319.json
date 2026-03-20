@@ -1,0 +1,148 @@
+{
+  "date": "20260320",
+  "ticker": "NEM",
+  "durationSeconds": 79.804,
+  "audioSrc": "audio/shorts-theme-firm/20260319.mp3",
+  "sceneTiming": {
+    "fundamental": {
+      "startSec": 0.0,
+      "endSec": 24.931
+    },
+    "growth": {
+      "startSec": 24.931,
+      "endSec": 42.062
+    },
+    "risk": {
+      "startSec": 42.062,
+      "endSec": 57.593
+    },
+    "sentiment": {
+      "startSec": 57.593,
+      "endSec": 79.804
+    }
+  },
+  "hook": {
+    "eyebrow": "AI DEBATE / NEM",
+    "headlineTop": "뉴몬트",
+    "headlineBottom": "$99",
+    "subheadline": "중동 리스크로 시장이 흔들린 오늘, 대표 안전자산 금광주 뉴몬트는 왜 급등락했을까요",
+    "dayChange": "-6.89%"
+  },
+  "fundamental": {
+    "label": "펀더멘털",
+    "stance": "적정 수준",
+    "confidence": 0.74,
+    "summary": "금, 구리, 은, 아연, 납 등 광물 탐사, 개발, 생산 및 판매",
+    "metrics": [
+      {
+        "label": "매출",
+        "value": "$227억",
+        "sub": "2025년 기준",
+        "pct": 88.0
+      },
+      {
+        "label": "순이익",
+        "value": "$71억",
+        "sub": "이익 성장",
+        "pct": 76.0
+      },
+      {
+        "label": "영업현금흐름",
+        "value": "$103억",
+        "sub": "현금창출력",
+        "pct": 64.0
+      },
+      {
+        "label": "잉여현금흐름",
+        "value": "$73억",
+        "sub": "FCF 기준",
+        "pct": 52.0
+      }
+    ]
+  },
+  "growth": {
+    "label": "성장 포인트",
+    "stance": "긍정적 시각",
+    "confidence": 0.82,
+    "summary": "'자원 테크' 기업으로의 진화",
+    "columns": [
+      {
+        "label": "원가 개선",
+        "value": "+20%",
+        "pct": 90.0
+      },
+      {
+        "label": "회수율",
+        "value": "+10%",
+        "pct": 76.0
+      },
+      {
+        "label": "장중 반등",
+        "value": "+3.08%",
+        "pct": 62.0
+      },
+      {
+        "label": "상승 여력",
+        "value": "2.5배",
+        "pct": 48.0
+      }
+    ],
+    "footnote": "뉴크레스트 인수 통한 연간 $5억 시너지 기대"
+  },
+  "risk": {
+    "label": "리스크",
+    "stance": "주의 필요",
+    "confidence": 0.84,
+    "summary": "핵심 리스크: 통제 불가능한 외부 변수",
+    "items": [
+      {
+        "label": "가나 로열티",
+        "detail": "로열티 상향 압박",
+        "highlight": "5%→12%"
+      },
+      {
+        "label": "멕시코 파업",
+        "detail": "운영 전면 중단",
+        "highlight": "4개월"
+      },
+      {
+        "label": "현금흐름 충격",
+        "detail": "금값 하락 시 타격",
+        "highlight": "-30%"
+      },
+      {
+        "label": "최악 시나리오",
+        "detail": "주가 급락 가능",
+        "highlight": "-50%"
+      }
+    ],
+    "totalExposure": "금값 -20% / CF -30%"
+  },
+  "sentiment": {
+    "label": "시장 해석",
+    "stance": "과열 경계",
+    "confidence": 0.8,
+    "summary": "시장 심리: 기대와 우려의 충돌",
+    "priceRange": {
+      "low": 95.79,
+      "high": 99.16,
+      "close": 99.16,
+      "dayChangePct": -6.89
+    },
+    "keywords": [
+      "반사성",
+      "낙관 우위",
+      "규제 무시"
+    ],
+    "insight": "과매도 판단에 따른 저가 매수세 유입"
+  },
+  "finale": {
+    "headline": "4명의 전문가가 분석한\nNEM의 현재 위치",
+    "bullets": [
+      "펀더멘털: 2025년 매출 227억 달러, 순이익 71억 달러 등 폭발적 실적…",
+      "성장성: 자율주행 채굴, AI 탐사 등 기술 혁신을 통해 생산 효율성을 극대화…",
+      "리스크: 운영 국가의 정치적 불안정성, 금 가격 변동성, 환경 규제 등 통제…"
+    ],
+    "cta": "구독과 좋아요 부탁드립니다"
+  }
+}

@@ -99,8 +99,8 @@ function main() {
     Math.floor(
       toPositiveNumber(
         args.concurrency ??
-          process.env.YOUTUBE_REMOTION_CONCURRENCY ??
-          process.env.REMOTION_CONCURRENCY,
+        process.env.YOUTUBE_REMOTION_CONCURRENCY ??
+        process.env.REMOTION_CONCURRENCY,
         2,
       ),
     ),
@@ -133,9 +133,10 @@ function main() {
   if (durationSeconds > 0) {
     episode.durationSeconds = durationSeconds;
   }
+  const INTRO_SECONDS = 2; // 썸네일 인트로 2초 (PodcastVideoComposition INTRO_FRAMES=60 @ 30fps)
   const targetDuration =
     previewSeconds > 0 ? Math.max(0.2, Math.min(previewSeconds, durationSeconds)) : durationSeconds;
-  const frameCount = Math.max(1, Math.ceil(targetDuration * fps));
+  const frameCount = Math.max(1, Math.ceil((targetDuration + INTRO_SECONDS) * fps));
   const frameRange = `0-${frameCount - 1}`;
 
   const date = String(episode?.date || "").replace(/[^0-9]/g, "");
@@ -198,8 +199,7 @@ function main() {
     "--overwrite",
   ];
   console.log(
-    `[remotion-episode] cli-source: ${
-      remotion.cmd === "npx" ? "npx remotion" : "local (node_modules/.bin/remotion)"
+    `[remotion-episode] cli-source: ${remotion.cmd === "npx" ? "npx remotion" : "local (node_modules/.bin/remotion)"
     }`,
   );
   if (browserExecutable) {

@@ -44,6 +44,25 @@ MAX_COMPANY_BULLETS = 3
 MAX_VISUAL_HEADLINE = 24
 MAX_VISUAL_SUBHEADLINE = 42
 MAX_VISUAL_BODY = 52
+BKNG_ROLE_ORDER = ("fundamental", "growth", "risk", "sentiment")
+BKNG_ROLE_LABELS = {
+    "fundamental": "펀더멘털",
+    "growth": "성장 포인트",
+    "risk": "리스크",
+    "sentiment": "시장 심리",
+}
+BKNG_ROLE_STANCES = {
+    "fundamental": "적정 수준",
+    "growth": "긍정적 시각",
+    "risk": "주의 필요",
+    "sentiment": "과열 경계",
+}
+BKNG_ROLE_CONFIDENCE = {
+    "fundamental": 0.74,
+    "growth": 0.82,
+    "risk": 0.84,
+    "sentiment": 0.8,
+}
 
 
 def compact_text(value: Any) -> str:
@@ -91,8 +110,8 @@ def build_analysis_title(script_payload: dict[str, Any], lang: str) -> str:
 
 def default_cta_text(lang: str) -> str:
     if compact_text(lang).lower() == "en":
-        return "Please like and subscribe."
-    return "구독과 좋아요 부탁드립니다."
+        return "Please like and subscribe"
+    return "구독과 좋아요 부탁드립니다"
 
 
 def parse_date_arg(value: str) -> str:
@@ -150,6 +169,11 @@ def resolve_slides_config_node(config: dict[str, Any]) -> dict[str, Any]:
     return config
 
 
+def resolve_upload_metadata_config_node(config: dict[str, Any]) -> dict[str, Any]:
+    node = config.get("upload_metadata")
+    return node if isinstance(node, dict) else {}
+
+
 def resolve_slides_defaults(config: dict[str, Any]) -> dict[str, Any]:
     node = resolve_slides_config_node(config)
     defaults = node.get("defaults")
@@ -163,6 +187,21 @@ def load_json(path: Path) -> dict[str, Any]:
     if not isinstance(payload, dict):
         raise ValueError(f"Invalid JSON object: {path}")
     return payload
+
+
+def load_debate_json(date: str, lang: str) -> dict[str, Any]:
+    """Auto-find and load the intermediate debate JSON for the given date."""
+    # First try to find debate JSONs for the selected date
+    debate_dir = ROOT_DIR / "podcast" / date / "intermediate" / "debate"
+    if debate_dir.exists():
+        debate_files = sorted(debate_dir.glob("*_debate.json"), key=lambda p: p.name)
+        if debate_files:
+            # Prefer the first one (alphabetically sorted by ticker)
+            payload = json.loads(debate_files[0].read_text(encoding="utf-8"))
+            logger.info("Loaded debate JSON: %s", debate_files[0])
+            return payload if isinstance(payload, dict) else {}
+    logger.warning("No debate JSON found at %s; debate_json will be empty", debate_dir)
+    return {}
 
 
 def parse_duration_seconds(script_payload: dict[str, Any], timing_payload: dict[str, Any] | None) -> float:
@@ -377,6 +416,71 @@ def merge_timing(sections: list[dict[str, Any]], timing_payload: dict[str, Any] 
     return out
 
 
+def build_bkng_scene_timing(
+    *,
+    timing_payload: dict[str, Any] | None,
+    sections: list[dict[str, Any]],
+    duration_seconds: float,
+) -> dict[str, dict[str, float]]:
+    section_to_scene = {
+        "company_1": "fundamental",
+        "company_2": "growth",
+        "company_3": "risk",
+        "company_4": "sentiment",
+    }
+    out: dict[str, dict[str, float]] = {}
+
+    raw_sections = timing_payload.get("sections") if isinstance(timing_payload, dict) else None
+    if isinstance(raw_sections, list):
+        for item in raw_sections:
+            if not isinstance(item, dict):
+                continue
+            section_name = normalize_section_name(item.get("name"))
+            scene_name = section_to_scene.get(section_name)
+            start_sec = item.get("startSec")
+            end_sec = item.get("endSec")
+            if not scene_name or not isinstance(start_sec, (int, float)) or not isinstance(end_sec, (int, float)):
+                continue
+            if float(end_sec) <= float(start_sec):
+                continue
+            out[scene_name] = {
+                "startSec": round(float(start_sec), 3),
+                "endSec": round(float(end_sec), 3),
+            }
+
+    if len(out) == len(section_to_scene):
+        return out
+
+    for section in sections:
+        section_name = normalize_section_name(section.get("name"))
+        scene_name = section_to_scene.get(section_name)
+        start_sec = section.get("startSec")
+        end_sec = section.get("endSec")
+        if not scene_name or not isinstance(start_sec, (int, float)) or not isinstance(end_sec, (int, float)):
+            continue
+        if float(end_sec) <= float(start_sec):
+            continue
+        out[scene_name] = {
+            "startSec": round(float(start_sec), 3),
+            "endSec": round(float(end_sec), 3),
+        }
+
+    if out:
+        return out
+
+    quarter = max(0.1, float(duration_seconds) / 4.0)
+    cursor = 0.0
+    for scene_name in ("fundamental", "growth", "risk", "sentiment"):
+        next_cursor = min(float(duration_seconds), cursor + quarter)
+        out[scene_name] = {
+            "startSec": round(cursor, 3),
+            "endSec": round(next_cursor, 3),
+        }
+        cursor = next_cursor
+
+    return out
+
+
 def normalize_tickers(values: Any) -> list[str]:
     if not isinstance(values, list):
         return []
@@ -401,6 +505,45 @@ def normalize_string_list(values: Any, limit: int, max_len: int) -> list[str]:
         if not text:
             continue
         text = text if len(text) <= max_len else f"{text[: max_len - 1].rstrip()}…"
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def normalize_multiline_text(value: Any, max_len: int) -> str:
+    text = str(value or "").replace("\r\n", "\n").replace("\r", "\n")
+    raw_lines = [re.sub(r"\s+", " ", line).strip() for line in text.split("\n")]
+    out_lines: list[str] = []
+    previous_blank = True
+    for line in raw_lines:
+        if not line:
+            if not previous_blank:
+                out_lines.append("")
+            previous_blank = True
+            continue
+        out_lines.append(line)
+        previous_blank = False
+    normalized = "\n".join(out_lines).strip()
+    return normalized[:max_len].rstrip()
+
+
+def normalize_upload_tags(values: Any, limit: int, max_len: int) -> list[str]:
+    if not isinstance(values, list):
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = compact_text(value).lstrip("#")
+        text = re.sub(r"\s+", "", text)
+        if not text:
+            continue
+        if len(text) > max_len:
+            text = text[:max_len].rstrip()
         key = text.lower()
         if key in seen:
             continue
@@ -1004,6 +1147,874 @@ def normalize_llm_render_payload(
     }
 
 
+def collect_text_fragments(value: Any) -> list[str]:
+    out: list[str] = []
+
+    def visit(item: Any) -> None:
+        if isinstance(item, str):
+            text = compact_text(item)
+            if text:
+                out.append(text)
+            return
+        if isinstance(item, list):
+            for child in item:
+                visit(child)
+            return
+        if isinstance(item, dict):
+            for child in item.values():
+                visit(child)
+
+    visit(value)
+    return out
+
+
+def parse_float_token(value: str) -> float | None:
+    token = compact_text(value).replace(",", "")
+    if not token:
+        return None
+    try:
+        return float(token)
+    except ValueError:
+        return None
+
+
+def extract_close_price(texts: list[str]) -> float | None:
+    priority_patterns = (
+        r"([0-9][0-9,]*\.?[0-9]*)달러로 마감",
+        r"종가(?:는|가)?\s*([0-9][0-9,]*\.?[0-9]*)달러",
+        r"주가(?:는|가)?\s*(?:하루 만에\s*[+-]?\d+(?:\.\d+)?%\s*)?(?:급등하며|급락하며|상승하며|하락하며)?\s*([0-9][0-9,]*\.?[0-9]*)달러",
+    )
+    for pattern in priority_patterns:
+        for text in texts:
+            match = re.search(pattern, text, flags=re.IGNORECASE)
+            if not match:
+                continue
+            value = parse_float_token(match.group(1))
+            if value and value > 100:
+                return value
+
+    fallback_values: list[float] = []
+    for text in texts:
+        for match in re.finditer(r"(?:\$|USD\s*)?([0-9][0-9,]*\.?[0-9]*)\s*(?:달러|usd)?", text, flags=re.IGNORECASE):
+            raw = match.group(0)
+            if not raw or ("$" not in raw and "달러" not in raw.lower() and "usd" not in raw.lower()):
+                continue
+            value = parse_float_token(match.group(1))
+            if value and 1 < value < 10000:
+                fallback_values.append(value)
+    if fallback_values:
+        return max(fallback_values)
+    return None
+
+
+def format_hook_price(value: float | None, *, fallback: str) -> str:
+    if value is None:
+        return fallback
+    rounded = int(round(value))
+    return f"${rounded:,}"
+
+
+def resolve_shorts_audio_src(date: str, audio_file: str) -> str:
+    match = re.search(r"(\d{8})", compact_text(audio_file))
+    asset_date = match.group(1) if match else parse_date_arg(date)
+    return f"audio/shorts-theme-firm/{asset_date}.mp3"
+
+
+def extract_company_display_name(
+    *,
+    ticker: str,
+    company_profile: dict[str, Any],
+    fallback_name: str,
+) -> str:
+    texts = collect_text_fragments(
+        [
+            company_profile.get("identity_expert_summary"),
+            company_profile.get("today_expert_summary"),
+            company_profile.get("expert_summaries"),
+            company_profile.get("expert_sections"),
+        ]
+    )
+    if ticker:
+        pattern = re.compile(rf"([가-힣][가-힣\s]{{1,24}})\s*\(\s*{re.escape(ticker)}\s*\)")
+        for text in texts:
+            match = pattern.search(text)
+            if match:
+                return compact_text(match.group(1))
+    simplified = simplify_company_name(fallback_name)
+    return simplified or ticker
+
+
+def build_hook_eyebrow(ticker: str) -> str:
+    if ticker:
+        return f"AI DEBATE / {ticker}"
+    return "AI DEBATE"
+
+
+def first_nonempty_text(values: list[Any], *, max_len: int) -> str:
+    for value in values:
+        text = strip_visual_tone(value)
+        if text:
+            return truncate_text(text, max_len=max_len)
+    return ""
+
+
+def extract_percentage(texts: list[str]) -> float | None:
+    for text in texts:
+        match = re.search(r"([+-]?\d+(?:\.\d+)?)%", text)
+        if not match:
+            continue
+        value = parse_float_token(match.group(1))
+        if value is not None:
+            return value
+    return None
+
+
+def extract_percent_tokens(text: str) -> list[str]:
+    values = re.findall(r"([+-]?\d+(?:\.\d+)?)%", compact_text(text))
+    out: list[str] = []
+    for raw in values:
+        sign = "" if raw.startswith(("+", "-")) else "+"
+        out.append(f"{sign}{raw}%")
+    return out
+
+
+def split_text_units(texts: list[str]) -> list[str]:
+    out: list[str] = []
+    for text in texts:
+        normalized = compact_text(text)
+        if not normalized:
+            continue
+        parts = re.split(r"(?:\n+|(?<=[.!?])\s+|•|\s+-\s+)", normalized)
+        for part in parts:
+            cleaned = compact_text(part)
+            if cleaned:
+                out.append(cleaned)
+    return out
+
+
+def find_text_with_keywords(texts: list[str], keywords: list[str]) -> str:
+    lowered = [keyword.lower() for keyword in keywords if keyword]
+    for text in texts:
+        haystack = text.lower()
+        if any(keyword in haystack for keyword in lowered):
+            return text
+    return ""
+
+
+def format_numeric_token(text: str) -> str:
+    source = compact_text(text)
+    if not source:
+        return ""
+
+    arrow_match = re.search(r"([0-9]+(?:\.\d+)?)%\s*[→>-]+\s*([0-9]+(?:\.\d+)?)%", source)
+    if arrow_match:
+        return f"{arrow_match.group(1)}%→{arrow_match.group(2)}%"
+
+    range_match = re.search(r"([0-9]+(?:\.\d+)?)~([0-9]+(?:\.\d+)?)%", source)
+    if range_match:
+        return f"{range_match.group(1)}~{range_match.group(2)}%"
+
+    eur_suffix_match = re.search(r"([0-9][0-9,.]*)억 유로", source)
+    if eur_suffix_match:
+        return f"EUR {eur_suffix_match.group(1)}억"
+
+    usd_suffix_match = re.search(r"([0-9][0-9,.]*)억 달러", source)
+    if usd_suffix_match:
+        return f"${usd_suffix_match.group(1)}억"
+
+    usd_token_match = re.search(r"\$([0-9][0-9,.]*)([BMK])", source, flags=re.IGNORECASE)
+    if usd_token_match:
+        return f"${usd_token_match.group(1)}{usd_token_match.group(2).upper()}"
+
+    eur_token_match = re.search(r"EUR\s*([0-9][0-9,.]*)([BMK])", source, flags=re.IGNORECASE)
+    if eur_token_match:
+        return f"EUR {eur_token_match.group(1)}{eur_token_match.group(2).upper()}"
+
+    usd_plain_match = re.search(r"\$([0-9][0-9,.]*)", source)
+    if usd_plain_match:
+        return f"${usd_plain_match.group(1)}"
+
+    percent_match = re.search(r"([+-]?\d+(?:\.\d+)?)%", source)
+    if percent_match:
+        value = percent_match.group(1)
+        if value.startswith(("+", "-")):
+            return f"{value}%"
+        negative = re.search(r"(하락|급락|폭락|감소|축소|하방|리스크|충격)", source)
+        positive = re.search(r"(상승|급등|반등|향상|개선|증가|확대|시너지|성장)", source)
+        sign = "-" if negative and not positive else "+"
+        return f"{sign}{value}%"
+
+    month_match = re.search(r"([0-9]+(?:\.\d+)?)개월", source)
+    if month_match:
+        return f"{month_match.group(1)}개월"
+
+    country_match = re.search(r"([0-9]+(?:\.\d+)?)개국", source)
+    if country_match:
+        return f"{country_match.group(1)}개국"
+
+    multiplier_match = re.search(r"([0-9]+(?:\.\d+)?)배", source)
+    if multiplier_match:
+        return f"{multiplier_match.group(1)}배"
+
+    dollar_match = re.search(r"([0-9][0-9,.]*)달러", source)
+    if dollar_match:
+        return f"${dollar_match.group(1)}"
+
+    return ""
+
+
+def extract_token_near_keyword(text: str, keywords: list[str]) -> str:
+    source = compact_text(text)
+    if not source:
+        return ""
+    token_pattern = r"(\$[0-9][0-9,.]*(?:[BMK])?|[0-9][0-9,.]*억 달러|[0-9][0-9,.]*억 유로|EUR\s*[0-9][0-9,.]*(?:[BMK])?|[0-9]+(?:\.\d+)?%\s*[→>-]+\s*[0-9]+(?:\.\d+)?%|[0-9]+(?:\.\d+)?~[0-9]+(?:\.\d+)?%|[+-]?\d+(?:\.\d+)?%|[0-9]+(?:\.\d+)?개월|[0-9]+(?:\.\d+)?개국|[0-9]+(?:\.\d+)?배|\$[0-9][0-9,.]*)"
+    for keyword in keywords:
+        pattern = re.compile(rf"{re.escape(keyword)}[^$0-9]{{0,18}}{token_pattern}", flags=re.IGNORECASE)
+        match = pattern.search(source)
+        if match:
+            return format_numeric_token(match.group(1))
+    return ""
+
+
+def build_fundamental_metrics_from_texts(texts: list[str], company_move: dict[str, Any]) -> list[dict[str, Any]]:
+    units = split_text_units(texts)
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    score_by_index = [88.0, 76.0, 64.0, 52.0]
+
+    def add_metric(label: str, text: str, sub: str) -> None:
+        token = extract_token_near_keyword(text, [label]) or format_numeric_token(text)
+        if not token or label in seen:
+            return
+        seen.add(label)
+        out.append(
+            {
+                "label": label,
+                "value": truncate_text(token, max_len=10),
+                "sub": truncate_text(sub, max_len=16),
+                "pct": score_by_index[min(len(out), len(score_by_index) - 1)],
+            }
+        )
+
+    revenue_text = find_text_with_keywords(units, ["매출"])
+    if revenue_text:
+        pcts = extract_percent_tokens(revenue_text)
+        add_metric("매출", revenue_text, pcts[0] if pcts else "2025년 기준")
+
+    income_text = find_text_with_keywords(units, ["순이익"])
+    if income_text:
+        pcts = extract_percent_tokens(income_text)
+        add_metric("순이익", income_text, pcts[1] if len(pcts) > 1 else (pcts[0] if pcts else "이익 성장"))
+
+    operating_cf_text = find_text_with_keywords(units, ["영업현금흐름"])
+    if operating_cf_text:
+        add_metric("영업현금흐름", operating_cf_text, "현금창출력")
+
+    fcf_text = find_text_with_keywords(units, ["잉여현금흐름", "FCF"])
+    if fcf_text:
+        add_metric("잉여현금흐름", fcf_text, "FCF 기준")
+
+    buyback_text = find_text_with_keywords(units, ["자사주 매입", "자사주매입"])
+    if buyback_text:
+        add_metric("자사주매입", buyback_text, "주주환원")
+
+    dividend_text = find_text_with_keywords(units, ["배당"])
+    if dividend_text and len(out) < 4:
+        add_metric("배당", dividend_text, "현금 배당")
+
+    if len(out) < 4 and company_move.get("roe_display"):
+        add_metric("ROE", str(company_move.get("roe_display")), "수익성")
+    if len(out) < 4 and company_move.get("market_cap_display"):
+        add_metric("시가총액", str(company_move.get("market_cap_display")), "시장 가치")
+
+    return out[:4]
+
+
+def build_growth_columns_from_texts(texts: list[str]) -> list[dict[str, Any]]:
+    units = split_text_units(texts)
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    score_by_index = [90.0, 76.0, 62.0, 48.0]
+    joined = " ".join(units)
+
+    def add_column(label: str, token: str) -> None:
+        if not token or label in seen:
+            return
+        seen.add(label)
+        out.append(
+            {
+                "label": label,
+                "value": truncate_text(token, max_len=10),
+                "pct": score_by_index[min(len(out), len(score_by_index) - 1)],
+            }
+        )
+
+    synergy_match = re.search(r"연간\s*([0-9][0-9,.]*)억 달러\s*시너지", joined)
+    if synergy_match:
+        add_column("시너지", f"${synergy_match.group(1)}억")
+
+    aisc_pct_match = re.search(r"AISC(?:를)?\s*([0-9]+(?:\.\d+)?)~([0-9]+(?:\.\d+)?)%\s*이상", joined)
+    if aisc_pct_match:
+        add_column("원가 개선", f"+{aisc_pct_match.group(2)}%")
+    else:
+        aisc_money_match = re.search(r"([0-9]+(?:\.\d+)?)~([0-9]+(?:\.\d+)?)달러\s*절감", joined)
+        if aisc_money_match:
+            add_column("원가 개선", f"${aisc_money_match.group(2)}")
+
+    recovery_match = re.search(r"회수율(?:을)?\s*([0-9]+(?:\.\d+)?)%\s*향상", joined)
+    if recovery_match:
+        add_column("회수율", f"+{recovery_match.group(1)}%")
+
+    rebound_match = re.search(r"([0-9]+(?:\.\d+)?)%\s*(?:의\s*)?반등", joined)
+    if rebound_match:
+        add_column("장중 반등", f"+{rebound_match.group(1)}%")
+
+    upside_match = re.search(r"([0-9]+(?:\.\d+)?)배\s*이상의\s*상승", joined)
+    if not upside_match:
+        upside_match = re.search(r"([0-9]+(?:\.\d+)?)배\s*이상의\s*주가\s*상승", joined)
+    if not upside_match:
+        upside_match = re.search(r"([0-9]+(?:\.\d+)?)배\s*이상의\s*주가\s*상승은", joined)
+    if not upside_match:
+        upside_match = re.search(r"([0-9]+(?:\.\d+)?)배\s*이상", joined)
+    if upside_match:
+        add_column("상승 여력", f"{upside_match.group(1)}배")
+
+    patterns = [
+        ("시너지", ["시너지", "뉴크레스트"]),
+        ("원가 개선", ["AISC", "절감"]),
+        ("회수율", ["회수율", "향상"]),
+        ("장중 반등", ["반등"]),
+        ("상승 여력", ["배 이상의", "배 이상", "상승 여력"]),
+    ]
+    for label, keywords in patterns:
+        if len(out) >= 4:
+            break
+        text = find_text_with_keywords(units, keywords)
+        token = extract_token_near_keyword(text, keywords) or format_numeric_token(text)
+        if not text or not token:
+            continue
+        add_column(label, token)
+
+    return out[:4]
+
+
+def build_risk_items_from_texts(texts: list[str]) -> list[dict[str, str]]:
+    units = split_text_units(texts)
+    out: list[dict[str, str]] = []
+    joined = " ".join(units)
+
+    def add_item(label: str, detail: str, token: str) -> None:
+        if not token:
+            return
+        out.append(
+            {
+                "label": truncate_text(label, max_len=14),
+                "detail": truncate_text(detail, max_len=16),
+                "highlight": truncate_text(token, max_len=10),
+            }
+        )
+
+    royalty_match = re.search(r"([0-9]+)%\s*→\s*([0-9]+)%", joined)
+    if royalty_match:
+        add_item("가나 로열티", "로열티 상향 압박", f"{royalty_match.group(1)}%→{royalty_match.group(2)}%")
+
+    strike_match = re.search(r"([0-9]+)개월(?:간)?\s*(?:멈춰|중단|파업)", joined)
+    if strike_match:
+        add_item("멕시코 파업", "운영 전면 중단", f"{strike_match.group(1)}개월")
+
+    cashflow_match = re.search(r"30(?:\.\d+)?%\s*(?:증발|감소|하락)", joined)
+    if cashflow_match:
+        drop_value = re.search(r"30(?:\.\d+)?", cashflow_match.group(0)).group(0)
+        add_item("현금흐름 충격", "금값 하락 시 타격", f"-{drop_value}%")
+
+    collapse_match = re.search(r"50(?:\.\d+)?%\s*이상\s*폭락", joined)
+    if collapse_match:
+        add_item("최악 시나리오", "주가 급락 가능", "-50%")
+
+    if len(out) < 4:
+        specs = [
+            ("가나 로열티", ["로열티", "12%"], "로열티 상향 압박"),
+            ("멕시코 파업", ["4개월", "파업"], "운영 전면 중단"),
+            ("현금흐름 충격", ["30.1%", "30%"], "금값 하락 시 타격"),
+            ("최악 시나리오", ["50% 이상", "폭락"], "주가 급락 가능"),
+        ]
+        for label, keywords, detail in specs:
+            if len(out) >= 4:
+                break
+            text = find_text_with_keywords(units, keywords)
+            token = extract_token_near_keyword(text, keywords) or format_numeric_token(text)
+            if not text or not token or any(item["label"] == truncate_text(label, max_len=14) for item in out):
+                continue
+            add_item(label, detail, token)
+
+    return out[:4]
+
+
+def build_risk_total_exposure(texts: list[str], fallback: str) -> str:
+    joined = " ".join(split_text_units(texts))
+    risk_drop_match = re.search(r"20(?:\.\d+)?%\s*(?:하락|급락)", joined)
+    cashflow_match = re.search(r"30(?:\.\d+)?%\s*(?:증발|감소|하락)", joined)
+    if risk_drop_match and cashflow_match:
+        left = "-20%"
+        right = f"-{re.search(r'30(?:\\.\\d+)?', cashflow_match.group(0)).group(0)}%"
+        return truncate_text(f"금값 {left} / CF {right}", max_len=22)
+    direct = format_numeric_token(fallback)
+    if direct:
+        return truncate_text(direct, max_len=22)
+    return truncate_text(fallback, max_len=22)
+
+
+def extract_sentiment_price_range(texts: list[str], fallback_close: float | None, day_change_pct: float) -> dict[str, float]:
+    joined = " ".join(split_text_units(texts))
+    range_match = re.search(
+        r"([0-9]+(?:\.\d+)?)달러(?:를)?\s*저점(?:으로)?\s*([0-9]+(?:\.\d+)?)달러(?:까지)?\s*반등",
+        joined,
+    )
+    if range_match:
+        low = float(range_match.group(1))
+        high = float(range_match.group(2))
+        close = high
+        return {
+            "low": round(low, 2),
+            "high": round(high, 2),
+            "close": round(close, 2),
+            "dayChangePct": round(float(day_change_pct), 2),
+        }
+
+    if fallback_close:
+        rounded = round(float(fallback_close), 2)
+        return {
+            "low": rounded,
+            "high": rounded,
+            "close": rounded,
+            "dayChangePct": round(float(day_change_pct), 2),
+        }
+
+    return {
+        "low": 0.0,
+        "high": 0.0,
+        "close": 0.0,
+        "dayChangePct": round(float(day_change_pct), 2),
+    }
+
+
+def collect_debate_role_texts(debate_payload: dict[str, Any] | None, role: str) -> list[str]:
+    if not isinstance(debate_payload, dict):
+        return []
+    out: list[str] = []
+    rounds = debate_payload.get("rounds")
+    if isinstance(rounds, list):
+        for round_payload in rounds:
+            if not isinstance(round_payload, dict):
+                continue
+            role_payload = round_payload.get(role)
+            if isinstance(role_payload, dict):
+                out.extend(collect_text_fragments(role_payload.get("text")))
+            elif isinstance(role_payload, str):
+                out.extend(collect_text_fragments(role_payload))
+    conclusion = debate_payload.get("conclusion")
+    if isinstance(conclusion, dict):
+        out.extend(collect_text_fragments(conclusion.get("text")))
+    elif isinstance(conclusion, str):
+        out.extend(collect_text_fragments(conclusion))
+    return out
+
+
+def point_to_metric(point: str, *, index: int) -> dict[str, Any]:
+    text = strip_visual_tone(point)
+    label = ""
+    remainder = text
+    if ":" in text:
+        label, remainder = [strip_visual_tone(part) for part in text.split(":", 1)]
+    if not label:
+        label = f"지표 {index + 1}"
+    paren_match = re.search(r"\(([^)]+)\)", remainder)
+    sub = strip_visual_tone(paren_match.group(1)) if paren_match else ""
+    value = strip_visual_tone(re.sub(r"\([^)]*\)", "", remainder))
+    value = truncate_text(value or label, max_len=18)
+    pct = extract_percentage([remainder])
+    if pct is None:
+        pct = [88, 72, 58, 44][min(index, 3)]
+    pct = max(10.0, min(100.0, abs(float(pct))))
+    return {
+        "label": truncate_text(label, max_len=18),
+        "value": value,
+        "sub": truncate_text(sub or value, max_len=28),
+        "pct": round(pct, 1),
+    }
+
+
+def build_growth_columns(points: list[str]) -> list[dict[str, Any]]:
+    columns: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for point in points:
+        text = strip_visual_tone(point)
+        for label, pct_value in re.findall(r"([가-힣A-Za-z][가-힣A-Za-z\s/']{0,16})\s*([+-]?\d+(?:\.\d+)?)%", text):
+            clean_label = truncate_text(strip_visual_tone(label), max_len=16)
+            key = clean_label.lower()
+            if not clean_label or key in seen:
+                continue
+            seen.add(key)
+            columns.append(
+                {
+                    "label": clean_label,
+                    "value": f"{float(pct_value):+g}%",
+                    "pct": max(10.0, min(100.0, abs(float(pct_value)))),
+                }
+            )
+            if len(columns) >= 4:
+                return columns
+    for index, point in enumerate(points):
+        if len(columns) >= 4:
+            break
+        text = strip_visual_tone(point)
+        if not text:
+            continue
+        label = ""
+        value = ""
+        if ":" in text:
+            label, value = [strip_visual_tone(part) for part in text.split(":", 1)]
+        if not label:
+            label = truncate_text(text, max_len=16)
+        if not value:
+            value = truncate_text(text, max_len=18)
+        key = label.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        columns.append(
+            {
+                "label": truncate_text(label, max_len=16),
+                "value": truncate_text(value, max_len=18),
+                "pct": [90.0, 76.0, 62.0, 48.0][min(index, 3)],
+            }
+        )
+    return columns[:4]
+
+
+def build_risk_items(points: list[str]) -> list[dict[str, str]]:
+    out: list[dict[str, str]] = []
+    for point in points[:4]:
+        text = strip_visual_tone(point)
+        if not text:
+            continue
+        label = ""
+        detail = text
+        if ":" in text:
+            label, detail = [strip_visual_tone(part) for part in text.split(":", 1)]
+        highlight_match = re.search(r"(EUR\s*[0-9.,]+M|\$[0-9.,]+[BM]?|[0-9]+개국|[0-9]+%)", text)
+        highlight = compact_text(highlight_match.group(1)) if highlight_match else truncate_text(detail, max_len=10)
+        out.append(
+            {
+                "label": truncate_text(label or detail, max_len=24),
+                "detail": truncate_text(detail, max_len=30),
+                "highlight": truncate_text(highlight, max_len=12),
+            }
+        )
+    return out[:4]
+
+
+def build_sentiment_keywords(texts: list[str]) -> list[str]:
+    mapping = (
+        ("fomo", "FOMO"),
+        ("반사성", "반사성"),
+        ("오버슈팅", "오버슈팅"),
+        ("낙관", "낙관 우위"),
+        ("규제", "규제 무시"),
+        ("탐욕", "탐욕"),
+    )
+    out: list[str] = []
+    seen: set[str] = set()
+    haystack = " ".join(texts).lower()
+    for token, label in mapping:
+        if token.lower() not in haystack or label in seen:
+            continue
+        seen.add(label)
+        out.append(label)
+        if len(out) >= 4:
+            break
+    if out:
+        return out
+    return ["FOMO", "낙관 우위", "리스크 무시"][:4]
+
+
+def is_generic_bkng_payload(payload: dict[str, Any]) -> bool:
+    return isinstance(payload.get("slides"), list) and not isinstance(payload.get("hook"), dict)
+
+
+def build_bkng_direct_props(
+    *,
+    generic_payload: dict[str, Any],
+    date: str,
+    lang: str,
+    script_payload: dict[str, Any],
+    sections: list[dict[str, Any]],
+    duration_seconds: float,
+    audio_file: str,
+    scene_timing: dict[str, dict[str, float]],
+    debate_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
+    company_profile = metadata.get("company_profile") if isinstance(metadata.get("company_profile"), dict) else {}
+    company_moves = expand_company_moves_for_sections(script_payload, sections)
+    expert_sections = resolve_expert_sections(script_payload)
+    slides = generic_payload.get("slides") if isinstance(generic_payload.get("slides"), list) else []
+    slide_by_section: dict[str, dict[str, Any]] = {}
+    for idx, section in enumerate(sections):
+        if idx < len(slides) and isinstance(slides[idx], dict):
+            slide_by_section[normalize_section_name(section.get("name"))] = slides[idx]
+
+    ticker = ""
+    for candidate in [
+        company_profile.get("ticker"),
+        *(move.get("ticker") for move in company_moves if isinstance(move, dict)),
+        script_payload.get("ticker"),
+    ]:
+        normalized = re.sub(r"[^A-Z0-9^.-]", "", str(candidate or "").upper())
+        if normalized:
+            ticker = normalized
+            break
+
+    fallback_name = resolve_company_name(script_payload) or ticker
+    display_name = extract_company_display_name(
+        ticker=ticker,
+        company_profile=company_profile,
+        fallback_name=fallback_name,
+    )
+
+    all_texts = collect_text_fragments(
+        [
+            generic_payload,
+            metadata.get("company_profile"),
+            metadata.get("key_points"),
+            metadata.get("company_moves"),
+            script_payload.get("hook"),
+            script_payload.get("title"),
+        ]
+    )
+    close_price = extract_close_price(all_texts)
+    first_move = company_moves[0] if company_moves else {}
+    day_change_text = compact_text(first_move.get("day_change_display"))
+    if not day_change_text:
+        day_change_value = extract_percentage(all_texts)
+        if day_change_value is not None:
+            sign = "+" if day_change_value >= 0 else ""
+            day_change_text = f"{sign}{day_change_value:.2f}%"
+    if not day_change_text:
+        day_change_text = "+0.00%"
+
+    hook_slide = slide_by_section.get("hook", {})
+    hook_copy = first_nonempty_text(
+        [
+            generic_payload.get("hook"),
+            hook_slide.get("subheadline"),
+            hook_slide.get("body"),
+            script_payload.get("hook"),
+            company_profile.get("today_expert_summary"),
+        ],
+        max_len=MAX_VISUAL_BODY,
+    )
+
+    role_to_section = {
+        "fundamental": "company_1",
+        "growth": "company_2",
+        "risk": "company_3",
+        "sentiment": "company_4",
+    }
+    move_by_role = {compact_text(move.get("segment_role")): move for move in company_moves if isinstance(move, dict)}
+
+    def role_slide(role: str) -> dict[str, Any]:
+        return slide_by_section.get(role_to_section[role], {})
+
+    def role_move(role: str, index: int) -> dict[str, Any]:
+        if role in move_by_role:
+            return move_by_role[role]
+        return company_moves[index] if index < len(company_moves) else {}
+
+    def role_context_texts(role: str, index: int) -> list[str]:
+        move = role_move(role, index)
+        section_name = role_to_section[role]
+        expert_section = expert_sections.get(section_name, {})
+        section_payload = next(
+            (section for section in sections if normalize_section_name(section.get("name")) == section_name),
+            {},
+        )
+        return collect_text_fragments(
+            [
+                expert_section,
+                move,
+                section_payload,
+                company_profile.get("expert_summaries", {}).get(role) if isinstance(company_profile.get("expert_summaries"), dict) else "",
+                company_profile.get("expert_points", {}).get(role) if isinstance(company_profile.get("expert_points"), dict) else [],
+                collect_debate_role_texts(debate_payload, role),
+            ]
+        )
+
+    closing_slide = slide_by_section.get("closing", {})
+
+    fundamental_move = role_move("fundamental", 0)
+    fundamental_texts = role_context_texts("fundamental", 0)
+    fundamental_metrics = build_fundamental_metrics_from_texts(fundamental_texts, fundamental_move)
+    if not fundamental_metrics:
+        fundamental_points = normalize_company_point_lines(
+            fundamental_move.get("slide_points"),
+            limit=4,
+            max_len=96,
+        )
+        fundamental_metrics = [point_to_metric(point, index=index) for index, point in enumerate(fundamental_points[:4])]
+    if not fundamental_metrics:
+        fundamental_metrics = [point_to_metric("핵심 지표: 데이터 확인", index=0)]
+
+    growth_move = role_move("growth", 1)
+    growth_texts = role_context_texts("growth", 1)
+    growth_points = normalize_company_point_lines(growth_move.get("slide_points"), limit=4, max_len=96)
+    growth_columns = build_growth_columns_from_texts(growth_texts)
+    if not growth_columns:
+        growth_columns = build_growth_columns(growth_points)
+    if not growth_columns:
+        growth_columns = [{"label": "성장", "value": "확인 필요", "pct": 72.0}]
+
+    risk_move = role_move("risk", 2)
+    risk_texts = role_context_texts("risk", 2)
+    risk_points = normalize_company_point_lines(risk_move.get("slide_points"), limit=4, max_len=96)
+    risk_items = build_risk_items_from_texts(risk_texts)
+    if not risk_items:
+        risk_items = build_risk_items(risk_points)
+    if not risk_items:
+        risk_items = [{"label": "리스크", "detail": "핵심 변수 확인", "highlight": "CHECK"}]
+
+    sentiment_move = role_move("sentiment", 3)
+    sentiment_texts = role_context_texts("sentiment", 3)
+    day_change_pct = sentiment_move.get("day_change_pct")
+    if not isinstance(day_change_pct, (int, float)):
+        extracted_pct = extract_percentage(sentiment_texts)
+        day_change_pct = extracted_pct if extracted_pct is not None else 0.0
+    price_range = extract_sentiment_price_range(sentiment_texts, close_price, float(day_change_pct))
+    close_value = price_range.get("close") or close_price or 0.0
+
+    key_points = normalize_string_list(metadata.get("key_points"), limit=3, max_len=44)
+    finale_headline = first_nonempty_text(
+        [
+            closing_slide.get("headline"),
+            closing_slide.get("subheadline"),
+        ],
+        max_len=40,
+    )
+    if "구독과 좋아요" in finale_headline or "like and subscribe" in finale_headline.lower():
+        finale_headline = ""
+    if not finale_headline:
+        finale_headline = f"4명의 전문가가 분석한\n{ticker}의 현재 위치"
+
+    return {
+        "date": date,
+        "ticker": ticker,
+        "durationSeconds": round(duration_seconds, 3),
+        "audioSrc": resolve_shorts_audio_src(date, audio_file),
+        "sceneTiming": scene_timing,
+        "hook": {
+            "eyebrow": build_hook_eyebrow(ticker),
+            "headlineTop": display_name,
+            "headlineBottom": format_hook_price(close_value, fallback=ticker),
+            "subheadline": hook_copy,
+            "dayChange": day_change_text,
+        },
+        "fundamental": {
+            "label": expert_sections.get("company_1", {}).get("label") or BKNG_ROLE_LABELS["fundamental"],
+            "stance": BKNG_ROLE_STANCES["fundamental"],
+            "confidence": BKNG_ROLE_CONFIDENCE["fundamental"],
+            "summary": first_nonempty_text(
+                [
+                    role_slide("fundamental").get("subheadline"),
+                    role_slide("fundamental").get("body"),
+                    fundamental_move.get("move_summary"),
+                    expert_sections.get("company_1", {}).get("summary"),
+                ],
+                max_len=40,
+            ),
+            "metrics": fundamental_metrics[:4],
+        },
+        "growth": {
+            "label": expert_sections.get("company_2", {}).get("label") or BKNG_ROLE_LABELS["growth"],
+            "stance": BKNG_ROLE_STANCES["growth"],
+            "confidence": BKNG_ROLE_CONFIDENCE["growth"],
+            "summary": first_nonempty_text(
+                [
+                    role_slide("growth").get("subheadline"),
+                    role_slide("growth").get("body"),
+                    growth_move.get("move_summary"),
+                    expert_sections.get("company_2", {}).get("summary"),
+                ],
+                max_len=40,
+            ),
+            "columns": growth_columns[:4],
+            "footnote": first_nonempty_text(
+                [
+                    role_slide("growth").get("body"),
+                    expert_sections.get("company_2", {}).get("summary"),
+                    "성장 포인트 기준",
+                ],
+                max_len=64,
+            ),
+        },
+        "risk": {
+            "label": expert_sections.get("company_3", {}).get("label") or BKNG_ROLE_LABELS["risk"],
+            "stance": BKNG_ROLE_STANCES["risk"],
+            "confidence": BKNG_ROLE_CONFIDENCE["risk"],
+            "summary": first_nonempty_text(
+                [
+                    role_slide("risk").get("subheadline"),
+                    role_slide("risk").get("body"),
+                    risk_move.get("move_summary"),
+                    expert_sections.get("company_3", {}).get("summary"),
+                ],
+                max_len=40,
+            ),
+            "items": risk_items[:4],
+            "totalExposure": build_risk_total_exposure(
+                risk_texts,
+                first_nonempty_text(
+                    [
+                        risk_move.get("valuation_note"),
+                        risk_move.get("reason"),
+                        role_slide("risk").get("body"),
+                        "핵심 규제 리스크",
+                    ],
+                    max_len=24,
+                ),
+            ),
+        },
+        "sentiment": {
+            "label": expert_sections.get("company_4", {}).get("label") or BKNG_ROLE_LABELS["sentiment"],
+            "stance": BKNG_ROLE_STANCES["sentiment"],
+            "confidence": BKNG_ROLE_CONFIDENCE["sentiment"],
+            "summary": first_nonempty_text(
+                [
+                    role_slide("sentiment").get("subheadline"),
+                    role_slide("sentiment").get("body"),
+                    sentiment_move.get("move_summary"),
+                    expert_sections.get("company_4", {}).get("summary"),
+                ],
+                max_len=40,
+            ),
+            "priceRange": price_range,
+            "keywords": build_sentiment_keywords(sentiment_texts),
+            "insight": first_nonempty_text(
+                [
+                    role_slide("sentiment").get("body"),
+                    company_profile.get("today_expert_summary"),
+                    sentiment_move.get("reason"),
+                ],
+                max_len=MAX_VISUAL_BODY,
+            ),
+        },
+        "finale": {
+            "headline": finale_headline,
+            "bullets": key_points or normalize_string_list(closing_slide.get("bullets"), limit=3, max_len=44),
+            "cta": default_cta_text(lang),
+        },
+    }
+
+
 def generate_llm_slides_payload(
     *,
     llm: Any,
@@ -1014,6 +2025,7 @@ def generate_llm_slides_payload(
     script_payload: dict[str, Any],
     sections: list[dict[str, Any]],
     timing_payload: dict[str, Any] | None,
+    debate_payload: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     slides_cfg = resolve_slides_config_node(config)
     system_prompt = compact_text(slides_cfg.get("system"))
@@ -1022,7 +2034,7 @@ def generate_llm_slides_payload(
         raise ValueError("slides.user_template is missing in prompt config")
 
     expanded_company_moves = expand_company_moves_for_sections(script_payload, sections)
-    user_prompt = user_template.format(
+    format_kwargs: dict[str, Any] = dict(
         date=date,
         lang=lang,
         duration_seconds=round(duration_seconds, 3),
@@ -1030,7 +2042,50 @@ def generate_llm_slides_payload(
         sections_json=json.dumps(sections, ensure_ascii=False, indent=2),
         section_timing_json=json.dumps(timing_payload or {}, ensure_ascii=False, indent=2),
         company_moves_json=json.dumps(expanded_company_moves, ensure_ascii=False, indent=2),
+        debate_json=json.dumps(debate_payload or {}, ensure_ascii=False, indent=2),
     )
+    # Only pass keys that appear in the template to avoid KeyError with legacy templates
+    import string
+    template_keys = {field_name for _, field_name, _, _ in string.Formatter().parse(user_template) if field_name}
+    filtered_kwargs = {k: v for k, v in format_kwargs.items() if k in template_keys}
+    user_prompt = user_template.format(**filtered_kwargs)
+    full_prompt = f"{system_prompt}\n\n{user_prompt}" if system_prompt else user_prompt
+    response = llm.invoke(full_prompt)
+    return extract_json_object(response_to_text(response.content))
+
+
+def generate_llm_upload_metadata_payload(
+    *,
+    llm: Any,
+    config: dict[str, Any],
+    date: str,
+    lang: str,
+    duration_seconds: float,
+    script_payload: dict[str, Any],
+    render_payload: dict[str, Any],
+    sections: list[dict[str, Any]],
+    debate_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    metadata_cfg = resolve_upload_metadata_config_node(config)
+    system_prompt = compact_text(metadata_cfg.get("system"))
+    user_template = metadata_cfg.get("user_template")
+    if not isinstance(user_template, str) or not user_template.strip():
+        raise ValueError("upload_metadata.user_template is missing in prompt config")
+
+    format_kwargs: dict[str, Any] = dict(
+        date=date,
+        lang=lang,
+        duration_seconds=round(duration_seconds, 3),
+        shorts_script_json=json.dumps(script_payload, ensure_ascii=False, indent=2),
+        render_payload_json=json.dumps(render_payload, ensure_ascii=False, indent=2),
+        sections_json=json.dumps(sections, ensure_ascii=False, indent=2),
+        debate_json=json.dumps(debate_payload or {}, ensure_ascii=False, indent=2),
+    )
+    import string
+
+    template_keys = {field_name for _, field_name, _, _ in string.Formatter().parse(user_template) if field_name}
+    filtered_kwargs = {k: v for k, v in format_kwargs.items() if k in template_keys}
+    user_prompt = user_template.format(**filtered_kwargs)
     full_prompt = f"{system_prompt}\n\n{user_prompt}" if system_prompt else user_prompt
     response = llm.invoke(full_prompt)
     return extract_json_object(response_to_text(response.content))
@@ -1198,6 +2253,335 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def resolve_theme_firm_ticker(script_payload: dict[str, Any], render_payload: dict[str, Any]) -> str:
+    candidates = [
+        render_payload.get("ticker"),
+    ]
+    metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
+    company_profile = metadata.get("company_profile") if isinstance(metadata.get("company_profile"), dict) else {}
+    candidates.append(company_profile.get("ticker"))
+    company_moves = metadata.get("company_moves") if isinstance(metadata.get("company_moves"), list) else []
+    if company_moves and isinstance(company_moves[0], dict):
+        candidates.append(company_moves[0].get("ticker"))
+    for candidate in candidates:
+        ticker = re.sub(r"[^A-Z0-9^.-]", "", str(candidate or "").upper())
+        if ticker:
+            return ticker
+    return ""
+
+
+def resolve_theme_firm_display_name(script_payload: dict[str, Any], render_payload: dict[str, Any], lang: str) -> str:
+    hook = render_payload.get("hook") if isinstance(render_payload.get("hook"), dict) else {}
+    headline_top = compact_text(hook.get("headlineTop"))
+    if headline_top and not re.fullmatch(r"[$0-9, .+-]+", headline_top):
+        return headline_top
+    company_name = simplify_company_name(resolve_company_name(script_payload))
+    if company_name:
+        return company_name
+    return "핵심 종목" if compact_text(lang).lower() != "en" else "Focus Stock"
+
+
+def trim_trailing_punctuation(value: Any) -> str:
+    return compact_text(value).rstrip(" .!?")
+
+
+def build_theme_firm_hook_lead(hook_text: str, company_name: str, ticker: str, lang: str) -> str:
+    text = compact_text(hook_text)
+    for token in filter(None, [company_name, ticker, f"({ticker})" if ticker else ""]):
+        text = text.replace(token, " ")
+    text = compact_text(text)
+
+    if compact_text(lang).lower() == "en":
+        lowered = text.lower()
+        if "sell-off" in lowered or "drop" in lowered:
+            return "Why did it sell off?"
+        if "rebound" in lowered:
+            return "Why did it rebound?"
+        if "surge" in lowered:
+            return "Why did it surge?"
+        if "why" in lowered:
+            return "What is the market missing?"
+        return compact_text(text[:44]).rstrip(" ,")
+
+    if "급등락" in text:
+        return "왜 급등락했을까"
+    if "급락" in text:
+        return "왜 급락했을까"
+    if "반등" in text:
+        return "왜 반등했을까"
+    if "왜" in text:
+        return "시장이 놓친 건 뭘까"
+    if "리스크" in text:
+        return "지금 봐야 할 리스크"
+    return compact_text(text[:24]).rstrip(" ,")
+
+
+def build_theme_firm_fact_lead(render_payload: dict[str, Any], lang: str) -> str:
+    risk = render_payload.get("risk") if isinstance(render_payload.get("risk"), dict) else {}
+    risk_items = risk.get("items") if isinstance(risk.get("items"), list) else []
+    negative_candidates: list[tuple[float, str]] = []
+    for item in risk_items:
+        if not isinstance(item, dict):
+            continue
+        highlight = compact_text(item.get("highlight"))
+        label = trim_trailing_punctuation(item.get("label"))
+        numeric = parse_float_token(highlight)
+        if highlight.startswith("-") and numeric is not None:
+            lead = (
+                f"최악엔 {highlight} 가능성"
+                if compact_text(lang).lower() != "en"
+                else f"Downside risk: {highlight}"
+            )
+            negative_candidates.append((numeric, lead))
+        elif "최악" in label and highlight:
+            lead = (
+                f"최악엔 {highlight} 가능성"
+                if compact_text(lang).lower() != "en"
+                else f"Worst case: {highlight}"
+            )
+            negative_candidates.append((-9999.0, lead))
+    if negative_candidates:
+        negative_candidates.sort(key=lambda item: item[0])
+        return negative_candidates[0][1]
+
+    for item in risk_items:
+        if not isinstance(item, dict):
+            continue
+        highlight = compact_text(item.get("highlight"))
+        label = trim_trailing_punctuation(item.get("label"))
+        if compact_text(lang).lower() == "en":
+            if "→" in highlight:
+                return f"{label} shock: {highlight}"
+            if "month" in highlight.lower():
+                return f"{highlight} disruption risk"
+        else:
+            if "→" in highlight:
+                return f"{label} {highlight} 충격"
+            if "개월" in highlight:
+                return f"{label} {highlight} 중단 리스크"
+
+    growth = render_payload.get("growth") if isinstance(render_payload.get("growth"), dict) else {}
+    growth_columns = growth.get("columns") if isinstance(growth.get("columns"), list) else []
+    for column in growth_columns:
+        if not isinstance(column, dict):
+            continue
+        label = trim_trailing_punctuation(column.get("label"))
+        value = compact_text(column.get("value"))
+        if "배" in value:
+            return f"{label} {value} 시나리오" if compact_text(lang).lower() != "en" else f"{label} {value} scenario"
+        if value.startswith("+"):
+            numeric = parse_float_token(value)
+            if numeric is not None and abs(numeric) >= 20:
+                return f"{label} {value} 성장론" if compact_text(lang).lower() != "en" else f"{label} {value} growth case"
+
+    sentiment = render_payload.get("sentiment") if isinstance(render_payload.get("sentiment"), dict) else {}
+    price_range = sentiment.get("priceRange") if isinstance(sentiment.get("priceRange"), dict) else {}
+    day_change = price_range.get("dayChangePct")
+    if isinstance(day_change, (int, float)) and abs(float(day_change)) >= 5:
+        if compact_text(lang).lower() == "en":
+            return f"{float(day_change):+.2f}% and still rebounding?"
+        return f"{float(day_change):+.2f}%에도 반등한 이유"
+
+    return ""
+
+
+def build_theme_firm_youtube_title(
+    *,
+    script_payload: dict[str, Any],
+    render_payload: dict[str, Any],
+    lang: str,
+) -> str:
+    ticker = resolve_theme_firm_ticker(script_payload, render_payload)
+    company_name = resolve_theme_firm_display_name(script_payload, render_payload, lang)
+    hook = render_payload.get("hook") if isinstance(render_payload.get("hook"), dict) else {}
+    hook_text = compact_text(hook.get("subheadline") or script_payload.get("hook"))
+    lead = build_theme_firm_fact_lead(render_payload, lang) or build_theme_firm_hook_lead(
+        hook_text,
+        company_name,
+        ticker,
+        lang,
+    )
+    suffix = f"{company_name} ({ticker})" if ticker else company_name
+    title = f"{lead} | {suffix}" if lead else suffix
+    return title[:100].rstrip()
+
+
+def build_theme_firm_youtube_description(
+    *,
+    script_payload: dict[str, Any],
+    render_payload: dict[str, Any],
+    lang: str,
+) -> str:
+    metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
+    company_name = resolve_theme_firm_display_name(script_payload, render_payload, lang)
+    ticker = resolve_theme_firm_ticker(script_payload, render_payload)
+    company_label = f"{company_name} ({ticker})" if ticker else company_name
+    hook = render_payload.get("hook") if isinstance(render_payload.get("hook"), dict) else {}
+    hook_text = compact_text(hook.get("subheadline") or script_payload.get("hook"))
+    key_points = normalize_string_list(metadata.get("key_points"), limit=4, max_len=110)
+
+    section_map = [
+        ("펀더멘털", render_payload.get("fundamental")),
+        ("성장 포인트", render_payload.get("growth")),
+        ("리스크", render_payload.get("risk")),
+        ("시장 해석", render_payload.get("sentiment")),
+    ]
+    lines: list[str] = []
+    if compact_text(lang).lower() == "en":
+        lines.append(f"Today's AI debate short breaks down {company_label}.")
+        if hook_text:
+            lines.append(trim_trailing_punctuation(hook_text) + ".")
+        lines.append("")
+        lines.append("4 expert angles")
+        for label, section in section_map:
+            if not isinstance(section, dict):
+                continue
+            summary = trim_trailing_punctuation(section.get("summary"))
+            if not summary:
+                continue
+            lines.append(f"- {label}: {summary}")
+        if key_points:
+            lines.append("")
+            lines.append("Key debate points")
+            for point in key_points[:3]:
+                lines.append(f"- {trim_trailing_punctuation(point)}")
+    else:
+        lines.append(f"오늘의 AI debate 종목은 {company_label}입니다.")
+        if hook_text:
+            lines.append(trim_trailing_punctuation(hook_text) + ".")
+        lines.append("")
+        lines.append("4명의 전문가가 본 핵심 쟁점")
+        for label, section in section_map:
+            if not isinstance(section, dict):
+                continue
+            summary = trim_trailing_punctuation(section.get("summary"))
+            if not summary:
+                continue
+            lines.append(f"- {label}: {summary}")
+        if key_points:
+            lines.append("")
+            lines.append("핵심 debate 포인트")
+            for point in key_points[:3]:
+                lines.append(f"- {trim_trailing_punctuation(point)}")
+
+    return "\n".join(line.rstrip() for line in lines).strip()[:5000]
+
+
+def build_theme_firm_upload_tags(
+    *,
+    script_payload: dict[str, Any],
+    render_payload: dict[str, Any],
+    debate_payload: dict[str, Any] | None,
+    lang: str,
+) -> list[str]:
+    company_name = resolve_theme_firm_display_name(script_payload, render_payload, lang)
+    ticker = resolve_theme_firm_ticker(script_payload, render_payload)
+    metadata = script_payload.get("metadata") if isinstance(script_payload.get("metadata"), dict) else {}
+    company_profile = metadata.get("company_profile") if isinstance(metadata.get("company_profile"), dict) else {}
+    thematic_texts = collect_text_fragments(
+        [
+            script_payload.get("hook"),
+            metadata.get("key_points"),
+            company_profile.get("why_now"),
+            company_profile.get("business_model"),
+            company_profile.get("expert_summaries"),
+            render_payload.get("fundamental"),
+            render_payload.get("growth"),
+            render_payload.get("risk"),
+            render_payload.get("sentiment"),
+            debate_payload,
+        ]
+    )
+    joined = " ".join(thematic_texts).lower()
+    rules_ko = [
+        ("지정학리스크", ["지정학", "중동", "정치적 불안정"]),
+        ("금가격", ["금 가격", "금값", "gold"]),
+        ("금광주", ["금광", "gold miner", "금광주"]),
+        ("자율주행채굴", ["자율주행", "채굴 트럭"]),
+        ("ai탐사", ["ai 탐사", "ai 기반 탐사", "머신러닝"]),
+        ("환경규제", ["환경 규제", "epa", "환경"]),
+        ("로열티리스크", ["로열티"]),
+        ("저가매수", ["저가 매수", "과매도", "반등"]),
+    ]
+    rules_en = [
+        ("geopoliticalrisk", ["geopolitical", "middle east", "political instability"]),
+        ("goldprice", ["gold price", "gold"]),
+        ("goldminer", ["gold miner", "mining"]),
+        ("autonomousmining", ["autonomous", "haul truck"]),
+        ("aiexploration", ["ai exploration", "machine learning"]),
+        ("envregulation", ["environmental", "epa"]),
+        ("royaltyrisk", ["royalty"]),
+        ("dipbuying", ["oversold", "rebound", "dip buying"]),
+    ]
+    rules = rules_en if compact_text(lang).lower() == "en" else rules_ko
+    tags: list[str] = []
+    for tag, keywords in rules:
+        if any(keyword in joined for keyword in keywords):
+            tags.append(tag)
+    tags.extend([company_name, ticker])
+    out: list[str] = []
+    seen: set[str] = set()
+    for tag in tags:
+        text = compact_text(tag)
+        if not text:
+            continue
+        key = text.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+    return out
+
+
+def build_theme_firm_upload_metadata_payload(
+    *,
+    script_payload: dict[str, Any],
+    render_payload: dict[str, Any],
+    debate_payload: dict[str, Any] | None,
+    lang: str,
+) -> dict[str, Any]:
+    return {
+        "title": build_theme_firm_youtube_title(
+            script_payload=script_payload,
+            render_payload=render_payload,
+            lang=lang,
+        ),
+        "description": build_theme_firm_youtube_description(
+            script_payload=script_payload,
+            render_payload=render_payload,
+            lang=lang,
+        ),
+        "tags": build_theme_firm_upload_tags(
+            script_payload=script_payload,
+            render_payload=render_payload,
+            debate_payload=debate_payload,
+            lang=lang,
+        ),
+    }
+
+
+def merge_upload_metadata_payloads(
+    *,
+    fallback_payload: dict[str, Any],
+    llm_payload: dict[str, Any],
+) -> dict[str, Any]:
+    merged = dict(fallback_payload)
+    title = compact_text(llm_payload.get("title"))
+    if title:
+        merged["title"] = title[:100].rstrip()
+    description = normalize_multiline_text(llm_payload.get("description"), max_len=5000)
+    if description:
+        merged["description"] = description
+    tags = normalize_upload_tags(
+        llm_payload.get("tags") or llm_payload.get("hashtags") or llm_payload.get("keywords"),
+        limit=10,
+        max_len=24,
+    )
+    if tags:
+        merged["tags"] = tags
+    return merged
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Prepare shorts-theme-firm slide script/template artifacts")
     parser.add_argument("date", type=str, help="Date in YYYYMMDD or YYYY-MM-DD")
@@ -1207,6 +2591,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--script-output", type=Path, help="Output path for slides.script.json")
     parser.add_argument("--template-output", type=Path, help="Output path for slides.render.template.json")
     parser.add_argument("--render-output", type=Path, help="Output path for slides.render.json")
+    parser.add_argument("--upload-metadata-output", type=Path, help="Output path for upload.metadata.json")
     parser.add_argument("--overwrite-render", action="store_true", help="Overwrite slides.render.json")
     parser.add_argument("--config", type=Path, default=SLIDES_CONFIG_PATH, help="Slides prompt YAML path")
     parser.add_argument("--prefix", type=str, default="SHORTS_THEME_FIRM_SLIDES", help="LLM env prefix for slides generation")
@@ -1234,6 +2619,7 @@ def main(argv: list[str] | None = None) -> int:
     script_output_path = args.script_output or (base_dir / "slides.script.json")
     template_output_path = args.template_output or (base_dir / "slides.render.template.json")
     render_output_path = args.render_output or (base_dir / "slides.render.json")
+    upload_metadata_output_path = args.upload_metadata_output or (base_dir / "upload.metadata.json")
     config_path = args.config
 
     if not config_path.is_absolute():
@@ -1248,6 +2634,8 @@ def main(argv: list[str] | None = None) -> int:
         template_output_path = (ROOT_DIR / template_output_path).resolve()
     if not render_output_path.is_absolute():
         render_output_path = (ROOT_DIR / render_output_path).resolve()
+    if not upload_metadata_output_path.is_absolute():
+        upload_metadata_output_path = (ROOT_DIR / upload_metadata_output_path).resolve()
 
     logger.info("shorts-theme-firm slide preparation")
     logger.info("  - script: %s", script_path)
@@ -1266,6 +2654,11 @@ def main(argv: list[str] | None = None) -> int:
             if normalize_section_name(section.get("name")) == "closing":
                 section["text"] = default_cta_text(args.lang)
         audio_file = compact_text((timing_payload or {}).get("audioFile")) or f"shorts{date}.mp3"
+        bkng_scene_timing = build_bkng_scene_timing(
+            timing_payload=timing_payload,
+            sections=sections,
+            duration_seconds=duration_seconds,
+        )
 
         slide_script_payload = build_slide_script_payload(
             date=display_date,
@@ -1284,13 +2677,32 @@ def main(argv: list[str] | None = None) -> int:
             audio_file=audio_file,
             config=config,
         )
-        render_payload = template_payload
+        debate_payload = load_debate_json(date, args.lang)
+        render_payload = build_bkng_direct_props(
+            generic_payload=template_payload,
+            date=display_date,
+            lang=args.lang,
+            script_payload=script_payload,
+            sections=sections,
+            duration_seconds=duration_seconds,
+            audio_file=audio_file,
+            scene_timing=bkng_scene_timing,
+            debate_payload=debate_payload,
+        )
 
+        llm = None
         if not args.no_llm:
             try:
                 load_env_from_yaml(logger=logger)
                 load_dotenv(ROOT_DIR / ".env", override=False)
                 llm = build_llm(prefix=args.prefix, logger=logger)
+            except Exception as llm_exc:
+                logger.warning("LLM client setup failed, using fallback payloads: %s", llm_exc)
+        else:
+            logger.info("Gemini slides generation skipped (--no-llm)")
+
+        if llm is not None:
+            try:
                 llm_payload = generate_llm_slides_payload(
                     llm=llm,
                     config=config,
@@ -1300,27 +2712,73 @@ def main(argv: list[str] | None = None) -> int:
                     script_payload=script_payload,
                     sections=sections,
                     timing_payload=timing_payload,
+                    debate_payload=debate_payload,
                 )
-                render_payload = normalize_llm_render_payload(
-                    llm_payload=llm_payload,
-                    date=display_date,
-                    lang=args.lang,
-                    script_payload=script_payload,
-                    sections=sections,
-                    duration_seconds=duration_seconds,
-                    audio_file=audio_file,
-                    config=config,
-                )
+                # Detect BkngDebateShortsProps format: has 'fundamental' key instead of 'slides'
+                if isinstance(llm_payload.get("fundamental"), dict):
+                    logger.info("Detected BkngDebateShortsProps format — using LLM output directly")
+                    render_payload = llm_payload
+                else:
+                    normalized_payload = normalize_llm_render_payload(
+                        llm_payload=llm_payload,
+                        date=display_date,
+                        lang=args.lang,
+                        script_payload=script_payload,
+                        sections=sections,
+                        duration_seconds=duration_seconds,
+                        audio_file=audio_file,
+                        config=config,
+                    )
+                    render_payload = build_bkng_direct_props(
+                        generic_payload=normalized_payload,
+                        date=display_date,
+                        lang=args.lang,
+                        script_payload=script_payload,
+                        sections=sections,
+                        duration_seconds=duration_seconds,
+                        audio_file=audio_file,
+                        scene_timing=bkng_scene_timing,
+                        debate_payload=debate_payload,
+                    )
                 logger.info("Generated slides.render payload via Gemini")
             except Exception as llm_exc:
                 logger.warning("Gemini slides generation failed, using template fallback: %s", llm_exc)
-        else:
-            logger.info("Gemini slides generation skipped (--no-llm)")
+
+        if isinstance(render_payload, dict):
+            render_payload["sceneTiming"] = bkng_scene_timing
+        upload_metadata_payload = build_theme_firm_upload_metadata_payload(
+            script_payload=script_payload,
+            render_payload=render_payload,
+            debate_payload=debate_payload,
+            lang=args.lang,
+        )
+        if llm is not None:
+            try:
+                llm_upload_metadata_payload = generate_llm_upload_metadata_payload(
+                    llm=llm,
+                    config=config,
+                    date=display_date,
+                    lang=args.lang,
+                    duration_seconds=duration_seconds,
+                    script_payload=script_payload,
+                    render_payload=render_payload,
+                    sections=sections,
+                    debate_payload=debate_payload,
+                )
+                upload_metadata_payload = merge_upload_metadata_payloads(
+                    fallback_payload=upload_metadata_payload,
+                    llm_payload=llm_upload_metadata_payload,
+                )
+                logger.info("Generated upload metadata payload via Gemini")
+            except Exception as llm_exc:
+                logger.warning("Gemini upload metadata generation failed, using heuristic fallback: %s", llm_exc)
 
         write_json(script_output_path, slide_script_payload)
         write_json(template_output_path, template_payload)
+        write_json(upload_metadata_output_path, upload_metadata_payload)
         logger.info("Saved slide script payload: %s", script_output_path)
         logger.info("Saved slide render template: %s", template_output_path)
+        logger.info("Saved upload metadata JSON: %s", upload_metadata_output_path)
 
         if args.overwrite_render or not render_output_path.exists():
             write_json(render_output_path, render_payload)

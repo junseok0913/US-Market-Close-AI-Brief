@@ -195,11 +195,15 @@ jobs:
           SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
           SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts"
           SHORTS_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
+          SHORTS_THEME_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts"
+          SHORTS_THEME_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_thumbnail"
           if [[ -n "$PREVIEW_SECONDS" ]]; then
             SHORTS_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
             SHORTS_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
             SHORTS_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
             SHORTS_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
+            SHORTS_THEME_FIRM_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s"
+            SHORTS_THEME_FIRM_THUMBNAIL_BASENAME="${TARGET_DATE}_${LANG}_shorts_preview_${PREVIEW_SECONDS}s_thumbnail"
           fi
 
           echo "target_date=$TARGET_DATE" >> "$GITHUB_OUTPUT"
@@ -215,6 +219,8 @@ jobs:
           echo "shorts_thumbnail=podcast/$TARGET_DATE/$LANG/shorts/youtube/${SHORTS_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
           echo "shorts_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
           echo "shorts_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-firm/youtube/${SHORTS_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
+          echo "shorts_theme_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
+          echo "shorts_theme_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
 
           echo "TARGET_DATE=$TARGET_DATE"
           echo "LANG=$LANG"
@@ -360,6 +366,50 @@ jobs:
 
           uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
 
+      - name: Upload shorts-theme-firm video to YouTube
+        if: success() && steps.params.outputs.remotion_only != 'true' && steps.params.outputs.upload == 'true'
+        env:
+          TARGET_DATE: ${{ steps.params.outputs.target_date }}
+          LANG: ${{ steps.params.outputs.lang }}
+          PRIVACY: ${{ steps.params.outputs.privacy }}
+          SHORTS_THEME_FIRM_MP4: ${{ steps.params.outputs.shorts_theme_firm_mp4 }}
+          SHORTS_THEME_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_theme_firm_thumbnail }}
+          SHORTS_THEME_FIRM_DELAY_SECONDS: ${{ vars.YOUTUBE_SHORTS_THEME_FIRM_DELAY_SECONDS || '7200' }}
+          YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
+          YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
+        run: |
+          set -euo pipefail
+
+          if [[ ! -f "$SHORTS_THEME_FIRM_MP4" ]]; then
+            echo "Rendered shorts-theme-firm MP4 not found: $SHORTS_THEME_FIRM_MP4" >&2
+            exit 1
+          fi
+          if ! [[ "$SHORTS_THEME_FIRM_DELAY_SECONDS" =~ ^[0-9]+$ ]]; then
+            echo "Invalid SHORTS_THEME_FIRM_DELAY_SECONDS: $SHORTS_THEME_FIRM_DELAY_SECONDS" >&2
+            exit 1
+          fi
+
+          UPLOAD_ARGS=(
+            --file "$SHORTS_THEME_FIRM_MP4"
+            --date "$TARGET_DATE"
+            --lang "$LANG"
+          )
+          if [[ -f "$SHORTS_THEME_FIRM_THUMBNAIL" ]]; then
+            UPLOAD_ARGS+=(--thumbnail "$SHORTS_THEME_FIRM_THUMBNAIL")
+          fi
+
+          if [[ "$PRIVACY" == "public" ]]; then
+            SHORTS_THEME_FIRM_MTIME="$(stat -c %Y "$SHORTS_THEME_FIRM_MP4")"
+            SHORTS_THEME_FIRM_PUBLISH_AT="$(date -u -d "@$((SHORTS_THEME_FIRM_MTIME + SHORTS_THEME_FIRM_DELAY_SECONDS))" +"%Y-%m-%dT%H:%M:%SZ")"
+            echo "Scheduling shorts-theme-firm publish at ${SHORTS_THEME_FIRM_PUBLISH_AT} UTC (delay=${SHORTS_THEME_FIRM_DELAY_SECONDS}s)"
+            UPLOAD_ARGS+=(--privacy private --publish-at "$SHORTS_THEME_FIRM_PUBLISH_AT")
+          else
+            echo "PRIVACY=${PRIVACY}; uploading shorts-theme-firm without delayed public schedule."
+            UPLOAD_ARGS+=(--privacy "$PRIVACY")
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
+
       - name: Upload YouTube artifacts
         if: success() && steps.params.outputs.remotion_only != 'true'
         uses: actions/upload-artifact@v4
@@ -368,6 +418,8 @@ jobs:
           path: |
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts/youtube
             podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-firm/youtube
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-theme-firm/youtube
+            podcast/${{ steps.params.outputs.target_date }}/${{ steps.params.outputs.lang }}/shorts-theme-firm/upload.metadata.json
           if-no-files-found: warn
 
       - name: Commit and push generated shorts outputs
@@ -380,6 +432,8 @@ jobs:
           SHORTS_THUMBNAIL: ${{ steps.params.outputs.shorts_thumbnail }}
           SHORTS_FIRM_MP4: ${{ steps.params.outputs.shorts_firm_mp4 }}
           SHORTS_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_firm_thumbnail }}
+          SHORTS_THEME_FIRM_MP4: ${{ steps.params.outputs.shorts_theme_firm_mp4 }}
+          SHORTS_THEME_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_theme_firm_thumbnail }}
         run: |
           set -euo pipefail
 
@@ -394,9 +448,13 @@ jobs:
             "web/public/audio/shorts/$TARGET_DATE.mp3"
             "web/public/data/shorts-firm/$TARGET_DATE.json"
             "web/public/audio/shorts-firm/shortsfirm$TARGET_DATE.mp3"
+            "web/public/data/shorts-theme-firm/$TARGET_DATE.json"
+            "web/public/audio/shorts-theme-firm/$TARGET_DATE.mp3"
+            "podcast/$TARGET_DATE/$LANG/shorts-theme-firm/upload.metadata.json"
             "web/src/generated/shorts-firm/${TARGET_DATE}_${LANG}.generated.tsx"
             "$SHORTS_THUMBNAIL"
             "$SHORTS_FIRM_THUMBNAIL"
+            "$SHORTS_THEME_FIRM_THUMBNAIL"
           )
           for path in "${normal_paths[@]}"; do
             if [[ -e "$path" ]]; then
@@ -407,6 +465,7 @@ jobs:
           force_paths=(
             "$SHORTS_MP4"
             "$SHORTS_FIRM_MP4"
+            "$SHORTS_THEME_FIRM_MP4"
           )
           for path in "${force_paths[@]}"; do
             if [[ -e "$path" ]]; then
@@ -424,7 +483,8 @@ jobs:
           # generated intermediates first so remote tracked files can be checked out safely.
           for cleanup_path in \
             "podcast/$TARGET_DATE/$LANG/shorts" \
-            "podcast/$TARGET_DATE/$LANG/shorts-firm"; do
+            "podcast/$TARGET_DATE/$LANG/shorts-firm" \
+            "podcast/$TARGET_DATE/$LANG/shorts-theme-firm"; do
             if [[ -d "$cleanup_path" ]]; then
               git clean -fd -- "$cleanup_path"
             fi

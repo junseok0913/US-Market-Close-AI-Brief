@@ -906,35 +906,35 @@ export const ShortsFirmComposition: FC<ShortsFirmCompositionProps> = ({
     companyMoves.length > 0
       ? companyMoves[Math.max(0, Math.min(companyMoves.length - 1, companyIndex))]
       : {
-          ticker: compactText(activeSlide?.tickers?.[0], "N/A"),
-          name: compactText(activeSlide?.headline, "Company"),
-          day_change_pct: 0,
-          day_change_display: "N/A",
-          month_change_pct: 0,
-          month_change_display: "N/A",
-          market_cap_display: "N/A",
-          pe_ratio_display: "N/A",
-          pbr_display: "N/A",
-          roe_display: "N/A",
-          move_summary: compactText(activeSlide?.headline, "핵심 기업 동향"),
-          reason: compactText(activeSlide?.body),
-          slide_points: normalizeStringList(activeSlide?.bullets, 3),
-        };
+        ticker: compactText(activeSlide?.tickers?.[0], "N/A"),
+        name: compactText(activeSlide?.headline, "Company"),
+        day_change_pct: 0,
+        day_change_display: "N/A",
+        month_change_pct: 0,
+        month_change_display: "N/A",
+        market_cap_display: "N/A",
+        pe_ratio_display: "N/A",
+        pbr_display: "N/A",
+        roe_display: "N/A",
+        move_summary: compactText(activeSlide?.headline, "핵심 기업 동향"),
+        reason: compactText(activeSlide?.body),
+        slide_points: normalizeStringList(activeSlide?.bullets, 3),
+      };
 
   const activeCompany =
     variant === "theme-firm"
       ? {
-          ...companyFallback,
-          move_summary: compactText(
-            activeSlide?.subheadline || activeSlide?.headline,
-            companyFallback.move_summary,
-          ),
-          reason: compactText(activeSlide?.body || activeSlide?.subheadline, companyFallback.reason),
-          slide_points: normalizeStringList(
-            Array.isArray(activeSlide?.bullets) ? activeSlide.bullets : companyFallback.slide_points,
-            3,
-          ),
-        }
+        ...companyFallback,
+        move_summary: compactText(
+          activeSlide?.subheadline || activeSlide?.headline,
+          companyFallback.move_summary,
+        ),
+        reason: compactText(activeSlide?.body || activeSlide?.subheadline, companyFallback.reason),
+        slide_points: normalizeStringList(
+          Array.isArray(activeSlide?.bullets) ? activeSlide.bullets : companyFallback.slide_points,
+          3,
+        ),
+      }
       : companyIndex >= 0 && companyIndex < companyMoves.length
         ? companyMoves[companyIndex]
         : companyFallback;

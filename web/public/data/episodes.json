@@ -1,5 +1,125 @@
 [
   {
+    "date": "20260317",
+    "nutshell": "연준 회의 경계감 속 AI 모멘텀 지속",
+    "user_tickers": [
+      "BKNG"
+    ]
+  },
+  {
+    "date": "20260316",
+    "nutshell": "호르무즈 해협 긴장 완화에 따른 유가 급락과 증시 반등",
+    "user_tickers": [
+      "WDC"
+    ]
+  },
+  {
+    "date": "20260313",
+    "nutshell": "지정학적 리스크와 기업 실적 우려에 하락한 시장",
+    "user_tickers": [
+      "WDC"
+    ]
+  },
+  {
+    "date": "20260312",
+    "nutshell": "이란 리스크에 따른 유가 급등과 시장 전반의 하락",
+    "user_tickers": [
+      "SCCO"
+    ]
+  },
+  {
+    "date": "20260311",
+    "nutshell": "오라클 호실적과 유가 급등 속 시장 혼조",
+    "user_tickers": [
+      "CEG"
+    ]
+  },
+  {
+    "date": "20260310",
+    "nutshell": "오라클 호실적과 유가 급락 속 혼조 마감",
+    "user_tickers": [
+      "VRTX"
+    ]
+  },
+  {
+    "date": "20260309",
+    "nutshell": "이란 전쟁 우려 완화에 따른 유가 급락과 기술주 랠리",
+    "user_tickers": [
+      "VRT"
+    ]
+  },
+  {
+    "date": "20260305",
+    "nutshell": "유가 급등 충격과 고용지표 경계감 속 기술주 선방",
+    "user_tickers": [
+      "ORCL"
+    ]
+  },
+  {
+    "date": "20260304",
+    "nutshell": "지정학적 우려 완화와 기술주 강세에 따른 반등 장세",
+    "user_tickers": [
+      "AVGO"
+    ]
+  },
+  {
+    "date": "20260303",
+    "nutshell": "중동 지정학적 리스크와 유가 급등에 따른 인플레이션 우려 부각",
+    "user_tickers": [
+      "LMT"
+    ]
+  },
+  {
+    "date": "20260302",
+    "nutshell": "중동 지정학적 충격과 인플레이션 우려의 충돌",
+    "user_tickers": [
+      "BRK.A",
+      "COIN"
+    ]
+  },
+  {
+    "date": "20260227",
+    "nutshell": "인플레이션 우려 속 개별 기업 격변 장세",
+    "user_tickers": [
+      "MS"
+    ]
+  },
+  {
+    "date": "20260226",
+    "nutshell": "엔비디아 실적 발표 후 차익실현, 기술주 하락 속 혼조 마감",
+    "user_tickers": [
+      "MU"
+    ]
+  },
+  {
+    "date": "20260225",
+    "nutshell": "엔비디아 실적 발표 기대감 속 기술주 중심의 랠리",
+    "user_tickers": [
+      "IBM"
+    ]
+  },
+  {
+    "date": "20260224",
+    "nutshell": "AI발 반등 장세 속 관세 우려 지속",
+    "user_tickers": [
+      "AMD"
+    ]
+  },
+  {
+    "date": "20260223",
+    "nutshell": "대법원 관세 판결에 따른 무역전쟁 우려 부각",
+    "user_tickers": [
+      "IONQ"
+    ]
+  },
+  {
+    "date": "20260220",
+    "nutshell": "대법원의 관세 제동에 불확실성 걷히며 증시 랠리",
+    "user_tickers": [
+      "BLK"
+    ]
+  },
+  {
     "date": "20260219",
     "nutshell": "견조한 실적에도 신중한 기업 전망에 하락",
     "user_tickers": [
