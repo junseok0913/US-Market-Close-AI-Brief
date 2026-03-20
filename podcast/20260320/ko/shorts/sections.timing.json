@@ -1,0 +1,58 @@
+{
+  "date": "20260320",
+  "lang": "ko",
+  "audioFile": "shorts20260320.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 66.444,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 7.131,
+      "endSec": 7.131,
+      "speechDurationSec": 7.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 55,
+      "text": "AI 서버 대장주 슈퍼마이크로가 33% 폭락했습니다. 시장을 뒤흔든 두 가지 악재는 무엇이었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 7.131,
+      "speechEndSec": 22.142,
+      "endSec": 22.142,
+      "speechDurationSec": 15.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 111,
+      "text": "3월 21일 미국 증시는 중동 지정학적 리스크 부각에 따른 투자심리 위축으로 크게 하락했습니다. 다우는 0.96%, S&P 500은 1.51% 내렸고, 기술주 중심의 나스닥은 2% 넘게 급락했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.142,
+      "speechEndSec": 64.233,
+      "endSec": 64.233,
+      "speechDurationSec": 42.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 382,
+      "text": "첫 번째 악재는 중동 리스크였습니다. 이란 관련 분쟁 우려로 국제 유가가 1.8% 넘게 급등하며 배럴당 97달러 후반까지 치솟았습니다. 이는 인플레이션 공포를 다시 불러일으키며 연준의 금리 인하 기대를 후퇴시켰습니다. 그 결과 엑슨모빌 등 에너지주는 올랐지만, 유나이티드 항공 같은 항공주는 2% 넘게 하락했습니다. 두 번째 악재는 AI 섹터 내부에서 터졌습니다. AI 서버 제조사 슈퍼마이크로의 공동창업자가 엔비디아 칩이 탑재된 서버를 중국에 밀수한 혐의로 기소되면서 주가가 33%나 폭락했습니다. 이 충격은 엔비디아에도 미쳐, 공급망 리스크와 별도의 독점금지법 조사 소식까지 겹치며 주가가 4% 가까이 하락했습니다. AMD 등 다른 반도체 주식도 동반 하락세를 피하지 못했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 64.233,
+      "speechEndSec": 66.444,
+      "endSec": 66.444,
+      "speechDurationSec": 2.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

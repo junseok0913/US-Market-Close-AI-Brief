@@ -1,0 +1,67 @@
+{
+  "date": "20260320",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260320.mp3",
+  "sectionOrder": [
+    "smci",
+    "nvda",
+    "well",
+    "xom"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 95.764,
+  "sections": [
+    {
+      "id": 0,
+      "name": "smci",
+      "ticker": "SMCI",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 33.371,
+      "endSec": 33.371,
+      "speechDurationSec": 33.371,
+      "pauseAfterSec": 0.0,
+      "charCount": 295,
+      "text": "중동 리스크에 AI 섹터 악재까지 겹치며 시장이 크게 흔들렸습니다. AI 서버 제조사 슈퍼마이크로는 오늘 무려 33% 폭락했습니다. 공동창업자를 포함한 임직원들이 미국의 수출 통제를 위반하고, 엔비디아 칩이 탑재된 서버를 중국으로 밀수한 혐의로 기소되었다는 소식이 결정적이었습니다. 검찰은 이들이 동남아에 위장 회사를 세우는 등 치밀한 수법을 사용했으며, 불법 수출 규모가 25억 달러에 달할 수 있다고 밝혔습니다. 엔비디아 매출의 약 9%를 차지하는 핵심 파트너에게서 터진 악재에 AI 섹터 전반의 투자 심리가 얼어붙었습니다."
+    },
+    {
+      "id": 1,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 33.371,
+      "speechEndSec": 58.822,
+      "endSec": 58.822,
+      "speechDurationSec": 25.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 238,
+      "text": "엔비디아는 3% 넘게 하락하며 슈퍼마이크로 사태의 직격탄을 맞았습니다. 핵심 파트너의 공급망 리스크가 부각된 데 더해, 자체 악재까지 겹쳤습니다. 엘리자베스 워런 상원의원 등이 엔비디아의 200억 달러 규모 그록(Groq) 라이선스 계약에 대한 조사에 착수했다는 소식이 전해진 것입니다. 이 계약이 독점금지법 심사를 회피하려는 의도가 아니냐는 의혹이 제기되면서, 규제 리스크가 현실화될 수 있다는 우려가 주가를 끌어내렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "well",
+      "ticker": "WELL",
+      "kind": "company",
+      "startSec": 58.822,
+      "speechEndSec": 89.073,
+      "endSec": 89.073,
+      "speechDurationSec": 30.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 261,
+      "text": "헬스케어 리츠 웰타워는 오늘 5% 가까이 급락했습니다. 2026년부터 3년간 약 79억 달러에 달하는 막대한 부채 만기가 집중되어 있다는 점이 부각됐기 때문입니다. 고금리 환경이 지속될 경우 리파이낸싱에 따른 이자 비용 급증 우려가 주가를 압박했습니다. 하지만 반론도 만만치 않습니다. 2025년 동일 자산 기준 순영업이익 성장률이 21%에 달하는 등 압도적인 실적을 기록하고 있어, 강력한 현금흐름으로 부채 리스크를 충분히 감당할 수 있다는 분석이 맞서고 있습니다."
+    },
+    {
+      "id": 3,
+      "name": "xom",
+      "ticker": "XOM",
+      "kind": "company",
+      "startSec": 89.073,
+      "speechEndSec": 95.764,
+      "endSec": 95.764,
+      "speechDurationSec": 6.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 62,
+      "text": "시장 전반의 약세와 달리, 엑슨모빌은 에너지 섹터 강세에 힘입어 상승 마감했습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
