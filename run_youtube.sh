@@ -877,32 +877,42 @@ upload_shorts_theme_firm_video() {
 }
 
 render_podcast_video_llm_video() {
+    require_cmd ffmpeg
     require_cmd bash
     require_cmd ffprobe
     require_file "${ROOT_DIR}/podcast-video-llm/run_podcast_video_llm.sh"
 
     if [ -f "${PODCAST_VIDEO_LLM_OUTPUT_MP4}" ] && [ "${OVERWRITE}" -ne 1 ]; then
         echo "♻️  Reusing existing podcast-video-llm MP4: ${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
-        return 0
-    fi
+    else
+        echo "🎬 Rendering podcast-video-llm via Remotion..."
+        local render_args=(
+            "${DATE}"
+            --lang "${LANG}"
+        )
+        if [ "${OVERWRITE}" -eq 1 ]; then
+            render_args+=(--overwrite)
+        fi
+        if [ -n "${PREVIEW_SECONDS}" ]; then
+            render_args+=(--preview-seconds "${PREVIEW_SECONDS}")
+        fi
 
-    echo "🎬 Rendering podcast-video-llm via Remotion..."
-    local render_args=(
-        "${DATE}"
-        --lang "${LANG}"
-    )
-    if [ "${OVERWRITE}" -eq 1 ]; then
-        render_args+=(--overwrite)
+        YOUTUBE_REMOTION_CONCURRENCY="${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}" \
+            bash "${ROOT_DIR}/podcast-video-llm/run_podcast_video_llm.sh" "${render_args[@]}"
     fi
-    if [ -n "${PREVIEW_SECONDS}" ]; then
-        render_args+=(--preview-seconds "${PREVIEW_SECONDS}")
-    fi
-
-    YOUTUBE_REMOTION_CONCURRENCY="${PODCAST_VIDEO_LLM_REMOTION_CONCURRENCY}" \
-        bash "${ROOT_DIR}/podcast-video-llm/run_podcast_video_llm.sh" "${render_args[@]}"
 
     require_file "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
     validate_mp4_streams "${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+
+    if [ ! -f "${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}" ] || [ "${OVERWRITE}" -eq 1 ]; then
+        echo "🖼️  Creating podcast-video-llm thumbnail from intro first frame..."
+        ffmpeg -hide_banner -loglevel error -y \
+            -i "${PODCAST_VIDEO_LLM_OUTPUT_MP4}" \
+            -frames:v 1 \
+            "${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}"
+    else
+        echo "♻️  Reusing existing podcast-video-llm thumbnail: ${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}"
+    fi
 }
 
 upload_podcast_video_llm_video() {
@@ -922,6 +932,11 @@ upload_podcast_video_llm_video() {
         --lang "${LANG}"
         --privacy "${PRIVACY}"
     )
+    if [ -f "${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}" ]; then
+        upload_args+=(--thumbnail "${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}")
+    else
+        echo "⚠️  Podcast-video-llm thumbnail not found. Uploading without thumbnail."
+    fi
     uv run python "${YOUTUBE_UPLOAD_SCRIPT}" "${upload_args[@]}"
 }
 
@@ -1173,6 +1188,7 @@ PODCAST_VIDEO_LLM_RENDER_JSON="${PODCAST_VIDEO_LLM_BASE}/render.json"
 PODCAST_VIDEO_LLM_CHART_DATA_JSON="${PODCAST_VIDEO_LLM_BASE}/${DATE}_${LANG}_chart_data.json"
 PODCAST_VIDEO_LLM_OUTPUT_DIR="${PODCAST_VIDEO_LLM_BASE}/youtube"
 PODCAST_VIDEO_LLM_OUTPUT_MP4="${PODCAST_VIDEO_LLM_OUTPUT_DIR}/${DATE}_${LANG}_podcast_video_llm.mp4"
+PODCAST_VIDEO_LLM_THUMBNAIL_PNG="${PODCAST_VIDEO_LLM_OUTPUT_DIR}/${DATE}_${LANG}_podcast_video_llm_thumbnail.png"
 
 echo "========================================================"
 echo "🎬 YouTube Full Pipeline Start"
@@ -1271,5 +1287,6 @@ echo "📹 Shorts-Theme-Firm MP4: ${SHORTS_THEME_FIRM_OUTPUT_MP4}"
 echo "🖼️  Shorts-Theme-Firm thumbnail: ${SHORTS_THEME_FIRM_THUMBNAIL_PNG}"
 echo "📝 Shorts-Theme-Firm upload metadata: ${SHORTS_THEME_FIRM_UPLOAD_METADATA_PATH}"
 echo "📹 Podcast-Video-LLM MP4: ${PODCAST_VIDEO_LLM_OUTPUT_MP4}"
+echo "🖼️  Podcast-Video-LLM thumbnail: ${PODCAST_VIDEO_LLM_THUMBNAIL_PNG}"
 echo "📝 Podcast-Video-LLM render plan: ${PODCAST_VIDEO_LLM_RENDER_JSON}"
 echo "📈 Podcast-Video-LLM chart data: ${PODCAST_VIDEO_LLM_CHART_DATA_JSON}"

@@ -222,6 +222,7 @@ jobs:
           echo "shorts_theme_firm_mp4=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_BASENAME}.mp4" >> "$GITHUB_OUTPUT"
           echo "shorts_theme_firm_thumbnail=podcast/$TARGET_DATE/$LANG/shorts-theme-firm/youtube/${SHORTS_THEME_FIRM_THUMBNAIL_BASENAME}.png" >> "$GITHUB_OUTPUT"
           echo "podcast_video_llm_mp4=podcast/$TARGET_DATE/$LANG/podcast-video-llm/youtube/${TARGET_DATE}_${LANG}_podcast_video_llm.mp4" >> "$GITHUB_OUTPUT"
+          echo "podcast_video_llm_thumbnail=podcast/$TARGET_DATE/$LANG/podcast-video-llm/youtube/${TARGET_DATE}_${LANG}_podcast_video_llm_thumbnail.png" >> "$GITHUB_OUTPUT"
           echo "podcast_video_llm_render_json=podcast/$TARGET_DATE/$LANG/podcast-video-llm/render.json" >> "$GITHUB_OUTPUT"
           echo "podcast_video_llm_chart_data=podcast/$TARGET_DATE/$LANG/podcast-video-llm/${TARGET_DATE}_${LANG}_chart_data.json" >> "$GITHUB_OUTPUT"
 
@@ -420,6 +421,7 @@ jobs:
           LANG: ${{ steps.params.outputs.lang }}
           PRIVACY: ${{ steps.params.outputs.privacy }}
           PODCAST_VIDEO_LLM_MP4: ${{ steps.params.outputs.podcast_video_llm_mp4 }}
+          PODCAST_VIDEO_LLM_THUMBNAIL: ${{ steps.params.outputs.podcast_video_llm_thumbnail }}
           YOUTUBE_CLIENT_SECRETS_FILE: ${{ github.workspace }}/shared/runtime/secrets/youtube/client_secret.json
           YOUTUBE_TOKEN_FILE: ${{ github.workspace }}/shared/runtime/cache/youtube/token.json
         run: |
@@ -430,11 +432,17 @@ jobs:
             exit 1
           fi
 
-          uv run python shared/ops/scripts/youtube/upload_youtube_video.py \
-            --file "$PODCAST_VIDEO_LLM_MP4" \
-            --date "$TARGET_DATE" \
-            --lang "$LANG" \
+          UPLOAD_ARGS=(
+            --file "$PODCAST_VIDEO_LLM_MP4"
+            --date "$TARGET_DATE"
+            --lang "$LANG"
             --privacy "$PRIVACY"
+          )
+          if [[ -f "$PODCAST_VIDEO_LLM_THUMBNAIL" ]]; then
+            UPLOAD_ARGS+=(--thumbnail "$PODCAST_VIDEO_LLM_THUMBNAIL")
+          fi
+
+          uv run python shared/ops/scripts/youtube/upload_youtube_video.py "${UPLOAD_ARGS[@]}"
 
       - name: Upload YouTube artifacts
         if: success() && steps.params.outputs.remotion_only != 'true'
@@ -462,6 +470,7 @@ jobs:
           SHORTS_THEME_FIRM_MP4: ${{ steps.params.outputs.shorts_theme_firm_mp4 }}
           SHORTS_THEME_FIRM_THUMBNAIL: ${{ steps.params.outputs.shorts_theme_firm_thumbnail }}
           PODCAST_VIDEO_LLM_MP4: ${{ steps.params.outputs.podcast_video_llm_mp4 }}
+          PODCAST_VIDEO_LLM_THUMBNAIL: ${{ steps.params.outputs.podcast_video_llm_thumbnail }}
         run: |
           set -euo pipefail
 
@@ -487,6 +496,7 @@ jobs:
             "$SHORTS_THUMBNAIL"
             "$SHORTS_FIRM_THUMBNAIL"
             "$SHORTS_THEME_FIRM_THUMBNAIL"
+            "$PODCAST_VIDEO_LLM_THUMBNAIL"
           )
           for path in "${normal_paths[@]}"; do
             if [[ -e "$path" ]]; then
