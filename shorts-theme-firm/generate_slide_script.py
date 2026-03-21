@@ -2678,9 +2678,10 @@ def main(argv: list[str] | None = None) -> int:
             config=config,
         )
         debate_payload = load_debate_json(date, args.lang)
+        asset_audio_src = resolve_shorts_audio_src(date, audio_file)
         render_payload = build_bkng_direct_props(
             generic_payload=template_payload,
-            date=display_date,
+            date=date,
             lang=args.lang,
             script_payload=script_payload,
             sections=sections,
@@ -2731,7 +2732,7 @@ def main(argv: list[str] | None = None) -> int:
                     )
                     render_payload = build_bkng_direct_props(
                         generic_payload=normalized_payload,
-                        date=display_date,
+                        date=date,
                         lang=args.lang,
                         script_payload=script_payload,
                         sections=sections,
@@ -2745,6 +2746,8 @@ def main(argv: list[str] | None = None) -> int:
                 logger.warning("Gemini slides generation failed, using template fallback: %s", llm_exc)
 
         if isinstance(render_payload, dict):
+            render_payload["date"] = date
+            render_payload["audioSrc"] = asset_audio_src
             render_payload["sceneTiming"] = bkng_scene_timing
         upload_metadata_payload = build_theme_firm_upload_metadata_payload(
             script_payload=script_payload,

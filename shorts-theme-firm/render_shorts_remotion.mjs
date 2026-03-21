@@ -169,13 +169,14 @@ function main() {
   const frameRange = `0-${frameCount - 1}`;
 
   const date = String(episode?.date || "").replace(/[^0-9]/g, "");
-  const audioSrc = args["audio-src"] || `audio/shorts-theme-firm/${date || "episode"}.mp3`;
+  const explicitAudioSrc = args["audio-src"];
+  const fallbackAudioSrc = explicitAudioSrc || `audio/shorts-theme-firm/${date || "episode"}.mp3`;
 
   // BkngDebateShortsProps: episode JSON is the props directly.
-  // Inject audioSrc from CLI (if not already set in the episode JSON).
+  // CLI audio path must win over any display-date-derived payload value.
   const props = {
     ...episode,
-    audioSrc: episode.audioSrc || audioSrc,
+    audioSrc: explicitAudioSrc || episode.audioSrc || fallbackAudioSrc,
     sceneTiming: toSceneTiming(sectionTiming) || episode.sceneTiming || undefined,
   };
 
