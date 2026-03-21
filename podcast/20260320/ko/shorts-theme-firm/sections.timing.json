@@ -1,0 +1,67 @@
+{
+  "date": "20260320",
+  "lang": "ko",
+  "audioFile": "shorts20260320.mp3",
+  "sectionOrder": [
+    "company_1",
+    "company_2",
+    "company_3",
+    "company_4"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 74.404,
+  "sections": [
+    {
+      "id": 0,
+      "name": "company_1",
+      "ticker": "WELL",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 22.211,
+      "endSec": 22.211,
+      "speechDurationSec": 22.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 176,
+      "text": "중동 리스크로 시장이 공포에 휩싸인 오늘, 대표 헬스케어 리츠 웰타워는 왜 5% 가까이 급락했을까요? 펀더멘털 전문가는 숫자로 말합니다. 2025년 핵심 사업부의 순영업이익은 51% 급증했고, 기존 자산의 성장률도 21%에 달했습니다. 인구 고령화라는 순풍 속에서 강력한 운영 능력을 증명하고 있는 우량 기업입니다."
+    },
+    {
+      "id": 1,
+      "name": "company_2",
+      "ticker": "WELL",
+      "kind": "company",
+      "startSec": 22.211,
+      "speechEndSec": 37.142,
+      "endSec": 37.142,
+      "speechDurationSec": 14.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 130,
+      "text": "성장 전문가는 데이터와 AI를 성장 동력으로 꼽습니다. 웰타워는 2,500개 포트폴리오 데이터를 분석하는 헬스케어 플랫폼으로 진화 중입니다. 독자적인 운영 시스템을 통해 효율성을 극대화하는 것이 경이적인 이익 성장의 핵심 비결입니다."
+    },
+    {
+      "id": 2,
+      "name": "company_3",
+      "ticker": "WELL",
+      "kind": "company",
+      "startSec": 37.142,
+      "speechEndSec": 56.633,
+      "endSec": 56.633,
+      "speechDurationSec": 19.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 139,
+      "text": "리스크 전문가는 막대한 부채를 경고합니다. 2026년부터 3년간 만기가 돌아오는 부채가 약 79억 달러에 달해, 고금리 지속 시 이자 비용 급증 리스크가 존재합니다. 또한 상위 5개 운영사가 전체 이익의 26%를 차지하는 높은 의존도도 취약점입니다."
+    },
+    {
+      "id": 3,
+      "name": "company_4",
+      "ticker": "WELL",
+      "kind": "company",
+      "startSec": 56.633,
+      "speechEndSec": 74.404,
+      "endSec": 74.404,
+      "speechDurationSec": 17.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 149,
+      "text": "센티멘트 전문가는 시장이 공포에 반응했다고 분석합니다. 오늘 급락은 심리적 지지선 붕괴 신호로, 투자자들이 미래의 부채 리스크라는 '보이지 않는 공포'에 투매로 반응했다는 해석입니다. 견고한 실적보다 부정적 심리가 가격을 압도한 것입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

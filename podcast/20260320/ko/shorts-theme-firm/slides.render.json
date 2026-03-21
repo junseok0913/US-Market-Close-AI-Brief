@@ -1,0 +1,148 @@
+{
+  "date": "20260320",
+  "ticker": "WELL",
+  "durationSeconds": 75,
+  "audioSrc": "audio/shorts-theme-firm/20260320.mp3",
+  "sceneTiming": {
+    "fundamental": {
+      "startSec": 0.0,
+      "endSec": 22.211
+    },
+    "growth": {
+      "startSec": 22.211,
+      "endSec": 37.142
+    },
+    "risk": {
+      "startSec": 37.142,
+      "endSec": 56.633
+    },
+    "sentiment": {
+      "startSec": 56.633,
+      "endSec": 74.404
+    }
+  },
+  "hook": {
+    "eyebrow": "장마감 기업 분석",
+    "headlineTop": "웰타워(Welltower)",
+    "headlineBottom": "5% 가까이 급락",
+    "subheadline": "견고한 실적에도 부채 리스크에 투매 발생",
+    "dayChange": "-4.49%"
+  },
+  "fundamental": {
+    "label": "펀더멘털",
+    "stance": "안정적",
+    "confidence": 0.9,
+    "summary": "압도적 NOI 성장, 부채 리스크 상쇄 가능",
+    "metrics": [
+      {
+        "label": "핵심사업NOI",
+        "value": "+51%",
+        "sub": "$22.9억 달러 기록",
+        "pct": 88
+      },
+      {
+        "label": "동일자산NOI",
+        "value": "+21%",
+        "sub": "강력한 운영 능력",
+        "pct": 76
+      },
+      {
+        "label": "핵심사업매출",
+        "value": "$84.9억",
+        "sub": "전년 대비 +41%",
+        "pct": 64
+      },
+      {
+        "label": "분기 점유율",
+        "value": "87.4%",
+        "sub": "견고한 수요 입증",
+        "pct": 52
+      }
+    ]
+  },
+  "growth": {
+    "label": "성장 포인트",
+    "stance": "강한 시각",
+    "confidence": 0.9,
+    "summary": "데이터/AI 기반 헬스케어 플랫폼으로 진화",
+    "columns": [
+      {
+        "label": "SHO NOI",
+        "value": "+51%",
+        "pct": 95
+      },
+      {
+        "label": "SSNOI",
+        "value": "+21.0%",
+        "pct": 75
+      },
+      {
+        "label": "분석 포트폴리오",
+        "value": "2,500개",
+        "pct": 65
+      },
+      {
+        "label": "점유율 상승",
+        "value": "+2.6%p",
+        "pct": 50
+      }
+    ],
+    "footnote": "데이터 기반 운영 효율화"
+  },
+  "risk": {
+    "label": "리스크",
+    "stance": "위협 존재",
+    "confidence": 0.85,
+    "summary": "3년간 79억 달러 부채 만기, 리파이낸싱 부담",
+    "totalExposure": "$79억 부채 만기 (3년)",
+    "items": [
+      {
+        "label": "부채 만기 집중",
+        "detail": "고금리 차환 리스크",
+        "highlight": "$79억"
+      },
+      {
+        "label": "상위 운영사 의존도",
+        "detail": "5개사가 이익 26% 차지",
+        "highlight": "26%"
+      },
+      {
+        "label": "최대 운영사 리스크",
+        "detail": "Cogir 단독 8% 차지",
+        "highlight": "8%"
+      },
+      {
+        "label": "정부 정책/규제",
+        "detail": "수익성 악화 가능성",
+        "highlight": "핵심 변수"
+      }
+    ]
+  },
+  "sentiment": {
+    "label": "시장 심리",
+    "stance": "심리 위축",
+    "confidence": 0.8,
+    "summary": "견고한 실적보다 보이지 않는 공포에 투매",
+    "priceRange": {
+      "low": 194.3,
+      "high": 205.05,
+      "close": 195.84,
+      "dayChangePct": -4.49
+    },
+    "keywords": [
+      "투매",
+      "공포",
+      "지지선 붕괴"
+    ],
+    "insight": "부정적 심리가 펀더멘털을 압도하는 국면"
+  },
+  "finale": {
+    "headline": "압도적 실적 vs 부채 리스크, 당신의 선택은?",
+    "bullets": [
+      "핵심사업 NOI 51%, 동일자산 21% 성장",
+      "향후 3년간 79억 달러 부채 만기 도래",
+      "시장은 실적보다 미래 리스크에 과민 반응"
+    ],
+    "cta": "구독과 좋아요 부탁드립니다"
+  }
+}

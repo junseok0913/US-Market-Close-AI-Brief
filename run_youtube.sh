@@ -4,25 +4,25 @@
 # YouTube Full Pipeline (Episode + Shorts + Podcast Video LLM)
 #
 # Default flow:
-#   1) Episode render (browser capture -> MP4)
-#   2) Episode upload to YouTube (public by default)
-#   3) Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare (script/audio/slides as needed)
-#   4) Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)
-#   5) Shorts + Shorts-Firm + Shorts-Theme-Firm upload to YouTube (public by default)
-#   6) PodcastVideoComposition render (existing timed episode -> Remotion MP4)
-#   7) PodcastVideoComposition upload to YouTube (public by default)
+#   1) Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare (script/audio/slides as needed)
+#   2) Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)
+#   3) Shorts + Shorts-Firm + Shorts-Theme-Firm upload to YouTube (public by default)
+#   4) PodcastVideoComposition render (existing timed episode -> Remotion MP4)
+#   5) PodcastVideoComposition upload to YouTube (public by default)
+#   6) Episode render (browser capture -> MP4)
+#   7) Episode upload to YouTube (public by default)
 #
 # Usage:
-#   ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--overwrite]
+#   ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from N] [--stop-after N] [--overwrite]
 #
 # --start-from step map:
-#   1 = episode render
-#   2 = episode upload
-#   3 = shorts assets prepare
-#   4 = shorts render (+ shorts thumbnail first frame)
-#   5 = shorts upload
-#   6 = podcast-video-llm render
-#   7 = podcast-video-llm upload
+#   1 = shorts assets prepare
+#   2 = shorts render (+ shorts thumbnail first frame)
+#   3 = shorts upload
+#   4 = podcast-video-llm render
+#   5 = podcast-video-llm upload
+#   6 = episode render
+#   7 = episode upload
 # ==============================================================================
 
 set -Eeuo pipefail
@@ -36,6 +36,7 @@ fi
 DATE=""
 LANG="ko"
 START_FROM=1
+STOP_AFTER=7
 OVERWRITE=0
 UPLOAD=1
 PRIVACY="public"
@@ -76,17 +77,19 @@ CURRENT_STEP="init"
 usage() {
     cat <<'EOF'
 Usage:
-  ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from 1..7] [--overwrite] [--no-upload]
+  ./run_youtube.sh YYYYMMDD --lang ko|en [--start-from 1..7] [--stop-after 1..7] [--overwrite] [--no-upload]
 
 Options:
   --lang ko|en              Language path to render (default: ko)
   --start-from <n>          Resume from step n (1..7, default: 1)
-                            1=episode render, 2=episode upload,
-                            3=shorts+shorts-firm+shorts-theme-firm assets
-                            4=shorts+shorts-firm+shorts-theme-firm render
-                            5=shorts+shorts-firm+shorts-theme-firm upload
-                            6=podcast-video-llm render
-                            7=podcast-video-llm upload
+                            1=shorts+shorts-firm+shorts-theme-firm assets
+                            2=shorts+shorts-firm+shorts-theme-firm render
+                            3=shorts+shorts-firm+shorts-theme-firm upload
+                            4=podcast-video-llm render
+                            5=podcast-video-llm upload
+                            6=episode render
+                            7=episode upload
+  --stop-after <n>          Stop after step n (1..7, default: 7)
   --overwrite               Overwrite existing output files
   --privacy <value>         YouTube privacy status: private|unlisted|public (default: public)
   --no-upload               Render only, skip YouTube uploads
@@ -958,6 +961,10 @@ while [[ $# -gt 0 ]]; do
             START_FROM="$2"
             shift 2
             ;;
+        --stop-after)
+            STOP_AFTER="$2"
+            shift 2
+            ;;
         --overwrite)
             OVERWRITE=1
             shift
@@ -1028,6 +1035,21 @@ fi
 
 if [ "${START_FROM}" -lt 1 ] || [ "${START_FROM}" -gt 7 ]; then
     echo "❌ --start-from must be within 1..7: ${START_FROM}"
+    exit 1
+fi
+
+if ! [[ "${STOP_AFTER}" =~ ^[0-9]+$ ]]; then
+    echo "❌ --stop-after must be numeric: ${STOP_AFTER}"
+    exit 1
+fi
+
+if [ "${STOP_AFTER}" -lt 1 ] || [ "${STOP_AFTER}" -gt 7 ]; then
+    echo "❌ --stop-after must be within 1..7: ${STOP_AFTER}"
+    exit 1
+fi
+
+if [ "${STOP_AFTER}" -lt "${START_FROM}" ]; then
+    echo "❌ --stop-after (${STOP_AFTER}) must be >= --start-from (${START_FROM})"
     exit 1
 fi
 
@@ -1195,83 +1217,84 @@ echo "🎬 YouTube Full Pipeline Start"
 echo "📅 Date: ${DATE}"
 echo "🌐 Language: ${LANG}"
 echo "▶️  Start from: Step ${START_FROM}"
+echo "⏹️  Stop after: Step ${STOP_AFTER}"
 echo "☁️  Upload: $( [ "${UPLOAD}" -eq 1 ] && echo "Yes (${PRIVACY})" || echo "No (--no-upload)" )"
 echo "========================================================"
 
-if [ "${START_FROM}" -le 1 ]; then
-    CURRENT_STEP="step1_episode_render"
+if [ "${START_FROM}" -le 1 ] && [ "${STOP_AFTER}" -ge 1 ]; then
+    CURRENT_STEP="step1_shorts_assets"
     echo ""
-    echo "[1/7] Episode render (browser capture -> MP4)"
-    run_step1_with_retry
-else
-    echo ""
-    echo "[1/7] Episode render skipped (start-from ${START_FROM})"
-fi
-
-if [ "${START_FROM}" -le 2 ]; then
-    CURRENT_STEP="step2_episode_upload"
-    echo ""
-    echo "[2/7] Episode upload"
-    upload_episode_video
-else
-    echo ""
-    echo "[2/7] Episode upload skipped (start-from ${START_FROM})"
-fi
-
-if [ "${START_FROM}" -le 3 ]; then
-    CURRENT_STEP="step3_shorts_assets"
-    echo ""
-    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare"
+    echo "[1/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare"
     prepare_shorts_assets
     prepare_shorts_firm_assets
     prepare_shorts_theme_firm_assets
 else
     echo ""
-    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare skipped (start-from ${START_FROM})"
+    echo "[1/7] Shorts + Shorts-Firm + Shorts-Theme-Firm assets prepare skipped"
 fi
 
-if [ "${START_FROM}" -le 4 ]; then
-    CURRENT_STEP="step4_shorts_render"
+if [ "${START_FROM}" -le 2 ] && [ "${STOP_AFTER}" -ge 2 ]; then
+    CURRENT_STEP="step2_shorts_render"
     echo ""
-    echo "[4/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)"
+    echo "[2/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render (Remotion -> MP4 + first-frame thumbnail)"
     render_shorts_video
     render_shorts_firm_video
     render_shorts_theme_firm_video
 else
     echo ""
-    echo "[4/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render skipped (start-from ${START_FROM})"
+    echo "[2/7] Shorts + Shorts-Firm + Shorts-Theme-Firm render skipped"
 fi
 
-if [ "${START_FROM}" -le 5 ]; then
-    CURRENT_STEP="step5_shorts_upload"
+if [ "${START_FROM}" -le 3 ] && [ "${STOP_AFTER}" -ge 3 ]; then
+    CURRENT_STEP="step3_shorts_upload"
     echo ""
-    echo "[5/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload"
+    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload"
     upload_shorts_video
     upload_shorts_firm_video
     upload_shorts_theme_firm_video
 else
     echo ""
-    echo "[5/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload skipped (start-from ${START_FROM})"
+    echo "[3/7] Shorts + Shorts-Firm + Shorts-Theme-Firm upload skipped"
 fi
 
-if [ "${START_FROM}" -le 6 ]; then
-    CURRENT_STEP="step6_podcast_video_llm_render"
+if [ "${START_FROM}" -le 4 ] && [ "${STOP_AFTER}" -ge 4 ]; then
+    CURRENT_STEP="step4_podcast_video_llm_render"
     echo ""
-    echo "[6/7] Podcast-video-llm render (existing timed episode -> Remotion MP4)"
+    echo "[4/7] Podcast-video-llm render (existing timed episode -> Remotion MP4)"
     render_podcast_video_llm_video
 else
     echo ""
-    echo "[6/7] Podcast-video-llm render skipped (start-from ${START_FROM})"
+    echo "[4/7] Podcast-video-llm render skipped"
 fi
 
-if [ "${START_FROM}" -le 7 ]; then
-    CURRENT_STEP="step7_podcast_video_llm_upload"
+if [ "${START_FROM}" -le 5 ] && [ "${STOP_AFTER}" -ge 5 ]; then
+    CURRENT_STEP="step5_podcast_video_llm_upload"
     echo ""
-    echo "[7/7] Podcast-video-llm upload"
+    echo "[5/7] Podcast-video-llm upload"
     upload_podcast_video_llm_video
 else
     echo ""
-    echo "[7/7] Podcast-video-llm upload skipped (start-from ${START_FROM})"
+    echo "[5/7] Podcast-video-llm upload skipped"
+fi
+
+if [ "${START_FROM}" -le 6 ] && [ "${STOP_AFTER}" -ge 6 ]; then
+    CURRENT_STEP="step6_episode_render"
+    echo ""
+    echo "[6/7] Episode render (browser capture -> MP4)"
+    run_step1_with_retry
+else
+    echo ""
+    echo "[6/7] Episode render skipped"
+fi
+
+if [ "${START_FROM}" -le 7 ] && [ "${STOP_AFTER}" -ge 7 ]; then
+    CURRENT_STEP="step7_episode_upload"
+    echo ""
+    echo "[7/7] Episode upload"
+    upload_episode_video
+else
+    echo ""
+    echo "[7/7] Episode upload skipped"
 fi
 
 CURRENT_STEP="done"

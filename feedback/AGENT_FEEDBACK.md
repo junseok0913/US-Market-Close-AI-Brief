@@ -5,25 +5,25 @@ Single-file incident log + periodic summary for Codex mistakes.
 <!-- AUTO-SUMMARY:START -->
 ## Periodic Summary
 
-Generated: 2026-03-19 07:41:52Z (UTC)
+Generated: 2026-03-21 20:25:02Z (UTC)
 
 ### Incident Counts
-- Total: 8
+- Total: 9
 - Last 7 days: 6
-- Last 30 days: 7
+- Last 30 days: 8
 
 ### Impact Distribution
-- `medium`: 8
+- `medium`: 9
 
 ### Top Tags
 - `shorts-theme-firm`: 5
 - `remotion`: 3
+- `github-actions`: 2
+- `validation`: 2
 - `nextjs`: 1
 - `static-export`: 1
 - `youtube-render`: 1
-- `github-actions`: 1
 - `ci`: 1
-- `dependencies`: 1
 
 ### Actionable Feedback Rules
 - `For static-export apps, keep route static and parse render query params in client components (window.location.search) instead of dynamic server searchParams.`: 1
@@ -93,4 +93,11 @@ e:
 - Tags: remotion, design-scope, validation
 - Root Cause: I inferred the BKNG shorts composition should be redesigned holistically instead of preserving scenes 2-5 exactly as requested, and I did not verify the user's visual reference against the local composition before editing.
 - Prevention Rule: Before editing a multi-scene Remotion composition, compare the exact scenes the user named in localhost/current TSX and restate which scene indices will change. Preserve untouched scenes unless the user explicitly approves broader redesign.
+- Evidence:
+
+### 2026-03-21 | Misread GitHub Actions resume semantics in run_youtube
+- Impact: medium
+- Tags: github-actions, resume, validation, run_youtube
+- Root Cause: Assumed rerun jobs would have prior generated shorts assets available, like a local workspace, instead of recognizing each GitHub Actions run starts on a clean runner.
+- Prevention Rule: When advising or implementing --start-from behavior for CI, explicitly verify which prerequisites are regenerated versus expected to persist, and test the resume point against a date with intentionally missing generated assets before recommending it.
 - Evidence:
