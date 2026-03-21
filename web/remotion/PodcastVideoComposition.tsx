@@ -59,6 +59,7 @@ export type PodcastChapter = {
 export type PodcastEpisodeData = {
   date: string;
   nutshell: string;
+  durationSeconds?: number;
   user_tickers?: string[];
   news_tickers?: string[];
   chapter: PodcastChapter[];

@@ -22,9 +22,14 @@ const calculatePodcastMetadata: CalculateMetadataFunction<{
     Array.isArray(lastScript?.time) && Number.isFinite(lastScript.time[1])
       ? Number(lastScript.time[1])
       : 60_000;
+  const explicitDurationSeconds = Number(episode?.durationSeconds || 0);
+  const resolvedDurationSeconds =
+    Number.isFinite(explicitDurationSeconds) && explicitDurationSeconds > 0
+      ? explicitDurationSeconds
+      : timedEndMs / 1000;
   const durationInFrames = Math.max(
     INTRO_FRAMES + DEFAULT_FPS,
-    Math.ceil((timedEndMs / 1000) * DEFAULT_FPS) + INTRO_FRAMES,
+    Math.ceil(resolvedDurationSeconds * DEFAULT_FPS) + INTRO_FRAMES,
   );
   return { durationInFrames };
 };
