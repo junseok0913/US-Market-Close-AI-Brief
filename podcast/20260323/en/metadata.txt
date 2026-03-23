@@ -1,0 +1,23 @@
+Title:
+2026.3.24 US Market Close | A relief rally driven by easing geopolitical tensions with Iran
+
+Description:
+On March 24, the New York stock market staged a relief rally as investor sentiment significantly improved following an easing of geopolitical tensions with Iran. All major indices closed sharply higher after President Trump's comments about the possibility of dialogue eased fears of war.
+
+- Dow Jones: +1.38% - Rallied on relief from easing geopolitical tensions with Iran.
+- S&P 500: +1.15% - Risk-on sentiment returns.
+- Nasdaq: Surged 1.38% - A strong rebound led by tech stocks.
+
+Key Market Drivers
+- Easing Geopolitical Tensions: Market uncertainty significantly decreased on news that President Trump postponed military action against Iran and initiated productive dialogue.
+- Oil Prices Plunge: West Texas Intermediate (WTI) crude oil prices tumbled nearly 10% in a single day, falling to the $88 level, as concerns over supply disruptions diminished.
+- Sector Divergence: With reduced risk, defense stocks like Lockheed Martin saw a correction, while airline and travel-related stocks, benefiting from the sharp drop in oil prices, posted strong gains.
+- Solid Economic Fundamentals: The March Manufacturing PMI came in at 51.0, beating market expectations and signaling the underlying strength of the U.S. economy, which provided further support for the rally.
+
+Notable Movers
+- American Airlines (AAL): +3.6% - Benefited from the dual tailwinds of plunging oil prices and easing geopolitical risks.
+- Delta Air Lines (DAL): +2.7% - Rose on expectations of cost savings from lower oil prices.
+- Freeport-McMoRan (FCX): +1.25% - Gained on anticipation of increased copper demand driven by AI data centers and the energy transition.
+
+Keywords:
+미국주식,주식,재테크,시황,이란,지정학적리스크,유가,안도랠리,항공주,다우,나스닥,S&P500,금리

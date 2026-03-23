@@ -1,0 +1,282 @@
+import type { Slide } from '@/types/slide';
+
+export const slides: Slide[] = [
+  {
+    id: 0,
+    type: 'title',
+    turnId: 0,
+    date: '2026-03-24',
+    nutshell: '이란과의 지정학적 갈등 완화에 따른 안도 랠리',
+    description:
+      '주말 사이 최고조에 달했던 전쟁 위기감이 완화되면서 시장이 급반등했습니다. 오늘 브리핑에서는 지정학적 리스크 해소에 따른 자산 시장의 변화를 분석하고, AI 수혜주로 주목받는 프리포트 맥모란(FCX)의 기회와 위험 요인을 심층 진단합니다.',
+  },
+  {
+    id: 1,
+    type: 'market-summary',
+    turnId: 1,
+    title: '오늘의 시장 요약',
+    description:
+      '트럼프 대통령의 대화 가능성 언급으로 이란과의 군사적 긴장이 완화되자, 투자 심리가 급격히 회복되며 3대 지수 모두 1% 이상 급등 마감했습니다. 유가는 10% 가까이 폭락했습니다.',
+    indices: [
+      { name: 'S&P 500', value: 6581.00, change: 74.52, changePercent: 1.15 },
+      { name: 'NASDAQ', value: 21946.76, change: 299.15, changePercent: 1.38 },
+      { name: 'DOW', value: 46208.47, change: 631.00, changePercent: 1.38 },
+      { name: 'Russell 2000', value: 2494.23, change: 55.78, changePercent: 2.29 },
+      { name: 'Dollar Index', value: 99.12, change: -0.53, changePercent: -0.53 },
+    ],
+    commodities: [
+      { name: 'WTI Crude', value: 88.87, change: -9.45, changePercent: -9.61 },
+      { name: 'Gold', value: 4410.40, change: -160.00, changePercent: -3.50 },
+    ],
+    charts: [
+      { ticker: 'SP:SPX' },
+      { ticker: 'NASDAQ:IXIC' },
+      { ticker: 'DJ:DJI' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'headline',
+    turnId: 6,
+    icon: 'globe',
+    title: '전방위적 안도 랠리',
+    subtitle: '지정학적 리스크 완화가 모든 자산을 움직이다',
+    description:
+      '이란과의 군사 충돌이라는 최악의 시나리오가 해소되면서, 지난주까지의 위험 회피 심리가 빠르게 청산되었습니다. 주식, 채권, 원자재 등 모든 자산군에서 극적인 가격 되돌림 현상이 나타났습니다.',
+    bullets: [
+      'S&P 500 지수 1% 이상 급등',
+      '공포지수(VIX) 10% 이상 급락하며 26선으로 하락',
+      '안전자산 금 가격 온스당 4400달러 선으로 후퇴',
+      '위험자산 선호 심리 회복되며 미 10년물 국채 금리 상승',
+    ],
+    theme: 'blue',
+  },
+  {
+    id: 3,
+    type: 'stats',
+    turnId: 7,
+    title: '주요 자산 가격 급변동',
+    description: '지정학적 긴장 완화 소식에 시장의 위험 선호 심리가 되살아나며 주요 자산 가격이 하루 만에 급격한 변화를 보였습니다.',
+    stats: [
+      { label: 'S&P 500', value: '+1.15%', subtext: '강력한 증시 반등', trend: 'up' },
+      { label: 'VIX 지수', value: '-10.2%', subtext: '시장 공포 완화', trend: 'down' },
+      { label: 'WTI 유가', value: '-9.61%', subtext: '공급 차질 우려 해소', trend: 'down' },
+      { label: '금 가격', value: '-3.50%', subtext: '안전자산 매력 감소', trend: 'down' },
+    ],
+    theme: 'blue',
+    charts: [
+      { ticker: 'SP:SPX' },
+      { ticker: 'TVC:VIX' },
+      { ticker: 'NYMEX:CL1!' },
+      { ticker: 'COMEX:GC1!' },
+    ],
+  },
+  {
+    id: 4,
+    type: 'comparison',
+    turnId: 9,
+    title: '업종별 희비 교차',
+    description: '전쟁 위기감 완화는 업종별로 명확한 차별화 장세를 연출했습니다. 지난주 강세 업종과 약세 업종의 운명이 하루 만에 뒤바뀌었습니다.',
+    items: [
+      {
+        label: '항공/여행',
+        value: '강세',
+        description: '유가 급락과 지정학적 리스크 해소의 이중 수혜 (JETS ETF 급등)',
+        highlight: true,
+      },
+      {
+        label: '방산',
+        value: '약세',
+        description: '분쟁 가능성 감소로 전쟁 프리미엄 반납 (LMT, RTX 조정)',
+        highlight: false,
+      },
+      {
+        label: '에너지',
+        value: '선방',
+        description: '유가 폭락에도 불구, 시장 전반의 매수세에 힘입어 상승 마감 (XOM, CVX)',
+        highlight: false,
+      },
+    ],
+    charts: [{ ticker: 'JETS' }, { ticker: 'XAR' }],
+  },
+  {
+    id: 5,
+    type: 'headline',
+    turnId: 11,
+    icon: 'chart-line',
+    title: '견조한 경제지표, 랠리 뒷받침',
+    subtitle: '미국 경제의 튼튼한 기초체력 확인',
+    description:
+      '지정학적 이슈에 가려졌지만, 함께 발표된 경제 지표는 시장의 안도 랠리를 펀더멘털 측면에서 지지했습니다. 이는 투자자들에게 불확실성 해소 시 공격적인 매수에 나설 자신감을 부여했습니다.',
+    bullets: [
+      '3월 제조업 PMI 예비치 51.0 (예상 50.2 상회)',
+      '3월 서비스업 PMI 예비치 51.7 (예상 50.4 상회)',
+      '경기 확장세가 견조함을 시사',
+      '달러 인덱스 안정적 흐름 유지',
+    ],
+    theme: 'green',
+  },
+  {
+    id: 6,
+    type: 'headline',
+    turnId: 13,
+    icon: 'eye',
+    title: '랠리 지속 가능성? 다시 펀더멘털로',
+    subtitle: '시장의 초점은 다시 연준과 경제 지표로 이동할 것',
+    description:
+      '이번 랠리는 최악의 상황을 피했다는 안도감에서 비롯된 기술적 반등 성격이 강합니다. 지정학적 리스크가 완전히 해결된 것이 아니므로, 시장의 관심은 다시 본질적인 동력으로 옮겨갈 전망입니다.',
+    bullets: [
+      '이란 리스크는 \'해결\'이 아닌 \'연기\' 상태',
+      '시장의 관심은 연준의 통화정책으로 회귀',
+      '차주 비농업 고용지표 등 핵심 데이터 주목',
+      '추세적 상승을 위해서는 펀더멘털 확인 필요',
+    ],
+    theme: 'amber',
+  },
+  {
+    id: 7,
+    type: 'headline',
+    turnId: 15,
+    icon: 'trending-up',
+    title: '위험자산 선호의 귀환',
+    subtitle: '주식과 채권의 동반 강세 현상',
+    description:
+      '시장을 짓누르던 스태그플레이션 공포가 걷히자, 주식과 채권이 동시에 강세를 보이는 이례적인 현상이 나타났습니다. 유가 급락이 인플레이션 기대 심리를 완화시킨 것이 핵심 요인입니다.',
+    bullets: [
+      '스태그플레이션 공포 해소',
+      '유가 급락 → 인플레이션 기대 완화',
+      '美 10년물 국채금리 하락 (채권 가격 상승)',
+      '주식과 채권 동시 랠리라는 이례적 현상 발생',
+    ],
+    theme: 'green',
+  },
+  {
+    id: 8,
+    type: 'stats',
+    turnId: 17,
+    title: '유가 급락의 명확한 수혜주: 항공주',
+    description: '비용의 절대적인 부분을 차지하는 유류비가 급락하자 항공주가 일제히 강한 상승 탄력을 보였습니다.',
+    stats: [
+      { label: 'JETS (항공 ETF)', value: '+3.5%', subtext: '업종 전반 강세', trend: 'up' },
+      { label: '아메리칸 항공 (AAL)', value: '+3.6%', subtext: '개별 종목 급등', trend: 'up' },
+      { label: '델타 항공 (DAL)', value: '+2.7%', subtext: '동반 상승세', trend: 'up' },
+    ],
+    theme: 'green',
+    charts: [{ ticker: 'JETS' }, { ticker: 'AAL' }, { ticker: 'DAL' }],
+  },
+  {
+    id: 9,
+    type: 'headline',
+    turnId: 21,
+    icon: 'alert-triangle',
+    title: '랠리 지속 가능성에 대한 경고',
+    subtitle: '단일 재료에 의존하는 반등, 불확실성은 여전',
+    description:
+      '전문가들은 이번 랠리가 트럼프 대통령의 발언이라는 단일 재료에 의존하고 있어 아직 안심하기는 이르다고 경고합니다. 갈등의 근본 원인이 해결되지 않았기 때문입니다.',
+    bullets: [
+      '이란 외무부, 미국과의 대화 부인하며 혼선',
+      'CIBC: "호르무즈 해협 정상화 전까지 불확실성 여전"',
+      '유라시아 그룹: "단기적 운송 차질 계속될 가능성"',
+      '투자자들, 협상 과정 주시하며 펀더멘털 재점검 전망',
+    ],
+    theme: 'red',
+  },
+  {
+    id: 10,
+    type: 'ticker-intro',
+    turnId: 22,
+    ticker: 'FCX',
+    companyName: 'Freeport-McMoRan',
+    currentPrice: 54.94,
+    dayChange: 2.85,
+    dayChangePercent: 5.47,
+    description:
+      '세계적인 광산 기업 프리포트 맥모란은 장 초반 하락세를 극복하고 강한 V자 반등을 보이며 상승 마감했습니다. 시장은 이 기업을 AI와 에너지 전환의 핵심 수혜주로 주목하고 있습니다.',
+    charts: [{ ticker: 'NYSE:FCX' }],
+  },
+  {
+    id: 11,
+    type: 'ticker-analysis',
+    turnId: 23,
+    ticker: 'FCX',
+    title: '성장 스토리: AI가 이끄는 구리 수요',
+    description:
+      '시장은 프리포트 맥모란을 단순한 원자재 기업이 아닌, 거대 기술 패러다임의 핵심 인프라 공급자로 재평가하고 있습니다. 이는 주가에 강력한 상승 동력으로 작용하고 있습니다.',
+    points: [
+      'AI 데이터센터는 기존보다 훨씬 많은 구리를 필요로 함',
+      '에너지 전환(전기차, 신재생에너지) 역시 구리 수요를 폭발적으로 증가시킴',
+      '구조적인 수요 증가의 중심에 설 것이라는 시장의 기대감 형성',
+      '장중 저가 매수세 유입은 장기 성장 서사에 대한 긍정적 신호',
+    ],
+    outlook: 'AI와 에너지 전환이라는 강력한 성장 스토리가 주가를 견인하고 있습니다.',
+    outlookColor: 'emerald',
+  },
+  {
+    id: 12,
+    type: 'ticker-analysis',
+    turnId: 25,
+    ticker: 'FCX',
+    title: '리스크 ①: 높은 밸류에이션 부담',
+    description:
+      '화려한 성장 스토리 이면에는 재무적 부담이 존재합니다. 현재 주가는 매우 낙관적인 미래 전망을 선반영하고 있어 신중한 접근이 필요합니다.',
+    points: [
+      '막대한 자본 지출(45억 달러)로 잉여현금흐름(11억 달러)은 제한적',
+      '시가총액 대비 잉여현금흐름(P/FCF) 비율이 70배를 초과하는 높은 수준',
+      '현재의 높은 밸류에이션은 역사적으로 높은 구리 가격 유지를 전제로 함',
+      '구리 가격이 평균 수준으로 회귀할 경우 밸류에이션 정당화가 어려울 수 있음',
+    ],
+    outlook: '잉여현금흐름 대비 높은 밸류에이션은 잠재적 부담 요인입니다.',
+    outlookColor: 'amber',
+  },
+  {
+    id: 13,
+    type: 'ticker-analysis',
+    turnId: 27,
+    ticker: 'FCX',
+    title: '리스크 ②: 인도네시아 지정학적 리스크',
+    description:
+      '회사의 수익 구조는 특정 지역의 단일 자산에 과도하게 의존하고 있어, 해당 지역의 정치 및 운영 리스크가 기업 전체의 명운을 좌우할 수 있습니다.',
+    points: [
+      '전체 세전이익의 60%가 인도네시아 그라스버그 단일 광산에서 발생',
+      '최근 발생한 사망 사고로 운영 안정성에 대한 우려 부각',
+      '인도네시아 정부의 수출 규제 등 정책 불확실성 상존',
+      '연차보고서에 "정치적 리스크 보험"을 유지하고 있지 않다고 명시',
+    ],
+    outlook: '특정 지역에 대한 과도한 의존도와 보험 부재는 핵심적인 위험 요소입니다.',
+    outlookColor: 'rose',
+  },
+  {
+    id: 14,
+    type: 'events',
+    turnId: 33,
+    title: '향후 주목할 경제 지표',
+    description:
+      '시장의 방향성이 모호한 가운데, 투자자들은 연준의 다음 행보에 대한 단서를 찾기 위해 발표되는 주요 경제 지표에 더욱 민감하게 반응할 것입니다.',
+    events: [
+      {
+        date: '3/26 (목)',
+        label: '주간 신규 실업수당 청구건수',
+        description: '고용 시장의 열기가 지속되는지 확인할 수 있는 지표',
+      },
+      {
+        date: '3/27 (금)',
+        label: '미시간대 소비자심리지수',
+        description: '소비자들이 예상하는 미래 인플레이션에 대한 단서 제공',
+      },
+      {
+        date: '4/9 (목)',
+        label: '개인소비지출(PCE) 물가지수',
+        description: '연준이 가장 선호하는 물가 지표로, 향후 금리 정책의 핵심 변수',
+      },
+    ],
+  },
+  {
+    id: 15,
+    type: 'closing',
+    turnId: 37,
+    headline: '안갯속 장세, 핵심 지표 확인 필요',
+    tagline: '단기 변동성보다 큰 흐름을 읽는 신중한 접근이 필요한 시점입니다.',
+    description:
+      '긍정적 신호와 부정적 신호가 뒤섞여 섣부른 예측은 금물입니다. 앞으로 발표될 고용 및 물가 관련 핵심 데이터를 차분히 확인하며 시장의 방향성을 가늠하는 지혜가 필요합니다. 핵심 지표 발표 전후로 변동성이 확대될 수 있음을 유의해야 합니다.',
+  },
+];
