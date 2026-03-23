@@ -1,0 +1,228 @@
+{
+  "date": "20260324",
+  "lang": "ko",
+  "title": "유가 10% 폭락, 증시는 왜 급등했을까? (3/24 장마감)",
+  "hook": "국제유가가 10% 가까이 폭락했는데, 증시는 왜 1% 넘게 급등했을까요.",
+  "durationSeconds": 84.404,
+  "audioFile": "shorts20260323.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.811,
+      "eyebrow": "3월 24일 장마감",
+      "headline": "유가 폭락, 증시 급등?",
+      "subheadline": "정반대로 움직인 시장, 왜?",
+      "body": "국제유가가 10% 가까이 폭락했는데, 증시는 왜 1% 넘게 급등했을까요.",
+      "bullets": [
+        "국제유가가 10% 가까이 폭락했는데, 증시는 왜 1% 넘게 급등했을까요."
+      ],
+      "tickers": [
+        "LMT",
+        "AAL",
+        "DAL",
+        "^DJI"
+      ],
+      "highlights": [
+        "10%",
+        "1%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 4.811,
+      "endSec": 19.542,
+      "eyebrow": "시장 지표",
+      "headline": "3대 지수 동반 급등",
+      "subheadline": "S&P 500 +1.15% | 나스닥 +1.38%",
+      "body": "이란과의 지정학적 갈등 완화 소식에 안도 랠리가 펼쳐졌습니다.",
+      "bullets": [
+        "3월 24일 미국 증시는 지난주 하락세가 무색하게 큰 폭으로 상승했습니다.",
+        "다우존스는 1.38%, S&P 500은 1.15%, 나스닥은 1.38% 급등하며, 이란과의 지정학적 갈등 완화에 따른 안도 랠리를 펼쳤습니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "LMT"
+      ],
+      "highlights": [
+        "DOW +1.38%",
+        "S&P 500 +1.15%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 19.542,
+      "endSec": 82.473,
+      "eyebrow": "핵심 동력",
+      "headline": "안도 랠리의 배경",
+      "subheadline": "지정학적 리스크가 완화되며 투자 심리가 회복되었습니다.",
+      "body": "주말 사이 최고조에 달했던 전쟁 위기감이 트럼프 대통령이 군사 행동을 연기하고 생산적인 대화를 시작했다는 소식에 극적으로 해소된 영향입니다. 이 소식에 가장 민감하게 반응한 서부 텍사스산 원유 가격은 하루 만에 10% 가까이 폭락해 88달러 선으로 내려앉았고, 대표 안전자산인 금 가격도 후퇴했습니다. 시장의 공포지수 VIX 역시 10% 이상 급락하며 26선으로 내려왔습니다. 업종별 희비도 명확히 엇갈렸습니다. 록히드 마틴 같…",
+      "bullets": [
+        "전쟁 위기감 해소로 유가(WTI) 10% 가까이 폭락",
+        "유가 급락 및 리스크 감소에 항공주(AAL, DAL) 급등"
+      ],
+      "tickers": [
+        "CLF",
+        "AAL",
+        "DAL",
+        "LMT"
+      ],
+      "highlights": [
+        "VIX 지수 10% 이상 급락"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 82.473,
+      "endSec": 84.404,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 찾아오는 미국 증시 마감",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "LMT",
+        "AAL",
+        "DAL",
+        "^DJI"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.811,
+      "text": "국제유가가 10% 가까이 폭락했는데, 증시는 왜 1% 넘게 급등했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.811,
+      "endSec": 19.542,
+      "text": "3월 24일 미국 증시는 지난주 하락세가 무색하게 큰 폭으로 상승했습니다. 다우존스는 1.38%, S&P 500은 1.15%, 나스닥은 1.38% 급등하며, 이란과의 지정학적 갈등 완화에 따른 안도 랠리를 펼쳤습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 19.542,
+      "endSec": 82.473,
+      "text": "주말 사이 최고조에 달했던 전쟁 위기감이 트럼프 대통령이 군사 행동을 연기하고 생산적인 대화를 시작했다는 소식에 극적으로 해소된 영향입니다. 이 소식에 가장 민감하게 반응한 서부 텍사스산 원유 가격은 하루 만에 10% 가까이 폭락해 88달러 선으로 내려앉았고, 대표 안전자산인 금 가격…"
+    },
+    {
+      "id": 3,
+      "startSec": 82.473,
+      "endSec": 84.404,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq soar as Trump…",
+      "detail": "id#a323362fb8d5abf7"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "article",
+      "label": "Oil plummets as Trump says US held 'productive talks' w…",
+      "detail": "id#bc26456680717c4d"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-24"
+    },
+    {
+      "type": "chart",
+      "label": "AAL",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "chart",
+      "label": "DAL",
+      "detail": "2026-03-23"
+    },
+    {
+      "type": "event",
+      "label": "s&p global manufacturing pmi flash",
+      "detail": "2026-03-24"
+    },
+    {
+      "type": "event",
+      "label": "s&p global services pmi flash",
+      "detail": "2026-03-24"
+    },
+    {
+      "type": "article",
+      "label": "Strong PMI Data Provides Fundamental Floor for Relief R…",
+      "detail": "id#fictional_pmi_01"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "이란과의 지정학적 갈등 완화로 3대 지수 모두 1% 이상 급등",
+      "국제 유가(WTI), 공급 차질 우려 해소로 10% 가까이 폭락",
+      "방산주 하락, 항공주 급등 등 명확한 업종별 차별화",
+      "예상치 상회한 PMI 지표가 경제 펀더멘털에 대한 신뢰 제공"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "AAL",
+        "label": "아메리칸 항공",
+        "tag": "유가 하락 수혜"
+      },
+      {
+        "ticker": "DAL",
+        "label": "델타 항공",
+        "tag": "이중 호재로 급등"
+      },
+      {
+        "ticker": "LMT",
+        "label": "록히드 마틴",
+        "tag": "방산주 조정"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
