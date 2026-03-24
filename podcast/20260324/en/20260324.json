@@ -1,0 +1,656 @@
+{
+  "date": "20260324",
+  "nutshell": "Tech stocks slide on rising geopolitical risks concerning Iran.",
+  "user_tickers": [
+    "GLW"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 34
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's the closing bell briefing for March 25th. It looks like the major indices couldn't hold onto their recent gains and all finished in the red.",
+      "sources": [],
+      "time": [
+        0,
+        8851
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. The market today was dominated by a tech sell-off driven by rising geopolitical risks related to Iran. The Dow Jones Industrial Average fell 0.18% to close at 46,124.06, and the S&P 500 slipped 0.37% to 6,556.37. The tech-heavy Nasdaq Composite saw the biggest drop, falling 0.84% to finish the session at 21,761.90. While there was some optimism about negotiations early in the day, conflicting reports increased uncertainty, and West Texas Intermediate crude oil rose over 1% again, crossing the $89 a barrel mark and putting the market on edge.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-24"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-24"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-24"
+        },
+        {
+          "type": "article",
+          "pk": "id#c904c017b9bf0666",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war drags on, oil rebounds"
+        }
+      ],
+      "time": [
+        9351,
+        53282
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "As you mentioned, the market seemed confused today, getting mixed signals with hopes for negotiations on one hand and rising military tensions on the other. What were the specifics?",
+      "sources": [],
+      "time": [
+        53782,
+        65953
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. While President Trump gave the market some relief by mentioning productive talks with Iran, today we saw reports that Iran is denying any direct negotiations. To make matters worse, news that the Pentagon would be deploying an additional 3,000 elite troops to the Middle East caused investor sentiment to cool rapidly. With the situation so unpredictable, investors responded by reducing their exposure to risk assets, which led to the broad market decline.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d6ab4b4ef5f79bb2",
+          "title": "Iran Strikes Persist Even as Trump Claims Talks to End War"
+        }
+      ],
+      "time": [
+        66453,
+        95864
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, could you break down the key factors that moved the market today?",
+      "sources": [],
+      "time": [
+        96364,
+        100535
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, today's market can really be summed up by two main themes. First, the growing geopolitical uncertainty with Iran and the resulting spike in oil prices. And second, the tech-led market decline as this risk-off sentiment took hold.",
+      "sources": [],
+      "time": [
+        101035,
+        116326
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point you raised: the geopolitical risk from Iran. The sharp rise in oil prices seems to have really rattled the market.",
+      "sources": [],
+      "time": [
+        117326,
+        127337
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "That's right, the market was on a rollercoaster of hope and despair all day. President Trump tried to provide some reassurance by mentioning productive talks with Iran, but that optimism quickly faded after Iran's Foreign Ministry and parliament officially denied any negotiations were taking place. The decisive blow came in the afternoon with reports that the Pentagon would be deploying an additional 3,000 troops from the elite 82nd Airborne Division to the Middle East, which sent a chill through investor sentiment. On that news, WTI crude surged nearly 4% in a single day, crossing $91 a barrel. This stoked inflation fears and led to an unusual phenomenon where the 10-year Treasury yield was pushed up by 7 basis points. The VIX, the market's fear gauge, also spiked, and the U.S. dollar strengthened as a safe-haven asset. It was a classic risk-off session, with all major indices closing lower, led by the tech-heavy Nasdaq's drop of over 0.8%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c904c017b9bf0666",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war drags on, oil rebounds"
+        },
+        {
+          "type": "article",
+          "pk": "id#d6ab4b4ef5f79bb2",
+          "title": "Iran Strikes Persist Even as Trump Claims Talks to End War"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        127837,
+        182888
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "The impact of surging oil prices seems particularly significant. There's even talk about a potential blockade of the Strait of Hormuz, often called the artery of global oil supply. Just how serious is the situation?",
+      "sources": [],
+      "time": [
+        183388,
+        197719
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Well, the Strait of Hormuz accounts for about 20% of the world's seaborne oil transport, so its effective closure is a massive supply shock to the market. The chief economist at British Petroleum went so far as to describe the current situation as an analyst's worst nightmare, incomparable to any past oil shock. In fact, Brent crude, the international benchmark, has surged nearly 40% since the conflict began, approaching $104 a barrel today. While this is bad news for the broader market, it's a boon for energy companies, and energy sector stocks actually showed strength today, bucking the downward trend. This is a signal that investors are now pricing in a real disruption to the supply chain, not just heightened tensions.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#c904c017b9bf0666",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war drags on, oil rebounds"
+        },
+        {
+          "type": "article",
+          "pk": "id#a2bf92eae86a9f90",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq wobble after rally as Iran war drags on"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        198219,
+        246510
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "This oil price spike isn't just contained to the energy market, is it? What kind of ripple effects is it having on other industries and the broader U.S. economy?",
+      "sources": [],
+      "time": [
+        247010,
+        256301
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's right. A surge in oil prices pushes up costs across the entire economy. The airline industry is taking the most direct hit, with shares of major carriers like American Airlines and Delta Air Lines falling on concerns over higher fuel costs. Furthermore, this conflict is moving beyond just oil prices to actual physical infrastructure damage. Amazon Web Services officially announced that its data center operations in Bahrain were disrupted due to drone attacks, which adds a layer of uncertainty to Big Tech's expansion plans in the Middle East. According to an analysis by British Petroleum, an oil price increase of 30 to 40 percent, like we're seeing now, could act as a powerful headwind, potentially slowing global economic growth by as much as one percentage point.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#37753c273cb58d94",
+          "title": "Exclusive-Amazon says AWS' Bahrain region 'disrupted' following drone activity"
+        },
+        {
+          "type": "article",
+          "pk": "id#992ab93e6bed406b",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq retreat after rally as Iran war drags on"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAL",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        256801,
+        302172
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, how do you expect the market to react to this Iran-related uncertainty going forward? What variables should investors be watching?",
+      "sources": [],
+      "time": [
+        302672,
+        311082
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "For the time being, the market will likely remain volatile, caught between efforts to find a diplomatic solution and the potential for military escalation. Investors should first and foremost be watching for any real progress in dialogue, based on statements from President Trump and Iran's response. Additionally, whether passage through the Strait of Hormuz resumes and whether actual military operations begin following the new U.S. troop deployment will be key variables that will signal the peak of this risk. Ultimately, the prevailing view on Wall Street is that the future direction of the market will be determined by whether international oil prices stabilize above the $100 a barrel mark or fall back on hopes of a negotiated settlement.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#08c7ad2321a7f89a",
+          "title": "Trump Began Iran Talks as Allies Warned War Risked Disaster"
+        },
+        {
+          "type": "article",
+          "pk": "id#7fc7a7a1010a3c1d",
+          "title": "Trump Delays Energy Strikes, Sets Five Days for Iran Talks"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        311582,
+        350073
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Okay, so while the Iran risk shook the entire market, it's worth noting that the tech-heavy Nasdaq saw a particularly steep drop. Was there a specific reason why this geopolitical risk hit tech stocks harder?",
+      "sources": [],
+      "time": [
+        350573,
+        364304
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, there was. Today wasn't just about vague anxiety; we saw a clear example of how geopolitical risk can directly impact the core business of a Big Tech company. The news that Amazon Web Services, or AWS, had its Bahrain data center operations disrupted by drone activity was the key catalyst. This news went beyond a simple incident, exposing the vulnerability of global tech infrastructure and freezing investor sentiment. As a result, the tech-heavy Nasdaq fell 0.84%, more than double the decline of the S&P 500. The VIX volatility index jumped nearly 4% to approach the 27 level. In a classic risk-off environment where WTI crude crossed $89 a barrel and the safe-haven asset gold rose over 1%, the tech sector ETF, XLK, led the market lower, falling more than 1%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#37753c273cb58d94",
+          "title": "Exclusive-Amazon says AWS' Bahrain region 'disrupted' following drone activity"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        364804,
+        417615
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "That news about Amazon's data center being directly affected is pretty shocking. It seems that what used to feel like an abstract geopolitical risk has now become a tangible threat to the core infrastructure of Big Tech.",
+      "sources": [],
+      "time": [
+        418115,
+        432406
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Yes, and that's precisely what the market is most concerned about. Amazon officially stated that its Bahrain region was disrupted due to drone activity and that it was helping customers migrate to other regions. AWS, Amazon's cloud division, is not only essential infrastructure for countless companies and government agencies but also a key profit driver for the company. The fact that such a core asset was exposed to a physical attack highlights a new kind of risk that hadn't really been priced into the stock. As a result, Amazon's shares fell over 0.3% today, and the iShares Expanded Tech-Software Sector ETF, which includes many software companies reliant on cloud infrastructure, plunged more than 3.6%, reflecting broader industry concerns.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#37753c273cb58d94",
+          "title": "Exclusive-Amazon says AWS' Bahrain region 'disrupted' following drone activity"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMZN",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "IGV",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "article",
+          "pk": "id#c904c017b9bf0666",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war drags on, oil rebounds"
+        }
+      ],
+      "time": [
+        432906,
+        479317
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "Besides these geopolitical risks, I also heard there were some concerns about advancements in AI potentially threatening existing companies?",
+      "sources": [],
+      "time": [
+        479817,
+        488668
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's right. Another layer of anxiety was added to an already cautious market. Nvidia CEO Jensen Huang made headlines by claiming on a podcast that Artificial General Intelligence, or AGI, has already been achieved. He mentioned that AI has become capable of creating and running a billion-dollar company, a statement that once again highlighted the disruptive potential of AI technology. While this could be seen as a positive signal for Nvidia's chip demand, on the other hand, it also stokes fears of 'creative destruction,' where the business models of existing software and service companies could be completely replaced by AI. Ultimately, on a day when risk-off sentiment was already high due to geopolitical risks, this added uncertainty about future technology acted as another factor weighing on software and semiconductor stocks across the board.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f09ba6f7d9fc5a75",
+          "title": "Nvidia CEO Jensen Huang claims AGI has been 'achieved,' can create billion-dollar businesses"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "IGV",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-25"
+        }
+      ],
+      "time": [
+        489168,
+        540379
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the major macro factors shaking the market. Now let's turn to some individual company movers. And one of the most notable stocks today was Corning. It surged nearly 8% at the close without any specific news. What was behind that move?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "GLW",
+          "start_date": "2026-03-24",
+          "end_date": "2026-03-24"
+        }
+      ],
+      "time": [
+        541379,
+        558350
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, Corning's price action today is being interpreted as a strong signal that the market's view of the company is fundamentally changing. It seems the market no longer sees Corning as a traditional display glass manufacturer, but is starting to re-evaluate it as a key infrastructure provider for the AI data center revolution. The basis for this optimism can be found in its recently filed annual report, which showed that fueled by the explosion in AI data center demand, its Optical Communications segment saw revenue jump 35% year-over-year, while net income recorded a phenomenal 71% growth. Today's surge appears to be the market starting to seriously price in this structural shift.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "GLW",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000024741-26-000124"
+        }
+      ],
+      "time": [
+        558850,
+        594781
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "So the narrative is that it's supplying the nervous system for AI data centers. That's a very powerful growth story, but a surge like this in a single day also raises concerns about overheating, moving beyond fundamentals.",
+      "sources": [],
+      "time": [
+        595281,
+        611172
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "That's an excellent point, and it's exactly where market opinions are sharply divided. We need to look beyond the powerful AI growth narrative. While the market is focused on the explosive growth in the Optical Communications segment, Corning's other major business units, Display and Automotive, actually saw declining sales. Considering these segments still account for a significant portion of the company's total revenue, a price-to-earnings ratio exceeding 77 could be a dangerous situation, where the entire company's value is being judged solely on the growth of one division. The analysis suggests the current stock price is excessively pricing in even the most optimistic future scenarios.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "GLW",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000024741-26-000124"
+        }
+      ],
+      "time": [
+        611672,
+        652963
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So the imbalance between business segments is the key issue. But what about the optical communications business itself, the main growth driver? Is it risk-free?",
+      "sources": [],
+      "time": [
+        653463,
+        663474
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Not at all. In fact, the biggest risk is latent within that very growth engine. A closer look at the annual report reveals that 28% of the revenue from that fast-growing optical communications segment came from just two customers. This means its reliance on a small number of large data center operators is absolute. If even one of them decides to scale back AI-related investments or switch suppliers, Corning's most powerful growth engine could grind to a halt. While the market tends to interpret this as an irreplaceable strategic partnership, from a financial perspective, it can be assessed as a critical single point of failure, where the fate of the entire company hinges on the decisions of a few customers.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "GLW",
+          "form": "10-K",
+          "filed_date": "2026-02-12",
+          "accession_number": "0000024741-26-000124"
+        }
+      ],
+      "time": [
+        663974,
+        705625
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "That's significant customer concentration risk. So from a valuation perspective, how should we view the current stock price?",
+      "sources": [],
+      "time": [
+        706125,
+        713736
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "In conclusion, the prevailing view is that the current stock price has entered speculative territory, significantly exceeding its intrinsic value. One analysis showed that even if the optical communications segment grows according to a very optimistic scenario over the next three years, the achievable enterprise value in three years' time would still not reach today's market cap. This suggests the market is so focused on the glamorous AI story that it's completely ignoring the reality of the company's other struggling divisions and the extreme customer concentration risk. A surge like today's, without any specific news, is likely a sign that the market is being driven by a fear of missing out, or FOMO, rather than improving fundamentals. Therefore, the current price does not offer an attractive margin of safety from a long-term perspective.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "GLW",
+          "start_date": "2026-02-22",
+          "end_date": "2026-03-24"
+        }
+      ],
+      "time": [
+        714236,
+        759247
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, the market couldn't continue last week's rally and seemed to take a bit of a breather today. Could you summarize the day's action for us?",
+      "sources": [],
+      "time": [
+        760247,
+        768658
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's right. All three major indices slipped slightly in a consolidation session. It was a day where individual company news, rather than broad macro events, moved stocks. In particular, there was a clear divergence among individual stocks, with some Big Tech companies facing pressure from news of an EU Digital Markets Act investigation, while Boeing's stock rose after the bold move of a management shake-up. After the market rallied significantly last week on the Fed's dovish comments, it looks like we saw some short-term profit-taking.",
+      "sources": [],
+      "time": [
+        769158,
+        800689
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "I see. So what are the key economic events investors should be watching for this week?",
+      "sources": [],
+      "time": [
+        801189,
+        806960
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "This week is packed with important economic data that could give us clues about the Fed's path for rate cuts. First, on Tuesday, March 26th, we'll get the Conference Board's Consumer Confidence Index, which will give us a glimpse into consumer sentiment. Then on Thursday the 28th, the final reading for fourth-quarter Gross Domestic Product, or GDP, will be released. The market will be paying close attention to that for a final confirmation of the U.S. economy's growth trajectory.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417229",
+          "title": "CB Consumer Confidence",
+          "date": "2024-03-26"
+        },
+        {
+          "type": "event",
+          "id": "417228",
+          "title": "US GDP (QoQ) (4Q)",
+          "date": "2024-03-28"
+        }
+      ],
+      "time": [
+        807460,
+        833271
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "Both consumer sentiment and economic growth will be important. But I hear the most critical inflation report comes out on Friday.",
+      "sources": [],
+      "time": [
+        833771,
+        841622
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Yes, the most important piece of data is saved for last. That's the Personal Consumption Expenditures, or PCE, price index for February, which comes out on Friday the 29th. The PCE is the Fed's preferred inflation gauge, so it has a decisive influence on the future direction of monetary policy. The market is expecting Core PCE to have risen 0.3% month-over-month. If the actual number deviates significantly from that forecast, we could see major market volatility next week. Notably, the 29th is Good Friday and the U.S. stock market will be closed, so investors will have the entire weekend to digest this number before reacting on Monday.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "417231",
+          "title": "Core PCE Price Index (MoM) (Feb)",
+          "date": "2024-03-29"
+        }
+      ],
+      "time": [
+        842122,
+        880373
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Coming out on a market holiday, it'll certainly give investors a lot to think about over the weekend. That's all for the March 25th closing bell briefing. Thank you.",
+      "sources": [],
+      "time": [
+        880873,
+        890604
+      ]
+    }
+  ]
+}
