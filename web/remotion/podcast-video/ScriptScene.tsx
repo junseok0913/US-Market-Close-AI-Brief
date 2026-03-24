@@ -266,7 +266,7 @@ const SourceBadge: FC<{
 
   let icon = "📰";
   let label = source.title || "Article";
-  let badgeColor = COLORS.textMuted;
+  let badgeColor: string = COLORS.textMuted;
 
   if (source.type === "chart" && source.ticker) {
     icon = "📈";
@@ -400,6 +400,17 @@ export const ScriptScene: FC<{
     chartSources.some(
       (s) => s.ticker === "^VIX" || s.ticker === "TVC:VIX",
     );
+
+  const showGaugeMeter = vixMentioned && !!chartDataMap;
+  const showComparisonChart =
+    hasCharts && allChartTickers.length >= 3 && !!chartDataMap;
+  const showMiniChart =
+    !!primaryChart?.ticker && (!showGaugeMeter || !showComparisonChart);
+  const showSecondaryCards =
+    hasCharts &&
+    allChartTickers.length < 3 &&
+    secondaryCharts.length > 0 &&
+    !showGaugeMeter;
 
   const textLen = script.text.length;
   const baseFontSize = hasRightPanel ? 22 : 30;
@@ -535,7 +546,7 @@ export const ScriptScene: FC<{
             transform: `translateX(${interpolate(entryProgress, [0, 1], [50, 0])}px)`,
           }}
         >
-          {primaryChart?.ticker && (
+          {showMiniChart && primaryChart?.ticker && (
             <MiniChart
               ticker={primaryChart.ticker}
               accentColor={chapterColor}
@@ -544,7 +555,7 @@ export const ScriptScene: FC<{
             />
           )}
 
-          {hasCharts && allChartTickers.length >= 3 && chartDataMap && (
+          {showComparisonChart && chartDataMap && (
             <ComparisonBarChart
               tickers={allChartTickers}
               chartDataMap={chartDataMap}
@@ -553,7 +564,7 @@ export const ScriptScene: FC<{
             />
           )}
 
-          {hasCharts && allChartTickers.length < 3 && secondaryCharts.length > 0 && (
+          {showSecondaryCards && (
             <div style={{ display: "flex", gap: 10 }}>
               {secondaryCharts.map((s, i) =>
                 s.ticker ? (
@@ -571,7 +582,7 @@ export const ScriptScene: FC<{
             </div>
           )}
 
-          {vixMentioned && chartDataMap && (
+          {showGaugeMeter && chartDataMap && (
             <GaugeMeter chartDataMap={chartDataMap} delay={14} />
           )}
 

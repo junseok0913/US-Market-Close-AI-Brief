@@ -840,6 +840,7 @@ const TICKER_GROUP_MAP: Record<string, string> = {
 };
 
 const GROUP_ORDER = ["지수", "원자재", "매크로", "종목/ETF"];
+const MAX_HEATMAP_ITEMS_PER_GROUP = 3;
 
 const GROUP_COLORS: Record<string, string> = {
   "지수": "#3b82f6",
@@ -874,7 +875,7 @@ export const SectorHeatmap: FC<{
 
   const orderedGroups = GROUP_ORDER.filter((g) => groups[g]).map((g) => ({
     name: g,
-    items: groups[g],
+    items: groups[g].slice(0, MAX_HEATMAP_ITEMS_PER_GROUP),
   }));
 
   const fadeIn = spring({ frame, fps, config: { damping: 200 }, delay });
