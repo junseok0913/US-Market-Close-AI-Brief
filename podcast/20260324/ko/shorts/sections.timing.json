@@ -1,0 +1,58 @@
+{
+  "date": "20260324",
+  "lang": "ko",
+  "audioFile": "shorts20260324.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 70.324,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 6.411,
+      "endSec": 6.411,
+      "speechDurationSec": 6.411,
+      "pauseAfterSec": 0.0,
+      "charCount": 50,
+      "text": "아마존의 핵심 데이터센터가 드론 공격을 받았습니다. 지정학적 리스크가 현실이 된 날입니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 6.411,
+      "speechEndSec": 21.142,
+      "endSec": 21.142,
+      "speechDurationSec": 14.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 118,
+      "text": "3월 25일 미국 증시는 이란 리스크 부각에 따른 기술주 하락으로 마감했습니다. 다우는 0.18%, S&P 500은 0.37% 하락했고, 특히 기술주 중심의 나스닥은 0.84% 내리며 가장 큰 타격을 받았습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 21.142,
+      "speechEndSec": 68.273,
+      "endSec": 68.273,
+      "speechDurationSec": 47.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 417,
+      "text": "미 국방부가 중동에 정예 병력 3천 명을 추가 파병한다는 소식에 투자 심리가 급격히 얼어붙었습니다. 이 여파로 서부 텍사스산 원유는 4% 가까이 급등해 배럴당 91달러를 넘었고, 브렌트유는 분쟁 이후 40% 가까이 폭등하며 104달러에 육박했습니다. 하지만 시장을 강타한 진짜 충격은 아마존 웹 서비스의 바레인 데이터센터가 드론 공격으로 운영에 차질을 빚었다는 소식이었습니다. 막연했던 지정학적 리스크가 빅테크의 핵심 인프라를 직접 위협하는 현실이 되자 기술주 투매가 이어졌습니다. 이로 인해 소프트웨어 관련 ETF는 3.6% 이상 급락했고, 공포지수 VIX는 4% 가까이 급등했습니다. 여기에 엔비디아 CEO가 인공일반지능이 이미 달성되었다고 주장하며, 기존 소프트웨어 기업들이 대체될 수 있다는 우려까지 더해지며 기술주 하락을 부채질했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 68.273,
+      "speechEndSec": 70.324,
+      "endSec": 70.324,
+      "speechDurationSec": 2.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

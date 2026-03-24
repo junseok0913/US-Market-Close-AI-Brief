@@ -1,0 +1,67 @@
+{
+  "date": "20260324",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260324.mp3",
+  "sectionOrder": [
+    "amzn",
+    "aal",
+    "glw",
+    "nvda"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 105.124,
+  "sections": [
+    {
+      "id": 0,
+      "name": "amzn",
+      "ticker": "AMZN",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 37.091,
+      "endSec": 37.091,
+      "speechDurationSec": 37.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 299,
+      "text": "이란 관련 지정학적 리스크가 기술주를 흔들었습니다. 첫 번째 기업은 아마존입니다. 오늘 주가는 1.38% 하락했는데요. 중동의 지정학적 리스크가 빅테크의 핵심 사업을 직접 타격할 수 있다는 우려가 현실이 됐기 때문입니다. 아마존 웹 서비스, 즉 AWS의 바레인 데이터센터가 드론 활동으로 인해 운영에 차질을 빚고 있다는 소식이 전해진 것이 결정적이었습니다. 회사의 핵심 수익원이자 수많은 기업의 기반 시설인 클라우드 자산이 물리적 공격에 노출되었다는 사실은, 그동안 시장이 간과했던 새로운 위험을 부각시키며 투자 심리를 위축시켰습니다."
+    },
+    {
+      "id": 1,
+      "name": "aal",
+      "ticker": "AAL",
+      "kind": "company",
+      "startSec": 37.091,
+      "speechEndSec": 63.142,
+      "endSec": 63.142,
+      "speechDurationSec": 26.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 205,
+      "text": "다음은 아메리칸 항공입니다. 주가는 0.93% 하락했는데요. 앞서 아마존에 영향을 미쳤던 중동의 지정학적 리스크가 유가 급등으로 이어졌기 때문입니다. 서부 텍사스산 원유 가격이 1% 이상 오르며 배럴당 89달러 선을 넘어서자, 항공사의 가장 큰 비용 중 하나인 유류비 부담이 커질 것이란 우려가 주가를 끌어내렸습니다. 이는 항공업계 전반에 걸쳐 나타난 현상이었습니다."
+    },
+    {
+      "id": 2,
+      "name": "glw",
+      "ticker": "GLW",
+      "kind": "company",
+      "startSec": 63.142,
+      "speechEndSec": 95.753,
+      "endSec": 95.753,
+      "speechDurationSec": 32.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 263,
+      "text": "마지막 기업은 코닝입니다. 시장 하락에도 불구하고 무려 8.43%나 급등하며 눈길을 끌었습니다. 시장이 코닝을 더 이상 전통적인 디스플레이 유리 제조사가 아닌, AI 데이터센터 혁명의 핵심 공급사로 재평가하기 시작했기 때문입니다. 최근 연간 보고서에 따르면, AI 데이터센터 수요 폭증에 힘입어 광통신 부문 매출이 전년 대비 35%, 순이익은 71%나 급증했습니다. 다만 PER이 77배를 넘어서는 등 고평가 논란과 소수 고객에 대한 높은 의존도는 리스크로 남아있습니다."
+    },
+    {
+      "id": 3,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 95.753,
+      "speechEndSec": 105.124,
+      "endSec": 105.124,
+      "speechDurationSec": 9.371,
+      "pauseAfterSec": 0.0,
+      "charCount": 70,
+      "text": "엔비디아는 시장 전반의 경계심이 높아지며 -0.25% 소폭 하락, 숨을 고르는 모습을 보였습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
