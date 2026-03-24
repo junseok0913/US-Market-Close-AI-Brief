@@ -44,8 +44,10 @@ import { slides as slides20260318 } from './20260318/slides';
 import { slides as slides20260319 } from './20260319/slides';
 import { slides as slides20260320 } from './20260320/slides';
 import { slides as slides20260323 } from './20260323/slides';
+import { slides as slides20260324 } from './20260324/slides';
 
 const slidesMap: Record<string, Slide[]> = {
+  '20260324': slides20260324,
   '20260323': slides20260323,
   '20260320': slides20260320,
   '20260319': slides20260319,

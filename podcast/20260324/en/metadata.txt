@@ -1,0 +1,25 @@
+Title:
+2026.3.25 US Market Close | Tech Stocks Tumble as Iran-Related Geopolitical Risks Escalate
+
+Description:
+On March 25th, New York's major indices all closed lower as geopolitical risks involving Iran came into sharp focus. A tech-led sell-off was prominent after oil prices surged and news broke that an Amazon data center experienced operational disruptions following a drone attack.
+
+- Dow Jones: -0.18%
+- S&P 500: -0.37%
+- Nasdaq: -0.84%
+
+Today's Top Stories
+- Heightened Geopolitical Risk with Iran: Investor sentiment soured on news of additional US troop deployments to the Middle East amid mixed signals on negotiations with Iran. This pushed West Texas Intermediate (WTI) crude oil prices up over 1% to surpass $89 a barrel.
+- Direct Impact on the Tech Sector: News that an Amazon Web Services (AWS) data center in Bahrain was disrupted by drone activity sparked fears that geopolitical risks could now directly threaten Big Tech's core infrastructure.
+- Surging Oil Prices and Economic Fallout: Tensions in the Strait of Hormuz caused Brent crude to surge nearly 40%, approaching $104 a barrel. This dealt a direct blow to the airline industry and led to analysis suggesting it could slow global economic growth by up to one percentage point.
+- AI-Related Uncertainty: The NVIDIA CEO's claim that AGI (Artificial General Intelligence) has already been achieved highlighted concerns about 'creative destruction,' where existing software companies could be replaced by AI.
+- Awaiting Key Economic Data: Market caution is high ahead of this week's key data releases, including the Consumer Confidence Index, the final Q4 GDP estimate, and the Fed's preferred inflation gauge, the February Personal Consumption Expenditures (PCE) Price Index.
+
+Key Stocks in Focus
+- Corning (GLW): Surged nearly 8% as the company was re-evaluated as a key AI infrastructure supplier. This was driven by strong growth in its optical communications segment (up 35% year-over-year) thanks to booming demand from AI data centers.
+- Amazon (AMZN): Fell more than 0.3% as news of the operational disruption at its AWS data center in Bahrain due to a drone attack weighed on the stock.
+- iShares Expanded Tech-Software Sector ETF (IGV): Plunged over 3.6% as the broader software industry fell on concerns stemming from the Amazon data center attack and the potential threat of AI replacement.
+- American Airlines (AAL), Delta Air Lines (DAL): Declined as shares fell on concerns about rising fuel costs due to the surge in oil prices.
+
+Keywords:
+미국주식,주식,재테크,시황,이란,지정학적리스크,유가,나스닥,기술주,아마존,AMZN,코닝,GLW,AI,PCE
