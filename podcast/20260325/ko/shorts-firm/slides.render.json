@@ -1,0 +1,313 @@
+{
+  "date": "20260326",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, ARM 홀딩스, AMD, 서던 코퍼",
+  "hook": "반도체 업계에 쏟아진 호재!",
+  "durationSeconds": 78.684,
+  "audioFile": "shortsfirm20260325.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "bull",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.03.26 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, ARM 홀딩스, AMD, 서던 코퍼",
+      "subheadline": "반도체 업계에 쏟아진 호재, 핵심 기업들을 확인하세요.",
+      "body": "반도체 업계에 쏟아진 호재!",
+      "bullets": [
+        "반도체 업계에 쏟아진 호재!"
+      ],
+      "tickers": [
+        "ARM",
+        "AMD",
+        "SCCO",
+        "INTC"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 3.0,
+      "endSec": 23.651,
+      "eyebrow": "PICK 1",
+      "headline": "ARM",
+      "subheadline": "자체 AI 칩 생산 계획 발표로 사업 모델 전환 기대감에 급등",
+      "body": "기존 IP 제공 모델에서 벗어나 자체 AI 칩을 직접 개발, 생산하겠다는 계획에 시장이 환호했습니다.",
+      "bullets": [
+        "자체 AI 칩 개발 및 생산 계획 발표",
+        "1일 +16.38% / 1개월 +22.58%",
+        "시총 $166.81B / PER 206.67"
+      ],
+      "tickers": [
+        "ARM"
+      ],
+      "highlights": [
+        "+16.38%",
+        "+22.58%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 23.651,
+      "endSec": 46.422,
+      "eyebrow": "PICK 2",
+      "headline": "AMD",
+      "subheadline": "서버용 CPU 공급 부족에 따른 가격 인상 소식에 강세",
+      "body": "데이터센터와 AI 서버 증설 경쟁으로 CPU 수요가 폭발하며 실적 개선 기대감이 주가를 밀어 올렸습니다.",
+      "bullets": [
+        "서버용 CPU 가격 인상 보도",
+        "1일 +7.26% / 1개월 +3.01%",
+        "시총 $359.13B / PER 84.39"
+      ],
+      "tickers": [
+        "AMD"
+      ],
+      "highlights": [
+        "+7.26%",
+        "+3.01%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 46.422,
+      "endSec": 67.353,
+      "eyebrow": "PICK 3",
+      "headline": "SCCO",
+      "subheadline": "압도적 원가경쟁력에도 페루/멕시코 지정학적 리스크 부각",
+      "body": "세계 최저 수준의 구리 생산 원가에도 불구하고, 생산 기반이 특정 국가에 집중된 점이 리스크로 작용합니다.",
+      "bullets": [
+        "페루/멕시코 지정학적 리스크 부각",
+        "1일 +3.51% / 1개월 -21.45%",
+        "세계 최저 수준의 구리 생산 원가"
+      ],
+      "tickers": [
+        "SCCO"
+      ],
+      "highlights": [
+        "+3.51%",
+        "-21.45%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 67.353,
+      "endSec": 75.684,
+      "eyebrow": "PICK 1",
+      "headline": "INTC",
+      "subheadline": "반도체 업황 개선 및 CPU 가격 인상 소식에 급등",
+      "body": "CPU 가격 인상 보도와 필라델피아 반도체 지수 상승 등 업계 전반의 호재가 긍정적으로 작용했습니다.",
+      "bullets": [
+        "CPU 가격 인상 보도",
+        "1일 +7.08% / 1개월 +2.30%",
+        "반도체 업계 전반 호재 작용"
+      ],
+      "tickers": [
+        "INTC"
+      ],
+      "highlights": [
+        "+7.08%",
+        "+2.30%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 75.684,
+      "endSec": 78.684,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "반도체 업계에 쏟아진 호재, 핵심 기업들을 확인하세요."
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 23.651,
+      "text": "자체 AI 칩 생산 계획 발표로 사업 모델 전환 기대감에 급등"
+    },
+    {
+      "id": 2,
+      "startSec": 23.651,
+      "endSec": 46.422,
+      "text": "서버용 CPU 공급 부족에 따른 가격 인상 소식에 강세"
+    },
+    {
+      "id": 3,
+      "startSec": 46.422,
+      "endSec": 67.353,
+      "text": "압도적 원가경쟁력에도 페루/멕시코 지정학적 리스크 부각"
+    },
+    {
+      "id": 4,
+      "startSec": 67.353,
+      "endSec": 75.684,
+      "text": "반도체 업황 개선 및 CPU 가격 인상 소식에 급등"
+    },
+    {
+      "id": 5,
+      "startSec": 75.684,
+      "endSec": 78.684,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "ARM 홀딩스, 자체 AI 칩 생산 계획 발표로 16% 이상 폭등",
+      "AMD, 서버용 CPU 수요 급증에 따른 가격 인상 소식에 7% 이상 상승",
+      "서던 코퍼, 압도적 원가 경쟁력에도 페루/멕시코 지정학적 리스크 부각",
+      "반도체 업종, 개별 호재에 힘입어 시장 상승 주도"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "ARM",
+        "label": "ARM 홀딩스",
+        "tag": "강세"
+      },
+      {
+        "ticker": "AMD",
+        "label": "AMD",
+        "tag": "강세"
+      },
+      {
+        "ticker": "SCCO",
+        "label": "서던 코퍼",
+        "tag": "변동성"
+      },
+      {
+        "ticker": "INTC",
+        "label": "인텔",
+        "tag": "강세"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "ARM",
+        "name": "Arm Holdings plc",
+        "as_of": "2026-03-25",
+        "day_change_pct": 16.382631528188686,
+        "day_change_display": "+16.38%",
+        "month_change_pct": 22.57687534912489,
+        "month_change_display": "+22.58%",
+        "market_cap": 166808125440.0,
+        "market_cap_display": "$166.81B",
+        "pe_ratio": 206.67107,
+        "pe_ratio_display": "206.67",
+        "pbr": 21.390442,
+        "pbr_display": "21.39",
+        "roe": 11.2679996,
+        "roe_display": "11.27%",
+        "reason": "ARM 홀딩스는 그동안 반도체 설계 자산, 즉 IP만 제공하는 비즈니스 모델로 유명했는데, 여기서 한발 더 나아가 인공지능 구동을 위한 자체 칩을 직접 개발해 생산까지 하겠다는 계획을 발표했습니다.",
+        "spoken_text": "ARM 홀딩스는 오늘 16% 넘게 폭등했습니다. 기존의 반도체 설계 자산만 제공하던 사업 모델에서 벗어나, AI 구동을 위한 자체 칩을 직접 개발하고 생산까지 하겠다는 계획을 발표했기 때문입니다. 시장은 이 중대한 전략적 전환을 매우 긍정적으로 평가하며 주가를 끌어올렸습니다. 이는 AI 시장 성장성에 대한 자신감을 보여주는 대목입니다.",
+        "slide_points": [
+          "1일 +16.38% / 1개월 +22.58%",
+          "시총 $166.81B / PER 206.67",
+          "자체 AI 칩 개발 및 생산 계획 발표"
+        ],
+        "valuation_note": "시총 $166.81B, PER 206.67, PBR 21.39, ROE 11.27%",
+        "move_summary": "자체 AI 칩 생산 계획 발표로 사업 모델 전환 기대감에 급등"
+      },
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "as_of": "2026-03-25",
+        "day_change_pct": 7.255202565872021,
+        "day_change_display": "+7.26%",
+        "month_change_pct": 3.0069248244889657,
+        "month_change_display": "+3.01%",
+        "market_cap": 359130595328.0,
+        "market_cap_display": "$359.13B",
+        "pe_ratio": 84.39464,
+        "pe_ratio_display": "84.39",
+        "pbr": 5.6990943,
+        "pbr_display": "5.70",
+        "roe": 7.081999999999999,
+        "roe_display": "7.08%",
+        "reason": "네, AMD와 인텔은 중앙처리장치, 즉 CPU 가격을 인상할 것이라는 보도가 나오면서 주가가 급등했습니다. 니케이 아시아의 보도에 따르면, 두 회사는 고객사들에게 각각 3월과 4월부터 가격을 인상하겠다고 통보한 것으로 알려졌습니다.",
+        "spoken_text": "AMD 역시 7% 이상 급등하며 강세를 보였습니다. 데이터센터와 AI 서버 증설 경쟁이 치열해지면서 서버용 CPU 수요가 폭발적으로 늘었기 때문인데요. 니케이 아시아는 AMD가 공급 부족을 이유로 고객사들에게 CPU 가격 인상을 통보했다고 보도했습니다. 강력한 수요가 실적 개선으로 이어질 것이라는 기대감이 주가를 밀어 올렸습니다.",
+        "slide_points": [
+          "1일 +7.26% / 1개월 +3.01%",
+          "시총 $359.13B / PER 84.39",
+          "서버용 CPU 가격 인상 보도"
+        ],
+        "valuation_note": "시총 $359.13B, PER 84.39, PBR 5.70, ROE 7.08%",
+        "move_summary": "서버용 CPU 공급 부족에 따른 가격 인상 소식에 강세"
+      },
+      {
+        "ticker": "SCCO",
+        "name": "Southern Copper Corporation",
+        "as_of": "2026-03-25",
+        "day_change_pct": 3.5088819358390255,
+        "day_change_display": "+3.51%",
+        "month_change_pct": -21.45331834661328,
+        "month_change_display": "-21.45%",
+        "market_cap": 136705581056.0,
+        "market_cap_display": "$136.71B",
+        "pe_ratio": 31.825003,
+        "pe_ratio_display": "31.83",
+        "pbr": 12.385122,
+        "pbr_display": "12.39",
+        "roe": 42.748999999999995,
+        "roe_display": "42.75%",
+        "reason": "서던 코퍼의 생산 기반은 전적으로 페루와 멕시코, 단 두 국가에 집중되어 있습니다. 2026년 2월에 제출된 10-K 보고서에서도 명시하고 있듯이, 이들 지역의 정치적 불확실성은 매우 심각한 수준입니다.",
+        "spoken_text": "서던 코퍼는 오늘 3.5% 상승했지만, 최근 한 달간 21% 넘게 하락하며 변동성을 보였습니다. 이 회사는 세계 최저 수준의 원가로 구리를 생산하는 압도적인 경쟁력을 가졌지만, 생산 기반이 페루와 멕시코에 집중된 점이 핵심 리스크입니다. 정치적 불안정성과 외국인 투자에 비우호적인 정책 등 지정학적 리스크가 기업의 성장성을 가로막고 있습니다.",
+        "slide_points": [
+          "1일 +3.51% / 1개월 -21.45%",
+          "시총 $136.71B / PER 31.83",
+          "세계 최저 수준의 구리 생산 원가 보유"
+        ],
+        "valuation_note": "시총 $136.71B, PER 31.83, PBR 12.39, ROE 42.75%",
+        "move_summary": "압도적 원가경쟁력에도 페루/멕시코 지정학적 리스크 부각"
+      },
+      {
+        "ticker": "INTC",
+        "name": "Intel Corporation",
+        "as_of": "2026-03-25",
+        "day_change_pct": 7.081250192098487,
+        "day_change_display": "+7.08%",
+        "month_change_pct": 2.298355155767773,
+        "month_change_display": "+2.30%",
+        "market_cap": 235672518656.0,
+        "market_cap_display": "$235.67B",
+        "pe_ratio": 47.59983,
+        "pe_ratio_display": "47.60",
+        "pbr": 2.0617025,
+        "pbr_display": "2.06",
+        "roe": 2.2,
+        "roe_display": "2.20%",
+        "reason": "네, 오늘은 반도체 업종에 여러 호재가 겹치면서 시장 전체의 투자 심리를 이끌었다고 볼 수 있습니다. 필라델피아 반도체 지수인 SOXX가 2.3퍼센트 넘게 오르며 기술주 중심의 나스닥 지수 상승을 견인했습니다. 네, AMD와 인텔은 중앙처리장치, 즉 CPU 가격을 인상할 것이라는 보도가 나오면서 주가가 급등했습니다. 니케이 아시아의 보도에 따르면, 두 회사는 고객사들에게 각각 3월과 4월부…",
+        "spoken_text": "인텔은 CPU 가격을 인상할 것이라는 보도가 나오며 주가가 7% 넘게 급등했습니다. 필라델피아 반도체 지수 상승 등 업계 전반의 호재도 긍정적으로 작용했습니다.",
+        "slide_points": [
+          "1일 +7.08% / 1개월 +2.30%",
+          "시총 $235.67B, PER 47.60, PBR 2.06, ROE 2.20%",
+          "CPU 가격 인상 보도"
+        ],
+        "valuation_note": "시총 $235.67B, PER 47.60, PBR 2.06, ROE 2.20%",
+        "move_summary": "반도체 업황 개선 및 CPU 가격 인상 소식에 급등"
+      }
+    ]
+  }
+}

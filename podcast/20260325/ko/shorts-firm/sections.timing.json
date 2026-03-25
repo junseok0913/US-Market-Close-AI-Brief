@@ -1,0 +1,67 @@
+{
+  "date": "20260325",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260325.mp3",
+  "sectionOrder": [
+    "arm",
+    "amd",
+    "scco",
+    "intc"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 78.684,
+  "sections": [
+    {
+      "id": 0,
+      "name": "arm",
+      "ticker": "ARM",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 23.651,
+      "endSec": 23.651,
+      "speechDurationSec": 23.651,
+      "pauseAfterSec": 0.0,
+      "charCount": 204,
+      "text": "반도체 업계에 쏟아진 호재! ARM 홀딩스는 오늘 16% 넘게 폭등했습니다. 기존의 반도체 설계 자산만 제공하던 사업 모델에서 벗어나, AI 구동을 위한 자체 칩을 직접 개발하고 생산까지 하겠다는 계획을 발표했기 때문입니다. 시장은 이 중대한 전략적 전환을 매우 긍정적으로 평가하며 주가를 끌어올렸습니다. 이는 AI 시장 성장성에 대한 자신감을 보여주는 대목입니다."
+    },
+    {
+      "id": 1,
+      "name": "amd",
+      "ticker": "AMD",
+      "kind": "company",
+      "startSec": 23.651,
+      "speechEndSec": 46.422,
+      "endSec": 46.422,
+      "speechDurationSec": 22.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 185,
+      "text": "AMD 역시 7% 이상 급등하며 강세를 보였습니다. 데이터센터와 AI 서버 증설 경쟁이 치열해지면서 서버용 CPU 수요가 폭발적으로 늘었기 때문인데요. 니케이 아시아는 AMD가 공급 부족을 이유로 고객사들에게 CPU 가격 인상을 통보했다고 보도했습니다. 강력한 수요가 실적 개선으로 이어질 것이라는 기대감이 주가를 밀어 올렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "scco",
+      "ticker": "SCCO",
+      "kind": "company",
+      "startSec": 46.422,
+      "speechEndSec": 67.353,
+      "endSec": 67.353,
+      "speechDurationSec": 20.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 191,
+      "text": "서던 코퍼는 오늘 3.5% 상승했지만, 최근 한 달간 21% 넘게 하락하며 변동성을 보였습니다. 이 회사는 세계 최저 수준의 원가로 구리를 생산하는 압도적인 경쟁력을 가졌지만, 생산 기반이 페루와 멕시코에 집중된 점이 핵심 리스크입니다. 정치적 불안정성과 외국인 투자에 비우호적인 정책 등 지정학적 리스크가 기업의 성장성을 가로막고 있습니다."
+    },
+    {
+      "id": 3,
+      "name": "intc",
+      "ticker": "INTC",
+      "kind": "company",
+      "startSec": 67.353,
+      "speechEndSec": 78.684,
+      "endSec": 78.684,
+      "speechDurationSec": 11.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 105,
+      "text": "인텔은 CPU 가격을 인상할 것이라는 보도가 나오며 주가가 7% 넘게 급등했습니다. 필라델피아 반도체 지수 상승 등 업계 전반의 호재도 긍정적으로 작용했습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
