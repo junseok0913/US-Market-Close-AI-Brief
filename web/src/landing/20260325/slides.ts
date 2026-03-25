@@ -1,0 +1,260 @@
+import type { Slide } from '@/types/slide';
+
+export const slides: Slide[] = [
+  {
+    id: 0,
+    type: 'title',
+    turnId: 0,
+    date: '2026-03-26',
+    nutshell: '중동 리스크 완화 기대감 속 기술주 반등',
+    description:
+      '미국과 이란 간의 외교적 해결 가능성이 부각되며 유가가 하락하고 3대 지수가 모두 상승했습니다. 특히 반도체 섹터의 개별 호재들이 더해지며 시장 반등을 이끌었습니다.',
+  },
+  {
+    id: 1,
+    type: 'market-summary',
+    turnId: 1,
+    title: '오늘의 시장 요약',
+    description:
+      '미국 3대 지수는 중동 지정학적 리스크 완화 기대감에 힘입어 일제히 상승 마감했습니다. 국제 유가 하락이 투자 심리에 긍정적으로 작용하며 시장 전반에 안도 랠리가 펼쳐졌습니다.',
+    indices: [
+      { name: 'S&P 500', value: 6591.90, change: 35.53, changePercent: 0.54 },
+      { name: 'NASDAQ', value: 21929.83, change: 167.94, changePercent: 0.77 },
+      { name: 'DOW', value: 46429.49, change: 305.43, changePercent: 0.66 },
+      { name: 'Russell 2000', value: 2536.38, change: 30.94, changePercent: 1.23 },
+    ],
+    commodities: [
+      { name: 'WTI Crude', value: 91.42, change: -0.93, changePercent: -1.01 },
+      { name: 'Gold Futures', value: 4501.10, change: 101.80, changePercent: 2.31 },
+      { name: 'Dollar Index', value: 99.64, change: 0.21, changePercent: 0.21 },
+    ],
+    charts: [
+      { ticker: 'SP:SPX' },
+      { ticker: 'NASDAQ:IXIC' },
+      { ticker: 'DJ:DJI' },
+      { ticker: 'TVC:RUT' },
+      { ticker: 'NYMEX:CL' },
+      { ticker: 'COMEX:GC' },
+      { ticker: 'TVC:DXY' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'headline',
+    turnId: 3,
+    icon: 'cpu',
+    title: '반도체 섹터, 시장 반등 주도',
+    subtitle: '지정학적 리스크 완화와 개별 호재의 시너지',
+    description:
+      '지정학적 리스크가 완화되는 거시적 환경 속에서 반도체 업계의 개별 호재들이 더해지며 강력한 시너지를 냈습니다. 필라델피아 반도체 지수(SOXX)는 2.3% 이상 상승하며 기술주 강세를 이끌었습니다.',
+    bullets: [
+      '필라델피아 반도체 지수(SOXX) 2.3% 이상 상승',
+      'ARM, 자체 AI 칩 생산 계획 발표로 폭등',
+      'AMD & 인텔, CPU 가격 인상 보도로 동반 급등',
+      '중동 리스크 완화 및 유가 하락이 투자 심리 개선',
+    ],
+    theme: 'blue',
+    charts: [{ ticker: 'NASDAQ:SOXX' }, { ticker: 'NASDAQ:IXIC' }],
+  },
+  {
+    id: 3,
+    type: 'stats',
+    turnId: 7,
+    title: '반도체 주요 종목 급등',
+    description:
+      '반도체 업종에 여러 호재가 겹치면서 개별 종목들의 움직임은 더욱 극적이었습니다. AI 관련 수요가 업계의 구조적 성장을 이끌고 있다는 점이 다시 한번 확인되었습니다.',
+    stats: [
+      { label: 'ARM 홀딩스 (ARM)', value: '~20% 급등', subtext: '자체 AI 칩 생산 계획 발표', trend: 'up' },
+      { label: 'AMD', value: '>6% 상승', subtext: '서버용 CPU 가격 인상 보도', trend: 'up' },
+      { label: '인텔 (INTC)', value: '>6% 상승', subtext: 'AMD와 동반 가격 인상', trend: 'up' },
+    ],
+    theme: 'green',
+    charts: [{ ticker: 'NASDAQ:ARM' }, { ticker: 'NASDAQ:AMD' }, { ticker: 'NASDAQ:INTC' }],
+  },
+  {
+    id: 4,
+    type: 'headline',
+    turnId: 9,
+    icon: 'trending-up',
+    title: 'ARM: 설계에서 생산으로',
+    subtitle: 'AI 칩 직접 개발 및 생산 계획 발표',
+    description:
+      'ARM이 반도체 설계 자산(IP)만 제공하던 기존 비즈니스 모델에서 벗어나, AI 구동을 위한 자체 칩을 직접 개발 및 생산하겠다는 중대한 전략적 전환을 발표했습니다.',
+    bullets: [
+      '기존 IP 제공 비즈니스 모델에서 중대한 전환',
+      'AI 및 데이터센터 시장 성장성에 대한 자신감 표출',
+      '시장의 긍정적 평가 속 주가 157달러 돌파 마감',
+      '엔비디아 등 타 반도체 기업에도 긍정적 영향',
+    ],
+    theme: 'blue',
+    charts: [{ ticker: 'NASDAQ:ARM' }, { ticker: 'NASDAQ:NVDA' }],
+  },
+  {
+    id: 5,
+    type: 'comparison',
+    turnId: 11,
+    title: 'AMD & 인텔: CPU 가격 인상 배경',
+    description:
+      '두 기업의 CPU 가격 인상은 단순한 비용 전가가 아닌, 폭발적인 AI 수요로 인한 공급 부족 현상을 반영합니다. 이는 데이터센터와 AI 서버 증설 경쟁이 매우 치열함을 보여주는 지표입니다.',
+    items: [
+      {
+        label: '가격 인상',
+        value: '3월, 4월부터',
+        description: '고객사에 가격 인상 통보 (Nikkei Asia 보도)',
+        highlight: true,
+      },
+      {
+        label: '핵심 원인',
+        value: '공급 부족',
+        description: '폭발적인 수요를 공급이 따라가지 못하는 상황',
+      },
+      {
+        label: '실제 지표',
+        value: '대기 시간 8~12주',
+        description: '서버용 CPU 평균 대기 시간 급증 (기존 1~2주)',
+      },
+    ],
+    charts: [{ ticker: 'NASDAQ:AMD' }, { ticker: 'NASDAQ:INTC' }],
+  },
+  {
+    id: 6,
+    type: 'headline',
+    turnId: 13,
+    icon: 'memory-chip',
+    title: 'AI 수요, 반도체 성장 동력 재확인',
+    subtitle: '거시 경제 변수에도 꺾이지 않는 펀더멘털',
+    description:
+      '시장은 중동의 지정학적 불안감에도 불구하고, AI와 데이터센터라는 강력한 전방 수요가 반도체 섹터의 근본적인 성장 동력임을 재확인했습니다.',
+    bullets: [
+      'ARM의 사업 확장: AI 시장 자신감의 증거',
+      'AMD/인텔 가격 인상: 견조한 서버 수요 반증',
+      '개별 기업 호재가 기술주 전반의 매수세 견인',
+      '나스닥 및 S&P 500 상승의 핵심 동력으로 작용',
+    ],
+    theme: 'blue',
+    charts: [{ ticker: 'NASDAQ:SOXX' }, { ticker: 'SP:SPX' }],
+  },
+  {
+    id: 7,
+    type: 'ticker-intro',
+    turnId: 14,
+    ticker: 'SCCO',
+    companyName: 'Southern Copper',
+    currentPrice: 165.49,
+    dayChange: 5.61,
+    dayChangePercent: 3.51,
+    description:
+      '서던 코퍼는 에너지 전환과 AI 인프라 확장에 필수적인 구리를 가장 저렴하게 생산하는 기업 중 하나입니다. 그러나 생산 기반이 특정 지역에 집중되어 있어 지정학적 리스크가 큰 종목이기도 합니다.',
+    charts: [{ ticker: 'NYSE:SCCO' }],
+  },
+  {
+    id: 8,
+    type: 'ticker-analysis',
+    turnId: 15,
+    ticker: 'SCCO',
+    title: '투자 포인트: 압도적 원가 경쟁력',
+    points: [
+      "에너지 전환 및 AI 인프라의 핵심 소재 '구리' 생산",
+      '세계 최고 수준의 구리 매장량 보유',
+      '파운드당 현금 원가 $0.58, 업계 최저 수준 (2025년 연차보고서)',
+      '구리 가격 상승 시 최대 수혜주로 부각',
+    ],
+    outlook: '강력한 펀더멘털을 바탕으로 구리 가격 상승의 수혜가 기대되나, 아래 슬라이드의 리스크 요인에 대한 면밀한 검토가 필요합니다.',
+    outlookColor: 'amber',
+  },
+  {
+    id: 9,
+    type: 'ticker-analysis',
+    turnId: 17,
+    ticker: 'SCCO',
+    title: '핵심 리스크: 지정학적 불확실성',
+    points: [
+      '생산 기반이 페루와 멕시코, 단 두 국가에 100% 집중',
+      '페루의 극심한 정치적 불안정 지속',
+      '멕시코, 광업법 개정 등 외국인 투자에 비우호적 환경 조성',
+      '국가 정책 하나로 기업 펀더멘털이 무력화될 수 있는 위험',
+    ],
+    outlook: '통제 불가능한 정치적 리스크가 기업 가치를 영구적으로 훼손할 수 있다는 점이 가장 큰 우려 사항입니다.',
+    outlookColor: 'rose',
+  },
+  {
+    id: 10,
+    type: 'stats',
+    turnId: 19,
+    title: '지정학적 리스크의 현실화',
+    description:
+      '지정학적 리스크는 단순한 우려가 아니라, 이미 기업의 성장을 직접적으로 가로막는 현실적인 위협으로 작용하고 있습니다.',
+    stats: [
+      { label: '페루 티아 마리아', value: '개발 장기 지연', subtext: '지역 사회 반발 및 7건의 소송', trend: 'down' },
+      { label: '멕시코 탁스코 광산', value: '장기 파업 상태', subtext: '2007년부터 운영 차질 지속', trend: 'down' },
+      { label: '성장 잠재력', value: '훼손', subtext: '미래 성장 동력에 대한 불확실성 증대', trend: 'down' },
+    ],
+    theme: 'red',
+  },
+  {
+    id: 11,
+    type: 'ticker-analysis',
+    turnId: 21,
+    ticker: 'SCCO',
+    title: '결론: 리스크 vs. 보상',
+    points: [
+      '현재 주가는 구리 가격 상승 낙관론을 상당 부분 반영',
+      '자산 국유화 등 최악의 시나리오 리스크는 불충분하게 반영',
+      '스트레스 테스트: 페루 20% 추가 과세 시 주가는 고평가 영역 진입',
+      '잠재적 이익보다 영구적 자본 손실 위험 방어가 중요',
+    ],
+    outlook: '예측 불가능한 정치적 리스크로 인한 자산 가치 훼손 가능성을 고려할 때, 매우 신중한 접근이 필요한 시점입니다.',
+    outlookColor: 'rose',
+  },
+  {
+    id: 12,
+    type: 'headline',
+    turnId: 23,
+    icon: 'calendar-search',
+    title: '관망세 짙어진 시장',
+    subtitle: '주요 경제 지표 발표 앞두고 숨 고르기',
+    description:
+      '연준의 금리 인하 기대감이 여전히 유효하지만, 투자자들은 이번 주 후반에 발표될 핵심 인플레이션 지표인 개인소비지출(PCE)을 확인하고 가자는 신중한 태도를 보였습니다.',
+    bullets: [
+      '3대 지수 모두 소폭 하락하며 관망세',
+      '연준의 금리 인하 기대감은 여전히 유효',
+      '핵심 인플레이션 지표인 PCE 발표 대기 심리 뚜렷',
+      'PCE 결과를 통해 향후 금리 정책 방향성 가늠',
+    ],
+    theme: 'purple',
+  },
+  {
+    id: 13,
+    type: 'events',
+    turnId: 25,
+    title: '이번 주 핵심 이벤트',
+    description:
+      '이번 주 금요일은 미국 증시가 휴장하지만, 시장의 향방을 결정할 매우 중요한 지표 발표와 파월 의장의 연설이 예정되어 있어 각별한 주의가 필요합니다.',
+    events: [
+      {
+        date: '3월 29일 (금)',
+        label: '2월 근원 PCE 가격지수 발표',
+        description: '연준이 가장 선호하는 인플레이션 지표',
+      },
+      {
+        date: '3월 29일 (금)',
+        label: '제롬 파월 연준 의장 연설',
+        description: '최신 PCE 데이터를 확인한 후 시장과 소통할 예정',
+      },
+      {
+        date: '3월 29일 (금)',
+        label: '미국 증시 휴장 (성금요일)',
+        description: '지표 결과는 다음 주 월요일 시장에 반영될 예정',
+      },
+    ],
+  },
+  {
+    id: 14,
+    type: 'closing',
+    turnId: 29,
+    headline: '휴장일 속 변동성 주의보',
+    tagline: '주요 이벤트 결과를 차분히 분석할 시점',
+    description:
+      '휴장일에 발표되는 중요 지표와 파월 의장 발언으로 인해 다음 주 월요일 시장 변동성이 커질 수 있습니다. 단기적 반응보다는 발표 내용을 분석하며 다음 투자 전략을 세우는 지혜가 필요합니다.',
+  },
+];

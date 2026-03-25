@@ -1,0 +1,24 @@
+Title:
+2026.3.26 US Market Close | Tech Stocks Rebound as Middle East Tensions Ease
+
+Description:
+On March 26, the New York stock market saw all three major indices close higher, buoyed by hopes of easing geopolitical risks in the Middle East and a strong performance from technology stocks, particularly semiconductors. Positive individual news from semiconductor companies like ARM, AMD, and Intel drove overall market sentiment.
+
+- Dow Jones: Up 0.66% - Tech stocks rebound on hopes of easing Middle East tensions.
+- S&P 500: Up 0.54% - Rose on the back of strong tech performance.
+- Nasdaq: Up 0.77% - Gained momentum from positive news in the semiconductor sector.
+
+Key Market Drivers
+- Easing Middle East Tensions: Investor sentiment improved as the possibility of a diplomatic solution between the U.S. and Iran emerged, causing international oil prices to fall to the $91 per barrel level.
+- Semiconductor Sector Rally: The semiconductor industry led the market's advance, with the Philadelphia Semiconductor Index (SOXX) surging over 2.3%. Positive catalysts included ARM's plan to produce its own chips and reports of price hikes from AMD and Intel.
+- Southern Copper (SCCO) Risk Analysis: Despite its dominant copper production cost of $0.58 per pound, political uncertainty and geopolitical risks in Peru and Mexico are weighing on the stock.
+- Upcoming Economic Data: The market is in a wait-and-see mode ahead of the February Core Personal Consumption Expenditures (PCE) price index, set to be released on March 29 (Good Friday, market holiday), and a speech by Fed Chair Jerome Powell.
+
+Key Movers
+- ARM Holdings (ARM): Surged nearly 20% intraday after announcing plans to develop and produce its own AI chips, moving beyond its traditional chip design business. The move was positively received by the market.
+- Advanced Micro Devices (AMD): Jumped over 6% on reports that the company will increase its CPU prices.
+- Intel (INTC): Also rose more than 6%, gaining on the same news of CPU price hikes as AMD.
+- Southern Copper (SCCO): Edged slightly lower. Despite its world-class cost competitiveness, the stock showed volatility as geopolitical risks in Peru and Mexico came into focus.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,반도체,AI,인공지능,ARM,AMD,인텔,INTC,지정학적리스크,유가,PCE,금리,파월

@@ -1,0 +1,427 @@
+{
+  "date": "20260325",
+  "nutshell": "Tech stocks rebound on hopes of easing Middle East tensions.",
+  "user_tickers": [
+    "SCCO"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 13
+    },
+    {
+      "name": "ticker",
+      "start_id": 14,
+      "end_id": 21
+    },
+    {
+      "name": "closing",
+      "start_id": 22,
+      "end_id": 30
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's the closing bell briefing for March 26th. Today, all three major indices managed to rebound, finishing the day higher.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up by a tech rebound amid hopes of easing Middle East tensions. The Dow Jones Industrial Average gained 0.66%, the S&P 500 was up 0.54%, and the tech-heavy Nasdaq Composite also climbed 0.77% to close out the session. A key factor was the drop in global oil prices, driven by the prospect of a diplomatic solution between the U.S. and Iran, which positively impacted investor sentiment. As geopolitical anxieties eased a bit, we saw a relief rally across the board.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So you're saying the news related to Iran drove oil prices down and the stock market up. And tech stocks were also a major driver of today's gains.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. Semiconductor-related stocks were particularly strong. Major tech names that had fallen yesterday all bounced back, leading the Nasdaq's advance. News that ARM Holdings plans to not only design but also produce its own chips, coupled with reports that Advanced Micro Devices and Intel will raise prices, sent their shares soaring. This, combined with the improved macro environment from easing geopolitical risks, further boosted sentiment for tech stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ceaaa2ba4a6698ba",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise on hopes of US-Iran talks, oil drops below $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "ARM",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So we can boil down the key market drivers today to two things: easing geopolitical risk and the strength in semiconductor stocks.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, that's a perfect summary. The positive company-specific news from the semiconductor industry created a powerful synergy, especially within the broader macro environment of easing geopolitical risk.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "As you said, the semiconductor sector was clearly at the center of today's market rebound. Could you break down the specific news that created such strong momentum?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Certainly. A confluence of positive news in the semiconductor sector really drove market sentiment today. The Philadelphia Semiconductor Index, SOXX, jumped over 2.3 percent, leading the tech-heavy Nasdaq higher. The moves in individual stocks were even more dramatic. ARM Holdings surged nearly 20 percent at one point, while Advanced Micro Devices and Intel also posted strong gains of over 6 percent each. This is seen as a powerful synergistic effect: the macro environment improved as geopolitical risks eased—with West Texas Intermediate crude falling to the $91 a barrel level on news of potential U.S.-Iran talks—and that was combined with company-specific news that affirmed the industry's structural growth.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "ARM",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#ceaaa2ba4a6698ba",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise on hopes of US-Iran talks, oil drops below $100"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "That nearly 20 percent jump for ARM Holdings is what really stands out. What was the specific news behind that?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Well, ARM Holdings has been famous for its business model of only providing semiconductor design assets, or IP. But now, they've announced a plan to go a step further and develop and produce their own chips for running AI. This is a major strategic shift that changes the company's identity, and the market reacted very positively. On that news, the stock closed above the $157 mark. Moving from just design to producing their own products shows immense confidence in the growth of the AI and data center markets. This also had a positive ripple effect on other semiconductor companies, including NVIDIA.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ceaaa2ba4a6698ba",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise on hopes of US-Iran talks, oil drops below $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "ARM",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So, along with ARM's business model shift, AMD and Intel shares also rose sharply. Was there a specific reason for that as well?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, AMD and Intel shares surged on reports that they will be raising prices for their central processing units, or CPUs. According to a report from Nikkei Asia, both companies have notified customers of price hikes starting in March and April, respectively. The key here is that these price increases aren't just about passing on costs; they're due to a supply shortage where supply can't keep up with explosive demand. In fact, the average wait time for server CPUs has reportedly increased significantly from one or two weeks to between eight and twelve weeks. This is a clear indicator of just how intense the competition is for data center and AI server expansion.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ceaaa2ba4a6698ba",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise on hopes of US-Iran talks, oil drops below $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, today's strength in semiconductor stocks, helped by the tailwind of easing geopolitical risk, essentially reaffirmed that the massive demand from AI is driving the industry's structural growth.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Exactly. ARM's business expansion and the price hikes from AMD and Intel are all signals proving that the strong forward demand from AI and data centers remains very robust. The market focused on the fact that despite macroeconomic variables like geopolitical instability in the Middle East, the fundamental growth drivers for tech stocks, especially in the semiconductor sector, remain intact. As this perception spread, buying flowed into the Philadelphia Semiconductor Index and related tech stocks, and that became the key engine driving the Nasdaq and S&P 500 higher today.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ceaaa2ba4a6698ba",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rise on hopes of US-Iran talks, oil drops below $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Alright, we've taken a deep dive into the semiconductor sector that led the broader market. Now, let's turn to some individual stocks that caught investors' attention. The first company we'll look at is Southern Copper. The stock showed strength early in the session but gave back its gains to end the day slightly down. It was quite a volatile session for them.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SCCO",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-25"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, Southern Copper is a prime example of one of the market's hottest debates right now. On one hand, you have the view that it's a top-tier company, producing copper—which is essential for the energy transition and AI infrastructure expansion—at the lowest cost. In fact, their 2025 annual report shows their cash cost to produce a pound of copper, excluding byproduct credits, is just $0.58. That's an overwhelmingly strong cost advantage in the industry. Based on these fundamentals, the expectation that it will be the biggest beneficiary of rising copper prices has been driving the stock up.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "World-class reserves and the lowest production costs—that certainly sounds like an attractive investment thesis. But the stock is down quite a bit from its recent highs. Despite these strong fundamentals, what are the market's concerns?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That gets to the heart of the company's key risk. Southern Copper's production base is entirely concentrated in just two countries: Peru and Mexico. As stated in their 10-K report filed in February 2026, the political uncertainty in these regions is at a very serious level. Peru is experiencing extreme political instability, and Mexico has created a less friendly environment for foreign investment by amending its mining laws in 2023 to shorten concession periods. No matter how great your cost advantage is, the geopolitical risk that everything could be nullified by a single government policy is what's holding the stock back.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "Have these political risks led to any specific operational disruptions?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Absolutely. The most prominent example is the Tía María project in Peru. Despite its enormous potential, the 10-K report notes that development has been delayed for a long time due to local community opposition and seven pending lawsuits. This is clear evidence that geopolitical risk isn't just a theoretical concern; it's a real threat that directly hinders the company's growth. Additionally, the Taxco mine in Mexico has been on a long-term strike since 2007, indicating ongoing operational difficulties. These problems not only undermine future growth potential but also continue to weigh on current profitability.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So it's a situation where world-class assets are clashing with uncontrollable risks. How should we view the current stock price as reflecting these two sides?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "In conclusion, the current stock price seems to have priced in a significant amount of optimism about rising copper prices, but it doesn't appear to be fully accounting for the risk of worst-case scenarios, like asset nationalization. Stress tests show that even a 20% additional tax in Peru, if it became reality, would permanently impair the company's earnings and place the current stock in overvalued territory. It's more important to defend against the risk of permanent capital loss than to chase potential gains, and Southern Copper is exposed to a very high level of that risk. Therefore, considering the potential for asset value impairment due to unpredictable political risks, this seems to be a time for a very cautious approach.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "The market was a bit disappointing today, with all three major indices finishing lower. How would you sum up today's market action in one sentence?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, it can be summed up as a day where investors took to the sidelines ahead of key economic data releases. The Dow, S&P 500, and Nasdaq all slipped slightly in a wait-and-see session. While hopes for a Fed rate cut remain in the market, there was a clear sentiment of wanting to see the Personal Consumption Expenditures, PCE, price index data, due out later this week. Investors are looking to gauge the future direction of monetary policy from the Fed's preferred inflation metric, so they chose caution over making any bold bets.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "And as you mentioned, there are some major releases scheduled for later this week, right?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's right. Investors should be paying close attention to this Friday. That's when the February Core Personal Consumption Expenditures, or PCE, price index is released—the Fed's favorite inflation gauge. If this number comes in at or below expectations, the market will likely become more confident in the possibility of a June rate cut. However, there's a unique wrinkle: the release date, March 29th, is 'Good Friday,' and the U.S. stock market will be closed. Therefore, the market's reaction to the data will likely be priced in all at once on the following Monday.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "Core PCE Price Index (MoM)",
+          "date": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So the inflation data comes out while the market is closed. And I believe Fed Chair Jerome Powell is also scheduled to speak?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Yes, you've hit on a very important point. On the same Friday that the PCE data is released, a speech from Fed Chair Jerome Powell is also on the calendar. He'll be participating in a discussion hosted by the San Francisco Fed, and it's highly likely his remarks will come shortly after the PCE data is out. This means he'll be communicating with the market with the very latest inflation data in hand. The tone and content of his comments could set the market's direction for next week, so investors will be hanging on his every word.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "419441",
+          "title": "Fed Chair Powell Speech",
+          "date": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So what should investors be mindful of?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Given that we have key economic data and comments from the Fed Chair coming out on a market holiday, everyone should be prepared for potentially higher volatility next Monday. If the data is unexpected or if Chair Powell says something the market isn't anticipating, the uncertainty built up over the weekend could be unleashed all at once at Monday's open. So, rather than reacting emotionally to the immediate market moves, it will be a time for calmly analyzing the data and Powell's remarks to plan the next steps.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Right, be prepared for volatility. That's all for the March 26th closing bell briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}
