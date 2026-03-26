@@ -1,0 +1,25 @@
+Title:
+2026.3.27 US Market Close | Stocks Plunge as Iran Ceasefire Uncertainty Mounts
+
+Description:
+On March 27, the New York stock market saw all three major indices fall sharply as uncertainty surrounding Iran ceasefire negotiations reached a peak. Geopolitical risks fueled a surge in oil prices and inflation fears, prompting a broad risk-off sentiment across the market. The tech-heavy Nasdaq Composite, in particular, entered correction territory.
+
+- Dow Jones: Down 1.01% - Weighed down by uncertainty over Iran ceasefire talks.
+- S&P 500: Down 1.74% - Driven by risk-off sentiment from geopolitical tensions.
+- Nasdaq: Plunged 2.38% - Led by a tech sell-off amid surging oil prices and interest rate concerns.
+
+Key Market Drivers
+- Iran Ceasefire Uncertainty: Conflicting statements from the US and Iran heightened investor anxiety and increased market volatility.
+- Surging Oil Prices & Shock Fears: West Texas Intermediate (WTI) crude jumped over 3.6% on concerns about a potential blockade of the Strait of Hormuz, stoking inflation fears.
+- Tech Sector Enters Correction: The Nasdaq Composite officially entered a correction, falling more than 10% from its recent high. Concerns over potential interest rate hikes, driven by rising oil prices, heavily weighed on tech stocks.
+- Big Tech Headwinds: Negative news for individual tech giants, including lawsuit losses for Meta and Google, and an AI-related announcement from Alphabet, negatively impacted semiconductor stocks like Nvidia, contributing to the tech sell-off.
+
+Stock Movers
+- Meta (META): Tumbled nearly 8% following news of a lost lawsuit related to the harmfulness of social media.
+- Alphabet (GOOGL): Dropped over 3.4% on news of its lawsuit loss and an announcement regarding AI memory usage.
+- Nvidia (NVDA): Fell more than 4% due to concerns about semiconductor demand following Alphabet's announcement.
+- SanDisk (SNDK): Plunged 7.54% as concerns grew over the financial burden of its joint venture with Kioxia.
+- Apple (AAPL): Rose slightly on optimism following news of plans to open up its AI assistant, Siri.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,이란,유가,인플레이션,금리,기술주,메타,META,엔비디아,NVDA,알파벳,GOOGL

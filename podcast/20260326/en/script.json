@@ -1,0 +1,731 @@
+{
+  "date": "20260326",
+  "nutshell": "Stocks plunge as uncertainty over Iran ceasefire talks intensifies.",
+  "user_tickers": [
+    "SNDK"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 29
+    },
+    {
+      "name": "ticker",
+      "start_id": 30,
+      "end_id": 37
+    },
+    {
+      "name": "closing",
+      "start_id": 38,
+      "end_id": 46
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the closing bell briefing for March 27th. All three major New York indices finished the day sharply lower.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up as a sharp sell-off driven by mounting uncertainty over the Iran ceasefire talks. The Dow Jones Industrial Average fell 1.01% to close at 45,960.11, and the S&P 500 dropped 1.74% to 6,477.16. The tech-heavy Nasdaq Composite was hit particularly hard, plunging 2.38% to finish at 21,408.08. Conflicting reports about the truce negotiations with Iran brought geopolitical risk to a boiling point, triggering a flight from risk assets that dragged down the entire market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#dce50b96825d4be9",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Wall Street weighs prospects for Iran truce"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "What's the reason behind the Iran news shaking the market so dramatically?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The biggest reason is uncertainty. Hopes for a deal between the U.S. and Iran clashed with fears of a breakdown multiple times throughout the day, leaving investors unable to find their footing and feeling extremely anxious. On top of that, the potential for the conflict to block oil supplies through the Strait of Hormuz sent crude prices surging over 3%, which was a major shock to the market. That spike in oil immediately stoked inflation fears, which in turn fueled concerns about rising corporate costs and a consumer slowdown, ultimately amplifying fears of a recession.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#91fd24233c3575b3",
+          "title": "BlackRock’s Kapito Warns Investors Are Mispricing Iran Risks"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key factors that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, the biggest shock was definitely the geopolitical risk surrounding the Iran truce talks. You can think of the resulting oil price spike and inflation worries as the primary forces weighing down the entire market.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start by taking a closer look at those Iran negotiations. Can you explain the specific conflicting reports that threw investors into such confusion?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the confusion in the market peaked as the White House and Iran gave completely contradictory statements. The White House announced that productive talks had taken place over the past three days, but Iran, through its state media, officially rejected the U.S. proposal and laid out its own conditions, including war reparations and recognition of its control over the Strait of Hormuz. As this unpredictable situation unfolded, the market immediately switched to risk-off mode. The S&P 500 fell over 1.7%, and the Nasdaq tumbled more than 2.3%. West Texas Intermediate crude oil shot up over 3.6%, fueling inflation fears, and the VIX, the market's fear gauge, also jumped more than 8%, reflecting the intense anxiety. In an unusual move, even the 10-year Treasury yield, a traditional safe-haven asset, spiked while gold prices fell, proving just how severe the market's confusion was as the typical safe-haven playbook was thrown out the window.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e46ee32a3d7d929f",
+          "title": "US Insists Talks Ongoing Even as Iran Rejects Trump Outreach"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "The impact of the oil spike seems particularly severe. Some analysts are even calling it the worst oil shock in history.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's right. This oil price surge goes beyond a simple supply-demand imbalance; it's causing something akin to an arterial blockage for the global economy. BP's chief economist described this situation as the 'worst nightmare,' incomparable to any past oil crisis. The fundamental reason is that the Strait of Hormuz, through which about 20% of the world's oil passes, is now in a state of virtual blockade, cutting off more than 15 million barrels of supply per day. Reflecting this, the energy sector actually managed to rise over 1.5% today despite the broader market decline. BlackRock's President Rob Kapito warned that investors are underpricing the Iran risk, emphasizing the gravity of the situation by stating that oil could soar to $150 a barrel even if the war ended tomorrow.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b01c8367f68d689d",
+          "title": "'Worst nightmare': Iran war is the biggest oil shock in history, analysts say"
+        },
+        {
+          "type": "article",
+          "pk": "id#e46ee32a3d7d929f",
+          "title": "US Insists Talks Ongoing Even as Iran Rejects Trump Outreach"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#91fd24233c3575b3",
+          "title": "BlackRock’s Kapito Warns Investors Are Mispricing Iran Risks"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "It seems most sectors outside of energy, especially tech stocks, took a major hit. What's the reason for that?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, the tech-heavy Nasdaq Composite fell over 2.3%, entering correction territory, which is a drop of more than 10% from its recent high. The main reason for the tech sell-off is that the oil spike is fueling inflationary pressures, which dampens hopes for Fed rate cuts while simultaneously raising concerns about an economic slowdown. Tech stocks, which are sensitive to future growth prospects, are particularly vulnerable to this kind of outlook where rates are expected to rise and the economy is set to weaken. In fact, the tech-focused ETF, XLK, dropped over 3% today alone, leading the broader market decline. Ultimately, the extreme uncertainty, with hope for a deal clashing with fear of failure, seems to have prompted investors to sell off growth stocks first.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#dce50b96825d4be9",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Wall Street weighs prospects for Iran truce"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, what will the market be watching most closely going forward?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "For the time being, the market is likely to remain in a 'headline-driven' mode, reacting very sensitively to every statement coming out of Washington and Tehran. Tensions are expected to escalate further as the negotiation deadline set by President Trump approaches. Investors will be primarily focused on whether passage through the Strait of Hormuz can be restored and if oil prices can stabilize. Also, as we saw in the market today, we need to be mindful that geopolitical risk could continue to distort the prices of traditional safe-haven assets like Treasuries and gold by stoking inflation fears. The prevailing analysis is that this period of high volatility will likely continue until a clear diplomatic solution emerges.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e46ee32a3d7d929f",
+          "title": "US Insists Talks Ongoing Even as Iran Rejects Trump Outreach"
+        },
+        {
+          "type": "article",
+          "pk": "id#33334d2f05b78c70",
+          "title": "How Trump went from saying Strait of Hormuz 'will open itself' to acknowledging Iran's power to control the waterway"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, as you said, stabilizing oil prices seems to be the top priority. Can you detail the specific impact the market felt from the oil price surge caused by the Iran conflict?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today was a day where the oil shock rattled all asset classes. West Texas Intermediate crude jumped over 3.6% from the previous day to close at $93.60 a barrel, and Brent crude also remained high, trading around the $101 per barrel mark. This shock immediately fueled inflation fears, which spilled over into the bond market, a traditional safe haven. The 10-year U.S. Treasury yield surged by nearly 9 basis points in a single day to over 4.41%, providing the catalyst for the rate-sensitive Nasdaq to plunge nearly 2.4% into correction territory. The VIX, which reflects market fear, also shot up over 8%. With the exception of the energy sector, which gained nearly 1.6%, most sectors like airlines and consumer goods couldn't escape the decline. In the end, the geopolitical risk of the Hormuz blockade went beyond a simple oil price hike to shake the market's fundamental outlook on growth and inflation itself.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#b01c8367f68d689d",
+          "title": "'Worst nightmare': Iran war is the biggest oil shock in history, analysts say"
+        },
+        {
+          "type": "article",
+          "pk": "id#ad077ce70bc3ffcd",
+          "title": "Oil Advances as US and Iran Offer Conflicting Views on Talks"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Some analysts are calling this the biggest oil shock in history. What's the basis for that assessment?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "It's all about the sheer scale of the supply shock. With the Strait of Hormuz, which handles about 20% of the world's seaborne oil transport, effectively blockaded, over 15 million barrels of supply per day have vanished from the market. Experts say this is a level that's incomparable even to the oil shocks of the 1970s. In fact, the chief economist at British Petroleum called this situation the 'worst nightmare,' unlike any supply disruption in the past. Because of this unprecedented supply disruption, key Wall Street figures, including the CEO of BlackRock, are warning that oil could spike to $150 a barrel even if a deal is reached. The fact that the physical supply itself is blocked, not just that prices are rising, is what's creating extreme fear in the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#b01c8367f68d689d",
+          "title": "'Worst nightmare': Iran war is the biggest oil shock in history, analysts say"
+        },
+        {
+          "type": "article",
+          "pk": "id#91fd24233c3575b3",
+          "title": "BlackRock’s Kapito Warns Investors Are Mispricing Iran Risks"
+        },
+        {
+          "type": "article",
+          "pk": "id#33334d2f05b78c70",
+          "title": "How Trump went from saying Strait of Hormuz 'will open itself' to acknowledging Iran's power to control the waterway"
+        },
+        {
+          "type": "article",
+          "pk": "id#e46ee32a3d7d929f",
+          "title": "US Insists Talks Ongoing Even as Iran Rejects Trump Outreach"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So concerns that the oil spike will reignite inflation must be running high.",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Exactly. The oil shock is making the Federal Reserve's monetary policy path highly uncertain. The OECD has sharply revised its forecast, now projecting that U.S. inflation could surge to 4.2% this year due to this crisis. This is raising concerns that the Fed might not only have to reconsider rate cuts but could even be forced into further tightening. In fact, opinions are divided within the Fed itself. Fed Governor Stephen Miran argued that we should tolerate a temporary oil shock, but Governor Michael Barr expressed a more cautious stance, pointing to the pain that rising oil prices inflict on low-income households. Ultimately, the sharp rise in Treasury yields in the bond market today is clear evidence that the market is rapidly pricing out its expectations for Fed rate cuts.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bdeddd0a544a01e1",
+          "title": "War Hits Global Economy With OECD Seeing 4.2% US Inflation"
+        },
+        {
+          "type": "article",
+          "pk": "id#3682b689da0a9a02",
+          "title": "Fed's Miran favors looking through oil price spike, says concern is about job market"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So it's escalating to the point where the possibility of a recession is now on the table.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, the market has started to price in the worst-case scenario of rising inflation and slowing growth happening at the same time—in other words, stagflation. BlackRock President Rob Kapito warned that investors are underestimating the Iran risk and that global economic growth could fall by up to two percentage points even if the conflict ends quickly. High energy prices increase production costs for businesses and reduce the real purchasing power of consumers, dampening overall economic vitality. The fact that the tech-heavy Nasdaq officially entered a correction today, falling more than 10% from its 52-week high, is a symbolic sign that these recession fears have deeply penetrated the market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#91fd24233c3575b3",
+          "title": "BlackRock’s Kapito Warns Investors Are Mispricing Iran Risks"
+        },
+        {
+          "type": "article",
+          "pk": "id#dce50b96825d4be9",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Wall Street weighs prospects for Iran truce"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLY",
+          "start_date": "2026-03-25",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Right, you just mentioned the Nasdaq entering a correction as a symbolic moment. Could you elaborate on why tech stocks were hit particularly hard in today's market?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, it was a very tough day for tech investors. The Nasdaq Composite plunged 2.38% in a single session, putting it more than 10.6% below its October high and officially into a correction. This tech-led decline was triggered by geopolitical risk causing a spike in oil prices. When West Texas Intermediate crude shot up over 3% to surpass $93 a barrel, inflation fears once again gripped the market, which in turn pushed the 10-year U.S. Treasury yield above 4.4%. Tech stocks, which are sensitive to future growth prospects, are naturally more vulnerable in a rising-rate environment like this. As you can see from the VIX, the market's fear gauge, which jumped over 8%, investor risk aversion was at a peak, and the S&P 500 was also under pressure, falling more than 1.7%.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "And on top of the macroeconomic uncertainty, I heard there was also some company-specific bad news for certain Big Tech firms that fueled the sell-off, right?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's correct. While the overall market sentiment was poor, negative news from within Big Tech acted as a catalyst for the decline. Specifically, news that Meta and Google's YouTube lost a lawsuit related to the harmfulness of social media platforms showed regulatory risks becoming a reality. The ripple effects of this ruling sparked concerns about similar future lawsuits, causing Meta's stock to plummet nearly 8%, while Google's parent company, Alphabet, also fell over 3.4%. On top of that, when Alphabet announced a new algorithm to reduce its use of AI memory, it raised questions about semiconductor demand, which dragged down Nvidia's stock by more than 4%, spreading the negative sentiment across the tech sector.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        },
+        {
+          "type": "chart",
+          "ticker": "META",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "GOOGL",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So most of the so-called 'Magnificent Seven' big tech stocks took a major hit.",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Yes, the core drivers that had been leading the market all faltered at once. The XLK, an ETF representing the tech sector, fell over 3.1%, and the semiconductor industry was hit particularly hard, with the SOXX ETF, which tracks the Philadelphia Semiconductor Index, plunging more than 4.7%. What's interesting is that among the Magnificent Seven, only Apple managed to close with a slight gain. This seems to be a result of news that Apple plans to open up its AI assistant, Siri, to external AI models, which created some fresh optimism about the company's AI strategy. However, even Apple's resilience wasn't enough to prevent the broad-based decline across Big Tech.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "SOXX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAPL",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, it seems that as long as the macro variables of geopolitical risk and inflation remain unresolved, volatility in tech stocks is likely to continue.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Precisely. The Nasdaq's entry into a correction today isn't just about individual company issues; it's a clear example of how sensitively tech stocks react to the macroeconomic uncertainty weighing on the entire market. As long as geopolitical tensions surrounding Iran continue to fuel oil prices, and that in turn pushes back expectations for Fed rate cuts, investor sentiment toward growth stocks will remain suppressed. For the time being, investors will likely evaluate tech valuations more conservatively, and the conflict in the Middle East, along with upcoming inflation data, will be the most critical factors determining the direction of tech stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-01-01",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-01",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-01",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#41040d2a8839fdf2",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Tech slides and oil spikes amid Iran war"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, with these macro variables shaking the market, let's look at a standout individual stock. In the tech sector, SanDisk fell particularly sharply today, plunging over 7% in a single day. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SNDK",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, SanDisk plunged 7.54% to close at $603.04 today without any distinct company-specific news. It had a very poor trading pattern, rising to around $659 early in the session before trending down all day and closing near its daily low of $602. The market analysis suggests that certain details from its 10-Q report, filed back at the end of January, were highlighted belatedly, causing a sudden freeze in investor sentiment. It appears that in an information vacuum, concerns about potential risks triggered a sell-off.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SNDK",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-26"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "SNDK",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004407"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So you're saying that a filing from January is what dragged the stock down so much now. What exactly was the issue?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "The core issue is the financial burden related to its joint venture with Japan's Kioxia, known as Flash Ventures. According to the 10-Q report, SanDisk is required to pay Kioxia a total of $1.2 billion over four years, starting in 2026, to ensure supply chain stability. Furthermore, the fact that the total commitment related to this joint venture exceeds $5.3 billion is now coming into focus. Some in the market are interpreting this as an excessive reliance on a single partner and a potentially fatal fixed-cost shackle that could constrain the company's cash flow if a semiconductor down-cycle occurs. The critical view that this is essentially a risky contract that mortgages the company's survival was reflected in the stock price today.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SNDK",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004407"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "That's a significant financial commitment. But haven't its recent earnings been explosive thanks to AI demand? Couldn't this be seen as a necessary investment for growth?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's an excellent point, and that's precisely where the market's interpretation is sharply divided. Those with a positive view see this commitment as a 'strategic investment.' In its most recent quarter, SanDisk's revenue surged 61% year-over-year, and net income skyrocketed by an incredible 672%, with a gross margin of 50.9%. The company generated over $1.5 billion in operating cash flow in the last six months alone. Considering this, an annual payment of around $300 million is seen as perfectly manageable. In fact, the prevailing view is that through this contract, SanDisk has built a powerful competitive advantage, or a moat, by securing stable production capacity for the next decade while competitors struggle with supply chain issues.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SNDK",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004407"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So on the same issue, one side sees a shackle threatening survival, while the other sees an investment securing the future. It must be confusing for investors.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Yes, that's right. However, the ongoing AI infrastructure investment is likely a structural shift rather than a simple cyclical trend. This should support SanDisk's strong pricing power and cash generation for years to come. Of course, the reliance on Kioxia and the financial commitment are clear risk factors. But considering the fundamentals of a company that generates over $3 billion in cash annually, the possibility is raised that today's 7%-plus drop was an excessive fear-based reaction, mistaking a long-term strategic investment for a short-term liability. Therefore, while it's crucial to be fully aware of the risks, given the company's monopolistic position as a key supplier in the AI era, the current stock decline is seen as providing an opportunity to re-evaluate its intrinsic value.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SNDK",
+          "form": "10-Q",
+          "filed_date": "2026-01-30",
+          "accession_number": "0001628280-26-004407"
+        },
+        {
+          "type": "chart",
+          "ticker": "SNDK",
+          "start_date": "2026-02-24",
+          "end_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "The market saw a strong rebound today with all three major indices moving higher. The S&P 500 even hit another record high. Could you give us a quick summary of today's market action?",
+      "sources": []
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "Yes, as you mentioned, the S&P 500 hit a record high, spreading a positive mood across the market. It was impressive to see a broad-based rally, with various sectors from defensive plays like utilities and real estate to industrials all gaining ground. On the individual stock front, Merck and Cintas stood out with strong performances. Now, all eyes are on the economic data and comments from Fed Chair Jerome Powell scheduled for later this week.",
+      "sources": []
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "Speaking of that economic data, what should we be looking out for?",
+      "sources": []
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "First, on Thursday, we'll get the final reading for Q4 GDP growth and the weekly initial jobless claims. This will give us another check on the health of the U.S. economy. But the most important release is undoubtedly Friday's Personal Consumption Expenditures, or PCE, price index for February. Since this is the inflation gauge the Fed watches most closely when setting monetary policy, the market's expectations for the future path of rate cuts could change significantly based on this result.",
+      "sources": []
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "But isn't the U.S. stock market closed for Good Friday? The data comes out, but the market is shut. I'm curious how investors should approach that.",
+      "sources": []
+    },
+    {
+      "id": 43,
+      "speaker": "해설자",
+      "text": "You've pointed out a very important detail. Although the PCE data is released on Friday, the market will be closed, so the results will be fully priced in when trading resumes next Monday. In a way, it gives investors the weekend to digest the numbers. On top of that, a speech by Fed Chair Jerome Powell is also scheduled for the same day, which could amplify volatility. The market's direction next week could be determined by what Powell says, especially if he comments directly on the PCE results, so investors can't let their guard down over the weekend.",
+      "sources": []
+    },
+    {
+      "id": 44,
+      "speaker": "진행자",
+      "text": "So it's like the calm before the storm, waiting to react to the data and Powell's comments. Thanks for your insights today.",
+      "sources": []
+    },
+    {
+      "id": 45,
+      "speaker": "해설자",
+      "text": "Yes, that's right. With the market trading near all-time highs, we should keep in mind that even a small shock could lead to increased volatility. It's particularly possible that the market could open next Monday with a gap up or a gap down as it digests both the data and Powell's remarks at once. Therefore, rather than chasing the market, it would be wise to calmly analyze the information released over the weekend and formulate a response strategy.",
+      "sources": []
+    },
+    {
+      "id": 46,
+      "speaker": "진행자",
+      "text": "Right, a calm approach will be key. That concludes our closing bell briefing for March 27th. Thank you.",
+      "sources": []
+    }
+  ]
+}
