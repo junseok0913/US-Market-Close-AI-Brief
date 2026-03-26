@@ -1,0 +1,67 @@
+{
+  "date": "20260326",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260326.mp3",
+  "sectionOrder": [
+    "meta",
+    "googl",
+    "nvda",
+    "sndk"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 72.164,
+  "sections": [
+    {
+      "id": 0,
+      "name": "meta",
+      "ticker": "META",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 23.691,
+      "endSec": 23.691,
+      "speechDurationSec": 23.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 215,
+      "text": "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다. 메타는 오늘 8% 가까이 폭락했습니다. 소셜 미디어 플랫폼의 유해성과 관련된 소송에서 패소했다는 소식이 주가에 직격탄이 됐습니다. 이번 판결로 인해 향후 유사 소송이 이어질 수 있다는 우려가 커지면서, 규제 리스크가 현실화됐다는 평가가 나옵니다. 투자 심리가 급격히 위축되며 큰 폭의 하락으로 이어졌습니다."
+    },
+    {
+      "id": 1,
+      "name": "googl",
+      "ticker": "GOOGL",
+      "kind": "company",
+      "startSec": 23.691,
+      "speechEndSec": 42.982,
+      "endSec": 42.982,
+      "speechDurationSec": 19.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 173,
+      "text": "구글의 모회사 알파벳도 3.4% 넘게 하락했습니다. 알파벳 역시 소셜 미디어 유해성 관련 소송에서 패소하며 규제 리스크가 부각됐습니다. 여기에 더해, 인공지능 모델의 메모리 사용을 줄이는 새로운 알고리즘을 발표한 점도 주가에 부담으로 작용했습니다. 이는 반도체 수요 감소로 이어질 수 있다는 우려를 낳았습니다."
+    },
+    {
+      "id": 2,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 42.982,
+      "speechEndSec": 59.193,
+      "endSec": 59.193,
+      "speechDurationSec": 16.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 145,
+      "text": "엔비디아는 4% 넘게 하락하며 마감했습니다. 앞서 알파벳이 발표한 AI 메모리 사용 최적화 소식이 반도체 수요에 대한 의문으로 직접 이어졌기 때문입니다. AI 칩 선두주자인 엔비디아에 대한 수요 전망에 불확실성이 제기되면서 주가가 큰 폭으로 조정을 받았습니다."
+    },
+    {
+      "id": 3,
+      "name": "sndk",
+      "ticker": "SNDK",
+      "kind": "company",
+      "startSec": 59.193,
+      "speechEndSec": 72.164,
+      "endSec": 72.164,
+      "speechDurationSec": 12.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 105,
+      "text": "샌디스크 역시 반도체 업황 우려를 피하지 못하고 11% 넘게 급락했습니다. 특히 키옥시아 합작 벤처에 대한 재무적 부담이 주가 하락의 주요 원인으로 지목됩니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

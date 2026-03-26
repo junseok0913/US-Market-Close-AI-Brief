@@ -1,0 +1,232 @@
+{
+  "date": "20260327",
+  "lang": "ko",
+  "title": "메타 8% 폭락, 나스닥 조정장 진입. 이란 리스크가 시장을 덮쳤다.",
+  "hook": "메타가 8% 폭락하고 나스닥이 조정장에 진입했습니다. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 73.284,
+  "audioFile": "shorts20260326.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.491,
+      "eyebrow": "3월 27일 미국 증시",
+      "headline": "메타 8% 폭락",
+      "subheadline": "나스닥, 조정장에 진입했습니다.",
+      "body": "대체 무슨 일이 있었을까요?",
+      "bullets": [
+        "메타가 8% 폭락하고 나스닥이 조정장에 진입했습니다.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "META",
+        "^IXIC",
+        "GOOGL",
+        "NVDA"
+      ],
+      "highlights": [
+        "8%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.491,
+      "endSec": 18.582,
+      "eyebrow": "주요 지수 현황",
+      "headline": "3대 지수 일제히 급락",
+      "subheadline": "이란 휴전 협상 불확실성이 시장을 덮쳤습니다.",
+      "body": "3월 27일 미국 증시는 이란 휴전 협상 불확실성으로 급락했습니다. 다우는 1.01%, S&P 500은 1.74% 하락했고, 기술주 중심의 나스닥은 2.38%나 폭락했습니다.",
+      "bullets": [
+        "나스닥: -2.38%",
+        "S&P 500: -1.74%"
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "META"
+      ],
+      "highlights": [
+        "나스닥 -2.38%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 18.582,
+      "endSec": 71.273,
+      "eyebrow": "시장 하락 원인",
+      "headline": "유가 급등, 기술주 직격탄",
+      "subheadline": "지정학적 리스크가 인플레이션 공포를 자극했습니다.",
+      "body": "시장 혼란의 시작은 미국과 이란의 상반된 발표였습니다. 협상 타결 기대와 결렬 우려가 엇갈리며 지정학적 리스크가 최고조에 달했습니다. 이로 인해 세계 원유의 20%가 통과하는 호르무즈 해협 봉쇄 우려가 커지며 서부 텍사스산 원유 가격이 3.6% 넘게 폭등했고, 공포지수 VIX는 8% 이상 급등했습니다. 유가 급등은 인플레이션 공포를 자극해 금리 인하 기대를 약화시키며 기술주에 직격탄이 됐습니다. 나스닥은 고점 대비 10% 이…",
+      "bullets": [
+        "이란 리스크로 유가(WTI) 3.6% 폭등, 공포지수(VIX) 8% 급등",
+        "빅테크 개별 악재까지 겹치며 META, GOOGL, NVDA 동반 하락"
+      ],
+      "tickers": [
+        "CLF",
+        "^VIX",
+        "META",
+        "NVDA"
+      ],
+      "highlights": [
+        "WTI +3.6%",
+        "VIX +8%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 71.273,
+      "endSec": 73.284,
+      "eyebrow": "콘텐츠가 유용했다면",
+      "headline": "구독과 좋아요",
+      "subheadline": "부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "META",
+        "GOOGL",
+        "NVDA",
+        "^DJI"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.491,
+      "text": "메타가 8% 폭락하고 나스닥이 조정장에 진입했습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.491,
+      "endSec": 18.582,
+      "text": "3월 27일 미국 증시는 이란 휴전 협상 불확실성으로 급락했습니다. 다우는 1.01%, S&P 500은 1.74% 하락했고, 기술주 중심의 나스닥은 2.38%나 폭락했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 18.582,
+      "endSec": 71.273,
+      "text": "시장 혼란의 시작은 미국과 이란의 상반된 발표였습니다. 협상 타결 기대와 결렬 우려가 엇갈리며 지정학적 리스크가 최고조에 달했습니다. 이로 인해 세계 원유의 20%가 통과하는 호르무즈 해협 봉쇄 우려가 커지며 서부 텍사스산 원유 가격이 3.6% 넘게 폭등했고, 공포지수 VIX는 8%…"
+    },
+    {
+      "id": 3,
+      "startSec": 71.273,
+      "endSec": 73.284,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-26"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-26"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-26"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq slide as Wall…",
+      "detail": "id#dce50b96825d4be9"
+    },
+    {
+      "type": "article",
+      "label": "US Insists Talks Ongoing Even as Iran Rejects Trump Out…",
+      "detail": "id#e46ee32a3d7d929f"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-26"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-26"
+    },
+    {
+      "type": "article",
+      "label": "'Worst nightmare': Iran war is the biggest oil shock in…",
+      "detail": "id#b01c8367f68d689d"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq sink as Big Te…",
+      "detail": "id#41040d2a8839fdf2"
+    },
+    {
+      "type": "chart",
+      "label": "SOXX",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "META",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "GOOGL",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-03-27"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 모두 급락, 나스닥 조정장 진입",
+      "이란 휴전 협상 불확실성으로 유가 3.6% 급등",
+      "빅테크 개별 악재로 메타 8%, 엔비디아 4% 급락"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "META",
+        "label": "메타",
+        "tag": "소송 패소로 8% 폭락"
+      },
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "반도체 수요 우려로 4% 하락"
+      },
+      {
+        "ticker": "GOOGL",
+        "label": "알파벳",
+        "tag": "빅테크 동반 하락"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

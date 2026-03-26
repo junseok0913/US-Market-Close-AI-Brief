@@ -1,0 +1,308 @@
+{
+  "date": "20260327",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 메타, 알파벳, 엔비디아",
+  "hook": "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다.",
+  "durationSeconds": 72.164,
+  "audioFile": "shortsfirm20260326.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "bear",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.03.27 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, 메타, 알파벳, 엔비디아",
+      "subheadline": "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다.",
+      "body": "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다.",
+      "bullets": [
+        "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다."
+      ],
+      "tickers": [
+        "META",
+        "GOOGL",
+        "NVDA",
+        "SNDK"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 3.0,
+      "endSec": 23.691,
+      "eyebrow": "PICK 1",
+      "headline": "META",
+      "subheadline": "소셜 미디어 유해성 소송 패소로 규제 리스크 부각",
+      "body": "소송 패소 소식이 직격탄이 되며 투자 심리가 급격히 위축되었습니다.",
+      "bullets": [
+        "소셜 미디어 유해성 관련 소송 패소",
+        "규제 리스크 현실화 우려 부각"
+      ],
+      "tickers": [
+        "META"
+      ],
+      "highlights": [
+        "-7.96%",
+        "-16.24%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 23.691,
+      "endSec": 42.982,
+      "eyebrow": "PICK 2",
+      "headline": "GOOGL",
+      "subheadline": "소송 패소와 AI 알고리즘 발표로 이중 압박",
+      "body": "규제 리스크와 함께 반도체 수요 감소 우려가 주가에 부담으로 작용했습니다.",
+      "bullets": [
+        "소송 패소 및 AI 알고리즘 발표",
+        "규제 리스크와 반도체 수요 우려 동시 작용"
+      ],
+      "tickers": [
+        "GOOGL"
+      ],
+      "highlights": [
+        "-3.44%",
+        "-10.22%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 42.982,
+      "endSec": 59.193,
+      "eyebrow": "PICK 3",
+      "headline": "NVDA",
+      "subheadline": "AI 메모리 최적화 소식에 반도체 수요 우려로 하락",
+      "body": "알파벳의 발표가 AI 칩 수요 전망에 대한 불확실성으로 직접 이어졌습니다.",
+      "bullets": [
+        "알파벳의 AI 최적화 발표 여파",
+        "AI 반도체 수요 둔화 우려로 하락"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "highlights": [
+        "-4.16%",
+        "-12.44%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 59.193,
+      "endSec": 69.164,
+      "eyebrow": "PICK 1",
+      "headline": "SNDK",
+      "subheadline": "반도체 수요 우려 확산에 11%대 동반 급락",
+      "body": "키옥시아 합작 벤처에 대한 재무적 부담이 주가 하락의 주요 원인으로 지목됩니다.",
+      "bullets": [
+        "키옥시아 합작 벤처 재무 부담 우려"
+      ],
+      "tickers": [
+        "SNDK"
+      ],
+      "highlights": [
+        "-11.02%",
+        "-4.62%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 69.164,
+      "endSec": 72.164,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "이란 리스크에 시장이 급락한 가운데, 빅테크 내부 악재가 하락을 부추겼습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 23.691,
+      "text": "소셜 미디어 유해성 소송 패소로 규제 리스크 부각"
+    },
+    {
+      "id": 2,
+      "startSec": 23.691,
+      "endSec": 42.982,
+      "text": "소송 패소와 AI 알고리즘 발표로 이중 압박"
+    },
+    {
+      "id": 3,
+      "startSec": 42.982,
+      "endSec": 59.193,
+      "text": "AI 메모리 최적화 소식에 반도체 수요 우려로 하락"
+    },
+    {
+      "id": 4,
+      "startSec": 59.193,
+      "endSec": 69.164,
+      "text": "반도체 수요 우려 확산에 11%대 동반 급락"
+    },
+    {
+      "id": 5,
+      "startSec": 69.164,
+      "endSec": 72.164,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "이란 리스크와 빅테크 내부 악재로 시장 급락",
+      "메타, 소셜 미디어 유해성 소송 패소로 8% 가까이 폭락",
+      "알파벳, 소송 패소와 AI 최적화 발표로 동반 하락",
+      "엔비디아, 알파벳 발표 여파로 AI 칩 수요 우려 부각"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "META",
+        "label": "메타",
+        "tag": "하락"
+      },
+      {
+        "ticker": "GOOGL",
+        "label": "알파벳",
+        "tag": "하락"
+      },
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "하락"
+      },
+      {
+        "ticker": "SNDK",
+        "label": "샌디스크",
+        "tag": "하락"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "META",
+        "name": "Meta Platforms, Inc.",
+        "as_of": "2026-03-26",
+        "day_change_pct": -7.9594606490539626,
+        "day_change_display": "-7.96%",
+        "month_change_pct": -16.238587712465026,
+        "month_change_display": "-16.24%",
+        "market_cap": 1385032712192.0,
+        "market_cap_display": "$1.39T",
+        "pe_ratio": 23.299574,
+        "pe_ratio_display": "23.30",
+        "pbr": 6.3766055,
+        "pbr_display": "6.38",
+        "roe": 30.238,
+        "roe_display": "30.24%",
+        "reason": "이 판결의 파장이 향후 유사 소송에 대한 우려로 번지면서 메타 주가는 8퍼센트 가까이 폭락했고.",
+        "spoken_text": "메타는 오늘 8% 가까이 폭락했습니다. 소셜 미디어 플랫폼의 유해성과 관련된 소송에서 패소했다는 소식이 주가에 직격탄이 됐습니다. 이번 판결로 인해 향후 유사 소송이 이어질 수 있다는 우려가 커지면서, 규제 리스크가 현실화됐다는 평가가 나옵니다. 투자 심리가 급격히 위축되며 큰 폭의 하락으로 이어졌습니다.",
+        "slide_points": [
+          "1일 -7.96% / 1개월 -16.24%",
+          "소셜 미디어 유해성 관련 소송 패소",
+          "규제 리스크 현실화 우려 부각"
+        ],
+        "valuation_note": "시총 $1.39T / PER 23.30 / PBR 6.38 / ROE 30.24%",
+        "move_summary": "소셜 미디어 유해성 소송 패소로 규제 리스크 부각"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc.",
+        "as_of": "2026-03-26",
+        "day_change_pct": -3.4406831540405025,
+        "day_change_display": "-3.44%",
+        "month_change_pct": -10.220511694650213,
+        "month_change_display": "-10.22%",
+        "market_cap": 3398289588224.0,
+        "market_cap_display": "$3.40T",
+        "pe_ratio": 25.963034,
+        "pe_ratio_display": "25.96",
+        "pbr": 8.177452,
+        "pbr_display": "8.18",
+        "roe": 35.705003000000005,
+        "roe_display": "35.71%",
+        "reason": "구글의 모회사 알파벳 역시 3.4퍼센트 넘게 하락했습니다.",
+        "spoken_text": "구글의 모회사 알파벳도 3.4% 넘게 하락했습니다. 알파벳 역시 소셜 미디어 유해성 관련 소송에서 패소하며 규제 리스크가 부각됐습니다. 여기에 더해, 인공지능 모델의 메모리 사용을 줄이는 새로운 알고리즘을 발표한 점도 주가에 부담으로 작용했습니다. 이는 반도체 수요 감소로 이어질 수 있다는 우려를 낳았습니다.",
+        "slide_points": [
+          "1일 -3.44% / 1개월 -10.22%",
+          "소송 패소 및 AI 알고리즘 발표",
+          "규제 리스크와 반도체 수요 우려 동시 작용"
+        ],
+        "valuation_note": "시총 $3.40T / PER 25.96 / PBR 8.18 / ROE 35.71%",
+        "move_summary": "소송 패소와 AI 알고리즘 발표로 이중 압박"
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA Corporation",
+        "as_of": "2026-03-26",
+        "day_change_pct": -4.163861365338873,
+        "day_change_display": "-4.16%",
+        "month_change_pct": -12.436077096054843,
+        "month_change_display": "-12.44%",
+        "market_cap": 4161988460544.0,
+        "market_cap_display": "$4.16T",
+        "pe_ratio": 34.946938,
+        "pe_ratio_display": "34.95",
+        "pbr": 26.458591,
+        "pbr_display": "26.46",
+        "roe": 101.485,
+        "roe_display": "101.48%",
+        "reason": "이는 반도체 수요에 대한 의문으로 이어지며 엔비디아 주가를 4퍼센트 넘게 끌어내리는 등 기술주 전반으로 부정적인 분위기가 확산되었습니다.",
+        "spoken_text": "엔비디아는 4% 넘게 하락하며 마감했습니다. 앞서 알파벳이 발표한 AI 메모리 사용 최적화 소식이 반도체 수요에 대한 의문으로 직접 이어졌기 때문입니다. AI 칩 선두주자인 엔비디아에 대한 수요 전망에 불확실성이 제기되면서 주가가 큰 폭으로 조정을 받았습니다.",
+        "slide_points": [
+          "1일 -4.16% / 1개월 -12.44%",
+          "알파벳의 AI 최적화 발표 여파",
+          "AI 반도체 수요 둔화 우려로 하락"
+        ],
+        "valuation_note": "시총 $4.16T / PER 34.95 / PBR 26.46 / ROE 101.48%",
+        "move_summary": "AI 메모리 최적화 소식에 반도체 수요 우려로 하락"
+      },
+      {
+        "ticker": "SNDK",
+        "name": "Sandisk Corporation",
+        "as_of": "2026-03-26",
+        "day_change_pct": -11.01849999342701,
+        "day_change_display": "-11.02%",
+        "month_change_pct": -4.6190616001638425,
+        "month_change_display": "-4.62%",
+        "market_cap": 89028476928.0,
+        "market_cap_display": "$89.03B",
+        "pe_ratio": 6.8756866,
+        "pe_ratio_display": "6.88",
+        "pbr": 8.740706,
+        "pbr_display": "8.74",
+        "roe": -9.372,
+        "roe_display": "-9.37%",
+        "reason": "네, 샌디스크는 오늘 뚜렷한 개별 뉴스 없이 7.54% 급락하며 603.04달러에 장을 마쳤습니다. 장 초반 659달러 선까지 올랐다가 하루 종일 하락세를 보이며 장 막판에 일일 최저가인 602달러 근처에서 마감하는, 매우 좋지 않은 흐름을 보였습니다. 핵심은 일본의 키옥시아와의 합작 벤처, 즉 플래시 벤처스에 대한 재무적 부담입니다. 10-Q 보고서에 따르면 샌디스크는 공급망 안정을 위해…",
+        "spoken_text": "샌디스크 역시 반도체 업황 우려를 피하지 못하고 11% 넘게 급락했습니다. 특히 키옥시아 합작 벤처에 대한 재무적 부담이 주가 하락의 주요 원인으로 지목됩니다.",
+        "slide_points": [
+          "1일 -11.02% / 1개월 -4.62%",
+          "시총 $89.03B, PER 6.88, PBR 8.74, ROE -9.37%",
+          "키옥시아 합작 벤처 재무 부담 우려"
+        ],
+        "valuation_note": "시총 $89.03B, PER 6.88, PBR 8.74, ROE -9.37%",
+        "move_summary": "반도체 수요 우려 확산에 11%대 동반 급락"
+      }
+    ]
+  }
+}
