@@ -1,0 +1,218 @@
+{
+  "date": "20260328",
+  "lang": "ko",
+  "title": "유가 6.6% 폭등, 나스닥 2.1% 급락! 이란 전쟁 위기",
+  "hook": "유가가 6% 넘게 폭등하며 100달러를 돌파, 증시는 왜 2% 넘게 급락했을까요.",
+  "durationSeconds": 72.084,
+  "audioFile": "shorts20260327.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.451,
+      "eyebrow": "3월 28일 마감",
+      "headline": "유가 폭등, 증시 급락",
+      "subheadline": "유가 6%↑, 증시 2%↓... 대체 왜?",
+      "body": "유가가 6% 넘게 폭등하며 100달러를 돌파, 증시는 왜 2% 넘게 급락했을까요.",
+      "bullets": [
+        "유가가 6% 넘게 폭등하며 100달러를 돌파, 증시는 왜 2% 넘게 급락했을까요."
+      ],
+      "tickers": [
+        "CLF",
+        "^IXIC",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "유가 $100 돌파"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.451,
+      "endSec": 20.222,
+      "eyebrow": "시장 요약",
+      "headline": "3대 지수 일제히 급락",
+      "subheadline": "나스닥 -2.1% | S&P500 -1.67% | 다우 -1.7%",
+      "body": "이란 전쟁 위기 고조가 시장 하락을 주도했습니다.",
+      "bullets": [
+        "3월 28일 미국 증시는 이란 전쟁 위기 고조에 따른 유가 급등과 증시 급락으로 요약됩니다.",
+        "다우존스는 1.7%, S&P 500은 1.67% 하락했고, 특히 기술주 중심의 나스닥은 2.1% 이상 급락했습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "CLF"
+      ],
+      "highlights": [
+        "NASDAQ -2.1%",
+        "S&P 500 -1.67%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 20.222,
+      "endSec": 69.753,
+      "eyebrow": "하락의 중심",
+      "headline": "유가 쇼크 & 인플레 공포",
+      "subheadline": "지정학적 리스크가 모든 것을 바꿨습니다.",
+      "body": "모든 하락의 중심에는 지정학적 리스크가 있었습니다. 이란과의 분쟁 우려가 커지면서 서부 텍사스산 원유가 6.6% 넘게 폭등해 배럴당 100달러를 돌파했고, 브렌트유 역시 106달러를 넘어섰습니다. 시장의 공포심리를 보여주는 변동성지수 VIX는 하루 만에 13% 이상 치솟았습니다. 유가 급등은 인플레이션이 다시 고개를 들 것이라는 공포를 불러왔고, 이는 연준의 금리 인하 기대를 후퇴시켰습니다. 필립 제퍼슨 연준 부의장은 현재…",
+      "bullets": [
+        "WTI 유가 6.6% 폭등, VIX 지수 13% 급등",
+        "연준 금리 인하 기대 후퇴, 기술주 직격탄"
+      ],
+      "tickers": [
+        "CLF",
+        "^VIX",
+        "XLE",
+        "^DJI"
+      ],
+      "highlights": [
+        "WTI +6.6%",
+        "VIX +13%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 69.753,
+      "endSec": 72.084,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "CLF"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.451,
+      "text": "유가가 6% 넘게 폭등하며 100달러를 돌파, 증시는 왜 2% 넘게 급락했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.451,
+      "endSec": 20.222,
+      "text": "3월 28일 미국 증시는 이란 전쟁 위기 고조에 따른 유가 급등과 증시 급락으로 요약됩니다. 다우존스는 1.7%, S&P 500은 1.67% 하락했고, 특히 기술주 중심의 나스닥은 2.1% 이상 급락했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 20.222,
+      "endSec": 69.753,
+      "text": "모든 하락의 중심에는 지정학적 리스크가 있었습니다. 이란과의 분쟁 우려가 커지면서 서부 텍사스산 원유가 6.6% 넘게 폭등해 배럴당 100달러를 돌파했고, 브렌트유 역시 106달러를 넘어섰습니다. 시장의 공포심리를 보여주는 변동성지수 VIX는 하루 만에 13% 이상 치솟았습니다. 유가…"
+    },
+    {
+      "id": 3,
+      "startSec": 69.753,
+      "endSec": 72.084,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran…",
+      "detail": "id#491c1266df3e040d"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices could hit $200 per barrel if the war in Iran…",
+      "detail": "id#09a00fcb564a2e65"
+    },
+    {
+      "type": "article",
+      "label": "Fed's Jefferson sees higher inflation from Iran war nea…",
+      "detail": "id#aa24a3af7ab760f1"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-03-27"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: S&P 500 clinches longest losing str…",
+      "detail": "id#1c7481704aa97c9a"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "이란 전쟁 위기로 유가 6.6% 폭등 및 100달러 돌파",
+      "3대 지수 모두 1.6% 이상 급락, 나스닥 -2.1%",
+      "인플레이션 공포 재점화 및 연준 금리 인하 기대 후퇴",
+      "에너지 섹터만 유일하게 1.6% 상승"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "유일한 상승 섹터"
+      },
+      {
+        "ticker": "CCL",
+        "label": "카니발",
+        "tag": "수익 전망 하향"
+      },
+      {
+        "ticker": "MQBKY",
+        "label": "맥쿼리 그룹",
+        "tag": "유가 $200 전망"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
