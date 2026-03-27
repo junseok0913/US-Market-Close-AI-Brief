@@ -1,0 +1,449 @@
+{
+  "date": "20260327",
+  "nutshell": "Surging oil prices and a sharp market sell-off driven by escalating war risks with Iran.",
+  "user_tickers": [
+    "CRWD"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 13
+    },
+    {
+      "name": "ticker",
+      "start_id": 14,
+      "end_id": 21
+    },
+    {
+      "name": "closing",
+      "start_id": 22,
+      "end_id": 30
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the March 28th closing bell briefing. It was a very tough day in the markets, with all the major indices falling sharply.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, today's market can be summed up in one phrase: surging oil prices and a stock market plunge due to escalating war risks with Iran. The Dow Jones Industrial Average fell 1.7% to close at 45,166, and the S&P 500 also dropped 1.67% to 6,368. The tech-heavy Nasdaq was hit particularly hard, tumbling more than 2.1% to finish at 20,948. Geopolitical risk was at the heart of all this selling.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-27",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-27",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-27",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#491c1266df3e040d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war pushes oil prices higher, tech sells off"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So it was the geopolitical risk spilling over into surging oil prices that really hit the market hard.",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's right. As concerns grew that the conflict with Iran could escalate, West Texas Intermediate crude oil shot up over 6%, breaking past $100 a barrel. Some investment banks are even putting out pessimistic forecasts that oil could spike to $200 if the war continues into the summer. This surge in oil prices brought fears of resurgent inflation roaring back, which in turn pushed back expectations for Fed rate cuts and triggered a broad-based sell-off, especially in rate-sensitive tech stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-27",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#09a00fcb564a2e65",
+          "title": "Oil prices could hit $200 per barrel if the war in Iran continues into summer"
+        },
+        {
+          "type": "article",
+          "pk": "id#aa24a3af7ab760f1",
+          "title": "Fed's Jefferson sees higher inflation from Iran war near term, signals toward holding rates steady"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, could you break down the key drivers that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, we can really break it down into two main themes today. First, the oil price shock caused by the escalating war crisis with Iran, and second, the reignited inflation fears and concerns about the Fed's policy path that followed. We'll dig into each of these in more detail in a moment.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point, the oil shock. How exactly did this geopolitical risk shake up different parts of the market?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Well, today was a classic risk-off session where the geopolitical shock from the Middle East rattled all asset prices. West Texas Intermediate crude surged over 6.6 percent from the previous day, breaking through $100 a barrel, and Brent crude, the international benchmark, also crossed the $106 mark, sending market fear to an extreme. The CBOE Volatility Index, or VIX, jumping more than 13 percent in a single day proves that. This shockwave hit the stock market directly, with the Dow falling over 1.7 percent, the S&P 500 down 1.67 percent, and the tech-heavy Nasdaq seeing the biggest drop, plunging more than 2.1 percent. Amid the chaos, even the flight to safety was limited, as the 10-year Treasury yield actually ticked up slightly on inflation worries. The only bright spot was the energy sector, which rose over 1.6 percent, moving completely against the market trend.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#491c1266df3e040d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war pushes oil prices higher, tech sells off"
+        },
+        {
+          "type": "article",
+          "pk": "id#1c7481704aa97c9a",
+          "title": "Stock market today: S&P 500 clinches longest losing streak since 2022 as oil surges, 'Magnificent 7' stocks shed $300 billion"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So we saw a stark divergence, with only the energy sector rising while tech stocks in particular took a much bigger hit.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Exactly. The surge in oil prices led to expectations of improved profitability for energy companies, boosting their stocks. But for every other part of the market, it acted as a headwind of rising costs and inflation. The tech sector was hit particularly hard because of the outlook for interest rates. When rising oil fuels inflation, it makes it harder for the Fed to cut rates, which in turn leads to higher Treasury yields. Growth stocks, like those in tech, get their high valuations from the expectation of future profits. When interest rates, which act as a discount rate, go up, the present value of those future profits falls, putting direct downward pressure on stock prices. And we certainly saw weakness in sectors directly impacted by fuel costs, like airlines and cruise lines. In fact, cruise operator Carnival actually lowered its full-year profit forecast, citing the rise in oil prices.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#1c7481704aa97c9a",
+          "title": "Stock market today: S&P 500 clinches longest losing streak since 2022 as oil surges, 'Magnificent 7' stocks shed $300 billion"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So, in the end, it was the fear that surging oil would reignite inflation that completely changed expectations for the Fed's policy path.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Precisely. The market mood, which at the start of the year was hopeful for rate cuts, has completely flipped. Fed Vice Chair Philip Jefferson commented that the war with Iran is expected to increase inflation in the short term, signaling that holding rates steady is the appropriate course. This was interpreted as effectively shutting the door on rate cut expectations. Some investment banks are even presenting extreme scenarios where oil could soar to $200 a barrel if the conflict drags on into the summer. This kind of forecast isn't just stoking inflation fears; it's also fueling concerns about stagflation—that's high inflation and an economic recession happening at the same time—which is freezing investor sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#aa24a3af7ab760f1",
+          "title": "Fed's Jefferson sees higher inflation from Iran war near term, signals toward holding rates steady"
+        },
+        {
+          "type": "article",
+          "pk": "id#7be66ea158d96ab8",
+          "title": "Oil prices could hit $200 per barrel if the war in Iran continues into the summer"
+        },
+        {
+          "type": "article",
+          "pk": "id#09a00fcb564a2e65",
+          "title": "Oil prices could hit $200 per barrel if the war in Iran continues into summer"
+        },
+        {
+          "type": "article",
+          "pk": "id#491c1266df3e040d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Iran war pushes oil prices higher, tech sells off"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So it seems for the time being, the market's focus will be less on economic data and more on the geopolitical situation in the Middle East and oil prices.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, that's right. As you said, the market will now be driven by two key variables: signs of de-escalation in the conflict with Iran, and the level at which international oil prices find stability. Until then, it's highly likely that the high volatility and risk-off sentiment we saw today will continue to dominate the market. It's important to remember just how high the uncertainty is, with scenarios like the $200 oil forecast from institutions like Macquarie Group being discussed with a 40 percent probability.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-26",
+          "end_date": "2026-03-27"
+        },
+        {
+          "type": "article",
+          "pk": "id#7be66ea158d96ab8",
+          "title": "Oil prices could hit $200 per barrel if the war in Iran continues into the summer"
+        },
+        {
+          "type": "article",
+          "pk": "id#62f68471f17649b5",
+          "title": "Stock market today: Dow, S&P 500 sink, Nasdaq enters correction territory as oil spikes amid Iran war"
+        },
+        {
+          "type": "article",
+          "pk": "id#aa24a3af7ab760f1",
+          "title": "Fed's Jefferson sees higher inflation from Iran war near term, signals toward holding rates steady"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, and with so much uncertainty in the broader market, we also saw some unusual moves in individual stocks. CrowdStrike, for example, was extremely volatile today, surging at the open before plunging, and ultimately closing nearly flat. What was behind all that volatility?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CRWD",
+          "start_date": "2026-03-27",
+          "end_date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, CrowdStrike is one of those stocks where the bull and bear cases are clashing most dramatically right now. On the surface, its growth metrics are excellent. For the recent fiscal year, its Annual Recurring Revenue, or ARR, grew 24% to over $5.2 billion, and its net retention rate, which shows increased spending from existing customers, is at 115%. But behind this impressive growth story, the fallout from the massive system outage in 2024 and the serious legal and regulatory risks that have stemmed from it are casting a long shadow. Today's volatility seems to be a reflection of this intense tug-of-war between growth and risk.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CRWD",
+          "form": "10-K",
+          "filed_date": "2026-03-05",
+          "accession_number": "0001535527-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "You mentioned legal and regulatory risks. I'm curious about the specifics. Does this mean the market is taking these issues more seriously than the growth metrics?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's exactly right. The biggest problem facing CrowdStrike right now are two issues disclosed in its recent 10-K filing. First, it's being sued by major clients like Delta Air Lines in relation to that past system outage. And second, a much more serious issue, is the fact that the Department of Justice and the SEC have opened investigations into how the company calculates its key growth metric, ARR. The valuation of a SaaS company is based on ARR, which represents expectations of future growth. Now, the reliability of that very metric is being questioned. This is seen as a very significant risk that could shake the company's entire growth narrative to its core.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CRWD",
+          "form": "10-K",
+          "filed_date": "2026-03-05",
+          "accession_number": "0001535527-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "An investigation into a key growth metric... that certainly sounds serious. But isn't there also a view that with its massive operating cash flow of $1.6 billion a year, this is just short-term noise it can overcome?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Of course, its strong cash generation is a positive factor that boosts the company's defenses. You could say it has the financial strength to pay potential damages or fines. However, the nature of this problem isn't something that can simply be solved with money. An investigation into ARR accounting practices undermines the credibility of the most fundamental yardstick investors use to evaluate the company. If the investigation leads to a situation where past results have to be restated, it could lead to a complete collapse of investor trust. What's more, the company itself has stated that it's impossible to estimate the potential scope or scale of losses from related litigation, which maximizes the uncertainty because the size of the risk is unknowable.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CRWD",
+          "form": "10-K",
+          "filed_date": "2026-03-05",
+          "accession_number": "0001535527-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, despite its excellent fundamentals, it's being held back by an unquantifiable risk.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, the current situation raises the possibility of entering a vicious cycle of 'negative reflexivity.' Concerns about regulatory risk cause the stock price to fall, and the falling stock price then amplifies doubts about the company's fundamentals. While CrowdStrike is clearly a technologically superior company, it's hard to say that the current stock price fully reflects the fundamental questions about its accounting credibility and the unpredictable legal risks. Therefore, until these core uncertainties are resolved, this is seen as a time when risk management is critically important.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "CRWD",
+          "form": "10-K",
+          "filed_date": "2026-03-05",
+          "accession_number": "0001535527-26-000010"
+        },
+        {
+          "type": "chart",
+          "ticker": "CRWD",
+          "start_date": "2026-02-25",
+          "end_date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Okay, so the S&P 500 has once again hit a new all-time high to close out the first quarter. How would you sum up today's market action in a nutshell?",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "In a word, it was a classic bull market day. The optimism around artificial intelligence and expectations for Fed rate cuts, which have dominated the entire quarter, continued to show their strength right up to the last trading day. In particular, the Personal Consumption Expenditures price index released this morning came in line with expectations, adding to the conviction that inflation is slowing. Investors successfully wrapped up the first quarter by betting on an ideal scenario where the economy grows without a recession while inflation remains stable.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "A successful first quarter indeed. The market is closed tomorrow for Good Friday. Looking ahead to next week, what economic indicators should investors be watching?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The highlight of next week is definitely the March jobs report, out on Friday. The two most important data points for the Fed in deciding on rate cuts are inflation and employment. We're seeing inflation stabilize to some extent. So now, all eyes will be on whether the heat is coming out of the labor market. The change in non-farm payrolls, the unemployment rate, and the growth in average hourly earnings—these three indicators will be the most critical turning point for gauging the Fed's next move.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "non farm payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "unemployment rate",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395471",
+          "title": "average hourly earnings mom",
+          "date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So the jobs report is the big one. Will the market be in a holding pattern until then?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Not necessarily. On Monday, we have a speech from Fed Chair Jerome Powell, so there will be another attempt to glean hints about rate policy from that. Then on Wednesday, we get the ISM Manufacturing PMI. This index is based on a survey of corporate purchasing managers and is a very significant leading indicator that gives us the first look at whether the manufacturing sector is in an expansion or contraction phase. As the first major data point for the second quarter, it could certainly influence market sentiment.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "419608",
+          "title": "fed chair powell speech",
+          "date": "2026-03-30"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ism manufacturing pmi",
+          "date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "As we head into a new quarter, do you have any final thoughts for our investors?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "The market has been on a hot rally throughout the first quarter. Behind this optimism is the expectation of a 'Goldilocks' scenario—an ideal economic situation that's not too hot and not too cold. But expectations always need to be proven by data. The employment and manufacturing data coming out next week will be the first test of how well these market hopes align with reality. Depending on the results, we could see increased market volatility, so rather than celebrating just yet, it's a time when the wisdom to calmly assess the market and prepare a strategy is needed.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "That was the March 28th closing bell briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}
