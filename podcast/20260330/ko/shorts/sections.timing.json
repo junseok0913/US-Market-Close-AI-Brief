@@ -1,0 +1,58 @@
+{
+  "date": "20260330",
+  "lang": "ko",
+  "audioFile": "shorts20260330.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 76.124,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.091,
+      "endSec": 5.091,
+      "speechDurationSec": 5.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 38,
+      "text": "유가는 5% 폭등, 반도체는 9% 폭락. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.091,
+      "speechEndSec": 22.142,
+      "endSec": 22.142,
+      "speechDurationSec": 17.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 131,
+      "text": "3월 31일 미국 증시는 혼조세로 마감했습니다. 다우는 0.11% 소폭 상승했지만, S&P 500은 0.39%, 기술주 중심의 나스닥은 0.73% 하락했습니다. 시장의 핵심은 이란 리스크 고조에 따른 유가 급등과 기술주 하락이었습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.142,
+      "speechEndSec": 73.913,
+      "endSec": 73.913,
+      "speechDurationSec": 51.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 442,
+      "text": "이란 분쟁이 5주차에 접어들고 후티 반군까지 개입하면서 지정학적 리스크가 최고조에 달했습니다. 이로 인해 서부 텍사스산 원유는 5% 넘게 급등해 배럴당 105달러 선을 돌파했고, 브렌트유는 112달러 선까지 치솟았습니다. 전 세계 원유 공급의 동맥인 호르무즈 해협과 바브엘만데브 해협이 동시에 위협받게 된 것입니다. 이 유가 급등은 시장을 둘로 갈랐습니다. 엑손모빌, 셰브론 같은 에너지 기업들은 강세를 보이며 다우 지수를 방어했지만, 인플레이션과 금리 인상 우려에 기술주는 직격탄을 맞았습니다. 특히 반도체주의 하락이 두드러졌는데, 마이크론은 9% 가까이 폭락했고 인텔은 4%, AMD는 2.8% 하락했습니다. 여기에 3월 소비자신뢰지수가 예상치를 밑도는 88로 나오며 경기 둔화 우려를 더했지만, 파월 의장이 에너지 충격은 일시적일 수 있다고 언급하며 시장의 전면적인 패닉을 막았습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 73.913,
+      "speechEndSec": 76.124,
+      "endSec": 76.124,
+      "speechDurationSec": 2.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

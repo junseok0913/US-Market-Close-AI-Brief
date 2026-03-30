@@ -1,0 +1,230 @@
+{
+  "date": "20260331",
+  "lang": "ko",
+  "title": "유가 5% 폭등, 반도체 9% 폭락! 다우만 오른 이유",
+  "hook": "유가는 5% 폭등, 반도체는 9% 폭락. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 76.124,
+  "audioFile": "shorts20260330.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.091,
+      "eyebrow": "3월 31일 미국 증시",
+      "headline": "유가 5% 폭등, 반도체 9% 폭락!",
+      "subheadline": "엇갈린 시장, 대체 무슨 일이?",
+      "body": "유가는 5% 폭등, 반도체는 9% 폭락. 대체 무슨 일이 있었을까요.",
+      "bullets": [
+        "유가는 5% 폭등, 반도체는 9% 폭락.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "MU",
+        "INTC"
+      ],
+      "highlights": [
+        "5%",
+        "9%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.091,
+      "endSec": 22.142,
+      "eyebrow": "시장 지표",
+      "headline": "기술주 하락, 다우만 나홀로 상승",
+      "subheadline": "나스닥 -0.73% | S&P 500 -0.39%",
+      "body": "미국 증시는 혼조세로 마감했습니다. 유가 급등이 기술주에 부담으로 작용했습니다.",
+      "bullets": [
+        "다우 +0.11%",
+        "S&P 500 -0.39%"
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "XOM"
+      ],
+      "highlights": [
+        "다우 +0.11%",
+        "나스닥 -0.73%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 22.142,
+      "endSec": 73.913,
+      "eyebrow": "핵심 원인",
+      "headline": "이란 리스크, 시장을 가르다",
+      "subheadline": "지정학적 리스크가 유가 급등을 촉발하며 시장이 둘로 나뉘었습니다.",
+      "body": "이란 분쟁이 5주차에 접어들고 후티 반군까지 개입하면서 지정학적 리스크가 최고조에 달했습니다. 이로 인해 서부 텍사스산 원유는 5% 넘게 급등해 배럴당 105달러 선을 돌파했고, 브렌트유는 112달러 선까지 치솟았습니다. 전 세계 원유 공급의 동맥인 호르무즈 해협과 바브엘만데브 해협이 동시에 위협받게 된 것입니다. 이 유가 급등은 시장을 둘로 갈랐습니다. 엑손모빌, 셰브론 같은 에너지 기업들은 강세를 보이며 다우 지수를 방어…",
+      "bullets": [
+        "유가 급등 → 에너지주(XOM, CVX) 강세",
+        "인플레 우려 → 기술주(MU, INTC) 급락"
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "MU",
+        "INTC"
+      ],
+      "highlights": [
+        "WTI 유가 > $105",
+        "마이크론(MU) -9%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 73.913,
+      "endSec": 76.124,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 찾아오는 미국 증시 마감 시황",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "MU",
+        "INTC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.091,
+      "text": "유가는 5% 폭등, 반도체는 9% 폭락. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.091,
+      "endSec": 22.142,
+      "text": "3월 31일 미국 증시는 혼조세로 마감했습니다. 다우는 0.11% 소폭 상승했지만, S&P 500은 0.39%, 기술주 중심의 나스닥은 0.73% 하락했습니다. 시장의 핵심은 이란 리스크 고조에 따른 유가 급등과 기술주 하락이었습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 22.142,
+      "endSec": 73.913,
+      "text": "이란 분쟁이 5주차에 접어들고 후티 반군까지 개입하면서 지정학적 리스크가 최고조에 달했습니다. 이로 인해 서부 텍사스산 원유는 5% 넘게 급등해 배럴당 105달러 선을 돌파했고, 브렌트유는 112달러 선까지 치솟았습니다. 전 세계 원유 공급의 동맥인 호르무즈 해협과 바브엘만데브 해협이…"
+    },
+    {
+      "id": 3,
+      "startSec": 73.913,
+      "endSec": 76.124,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "article",
+      "label": "The 2 reasons oil prices are surging as the Iran War en…",
+      "detail": "id#63579686d91a2de2"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "BZ=F",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow rises, S&P 500 and Nasdaq slip…",
+      "detail": "id#9b82c466009222e2"
+    },
+    {
+      "type": "chart",
+      "label": "MU",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "INTC",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "AMD",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "event",
+      "label": "CB Consumer Confidence",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "event",
+      "label": "Fed Chair Powell speech",
+      "detail": "2026-03-30"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "이란 리스크로 유가 5% 이상 급등",
+      "기술주, 특히 반도체주 급락 (마이크론 -9%)",
+      "에너지주 강세로 다우 지수만 소폭 상승",
+      "소비자신뢰지수 악화 속 파월 의장의 완화적 발언"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XOM",
+        "label": "엑손모빌",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "MU",
+        "label": "마이크론",
+        "tag": "9%대 폭락"
+      },
+      {
+        "ticker": "INTC",
+        "label": "인텔",
+        "tag": "반도체 약세"
+      },
+      {
+        "ticker": "CVX",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "AMD",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

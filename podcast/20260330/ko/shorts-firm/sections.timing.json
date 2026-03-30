@@ -1,0 +1,67 @@
+{
+  "date": "20260330",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260330.mp3",
+  "sectionOrder": [
+    "panw",
+    "mu",
+    "intc",
+    "nvda"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 63.204,
+  "sections": [
+    {
+      "id": 0,
+      "name": "panw",
+      "ticker": "PANW",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 26.691,
+      "endSec": 26.691,
+      "speechDurationSec": 26.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 233,
+      "text": "이란발 지정학적 리스크가 유가를 끌어올리며 시장의 희비가 엇갈렸습니다. 팔로알토 네트웍스는 장중 급등 후 상승분을 일부 반납하며 1.57% 상승 마감했습니다. AI 시대의 '사이버 보안 운영체제'로 진화한다는 강력한 성장 스토리가 주가를 끌어올렸습니다. 하지만 마이크로소프트와의 경쟁 심화 우려, 그리고 영업이익의 95%에 달하는 막대한 주식 보상 비용 등 재무 건전성에 대한 의문이 제기되며 상승폭이 제한되었습니다."
+    },
+    {
+      "id": 1,
+      "name": "mu",
+      "ticker": "MU",
+      "kind": "company",
+      "startSec": 26.691,
+      "speechEndSec": 44.782,
+      "endSec": 44.782,
+      "speechDurationSec": 18.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 165,
+      "text": "마이크론 테크놀로지는 오늘 9% 가까이 급락했습니다. 유가 급등으로 인한 인플레이션 우려가 기술주 전반의 투자 심리를 위축시킨 가운데, 지난주 구글이 발표한 새로운 메모리 절감 알고리즘이 향후 칩 수요 감소와 가격 하락으로 이어질 수 있다는 섹터 내부의 악재가 겹치며 주가를 크게 끌어내렸습니다."
+    },
+    {
+      "id": 2,
+      "name": "intc",
+      "ticker": "INTC",
+      "kind": "company",
+      "startSec": 44.782,
+      "speechEndSec": 56.473,
+      "endSec": 56.473,
+      "speechDurationSec": 11.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 96,
+      "text": "인텔 역시 4% 넘게 하락하며 부진한 모습을 보였습니다. 앞서 말씀드린 반도체 섹터 전반을 짓누른 거시 경제 불확실성과 기술적 우려가 주가에 동일하게 부담으로 작용했습니다."
+    },
+    {
+      "id": 3,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 56.473,
+      "speechEndSec": 63.204,
+      "endSec": 63.204,
+      "speechDurationSec": 6.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 58,
+      "text": "엔비디아 역시 반도체 섹터 약세 흐름을 피하지 못하고 1.4% 하락했습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
