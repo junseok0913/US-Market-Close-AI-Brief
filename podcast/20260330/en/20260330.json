@@ -1,0 +1,758 @@
+{
+  "date": "20260330",
+  "nutshell": "Oil surges and tech stocks fall on heightened Iran risk.",
+  "user_tickers": [
+    "PANW"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the March 31st closing bell briefing. We saw a mixed session today, with the major indices heading in different directions.",
+      "sources": [],
+      "time": [
+        0,
+        8211
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up by surging oil prices on heightened Iran risk and a subsequent drop in tech stocks. The Dow Jones Industrial Average edged up a slight 0.11% to close at 45,216.14, but the S&P 500 fell 0.39% to 6,343.72. The tech-heavy Nasdaq Composite was hit particularly hard, dropping 0.73% to finish at 20,794.64. The main weight on the market was escalating geopolitical tensions in the Middle East, which sent West Texas Intermediate crude soaring over 5% to surpass $105 a barrel, reigniting inflation concerns.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ],
+      "time": [
+        8711,
+        51602
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It's interesting that the Dow was the only index to rise while the oil surge weighed on the broader market. Why were tech stocks particularly weak?",
+      "sources": [],
+      "time": [
+        52102,
+        60913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Well, rising oil prices increase costs and inflationary pressures, which negatively impacts corporate earnings and consumer sentiment. Tech stocks, whose valuations are heavily based on future growth expectations, tend to be more sensitive to the possibility of inflation and higher interest rates. In today's session, semiconductor stocks fell sharply, leading the Nasdaq's decline. The Dow, on the other hand, includes energy companies that benefit from higher oil prices and has a larger weighting of traditional value stocks, which helped it fare relatively well.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        }
+      ],
+      "time": [
+        61413,
+        93264
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, geopolitical risk drove up oil, which in turn dampened investor sentiment for tech. What was the key theme moving the market today?",
+      "sources": [],
+      "time": [
+        93764,
+        103175
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, that's exactly it. The biggest factor was the oil price surge driven by geopolitical risk out of Iran, and that led to the weakness in tech and the mixed market overall.",
+      "sources": [],
+      "time": [
+        103675,
+        114486
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's dig into that geopolitical risk from Iran first. We're hearing that as the conflict with the U.S. enters its fifth week, oil prices have topped $100 a barrel for the first time since 2022.",
+      "sources": [],
+      "time": [
+        115486,
+        129177
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "That's right, all eyes are back on the Middle East. Today, WTI crude crossed the $102 a barrel mark, and Brent, the international benchmark, soared to around $112. This isn't just a continuation of the Iran risk; it's a new phase, as Iran-backed Houthi rebels have now fully entered the conflict. This has created a double-pressure situation, threatening not only the already disrupted Strait of Hormuz but also the Bab el-Mandeb strait, which is Saudi Arabia's alternative export route. These supply shock fears dragged the S&P 500 and Nasdaq down by over 0.4% and 0.7%, respectively. In contrast, the Dow Jones Industrial Average managed a slight gain, buoyed by strong performance in energy stocks. We saw some flight to safety, but in a complex move amid Fed policy uncertainty, the 10-year Treasury yield actually fell.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#63579686d91a2de2",
+          "title": "The 2 reasons oil prices are surging as the Iran War enters its 5th week"
+        },
+        {
+          "type": "article",
+          "pk": "id#b5fef308168b0860",
+          "title": "Oil Gains as Iran War Escalates With Houthi Attacks on Israel"
+        },
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ],
+      "time": [
+        129677,
+        180888
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So we have two key shipping lanes, the Strait of Hormuz and now the Bab el-Mandeb strait, under threat simultaneously. What are the specific ripple effects we should be concerned about?",
+      "sources": [],
+      "time": [
+        181388,
+        192719
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "These two straits are essentially the arteries of global oil supply. The blockade of the Strait of Hormuz already cut off about 15 million barrels per day. Now, the Red Sea port of Yanbu, which Saudi Arabia was using to bypass it, and its exit at the Bab el-Mandeb strait are within range of Houthi rebels. This raises the possibility of an additional supply disruption of 7 million barrels per day. Because of this, the energy sector was the only winner in the market today. Shares of major energy companies like ExxonMobil and Chevron all rose, propping up the Dow. The tech sector, on the other hand, took a direct hit, with semiconductor stocks seeing the most significant declines. That's because the oil surge fuels inflation, which in turn leads to pressure for rate hikes, weighing on growth-sensitive tech stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#63579686d91a2de2",
+          "title": "The 2 reasons oil prices are surging as the Iran War enters its 5th week"
+        },
+        {
+          "type": "article",
+          "pk": "id#9b82c466009222e2",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq slip as chip stocks tank, oil surges"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ],
+      "time": [
+        193219,
+        240470
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "How might this oil shock affect the real economy and the Fed's monetary policy? We did get some relevant data on that today.",
+      "sources": [],
+      "time": [
+        240970,
+        249341
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, and the timing wasn't great. The Conference Board's Consumer Confidence Index for March came in at 88, below expectations, showing that consumer sentiment is already weakening. On top of that, an analysis showed that Americans spent an extra $8 billion on gasoline over the past month. The oil surge in this context further erodes household purchasing power, fueling concerns of an economic slowdown. What's interesting were the comments from Fed Chair Jerome Powell. He mentioned that energy price shocks tend to be temporary, so the Fed tends to 'look through' them. This statement helped ease some of the market's rate hike fears, leading to the unusual phenomenon of Treasury yields falling despite the inflation scare. It seems the market is starting to focus more on the potential for a recession caused by the oil shock than on the immediate inflation itself.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "418452",
+          "title": "CB Consumer Confidence",
+          "date": "2026-03-31"
+        },
+        {
+          "type": "article",
+          "pk": "id#23593d95cf41fc65",
+          "title": "Americans have spent an extra $8 billion in gasoline since the start of Iran war"
+        },
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#4077f673bc61b027",
+          "title": "Stock market bulls, don't forget this one: Oil price shocks usually lead to a recession"
+        }
+      ],
+      "time": [
+        249841,
+        299852
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "I see. So the oil surge is fueling both inflation and recession fears at the same time. What should the market be watching for going forward?",
+      "sources": [],
+      "time": [
+        300352,
+        309562
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "In the short term, the March jobs report coming out this Friday is critical. If the labor market proves to be resilient, it could alleviate some recession fears. But if wage growth also comes in hot, it could heighten concerns about stagflation—the worst-case scenario of slowing growth and rising prices. Also, this situation is spreading to other commodity markets. News over the weekend that Iran attacked aluminum smelters in the Gulf region sent aluminum futures surging. Ultimately, market volatility will likely depend on whether military tensions surrounding Iran de-escalate and whether a real blockade of the two key straits materializes. Some are even putting out extreme forecasts that oil could reach $200 a barrel if this situation drags on, so investor caution is likely to remain high for the time being.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "article",
+          "pk": "id#10c358f6c1257f8d",
+          "title": "Iran’s Attacks on Gulf Aluminum Plants Threaten Supply Crisis"
+        },
+        {
+          "type": "article",
+          "pk": "id#b5fef308168b0860",
+          "title": "Oil Gains as Iran War Escalates With Houthi Attacks on Israel"
+        },
+        {
+          "type": "article",
+          "pk": "id#c6bedb0aa761c897",
+          "title": "Trump Warns Iran of Escalation as US Troops Arrive in Region"
+        }
+      ],
+      "time": [
+        310062,
+        354753
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "And that cautious sentiment was clearly reflected in the market, leading to the mixed session you mentioned, with the Dow and Nasdaq moving in opposite directions. Let's take a closer look at the performance by index and sector.",
+      "sources": [],
+      "time": [
+        355253,
+        368344
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, the single variable that dominated everything today was geopolitical tension in the Middle East. The decisive factor was that as the conflict with Iran entered its fifth week, Yemen's Houthi rebels, backed by Iran, officially entered the fray by launching missiles at Israel. This development threatened the safety of another key maritime chokepoint, the Bab el-Mandeb strait, in addition to the existing blockade of the Strait of Hormuz, sending a wave of fear through oil supply chains. As a result, WTI crude closed above $102 a barrel for the first time since 2022, and Brent crude also topped $112. This oil surge directly hit the tech-heavy Nasdaq, causing it to fall over 0.7%, while the Dow Jones Industrial Average showed a stark contrast, finishing slightly higher thanks to the strength in energy stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#63579686d91a2de2",
+          "title": "The 2 reasons oil prices are surging as the Iran War enters its 5th week"
+        },
+        {
+          "type": "article",
+          "pk": "id#b5fef308168b0860",
+          "title": "Oil Gains as Iran War Escalates With Houthi Attacks on Israel"
+        },
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ],
+      "time": [
+        368844,
+        417415
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Within the tech sector, the semiconductor space was hit particularly hard. Was there a specific reason for that?",
+      "sources": [],
+      "time": [
+        417915,
+        424446
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's right. Chip stocks faced a double whammy of macroeconomic uncertainty and sector-specific headwinds. First, the inflation and rate hike concerns from the oil surge increase the discount rate on future earnings, which puts more pressure on high-growth tech stocks like semiconductors. On top of that, the fallout from Google's announcement last week of a new algorithm that reduces the amount of memory needed to run its AI models continued today. Concerns that this technology could alleviate chip shortages and lead to price declines weighed on investor sentiment. In fact, Micron's stock fell nearly 9%, Intel dropped 4%, and Nvidia and AMD were also down over 1% and 2.8% respectively, leading the index lower.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#9b82c466009222e2",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq slip as chip stocks tank, oil surges"
+        },
+        {
+          "type": "chart",
+          "ticker": "MU",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMD",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ],
+      "time": [
+        424946,
+        468437
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "On the flip side, I assume it was the energy-related companies that propped up the Dow.",
+      "sources": [],
+      "time": [
+        468937,
+        474388
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, that's exactly right. The oil surge was a headwind for one part of the market but a clear tailwind for another. Not only the energy companies in the Dow, but the entire S&P 500 energy sector showed strength, supporting the broader index. The fallout from the conflict also spread to other commodity markets. News over the weekend that Iran had struck aluminum plants in the UAE and Bahrain sent aluminum futures up over 4%, and shares of related companies like Alcoa also rallied. Additionally, Fed Chair Jerome Powell's reaffirmation that the Fed would watch and see, noting that energy shocks can be temporary, helped prevent a full-blown market panic.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#9b82c466009222e2",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq slip as chip stocks tank, oil surges"
+        },
+        {
+          "type": "chart",
+          "ticker": "AA",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "event",
+          "id": "419608",
+          "title": "Fed Chair Powell speech",
+          "date": "2026-03-30"
+        }
+      ],
+      "time": [
+        474888,
+        514739
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, what variables will the market be focused on going forward?",
+      "sources": [],
+      "time": [
+        515239,
+        519210
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "In the short term, all eyes will inevitably be fixed on the geopolitical situation in the Middle East. Some investment banks are even presenting extreme scenarios where oil could spike to $200 a barrel if the conflict continues into the summer, so tensions are high. On the economic data front, this week's employment data will be crucial. Starting with the JOLTS job openings report released today, the week culminates with the March jobs report on Friday, when the market is closed. It will be a key week for gauging how the Fed will strike a policy balance between the oil shock and the state of the labor market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1cedef57bb892148",
+          "title": "Stock market today: Dow rises, S&P 500 and Nasdaq drop as chip stocks slide, US crude oil surges above $100"
+        },
+        {
+          "type": "article",
+          "pk": "id#63579686d91a2de2",
+          "title": "The 2 reasons oil prices are surging as the Iran War enters its 5th week"
+        },
+        {
+          "type": "event",
+          "id": "398798",
+          "title": "JOLTS Job Openings",
+          "date": "2026-03-31"
+        },
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        }
+      ],
+      "time": [
+        519710,
+        551561
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Amid these complex market conditions, let's take a look at some of the stocks that captured investors' attention. The first is Palo Alto Networks. The stock surged today, at one point trading above $159, but it gave back some of those gains to close up 1.57% at $154.33. Why did the early momentum fade?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "PANW",
+          "start_date": "2026-03-30",
+          "end_date": "2026-03-30"
+        }
+      ],
+      "time": [
+        552561,
+        575812
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, today's volatility shows a direct clash between the hopes and concerns surrounding Palo Alto Networks. On the positive side, a powerful narrative that the company is evolving beyond a simple security firm into the 'cybersecurity operating system' for the AI era drove the stock higher. The recent acquisitions of CyberArk and Chronosphere are seen as completing an integrated platform that spans from network and cloud to identity and observability, which seems to have excited investors. The fact that over 81% of total revenue comes from recurring subscription and support services, with next-gen security annual recurring revenue reaching $6.3 billion, suggests this platform strategy is successfully taking hold.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PANW",
+          "form": "10-Q",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001327567-26-000005"
+        }
+      ],
+      "time": [
+        576312,
+        625883
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "The growth story is certainly compelling. But the fact that the stock pulled back from its intraday high could be a sign that the market is starting to see another side of the story. What risk factors are coming into focus?",
+      "sources": [],
+      "time": [
+        626383,
+        639354
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The biggest concern is intensifying competition from big tech. Specifically, if companies like Microsoft leverage their vast resources to integrate security features into their existing platforms and offer them at nearly free prices—a so-called 'bundling' strategy—it could directly threaten Palo Alto's pricing power and market share. There's also significant risk embedded in the company's financial structure. According to its filings, the company has non-cancellable purchase commitments of about $6.8 billion for things like cloud hosting services, which means it's locked into massive fixed costs for years to come. If revenue growth falls short of expectations due to an economic slowdown, this fixed-cost burden could become a trigger that rapidly deteriorates profit margins.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PANW",
+          "form": "10-Q",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001327567-26-000005"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "PANW",
+          "form": "10-K",
+          "filed_date": "2025-08-29",
+          "accession_number": "0001327567-25-000027"
+        }
+      ],
+      "time": [
+        639854,
+        685985
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "A $6.8 billion fixed-cost commitment could certainly be a burden. The top-line growth metrics look solid, but are there other concerns about the quality of its financials?",
+      "sources": [],
+      "time": [
+        686485,
+        697416
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's a very important point. While it's true that operating income for the first half of the fiscal year surged 34% to $706 million, we need to look closer. Stock-based compensation expense for the same period was $671 million, which is 95% of the operating income. This can be interpreted to mean that most of the profit is being paid out to employees in a way that dilutes the value for existing shareholders. Furthermore, the company spent about $2.6 billion in cash on acquisitions in the first half alone, which exceeds the cash generated from its operations. This is a sign that it's buying growth through acquisitions rather than generating it organically, which brings the financial burden of future integration failure risks and potential goodwill write-downs.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PANW",
+          "form": "10-Q",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001327567-26-000005"
+        }
+      ],
+      "time": [
+        697916,
+        743167
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So to summarize, on one hand, you have the rosy outlook of a successful transition to an AI platform company, and on the other, you have realistic concerns about shareholder dilution, financial inflexibility, and the threat from a massive competitor.",
+      "sources": [],
+      "time": [
+        743667,
+        759078
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Exactly. The market is enthusiastic about the future vision of becoming the 'operating system for cybersecurity,' but the scale of the risks the company is taking to achieve that vision appears to be substantial. There are suggestions that multi-layered risk factors—such as profit dilution through excessive stock compensation, a massive fixed-cost structure that could be a burden in a downturn, and the existential threat of Microsoft's bundling strategy—may not be fully reflected in the current stock price. Therefore, this seems to be a time for a cautious approach, carefully examining the specific risks hidden behind the impressive growth narrative.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "PANW",
+          "form": "10-Q",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001327567-26-000005"
+        }
+      ],
+      "time": [
+        759578,
+        797589
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Well, the final trading day of March and the first quarter has come to a close. If you could sum up today's market action in one sentence, what would it be?",
+      "sources": [],
+      "time": [
+        798589,
+        807800
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "In a word, it was a day for the market to catch its breath. After a strong run-up in the first quarter, we saw some profit-taking moves as the quarter came to an end. At the same time, with uncertainty still lingering over the Fed's rate cut path, investors took a cautious stance, preferring to wait and see upcoming economic data before making any big moves. Essentially, the market has entered a wait-and-see mode, looking for direction ahead of key data like next week's jobs report.",
+      "sources": [],
+      "time": [
+        808300,
+        836951
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. As we head into a new quarter next week, what are the main economic events investors should be watching?",
+      "sources": [],
+      "time": [
+        837451,
+        844822
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "As the second quarter officially kicks off, we have a series of highly anticipated data releases. First, on Wednesday, April 1st, we'll get the ADP private employment report and the ISM Manufacturing PMI in the morning. The ADP report serves as a preview for the official jobs report, giving us an early read on the labor market's temperature. The ISM Manufacturing PMI will be a crucial barometer for judging whether the manufacturing sector, a cornerstone of the U.S. economy, is continuing to expand or is starting to slow down.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395421",
+          "title": "adp employment change",
+          "date": "2026-04-01"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ism manufacturing pmi",
+          "date": "2026-04-01"
+        }
+      ],
+      "time": [
+        845322,
+        880653
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So we have important data starting Wednesday. But I imagine the market's main focus will be on the jobs report later in the week.",
+      "sources": [],
+      "time": [
+        881153,
+        888804
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's right. The highlight of the week is undoubtedly the March non-farm payrolls and unemployment rate, set to be released on the morning of Friday, April 3rd. Considering that the Fed's two main pillars for rate decisions are inflation and employment, the importance of this jobs report cannot be overstated. The market will be looking for clues about the Fed's next move by watching how many new jobs were created and whether the unemployment rate remains at a low level. The wage growth data, in particular, is directly linked to inflationary pressures, so it's essential to examine the details closely.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "non farm payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "unemployment rate",
+          "date": "2026-04-03"
+        }
+      ],
+      "time": [
+        889304,
+        924514
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Do you have any final thoughts for investors as we begin a new quarter?",
+      "sources": [],
+      "time": [
+        925014,
+        929105
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market showed surprising strength in the first quarter, delivering good returns for many investors. However, it's important to remember that with market expectations now elevated, volatility could increase if upcoming economic data fails to meet those expectations. The employment-related data out this week, in particular, is a powerful variable that could instantly shift the market's outlook on Fed policy. Therefore, rather than reacting emotionally to each data point, this is a time when it's wise to calmly analyze the broader economic direction and formulate a prudent investment strategy.",
+      "sources": [],
+      "time": [
+        929605,
+        961896
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Thank you for that reminder about the need for a cautious approach. That concludes our March 31st closing bell briefing. We'll be back tomorrow with more market insights. Thank you.",
+      "sources": [],
+      "time": [
+        962396,
+        973847
+      ]
+    }
+  ]
+}
