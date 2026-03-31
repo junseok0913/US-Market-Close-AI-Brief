@@ -1,0 +1,225 @@
+{
+  "date": "20260401",
+  "lang": "ko",
+  "title": "유가 3% 폭락, 나스닥 3.8% 폭등! AI가 시장을 구했다",
+  "hook": "유가가 3% 넘게 폭락하자 나스닥은 3.8% 폭등했습니다.",
+  "durationSeconds": 69.044,
+  "audioFile": "shorts20260331.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.611,
+      "eyebrow": "2026년 4월 1일",
+      "headline": "유가 폭락, 나스닥 폭등",
+      "subheadline": "유가 3% 폭락에 나스닥은 3.8% 폭등했습니다.",
+      "body": "유가가 3% 넘게 폭락하자 나스닥은 3.8% 폭등했습니다.",
+      "bullets": [
+        "유가가 3% 넘게 폭락하자 나스닥은 3.8% 폭등했습니다."
+      ],
+      "tickers": [
+        "CLF",
+        "^IXIC",
+        "NVDA",
+        "MRVL"
+      ],
+      "highlights": [
+        "3%",
+        "3.8%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 4.611,
+      "endSec": 21.222,
+      "eyebrow": "시장 요약",
+      "headline": "3대 지수 전방위 랠리",
+      "subheadline": "나스닥 +3.8% | S&P 500 +2.9% | 다우 +2.5%",
+      "body": "지정학적 긴장 완화 기대감에 유가가 급락하며 증시는 강한 랠리를 펼쳤습니다.",
+      "bullets": [
+        "4월 1일 미국 증시는 지정학적 긴장 완화 기대감에 유가가 급락하며 전방위적 랠리를 펼쳤습니다.",
+        "다우존스는 2.5% 급등하며 1125포인트 이상 올랐고, S&P 500은 2.9%, 기술주 중심의 나스닥은 3.8% 넘게 폭등했습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "나스닥 +3.8%",
+        "S&P 500 +2.9%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 21.222,
+      "endSec": 66.953,
+      "eyebrow": "핵심 동력",
+      "headline": "AI가 시장을 구했다",
+      "subheadline": "유가 하락과 AI 투자 열기가 랠리를 이끌었습니다.",
+      "body": "시장을 움직인 첫 번째 동력은 지정학적 리스크 완화입니다. 미국과 이란 양측에서 유화적인 신호가 나오자 전쟁 공포가 줄었고, 서부 텍사스산 원유는 2% 넘게, 브렌트유는 3% 이상 급락했습니다. 유가 안정 기대감에 3월 소비자신뢰지수도 91.8로 예상을 웃돌며 소비 심리가 견조함을 보여줬습니다. 두 번째 동력은 AI 투자 열기였습니다. 엔비디아가 지원하는 AI 데이터센터 기업 코어위브가 85억 달러 자금 조달에 성공했다는 소…",
+      "bullets": [
+        "지정학적 리스크 완화 → 유가 3%대 급락",
+        "AI 데이터센터 투자 붐 → NVDA 5%, MRVL 7% 급등"
+      ],
+      "tickers": [
+        "NVDA",
+        "MRVL",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "3%",
+        "5%",
+        "7%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 66.953,
+      "endSec": 69.044,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 찾아오는 미국 증시 마감 정보",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "MRVL",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.611,
+      "text": "유가가 3% 넘게 폭락하자 나스닥은 3.8% 폭등했습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 4.611,
+      "endSec": 21.222,
+      "text": "4월 1일 미국 증시는 지정학적 긴장 완화 기대감에 유가가 급락하며 전방위적 랠리를 펼쳤습니다. 다우존스는 2.5% 급등하며 1125포인트 이상 올랐고, S&P 500은 2.9%, 기술주 중심의 나스닥은 3.8% 넘게 폭등했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 21.222,
+      "endSec": 66.953,
+      "text": "시장을 움직인 첫 번째 동력은 지정학적 리스크 완화입니다. 미국과 이란 양측에서 유화적인 신호가 나오자 전쟁 공포가 줄었고, 서부 텍사스산 원유는 2% 넘게, 브렌트유는 3% 이상 급락했습니다. 유가 안정 기대감에 3월 소비자신뢰지수도 91.8로 예상을 웃돌며 소비 심리가 견조함을 보…"
+    },
+    {
+      "id": 3,
+      "startSec": 66.953,
+      "endSec": 69.044,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "article",
+      "label": "Stock market today: Dow surges 1,000 points, S&P 500 an…",
+      "detail": "a3e2e2a3381155ad"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-01"
+    },
+    {
+      "type": "chart",
+      "label": "BZ=F",
+      "detail": "2026-04-01"
+    },
+    {
+      "type": "event",
+      "label": "CB Consumer Confidence",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "article",
+      "label": "CoreWeave stock jumps 9% after company secures $8.5 bil…",
+      "detail": "26ca0c9b08121326"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-03-31"
+    },
+    {
+      "type": "article",
+      "label": "Nvidia invests $2 billion in Marvell, launches AI partn…",
+      "detail": "525f34d503ce1861"
+    },
+    {
+      "type": "chart",
+      "label": "MRVL",
+      "detail": "2026-03-31"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 2.5% 이상 급등",
+      "지정학적 리스크 완화로 유가 3%대 급락",
+      "AI 기업 코어위브 85억 달러 자금 조달",
+      "엔비디아 5%, 마벨 7% 급등"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "AI 랠리 주도"
+      },
+      {
+        "ticker": "MRVL",
+        "label": "마벨 테크놀로지",
+        "tag": "NVDA 투자 유치"
+      },
+      {
+        "ticker": "AMD",
+        "label": "AMD",
+        "tag": "AI 관련주"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

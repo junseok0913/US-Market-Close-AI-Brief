@@ -1,0 +1,53 @@
+{
+  "date": "20260331",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260331.mp3",
+  "sectionOrder": [
+    "nvda",
+    "mrvl",
+    "scco"
+  ],
+  "ttsCallCount": 3,
+  "totalDurationSeconds": 83.113,
+  "sections": [
+    {
+      "id": 0,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 30.731,
+      "endSec": 30.731,
+      "speechDurationSec": 30.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 265,
+      "text": "AI 인프라 투자 열기가 엔비디아를 다시 한번 끌어올렸습니다. 엔비디아가 5.59% 급등했습니다. 직접적인 뉴스는 아니었지만, 엔비디아가 지원하는 AI 데이터센터 기업 코어위브가 85억 달러 자금 조달에 성공한 것이 결정적이었습니다. 특히 이번 투자는 코어위브가 보유한 엔비디아 GPU를 담보로 이뤄졌는데요. 이는 AI 연산의 핵심인 GPU 자체가 우량 담보물로 인정받기 시작했다는 의미이며, 엔비디아의 독보적인 시장 지배력에 대한 강력한 신뢰를 보여준 상징적인 사건입니다."
+    },
+    {
+      "id": 1,
+      "name": "mrvl",
+      "ticker": "MRVL",
+      "kind": "company",
+      "startSec": 30.731,
+      "speechEndSec": 54.422,
+      "endSec": 54.422,
+      "speechDurationSec": 23.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 205,
+      "text": "마벨 테크놀로지는 무려 12.80% 폭등했습니다. 엔비디아가 마벨에 20억 달러를 투자하고 AI 파트너십을 체결했다는 소식이 주가를 밀어 올렸습니다. 이는 엔비디아가 단순히 칩을 판매하는 것을 넘어, 자사 기술을 중심으로 한 거대한 AI 동맹을 구축하고 있음을 보여주는 대목입니다. AI 생태계가 더욱 공고해지고 있다는 기대감이 투자 심리를 자극한 것으로 풀이됩니다."
+    },
+    {
+      "id": 2,
+      "name": "scco",
+      "ticker": "SCCO",
+      "kind": "company",
+      "startSec": 54.422,
+      "speechEndSec": 83.113,
+      "endSec": 83.113,
+      "speechDurationSec": 28.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 238,
+      "text": "서던 코퍼는 8.02% 급등하며 시장의 주목을 받았습니다. AI 데이터센터와 전기차 확산에 필수적인 구리 수요가 폭증할 것이란 기대감 때문입니다. 시장은 서던 코퍼를 '디지털 시대의 원유' 공급자로 재평가하기 시작했습니다. 하지만 사업장이 페루와 멕시코에 집중돼 있어 극심한 정치적 리스크라는 약점도 명확합니다. 세계 최고 수준의 원가 경쟁력과 통제 불가능한 지정학적 리스크가 공존하는 상황입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

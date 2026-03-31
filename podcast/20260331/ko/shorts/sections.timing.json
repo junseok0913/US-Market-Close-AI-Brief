@@ -1,0 +1,58 @@
+{
+  "date": "20260331",
+  "lang": "ko",
+  "audioFile": "shorts20260331.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 69.044,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.611,
+      "endSec": 4.611,
+      "speechDurationSec": 4.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 32,
+      "text": "유가가 3% 넘게 폭락하자 나스닥은 3.8% 폭등했습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.611,
+      "speechEndSec": 21.222,
+      "endSec": 21.222,
+      "speechDurationSec": 16.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 129,
+      "text": "4월 1일 미국 증시는 지정학적 긴장 완화 기대감에 유가가 급락하며 전방위적 랠리를 펼쳤습니다. 다우존스는 2.5% 급등하며 1125포인트 이상 올랐고, S&P 500은 2.9%, 기술주 중심의 나스닥은 3.8% 넘게 폭등했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 21.222,
+      "speechEndSec": 66.953,
+      "endSec": 66.953,
+      "speechDurationSec": 45.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 376,
+      "text": "시장을 움직인 첫 번째 동력은 지정학적 리스크 완화입니다. 미국과 이란 양측에서 유화적인 신호가 나오자 전쟁 공포가 줄었고, 서부 텍사스산 원유는 2% 넘게, 브렌트유는 3% 이상 급락했습니다. 유가 안정 기대감에 3월 소비자신뢰지수도 91.8로 예상을 웃돌며 소비 심리가 견조함을 보여줬습니다. 두 번째 동력은 AI 투자 열기였습니다. 엔비디아가 지원하는 AI 데이터센터 기업 코어위브가 85억 달러 자금 조달에 성공했다는 소식이 기술주 랠리의 기폭제가 됐습니다. 이 소식에 엔비디아는 5% 넘게 급등했고, 엔비디아로부터 20억 달러 투자를 유치한 마벨 테크놀로지는 7% 넘게 폭등했습니다. 유가 하락이라는 거시적 호재 위에서 AI라는 성장 스토리가 펼쳐진 하루였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 66.953,
+      "speechEndSec": 69.044,
+      "endSec": 69.044,
+      "speechDurationSec": 2.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
