@@ -1,0 +1,569 @@
+{
+  "date": "20260331",
+  "nutshell": "Stocks surge and oil prices plunge on hopes of easing geopolitical tensions.",
+  "user_tickers": [
+    "SCCO"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is your April 1st market close briefing. All the major indexes surged today, showing a strong rebound.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up as: 'Stocks surge and oil prices plunge on hopes of easing geopolitical tensions.' The Dow Jones Industrial Average jumped 2.5%, adding over 1,125 points, and the S&P 500 gained 2.9%. The tech-heavy Nasdaq Composite was the standout, soaring over 3.8%. Growing optimism that geopolitical risks related to Iran might be easing caused international oil prices to fall, which in turn became the catalyst that significantly revived investor sentiment.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the news out of Iran had a huge impact on the market. Was there a specific reason why tech stocks were particularly strong?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. Amid the broader market relief rally, tech stocks got an extra boost from their own positive news, which amplified their gains. Specifically, positive developments in AI infrastructure played a key role. News that CoreWeave, an AI cloud platform, successfully secured a massive funding round proved that investor appetite in this space is still red-hot. This news sent Nvidia's stock surging more than 5% and energized related tech stocks, leading the Nasdaq's strong performance.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "26ca0c9b08121326",
+          "title": "CoreWeave stock jumps 9% after company secures $8.5 billion GPU-backed loan"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So could you break down the key drivers that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, two main currents drove the market today. First was the broad relief rally fueled by hopes of easing geopolitical risks from Iran. And second was the surge in AI-related tech stocks, powered by that major funding news. We'll dive into each of these in more detail shortly.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "As you mentioned, easing geopolitical tensions sparked a relief rally. What specific news changed the market's mood so dramatically in just one day?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the decisive factor today was that conciliatory signals came from both the U.S. and Iran simultaneously, which greatly eased the fears of war that had been weighing on the market. The U.S. President hinted at a more flexible stance, suggesting the war could end without regaining full control of the Strait of Hormuz. Following that, the Iranian President also stated his willingness to end the war through negotiations. This spread a sense of relief that a worst-case scenario had been averted. The most immediate reaction was in oil prices. West Texas Intermediate crude fell to the $100-a-barrel mark, dropping over 2%, while Brent crude plunged more than 3% to below $104. This sharp drop in oil immediately translated into a stock market surge, with the Dow and S&P 500 climbing nearly 2% and 3% respectively, and the Nasdaq soaring almost 4%. While gold, a typical safe-haven asset, did rebound, it's on track for its worst monthly decline in over a decade, which clearly shows that risk appetite has made a strong comeback.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a3e2e2a3381155ad",
+          "title": "Stock market today: Dow surges 1,000 points, S&P 500 and Nasdaq soar after Iranian leader signals openness to negotiations"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "It's clear that falling oil prices had a positive effect on the market. But weren't there significant concerns about a consumer slowdown due to the recent spike in oil?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's a great point. In fact, since the war began, the average price of gasoline in the U.S. topped $4 a gallon, sparking many warnings about the negative impact on consumption. Investment banks like Goldman Sachs and Moody's had analyzed that high oil prices could slow down overall spending, particularly by burdening middle- and low-income households. However, the Conference Board's March Consumer Confidence Index, released today, came in at 91.8, beating market expectations and showing that consumer sentiment is still holding up. At the same time, though, the February JOLTS report showed the hiring rate fell to its lowest level since April 2020, signaling some cooling in the job market. So, while hopes for stable oil prices overshadowed concerns about a consumer slowdown for now, the subtle shifts in the labor market will be a key variable to watch for the economy's direction going forward.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a3e2e2a3381155ad",
+          "title": "Stock market today: Dow surges 1,000 points, S&P 500 and Nasdaq soar after Iranian leader signals openness to negotiations"
+        },
+        {
+          "type": "event",
+          "id": "418452",
+          "title": "CB Consumer Confidence",
+          "date": "2026-03-31"
+        },
+        {
+          "type": "event",
+          "id": "398798",
+          "title": "JOLTS Job Openings",
+          "date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "With some of the macroeconomic uncertainty clearing up, what kind of moves did we see at the sector level? How did the energy sector, which was directly impacted by falling oil prices, perform?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "We saw a classic risk-on session, with a clear divergence among sectors. As expected, the energy sector took a direct hit from the drop in oil prices and was the only one of the S&P 500's 11 sectors to finish in the red. On the other hand, tech and consumer discretionary stocks, which had been held down by the oil price spike and geopolitical risk, led the market's rally. The technology sector jumped more than 3%, showing the strongest performance, which can be seen as a result of both reduced cost pressures from stable oil and renewed optimism about an economic recovery. It was a day where we saw capital quickly rotate out of commodity-related stocks like energy and into growth stocks as the market's risk-averse sentiment eased.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a3e2e2a3381155ad",
+          "title": "Stock market today: Dow surges 1,000 points, S&P 500 and Nasdaq soar after Iranian leader signals openness to negotiations"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "I'm wondering if today's rally can be sustained. After all, a deal hasn't actually been reached yet.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, it's crucial to remember that today's rally was based on 'hope,' not on confirmed facts. While the VIX, the market's fear gauge, fell significantly to below 25, it's still above the 20-level, which indicates a high degree of anxiety. This is proof that investors aren't completely at ease yet. Key economic data, starting with the ISM Manufacturing PMI released today and followed by the March non-farm payrolls report later this week, will likely determine the market's next move. Now that we've cleared the major hurdle of geopolitical risk for the time being, the market's focus will shift back to economic fundamentals.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a3e2e2a3381155ad",
+          "title": "Stock market today: Dow surges 1,000 points, S&P 500 and Nasdaq soar after Iranian leader signals openness to negotiations"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-03-31",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ISM Manufacturing PMI",
+          "date": "2026-04-01"
+        },
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "You mentioned the market's focus is shifting back to fundamentals, and another key driver today was AI-related tech stocks. The news about a massive funding round for an Nvidia-backed startup was a big topic, right?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "That's right. Today was a perfect storm of macroeconomic tailwinds and powerful industry-specific good news. With oil prices dropping over 3% on hopes of easing tensions in the Middle East, overall investor sentiment improved. This led to stable Treasury yields, helping the S&P 500 and Nasdaq surge 2.9% and 3.8%, respectively. Against this favorable backdrop, the news that CoreWeave, an AI data center company backed by Nvidia, had successfully raised $8.5 billion acted as a catalyst, drawing strong buying into tech stocks. That news alone sent Nvidia's stock up over 5%, and the Philadelphia Semiconductor Index also rose sharply, proving once again just how hot the investment fervor for AI infrastructure is.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "ad121aca0b6f9359",
+          "title": "Stock market today: Dow soars 1,000 points, S&P 500 and Nasdaq surge in upbeat end to brutal quarter"
+        },
+        {
+          "type": "article",
+          "pk": "5dc1cf9712f63a5b",
+          "title": "CoreWeave stock jumps 11% after company secures $8.5 billion GPU-backed loan"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "It's interesting that a funding round for a private company like CoreWeave had such a big impact on the entire market, especially Nvidia. What's the specific significance here?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Because this funding round is more than just an investment; it's a symbolic event that validates the structural growth of the AI industry. The deal, led by major institutions like Blackstone and Carlyle, was structured as a loan backed by CoreWeave's inventory of Nvidia GPUs. This means that GPUs, the core of AI computing, are now starting to be recognized as investment-grade collateral. In other words, the demand for AI infrastructure is so certain that a new financing method has emerged where billions of dollars are flowing in, backed by the value of the underlying hardware. This ultimately translates into powerful confidence in the dominant market position and future profitability of Nvidia, which sits at the top of the GPU supply chain.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "26ca0c9b08121326",
+          "title": "CoreWeave stock jumps 9% after company secures $8.5 billion GPU-backed loan"
+        },
+        {
+          "type": "article",
+          "pk": "5dc1cf9712f63a5b",
+          "title": "CoreWeave stock jumps 11% after company secures $8.5 billion GPU-backed loan"
+        },
+        {
+          "type": "article",
+          "pk": "ad121aca0b6f9359",
+          "title": "Stock market today: Dow soars 1,000 points, S&P 500 and Nasdaq surge in upbeat end to brutal quarter"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "The idea of a GPU-backed investment is fascinating. Did we see this AI investment enthusiasm spread to other related companies?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Absolutely. The positive sentiment spread throughout the entire AI ecosystem. Nvidia also announced today a $2 billion investment and partnership with data center infrastructure company Marvell Technology, which sent Marvell's stock soaring over 7%. This shows that Nvidia isn't just selling chips; it's building a massive AI alliance centered around its technology. Other AI-related stocks like Super Micro Computer and AMD also saw strong gains. On top of that, the April ISM Manufacturing PMI released today came in slightly below expectations, which eased concerns about an overheating economy. This acted as an additional tailwind for interest-rate-sensitive tech stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "525f34d503ce1861",
+          "title": "Nvidia invests $2 billion in Marvell, launches AI partnership"
+        },
+        {
+          "type": "article",
+          "pk": "ad121aca0b6f9359",
+          "title": "Stock market today: Dow soars 1,000 points, S&P 500 and Nasdaq surge in upbeat end to brutal quarter"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ism manufacturing pmi",
+          "date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "MRVL",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So even the macroeconomic data worked in favor of tech stocks. How would you summarize today's market action then?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "In conclusion, today's market was a stage set by the macroeconomic tailwind of falling oil prices, upon which the powerful growth story of AI played out. CoreWeave's funding round provided confidence that the massive capital needed for the AI industry's growth will continue to be supplied. And the Nvidia-Marvell partnership showed that this ecosystem is becoming even more solid. This clearly establishes that AI is no longer just a theme, but a core driver of the U.S. economy and stock market. Therefore, despite short-term fluctuations from geopolitical risks or economic data, the massive trend of building out AI infrastructure looks to be the most important variable driving the market for the foreseeable future.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "5dc1cf9712f63a5b",
+          "title": "CoreWeave stock jumps 11% after company secures $8.5 billion GPU-backed loan"
+        },
+        {
+          "type": "article",
+          "pk": "525f34d503ce1861",
+          "title": "Nvidia invests $2 billion in Marvell, launches AI partnership"
+        },
+        {
+          "type": "article",
+          "pk": "99e30044bc18a791",
+          "title": "Oil plunges, stocks soar after Iranian president offers first signs of willingness to end war with US"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ism manufacturing pmi",
+          "date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the broad market trends. Now let's dive into some of the individual stocks that were in the spotlight today. First up, Southern Copper's stock movement was notable, closing up a sharp 5.59%. What was the reason behind this powerful rally?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "SCCO",
+          "start_date": "2026-03-31",
+          "end_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, it seems to be a sign that the market is starting to re-evaluate Southern Copper not just as a copper mining company, but as a key supplier for the AI revolution and the energy transition. In its 10-K filing, the company demonstrated an industry-leading cash cost structure of just $0.58 per pound. This provides a powerful competitive advantage, as profits can increase exponentially when copper prices rise. Amid expectations of a structural increase in copper demand from electric vehicles and AI data centers, it appears that buying pressure mounted as Southern Copper is being highlighted as a supplier of the 'new oil for the digital age.'",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "The 'new oil for the digital age' is a compelling phrase. But with most of its operations concentrated in Peru and Mexico, aren't there geopolitical risks?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That is precisely the company's most critical weakness. The company's own 10-K report explicitly lists the extreme political instability in Peru and Mexico as a major risk. Peru, in particular, is facing a general election in April 2026, and the risk is so high that the possibility of asset expropriation or nationalization has been mentioned in the past. What's more serious is that losses from such political risks are generally not covered by insurance. Therefore, it's hard to avoid the criticism that its world-class cost competitiveness is built on a house of cards—uncontrollable political risk.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So it's a situation where world-class fundamentals are clashing with worst-case geopolitical risks. How should we evaluate these two conflicting factors?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "A balanced perspective is crucial here. The long-term growth in copper demand and the company's unparalleled cost structure are clearly positives. However, when valuing the company, it's reasonable to apply a higher discount rate compared to its peers to reflect the political and social risks in Peru and Mexico. From this conservative viewpoint, the recent stock surge seems to have priced in a significant portion of its future growth potential, leaving little margin of safety. In short, while the company's fundamentals are excellent, the uncertainty of external variables that could erode that value is just too high.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "SCCO",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001104659-26-021492"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, what's the final takeaway on a strategy for Southern Copper at this point?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Ultimately, it appears to be an investment with coexisting extremes of risk and reward. The growth driver of being a key commodity for the AI era is very attractive, but you can't ignore the potential for permanent capital loss, where asset value could be severely impaired by a single political decision in one country. This might represent an intolerable level of uncertainty for a portfolio. Therefore, rather than an aggressive approach, this seems to be a time where sufficient caution about the latent, critical risks is needed, even while acknowledging the company's positive aspects.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, the market seemed a bit confused today after the ISM manufacturing data showed unexpected expansion. Looking ahead, what economic indicators should investors be paying attention to?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Right, the ISM Manufacturing PMI released today crossed the 50-mark for the first time since September 2022, entering expansion territory. This was interpreted as a sign that the U.S. economy is still robust, which raised concerns that the Fed's first rate cut could be further delayed. This put pressure on the stock market as Treasury yields rose. Consequently, the market's focus is naturally shifting to the other pillar of the economy: the labor market. That's because for the Fed to decide on a rate cut, it needs evidence that inflation is slowing down and that the overheated job market is also cooling.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. So could you walk us through the employment-related data coming out this week?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "First, tomorrow, on the 2nd, we'll get the Challenger Job Cuts report, which will give us a sense of the temperature in the labor market. But the most important release will be the March jobs report on Friday, the 3rd. The market will be looking at the non-farm payrolls number, the unemployment rate, and the average hourly earnings growth to get a comprehensive picture of the labor market's health. Wage growth, in particular, is directly linked to inflation, so it will be a very important clue for the Fed's monetary policy decisions.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398655",
+          "title": "challenger job cuts",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "non farm payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "unemployment rate",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395471",
+          "title": "average hourly earnings mom",
+          "date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides the jobs report, are there any other indicators to watch?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, the ISM Services PMI, which comes out next Monday, the 6th, is also very important. The services sector makes up a much larger portion of the U.S. economy than manufacturing, so its health is a key indicator for understanding the overall economic trend. If the services index also comes in strong, following today's manufacturing data, the perception that the economy is stronger than expected could spread, further dampening rate cut expectations. This is a factor that could increase market volatility, so it's one to watch closely.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395478",
+          "title": "ism services pmi",
+          "date": "2026-04-06"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So we're continuing to see this 'good news is bad news' situation, where strong economic data actually weighs on the market.",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Exactly. The market is currently hanging on every word about the timing of the Fed's pivot. Strong economic data can be positive for corporate earnings, but at the same time, it acts as a factor that delays the Fed's rate cuts, creating a tug-of-war. Therefore, for the time being, investors will need to respond cautiously, closely watching how market expectations shift with each new piece of major economic data.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, thank you for the detailed explanation. That concludes our April 1st market close briefing.",
+      "sources": []
+    }
+  ]
+}
