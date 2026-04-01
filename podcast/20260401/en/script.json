@@ -1,0 +1,624 @@
+{
+  "date": "20260401",
+  "nutshell": "A relief rally driven by easing geopolitical concerns over Iran.",
+  "user_tickers": [
+    "NEM"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 2nd market close briefing. The market has rallied strongly for two straight days. Should we say that, like yesterday, geopolitical risk was the biggest driver today?",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, that's right. Today's market can be summed up as a relief rally on easing geopolitical concerns over Iran. Hopes that the conflict between the U.S. and Iran could de-escalate revived risk-on sentiment. The S&P 500 gained 0.7%, and the tech-heavy Nasdaq led the way, climbing 1.2%. The Dow Jones Industrial Average also rose about 0.5%. The key catalyst was President Trump's mention of a possible troop withdrawal from Iran, which sent West Texas Intermediate crude oil, once well over $100 a barrel, down 2.3% to the $99 level.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-01"
+        },
+        {
+          "type": "article",
+          "pk": "id#ea6c5b2a28817c94",
+          "title": "Trump Says US Will Leave Iran Within Two to Three Weeks"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It's a relief that war concerns have subsided, but isn't it too early to say the economic fallout from a conflict that's lasted over a month has completely disappeared?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's correct. While the market is relieved, there's still a sense of caution about the after-effects. Bank of America warned that even if the conflict ends soon, oil prices could remain around $100 for the year, and the U.S. economy might experience mild stagflation. We're actually seeing these concerns reflected in individual company earnings. Nike's stock plunged over 13% after it issued a weak outlook, citing sluggishness in the Chinese market and rising cost pressures from the Middle East situation. It's a clear example that even amid a broad market updraft, the situation for individual companies can be very different.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#58cee3f815d5415a",
+          "title": "'Mild stagflation': Bank of America rips up economic forecasts, braces for $100 oil all year on Iran war disruptions"
+        },
+        {
+          "type": "article",
+          "pk": "id#028c6a6c6b505c77",
+          "title": "Nike stock tumbles more than 13%, hits 11-year low as weakness in China, high oil prices weigh on outlook"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key factors that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, there are two main things to cover today. First, we'll look at how the easing of geopolitical concerns led to this relief rally. And then, we'll take a closer look at the individual moves of companies that reported mixed results, bucking the broader market trend.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the easing geopolitical concerns. What specific news brought this sense of relief to the market?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "The market cheered the news that the possibility of a military conflict with Iran—the biggest uncertainty over the past month—has significantly decreased. Following yesterday's gains, the S&P 500 rose another 0.72% and the Nasdaq climbed 1.16%, extending their two-day rally. This recovery in risk appetite was clearly visible in safe-haven assets. The VIX, a key volatility index, fell over 7% to drop below the 20 mark. West Texas Intermediate crude, which had spiked on war fears, fell another 2.3% to around $99 a barrel. On the flip side, the yield on the 10-year U.S. Treasury note, considered a safe haven, rose to the 4.4% range as bonds sold off, and the price of gold also pulled back, dipping below the $2,500 an ounce level. All of these asset movements pointed in one direction: a reduction in war risk.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#09f999d2f2cd7112",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq extend rally for 2nd day on hopes of Iran war deescalation"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "President Trump's comments were said to be decisive. What exactly did he say?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Yes, the catalyst was President Trump's statement last night, local time, that U.S. troops would be withdrawn from Iran within two to three weeks. With Iran also sending positive signals about ending the war, the market was swept with relief that a worst-case scenario had been avoided. This news had a direct impact on oil prices. As the war premium was quickly priced out and oil stabilized, transportation stocks, especially airlines, rallied across the board. United Airlines and Delta Air Lines each rose over 3%, and American Airlines was up nearly 4%, leading the market's positive mood. The optimism that lower oil prices would ease corporate cost burdens and boost consumer spending power spread throughout the stock market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ea6c5b2a28817c94",
+          "title": "Trump Says US Will Leave Iran Within Two to Three Weeks"
+        },
+        {
+          "type": "chart",
+          "ticker": "UAL",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "DAL",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAL",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#a0d26c45288477a5",
+          "title": "Gold Extends Three-Day Gain After Trump Signals End to Iran War"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "On the other hand, I assume the sectors that benefited from war concerns saw a pullback.",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's right. The energy and defense sectors, in particular, couldn't avoid weakness. Shares of major energy companies like ExxonMobil and Chevron fell along with oil prices. The XLE energy sector ETF dropped over 1% despite the broader market rally. Major defense stocks like Lockheed Martin and Northrop Grumman also declined. This is seen as a natural process of the premium that was priced in during heightened geopolitical tensions being unwound. However, some are still voicing caution, noting that negotiations aren't completely finalized and the situation could change again.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "LMT",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "NOC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, should we assume that today's economic data didn't have much of an impact on the market?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, with all eyes on Iran, the impact of economic data was minimal. The weekly initial jobless claims released before the open came in slightly below expectations, reaffirming a solid labor market, and the trade deficit also narrowed more than expected. But even these positive indicators didn't get much attention in the face of the huge geopolitical news. This shows that the market is currently reacting much more sensitively to geopolitical variables in the Middle East than to macroeconomic fundamentals. For the time being, investors are likely to focus more on follow-up news related to Iran than on economic data.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395442",
+          "title": "initial jobless claims",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "395444",
+          "title": "continuing jobless claims",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "398132",
+          "title": "balance of trade",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#2dcbc54407adf6ae",
+          "title": "Stock market today: Dow S&P 500, Nasdaq futures climb as de-escalation talk in Iran sparks rally to close out Q1"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right. So while the market's attention was fixated on geopolitical risk, you mentioned earlier that the fortunes of individual companies were mixed. Let's dig into that.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Exactly. Today's market was a case of 'the forest was green, but the individual trees were in different seasons.' This macroeconomic tailwind didn't lift all boats. The healthcare sector rose, thanks to the giant Eli Lilly, but the consumer discretionary sector was relatively sluggish, weighed down by Nike's poor performance. On top of that, the 10-year Treasury yield remaining at a high level of 4.3% due to strong economic data also acted as a headwind. Ultimately, this created a classic stock-picker's market, where attention shifted to the fundamental health of individual companies.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLV",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLY",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "395421",
+          "title": "adp employment change",
+          "date": "2026-04-01"
+        },
+        {
+          "type": "article",
+          "pk": "id#09f999d2f2cd7112",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq extend rally for 2nd day on hopes of Iran war deescalation"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Eli Lilly's rally was really impressive. What was the specific good news, and what does this mean for the broader pharma and biotech sector?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Eli Lilly's stock surged over 5% on the powerful catalyst of an FDA approval. The newly approved drug, Foundaeo, is being hailed as a game-changer because it's an oral weight-loss treatment—a pill. It dramatically improves convenience over existing injectables, allowing it to target a much wider patient base. While clinical results show its weight-loss effect is slightly less than the injectable Zepbound, the convenience of taking it just once a day without water or food is expected to more than offset this drawback, and that optimism drove the stock higher. This approval not only reaffirms the explosive growth potential of the weight-loss drug market but also clearly demonstrates how a company with a strong new drug pipeline can secure its own growth engine, even amid market uncertainty.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#30f22bf2365a1544",
+          "title": "Eli Lilly stock pops after FDA approves new GLP-1 weight-loss pill"
+        },
+        {
+          "type": "chart",
+          "ticker": "LLY",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#1478d2e9ea395a11",
+          "title": "Stock market today: Nasdaq leads S&P 500, Dow higher as deescalation talk in Iran extends rally"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLV",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "On the flip side, despite the market tailwind, Nike's stock sank to an 11-year low. A slowdown in China was cited as the main reason. What's the situation there, specifically?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Nike moved in the complete opposite direction of the broader market, with its stock falling more than 13%. The biggest reason was its disappointing future outlook, or guidance. The weakness in its key market, China, was particularly severe. After sales in China fell 11% last quarter, the company's forecast for a roughly 20% plunge in sales next quarter heightened investor concerns. Adding to that were comments from the CFO that rising oil prices and supply chain instability due to the Middle East situation would add to cost pressures. This suggests Nike isn't just facing a temporary setback, but is exposed to both a structural problem of intensifying competition in China and a macroeconomic headwind from geopolitical risk. It really shows that even a global company with a powerful brand isn't immune to a regional economic slowdown and rising cost pressures.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#028c6a6c6b505c77",
+          "title": "Nike stock tumbles more than 13%, hits 11-year low as weakness in China, high oil prices weigh on outlook"
+        },
+        {
+          "type": "chart",
+          "ticker": "NKE",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#268988acf922fad7",
+          "title": "3 things Nike investors need to watch with the stock plunging after earnings"
+        },
+        {
+          "type": "article",
+          "pk": "id#1ef082b25be44b70",
+          "title": "Nike set the stage for a turnaround. Global events keep getting in its way."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So what you're saying is, this is a market where you need to carefully examine the fundamentals of individual companies, rather than just looking at macroeconomic indicators.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Exactly. The stark contrast between Eli Lilly and Nike today perfectly encapsulates the nature of the current market. We can say the era where all stocks rise together on a tide of broad market liquidity or sentiment is over. Instead, micro-level factors like a company's unique innovation capabilities, its dependence on specific markets, and its ability to manage costs are emerging as the key variables driving stock prices. The weekly initial jobless claims data released today also came in line with expectations, reaffirming a stable labor market, which in turn gives the Fed less reason to rush into rate cuts. Therefore, as we head into the main earnings season, this divergence between stocks is likely to intensify, and it's a time that demands more careful analysis from investors.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395442",
+          "title": "initial jobless claims",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "id#30f22bf2365a1544",
+          "title": "Eli Lilly stock pops after FDA approves new GLP-1 weight-loss pill"
+        },
+        {
+          "type": "article",
+          "pk": "id#028c6a6c6b505c77",
+          "title": "Nike stock tumbles more than 13%, hits 11-year low as weakness in China, high oil prices weigh on outlook"
+        },
+        {
+          "type": "article",
+          "pk": "id#b86d853f4674a216",
+          "title": "Stock market today: Dow S&P 500, Nasdaq climb as deescalation talk in Iran extends rally"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, as you said, let's look at some of the stocks that require that careful analysis. What about Newmont, the world's largest gold miner, which jumped over 5% today and caught the market's attention? It closed around the $113 mark. Was there any specific good news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NEM",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "It seems the market narrative, rather than any specific news, drove the stock higher. A new perspective is emerging in the market that sees Newmont not just as a gold mining company, but as a hidden beneficiary of the AI industry. The narrative is that through its recent acquisition of Newcrest, it has significantly expanded its copper assets, which are essential for AI data centers and the energy transition. And the cash flow generated from strong gold prices is being reinvested in technological innovations like autonomous mining systems. It appears investors are betting on a growth story where Newmont is transforming from a traditional commodities company into a 'resource tech' company.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That growth story connecting AI and copper sounds quite compelling. But isn't it possible that the operational risks inherent to the mining industry are being overlooked in this optimism?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's an excellent point. Behind the flashy growth story, there are specific risks that investors may be overlooking. According to the company's own annual report, the government of Ghana, a key operational region, is pushing legislation to increase royalties from the current maximum of 5% to as high as 12%, tied to the price of gold. If this happens, it's a clear cost increase that would directly hit profitability. Furthermore, its key Cadia mine in Australia is facing multiple lawsuits from environmental authorities over dust emissions, which is a potential time bomb that could lead to unpredictable fines or production disruptions. The current stock surge doesn't seem to be pricing in any of these stated risks.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So, how much of an impact would a risk like the royalty hike in Ghana actually have on earnings?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "It's not just a concern; it's a tangible hit to value that can be calculated. Based on the revenue from the Ghana region disclosed in the annual report, a 7-percentage-point increase in royalties would result in a decrease of about $0.09 in earnings per share. This represents an immediate cash outflow that's hard to offset in the short term with future technologies like AI mining. Also, the high reported EPS of $6.39 for 2025 includes a one-time gain from the sale of non-core assets. If you strip that out, its actual earnings power might not meet market expectations. Taking these factors together, it raises the possibility that the current stock price is overvalued relative to its intrinsic value.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, it seems today's stock surge was more a result of excessive market hype than any fundamental improvement.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, it looks like a classic case of psychological momentum. With no specific news, the price surged, and the attractive 'resource tech' narrative took hold, creating a self-reinforcing cycle that justified the price increase. But at its core, Newmont is still a company that follows commodity prices, with 85% of its revenue coming from gold. The market's optimism isn't fully accounting for the real cost increases and regulatory risks in Ghana and Australia. Therefore, the current stock price appears to be built on unsustainable expectations, and it's being observed as a situation with a high risk of a sharp correction if these potential headwinds materialize.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        },
+        {
+          "type": "chart",
+          "ticker": "NEM",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "The market looked pretty weak overall today. Could you summarize the day's trading?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, the market couldn't withstand the pressure from rising Treasury yields, and all three major indexes closed lower. The 10-year Treasury yield approached its yearly high again, which hit tech stocks particularly hard, with the Nasdaq falling nearly 1%. Today's factory orders and JOLTs job openings reports both came in stronger than expected, weighing on the market with concerns that the Fed might delay rate cuts even further. We're continuing to see this ironic situation where a strong economy actually dampens hopes for rate cuts.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So, what should investors be watching for going forward?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "All eyes in the market are now focused on the March jobs report, set to be released this Friday, April 3rd, local time. It's the most important indicator to see if the labor market is cooling down. Specifically, we'll need to watch the non-farm payrolls number, the unemployment rate, and the year-over-year average hourly earnings growth. The market is expecting the unemployment rate to hold at 4.4% and wage growth to be around 3.8% year-over-year. If hiring and wage growth come in stronger than expected, the chances of a June rate cut could become even slimmer.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "non farm payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "unemployment rate",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395469",
+          "title": "average hourly earnings yoy",
+          "date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Are there any other important events scheduled after the jobs report?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, if the jobs report is the first hurdle, an even more important inflation report is waiting for us next week. On Monday the 6th, we'll get the ISM Services PMI, which will give us a read on the services economy. And on Wednesday the 10th, we have the one everyone is watching: the March Consumer Price Index, or CPI. With the January and February CPI reports coming in hotter than expected, concerns about inflation have grown again. So, this March CPI data will likely be the most crucial clue for determining the Fed's monetary policy path.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395478",
+          "title": "ism services pmi",
+          "date": "2026-04-06"
+        },
+        {
+          "type": "event",
+          "id": "399045",
+          "title": "core inflation rate yoy",
+          "date": "2026-04-10"
+        },
+        {
+          "type": "event",
+          "id": "398668",
+          "title": "core inflation rate mom",
+          "date": "2026-04-10"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Finally, do you have any closing thoughts for our investors?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "The market is desperately looking for a reason for the Fed to cut rates, but recent economic data is actually weakening that case. This means the Fed has little reason to rush. Therefore, it's likely the market will continue to be volatile for a while, reacting to every piece of macroeconomic data rather than to individual company earnings or news. It would be prudent for investors to keep this market environment in mind and approach it with caution.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, thank you again for your valuable insights. That concludes our April 2nd market close briefing. Thank you for listening.",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+Title:
+2026.4.2 US Market Close | Stocks rally as Iran geopolitical fears ease
+
+Description:
+On April 2nd, the New York stock market staged a relief rally as geopolitical concerns regarding Iran eased. All three major indices closed higher as risk appetite returned on hopes of de-escalation between the U.S. and Iran.
+
+- S&P 500: Up 0.72% - Risk-on sentiment returns as Iran geopolitical fears subside.
+- Nasdaq: Up 1.16% - Tech stocks lead the gains.
+- Dow Jones: Up 0.5% - Rises in tandem with easing geopolitical risks.
+
+Key Issues
+- Easing Iran Geopolitical Risk: A sense of relief spread across the market after President Trump mentioned the possibility of withdrawing troops from Iran, reducing fears of war. Consequently, West Texas Intermediate (WTI) crude oil prices fell 2.3% to around $99 per barrel.
+- Mixed Corporate Earnings: Despite the positive market sentiment, individual company performances were mixed. Nike plunged over 13% on concerns about a slowdown in the Chinese market and rising costs, while Eli Lilly surged more than 5% on news of FDA approval for its oral weight-loss drug.
+- Sector Divergence on Falling Oil Prices: The drop in oil prices acted as a tailwind for airline stocks, boosting their shares. However, it was a headwind for energy companies like ExxonMobil and Chevron, as well as defense stocks, leading to a decline in their prices.
+- Newmont Emerges as an AI Beneficiary: Newmont, the world's largest gold mining company, saw its stock jump after being recognized as a hidden beneficiary of the AI industry, thanks to its copper asset acquisition and technological innovation. However, tangible risks remain, such as a potential royalty increase in Ghana.
+
+Key Stocks
+- Nike (NKE): Plunged over 13% - On forecasts of a sharp decline in China sales and concerns over cost pressures from the Middle East situation.
+- Eli Lilly (LLY): Surged over 5% - Following FDA approval for its oral weight-loss drug, 'Poundayo'.
+- United Airlines (UAL): Up more than 3% - On expectations of cost savings from lower oil prices.
+- Delta Air Lines (DAL): Up over 3% - Benefiting from the drop in oil prices.
+- American Airlines (AAL): Up nearly 4% - Also benefiting from lower oil prices.
+- Newmont (NEM): Jumped more than 5% - Driven by expectations of its transformation into a 'resource tech' company, following the acquisition of copper assets essential for AI data centers.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,이란,지정학,유가,나이키,NKE,일라이릴리,LLY,비만치료제,뉴몬트,NEM,AI
