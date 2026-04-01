@@ -1,0 +1,58 @@
+{
+  "date": "20260401",
+  "lang": "ko",
+  "audioFile": "shorts20260401.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 74.844,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 6.171,
+      "endSec": 6.171,
+      "speechDurationSec": 6.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 45,
+      "text": "나이키 13% 폭락, 일라이 릴리 5% 급등. 같은 날 시장에서 벌어진 일입니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 6.171,
+      "speechEndSec": 24.422,
+      "endSec": 24.422,
+      "speechDurationSec": 18.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 151,
+      "text": "4월 2일 미국 증시는 이란 지정학적 우려 완화에 따른 안도 랠리를 펼쳤습니다. 다우 0.5%, S&P 500 0.72%, 기술주 중심의 나스닥은 1.16% 상승 마감했습니다. 트럼프 대통령이 2-3주 내 이란 철군 가능성을 언급하며 위험자산 선호 심리가 되살아났습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 24.422,
+      "speechEndSec": 72.873,
+      "endSec": 72.873,
+      "speechDurationSec": 48.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 379,
+      "text": "전쟁 위험이 줄자 변동성 지수 VIX는 7% 넘게 하락했고, 안전자산인 금 가격도 내렸습니다. 특히 서부 텍사스산 원유 가격이 2.3% 하락해 배럴당 99달러 선으로 내려오자 업종별 명암이 뚜렷해졌습니다. 유나이티드, 델타 등 항공주들은 3% 넘게 급등했지만, 엑슨모빌 같은 에너지주와 록히드마틴 등 방산주는 동반 하락했습니다. 하지만 이런 시장 전반의 훈풍 속에서도 개별 기업의 기초 체력이 주가를 갈랐습니다. 일라이 릴리는 경구용, 즉 먹는 비만 치료제 '파운대요'가 FDA 승인을 받았다는 소식에 5% 넘게 급등했습니다. 반면 나이키는 핵심 시장인 중국 매출이 다음 분기 20% 급감할 것이라는 전망을 내놓으며 주가가 13% 넘게 폭락, 11년 만에 최저치를 기록했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 72.873,
+      "speechEndSec": 74.844,
+      "endSec": 74.844,
+      "speechDurationSec": 1.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

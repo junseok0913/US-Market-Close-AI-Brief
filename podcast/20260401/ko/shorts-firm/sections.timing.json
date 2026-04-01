@@ -1,0 +1,67 @@
+{
+  "date": "20260401",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260401.mp3",
+  "sectionOrder": [
+    "nem",
+    "ual",
+    "aal",
+    "dal"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 80.604,
+  "sections": [
+    {
+      "id": 0,
+      "name": "nem",
+      "ticker": "NEM",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 33.251,
+      "endSec": 33.251,
+      "speechDurationSec": 33.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 281,
+      "text": "이란발 지정학적 리스크가 줄면서 시장은 안도 랠리를 펼쳤지만, 모든 기업이 함께 웃지는 못했습니다. 세계 최대 금광업체 뉴몬트는 5% 넘게 급등했습니다. AI 데이터센터와 에너지 전환에 필수적인 구리 자산을 확보하면서, 단순한 금광 기업이 아닌 '리소스 테크' 기업으로 변모하고 있다는 기대감이 주가를 밀어 올렸습니다. 하지만 이 성장 스토리 뒤에는 가나 정부의 로열티 인상 가능성과 호주 광산의 환경 소송 같은 구체적인 운영 리스크가 숨어있어, 현재 주가는 과도한 기대감이 반영됐다는 분석도 나옵니다."
+    },
+    {
+      "id": 1,
+      "name": "ual",
+      "ticker": "UAL",
+      "kind": "company",
+      "startSec": 33.251,
+      "speechEndSec": 57.942,
+      "endSec": 57.942,
+      "speechDurationSec": 24.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 198,
+      "text": "유나이티드 항공은 3% 이상 상승했습니다. 미국과 이란의 갈등 완화 기대감에 국제 유가가 2% 넘게 하락한 것이 결정적이었습니다. 전쟁 프리미엄이 사라지면서 유가가 안정세를 찾자, 항공사의 가장 큰 비용 부담인 유류비가 줄어들 것이라는 전망이 주가에 긍정적으로 작용했습니다. 이는 소비 여력 증대 기대감으로도 이어지며 운송업종 전반의 강세를 이끌었습니다."
+    },
+    {
+      "id": 2,
+      "name": "aal",
+      "ticker": "AAL",
+      "kind": "company",
+      "startSec": 57.942,
+      "speechEndSec": 69.673,
+      "endSec": 69.673,
+      "speechDurationSec": 11.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 95,
+      "text": "아메리칸 항공 역시 같은 이유로 3.6% 오르며 강세를 보였습니다. 유가 하락이 비용 절감으로 이어질 것이라는 기대감이 반영되며 항공주가 동반 상승하는 모습을 보였습니다."
+    },
+    {
+      "id": 3,
+      "name": "dal",
+      "ticker": "DAL",
+      "kind": "company",
+      "startSec": 69.673,
+      "speechEndSec": 80.604,
+      "endSec": 80.604,
+      "speechDurationSec": 10.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 94,
+      "text": "델타항공 역시 같은 이유로 1.68% 올랐습니다. 유가 하락이 비용 절감으로 이어질 것이라는 기대감이 항공주 전반에 긍정적으로 작용했습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

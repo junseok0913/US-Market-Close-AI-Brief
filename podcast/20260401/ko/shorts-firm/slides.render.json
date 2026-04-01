@@ -1,0 +1,306 @@
+{
+  "date": "20260402",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 뉴몬트, 유나이티드 항공, 아메리칸 항공",
+  "hook": "이란발 지정학적 리스크가 줄면서 시장은 안도 랠리를 펼쳤지만, 모든 기업이 함께 웃지는 못했습니다.",
+  "durationSeconds": 80.604,
+  "audioFile": "shortsfirm20260401.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "neutral",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.04.02 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, 뉴몬트, 유나이티드 항공, 아메리칸 항공",
+      "subheadline": "지정학적 리스크 완화 속, 희비가 엇갈린 기업들",
+      "body": "이란발 지정학적 리스크가 줄면서 시장은 안도 랠리를 펼쳤지만, 모든 기업이 함께 웃지는 못했습니다.",
+      "bullets": [
+        "이란발 지정학적 리스크가 줄면서 시장은 안도 랠리를 펼쳤지만, 모든 기업이 함께 웃지는 못했습니다."
+      ],
+      "tickers": [],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 3.0,
+      "endSec": 33.251,
+      "eyebrow": "PICK 1",
+      "headline": "NEM",
+      "subheadline": "AI 수혜주 기대감과 운영 리스크 공존하며 5% 급등",
+      "body": "구리 자산 확보로 '리소스 테크' 기업 변모 기대감이 주가를 밀어 올렸습니다.",
+      "bullets": [
+        "AI 수혜주 기대감 부상",
+        "구리 자산 확보로 '리소스 테크' 변모",
+        "가나 로열티, 호주 소송 등 리스크 상존"
+      ],
+      "tickers": [
+        "NEM"
+      ],
+      "highlights": [
+        "+5.12%",
+        "-3.99%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 33.251,
+      "endSec": 57.942,
+      "eyebrow": "PICK 2",
+      "headline": "UAL",
+      "subheadline": "국제 유가 하락에 따른 비용 절감 기대로 3% 상승",
+      "body": "지정학적 우려 완화로 유가가 하락하며 유류비 부담 감소 기대감이 커졌습니다.",
+      "bullets": [
+        "이란 리스크 완화로 국제 유가 하락",
+        "항공사 최대 비용인 유류비 부담 감소",
+        "소비 여력 증대 기대감으로 운송업 강세"
+      ],
+      "tickers": [
+        "UAL"
+      ],
+      "highlights": [
+        "+3.27%",
+        "-7.28%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 57.942,
+      "endSec": 69.673,
+      "eyebrow": "PICK 3",
+      "headline": "AAL",
+      "subheadline": "유가 하락 수혜 기대로 3.6% 동반 상승",
+      "body": "유가 하락이 비용 절감으로 이어질 것이란 기대감에 항공주가 동반 상승했습니다.",
+      "bullets": [
+        "유가 하락 수혜주로 부각",
+        "비용 절감 기대감에 항공주 동반 강세"
+      ],
+      "tickers": [
+        "AAL"
+      ],
+      "highlights": [
+        "+3.63%",
+        "-10.67%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 69.673,
+      "endSec": 77.604,
+      "eyebrow": "PICK 1",
+      "headline": "DAL",
+      "subheadline": "유가 하락 수혜 기대감에 1.68% 동반 상승",
+      "body": "유가 하락이 비용 절감으로 이어질 것이라는 기대감이 항공주 전반에 긍정적으로 작용했습니다.",
+      "bullets": [
+        "유가 하락에 따른 비용 절감 기대감",
+        "항공주 전반에 긍정적 모멘텀 작용"
+      ],
+      "tickers": [
+        "DAL"
+      ],
+      "highlights": [
+        "+1.68%",
+        "+4.64%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 77.604,
+      "endSec": 80.604,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "지정학적 리스크 완화 속, 희비가 엇갈린 기업들"
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 33.251,
+      "text": "AI 수혜주 기대감과 운영 리스크 공존하며 5% 급등"
+    },
+    {
+      "id": 2,
+      "startSec": 33.251,
+      "endSec": 57.942,
+      "text": "국제 유가 하락에 따른 비용 절감 기대로 3% 상승"
+    },
+    {
+      "id": 3,
+      "startSec": 57.942,
+      "endSec": 69.673,
+      "text": "유가 하락 수혜 기대로 3.6% 동반 상승"
+    },
+    {
+      "id": 4,
+      "startSec": 69.673,
+      "endSec": 77.604,
+      "text": "유가 하락 수혜 기대감에 1.68% 동반 상승"
+    },
+    {
+      "id": 5,
+      "startSec": 77.604,
+      "endSec": 80.604,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "이란 지정학적 우려 완화에 따른 안도 랠리",
+      "뉴몬트, 'AI 리소스 테크' 기대감에 급등했으나 운영 리스크 상존",
+      "유가 하락으로 유나이티드 항공 등 항공주 동반 강세",
+      "시장 전반의 훈풍 속에서도 기업별 펀더멘털에 따른 차별화 장세"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NEM",
+        "label": "뉴몬트",
+        "tag": "강세"
+      },
+      {
+        "ticker": "UAL",
+        "label": "유나이티드 항공",
+        "tag": "강세"
+      },
+      {
+        "ticker": "AAL",
+        "label": "아메리칸 항공",
+        "tag": "강세"
+      },
+      {
+        "ticker": "DAL",
+        "label": "델타항공",
+        "tag": "강세"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "NEM",
+        "name": "Newmont Corporation",
+        "as_of": "2026-04-01",
+        "day_change_pct": 5.117783755683458,
+        "day_change_display": "+5.12%",
+        "month_change_pct": -3.990884122097871,
+        "month_change_display": "-3.99%",
+        "market_cap": 123789205504.0,
+        "market_cap_display": "$123.79B",
+        "pe_ratio": 17.807512,
+        "pe_ratio_display": "17.81",
+        "pbr": 3.6573136,
+        "pbr_display": "3.66",
+        "roe": 22.343999,
+        "roe_display": "22.34%",
+        "reason": "AI 데이터센터와 에너지 전환에 필수적인 구리 자산을 확보하면서 '리소스 테크' 기업으로의 변모 기대감이 부상했으나, 가나 로열티 인상 및 호주 환경 소송 등 운영 리스크도 존재합니다.",
+        "spoken_text": "세계 최대 금광업체 뉴몬트는 5% 넘게 급등했습니다. AI 데이터센터와 에너지 전환에 필수적인 구리 자산을 확보하면서, 단순한 금광 기업이 아닌 '리소스 테크' 기업으로 변모하고 있다는 기대감이 주가를 밀어 올렸습니다. 하지만 이 성장 스토리 뒤에는 가나 정부의 로열티 인상 가능성과 호주 광산의 환경 소송 같은 구체적인 운영 리스크가 숨어있어, 현재 주가는 과도한 기대감이 반영됐다는 분석도 나옵니다.",
+        "slide_points": [
+          "1D: +5.12% / 1M: -3.99%",
+          "AI 수혜주 기대감 부상",
+          "구리 자산 확보로 '리소스 테크' 내러티브 형성"
+        ],
+        "valuation_note": "시총 $123.79B, PER 17.81, PBR 3.66, ROE 22.34%",
+        "move_summary": "AI 수혜주 기대감과 운영 리스크가 공존하며 5% 급등"
+      },
+      {
+        "ticker": "UAL",
+        "name": "United Airlines Holdings, Inc.",
+        "as_of": "2026-04-01",
+        "day_change_pct": 3.269253987408982,
+        "day_change_display": "+3.27%",
+        "month_change_pct": -7.275208716467851,
+        "month_change_display": "-7.28%",
+        "market_cap": 30781007872.0,
+        "market_cap_display": "$30.78B",
+        "pe_ratio": 9.321569,
+        "pe_ratio_display": "9.32",
+        "pbr": 2.0125308,
+        "pbr_display": "2.01",
+        "roe": 23.987,
+        "roe_display": "23.99%",
+        "reason": "이란 관련 지정학적 우려가 완화되면서 국제 유가가 하락하자, 유류비 부담 감소 기대감에 주가가 상승했습니다.",
+        "spoken_text": "유나이티드 항공은 3% 이상 상승했습니다. 미국과 이란의 갈등 완화 기대감에 국제 유가가 2% 넘게 하락한 것이 결정적이었습니다. 전쟁 프리미엄이 사라지면서 유가가 안정세를 찾자, 항공사의 가장 큰 비용 부담인 유류비가 줄어들 것이라는 전망이 주가에 긍정적으로 작용했습니다. 이는 소비 여력 증대 기대감으로도 이어지며 운송업종 전반의 강세를 이끌었습니다.",
+        "slide_points": [
+          "1D: +3.27% / 1M: -7.28%",
+          "이란 리스크 완화로 국제 유가 하락",
+          "유류비 부담 감소 기대감에 주가 상승"
+        ],
+        "valuation_note": "시총 $30.78B, PER 9.32, PBR 2.01, ROE 23.99%",
+        "move_summary": "국제 유가 하락에 따른 비용 절감 기대로 3% 상승"
+      },
+      {
+        "ticker": "AAL",
+        "name": "American Airlines Group, Inc.",
+        "as_of": "2026-04-01",
+        "day_change_pct": 3.63128819026175,
+        "day_change_display": "+3.63%",
+        "month_change_pct": -10.67415665838032,
+        "month_change_display": "-10.67%",
+        "market_cap": 7349190144.0,
+        "market_cap_display": "$7.35B",
+        "pe_ratio": 65.47059,
+        "pe_ratio_display": "65.47",
+        "pbr": -1.9720057,
+        "pbr_display": "-1.97",
+        "roe": null,
+        "roe_display": "N/A",
+        "reason": "유나이티드 항공과 마찬가지로, 이란 관련 지정학적 우려 완화에 따른 유가 하락이 비용 절감 기대감으로 이어지며 주가를 끌어올렸습니다.",
+        "spoken_text": "아메리칸 항공 역시 같은 이유로 3.6% 오르며 강세를 보였습니다. 유가 하락이 비용 절감으로 이어질 것이라는 기대감이 반영되며 항공주가 동반 상승하는 모습을 보였습니다.",
+        "slide_points": [
+          "1D: +3.63% / 1M: -10.67%",
+          "유가 하락 수혜주로 부각",
+          "비용 절감 기대감에 항공주 동반 강세"
+        ],
+        "valuation_note": "시총 $7.35B, PER 65.47, PBR -1.97, ROE N/A",
+        "move_summary": "유가 하락 수혜 기대로 3.6% 동반 상승"
+      },
+      {
+        "ticker": "DAL",
+        "name": "Delta Air Lines, Inc.",
+        "as_of": "2026-04-01",
+        "day_change_pct": 1.6847097783286857,
+        "day_change_display": "+1.68%",
+        "month_change_pct": 4.643962957989545,
+        "month_change_display": "+4.64%",
+        "market_cap": 44151631872.0,
+        "market_cap_display": "$44.15B",
+        "pe_ratio": 8.825066,
+        "pe_ratio_display": "8.83",
+        "pbr": 2.1059191,
+        "pbr_display": "2.11",
+        "roe": 27.693,
+        "roe_display": "27.69%",
+        "reason": "아메리칸 항공 역시 4퍼센트 가까이 오르며 시장의 분위기를 주도했습니다. 유가 하락이 기업들의 비용 부담을 덜어주고 소비 여력을 늘릴 것이라는 기대감이 증시 전반으로 확산된 것입니다.",
+        "spoken_text": "델타항공 역시 같은 이유로 1.68% 올랐습니다. 유가 하락이 비용 절감으로 이어질 것이라는 기대감이 항공주 전반에 긍정적으로 작용했습니다.",
+        "slide_points": [
+          "1일 +1.68% / 1개월 +4.64%",
+          "시총 $44.15B, PER 8.83, PBR 2.11, ROE 27.69%",
+          "유가 하락에 따른 비용 절감 기대감"
+        ],
+        "valuation_note": "시총 $44.15B, PER 8.83, PBR 2.11, ROE 27.69%",
+        "move_summary": "유가 하락 수혜 기대감에 1.68% 동반 상승"
+      }
+    ]
+  }
+}
