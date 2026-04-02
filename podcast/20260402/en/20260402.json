@@ -1,0 +1,731 @@
+{
+  "date": "20260402",
+  "nutshell": "Oil prices surge on Iran geopolitical concerns, leaving stocks mixed.",
+  "user_tickers": [
+    "BMY"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 3rd closing bell briefing. The market seemed to have a hard time finding direction today, and the intraday moves in oil prices were particularly unsettling.",
+      "sources": [],
+      "time": [
+        0,
+        11251
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. In a nutshell, today's market was defined by surging oil prices on geopolitical concerns over Iran, leading to a mixed session for stocks. The Dow Jones Industrial Average fell 0.13% to close at 46,504.67, but the S&P 500 gained 0.11% to 6,582.69, and the Nasdaq also rose 0.18%, finishing at 21,879.18. The reason for this mixed performance is that crude oil prices skyrocketed over 11% following President Trump's speech on Iran, which really rattled investor sentiment.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        11751,
+        52722
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the president's speech had a major impact on the market. It sounds like his remarks went in a different direction than what investors were hoping for.",
+      "sources": [],
+      "time": [
+        53222,
+        61513
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. The market was holding out some hope for a swift resolution to the conflict with Iran, but President Trump's comments did the opposite. He mentioned striking Iran hard but offered no clear timeline for a withdrawal. This ambiguous message heightened geopolitical risk in the Middle East, directly fueling uncertainty around the Strait of Hormuz—a vital artery for global oil supply—and that's what sent oil prices soaring. Ultimately, the surge in oil stoked inflation fears, which ended up dragging on the stock market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ebe0109c9c298b8b",
+          "title": "Oil surges and US stock futures fall after Trump offers no clear timeline to end war in Iran"
+        }
+      ],
+      "time": [
+        62013,
+        91784
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, could you break down the key factors that moved the market today?",
+      "sources": [],
+      "time": [
+        92284,
+        96495
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, the biggest driver today was the geopolitical risk sparked by President Trump's remarks. This risk pushed oil prices higher, which in turn led to inflation concerns that shook the entire market. Let's start by digging into this issue of geopolitical uncertainty.",
+      "sources": [],
+      "time": [
+        96995,
+        112886
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Right, so the president's speech completely defied market expectations. What specifically was the problem?",
+      "sources": [],
+      "time": [
+        113886,
+        120857
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Well, the market was clinging to a sliver of hope for a quick end to the conflict, but the president's speech essentially poured fuel on the fire of uncertainty. When he delivered a message about striking Iran hard without offering a timeline for ending the war, fears of a prolonged geopolitical risk overwhelmed the market. The first to react was crude oil, with West Texas Intermediate surging past $110 a barrel intraday, which immediately sparked inflation concerns. Unusually, we even saw a sell-off in the safe-haven U.S. Treasury market; the 10-year Treasury yield spiked to 4.38% intraday, showing that inflation fears were overpowering risk-off sentiment. The Dollar Index also strengthened, rising over 0.5%, and the VIX, the market's volatility index, jumped above 27 at one point, clearly showing the anxiety in the market. In the end, while the S&P 500 closed slightly higher, underneath the surface we saw a sharply divergent market, with the energy sector being the only one to rally hard.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ebe0109c9c298b8b",
+          "title": "Oil surges and US stock futures fall after Trump offers no clear timeline to end war in Iran"
+        },
+        {
+          "type": "article",
+          "pk": "id#3dbfbf073a536404",
+          "title": "US Bonds Fall as Trump’s Iran Threats Add to Inflation Angst"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        121357,
+        184368
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So the source of the oil surge was clearly the Strait of Hormuz. What did the president say about it that caused such a sensitive reaction from the market?",
+      "sources": [],
+      "time": [
+        184868,
+        194039
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "It was a critical moment. President Trump suggested that allies should take the lead in guaranteeing security in the Strait of Hormuz, a key chokepoint for global oil supply. He essentially signaled that control over this strait, through which one-fifth of the world's oil passes, could be left as an unresolved issue. This did more than just spook oil prices; it effectively imposed a 'geopolitical premium' on the entire global supply chain. Market participants interpreted this to mean that military tensions in the Middle East would not end quickly and that uncertainty in the energy supply would persist for a considerable time. The fact that Brent crude surpassed $108 is a direct reflection of these supply fears.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ebe0109c9c298b8b",
+          "title": "Oil surges and US stock futures fall after Trump offers no clear timeline to end war in Iran"
+        },
+        {
+          "type": "article",
+          "pk": "id#a708e347c1b22382",
+          "title": "Stock market today: Dow S&P 500, Nasdaq futures dip after Trumps says war with Iran not yet over"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        194539,
+        236630
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So how did this oil shock specifically impact the stock market? Can you walk us through the sector performance?",
+      "sources": [],
+      "time": [
+        237130,
+        244381
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, the market showed classic signs of stagflation fears. Energy companies like ExxonMobil and Chevron, which directly benefit from higher oil prices, saw their stocks rally across the board. Also, with military tensions rising, defense stocks like Lockheed Martin and Raytheon also felt upward pressure. On the other hand, the airline industry took the biggest hit. With jet fuel prices having skyrocketed over 100% in the past month, cost burdens have ballooned, and shares of American Airlines and United Airlines fell more than 3%. So, while the major indexes were mixed, the underlying mood in the market was very unstable, as this single variable of oil prices created a stark divide between industries.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#082e629163aa48ca",
+          "title": "Jet fuel prices are up 100%, oil prices keep surging, and airlines are paying the price"
+        },
+        {
+          "type": "article",
+          "pk": "id#0334096d46290bd9",
+          "title": "Oil prices have ripped higher, yet investors keep making this mistake with energy stocks"
+        },
+        {
+          "type": "chart",
+          "ticker": "AAL",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        244881,
+        287732
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "It seems these inflation concerns will inevitably put significant pressure on the Fed's monetary policy.",
+      "sources": [],
+      "time": [
+        288232,
+        294522
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's right. This oil price surge has completely upended the market's expectations for the Fed's policy path. Just a few weeks ago, the market was pricing in the possibility of two or more rate cuts this year. But after President Trump's speech, as fears of prolonged oil-driven inflation grew, those rate cut hopes have virtually evaporated. Investment banks like Bank of America have even warned that if oil stays around $100 a barrel through year-end, the U.S. economy could enter a period of low growth and high inflation. Now, the market's focus will shift from economic data to how the geopolitical risk in the Middle East unfolds and how that will pressure the Fed's decisions.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#3dbfbf073a536404",
+          "title": "US Bonds Fall as Trump’s Iran Threats Add to Inflation Angst"
+        },
+        {
+          "type": "article",
+          "pk": "id#a708e347c1b22382",
+          "title": "Stock market today: Dow S&P 500, Nasdaq futures dip after Trumps says war with Iran not yet over"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        295022,
+        331793
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "The Fed's dilemma is certainly deepening. Let's take a closer look at the surge in crude oil prices that started this whole situation. Just how severe was the shock?",
+      "sources": [],
+      "time": [
+        332293,
+        343104
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, today was a day where geopolitical risk, triggered by the president's speech, shook every asset class. When the speech failed to provide a clear timeline for ending the conflict with Iran, uncertainty over the Strait of Hormuz, a critical global oil chokepoint, intensified. On this news, West Texas Intermediate crude futures shot up over 11% to surpass $111 a barrel, and Brent crude futures, the international benchmark, also surged, breaking through the $108 a barrel mark. The spike in oil immediately translated into inflation fears, hitting the bond market hard. As investors sold bonds to hedge against inflation, the 10-year U.S. Treasury yield soared to 4.38% intraday. The volatility index, which reflects market fear, also jumped, adding to the anxiety. Within the stock market, there was a stark divergence: the energy sector surged, while airline stocks, which are directly hit by rising oil prices, fell sharply.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ebe0109c9c298b8b",
+          "title": "Oil surges and US stock futures fall after Trump offers no clear timeline to end war in Iran"
+        },
+        {
+          "type": "article",
+          "pk": "id#3dbfbf073a536404",
+          "title": "US Bonds Fall as Trump’s Iran Threats Add to Inflation Angst"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        343604,
+        400135
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So it's a chain reaction: surging oil fuels inflation fears, which in turn pushes up bond yields. How is this oil spike different from past oil shocks, and what are the market's biggest concerns right now?",
+      "sources": [],
+      "time": [
+        400635,
+        413566
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "This oil surge is far more dangerous because it's a supply-side shock driven by a geopolitical crisis, not a demand-driven boom. The potential blockade of the Strait of Hormuz, which carries about 20% of the world's oil, has been raised. This is a classic recipe for stagflation, as it can fuel inflation while simultaneously triggering an economic downturn. The market's biggest fear is the resulting policy dilemma for the Federal Reserve. As the Dallas Fed President noted, the Fed now faces conflicting pressures: the need to maintain a tight policy to ensure price stability and the need to prevent an economic slowdown. Expectations for a rate cut this year have already vanished from the market, and there's even talk of potential further tightening. This extreme uncertainty around monetary policy is what's weighing most heavily on investor sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ebe0109c9c298b8b",
+          "title": "Oil surges and US stock futures fall after Trump offers no clear timeline to end war in Iran"
+        },
+        {
+          "type": "article",
+          "pk": "id#3d174e8ff390ecb7",
+          "title": "Fed's Logan says US oil producers unlikely to provide near-term relief for consumers"
+        },
+        {
+          "type": "article",
+          "pk": "id#3dbfbf073a536404",
+          "title": "US Bonds Fall as Trump’s Iran Threats Add to Inflation Angst"
+        },
+        {
+          "type": "article",
+          "pk": "id#434c2e7ace7dc55b",
+          "title": "Stock market today: Dow S&P 500, Nasdaq futures slide on Trump's national address on Iran"
+        }
+      ],
+      "time": [
+        414066,
+        463197
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So the key takeaway is that the Fed's policy options have narrowed. Amid this situation, the market saw a sharp divergence. The energy sector showed exceptional strength—which specific stocks were on the move?",
+      "sources": [],
+      "time": [
+        463697,
+        478228
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, energy companies that directly benefit from the oil price surge saw their stocks rally across the board. Notably, shares of major oil companies like ExxonMobil and Chevron rose significantly, helping to offset some of the downward pressure on the market. According to analysis from Citigroup, energy stocks have performed strongly during the last four major energy supply shocks, and some see the sector as still attractive given that its weight in the overall market is lower than historical averages. On the flip side, airlines, whose cost structure is heavily dependent on fuel prices, had a terrible day. Shares of major carriers like Delta Air Lines and United Airlines all fell, as concerns about eroding profitability weighed on the stocks, especially with jet fuel prices having more than doubled in the past month.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#082e629163aa48ca",
+          "title": "Jet fuel prices are up 100%, oil prices keep surging, and airlines are paying the price"
+        },
+        {
+          "type": "article",
+          "pk": "id#0334096d46290bd9",
+          "title": "Oil prices have ripped higher, yet investors keep making this mistake with energy stocks"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "DAL",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-03"
+        }
+      ],
+      "time": [
+        478728,
+        522899
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So if this geopolitical risk isn't resolved in the short term, it seems oil price volatility could continue to shake the entire market. Finally, what are the key variables to watch going forward?",
+      "sources": [],
+      "time": [
+        523399,
+        535890
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "The most important variable is undoubtedly any news regarding the passage protocols for the Strait of Hormuz being discussed between Iran and Oman. Late in the session, a report on this topic helped the stock market pare some of its losses and briefly cooled off oil prices. This shows just how desperate the market is for a diplomatic solution in the Middle East. Also, we need to watch for a potential release from the U.S. Strategic Petroleum Reserve to stabilize prices, as well as any issues with Russia's crude oil production. Some analyses suggest that recent Ukrainian drone attacks have damaged some of Russia's port facilities and storage capacity, which could further strain the global supply chain. For the time being, the market is likely to remain volatile, driven more by geopolitical news flow from the Middle East than by macroeconomic indicators.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9638c7dc9c07c7ec",
+          "title": "Stock market today: Dow falls, S&P 500 and Nasdaq shake of early losses on Strait of Hormuz hopes"
+        },
+        {
+          "type": "article",
+          "pk": "id#d5645a0bebe5e56d",
+          "title": "Exclusive-Russian oil output cuts are unavoidable as drone attacks shrink exports, sources say"
+        },
+        {
+          "type": "article",
+          "pk": "id#2a19f07fb35f553a",
+          "title": "Exclusive-Russia's Primorsk oil terminal lost 40% of storage to drone attacks, satellite images show"
+        },
+        {
+          "type": "article",
+          "pk": "id#3d174e8ff390ecb7",
+          "title": "Fed's Logan says US oil producers unlikely to provide near-term relief for consumers"
+        }
+      ],
+      "time": [
+        536390,
+        579561
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Okay, with all this volatility in the broader market, let's look at how some individual companies are faring. We'll start with Bristol Myers Squibb. The stock opened around the $60 mark today and trended down all session, ultimately closing with a loss of over 1%. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BMY",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        }
+      ],
+      "time": [
+        580561,
+        599372
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, BMY fell sharply today without any clear news, raising concerns in the market. This seems to be less about a single-day issue and more of a reflection of the market's anxiety over the structural dilemma the company is facing. The core of the problem is the 'patent cliff.' Two of its drugs, the anticoagulant Eliquis and the cancer immunotherapy Opdivo, are set to lose patent protection in the U.S. around 2028. Together, these two products account for about 51% of the company's total revenue. This represents a massive threat, potentially wiping out over $24 billion in annual cash flow, and it appears the market is starting to price in this definite future risk.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BMY",
+          "form": "10-K",
+          "filed_date": "2026-02-11",
+          "accession_number": "0000014272-26-000004"
+        }
+      ],
+      "time": [
+        599872,
+        645563
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Losing half of your revenue is a really serious problem. So how is the company responding to this clear and present danger?",
+      "sources": [],
+      "time": [
+        646063,
+        653314
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The company is pursuing a very aggressive M&A strategy to address this. They're using the massive cash flow generated by their existing blockbusters to acquire promising biotech firms like Karuna and RayzeBio, betting everything on building a next-generation pipeline. It's a desperate attempt to fill the huge hole left by the patent cliff with new growth drivers. However, this has also led to a significant amount of debt, which acts as a double-edged sword that could seriously threaten the company's financial stability if the new drug developments fail.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BMY",
+          "form": "10-K",
+          "filed_date": "2026-02-11",
+          "accession_number": "0000014272-26-000004"
+        }
+      ],
+      "time": [
+        653814,
+        684625
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So they're essentially betting the company's future on the success of these acquisitions. How is the potential of this new drug pipeline being assessed?",
+      "sources": [],
+      "time": [
+        685125,
+        694016
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "In terms of growth potential, there are some very positive assessments. In particular, the schizophrenia treatment 'KarXT' is seen as a potential game-changer, being the first new mechanism of action in decades. If it can expand its indications to Alzheimer's psychosis, it could capture a huge market. Additionally, the radiopharmaceutical platform acquired through the RayzeBio deal is expected to lead the next paradigm in cancer treatment. The optimistic view is that if these new drugs are successfully commercialized, they could have the disruptive power to more than make up for the $24 billion revenue gap.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BMY",
+          "form": "10-K",
+          "filed_date": "2026-02-11",
+          "accession_number": "0000014272-26-000004"
+        }
+      ],
+      "time": [
+        694516,
+        728727
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "But looking at today's stock performance, it seems the market is focusing more on the immediate risks than that potential. What's the counterargument to this growth story?",
+      "sources": [],
+      "time": [
+        729227,
+        739798
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's a sharp observation. The market's core concern is that while the success of the new pipeline is an uncertain hope, the revenue cliff is a confirmed reality. Drug development is inherently high-risk, and even if a drug is successfully commercialized, it takes years to replace the revenue scale of existing blockbusters. The market is worried about this inevitable earnings gap and the increased debt burden from the M&A at the same time. Ultimately, the current stock decline can be seen as a rational market repricing, weighing the predictable collapse in earnings and financial pressure more heavily than the hopes for a rosy future.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BMY",
+          "form": "10-K",
+          "filed_date": "2026-02-11",
+          "accession_number": "0000014272-26-000004"
+        },
+        {
+          "type": "chart",
+          "ticker": "BMY",
+          "start_date": "2026-03-03",
+          "end_date": "2026-04-02"
+        }
+      ],
+      "time": [
+        740298,
+        779069
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "To sum up today's market, we could call it the 'paradox of a strong economy.' We've now seen two consecutive days of declines. Could you break it down for us?",
+      "sources": [],
+      "time": [
+        780069,
+        790080
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, that's exactly right. The ADP private payrolls and ISM services data released today both came in hotter than expected, which actually turned out to be poison for the market. The strong economic indicators pushed back expectations for Fed rate cuts, leading to higher Treasury yields and a drop in stocks. With Fed Chair Powell yesterday reiterating a cautious, data-dependent approach, the market is sensitively interpreting good economic news as a signal for delayed rate cuts. As a result, the Dow, S&P 500, and Nasdaq all fell for a second straight day, taking a breather.",
+      "sources": [],
+      "time": [
+        790580,
+        826751
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "As you said, the Fed's rate cut path seems to be shrouded in fog again. Are there any important events left this week that could give us a better sense of the market's direction?",
+      "sources": [],
+      "time": [
+        827251,
+        836622
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Absolutely. All eyes are now on the Labor Department's March jobs report, which will be released on Friday morning local time. With today's ADP private employment numbers coming in well above market expectations, this official jobs report will be a crucial test to see if the labor market is indeed still running hot. It's not just about the headline payroll number; the unemployment rate and average hourly earnings will also be released, making it a key set of data for gauging the future direction of the Fed's monetary policy.",
+      "sources": [],
+      "time": [
+        837122,
+        866893
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "What specifically should we be watching for in Friday's jobs report?",
+      "sources": [],
+      "time": [
+        867393,
+        871404
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "We need to look at three things together. First is the nonfarm payrolls number. If it comes in significantly above expectations, it will fuel concerns that a strong labor market could increase inflationary pressures, further weakening rate cut hopes. Second is the unemployment rate. It's important to see if it remains at a low level. Finally, and most importantly, is average hourly earnings, or wage growth. If wage growth doesn't slow down and instead shows signs of accelerating, it would be taken as a clear signal that the fight against inflation is not over, and that could deliver the biggest shock to the market.",
+      "sources": [],
+      "time": [
+        871904,
+        908834
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So all eyes are on the details of Friday's jobs report. Thanks again for the detailed analysis today.",
+      "sources": [],
+      "time": [
+        909334,
+        915625
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "In a period of heightened market volatility, it's important to look at multiple data points to confirm a trend, rather than reacting hastily to a single indicator. This jobs report, in particular, along with next week's Consumer Price Index, could be decisive for the Fed's June rate decision, so it's wise for investors to remain patient and watch how the situation unfolds.",
+      "sources": [],
+      "time": [
+        916125,
+        938416
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Understood. That concludes our April 3rd closing bell briefing. Thank you for watching.",
+      "sources": [],
+      "time": [
+        938916,
+        944807
+      ]
+    }
+  ]
+}
