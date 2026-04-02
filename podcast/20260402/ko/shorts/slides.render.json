@@ -1,0 +1,222 @@
+{
+  "date": "20260403",
+  "lang": "ko",
+  "title": "유가 11% 폭등! 이란 리스크가 시장을 덮친 이유",
+  "hook": "유가가 11% 폭등하고 10년물 국채금리는 4.38%까지 치솟았습니다. 대체 무슨 일이 있었을까요.",
+  "durationSeconds": 71.284,
+  "audioFile": "shorts20260402.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 7.091,
+      "eyebrow": "시장 쇼크",
+      "headline": "유가 11% 폭등",
+      "subheadline": "국채금리 4.38% 돌파, 대체 무슨 일이?",
+      "body": "유가가 11% 폭등하고 10년물 국채금리는 4.38%까지 치솟았습니다. 대체 무슨 일이 있었을까요.",
+      "bullets": [
+        "유가가 11% 폭등하고 10년물 국채금리는 4.38%까지 치솟았습니다.",
+        "대체 무슨 일이 있었을까요."
+      ],
+      "tickers": [
+        "CLF",
+        "^TNX",
+        "XOM",
+        "CVX"
+      ],
+      "highlights": [
+        "WTI 유가 +11%",
+        "10년물 국채금리 4.38%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 7.091,
+      "endSec": 20.142,
+      "eyebrow": "4월 3일 마감",
+      "headline": "미 증시 혼조 마감",
+      "subheadline": "지정학적 리스크에 시장 방향성 상실",
+      "body": "4월 3일 미국 증시는 이란 관련 지정학적 우려에 유가가 폭등하며 혼조세로 마감했습니다. 다우는 0.13% 하락했지만, S&P 500은 0.11%, 나스닥은 0.18% 상승했습니다.",
+      "bullets": [
+        "S&P 500 +0.11%",
+        "NASDAQ +0.18%"
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "XOM"
+      ],
+      "highlights": [
+        "S&P 500 +0.11%",
+        "NASDAQ +0.18%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 20.142,
+      "endSec": 69.473,
+      "eyebrow": "핵심 원인",
+      "headline": "대통령 연설이 부른 공포",
+      "subheadline": "이란 리스크 장기화 우려가 시장을 덮쳤습니다.",
+      "body": "시장의 예상을 깬 트럼프 대통령의 연설이 모든 것을 바꿨습니다. 이란과의 분쟁을 끝낼 명확한 시간표 제시 없이 강경 발언이 나오자, 지정학적 리스크가 장기화될 것이라는 공포가 시장을 덮쳤습니다. 가장 먼저 반응한 국제 유가는 서부 텍사스산 원유가 11% 넘게 폭등하며 배럴당 111달러를 돌파했습니다. 이는 즉각 인플레이션 우려를 자극했고, 안전자산인 국채마저 매도세가 나오며 10년물 금리는 4.38%까지 치솟았습니다. 공포지…",
+      "bullets": [
+        "트럼프 대통령의 강경 발언으로 지정학적 리스크 부각",
+        "유가 폭등에 에너지주는 급등, 항공주는 급락"
+      ],
+      "tickers": [
+        "XOM",
+        "AAL",
+        "CVX",
+        "UAL"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 69.473,
+      "endSec": 71.284,
+      "eyebrow": "콘텐츠 더보기",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 장 마감 정보를 가장 빠르게 받아보세요.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "AAL",
+        "UAL"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 7.091,
+      "text": "유가가 11% 폭등하고 10년물 국채금리는 4.38%까지 치솟았습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 7.091,
+      "endSec": 20.142,
+      "text": "4월 3일 미국 증시는 이란 관련 지정학적 우려에 유가가 폭등하며 혼조세로 마감했습니다. 다우는 0.13% 하락했지만, S&P 500은 0.11%, 나스닥은 0.18% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 20.142,
+      "endSec": 69.473,
+      "text": "시장의 예상을 깬 트럼프 대통령의 연설이 모든 것을 바꿨습니다. 이란과의 분쟁을 끝낼 명확한 시간표 제시 없이 강경 발언이 나오자, 지정학적 리스크가 장기화될 것이라는 공포가 시장을 덮쳤습니다. 가장 먼저 반응한 국제 유가는 서부 텍사스산 원유가 11% 넘게 폭등하며 배럴당 111달러…"
+    },
+    {
+      "id": 3,
+      "startSec": 69.473,
+      "endSec": 71.284,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "article",
+      "label": "Oil surges and US stock futures fall after Trump offers…",
+      "detail": "id#ebe0109c9c298b8b"
+    },
+    {
+      "type": "article",
+      "label": "US Bonds Fall as Trump’s Iran Threats Add to Inflation…",
+      "detail": "id#3dbfbf073a536404"
+    },
+    {
+      "type": "article",
+      "label": "Jet fuel prices are up 100%, oil prices keep surging, a…",
+      "detail": "id#082e629163aa48ca"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "AAL",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-03"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-03"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "국제 유가 11% 폭등",
+      "이란 관련 지정학적 리스크로 인한 인플레이션 공포",
+      "에너지주 급등, 항공주 급락의 섹터 차별화",
+      "연준 금리 인하 기대감 소멸"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "CVX",
+        "label": "셰브론",
+        "tag": "에너지주 강세"
+      },
+      {
+        "ticker": "AAL",
+        "label": "아메리칸 항공",
+        "tag": "유가 급등 피해"
+      },
+      {
+        "ticker": "UAL",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "CLF",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

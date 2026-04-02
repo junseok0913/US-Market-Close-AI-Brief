@@ -1,0 +1,58 @@
+{
+  "date": "20260402",
+  "lang": "ko",
+  "audioFile": "shorts20260402.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 71.284,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 7.091,
+      "endSec": 7.091,
+      "speechDurationSec": 7.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 55,
+      "text": "유가가 11% 폭등하고 10년물 국채금리는 4.38%까지 치솟았습니다. 대체 무슨 일이 있었을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 7.091,
+      "speechEndSec": 20.142,
+      "endSec": 20.142,
+      "speechDurationSec": 13.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 101,
+      "text": "4월 3일 미국 증시는 이란 관련 지정학적 우려에 유가가 폭등하며 혼조세로 마감했습니다. 다우는 0.13% 하락했지만, S&P 500은 0.11%, 나스닥은 0.18% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 20.142,
+      "speechEndSec": 69.473,
+      "endSec": 69.473,
+      "speechDurationSec": 49.331,
+      "pauseAfterSec": 0.0,
+      "charCount": 435,
+      "text": "시장의 예상을 깬 트럼프 대통령의 연설이 모든 것을 바꿨습니다. 이란과의 분쟁을 끝낼 명확한 시간표 제시 없이 강경 발언이 나오자, 지정학적 리스크가 장기화될 것이라는 공포가 시장을 덮쳤습니다. 가장 먼저 반응한 국제 유가는 서부 텍사스산 원유가 11% 넘게 폭등하며 배럴당 111달러를 돌파했습니다. 이는 즉각 인플레이션 우려를 자극했고, 안전자산인 국채마저 매도세가 나오며 10년물 금리는 4.38%까지 치솟았습니다. 공포지수 VIX도 27을 넘어서며 불안 심리를 키웠습니다. 시장 내부는 극명하게 갈렸습니다. 엑슨모빌, 셰브론 등 에너지주는 급등했지만, 제트유 가격이 한 달 만에 100% 폭등한 아메리칸 항공, 유나이티드 항공 등 항공주들은 3% 넘게 급락했습니다. 결국 공급망 충격발 스태그플레이션 우려가 커지면서, 시장의 연내 금리 인하 기대감은 사실상 소멸했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 69.473,
+      "speechEndSec": 71.284,
+      "endSec": 71.284,
+      "speechDurationSec": 1.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

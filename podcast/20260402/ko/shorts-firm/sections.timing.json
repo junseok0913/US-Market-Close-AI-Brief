@@ -1,0 +1,67 @@
+{
+  "date": "20260402",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260402.mp3",
+  "sectionOrder": [
+    "cvx",
+    "aal",
+    "bmy",
+    "xom"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 88.135,
+  "sections": [
+    {
+      "id": 0,
+      "name": "cvx",
+      "ticker": "CVX",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 28.491,
+      "endSec": 28.491,
+      "speechDurationSec": 28.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 243,
+      "text": "이란 관련 지정학적 우려에 유가가 11% 넘게 폭등하며 시장의 희비가 극명하게 엇갈렸습니다. 셰브론은 오늘 0.79% 상승했습니다. 트럼프 대통령의 이란 관련 연설 이후 지정학적 리스크가 커지면서 국제 유가가 폭등했기 때문입니다. 유가 급등의 직접적인 수혜를 받는 대표적인 에너지 기업으로서, 시장의 불안감 속에서도 주가가 강세를 보였습니다. 씨티그룹은 과거 에너지 공급 충격 당시에도 에너지 주식은 강한 성과를 보였다고 분석했습니다."
+    },
+    {
+      "id": 1,
+      "name": "aal",
+      "ticker": "AAL",
+      "kind": "company",
+      "startSec": 28.491,
+      "speechEndSec": 46.862,
+      "endSec": 46.862,
+      "speechDurationSec": 18.371,
+      "pauseAfterSec": 0.0,
+      "charCount": 169,
+      "text": "반면 아메리칸 항공은 2.61% 하락하며 직격탄을 맞았습니다. 유가 폭등은 항공사의 비용 구조에서 가장 큰 비중을 차지하는 항공유 가격 급등으로 이어졌기 때문입니다. 지난 한 달간 항공유 가격이 100% 이상 폭등하면서 수익성 악화에 대한 우려가 커졌고, 이는 고스란히 주가 하락 압력으로 작용했습니다."
+    },
+    {
+      "id": 2,
+      "name": "bmy",
+      "ticker": "BMY",
+      "kind": "company",
+      "startSec": 46.862,
+      "speechEndSec": 69.153,
+      "endSec": 69.153,
+      "speechDurationSec": 22.291,
+      "pauseAfterSec": 0.0,
+      "charCount": 178,
+      "text": "브리스톨 마이어스 스큅은 오늘 3.45% 하락했습니다. 이는 시장 전반의 이슈가 아닌 '특허 절벽'이라는 회사 고유의 구조적 문제 때문입니다. 2028년 특허가 만료되는 항응고제 '엘리퀴스'와 면역항암제 '옵디보'가 전체 매출의 51%를 차지하는데, 이 거대한 매출 공백에 대한 시장의 불안감이 주가를 짓누른 것입니다."
+    },
+    {
+      "id": 3,
+      "name": "xom",
+      "ticker": "XOM",
+      "kind": "company",
+      "startSec": 69.153,
+      "speechEndSec": 88.135,
+      "endSec": 88.135,
+      "speechDurationSec": 18.982,
+      "pauseAfterSec": 0.0,
+      "charCount": 117,
+      "text": "엑슨모빌은 국제 유가 급등의 직접적인 수혜를 받으며 최근 한 달간 7.26% 상승했습니다. 유가 상승이 다른 산업에는 비용 부담으로 작용했지만, 에너지 기업에는 호재가 된 것입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
