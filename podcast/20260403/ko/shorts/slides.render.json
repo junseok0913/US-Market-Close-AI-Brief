@@ -1,0 +1,225 @@
+{
+  "date": "20260404",
+  "lang": "ko",
+  "title": "유가 11% 폭등, 증시는 왜 혼조세였을까?",
+  "hook": "하루 만에 국제 유가가 11% 넘게 폭등했습니다. 시장은 어떻게 반응했을까요.",
+  "durationSeconds": 70.844,
+  "audioFile": "shorts20260403.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 6.811,
+      "eyebrow": "4월 4일 마감",
+      "headline": "유가 11% 폭등",
+      "subheadline": "하루 만에 벌어진 유가 급등, 시장의 반응은?",
+      "body": "하루 만에 국제 유가가 11% 넘게 폭등했습니다. 시장은 어떻게 반응했을까요.",
+      "bullets": [
+        "하루 만에 국제 유가가 11% 넘게 폭등했습니다.",
+        "시장은 어떻게 반응했을까요."
+      ],
+      "tickers": [
+        "CLF",
+        "CVX",
+        "OXY",
+        "^DJI"
+      ],
+      "highlights": [
+        "국제 유가 +11.4%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 6.811,
+      "endSec": 19.822,
+      "eyebrow": "미국 증시",
+      "headline": "혼조세 마감",
+      "subheadline": "S&P 500 +0.11% | NASDAQ +0.17%",
+      "body": "유가 급등과 고용보고서 경계감 속 지수별 등락이 엇갈렸습니다.",
+      "bullets": [
+        "4월 4일 미국 증시는 유가 급등과 고용보고서 경계감 속 혼조세를 보였습니다.",
+        "다우 지수는 0.13% 하락했지만, S&P 500은 0.11%, 나스닥은 0.17% 소폭 상승 마감했습니다."
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "CVX"
+      ],
+      "highlights": [
+        "S&P 500 +0.11%",
+        "NASDAQ +0.17%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 19.822,
+      "endSec": 68.673,
+      "eyebrow": "시장 인사이트",
+      "headline": "유가 충격과 매파 발언",
+      "subheadline": "인플레이션 우려가 시장을 짓누르다",
+      "body": "시장을 뒤흔든 건 중동 호르무즈 해협의 긴장감이었습니다. 이로 인해 서부 텍사스산 원유 가격이 하루 만에 11.4% 폭등하며 배럴당 111달러를 넘어섰습니다. 유가 급등은 인플레이션 우려를 다시 자극하며 업종별 희비를 극명하게 갈랐습니다. 셰브론은 0.8%, 옥시덴탈 페트롤리움은 1% 넘게 오르는 등 에너지 섹터는 강세를 보였지만, 유류비 부담이 커진 항공주 ETF는 1.3% 넘게 하락했고, 소비 위축 우려에 소비재 ETF도…",
+      "bullets": [
+        "중동 리스크로 유가 폭등, 에너지주(CVX, OXY)는 강세",
+        "인플레 우려와 연준 매파 발언에 금리 인하 기대감 후퇴"
+      ],
+      "tickers": [
+        "CVX",
+        "OXY",
+        "JETS",
+        "XLY"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 68.673,
+      "endSec": 70.844,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "CVX",
+        "OXY",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 6.811,
+      "text": "하루 만에 국제 유가가 11% 넘게 폭등했습니다. 시장은 어떻게 반응했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 6.811,
+      "endSec": 19.822,
+      "text": "4월 4일 미국 증시는 유가 급등과 고용보고서 경계감 속 혼조세를 보였습니다. 다우 지수는 0.13% 하락했지만, S&P 500은 0.11%, 나스닥은 0.17% 소폭 상승 마감했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 19.822,
+      "endSec": 68.673,
+      "text": "시장을 뒤흔든 건 중동 호르무즈 해협의 긴장감이었습니다. 이로 인해 서부 텍사스산 원유 가격이 하루 만에 11.4% 폭등하며 배럴당 111달러를 넘어섰습니다. 유가 급등은 인플레이션 우려를 다시 자극하며 업종별 희비를 극명하게 갈랐습니다. 셰브론은 0.8%, 옥시덴탈 페트롤리움은 1%…"
+    },
+    {
+      "id": 3,
+      "startSec": 68.673,
+      "endSec": 70.844,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "article",
+      "label": "Fears of Supply Disruption in Strait of Hormuz Send Oil…",
+      "detail": "h#12345"
+    },
+    {
+      "type": "chart",
+      "label": "CVX",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "OXY",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "JETS",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "chart",
+      "label": "XLY",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "event",
+      "label": "Initial Jobless Claims",
+      "detail": "2026-04-02"
+    },
+    {
+      "type": "article",
+      "label": "Fed's Kashkari Questions Rate Cuts Amid Sticky Inflatio…",
+      "detail": "n#2001"
+    },
+    {
+      "type": "article",
+      "label": "Stocks Mixed as Investors Await Key Jobs Report for Fed…",
+      "detail": "h#67890"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "국제 유가 11.4% 폭등 및 인플레이션 우려 자극",
+      "연준 위원의 매파적 발언으로 금리 인하 기대감 후퇴",
+      "에너지주 강세 vs 항공/소비재주 약세 등 업종별 희비 교차"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "CVX",
+        "label": "셰브론",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "OXY",
+        "label": "옥시덴탈 페트롤리움",
+        "tag": "에너지 섹터 강세"
+      },
+      {
+        "ticker": "JETS",
+        "label": "항공주 ETF",
+        "tag": "유류비 부담에 하락"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
