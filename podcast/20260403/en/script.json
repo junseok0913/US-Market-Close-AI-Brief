@@ -1,0 +1,627 @@
+{
+  "date": "20260403",
+  "nutshell": "A mixed session amid surging oil prices and caution ahead of the jobs report.",
+  "user_tickers": [
+    "INTC"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 7
+    },
+    {
+      "name": "theme",
+      "start_id": 8,
+      "end_id": 23
+    },
+    {
+      "name": "ticker",
+      "start_id": 24,
+      "end_id": 31
+    },
+    {
+      "name": "closing",
+      "start_id": 32,
+      "end_id": 40
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the market closing brief for April 4th. The market showed a split direction today, with the Dow falling while the Nasdaq rose. What was the backdrop for this?",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Yes, today can be summed up as a mixed session amid a surge in oil prices and caution ahead of the jobs report. The Dow Jones Industrial Average closed down 0.13% at 46,504.67, while the S&P 500 gained 0.11% and the tech-heavy Nasdaq Composite also finished up 0.17%. The market's attention was focused on two main things: the more than 11% spike in international oil prices due to geopolitical risks in the Middle East, and the U.S. jobs report set to be released tomorrow.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "That surge of over 11% in oil prices in a single day is what really stands out. Was there a specific reason for that?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The direct cause was heightened tensions in the Strait of Hormuz in the Middle East, which brought concerns about crude oil supply disruptions to the forefront. As a result, shares of energy companies like ExxonMobil and Chevron saw strong gains. On the other hand, the fear that surging oil prices could reignite inflation acted as a drag on overall market sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "h#12345",
+          "title": "Fears of Supply Disruption in Strait of Hormuz Send Oil Prices Soaring"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "Despite the oil shock, the fact that the market didn't completely break down suggests there was also a strong wait-and-see attitude.",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "That's right. Market participants were holding back from making any aggressive moves ahead of the March non-farm payrolls report, which is due out tomorrow morning. With so much uncertainty about how this jobs data will affect expectations for a Fed rate cut, everyone was essentially holding their breath and waiting for the results. The fact that today's weekly jobless claims came in below expectations, reaffirming the strength of the labor market, also bolstered this cautious stance.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395442",
+          "title": "initial jobless claims",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "h#67890",
+          "title": "Stocks Mixed as Investors Await Key Jobs Report for Fed Clues"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "So, today was really a day where the wild card of oil prices collided with the caution ahead of the key jobs report. What were the core themes that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, we can point to two core themes: the surge in oil prices driven by geopolitical risk, and the market's cautiousness ahead of the jobs report, which will be a key indicator for the Fed's policy direction.",
+      "sources": []
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "Alright, let's dig into the oil price surge first. Geopolitical risks in the Middle East are back in focus, is that right?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's right, today's market was completely dominated by the single variable of tensions in the Strait of Hormuz. West Texas Intermediate crude prices shot up 11.4% in a single day to over $111 a barrel, and Brent crude also jumped more than 7%, directly reflecting fears of a supply shock. As a result, the VIX, which measures market fear, spiked to nearly 28 at one point during the session before giving back some of those gains by the close. The oil surge fueled inflation concerns, keeping the 10-year U.S. Treasury yield at an elevated 4.3%. And while the S&P 500 finished slightly higher, a look under the hood reveals a chaotic session with a stark divergence between the strong performance of the energy sector and the weakness in other sectors, including airline stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "The biggest concern is that this oil spike could reignite inflation. What kind of impact could this have on the Fed's monetary policy?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "This certainly complicates things for the Fed. If oil prices settle above the $100 per barrel mark, it will directly translate to higher consumer prices, hindering the disinflationary trend. This weakens the Fed's justification for cutting rates anytime soon. In this context, all eyes are now on tomorrow's March non-farm payrolls report. If the labor market is confirmed to be still running hot, combined with oil-driven inflation fears, expectations for a Fed rate cut will inevitably be pushed back further. The fact that the 10-year Treasury yield remained elevated today reflects this cautious sentiment in the bond market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "Unemployment Rate",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "On the flip side, could you give us some specifics on how the energy sector, which benefited from the oil surge, performed?",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "The energy sector was strong as expected, but there were some nuances among individual stocks. The XLE ETF, which tracks the entire energy sector, rose about 0.5%, outperforming the broader market. Chevron gained about 0.8%, and Occidental Petroleum was up over 1%, clearly benefiting from the rise in oil prices. What's interesting, however, is that shares of ExxonMobil, the industry's largest company, ended the day slightly down after a volatile session. This suggests that despite the positive catalyst of surging oil, profit-taking or other company-specific factors were at play, showing a subtle divergence in investor views even within the energy sector.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "OXY",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "So which sectors were directly hit by this oil shock?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Airlines and consumer discretionary sectors were by far the hardest hit. The JETS ETF, which tracks airline stocks, fell more than 1.3% today. For airlines, fuel is one of their biggest costs, so a spike in oil prices immediately leads to concerns about profitability. At the same time, the consumer discretionary sector also took a direct hit, with the XLY ETF falling 1.5%. This reflects the market's analysis that higher gasoline prices will reduce households' real purchasing power, leaving less money for discretionary spending like travel and shopping. So, the oil surge is a double-edged sword: it's a boon for energy companies but a burden on the broader economy through increased costs and reduced consumption.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLY",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-01",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "With rising oil prices fueling inflation fears, it seems even more attention will be on the jobs report, which could sway the Fed's decision. Why is this particular jobs report considered so crucial?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Yes, it's because uncertainty surrounding the Federal Reserve's path for rate cuts has reached a peak. Today's market was the very definition of the calm before the storm. The Dow Jones Industrial Average fell 0.13%, but the S&P 500 and Nasdaq Composite edged up 0.11% and 0.17% respectively, showing a clear lack of direction. While Middle East risks sent WTI crude soaring over 11%, fueling inflation fears, the 10-year U.S. Treasury yield, which is highly sensitive to Fed policy, remained largely unchanged around 4.31%. The Dollar Index also stayed in a tight range. It was a day that clearly showed investors are extremely hesitant to place any major bets before seeing the key data point: the March non-farm payrolls report at 8:30 AM tomorrow.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "Weren't there some employment-related indicators out today as well? How did the weekly jobless claims come in?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Today's weekly initial jobless claims report further heightened the market's sense of caution. The number came in lower than expected at 210,000, once again confirming that the U.S. labor market remains very robust. This result lends support to the more hawkish voices emerging from within the Fed. In fact, Minneapolis Fed President Neel Kashkari commented today that if inflation continues to move sideways, rate cuts might not be necessary this year, throwing cold water on the market's hopes for an early rate cut. With strong employment, coupled with the recent ISM Manufacturing PMI shifting into expansion territory, the narrative that the economy is too strong for the Fed to rush into cutting rates is gaining traction.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395442",
+          "title": "Initial Jobless Claims",
+          "date": "2026-04-02"
+        },
+        {
+          "type": "article",
+          "pk": "n#2001",
+          "title": "Fed's Kashkari Questions Rate Cuts Amid Sticky Inflation, Strong Economy"
+        },
+        {
+          "type": "article",
+          "pk": "n#2003",
+          "title": "Jobless Claims Dip Again, Highlighting Labor Market Resilience Before NFP Report"
+        },
+        {
+          "type": "event",
+          "id": "395425",
+          "title": "ISM Manufacturing PMI",
+          "date": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, what are the key things the market will be watching for in tomorrow's report, and what are the potential scenarios we can expect?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "The market is currently expecting about 200,000 non-farm jobs to have been added in March, with the unemployment rate holding at 3.8%. Even more important is the average hourly earnings growth, as the key question is whether wage inflation is slowing down. The best-case scenario for the market is a so-called 'Goldilocks' report: job growth cools down a bit while wage pressures ease, giving the Fed a clear reason to cut rates. On the other hand, if job growth comes in much stronger than expected and wage growth is also high, that would push back rate cut expectations and be the biggest headwind for the market. Right now, the prevailing sentiment on Wall Street is hoping for a report that's not too hot and not too cold, but just right.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "Non Farm Payrolls",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "Unemployment Rate",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "event",
+          "id": "395471",
+          "title": "Average Hourly Earnings MoM",
+          "date": "2026-04-03"
+        },
+        {
+          "type": "article",
+          "pk": "n#2004",
+          "title": "Analysts Divided: Is the Jobs Market 'Too Hot' or 'Just Right' for a Soft Landing?"
+        },
+        {
+          "type": "article",
+          "pk": "n#2002",
+          "title": "Wall Street Holds Its Breath for March Jobs Data, Fed's Path in Focus"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "So it sounds like the market's short-term direction will be determined by every single number that comes out tomorrow morning.",
+      "sources": []
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Exactly. Today's mixed session, with the Dow down and the Nasdaq up, perfectly represents this extreme wait-and-see sentiment. Investors are postponing portfolio adjustments as they wait for a clear signal on the Fed's next move. With the oil price surge complicating the inflation outlook, tomorrow's jobs report will be the most critical inflection point that will set the market tone for the next few weeks. We'll be able to see immediately how the market interprets the data by watching the reaction in bond yields, the U.S. dollar, and the performance of tech stocks versus cyclicals right after the report is released.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "n#2006",
+          "title": "Market Indecision Reflected in Mixed Close for Dow, Nasdaq"
+        },
+        {
+          "type": "article",
+          "pk": "n#2005",
+          "title": "Oil Surge Complicates Fed's Inflation Fight Ahead of Key Employment Data"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-02",
+          "end_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Okay, that wraps up the broad market picture. Now let's look at some individual companies that made notable moves amidst this mixed session. First up is Intel, which surged nearly 5% to cross the $50 mark. What was behind that move?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-04-03",
+          "end_date": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Yes, today's stock price increase seems to reflect the market's optimism about Intel's future. However, if you look closely at the financials, the company is currently split into two different stories. For fiscal year 2025, the legacy 'Intel Products' division is still a cash cow, generating a solid $12.7 billion in operating income on $49.1 billion in revenue. In contrast, the 'Intel Foundry' business, on which the company is betting its future, is posting a massive operating loss of $10.3 billion, draining the company's overall cash flow. So, today's stock surge is essentially a bet on the highly optimistic view that the foundry transition will succeed, despite these enormous losses.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "As you said, an operating loss of over $10 billion seems like a significant burden. So why is the market so hopeful? Do they see that much potential in the foundry business?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's right. The market's hope is based on the vision that Intel can transform from just a chip company into the 'core of Western AI infrastructure.' The biggest growth driver is the potential success of its 18A process. It's the first in the industry to apply next-generation technologies like RibbonFET and PowerVia, which is being seen as a sign that Intel can reclaim its technological leadership. On top of that, massive subsidies from the U.S. CHIPS Act and strategic investments from major players like Nvidia are creating a narrative that Intel will be the biggest beneficiary of the geopolitical realignment of supply chains. The current massive losses are being interpreted as a necessary investment cost for this grand transition—the bottom of the 'J-curve,' so to speak.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "It's a rosy picture, but eventually, they'll have to prove it with numbers. Realistically, what level of performance does the foundry business need to achieve to cover its losses and turn a profit?",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's a critical point. The scale of revenue needed to overcome the foundry's $10.3 billion operating loss and the company's overall negative free cash flow is staggering. Even by conservatively using the industry-leading operating margins of TSMC as a benchmark, Intel would need to secure at least $50 billion to $67 billion in 'new external customer revenue' annually. That's an enormous figure, equivalent to a significant portion of the annual revenue of TSMC, the undisputed leader in the foundry market. Attracting that many customers in a short period of time by breaking into the well-established foundry ecosystem is an incredibly difficult task. This is precisely why the company itself admitted in its 10-K report that its foundry strategy is 'highly risky and its success is highly uncertain.'",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So it's a tug-of-war between the hope of future growth potential and the reality of massive cash burn. From an investor's perspective, what do you see as the key risk to watch most closely?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "The biggest risk, by far, is 'execution risk.' No matter how brilliant the technology roadmap is, it's useless if they can't mass-produce it with stable yields. Intel has a history of delays in developing new process nodes. If they fail to secure significant external customers for the 18A or the next-gen 14A process, they might have to, as the company itself acknowledged, halt the development of next-gen processes altogether. In that case, they could face a massive impairment charge on over $100 billion in tangible assets, which could be an existential threat that shakes the company's financial foundation. Therefore, future announcements on foundry yields and new customer wins will be the most important barometers for the success or failure of this enormous bet.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "To sum up today's market in one word, it was a 'rollercoaster.' The market gave back all of its early gains, with all three major indexes closing down over 1%. Could you walk us through today's market action one more time?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Yes, today was a stark reminder of just how fragile the foundation of the Fed's rate cut expectations has been. In the morning, we saw a relief rally when weekly jobless claims came in higher than expected, which was interpreted as a sign of a cooling labor market. But the mood reversed sharply in the afternoon after Minneapolis Fed President Neel Kashkari made hawkish remarks, suggesting that if inflation continues to stall, rate cuts might not be necessary this year. On top of that, rising geopolitical tensions in the Middle East kept pushing oil prices higher, adding to inflation worries and rapidly souring investor sentiment.",
+      "sources": []
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Seeing the market react so sensitively to a single comment from a Fed official, it seems the importance of upcoming economic data has grown even more. All eyes are on the March jobs report tomorrow, right?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "That's right. The market will now likely try to judge for itself by looking at the data, not just listening to the Fed. In that sense, tomorrow's March non-farm payrolls data will be the most important turning point in determining the market's short-term direction. The current market consensus is for a 60,000 increase in non-farm jobs and an unemployment rate of 4.4%. Also, average hourly earnings, which indicate wage inflation, are expected to have risen 0.3% month-over-month. If the results come in much hotter than these forecasts, rate cut expectations could recede further, putting pressure on the market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395470",
+          "title": "non farm payrolls",
+          "date": "2026-04-05"
+        },
+        {
+          "type": "event",
+          "id": "395468",
+          "title": "unemployment rate",
+          "date": "2026-04-05"
+        },
+        {
+          "type": "event",
+          "id": "395471",
+          "title": "average hourly earnings mom",
+          "date": "2026-04-05"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "After the jobs report, are there any other important economic events next week that investors should be watching?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Yes, there are more potentially market-moving events waiting next week. First, on Wednesday, we'll get the March Consumer Price Index, or CPI. If the jobs report checks the temperature of the labor market, the CPI directly shows the direction of inflation, making it a crucial factor in the Fed's policy decisions. On the same afternoon, the minutes from the March FOMC meeting will also be released. These will be closely watched for clues that could reduce market uncertainty, as they provide a detailed look into the Fed's internal discussions, such as which members were cautious about rate cuts and their reasoning.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398668",
+          "title": "core inflation rate mom",
+          "date": "2026-04-10"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "It seems all roads lead back to the Fed's rate decision. It looks like we could be in for a period of high volatility.",
+      "sources": []
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "That's correct. Now that cracks are beginning to appear in the market's long-held expectation of Fed rate cuts, investors need to take a step back and calmly assess the economic data rather than getting ahead of themselves. This is a phase where the market could react sensitively to every piece of data, leading to increased volatility. Therefore, instead of getting caught up in the day-to-day ups and downs, it's a time to focus more on a company's fundamental value and earnings and to build a cautious investment strategy.",
+      "sources": []
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "Alright, thank you again for your valuable insights today. That concludes our market closing brief for April 4th. Thank you.",
+      "sources": []
+    }
+  ]
+}

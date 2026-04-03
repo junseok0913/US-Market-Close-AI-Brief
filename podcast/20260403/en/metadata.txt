@@ -1,0 +1,24 @@
+Title:
+2026.4.4 US Market Close | A mixed session driven by surging oil prices and jobs report jitters
+
+Description:
+On April 4th, the New York stock market closed mixed as surging oil prices, driven by geopolitical risks in the Middle East, collided with caution ahead of the March jobs report. The Dow Jones fell, while the Nasdaq and S&P 500 posted slight gains, showing a divergent performance.
+
+- Dow Jones: Down 0.13% - Declined amid caution before the jobs report release.
+- S&P 500: Up 0.11% - A mix of strength in the energy sector and weakness in other industries.
+- Nasdaq: Up 0.17% - A modest rebound led by tech stocks.
+
+Key Issues
+- International Oil Prices Surge 11.4%: Tensions in the Strait of Hormuz in the Middle East caused West Texas Intermediate (WTI) crude oil prices to skyrocket by 11.4%, fueling inflation concerns.
+- Awaiting the March Jobs Report: Market participants adopted a wait-and-see approach ahead of the non-farm payrolls report, looking for clues on the Fed's path for interest rate cuts.
+- Hawkish Fed Commentary: Minneapolis Fed President Neel Kashkari dampened investor sentiment by stating that if inflation remains stagnant, rate cuts may not be necessary this year.
+- Mixed Sector Performance: The energy sector rallied on the back of surging oil prices. In contrast, the airline sector weakened due to higher fuel costs, and consumer goods stocks fell on concerns of a potential slowdown in spending.
+
+Key Stocks
+- Intel (INTC): Jumped nearly 5% - Despite a $10.3 billion operating loss in its foundry division, the stock rallied on expectations for future growth potential, including its 18A process technology.
+- Chevron (CVX): Rose approximately 0.8% - The stock benefited from the surge in international oil prices.
+- Occidental Petroleum (OXY): Gained over 1% - Energy-related stocks saw a broad rally driven by the rise in oil prices.
+- ExxonMobil (XOM): Edged down slightly - Despite the positive catalyst of surging oil prices, the stock finished lower after fluctuating, likely due to profit-taking.
+
+Keywords:
+미국주식,주식,재테크,시황,유가,금리,고용보고서,인플레이션,연준,인텔,INTC,엑슨모빌,셰브론,CVX
