@@ -1,0 +1,58 @@
+{
+  "date": "20260406",
+  "lang": "ko",
+  "audioFile": "shorts20260406.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 73.244,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.211,
+      "endSec": 4.211,
+      "speechDurationSec": 4.211,
+      "pauseAfterSec": 0.0,
+      "charCount": 31,
+      "text": "시장은 올랐지만, 월가 거물은 금리 8%를 경고했습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.211,
+      "speechEndSec": 16.302,
+      "endSec": 16.302,
+      "speechDurationSec": 12.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 90,
+      "text": "4월 7일 미국 증시는 이란 휴전 기대감에 지정학적 우려가 완화되며 상승했습니다. 다우는 0.36%, S&P 500은 0.44%, 나스닥은 0.54% 올랐습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 16.302,
+      "speechEndSec": 71.153,
+      "endSec": 71.153,
+      "speechDurationSec": 54.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 474,
+      "text": "트럼프 대통령이 설정한 이란과의 협상 마감 시한이 임박한 가운데, 파키스탄 등이 중재하는 막후 협상으로 45일간의 임시 휴전이 타결될 수 있다는 기대감이 시장을 끌어올렸습니다. 하지만 시장의 낙관론 이면에는 큰 위험이 존재했습니다. 이란이 전 세계 원유 해상 수송량의 약 20%가 통과하는 호르무즈 해협 봉쇄를 위협하자, 서부 텍사스산 원유는 장중 115달러를 돌파하며 즉각 반응했습니다. 이런 아슬아슬한 상황 속에서 제이피모건의 제이미 다이먼 CEO는 연례 주주서한을 통해 시장의 기대와는 정반대의 경고를 내놨습니다. 그는 이란과의 전쟁이 장기화될 경우 유가와 원자재 가격에 상당한 충격이 발생할 것이며, 이는 시장이 예상하는 것보다 훨씬 끈질긴 인플레이션을 유발해 금리가 8% 혹은 그 이상으로 치솟을 수 있다고 경고했습니다. 결국 시장은 당장 눈앞의 휴전 가능성에 안도했지만, 월가의 거물은 그 이면에 도사린 거대한 리스크를 지적한 셈입니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 71.153,
+      "speechEndSec": 73.244,
+      "endSec": 73.244,
+      "speechDurationSec": 2.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
