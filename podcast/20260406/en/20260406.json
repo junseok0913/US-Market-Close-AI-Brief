@@ -1,0 +1,698 @@
+{
+  "date": "20260406",
+  "nutshell": "Geopolitical concerns ease on hopes of an Iran ceasefire.",
+  "user_tickers": [
+    "APP"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 7th market close briefing. Tensions in the Middle East reached a fever pitch, yet the market actually closed higher. That seems like an unexpected move.",
+      "sources": [],
+      "time": [
+        0,
+        11491
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. The market today saw some easing of geopolitical concerns on hopes of an Iran ceasefire. The Dow Jones Industrial Average gained 0.36% to close at 46,669.88, and the S&P 500 rose 0.44% to finish at 6,611.83. The tech-heavy Nasdaq Composite also climbed 0.54%, ending at 21,996.34. While intraday volatility was expected as President Trump's negotiation deadline with Iran approached, investor sentiment recovered on rising hopes for last-minute diplomatic efforts by mediators like Pakistan. This sentiment also affected oil prices; West Texas Intermediate crude surpassed $115 a barrel during the session but gave back some of those gains to close around the $112 mark.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "article",
+          "pk": "44db06eb4010059e",
+          "title": "Stock market today: US stock futures steady amid hopes for a Mideast end to hostilities"
+        }
+      ],
+      "time": [
+        11991,
+        63922
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So you're saying that hope is what lifted the market. But weren't there also warnings from Wall Street about the economic fallout from this situation?",
+      "sources": [],
+      "time": [
+        64422,
+        72913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's correct. Separate from the market's optimism, financial leaders issued some strong warnings. Specifically, JPMorgan Chase CEO Jamie Dimon, in his annual letter to shareholders, pointed out that a prolonged war with Iran could lead to a severe oil price shock and entrenched inflation. This, he analyzed, could lead to higher interest rates than the market expects. In fact, the 10-year U.S. Treasury yield also closed slightly higher today, partially reflecting these concerns. Ultimately, while the market is currently betting on the positive scenario of a ceasefire, it's a precarious situation that also carries the risk of economic shock if negotiations fall apart.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f6ff7b96c76e86f3",
+          "title": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        73413,
+        109144
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "Right, a day of coexisting hope and concern. Could you break down the key drivers that moved the market today?",
+      "sources": [],
+      "time": [
+        109644,
+        116775
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, the biggest variable was undoubtedly the Trump administration's ultimatum deadline for Iran. Fears of an all-out war versus hopes for a last-minute ceasefire kept the market on edge all day.",
+      "sources": [],
+      "time": [
+        117275,
+        130086
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "You mentioned that even with the ultimatum deadline looming, the market actually rose on ceasefire hopes. What was behind this precarious optimism? Let's start with the specific market conditions.",
+      "sources": [],
+      "time": [
+        131086,
+        143657
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, the market today was betting that the worst-case scenario of an all-out war could be avoided. The Dow gained 0.36%, the S&P 500 was up 0.44%, and the tech-heavy Nasdaq climbed 0.54%, with all three major indices showing strength. This was thanks to a revival in risk appetite as news spread about a potential breakthrough ceasefire brokered by countries like Pakistan. But looking under the hood, the tension was still palpable. West Texas Intermediate crude oil flirted with the $115 mark intraday on threats from Iran to blockade the Strait of Hormuz, before settling slightly to around $112 on ceasefire hopes. Gold, a typical safe-haven asset, also saw intraday volatility. Meanwhile, the 10-year U.S. Treasury yield ticked up slightly to the 4.3% range, reflecting both an easing of the flight to safety and, at the same time, pricing in concerns about inflation that could be triggered by geopolitical risk. In the end, it was a day where the market leaned towards the possibility of a truce, with the energy sector rallying on the back of surging oil prices, but it closed with geopolitical anxieties still lingering everywhere.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "article",
+          "pk": "dfdb622fdbab4b90",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq gain ahead of Trump deadline for Iran deal"
+        },
+        {
+          "type": "article",
+          "pk": "44db06eb4010059e",
+          "title": "Stock market today: US stock futures steady amid hopes for a Mideast end to hostilities"
+        }
+      ],
+      "time": [
+        144157,
+        213368
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So you're saying the market bet on the best-case scenario. What specific diplomatic efforts were underway to prompt this kind of reaction?",
+      "sources": [],
+      "time": [
+        213868,
+        222519
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Yes, reports from multiple foreign press outlets that Pakistan was actively mediating, having delivered a ceasefire proposal to both the U.S. and Iran, helped soothe market nerves. Some reports also indicated that other Middle Eastern countries like Egypt and Turkey were working towards a diplomatic solution. The plan currently being discussed is centered on a temporary 45-day truce to buy time for further negotiations. With President Trump's ultimatum deadline of 8 p.m. local time on Tuesday fast approaching, these final diplomatic efforts to avoid a full-scale war became the key driver that revived investor sentiment. Of course, differences remain—an Iranian foreign ministry spokesperson stated they want a permanent end to the war, not just a temporary truce—but the market reacted positively to the mere fact that the lines of communication are still open.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "3ca04dde331b0c2c",
+          "title": "Trump’s Iran Deadline Looms With Mediators Pushing for Truce"
+        },
+        {
+          "type": "article",
+          "pk": "44db06eb4010059e",
+          "title": "Stock market today: US stock futures steady amid hopes for a Mideast end to hostilities"
+        },
+        {
+          "type": "article",
+          "pk": "dfdb622fdbab4b90",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq gain ahead of Trump deadline for Iran deal"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        223019,
+        271350
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "As you said, hopes were certainly a factor, but it's also true that Iran took aggressive action, like actually blockading the Strait of Hormuz. How should we view the potential impact of that?",
+      "sources": [],
+      "time": [
+        271850,
+        284541
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's the biggest risk factor hidden behind the market's optimism. The Strait of Hormuz is a critical chokepoint through which about 20 percent of the world's seaborne oil passes. When Iran effectively blockaded passage through the strait, international oil prices reacted immediately, surging past $115 a barrel at one point. This is interpreted as a powerful pressure tactic by Iran to gain an upper hand at the negotiating table, going beyond a simple show of force. In fact, JPMorgan has warned that if the blockade becomes prolonged, U.S. gasoline prices could exceed $5 a gallon. This would directly translate into inflationary pressure, placing a significant burden on the entire economy. Therefore, the market's current relief is predicated on a ceasefire agreement being reached. If negotiations fail and the blockade continues, the market could be in for another major shake-up from an oil shock.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "dfdb622fdbab4b90",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq gain ahead of Trump deadline for Iran deal"
+        },
+        {
+          "type": "article",
+          "pk": "3ca04dde331b0c2c",
+          "title": "Trump’s Iran Deadline Looms With Mediators Pushing for Truce"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        285041,
+        340972
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So it all comes down to oil prices. And speaking of which, JPMorgan Chase CEO Jamie Dimon specifically warned about this risk of an oil shock, correct?",
+      "sources": [],
+      "time": [
+        341472,
+        351482
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Exactly. In his annual letter to shareholders, JPMorgan Chase CEO Jamie Dimon warned of a scenario that's the complete opposite of the market's current optimism. He pointed out that a prolonged war with Iran could cause a significant shock to oil and commodity prices. His analysis is that this wouldn't just stop at higher energy costs; combined with the realignment of global supply chains, it could trigger much stickier inflation than the market anticipates, ultimately leading to higher interest rates. Dimon's warning precisely pinpoints the economic fallout that could occur in the worst-case scenario that the market is currently ignoring—the failure of a diplomatic solution. While the stock market is breathing a sigh of relief on a potential truce, the movements in the bond and commodity markets, along with warnings from Wall Street veterans, are a constant reminder of the massive risks lurking beneath the surface.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f6ff7b96c76e86f3",
+          "title": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher"
+        },
+        {
+          "type": "article",
+          "pk": "dfdb622fdbab4b90",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq gain ahead of Trump deadline for Iran deal"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLF",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        351982,
+        404673
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "A warning that's the polar opposite of market sentiment. Can you give us more details on what he said?",
+      "sources": [],
+      "time": [
+        405173,
+        411464
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, Dimon's letter essentially threw cold water on the market's short-term optimism. He warned that if the current geopolitical conflicts, particularly a prolonged war with Iran, cause oil and gas prices to surge, it could reignite inflation and lead to interest rates of 8 percent or even higher—not the 2 or 3 percent the market is expecting. This is a stark contrast to the S&P 500's 0.44 percent gain today and the VIX, the volatility index, remaining stable. His warning wasn't limited to geopolitics either. He also mentioned massive government spending, the effects of quantitative tightening, and risks in the private credit market, pointing out that the market is overestimating the chances of a soft landing for the U.S. economy. In fact, after his warning was released, the 10-year Treasury yield rose slightly, approaching the 4.4 percent mark, and West Texas Intermediate crude showed increased volatility, stoking the market's underlying anxiety.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f6ff7b96c76e86f3",
+          "title": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher"
+        },
+        {
+          "type": "article",
+          "pk": "84e2976382550c64",
+          "title": "Jamie Dimon highlights Iran War, private credit, and AI-driven job losses as major US risks in his annual letter"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        411964,
+        470495
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "Rates going to 8 percent is a truly extraordinary warning. What's the logic he's presenting to back that up?",
+      "sources": [],
+      "time": [
+        470995,
+        478286
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "He believes the market is currently leaning too heavily on an overly optimistic scenario. Dimon's analysis is that the economic resilience of the past two years might be due to massive fiscal stimulus and pandemic-era savings, and that these effects are now fading. On top of that, the Fed's quantitative tightening, which is draining about $1 trillion a year from market liquidity, has effects that are hard for anyone to predict. If a worst-case scenario unfolds where a war with Iran pushes oil past $150 a barrel, and at the same time the full impact of quantitative tightening kicks in, he argues that a stagflation scenario—recession combined with rising prices—could become a reality. His logic is that in such a complex crisis, the Fed would have no choice but to pursue aggressive rate hikes to control inflation.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "f6ff7b96c76e86f3",
+          "title": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher"
+        },
+        {
+          "type": "article",
+          "pk": "84e2976382550c64",
+          "title": "Jamie Dimon highlights Iran War, private credit, and AI-driven job losses as major US risks in his annual letter"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "JPM",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        478786,
+        529757
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So the point is that the market's current relief rally is overlooking these long-term, structural risks.",
+      "sources": [],
+      "time": [
+        530257,
+        536748
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's right. While the market cheered the immediate positive news of a potential ceasefire, Dimon is essentially telling everyone to look at the bigger picture behind it. In his letter, he also mentioned other potential risks to the financial system beyond geopolitics, such as the changes AI will bring to the job market and the rapid growth of the unregulated private credit market. This shows that JPMorgan Chase is preparing for a variety of potential crisis scenarios. Therefore, while today's stock gains can be seen as a short-term recovery in sentiment, Dimon's letter serves as an important milestone, reminding us once again just how significant the medium- to long-term uncertainties facing the market really are.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "84e2976382550c64",
+          "title": "Jamie Dimon highlights Iran War, private credit, and AI-driven job losses as major US risks in his annual letter"
+        },
+        {
+          "type": "article",
+          "pk": "f6ff7b96c76e86f3",
+          "title": "JPMorgan's Dimon warns Iran war may drive inflation and interest rates higher"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        537248,
+        578459
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Alright, you've laid out the macro market trends and potential risks very well. Now let's turn to some individual companies that made notable moves amidst this complex situation. AppLovin's stock movement stood out today. It closed with a strong gain of over 5 percent without any specific news. What was the background there?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "APP",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        579459,
+        599430
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, AppLovin saw strong buying pressure today, at one point surpassing $414, and closed around the $412 mark. It seems the market is re-evaluating AppLovin not just as an ad-tech company, but as an AI platform company. And it has the numbers to back it up: its 2025 annual revenue grew by about 70 percent year-over-year, and cash flow from operations surged by an impressive 89 percent to $3.97 billion, demonstrating explosive growth. In particular, the fact that its AI engine, AXON 2.0, boosted net revenue per install by 72 percent really highlighted the company's technological moat and fueled investor optimism.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "APP",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001751008-26-000010"
+        },
+        {
+          "type": "chart",
+          "ticker": "APP",
+          "start_date": "2026-04-06",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        599930,
+        639461
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Those are phenomenal results. So, should we expect this rally, based on such strong fundamentals, to continue?",
+      "sources": [],
+      "time": [
+        639961,
+        647492
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Not necessarily. AppLovin's biggest risk is its dependence on the platforms that form the foundation of its business model. As the company explicitly states in its 10-K report, its business operates entirely on a small number of platforms, namely Apple and Google. If these platforms change their privacy policies or rules regarding ad identifiers, the effectiveness of AppLovin's sophisticated AI targeting could be neutralized overnight. This is an external variable the company cannot control, and it's pointed to as a structural vulnerability that could threaten the very existence of the business.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "APP",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001751008-26-000010"
+        }
+      ],
+      "time": [
+        647992,
+        683603
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "This platform dependency risk isn't a new story. But isn't there also an argument that they're mitigating this risk by diversifying into new areas like Connected TV and e-commerce?",
+      "sources": [],
+      "time": [
+        684103,
+        695434
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's where there might be a gap between market expectations and reality. If you look at AppLovin's 10-K, the company still defines itself as having a 'single operating and reportable segment.' This can be interpreted to mean that its expansion into areas like Connected TV or e-commerce has not yet reached a significant enough scale to impact the overall financial structure. In other words, diversification is still closer to a narrative driving expectations, while the absolute majority of its revenue remains tied to the Apple and Google app ecosystems.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "APP",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001751008-26-000010"
+        }
+      ],
+      "time": [
+        695934,
+        727825
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So besides the platform risk, are there any other potential risk factors?",
+      "sources": [],
+      "time": [
+        728325,
+        733496
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "We can point to two more. First is the ongoing securities class-action lawsuit. While the company denies the allegations, it also states it cannot reasonably estimate the range of potential loss, which leaves the door open for unpredictable contingent liabilities. Second is its past M&A history. According to the 10-K, the company recognized a goodwill impairment charge of $188.9 million related to its past acquisition of the Apps business unit. This shows that its past capital allocation decisions haven't always been successful. These factors are potential risks hidden behind the impressive growth metrics.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "APP",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001751008-26-000010"
+        }
+      ],
+      "time": [
+        733996,
+        769087
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "To sum up, despite outstanding performance, the company carries uncontrollable structural risks and potential financial burdens. Is that right?",
+      "sources": [],
+      "time": [
+        769587,
+        779318
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's correct. In conclusion, AppLovin is undoubtedly an excellent company that generates massive amounts of cash using its AI technology. However, the structural vulnerability of not controlling the rules of the playground its business is built on is a critical risk that could wipe out all its achievements in an instant. Today's stock surge may be the result of overheated market sentiment focusing only on the AI growth narrative while overlooking these risks. Therefore, a cautious approach is needed at this point, as the current stock price may represent a situation where the risks to be shouldered outweigh the potential rewards.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "APP",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001751008-26-000010"
+        },
+        {
+          "type": "chart",
+          "ticker": "APP",
+          "start_date": "2026-03-07",
+          "end_date": "2026-04-06"
+        }
+      ],
+      "time": [
+        779818,
+        818109
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, so the market took a breather today, pausing a three-day winning streak. It seems strong jobs data, followed by hawkish comments from the Fed, dampened investor sentiment a bit.",
+      "sources": [],
+      "time": [
+        819109,
+        831760
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "That's right. The March nonfarm payrolls report released today came in much stronger than market expectations, once again proving the resilience of the U.S. economy. However, this led to concerns that it could slow the pace of disinflation. When Minneapolis Fed President Neel Kashkari added to that with hawkish remarks that a rate cut might not be necessary, the market reacted immediately. Ultimately, the market's focus is shifting back to the Fed's rate cut path and inflation data. We're seeing a paradoxical situation where an economy that's too strong is actually becoming an obstacle to rate cuts.",
+      "sources": [],
+      "time": [
+        832260,
+        866351
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "So, looking ahead to next week, what are the key economic events that could give us a sense of the market's direction?",
+      "sources": [],
+      "time": [
+        866851,
+        873582
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Next week, we have a very important inflation report scheduled that could determine the market's trajectory. That's the March Consumer Price Index, or CPI, set to be released on Wednesday, April 10th. All eyes will be on this report, as the outcome could either sustain or further diminish hopes for a June rate cut from the Fed. The key things to watch will be how the recent rise in oil prices and the stickiness of services inflation are reflected in this data.",
+      "sources": [],
+      "time": [
+        874082,
+        898733
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides the CPI, are there any other indicators we should be watching?",
+      "sources": [],
+      "time": [
+        899233,
+        903404
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "The day right after the CPI release, on Thursday the 11th, the March Producer Price Index, or PPI, will be published. As a leading indicator that affects the price of final consumer goods, the PPI provides important clues about inflationary pressures alongside the CPI. Also on the same day, we need to check the minutes from the March Federal Open Market Committee, or FOMC, meeting. These minutes will give us a glimpse into the discussions Fed officials had about inflation and the rate path, and reveal how widely hawkish views, like the ones we heard today, are shared among the committee members.",
+      "sources": [],
+      "time": [
+        903904,
+        936834
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So it looks like next week's inflation data will be a crucial turning point for the market's short-term direction. That's all for our April 7th market close briefing. Thank you.",
+      "sources": [],
+      "time": [
+        937334,
+        947345
+      ]
+    }
+  ]
+}
