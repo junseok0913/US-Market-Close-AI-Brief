@@ -1,0 +1,718 @@
+{
+  "date": "20260407",
+  "nutshell": "Awaiting FOMC minutes amid rising Iran risk.",
+  "user_tickers": [
+    "UNH"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 8th closing bell briefing. The market finished mixed today, with the Dow falling while the S&P 500 and Nasdaq edged up slightly. What was behind this divergence?",
+      "sources": [],
+      "time": [
+        0,
+        12171
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up in one phrase: waiting for the FOMC minutes amid rising risks from Iran. The S&P 500 and Nasdaq both ticked up slightly, by 0.08% and 0.1% respectively, but the Dow Jones Industrial Average fell 0.18%. The market was under pressure early on due to heightened geopolitical tensions from President Trump's tough talk on Iran, but it recovered a significant portion of its losses late in the day on reports of a possible extension to negotiations. It was a day dominated by a wait-and-see attitude as investors look ahead to tomorrow's release of the FOMC minutes.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        }
+      ],
+      "time": [
+        12671,
+        51802
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So it sounds like the geopolitical risk related to Iran really shook the market throughout the session.",
+      "sources": [],
+      "time": [
+        52302,
+        58433
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. Market anxiety grew as the deadline set by President Trump regarding Iran approached. This caused international oil prices to surge over 4% at one point during the day, which put direct pressure on stocks. However, the situation reversed when news broke that Pakistan had proposed a two-week extension to the negotiation deadline. On that news, oil prices gave back their gains and closed lower, and stock indices also recovered quickly in the latter half of trading. Essentially, the market was whipsawed by Iran-related headlines all day long.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#03042d3cfa49a9b4",
+          "title": "Stock market today: S&P 500, Nasdaq close slightly higher on hopes of Iran deadline extension"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        58933,
+        90144
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, to wrap this section up, what were the key themes that moved the market today?",
+      "sources": [],
+      "time": [
+        90644,
+        95615
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Well, there were two main drivers. First, the heightened geopolitical tension and resulting oil price volatility sparked by President Trump's comments. And second, the market's strong wait-and-see stance ahead of the FOMC minutes release. We'll take a closer look at each of these themes in a moment.",
+      "sources": [],
+      "time": [
+        96115,
+        111526
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point you mentioned: the geopolitical risk. You said the market was on a real roller-coaster ride today based on President Trump's comments on Iran. Can you break down exactly how that played out?",
+      "sources": [],
+      "time": [
+        112526,
+        125697
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, geopolitical risk really rattled all asset classes today. The S&P 500 plunged over 1.2% at its low point following the President's harsh rhetoric, but then staged a dramatic late-day rally to close slightly positive, showing incredible volatility. The epicenter of all this movement was oil. West Texas Intermediate crude shot up more than 4% during the session, briefly topping $117 a barrel on fears of a military conflict with Iran. But it gave back all those gains to close lower after the possibility of a negotiation extension emerged. Amid this uncertainty, the classic safe-haven asset, gold, rose over 1.6% to surpass $4,700 an ounce, and energy sector stocks also rallied. On the other hand, the 10-year U.S. Treasury yield remained relatively stable around 4.34%, while the Dow Jones Industrial Average, despite a late rebound, still finished in the red, reflecting the lingering caution in the market.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#4c355046b52a4cf3",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after Trump escalates threats on Iran as deadline looms"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#487fa865c1b80093",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Trump's Iran deadline looms"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#03042d3cfa49a9b4",
+          "title": "Stock market today: S&P 500, Nasdaq close slightly higher on hopes of Iran deadline extension"
+        }
+      ],
+      "time": [
+        126197,
+        183688
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "What exactly did the President say that sent such a wave of fear through the market mid-day?",
+      "sources": [],
+      "time": [
+        184188,
+        189679
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The rhetoric was extremely strong. President Trump threatened via social media that if Iran did not reopen the Strait of Hormuz by 8 p.m. Eastern Time tonight, he would bomb all of Iran's bridges and power plants, sending them back to the Stone Age. This was widely seen as an ultimatum, and investor sentiment soured dramatically after The New York Times reported that Iran, through Pakistan, had signaled an end to negotiations. A blockade of the Strait of Hormuz, a key chokepoint for global oil shipments, would be a direct blow to the global economy. These fears were amplified when Chicago Fed President Austan Goolsbee warned that an energy shock from Iran could potentially trigger stagflation—that is, a combination of economic stagnation and rising inflation.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#de78ed73a57c1153",
+          "title": "Oil Steadies as Trump’s Iran Threats Escalate Before Deadline"
+        },
+        {
+          "type": "article",
+          "pk": "id#487fa865c1b80093",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Trump's Iran deadline looms"
+        },
+        {
+          "type": "article",
+          "pk": "id#4c355046b52a4cf3",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq sink after Trump escalates threats on Iran as deadline looms"
+        },
+        {
+          "type": "article",
+          "pk": "id#03042d3cfa49a9b4",
+          "title": "Stock market today: S&P 500, Nasdaq close slightly higher on hopes of Iran deadline extension"
+        }
+      ],
+      "time": [
+        190179,
+        232030
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So just as things were heading toward a worst-case scenario, the mood shifted at the end of the day. What was the news that turned it around?",
+      "sources": [],
+      "time": [
+        232530,
+        240861
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "The decisive news came less than an hour before the closing bell: a report that Pakistan had proposed a diplomatic solution. News that Pakistan suggested a two-week extension to the deadline set by President Trump sent a wave of relief through the market, with hopes that a direct military conflict could be avoided. On this news, the S&P 500 surged nearly 1.3% from its intraday low, erasing all its losses, and the Nasdaq also turned positive. The reaction in oil was even more dramatic, with prices plunging more than $8 from their session high, quickly calming what had been a near-panic atmosphere. This really highlights just how sensitive the market is to political headlines right now, perhaps more so than to fundamentals.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#03042d3cfa49a9b4",
+          "title": "Stock market today: S&P 500, Nasdaq close slightly higher on hopes of Iran deadline extension"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#beb90b335c49b3c3",
+          "title": "Americans are uniquely vulnerable to Iran war volatility after years of buying stocks"
+        }
+      ],
+      "time": [
+        241361,
+        285572
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "It seems like the immediate fire has been put out, but the underlying problem isn't solved. So where does the market's focus turn now?",
+      "sources": [],
+      "time": [
+        286072,
+        294802
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "That's right. The deadline may have been extended, but the geopolitical risk itself hasn't disappeared, so the market will remain on edge. In this environment, investors' attention is now shifting back to monetary policy, specifically the minutes from the March FOMC meeting, which will be released tomorrow at 2 p.m. These minutes will give us a detailed look at how Fed officials are assessing the impact of recent inflation data and geopolitical variables like the Iran situation on the economy. So, for the time being, the market is likely to trade cautiously, caught between headlines from the Middle East and clues about the Fed's monetary policy.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#de78ed73a57c1153",
+          "title": "Oil Steadies as Trump’s Iran Threats Escalate Before Deadline"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        },
+        {
+          "type": "article",
+          "pk": "id#be7c486f03dcc520",
+          "title": "Morning Brief: A sharp warning from Goldman Sachs"
+        },
+        {
+          "type": "article",
+          "pk": "id#29b644375b20b8e8",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq futures fall as Trump deadline for Iran deal nears"
+        }
+      ],
+      "time": [
+        295302,
+        328793
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "As you said, the market's focus is now shifting to the Fed's monetary policy. I'm curious, what specifically are market participants looking for in these FOMC minutes, and why are they considered so important right now?",
+      "sources": [],
+      "time": [
+        329293,
+        342504
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Right, there was a much more complex tug-of-war happening today than the headline numbers suggest. The Dow fell 0.18%, but the S&P 500 and Nasdaq rose 0.08% and 0.1% respectively, finishing mixed. This was the result of a tight battle between the geopolitical risks that shook the market all day and the anticipation of monetary policy clues. Investors are reacting to the immediate uncertainty around Iran, but they're also holding their breath for the bigger picture: the Fed's interest rate path, which they hope to clarify with tomorrow's release of the March FOMC minutes. This anxiety is clearly reflected in the VIX, the volatility index, which jumped over 6% to close above the 25 level. Meanwhile, the 10-year Treasury yield finished little changed around 4.34%, showing the bond market is also in a holding pattern. Ultimately, with rising commodity prices once again threatening the stock market, investors want to know what the Fed is thinking.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#298cb4f6d92e807b",
+          "title": "The next hot trade is starting to challenge stocks: Chart of the Day"
+        }
+      ],
+      "time": [
+        343004,
+        403295
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So, as you mentioned, the geopolitical risk from Iran is now becoming a direct variable in the Fed's monetary policy decisions.",
+      "sources": [],
+      "time": [
+        403795,
+        412406
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's precisely the market's core dilemma. Today, West Texas Intermediate crude oil prices surged over 4% at one point, topping $117 a barrel, driven by President Trump's aggressive rhetoric. But late in the day, prices reversed sharply after news that Pakistan proposed a two-week extension, ultimately closing down 0.8% around $111. The key point here is that Chicago Fed President Austan Goolsbee directly voiced his concern during this process. He warned that an energy shock from the Iran situation could lead to stagflation-type price increases. This was essentially an official confirmation that this geopolitical risk is not just a source of market volatility, but a serious inflation variable that Fed officials consider when setting policy. Therefore, investors are eager to see in the minutes just how concerned other committee members are about these external supply-side shocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        },
+        {
+          "type": "article",
+          "pk": "id#487fa865c1b80093",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq slide as Trump's Iran deadline looms"
+        },
+        {
+          "type": "article",
+          "pk": "id#03042d3cfa49a9b4",
+          "title": "Stock market today: S&P 500, Nasdaq close slightly higher on hopes of Iran deadline extension"
+        },
+        {
+          "type": "event",
+          "id": "419476",
+          "title": "fed goolsbee speech",
+          "date": "2026-04-07"
+        }
+      ],
+      "time": [
+        412906,
+        461517
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So, what specific parts of tomorrow's minutes should we be watching most closely?",
+      "sources": [],
+      "time": [
+        462017,
+        466828
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Investors will be most curious about the level of consensus among Fed officials. The dot plot from the March meeting indicated three rate cuts this year, but since then, both employment and inflation data have come in strong. So, it's crucial to see if any members expressed hawkish dissenting opinions in the minutes, or if there were discussions that it might take longer than expected to gain confidence that inflation is returning to the 2% target. In particular, echoing President Goolsbee's comments, the debate among members on whether they view supply-side inflation pressures, like rising energy prices, as a temporary phenomenon or a structural risk that could influence their policy stance will be a critical clue for forecasting the future path of interest rates. Ultimately, these minutes will be the first real test of the Fed's confidence level and the depth of its internal debate.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        },
+        {
+          "type": "article",
+          "pk": "id#beb90b335c49b3c3",
+          "title": "Americans are uniquely vulnerable to Iran war volatility after years of buying stocks"
+        },
+        {
+          "type": "article",
+          "pk": "id#05f8863db80bdfd3",
+          "title": "Oil prices extend gains as Trump sharpens rhetoric on Iran"
+        },
+        {
+          "type": "article",
+          "pk": "id#de78ed73a57c1153",
+          "title": "Oil Steadies as Trump’s Iran Threats Escalate Before Deadline"
+        }
+      ],
+      "time": [
+        467328,
+        514819
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Okay, now that we've covered the macro market trends, let's look at some individual stocks that were in the spotlight. One of the hottest stocks today was UnitedHealth Group. It surged more than 9% at the close. Was there some specific news driving that?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "UNH",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        515819,
+        531670
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, one of the biggest uncertainties that had been weighing on the stock was resolved. News broke that the U.S. government finalized a deal to increase the 2027 Medicare Advantage payment rate by 2.48%, which was much higher than the market had feared. This was a decisive catalyst that eased a significant portion of the short-term concerns about the company's future profitability. Investor sentiment recovered sharply, and the stock reacted explosively. The share price even topped $312 at one point before closing around the $307 mark, with strong buying pressure seen throughout the day.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ed597f018ebfddc9",
+          "title": "UnitedHealth and other insurer stocks jump after Medicare agrees to lift payments next year"
+        },
+        {
+          "type": "chart",
+          "ticker": "UNH",
+          "start_date": "2026-04-07",
+          "end_date": "2026-04-07"
+        }
+      ],
+      "time": [
+        532170,
+        570501
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "So the good news of regulatory risk being resolved drove the stock up. But can this news alone be seen as a fundamental improvement in the company's health? How have its recent earnings been?",
+      "sources": [],
+      "time": [
+        571001,
+        582612
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "That's a very sharp point. Despite the market's celebration, the company's actual financial situation is quite concerning. According to its annual report filed in March 2026, while revenue grew 12% in 2025, operating income plunged by 41% year-over-year to $19 billion. The estimated additional revenue from this Medicare rate increase is about $4.25 billion, which is far from enough to cover the $13.3 billion drop in operating income from last year. In particular, the Optum Health segment, once seen as a growth engine, swung from a profit to a loss, which could signal a serious crack in the business model. Therefore, it's been suggested that the current stock surge might be an overreaction, driven more by relief that the worst-case scenario was avoided rather than by a genuine improvement in fundamentals.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "UNH",
+          "form": "10-K",
+          "filed_date": "2026-03-02",
+          "accession_number": "0000731766-26-000062"
+        }
+      ],
+      "time": [
+        583112,
+        635683
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Besides the deteriorating earnings, are there any other potential risks investors should be aware of?",
+      "sources": [],
+      "time": [
+        636183,
+        642074
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Yes, there's a major risk that the market seems to be overlooking right now: the ongoing antitrust lawsuit from the Department of Justice (DOJ). This lawsuit isn't just about a potential fine; it targets the very core of UnitedHealth Group's competitive advantage—the vertical integration model between its insurance business and Optum. If the DOJ wins and forces a divestiture of Optum, it could be an existential threat that destroys the fundamental investment thesis for the company. The annual report itself states that the outcome of this lawsuit could have a material adverse effect on the business, and this should be seen as a very significant variable that could trip up the market at any time.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "UNH",
+          "form": "10-K",
+          "filed_date": "2026-03-02",
+          "accession_number": "0000731766-26-000062"
+        }
+      ],
+      "time": [
+        642574,
+        684945
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "Despite that, there is a more positive view from some corners, suggesting that UnitedHealth is evolving from a simple insurer into a healthcare platform company, powered by Optum's data and AI technology. What's your take on that growth story?",
+      "sources": [],
+      "time": [
+        685445,
+        701136
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The long-term vision itself is very compelling. If the value-based care model, leveraging Optum's data analytics, proves successful, there is certainly potential to control healthcare costs and improve profitability in the long run. However, that vision is still a future possibility that has not yet been proven by the numbers on the financial statements. On the other hand, the sharp decline in operating income and the DOJ's antitrust lawsuit are clear and present threats, confirmed in public filings. It seems a cautious approach is warranted when weighing uncertain future gains against visible and potentially fatal current risks. We'll need more time to see if today's rally reflects relief from short-term uncertainty or is the beginning of an excessive optimism that ignores structural risks.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "UNH",
+          "form": "10-K",
+          "filed_date": "2026-03-02",
+          "accession_number": "0000731766-26-000062"
+        },
+        {
+          "type": "article",
+          "pk": "id#ed597f018ebfddc9",
+          "title": "UnitedHealth and other insurer stocks jump after Medicare agrees to lift payments next year"
+        }
+      ],
+      "time": [
+        701636,
+        726407
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "The market closed mixed today in what was a relatively quiet session. It seems investors were on the sidelines ahead of some key economic data releases.",
+      "sources": [],
+      "time": [
+        727407,
+        736978
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, that's right. After last week's strong jobs report, all eyes in the market are now turning to inflation data. With growing uncertainty about the Fed's rate cut path, investors are looking for clues in this week's major reports about the Fed's next move. The market is currently scaling back its expectations for the number of Fed rate cuts, and this cautious stance is likely to continue through the end of the week.",
+      "sources": [],
+      "time": [
+        737478,
+        761489
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So what specific dates and events should investors be watching?",
+      "sources": [],
+      "time": [
+        761989,
+        765760
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "First up is the release of the FOMC minutes tomorrow at 2 p.m. This will give us a detailed look into the discussions Fed officials had about inflation and the economic outlook during their March meeting. We'll be able to see the reasoning behind maintaining the forecast for three rate cuts this year in the dot plot, as well as any subtle differences in opinion among the members. Also on the same day, at 1 p.m., there's a 10-year Treasury note auction, which could give us a sense of the market's direction on interest rates.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        },
+        {
+          "type": "event",
+          "id": "418796",
+          "title": "10-year note auction",
+          "date": "2026-04-08"
+        }
+      ],
+      "time": [
+        766260,
+        792631
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "The minutes are a look back at past discussions. When will we get new data that could actually move the market?",
+      "sources": [],
+      "time": [
+        793131,
+        799422
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "The highlight of the week is definitely the March Consumer Price Index, or CPI, which comes out on the morning of April 10th. The market is expecting a year-over-year increase of 3.3%, and a 0.3% month-over-month rise for core CPI, which excludes volatile food and energy prices. If the numbers come in hotter than expected, it could spark significant market volatility on fears that the Fed's first rate cut could be delayed even further. On the flip side, if the data confirms that inflation is cooling, the market could see a relief rally.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398668",
+          "title": "core inflation rate mom",
+          "date": "2026-04-10"
+        },
+        {
+          "type": "event",
+          "id": "399223",
+          "title": "inflation rate yoy",
+          "date": "2026-04-10"
+        }
+      ],
+      "time": [
+        799922,
+        832253
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides CPI, are there any other indicators to watch?",
+      "sources": [],
+      "time": [
+        832753,
+        836684
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Right after the CPI release on the same day, we should also keep an eye on the preliminary University of Michigan Consumer Sentiment index. This report includes 1-year and 5-year inflation expectations, which the Fed watches just as closely as actual inflation. That's because what consumers expect future inflation to be can influence their wage negotiations and spending decisions. So, if we see inflation expectations start to look unsettled again, it could add another layer of pressure on the Fed's policy decisions.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395569",
+          "title": "michigan consumer sentiment prel",
+          "date": "2026-04-10"
+        }
+      ],
+      "time": [
+        837184,
+        869434
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So, behind a quiet market, a week of important variables awaits. That's all for the April 8th closing bell briefing. Thank you.",
+      "sources": [],
+      "time": [
+        869934,
+        879025
+      ]
+    }
+  ]
+}
