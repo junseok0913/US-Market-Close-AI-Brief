@@ -1,0 +1,23 @@
+Title:
+2026.4.9 US Market Close | Market rallies as oil prices plunge on US-Iran ceasefire news
+
+Description:
+On April 9th, Wall Street saw all three major indices surge following news of a ceasefire agreement between the U.S. and Iran. The easing of geopolitical risks caused international oil prices to plummet by over 14%, alleviating inflation concerns. This, in turn, revived expectations for a Fed rate cut, sparking a broad relief rally across the market.
+
+- Dow Jones: +2.8% - Easing geopolitical risks from the US-Iran ceasefire agreement.
+- S&P 500: +2.5% - Reduced inflation fears due to the sharp drop in oil prices.
+- Nasdaq: +2.8% - Improved overall investor sentiment, led by tech stocks.
+
+Key Issues
+- US-Iran Ceasefire and Oil Price Plunge: News of a two-week ceasefire agreement sent West Texas Intermediate (WTI) crude oil prices tumbling over 14% to around $96 per barrel, resolving one of the market's biggest inflation worries.
+- Revival of Fed Rate Cut Hopes: The plunge in oil prices eased inflationary pressures, increasing the likelihood of a rate cut by the Fed. Concerns about oil prices mentioned in the March FOMC minutes had little impact on the market.
+- Mixed Fortunes Across Sectors: While the energy sector was the only one to decline due to falling oil prices, the transportation sector, led by Delta Air Lines, showed strong performance. The Dow Jones Transportation Average soared 4% to a new all-time high.
+- Intel's Surge and Potential Risks: Intel skyrocketed over 11% on optimism for its AI foundry business. However, significant financial risks were also highlighted, including a $4.9 billion free cash flow deficit revealed in its annual report.
+
+Key Stocks
+- ExxonMobil (XOM): Down over 5.5% - Hit by the plunge in oil prices and a forecast for lower Q1 production.
+- Delta Air Lines (DAL): Surged 12% - Benefited from lower oil prices and reported Q1 earnings that beat expectations.
+- Intel (INTC): Jumped over 11% - Fueled by AI foundry expectations and partnership news.
+
+Keywords:
+미국주식,주식,시황,유가,금리,인플레이션,FOMC,휴전,인텔,INTC,엑슨모빌,델타항공

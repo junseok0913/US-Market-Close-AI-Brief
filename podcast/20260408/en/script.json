@@ -1,0 +1,565 @@
+{
+  "date": "20260408",
+  "nutshell": "Oil plunges and stocks rally on U.S.-Iran ceasefire agreement.",
+  "user_tickers": [
+    "INTC"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 9th closing bell briefing. All three major indices surged today, giving Wall Street a reason to smile for the first time in a while.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up in one phrase: an oil price plunge and a stock market rally driven by the U.S.-Iran ceasefire agreement. The Dow Jones Industrial Average gained 2.8% to close at 47,909, and the S&P 500 rose 2.5% to 6,782. The tech-heavy Nasdaq Composite also jumped 2.8%, finishing the day at 22,634. The biggest driver behind this surge was news of easing geopolitical risk. When reports of a two-week ceasefire between the U.S. and Iran broke, West Texas Intermediate crude oil prices plummeted over 14% from the previous day, trading around the $96 per barrel mark.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-08"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-08"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-08"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, the market staged a relief rally as geopolitical risks eased. The Fed's FOMC minutes were also released today, but did they not have much of an impact?",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Exactly. While the content of the minutes was important, it was essentially overshadowed by a much bigger market-moving story. The March FOMC minutes revealed that members were concerned that rising oil prices due to the Middle East war could reignite inflation. But today, the very source of that concern—oil prices—plunged on the ceasefire news, greatly diminishing the minutes' impact. In fact, the market interpreted the drop in oil as a factor that would ease inflationary pressures, thereby increasing the odds of a Fed rate cut, which fueled the relief rally.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it was a day where a geopolitical development trumped all other market concerns. Could you break down the key drivers for us in more detail?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. We can break it down into two main themes. First, how the U.S.-Iran ceasefire agreement pulled down oil prices and sparked a broad market rally. And second, how that plunge in oil shifted the market's expectations for the Fed's monetary policy. Let's dive into each of these key points one by one.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point. Can you give us a detailed analysis of the chain reaction the U.S.-Iran ceasefire had across the market?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, this ceasefire agreement was seen as more than just an easing of tensions in the Middle East; it was interpreted as a signal that a key inflation threat was being removed. On the New York Mercantile Exchange, West Texas Intermediate crude oil plummeted nearly 14% in a single day, settling around $96 a barrel. Brent crude, the international benchmark, also fell over 11% to close at $96. This sharp drop in oil immediately stabilized inflation expectations, which in turn pushed the 10-year Treasury yield down by 9 basis points to 4.25%. At the same time, the geopolitical premium on the U.S. dollar, a safe-haven asset, vanished, causing the Dollar Index to plunge 1.2% below the 100 mark. With these three major macro variables—oil, rates, and the dollar—all turning favorable for stocks, investor sentiment exploded, leading to a broad relief rally, including a 2.5% surge in the S&P 500.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "article",
+          "pk": "id#5229b1102a7dd1ff",
+          "title": "Oil prices crater after Trump announces two-week ceasefire in US-Iran war"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "While the oil price drop was a tailwind for the broader market, it must have been a significant headwind for the energy sector. How did those stocks perform?",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "You're absolutely right. The energy sector was the only one in the red today, as the drop in oil prices immediately led to concerns about the profitability of energy companies. ExxonMobil's stock fell over 5.5% after the company also projected a decrease in first-quarter oil production due to the Middle East conflict. Shell also had a tough day, with its stock down 4% from the pre-market session. Other major energy firms like Diamondback Energy also saw significant declines, and the XLE, an ETF representing the broader energy sector, couldn't escape the weakness. It was a symbolic moment, showing that energy companies, which had reaped massive profits from rising oil prices during the war, are now facing a direct headwind from the easing of geopolitical risk.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bd8b1e5f28116a92",
+          "title": "Stock market today: Dow soars over 1,000 points, S&P 500 and Nasdaq surge on news of 2-week US-Iran ceasefire"
+        },
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "SHEL",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "I see. So on the flip side, which sectors were the biggest beneficiaries of the drop in oil prices?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "The most direct beneficiaries were, by far, the transportation stocks. For airlines, shipping, and trucking companies, fuel is a major expense, so the drop in oil prices fueled expectations of an immediate boost to their profits. Delta Air Lines, in particular, surged 12%, helped by the news that its first-quarter earnings beat expectations. Amid this positive sentiment, the Dow Jones Transportation Average soared 4%, hitting a new all-time high. Furthermore, since lower oil prices reduce consumers' fuel costs and increase their spending power, travel-related stocks like Airbnb and Booking Holdings, as well as consumer discretionary companies like Ross Stores, also saw strong gains.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bd8b1e5f28116a92",
+          "title": "Stock market today: Dow soars over 1,000 points, S&P 500 and Nasdaq surge on news of 2-week US-Iran ceasefire"
+        },
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "chart",
+          "ticker": "DAL",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJT",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So this all leads to the analysis that the ceasefire could influence the Fed's monetary policy path.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Precisely. Just yesterday, Fed Vice Chair Philip Jefferson expressed concern that surging oil prices were complicating the inflation outlook. And in the March FOMC minutes released today, many members warned that the Middle East war could reignite inflation. But the situation changed dramatically in just one day. According to an analysis by the Dallas Fed, the reopening of the Strait of Hormuz could quickly stabilize inflation expectations. The market seized on this analysis, interpreting it as a sign that the Fed now has a renewed justification and more room to cut rates. Ultimately, this plunge in oil prices has become a key driver, alleviating one of the Fed's biggest headaches—inflation risk—and strongly reigniting the market's hopes for a rate cut.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#bd8b1e5f28116a92",
+          "title": "Stock market today: Dow soars over 1,000 points, S&P 500 and Nasdaq surge on news of 2-week US-Iran ceasefire"
+        },
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "With market expectations shifting like that, I imagine we saw some big moves across the asset markets. What were the specific changes?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, all of today's market action can be summed up by one sentence: expectations for a Fed rate cut are back on the table. The news of the U.S.-Iran ceasefire instantly brought down oil prices, which had been the biggest inflation concern. West Texas Intermediate crude plunged nearly 14% during the session to around $96 a barrel, and Brent crude fell over 11%. As a result, safe-haven demand weakened sharply, causing the Dollar Index to erase all of its gains for the year. Conversely, a powerful wave of buying flowed into the stock market. The S&P 500, Nasdaq, and Dow all surged over 2.5%. The 10-year Treasury yield also fell to around 4.25%, down 9 basis points, as inflation expectations cooled. Coincidentally, the March FOMC minutes released today contained concerns that this very rise in oil prices could delay rate cuts, but the market reacted to the newer reality.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-03-03",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "article",
+          "pk": "id#7a6804a3450fc50a",
+          "title": "Dollar Erases 2026 Gains as Iran Ceasefire Saps Haven Demand"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "As you said, the FOMC minutes became old news almost instantly. What were the specific details in them?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Well, in the March minutes, Fed officials clearly stated that the Middle East war was a key variable that could reignite inflation and delay rate cuts. In fact, just a day earlier, Fed Vice Chair Philip Jefferson said that an energy price shock was complicating the inflation outlook, and Chicago Fed President Austan Goolsbee also expressed nervousness, saying an oil shock could push up prices in a stagflationary way. But a single piece of news—the ceasefire agreement—overturned all these concerns. The market decided that the current plunge in oil prices is more important for future monetary policy than a three-week-old record. According to the CME Group's FedWatch tool, bets on a rate cut within the year are rapidly increasing again, shifting the market's focus back to slowing inflation and the timing of the Fed's policy pivot.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "article",
+          "pk": "id#bd8b1e5f28116a92",
+          "title": "Stock market today: Dow soars over 1,000 points, S&P 500 and Nasdaq surge on news of 2-week US-Iran ceasefire"
+        },
+        {
+          "type": "article",
+          "pk": "id#34559f5d2e5c348c",
+          "title": "Morning Brief: Chicago Fed's Goolsbee 'nervous' about impact of oil shock on economy"
+        },
+        {
+          "type": "event",
+          "id": "390607",
+          "title": "fomc minutes",
+          "date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "So the expectation of easing inflationary pressure rippled through the entire asset market.",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "That's right. The most prominent example was the sharp reversal in the U.S. dollar. As the war premium disappeared, the dollar gave back all of its gains for the year, which in turn led to a surge in assets from other countries that had been suppressed by the strong dollar. Notably, the iShares MSCI Emerging Markets ETF recorded its biggest gain since last April, and country-specific ETFs for places like South Korea, Chile, and Taiwan also saw strong rallies ranging from 5% to over 10%. Commodity prices like gold and copper also rose more than 3%, boosted by the weaker dollar. So, it was a day where easing geopolitical risk lowered inflation fears, which in turn stimulated expectations of a Fed policy shift, triggering a relief rally across the entire global asset market.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#7a6804a3450fc50a",
+          "title": "Dollar Erases 2026 Gains as Iran Ceasefire Saps Haven Demand"
+        },
+        {
+          "type": "chart",
+          "ticker": "EEM",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "GC=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "HG=F",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "However, it's worth noting that this ceasefire is still on shaky ground, isn't it?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's an excellent point. Despite the ceasefire news, uncertainty remains, with the Iranian side citing Israeli military actions and hinting at the possibility of scrapping the deal. In fact, the speaker of the Iranian parliament claimed the U.S. had violated the terms of the agreement, expressing a negative stance on the negotiations. Analysts at firms like Rystad Energy noted that while oil prices have fallen significantly from around $110 to $95 a barrel, they are still higher than pre-conflict levels, suggesting the market doesn't fully trust the ceasefire's sustainability yet. Therefore, today's relief rally was a reaction to avoiding a worst-case scenario, and we should bear in mind that volatility could easily spike again depending on how the negotiations proceed over the next two weeks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#58fe48f30e11326c",
+          "title": "Oil prices plunge, but uncertainty remains as Iran threatens to pull out of ceasefire deal"
+        },
+        {
+          "type": "article",
+          "pk": "id#9205b7b5a35561d7",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plunges after US-Iran ceasefire sparks relief rally"
+        },
+        {
+          "type": "article",
+          "pk": "id#bd8b1e5f28116a92",
+          "title": "Stock market today: Dow soars over 1,000 points, S&P 500 and Nasdaq surge on news of 2-week US-Iran ceasefire"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-03-01",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the broad market picture in detail. But even within this widespread rally, one stock really stood out: Intel. It skyrocketed over 11% today, closing near $59.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTC",
+          "start_date": "2026-04-08",
+          "end_date": "2026-04-08"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, on the surface, positive narratives like a partnership with NVIDIA seem to have fueled speculative fervor in the market. There's a move to re-evaluate Intel not just as a chipmaker, but as a 'sovereign AI foundry' responsible for a key part of the AI infrastructure supply chain. However, behind this rosy optimism lies a harsh financial reality and serious business risks disclosed by the company itself, so a cautious approach is needed to determine whether today's surge is based on fundamental improvement.",
+      "sources": []
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "You mentioned a gap between expectations and reality. Can you explain the specific financial risks with some numbers?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "The biggest issue is the massive cash burn. According to the annual report filed in January 2026, Intel recorded a negative free cash flow of about $4.9 billion in fiscal year 2025. While its existing product divisions generated $12.7 billion in operating income, the foundry business alone incurred a loss of $10.3 billion. On top of that, an astronomical $14.6 billion in capital expenditures means the company is spending far more money than it's making. This is a clear indicator that the company is in a structure where it's difficult to survive without external funding.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "That sounds serious. But aren't there strong safety nets like the U.S. government's CHIPS Act funding or investment from NVIDIA? Can't that support offset the risk?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's the biggest blind spot in the stock's current valuation. The prevailing analysis is that investments from NVIDIA or the government are less of a safety net and more like life support to prolong this precarious structure. In fact, the price at which these strategic investors acquired their stakes is estimated to be between $20 and $23 per share, and the current stock price is more than 2.5 times higher than that. What's more serious is that the company itself admitted in its 10-K report that it 'may have to cease development of next-generation processes if it fails to secure key external customers.' This existential risk, which could lead to an impairment of over $100 billion in assets, doesn't seem to be reflected in the current stock price at all.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTC",
+          "form": "10-K",
+          "filed_date": "2026-01-23",
+          "accession_number": "0000050863-26-000011"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, to sum it up, today's surge seems to be driven less by fundamental improvement and more by excessive optimism about future potential—in other words, speculative sentiment.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's a fair way to put it. The growth story is very compelling, but the technical and financial hurdles to realize that vision are incredibly high and uncertain. The current price is pricing in the most optimistic scenario where everything goes perfectly, offering no margin of safety for the massive failure risks inherent in the process. Therefore, at this point, managing the risk associated with the stock's volatility seems more important than ever.",
+      "sources": []
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "So, how would you summarize today's market action in a nutshell?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "It was a day of wait-and-see. The three major indices fluctuated around the flatline before finishing mixed, with no clear direction. Investors were holding back from making aggressive bets ahead of tomorrow's release of the March Consumer Price Index, or CPI. Especially after last week's strong jobs report tempered expectations for a Fed rate cut, there was a widespread sense in the market that this inflation report will be a crucial turning point for the future path of interest rates.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "As you mentioned, tomorrow's Consumer Price Index report is the market's biggest focus.",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's right. The March CPI, set to be released on the morning of April 10th, is the key data point that will shape the Fed's next move. The market is currently expecting a year-over-year inflation rate of 3.3%, which is higher than the previous reading of 2.4%. If the report comes in hotter than expected, the timeline for a Fed rate cut will inevitably be pushed further out, which would be a significant burden on the market. On the other hand, if it comes in below expectations, hopes for a rate cut could be rekindled, providing a positive catalyst for stocks.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399223",
+          "title": "inflation rate yoy",
+          "date": "2026-04-10"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "Besides the CPI, are there any other economic events we should be watching?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, we have a series of inflation-related reports coming up. Next week, on April 14th, the Producer Price Index, or PPI, will be released. It's considered a leading indicator for consumer prices, so it can give us a preview of where inflation is headed. Also, on April 15th, the Fed's Beige Book will be published. While the Beige Book, a report on economic conditions from the 12 regional Federal Reserve Banks, doesn't directly influence rate decisions, it's important for understanding the detailed state of the U.S. economy and getting a glimpse into the perspectives of Fed officials.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398543",
+          "title": "ppi mom",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "418767",
+          "title": "fed beige book",
+          "date": "2026-04-15"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "I see. Ahead of these key data releases, what should investors keep in mind?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "They need to be prepared for short-term volatility. The market could swing significantly depending on the inflation data, so it's wise to avoid chasing rallies or panic selling. Instead, this could be an opportunity to review one's investment portfolio and focus on robust companies that can withstand market fluctuations. While macroeconomic indicators are important, it's crucial to remember that a company's intrinsic value is what ultimately determines its long-term stock price.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Alright, great insights. Thank you. That wraps up our closing bell briefing for April 9th.",
+      "sources": []
+    }
+  ]
+}
