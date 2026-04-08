@@ -1,0 +1,208 @@
+{
+  "date": "20260409",
+  "lang": "ko",
+  "title": "유가 14% 폭락, 증시는 왜 3% 가까이 급등했나?",
+  "hook": "국제 유가가 하루 만에 14% 폭락했습니다. 시장은 어떻게 반응했을까요.",
+  "durationSeconds": 66.404,
+  "audioFile": "shorts20260408.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.931,
+      "eyebrow": "시장 오프닝",
+      "headline": "유가 14% 폭락",
+      "subheadline": "증시는 왜 급등했을까?",
+      "body": "국제 유가가 하루 만에 14% 폭락했습니다. 시장은 어떻게 반응했을까요.",
+      "bullets": [
+        "국제 유가가 하루 만에 14% 폭락했습니다.",
+        "시장은 어떻게 반응했을까요."
+      ],
+      "tickers": [
+        "CLF",
+        "XOM",
+        "DAL",
+        "^GSPC"
+      ],
+      "highlights": [
+        "국제 유가 -14%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 5.931,
+      "endSec": 21.582,
+      "eyebrow": "오늘의 지수",
+      "headline": "3대 지수 동반 랠리",
+      "subheadline": "다우 +2.8% | S&P 500 +2.5% | 나스닥 +2.8%",
+      "body": "미-이란 휴전 합의 소식이 시장 전반의 안도 랠리를 이끌었습니다.",
+      "bullets": [
+        "4월 9일 미국 증시는 미-이란 휴전 합의 소식에 다우 2.8%, S&P 500 2.5%, 나스닥 2.8% 급등하며 랠리를 펼쳤습니다.",
+        "오늘 시장은 한마디로 미-이란 휴전 합의에 따른 유가 급락과 증시 랠리였습니다."
+      ],
+      "tickers": [
+        "^DJI",
+        "^GSPC",
+        "^IXIC",
+        "XOM"
+      ],
+      "highlights": [
+        "다우 +2.8%",
+        "S&P 500 +2.5%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 21.582,
+      "endSec": 64.513,
+      "eyebrow": "핵심 분석",
+      "headline": "유가 급락, 업종별 희비 교차",
+      "subheadline": "휴전 합의가 인플레이션 우려를 완화하며 금리 인하 기대감을 높였습니다.",
+      "body": "미국과 이란의 2주간 휴전 합의 소식이 전해지자, 서부 텍사스산 원유 가격은 14% 이상 폭락하며 배럴당 96달러 선으로 주저앉았습니다. 유가 급락은 인플레이션 압력이 완화될 것이라는 기대로 이어졌고, 이는 연준의 금리 인하 가능성을 다시 높이는 요인으로 해석됐습니다. 이 때문에 3월 FOMC 의사록에 담겼던 유가 상승 우려는 시장에 큰 영향을 주지 못했습니다. 업종별 희비는 엇갈렸습니다. 유가 하락에 엑슨모빌 주가가 5.5…",
+      "bullets": [
+        "에너지(XOM)↓: 유가 하락 직격탄에 5.5% 하락",
+        "운송(DAL)↑: 유류비 절감 기대감에 12% 급등"
+      ],
+      "tickers": [
+        "XOM",
+        "DAL",
+        "^GSPC",
+        "CLF"
+      ],
+      "highlights": [
+        "WTI 유가 $96",
+        "달러 인덱스 -1.2%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 64.513,
+      "endSec": 66.404,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "DAL",
+        "^GSPC",
+        "CLF"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.931,
+      "text": "국제 유가가 하루 만에 14% 폭락했습니다. 시장은 어떻게 반응했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.931,
+      "endSec": 21.582,
+      "text": "4월 9일 미국 증시는 미-이란 휴전 합의 소식에 다우 2.8%, S&P 500 2.5%, 나스닥 2.8% 급등하며 랠리를 펼쳤습니다. 오늘 시장은 한마디로 미-이란 휴전 합의에 따른 유가 급락과 증시 랠리였습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 21.582,
+      "endSec": 64.513,
+      "text": "미국과 이란의 2주간 휴전 합의 소식이 전해지자, 서부 텍사스산 원유 가격은 14% 이상 폭락하며 배럴당 96달러 선으로 주저앉았습니다. 유가 급락은 인플레이션 압력이 완화될 것이라는 기대로 이어졌고, 이는 연준의 금리 인하 가능성을 다시 높이는 요인으로 해석됐습니다. 이 때문에 3월…"
+    },
+    {
+      "id": 3,
+      "startSec": 64.513,
+      "endSec": 66.404,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "article",
+      "label": "Stock market today: Dow, S&P 500, Nasdaq surge, oil plu…",
+      "detail": "id#9205b7b5a35561d7"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-08"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-08"
+    },
+    {
+      "type": "event",
+      "label": "fomc minutes",
+      "detail": "2026-04-08"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-04-09"
+    },
+    {
+      "type": "chart",
+      "label": "DAL",
+      "detail": "2026-04-09"
+    },
+    {
+      "type": "chart",
+      "label": "^DJT",
+      "detail": "2026-04-09"
+    },
+    {
+      "type": "chart",
+      "label": "DX-Y.NYB",
+      "detail": "2026-04-09"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "미-이란 휴전 합의로 3대 지수 2.5% 이상 급등",
+      "국제 유가 14% 이상 폭락하며 인플레이션 우려 완화",
+      "에너지 섹터 하락, 운송 섹터 사상 최고치 경신"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XOM",
+        "label": "엑슨모빌",
+        "tag": "유가 하락에 5.5%↓"
+      },
+      {
+        "ticker": "DAL",
+        "label": "델타 항공",
+        "tag": "호실적 더해 12% 급등"
+      },
+      {
+        "ticker": "^DJT",
+        "label": "다우 운송 지수",
+        "tag": "사상 최고치 경신"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "CLF",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

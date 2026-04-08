@@ -1,0 +1,58 @@
+{
+  "date": "20260408",
+  "lang": "ko",
+  "audioFile": "shorts20260408.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 66.404,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.931,
+      "endSec": 5.931,
+      "speechDurationSec": 5.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 40,
+      "text": "국제 유가가 하루 만에 14% 폭락했습니다. 시장은 어떻게 반응했을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.931,
+      "speechEndSec": 21.582,
+      "endSec": 21.582,
+      "speechDurationSec": 15.651,
+      "pauseAfterSec": 0.0,
+      "charCount": 120,
+      "text": "4월 9일 미국 증시는 미-이란 휴전 합의 소식에 다우 2.8%, S&P 500 2.5%, 나스닥 2.8% 급등하며 랠리를 펼쳤습니다. 오늘 시장은 한마디로 미-이란 휴전 합의에 따른 유가 급락과 증시 랠리였습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 21.582,
+      "speechEndSec": 64.513,
+      "endSec": 64.513,
+      "speechDurationSec": 42.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 386,
+      "text": "미국과 이란의 2주간 휴전 합의 소식이 전해지자, 서부 텍사스산 원유 가격은 14% 이상 폭락하며 배럴당 96달러 선으로 주저앉았습니다. 유가 급락은 인플레이션 압력이 완화될 것이라는 기대로 이어졌고, 이는 연준의 금리 인하 가능성을 다시 높이는 요인으로 해석됐습니다. 이 때문에 3월 FOMC 의사록에 담겼던 유가 상승 우려는 시장에 큰 영향을 주지 못했습니다. 업종별 희비는 엇갈렸습니다. 유가 하락에 엑슨모빌 주가가 5.5% 넘게 하락하는 등 에너지 섹터는 유일하게 하락했습니다. 반면, 델타 항공은 1분기 호실적까지 더해지며 12%나 급등했고, 다우존스 운송업 평균 지수는 4% 치솟으며 사상 최고치를 경신했습니다. 안전자산 선호 심리가 약화되며 달러 인덱스는 1.2% 급락했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 64.513,
+      "speechEndSec": 66.404,
+      "endSec": 66.404,
+      "speechDurationSec": 1.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
