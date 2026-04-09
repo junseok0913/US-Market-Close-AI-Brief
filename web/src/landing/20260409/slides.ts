@@ -1,0 +1,257 @@
+import type { Slide } from '@/types/slide';
+
+export const slides: Slide[] = [
+  {
+    id: 0,
+    type: 'title',
+    turnId: 0,
+    date: '2026-04-10',
+    nutshell: '휴전 협상 기대감이 지정학적 우려를 압도하며 증시 상승',
+    description:
+      '중동의 지정학적 긴장감이 지속되는 가운데, 이스라엘과 레바논의 직접 협상 소식이 전해지며 시장은 반등에 성공했습니다. 오늘 브리핑에서는 시장을 움직인 핵심 동력과 함께, 규제 리스크에 직면한 인튜이트(INTU)를 심층 분석합니다.',
+  },
+  {
+    id: 1,
+    type: 'market-summary',
+    turnId: 1,
+    title: '주요 지수 현황',
+    description:
+      '장 초반 하락 출발했던 증시는 오후 들어 휴전 협상 기대감이 부상하며 상승 반전했습니다. 나스닥은 7거래일 연속 랠리를 이어갔고, 다우 지수는 연초 이후 수익률이 플러스로 전환되었습니다. 반면, 중동 리스크가 지속되며 WTI 유가는 4% 넘게 급등했습니다.',
+    indices: [
+      { name: 'S&P 500', value: 6824.66, change: 41.85, changePercent: 0.62 },
+      { name: 'NASDAQ', value: 22822.42, change: 187.43, changePercent: 0.83 },
+      { name: 'DOW', value: 48185.80, change: 275.88, changePercent: 0.58 },
+      { name: 'Russell 2000', value: 2636.31, change: 15.85, changePercent: 0.60 },
+    ],
+    commodities: [
+      { name: 'WTI Crude', value: 97.98, change: 3.57, changePercent: 3.78 },
+      { name: 'Gold Futures', value: 4790.50, change: 41.00, changePercent: 0.86 },
+      { name: 'Dollar Index', value: 98.80, change: -0.33, changePercent: -0.33 },
+    ],
+    charts: [
+      { ticker: 'SP:SPX' },
+      { ticker: 'NASDAQ:IXIC' },
+      { ticker: 'DJ:DJI' },
+      { ticker: 'TVC:RUT' },
+      { ticker: 'NYMEX:CL1!' },
+      { ticker: 'COMEX:GC1!' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'headline',
+    turnId: 3,
+    icon: 'globe',
+    title: '지정학적 리스크 완화',
+    subtitle: '외교적 해결 기대감이 시장 반등 견인',
+    description:
+      '이스라엘 총리가 레바논과의 직접 협상에 동의했다는 소식이 전해지며, 투자 심리가 급격히 개선되었습니다. 시장은 당장의 불확실성보다 외교적 해결 가능성에 무게를 두었습니다.',
+    bullets: [
+      '이스라엘, 레바논과 직접 협상 동의 보도',
+      '미-이란 간 휴전 합의 지지 신호로 해석',
+      '호르무즈 해협 재개방 가능성에 대한 기대감 부상',
+      '시장은 최악의 시나리오를 피할 수 있다는 희망에 베팅',
+    ],
+    theme: 'blue',
+  },
+  {
+    id: 3,
+    type: 'headline',
+    turnId: 4,
+    icon: 'help-circle',
+    title: '시장을 움직인 핵심 동력은?',
+    subtitle: '외교적 해결 가능성에 쏠린 시장의 눈',
+    description:
+      '불안정한 상황 속에서도 시장이 강한 반등을 보인 배경에는 이스라엘과 레바논의 직접 협상 소식이 있었습니다. 투자자들은 당장의 불확실성보다 외교적 해결이라는 희망에 베팅했습니다.',
+    theme: 'green',
+  },
+  {
+    id: 4,
+    type: 'ticker-intro',
+    turnId: 6,
+    ticker: 'INTU',
+    companyName: 'Intuit Inc.',
+    currentPrice: 361.69,
+    dayChange: -27.82,
+    dayChangePercent: -7.14,
+    description:
+      '세금 신고 마감일이 임박한 가운데, 인튜이트(INTU)의 주가는 7% 넘게 급락하며 시장의 전반적인 상승 분위기와 대조적인 모습을 보였습니다.',
+    charts: [{ ticker: 'INTU' }],
+  },
+  {
+    id: 5,
+    type: 'ticker-analysis',
+    turnId: 7,
+    ticker: 'INTU',
+    title: '인튜이트(INTU) 급락 배경: 구조적 위협',
+    points: [
+      '미 국세청(IRS)의 무료 세금 신고 파일럿 프로그램 확대',
+      '연방거래위원회(FTC)의 규제 압력 증대',
+      '핵심 수익원 \'터보택스\'의 비즈니스 모델 훼손 우려',
+      '세금 신고 시즌 정점에서 거래량 폭증하며 하락',
+    ],
+    outlook: '시장은 정부의 직접적인 경쟁과 규제 리스크를 가격에 반영하기 시작했습니다.',
+    outlookColor: 'rose',
+  },
+  {
+    id: 6,
+    type: 'stats',
+    turnId: 9,
+    title: '견고한 펀더멘털: 인튜이트 실적',
+    description:
+      '구조적 리스크 우려에도 불구하고, 인튜이트의 최근 실적은 매우 강력한 성장세를 보이고 있습니다. (2026 회계연도 상반기 기준)',
+    stats: [
+      { label: '매출 성장률', value: '+18%', subtext: '전년 동기 대비', trend: 'up' },
+      { label: '순이익 성장률', value: '+71%', subtext: '전년 동기 대비', trend: 'up' },
+      { label: '핵심 성장 동력', value: '퀵북스', subtext: '글로벌 비즈니스 솔루션', trend: 'up' },
+    ],
+    note: '일각에서는 현재 주가 하락이 기업 가치와 무관한 과도한 반응이며, 저평가 국면에 진입했다는 분석도 제기됩니다.',
+    theme: 'green',
+    charts: [{ ticker: 'INTU' }],
+  },
+  {
+    id: 7,
+    type: 'comparison',
+    turnId: 10,
+    title: '인튜이트(INTU) 투자 관점 충돌',
+    description:
+      '인튜이트의 미래를 두고 과거의 견고한 실적과 미래의 구조적 리스크가 충돌하며, 시장의 평가가 엇갈리고 있습니다.',
+    items: [
+      {
+        label: '긍정적 관점 (기회)',
+        value: 'AI 기반 성장',
+        description: '생성형 AI를 통한 개인화 금융 자문 플랫폼으로 진화. 정부 서비스와 차별화된 고부가가치 영역 창출 가능.',
+        highlight: false,
+      },
+      {
+        label: '부정적 관점 (위협)',
+        value: '즉각적 리스크',
+        description: '정부의 직접 경쟁은 산업 패러다임을 바꾸는 사건. 핵심 현금 창출원의 기반이 흔들릴 수 있다는 명백한 위험.',
+        highlight: true,
+      },
+    ],
+  },
+  {
+    id: 8,
+    type: 'ticker-analysis',
+    turnId: 11,
+    ticker: 'INTU',
+    title: 'AI, 구원투수가 될 수 있을까?',
+    points: [
+      '\'인튜이트 어시스트\' 등 생성형 AI로 고부가가치 창출 시도',
+      '단순 세금 신고를 넘어 개인화 금융 자문 플랫폼으로 진화 목표',
+      '문제는 AI 서비스의 수익 모델이 아직 불분명하다는 점',
+      '핵심 사업부에 가해지는 경쟁 압력은 즉각적이고 현실적인 리스크',
+    ],
+    outlook: '시장은 불확실한 미래 잠재력보다 현재의 명백한 리스크에 더 무게를 두고 있습니다.',
+    outlookColor: 'purple',
+  },
+  {
+    id: 9,
+    type: 'ticker-analysis',
+    turnId: 12,
+    ticker: 'INTU',
+    title: '시장의 재평가: 기회인가, 함정인가?',
+    points: [
+      '과거의 견고한 실적 기반 \'저가 매수\' 기회라는 시각',
+      'vs. 정부 개입이라는 구조적 변화에 대한 \'냉정한 재평가\'',
+      '안정적 독점 기업에서 \'규제 리스크 기업\'으로 인식 전환 중',
+    ],
+    outlook: '변화된 경쟁 환경을 반영한 시장의 가치 재산정 과정으로 해석됩니다.',
+    outlookColor: 'amber',
+  },
+  {
+    id: 10,
+    type: 'ticker-analysis',
+    turnId: 13,
+    ticker: 'INTU',
+    title: '결론: 인튜이트(INTU) 투자 전략',
+    points: [
+      '시장은 인튜이트를 안정적 독점 기업에서 \'규제 리스크 기업\'으로 재평가 중.',
+      '인식의 전환 자체가 밸류에이션 배수 하락 요인으로 작용 가능.',
+      'AI 기반 성장 스토리의 잠재력이 현실화되기까지는 상당한 시간 소요 예상.',
+    ],
+    outlook: '구조적 불확실성이 해소되고 비즈니스 모델의 방어력이 입증될 때까지 신중한 접근이 필요한 시점입니다.',
+    outlookColor: 'blue',
+  },
+  {
+    id: 11,
+    type: 'headline',
+    turnId: 14,
+    icon: 'alert-triangle',
+    title: '되살아난 인플레이션 우려',
+    subtitle: '예상 상회한 3월 CPI가 시장에 남긴 과제',
+    description:
+      '최근 발표된 3월 소비자물가지수(CPI)가 예상을 웃돌면서, 연준의 6월 금리 인하 기대감이 크게 후퇴했습니다. 이는 향후 시장의 변동성을 키울 핵심 요인으로 작용할 전망입니다.',
+    bullets: [
+      '3월 CPI, 전년 대비 3.5% 상승 (예상 3.4% 상회)',
+      '6월 금리 인하 가능성 사실상 소멸',
+      '10년물 국채금리 4.5% 돌파하며 증시 부담 가중',
+      '인플레이션 고착화 우려로 시장의 데이터 의존성 심화',
+    ],
+    theme: 'red',
+  },
+  {
+    id: 12,
+    type: 'stats',
+    turnId: 15,
+    title: '채권 시장의 경고',
+    description: 'CPI 쇼크로 금리 인하 기대가 후퇴하며 국채금리는 급등, 시장의 위험 회피 심리를 자극했습니다.',
+    stats: [
+      { label: '10년물 국채금리', value: '4.5% 돌파', subtext: '연중 최고 수준 근접', trend: 'up' },
+      { label: '6월 금리 인하 확률', value: '20% 미만', subtext: 'CPI 발표 이전 50% 상회', trend: 'down' },
+      { label: '시장 영향', value: '기술주 중심 하락', subtext: '고금리 환경 부담', trend: 'neutral' },
+    ],
+    theme: 'red',
+    charts: [{ ticker: 'TVC:US10Y', title: '미 10년물 국채금리' }],
+  },
+  {
+    id: 13,
+    type: 'events',
+    turnId: 17,
+    title: '향후 시장 방향성 결정할 주요 지표',
+    description:
+      'CPI 쇼크 이후, 시장의 관심은 향후 발표될 물가 및 소비 관련 지표에 집중되고 있습니다. 이 지표들이 연준의 다음 행보에 대한 단서를 제공할 것입니다.',
+    events: [
+      {
+        date: '내일 오전',
+        label: '3월 생산자물가지수 (PPI)',
+        description: '소비자물가의 선행지표. 예상치: 전월 대비 1.3% 상승.',
+      },
+      {
+        date: '이번 주 금요일',
+        label: '미시간대 소비자심리지수',
+        description: '소비자 경기 체감 및 인플레이션 기대 심리 파악.',
+      },
+      {
+        date: '다음 주 월요일',
+        label: '3월 소매판매',
+        description: '미국 경제의 3분의 2를 차지하는 소비 건전성 확인.',
+      },
+    ],
+  },
+  {
+    id: 14,
+    type: 'stats',
+    turnId: 19,
+    title: '소비 지표의 양면성',
+    description:
+      '향후 발표될 소비 관련 지표들은 미국 경제의 건전성을 보여주는 동시에 인플레이션 압력으로도 작용할 수 있어 시장의 면밀한 분석이 요구됩니다.',
+    stats: [
+      { label: '미국 경제 내 비중', value: '약 2/3', subtext: '소비가 차지하는 비중', trend: 'neutral' },
+      { label: '3월 소매판매 예상', value: '0.4% 증가', subtext: '이전보다 둔화 예상', trend: 'down' },
+      { label: '시장 해석', value: '양면성', subtext: '견고한 경제 vs 인플레 압력', trend: 'neutral' },
+    ],
+    note: '소비 지표가 견고할 경우 경제 펀더멘털에 대한 신뢰를 주지만, 연준의 긴축 장기화 우려를 자극할 수 있습니다.',
+    theme: 'purple',
+  },
+  {
+    id: 15,
+    type: 'closing',
+    turnId: 21,
+    headline: '데이터 의존적 장세 돌입, 변동성 확대 예상',
+    tagline: '신중한 접근이 필요한 시점',
+    description:
+      '6월 금리 인하 기대감이 사라진 지금, 시장은 발표되는 경제지표 하나하나에 민감하게 반응할 것입니다. 섣부른 매매보다는 PPI, 소매판매, 1분기 실적 등을 확인하며 방향성을 가늠해야 합니다.',
+  },
+];

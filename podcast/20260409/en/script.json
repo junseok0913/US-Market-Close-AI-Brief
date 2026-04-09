@@ -1,0 +1,257 @@
+{
+  "date": "20260409",
+  "nutshell": "Hopes for a ceasefire overshadowed geopolitical concerns, lifting the market.",
+  "user_tickers": [
+    "INTU"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": -1,
+      "end_id": -1
+    },
+    {
+      "name": "ticker",
+      "start_id": 6,
+      "end_id": 13
+    },
+    {
+      "name": "closing",
+      "start_id": 14,
+      "end_id": 22
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 10th closing bell briefing. Despite ongoing geopolitical tensions in the Middle East, the market managed to rebound, finishing the week on a high note.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. If I had to sum up today's market in one phrase, it would be that hopes for a ceasefire overshadowed geopolitical worries, driving stocks higher. The market actually opened lower on concerns that the truce could fall apart, but it reversed course in the afternoon. The S&P 500 closed up 0.62% at 6824, and the Nasdaq Composite gained 0.83% to 22822, extending its rally to a seventh straight day. The Dow Jones Industrial Average also rose 0.58%, turning its year-to-date performance positive. On the other hand, West Texas Intermediate crude oil prices surged more than 4.5%, climbing above $98 a barrel.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-09",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-09",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-09",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-09",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So, what was behind this strong performance in the stock market, especially when the situation still seems so volatile?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "The news that broke in the afternoon was the real game-changer. Reports that the Israeli Prime Minister agreed to direct negotiations with Lebanon completely shifted the market's mood. This was interpreted as a signal supporting the fragile ceasefire agreement between the U.S. and Iran. Investors chose to focus more on the possibility of a diplomatic solution that could reopen the Strait of Hormuz, rather than on the immediate uncertainty. Ultimately, the market found momentum by betting on hopes that the worst-case scenario could be avoided.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e453f3588c58ef5d",
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rebound to extend winning streak, oil rises ahead of US-Iran talks"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "It sounds like that optimism about a 'diplomatic solution' was the key driver that lifted the market. Can you break that down for us a bit more?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, exactly. The tentative ceasefire between the U.S. and Iran was on shaky ground, but the news that Israel agreed to direct talks with Lebanon completely changed the atmosphere. Investors were betting on the hope of a diplomatic resolution—specifically, the potential reopening of the Strait of Hormuz—rather than on the geopolitical uncertainty.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Right, so while the overall market sentiment was positive, it was a mixed bag for individual stocks. One of the most notable decliners today was Intuit. With the tax deadline just around the corner, the stock plunged more than 7% by the close.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTU",
+          "start_date": "2026-04-09",
+          "end_date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, Intuit had a very tough day, at one point dipping to the $354 level. Behind this sharp drop are structural threats: the expansion of the IRS's own free tax filing pilot program and regulation from the FTC. It seems the market is starting to price in the fear that the business model of TurboTax, Intuit's core revenue driver, could be permanently damaged by direct government competition and regulation. The fact that the stock fell on surging volume at the peak of tax season suggests that market concerns are translating into real action, not just worry.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "INTU",
+          "start_date": "2026-03-10",
+          "end_date": "2026-04-09"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "INTU",
+          "form": "10-Q",
+          "filed_date": "2026-02-26",
+          "accession_number": "0000896878-26-000014"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "That government intervention is clearly a major headwind. But hasn't Intuit been reporting strong earnings until recently? Some might argue this sell-off is an overreaction.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Absolutely. On the positive side, Intuit's fundamentals are still very strong. According to its most recent 10-Q filing, revenue for the first half of fiscal year 2026 was up 18% year-over-year, and net income surged by an impressive 71%. Plus, beyond TurboTax where the concerns are focused, its Global Business Solutions segment, which includes the small business accounting software QuickBooks, is driving overall growth. Because of this, it's certainly possible to argue that the current stock drop is an irrational market reaction to regulatory fears, and that the stock is actually entering undervalued territory.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTU",
+          "form": "10-Q",
+          "filed_date": "2026-02-26",
+          "accession_number": "0000896878-26-000014"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So it's a clash between strong past performance and future structural risks. Could the artificial intelligence, or AI, technology that Intuit is championing be the breakthrough it needs to overcome these risks?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's really the heart of the debate. Intuit is evolving beyond simple tax filing into a personalized financial advisory platform with generative AI like 'Intuit Assist.' This is clearly a high-value area that a free government service can't replicate. The problem, however, is that the revenue model for these AI services is still unclear, while the competitive pressure on its TurboTax division is an immediate and tangible risk. The market appears to be weighing the clear and present danger to its core cash cow more heavily than the uncertain potential of future profits. The government stepping in as a direct competitor is a paradigm-shifting event, and that's a new variable that's hard to assess based on past financial statements alone.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "INTU",
+          "form": "10-K",
+          "filed_date": "2025-09-03",
+          "accession_number": "0000896878-25-000035"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, you're saying this stock drop should be seen less as a buying opportunity and more as the market's sober reassessment of a changed competitive landscape.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Yes, that seems to be the most reasonable interpretation. The market has begun to re-evaluate Intuit, seeing it less as a stable, monopolistic company and more as a business with regulatory risk that's vulnerable to government policy. This shift in perception can, in itself, act as a factor to lower its valuation multiple. Of course, Intuit's AI-driven growth story is compelling, but it will likely take considerable time for that potential to be realized. Therefore, for now, it seems to be a time for a cautious approach until the structural uncertainties are resolved and the defensibility of its business model is proven again.",
+      "sources": []
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Alright, turning to today's market action, it was a down day across the board for the three major indices, driven by a shock from the hot Consumer Price Index. Can you walk us through what happened and what we should be watching for next?",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "The March Consumer Price Index coming in hotter than expected was the decisive factor, significantly pushing back the market's rate cut expectations. Today's CPI report showed a 3.5% year-over-year increase, beating the 3.4% forecast, and the prevailing analysis was that a June rate cut is now effectively off the table. As a result, the 10-year Treasury yield broke through 4.5% during the session, weighing on the entire market. Tech-heavy Nasdaq saw the biggest drop, falling 0.84%, while the Dow and S&P 500 also had a tough day, each declining over 1%.",
+      "sources": []
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "After the CPI shock, all eyes are now on the next inflation report. What's the outlook for the Producer Price Index, which is due out tomorrow?",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's right. The March Producer Price Index, or PPI, which is seen as a leading indicator for consumer prices, will be released tomorrow morning our time. The PPI shows price pressures at the production stage, which affects final consumer goods prices with a time lag. The market is currently forecasting a 1.3% month-over-month increase, which is significantly higher than the previous reading of 0.7%. If the PPI also comes in hotter than expected, it could amplify concerns that inflation is becoming entrenched again, making the Fed's path to a rate cut even more uncertain.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398543",
+          "title": "ppi mom",
+          "date": "2026-04-14"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "Besides the PPI, are there any other economic indicators we should be keeping an eye on?",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Along with the inflation data, it's crucial to watch indicators that show the strength of the consumer. First, this Friday, we'll get the preliminary University of Michigan Consumer Sentiment index. It's an important piece of data that gives us a glimpse into how consumers are feeling about the economy and their future inflation expectations. Then on Monday, the March retail sales data will be released. This is a direct measure of the health of consumption, which accounts for two-thirds of the U.S. economy. The forecast is for a 0.4% increase, a bit of a slowdown from the prior month. If these numbers come in strong, it would boost confidence in economic fundamentals, but it could also be seen as an inflationary pressure, so the market will be watching both sides of that coin.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395569",
+          "title": "michigan consumer sentiment prel",
+          "date": "2026-04-10"
+        },
+        {
+          "type": "event",
+          "id": "397925",
+          "title": "retail sales mom",
+          "date": "2026-04-21"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Finally, what's your advice for investors navigating the current market environment?",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "The market has now fully entered a data-dependent phase, reacting sensitively to each economic release rather than clear signals from the Fed. With hopes for a June rate cut now faded, the debate over the timing of the next cut will continue, and that will be a source of market volatility for the time being. Therefore, rather than rushing to buy the dip or chase a sell-off, this is a time when a cautious approach is warranted, calmly assessing the upcoming PPI, retail sales, and the subsequent first-quarter corporate earnings to gauge the market's direction.",
+      "sources": []
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "A time for a cautious approach, indeed. Thank you for your insights today. That wraps up our April 10th closing bell briefing. Thanks for listening.",
+      "sources": []
+    }
+  ]
+}
