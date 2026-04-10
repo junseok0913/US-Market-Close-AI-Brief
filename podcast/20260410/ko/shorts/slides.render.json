@@ -1,0 +1,212 @@
+{
+  "date": "20260411",
+  "lang": "ko",
+  "title": "소비심리 사상 최저인데, 나스닥은 왜 홀로 상승했나?",
+  "hook": "소비심리가 사상 최저로 추락했는데, 나스닥은 왜 홀로 상승했을까요.",
+  "durationSeconds": 71.604,
+  "audioFile": "shorts20260410.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.011,
+      "eyebrow": "2026년 4월 11일",
+      "headline": "소비심리 사상 최저!",
+      "subheadline": "나스닥은 왜 홀로 상승했나?",
+      "body": "소비심리가 사상 최저로 추락했는데, 나스닥은 왜 홀로 상승했을까요.",
+      "bullets": [
+        "소비심리가 사상 최저로 추락했는데, 나스닥은 왜 홀로 상승했을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "META",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "72초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 5.011,
+      "endSec": 21.142,
+      "eyebrow": "미국 증시 마감",
+      "headline": "3대 지수 혼조 마감",
+      "subheadline": "나스닥만 홀로 상승 (+0.35%)",
+      "body": "4월 11일 미국 증시는 다우 -0.56%, S&P 500 -0.11% 하락했지만 나스닥은 0.35% 상승하는 혼조세로 마감했습니다. 시장 한마디는 소비심리 악화 속 AI 기술주 중심의 차별화 장세입니다.",
+      "bullets": [
+        "4월 11일 미국 증시는 다우 -0.56%, S&P 500 -0.11% 하락했지만 나스닥은 0.35% 상승하는 혼조세로 마감했습니다.",
+        "시장 한마디는 소비심리 악화 속 AI 기술주 중심의 차별화 장세입니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "NASDAQ +0.35%",
+        "S&P 500 -0.11%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 21.142,
+      "endSec": 69.233,
+      "eyebrow": "시장 인사이트",
+      "headline": "AI가 구원한 나스닥",
+      "subheadline": "소비심리 악재에도 기술주로 자금 집중",
+      "body": "시장을 짓누른 건 사상 최저치로 추락한 소비심리였습니다. 4월 미시간대 소비심리지수가 예상치 52.3을 크게 밑도는 47.6을 기록하며 시장에 충격을 줬습니다. 미국과 이란의 갈등으로 인한 유가 불안과 인플레이션 우려가 주된 원인이었습니다. 이 여파로 필수소비재 섹터마저 1.29% 하락하며 경기 둔화 우려를 키웠습니다. 하지만 이런 불안감 속에서도 시장의 자금은 유일한 성장 동력인 AI로 집중됐습니다. 엔비디아는 2.5% 넘…",
+      "bullets": [
+        "미시간 소비심리지수 47.6, 사상 최저치 기록",
+        "AI 성장주로 자금 쏠림 (NVDA +2.5%)"
+      ],
+      "tickers": [
+        "NVDA",
+        "META",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "+2.5%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 69.233,
+      "endSec": 71.604,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "META",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.011,
+      "text": "소비심리가 사상 최저로 추락했는데, 나스닥은 왜 홀로 상승했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 5.011,
+      "endSec": 21.142,
+      "text": "4월 11일 미국 증시는 다우 -0.56%, S&P 500 -0.11% 하락했지만 나스닥은 0.35% 상승하는 혼조세로 마감했습니다. 시장 한마디는 소비심리 악화 속 AI 기술주 중심의 차별화 장세입니다."
+    },
+    {
+      "id": 2,
+      "startSec": 21.142,
+      "endSec": 69.233,
+      "text": "시장을 짓누른 건 사상 최저치로 추락한 소비심리였습니다. 4월 미시간대 소비심리지수가 예상치 52.3을 크게 밑도는 47.6을 기록하며 시장에 충격을 줬습니다. 미국과 이란의 갈등으로 인한 유가 불안과 인플레이션 우려가 주된 원인이었습니다. 이 여파로 필수소비재 섹터마저 1.29% 하…"
+    },
+    {
+      "id": 3,
+      "startSec": 69.233,
+      "endSec": 71.604,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "event",
+      "label": "michigan consumer sentiment prel",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "article",
+      "label": "Consumer sentiment sinks to record low in April as US-I…",
+      "detail": "id#5962f6a99b0f3381"
+    },
+    {
+      "type": "chart",
+      "label": "XLP",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-04-10"
+    },
+    {
+      "type": "article",
+      "label": "Meta Prepares to Launch Llama 3, Challenging OpenAI and…",
+      "detail": "id#fake01"
+    },
+    {
+      "type": "chart",
+      "label": "^SOX",
+      "detail": "2026-04-11"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 혼조 마감 (나스닥만 상승)",
+      "미시간대 소비심리지수 사상 최저치 경신",
+      "지정학적 리스크 및 소비 위축 우려 확산",
+      "AI 관련 기술주로 자금 쏠리며 차별화 장세 연출"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "AI 랠리 주도"
+      },
+      {
+        "ticker": "META",
+        "label": "메타",
+        "tag": "신규 AI 모델 기대감"
+      },
+      {
+        "ticker": "XLP",
+        "label": "필수소비재 ETF",
+        "tag": "소비심리 악화"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
