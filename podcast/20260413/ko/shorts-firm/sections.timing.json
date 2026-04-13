@@ -1,0 +1,67 @@
+{
+  "date": "20260413",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260413.mp3",
+  "sectionOrder": [
+    "kkr",
+    "gs",
+    "nvda",
+    "msft"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 92.204,
+  "sections": [
+    {
+      "id": 0,
+      "name": "kkr",
+      "ticker": "KKR",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 34.371,
+      "endSec": 34.371,
+      "speechDurationSec": 34.371,
+      "pauseAfterSec": 0.0,
+      "charCount": 299,
+      "text": "지정학적 리스크와 경기 둔화 우려에도 기술주는 왜 올랐을까요? 사모펀드 KKR은 오늘 7.5% 넘게 급등했습니다. 시장이 KKR을 더 이상 변동성 큰 투자회사가 아닌, 안정적인 자산운용사로 재평가하기 시작했기 때문입니다. 보험 자회사 인수를 통해 확보한 '영구 자본' 모델 덕분에, 변동성 큰 성과 보수 대신 안정적인 관리 수수료 기반의 이익이 크게 늘어난 점이 부각됐습니다. 금리 상승 시 자산가치 하락과 자금 유출이라는 '이중 노출' 리스크가 있지만, 정교한 헤지 프로그램을 통해 이를 관리하고 있다는 점도 긍정적으로 작용했습니다."
+    },
+    {
+      "id": 1,
+      "name": "gs",
+      "ticker": "GS",
+      "kind": "company",
+      "startSec": 34.371,
+      "speechEndSec": 59.182,
+      "endSec": 59.182,
+      "speechDurationSec": 24.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 194,
+      "text": "반면 골드만삭스는 시장 예상을 뛰어넘는 좋은 1분기 실적을 발표했음에도 주가는 1.8% 넘게 하락했습니다. 투자자들이 금융 부문의 실적 호조보다 실물 경제 전반의 둔화 가능성을 더 무겁게 본 것입니다. 특히 골드만삭스가 직접 유가 급등이 소비 지출에 타격을 줄 것이라는 경고 보고서를 내놓은 점이, 실적 호재를 압도하며 투자 심리를 위축시켰습니다."
+    },
+    {
+      "id": 2,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 59.182,
+      "speechEndSec": 81.793,
+      "endSec": 81.793,
+      "speechDurationSec": 22.611,
+      "pauseAfterSec": 0.0,
+      "charCount": 201,
+      "text": "이런 혼란 속에서 엔비디아는 시장 반등을 이끈 대표주자였습니다. 오늘 아침 발표된 생산자물가지수(PPI)가 예상보다 낮게 나오면서 인플레이션 완화 기대감이 커졌고, 이는 국채 금리 하락으로 이어졌습니다. 금리에 민감한 대표적인 성장주인 엔비디아는 이 소식에 가장 크게 환호하며, 불확실한 환경 속 투자자들이 확실한 성장 스토리에 집중하는 모습을 보여주었습니다."
+    },
+    {
+      "id": 3,
+      "name": "msft",
+      "ticker": "MSFT",
+      "kind": "company",
+      "startSec": 81.793,
+      "speechEndSec": 92.204,
+      "endSec": 92.204,
+      "speechDurationSec": 10.411,
+      "pauseAfterSec": 0.0,
+      "charCount": 89,
+      "text": "마이크로소프트 역시 같은 이유로 기술주 반등 흐름에 동참했습니다. 인플레이션 둔화 기대감이 확산되며 투자 심리가 개선된 덕분입니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

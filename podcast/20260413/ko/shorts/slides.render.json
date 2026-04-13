@@ -1,0 +1,227 @@
+{
+  "date": "20260414",
+  "lang": "ko",
+  "title": "유가 100달러 돌파, 악재 속 기술주만 급등한 이유?",
+  "hook": "유가가 100달러를 넘고 경제지표도 나쁜데, 기술주는 왜 1% 넘게 급등했을까요.",
+  "durationSeconds": 74.604,
+  "audioFile": "shorts20260413.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 6.291,
+      "eyebrow": "4월 14일 마감",
+      "headline": "악재 속 기술주 급등?",
+      "subheadline": "유가 100달러, 지표 부진에도 나스닥이 1% 넘게 오른 이유.",
+      "body": "유가가 100달러를 넘고 경제지표도 나쁜데, 기술주는 왜 1% 넘게 급등했을까요.",
+      "bullets": [
+        "유가가 100달러를 넘고 경제지표도 나쁜데, 기술주는 왜 1% 넘게 급등했을까요."
+      ],
+      "tickers": [
+        "NVDA",
+        "GS",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "유가 $100 돌파",
+        "기술주 1%대 급등"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 6.291,
+      "endSec": 21.942,
+      "eyebrow": "주요 지수 현황",
+      "headline": "기술주 중심의 반등",
+      "subheadline": "나스닥 +1.23% | S&P 500 +1.02% | 다우 +0.63%",
+      "body": "지정학적 리스크와 경기 둔화 우려에도 불구하고 주요 지수가 상승 마감했습니다.",
+      "bullets": [
+        "4월 14일 미국 증시는 지정학적 리스크와 경기 둔화 우려에도 불구하고 기술주가 반등했습니다.",
+        "다우는 0.63%, S&P 500은 1.02% 올랐고, 기술주 중심의 나스닥은 1.23% 상승하며 랠리를 이끌었습니다."
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "NVDA"
+      ],
+      "highlights": [
+        "나스닥 +1.23%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 21.942,
+      "endSec": 72.873,
+      "eyebrow": "상승 동력",
+      "headline": "PPI가 뒤집은 시장",
+      "subheadline": "예상보다 낮은 생산자물가지수가 긴축 완화 기대감을 자극했습니다.",
+      "body": "이날 시장은 악재로 가득했습니다. 이란의 호르무즈 해협 봉쇄 위협으로 국제 유가는 장중 배럴당 100달러를 돌파했고, 기존주택판매는 예상치 406만 건에 못 미치는 398만 건을 기록하며 경기 둔화 우려를 키웠습니다. 하지만 이 모든 악재를 뒤집은 건 예상보다 낮게 나온 3월 생산자물가지수, 즉 PPI였습니다. 생산자물가는 최종 소비자가격의 선행지표로, 이 지표가 둔화되자 연준의 긴축이 약해질 수 있다는 기대감이 퍼졌습니다.…",
+      "bullets": [
+        "유가 급등, 주택지표 부진 등 악재에도 국채 금리는 하락 안정세를 보였습니다.",
+        "투자자들은 경기 침체 우려보다 NVDA 등 대형 기술주 저가 매수에 집중했습니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "GS",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": [
+        "생산자물가지수(PPI) 둔화"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 72.873,
+      "endSec": 74.604,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "다음 마감 시황에서 뵙겠습니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "NVDA",
+        "GS",
+        "^DJI",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 6.291,
+      "text": "유가가 100달러를 넘고 경제지표도 나쁜데, 기술주는 왜 1% 넘게 급등했을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 6.291,
+      "endSec": 21.942,
+      "text": "4월 14일 미국 증시는 지정학적 리스크와 경기 둔화 우려에도 불구하고 기술주가 반등했습니다. 다우는 0.63%, S&P 500은 1.02% 올랐고, 기술주 중심의 나스닥은 1.23% 상승하며 랠리를 이끌었습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 21.942,
+      "endSec": 72.873,
+      "text": "이날 시장은 악재로 가득했습니다. 이란의 호르무즈 해협 봉쇄 위협으로 국제 유가는 장중 배럴당 100달러를 돌파했고, 기존주택판매는 예상치 406만 건에 못 미치는 398만 건을 기록하며 경기 둔화 우려를 키웠습니다. 하지만 이 모든 악재를 뒤집은 건 예상보다 낮게 나온 3월 생산자물…"
+    },
+    {
+      "id": 3,
+      "startSec": 72.873,
+      "endSec": 74.604,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-13"
+    },
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-13"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-13"
+    },
+    {
+      "type": "article",
+      "label": "Trump threatens to destroy Iranian ships that impede US…",
+      "detail": "a637f1ad0ceea70a"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-13"
+    },
+    {
+      "type": "event",
+      "label": "existing home sales",
+      "detail": "2026-04-13"
+    },
+    {
+      "type": "event",
+      "label": "ppi mom",
+      "detail": "2026-04-14"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-04-14"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-04-14"
+    },
+    {
+      "type": "article",
+      "label": "Goldman Sachs (NYSE:GS) Surprises With Q1 CY2026 Sales",
+      "detail": "da6fcbe791ae0ac2"
+    },
+    {
+      "type": "article",
+      "label": "Goldman Sachs warning on consumers: Gas price spike wil…",
+      "detail": "8111fe2a61279d9e"
+    },
+    {
+      "type": "chart",
+      "label": "GS",
+      "detail": "2026-04-14"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "기술주 중심의 시장 반등 (나스닥 +1.23%)",
+      "생산자물가지수(PPI) 둔화가 인플레이션 완화 기대감 촉발",
+      "유가 100달러 돌파 등 지정학적 리스크 및 경기지표 부진",
+      "골드만삭스 호실적에도 하락, 선택적 랠리 확인"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "저가 매수 집중"
+      },
+      {
+        "ticker": "GS",
+        "label": "골드만삭스",
+        "tag": "호실적에도 하락"
+      },
+      {
+        "ticker": "CLF",
+        "label": "WTI 유가",
+        "tag": "배럴당 $100 돌파"
+      },
+      {
+        "ticker": "^DJI",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
