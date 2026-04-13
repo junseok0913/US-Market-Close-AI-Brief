@@ -1,0 +1,22 @@
+Title:
+2026.4.14 US Market Close | Tech stocks rebound despite geopolitical risks and slowdown fears
+
+Description:
+On April 14, the New York stock market closed higher, led by technology stocks, despite geopolitical risks in the Middle East and concerns about an economic slowdown. A lower-than-expected Producer Price Index (PPI) fueled hopes for easing inflation, prompting the market to digest headwinds like surging oil prices and focus on dip-buying opportunities in large-cap tech.
+
+- Dow Jones: +0.63% - Reflecting a recovery in overall market sentiment.
+- S&P 500: +1.02% - Lifted by the strength in tech stocks.
+- Nasdaq: +1.23% - Tech stocks led the rally on expectations of slowing inflation.
+
+Key Issues
+- Tech Stocks Lead Market Rebound: Despite geopolitical risks and weak economic data, investors flocked to large-cap tech stocks with strong growth narratives, like AI, driven by hopes of easing inflation and dip-buying activity.
+- Mixed Economic Signals: The March Producer Price Index (PPI) came in lower than expected, easing inflation fears. However, existing home sales data missed forecasts, coming in at 3.98 million units versus an expected 4.06 million, adding to concerns about an economic slowdown.
+- Middle East Geopolitical Risk: Tensions rose as Iran's threat to blockade the Strait of Hormuz briefly pushed international oil prices above $100 per barrel intraday. However, the market digested this as a short-term shock.
+- Goldman Sachs' Warning: Despite reporting strong earnings, Goldman Sachs' stock declined. The firm also issued a cautionary report on the negative impact that surging oil prices could have on consumer spending.
+
+Key Stocks
+- KKR (KKR): Surged over 7% - The stock was re-evaluated as a stable asset management platform following its acquisition of an insurance subsidiary.
+- Goldman Sachs (GS): Closed lower - Despite reporting strong Q1 earnings, the stock fell as concerns about a slowdown in the real economy came to the forefront.
+
+Keywords:
+미국주식,주식,재테크,시황,나스닥,S&P500,기술주,인플레이션,PPI,금리,유가,지정학적리스크,KKR,골드만삭스,GS
