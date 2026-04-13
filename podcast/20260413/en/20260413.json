@@ -1,0 +1,763 @@
+{
+  "date": "20260413",
+  "nutshell": "Tech stocks rebound despite geopolitical risks and economic slowdown fears.",
+  "user_tickers": [
+    "KKR"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's your April 14th market close briefing. We saw a pretty unusual day where the major indices all moved higher, despite rising geopolitical tensions in the Middle East and some weak economic data.",
+      "sources": [],
+      "time": [
+        0,
+        13291
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. The market today saw tech stocks bounce back, even with those geopolitical risks and slowdown concerns. The Dow Jones Industrial Average gained 0.63%, and the S&P 500 was up 1.02%. The tech-heavy Nasdaq Composite led the way, climbing 1.23%. Early in the session, investor sentiment took a hit as oil prices surged on Iran's threat to blockade the Strait of Hormuz, but the market managed to shake that off and stage a strong recovery.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "article",
+          "pk": "a637f1ad0ceea70a",
+          "title": "Trump threatens to destroy Iranian ships that impede US blockade at Strait of Hormuz"
+        }
+      ],
+      "time": [
+        13791,
+        45722
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So with those clear headwinds, was there a specific catalyst that turned investor sentiment around?",
+      "sources": [],
+      "time": [
+        46222,
+        52833
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Actually, there wasn't one single piece of good news that flipped the market. It was really a day that highlighted the market's resilience. Goldman Sachs reported better-than-expected earnings, but its stock actually fell. At the same time, they also put out a report warning that the spike in oil prices would hurt consumers. On top of that, existing home sales data came in below expectations, adding to slowdown fears. Despite all this, investors seemed to focus more on the opportunity to buy big tech stocks on the dip, which pulled the indices higher.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "da6fcbe791ae0ac2",
+          "title": "Goldman Sachs (NYSE:GS) Surprises With Q1 CY2026 Sales"
+        },
+        {
+          "type": "article",
+          "pk": "8111fe2a61279d9e",
+          "title": "Goldman Sachs warning on consumers: Gas price spike will be felt"
+        },
+        {
+          "type": "event",
+          "id": "399042",
+          "title": "existing home sales",
+          "date": "2026-04-13"
+        }
+      ],
+      "time": [
+        53333,
+        83744
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So, how would you sum up the key driver for the market today?",
+      "sources": [],
+      "time": [
+        84244,
+        88495
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Right, the key takeaway is that the market shrugged off the clear negative of geopolitical risk surrounding Iran, and a wave of dip-buying in big tech stocks fueled a strong rebound. We'll break down these two conflicting trends in more detail in a moment.",
+      "sources": [],
+      "time": [
+        88995,
+        101606
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that geopolitical risk. As you mentioned, tensions with Iran were high, and oil prices even topped $100 a barrel at one point—a clear negative. How did the market manage to digest that pressure?",
+      "sources": [],
+      "time": [
+        102606,
+        117217
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Yes, yesterday the market showed remarkable resilience despite those peak tensions in the Middle East. When President Trump made strong remarks about Iranian ships impeding the blockade in the Strait of Hormuz, West Texas Intermediate crude briefly shot well past $100 a barrel, and it seemed like risk-off sentiment was taking over. But the market absorbed that early shock and managed to rally, with the S&P 500 closing up 1.02% and the tech-focused Nasdaq gaining 1.23%. The Dow also rose 0.63%. The fact that the 10-year Treasury yield, which tends to fall when safe-haven demand is high, actually recovered from its early dip to close higher is clear evidence that the market's focus quickly shifted away from geopolitical risk.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a637f1ad0ceea70a",
+          "title": "Trump threatens to destroy Iranian ships that impede US blockade at Strait of Hormuz"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        }
+      ],
+      "time": [
+        117717,
+        161328
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "You said the market's focus shifted elsewhere, and it sounds like tech stocks were right at the center of that.",
+      "sources": [],
+      "time": [
+        161828,
+        168479
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Exactly. The rebound was led by tech. The fact that the Nasdaq posted the biggest gains among the major indices proves that. Investors focused on big tech companies with clear growth stories, like AI, rather than the noise from macroeconomic indicators like geopolitical uncertainty or slowdown fears. In fact, yesterday's weaker-than-expected existing home sales data, which fueled those slowdown concerns, paradoxically worked in tech's favor. It led to hopes that the Fed's rate-hiking cycle is nearing its end, which is a positive for growth-oriented tech stocks. There was also an element of the market pricing in expectations that this morning's Producer Price Index would also come in lower than expected.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "event",
+          "id": "399042",
+          "title": "existing home sales",
+          "date": "2026-04-13"
+        }
+      ],
+      "time": [
+        168979,
+        207950
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "But even if tech led the way, if $100 oil becomes the new reality, wouldn't that reignite inflation fears and eventually become a headwind for tech stocks too?",
+      "sources": [],
+      "time": [
+        208450,
+        219341
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Absolutely. The surge in oil prices is a risk the market ignored, not one that has disappeared. The consensus view is that if the blockade of the Strait of Hormuz drags on, oil could settle above $100 a barrel, which would immediately translate to higher gas prices for consumers. Investment banks like JPMorgan are already warning that if these logistical disruptions continue, gas prices in the U.S. could hit $5 a gallon. That's a ticking time bomb that would inevitably weigh on the entire market by hurting consumer spending and increasing corporate costs. The fact that the energy sector was strong yesterday shows that expectations for benefiting from higher oil prices and the market's underlying inflation anxiety are coexisting.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "4fed123aa9e742f6",
+          "title": "Gas prices will probably 'return to climbing' as oil surges back above $100"
+        },
+        {
+          "type": "article",
+          "pk": "28dece7bc430104f",
+          "title": "Gas prices 'likely to jump again' as oil surges back above $100"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        }
+      ],
+      "time": [
+        219841,
+        265332
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, should we see yesterday's strength as the market becoming more resilient to bad news, or was it more of a selective rally that simply ignored the risks?",
+      "sources": [],
+      "time": [
+        265832,
+        275762
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "It's more reasonable to see it as a selective rally. The fact that the Dow's gains were relatively smaller than the Nasdaq's suggests that the buying was concentrated in a few large-cap tech stocks rather than spreading across the broader market. And the signals that the core of the economy is weakening are still there—following the weak existing home sales data, this morning's NFIB Business Optimism Index also missed expectations. Essentially, the market treated the geopolitical risk with Iran as short-term noise and bet solely on the growth story of tech. But I'd say the market is in a precarious balance, and its direction could easily shift depending on where oil prices go and what we hear from corporate earnings, which start to ramp up next week.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "a637f1ad0ceea70a",
+          "title": "Trump threatens to destroy Iranian ships that impede US blockade at Strait of Hormuz"
+        },
+        {
+          "type": "event",
+          "id": "399042",
+          "title": "existing home sales",
+          "date": "2026-04-13"
+        },
+        {
+          "type": "event",
+          "id": "399197",
+          "title": "nfib business optimism index",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        }
+      ],
+      "time": [
+        276262,
+        315673
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "So in the end, the market chose tech. But just yesterday there were so many headwinds. Was there a specific catalyst that revived sentiment for tech stocks in just one day?",
+      "sources": [],
+      "time": [
+        316173,
+        327544
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, the market looked completely different from yesterday, which was dominated by Middle East tensions and weak housing data. This morning's March Producer Price Index, or PPI, came in lower than expected, sparking hopes across the market that inflationary pressures might be easing. Treasury yields reacted immediately, turning lower, which acted as a powerful tailwind for interest-rate-sensitive tech stocks. As a result, while the S&P 500 and Dow also rose, the tech-heavy Nasdaq led the rally with the biggest gains. Oil prices remained high, but the market seemed to cheer the positive signal of slowing inflation much more loudly than it worried about the immediate oil risk.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "398543",
+          "title": "ppi mom",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "399015",
+          "title": "core ppi mom",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "399042",
+          "title": "existing home sales",
+          "date": "2026-04-13"
+        }
+      ],
+      "time": [
+        328044,
+        366215
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So the lower-than-expected PPI was the key. Is it fair to say that this sign of easing inflationary pressure is what revived investor sentiment for tech?",
+      "sources": [],
+      "time": [
+        366715,
+        377086
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Precisely. The PPI is seen as a leading indicator for final consumer prices, so the market reacts very sensitively to it. Today's report showing a month-over-month PPI increase below consensus forecasts led to expectations that the Fed might soften its tightening policy. This was immediately reflected in the bond market, with the 10-year Treasury yield falling and stabilizing. For growth stocks, especially tech, whose future earnings are heavily discounted by interest rates, there couldn't have been better news. And with speeches from Fed officials like Austan Goolsbee and Michael Barr scheduled for today, the market also began pricing in the expectation that their comments would be less hawkish, given the new inflation data.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398543",
+          "title": "ppi mom",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "419827",
+          "title": "fed goolsbee speech",
+          "date": "2026-04-14"
+        },
+        {
+          "type": "event",
+          "id": "419821",
+          "title": "fed barr speech",
+          "date": "2026-04-14"
+        }
+      ],
+      "time": [
+        377586,
+        421757
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "The inflation data was positive, but what about the concerns for the real economy, like the Goldman Sachs warning you mentioned at the top of the show, or the weak housing data? Aren't those still a factor?",
+      "sources": [],
+      "time": [
+        422257,
+        433628
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "Yes, it was a day where those two conflicting views collided. Goldman Sachs did indeed release a report stating that the oil price surge would hit consumer spending, and yesterday's existing home sales confirmed a cooling housing market, coming in at 3.98 million units versus the 4.06 million expected. What's more, even though Goldman Sachs itself reported strong Q1 earnings that beat expectations, its stock actually closed down. This suggests investors are weighing the possibility of a broader economic slowdown more heavily than strong performance in the financial sector. But today, the good news on inflation simply overpowered all those concerns, allowing the market to set aside recession worries for a moment and stage a relief rally.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "8111fe2a61279d9e",
+          "title": "Goldman Sachs warning on consumers: Gas price spike will be felt"
+        },
+        {
+          "type": "event",
+          "id": "399042",
+          "title": "existing home sales",
+          "date": "2026-04-13"
+        },
+        {
+          "type": "article",
+          "pk": "da6fcbe791ae0ac2",
+          "title": "Goldman Sachs (NYSE:GS) Surprises With Q1 CY2026 Sales"
+        },
+        {
+          "type": "chart",
+          "ticker": "GS",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        }
+      ],
+      "time": [
+        434128,
+        476499
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So is it safe to say that today's rebound was led by a few specific large-cap tech stocks?",
+      "sources": [],
+      "time": [
+        476999,
+        483890
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's right. The big tech stocks, seen as the primary beneficiaries of falling interest rates, all posted strong gains and drove the indices higher. The XLK, an ETF that tracks the broader tech sector, showed a solid advance, and semiconductor stocks like Nvidia, at the heart of the AI boom, saw particularly strong buying pressure and stood out. What we saw was a classic 'flight to quality,' where investors in an uncertain macro environment concentrate their capital into a few high-quality tech stocks with proven growth stories. In the end, the market was caught between fears of a slowdown and hopes of easing inflation, and for today, it bet on the latter and chose tech.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-14"
+        }
+      ],
+      "time": [
+        484390,
+        526321
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, now that we've covered the broad market, let's dive into some individual stocks that caught investors' attention. One of the standouts today was definitely KKR. It surged over 7% in a single day to close around the $98 mark. What was the fuel for this explosive move?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "KKR",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        }
+      ],
+      "time": [
+        527321,
+        546572
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, KKR's surge today seems to be a signal that the market is starting to re-evaluate the company, seeing it less as a volatile private equity firm and more as a stable asset management platform. The key is the growing appreciation for its 'permanent capital' model, secured through the acquisition of its insurance subsidiary, Global Atlantic. According to its 2025 annual report, KKR's fee-based assets under management grew 18% to $604.1 billion. This led to a 13.7% increase in profits from stable management fees, as opposed to more volatile performance fees. In other words, the market is finally starting to price in the fact that the quality of its earnings has fundamentally improved.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "KKR",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001404912-26-000007"
+        }
+      ],
+      "time": [
+        547072,
+        586843
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "That idea of using an insurer's funds as permanent capital is interesting. But doesn't that also mean it's now directly exposed to a new kind of macroeconomic risk, like interest rate fluctuations?",
+      "sources": [],
+      "time": [
+        587343,
+        600074
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's an excellent point. That is the biggest debate surrounding KKR, and it's known as the 'double exposure' risk. If interest rates rise sharply, the value of the massive bond portfolio held by the insurer could fall. At the same time, customers might be tempted to cancel their existing insurance policies and withdraw their funds to seek higher yields elsewhere. This could lead to a worst-case scenario of falling asset values and liability outflow pressure happening simultaneously. In fact, KKR's own 10-K filing acknowledges this risk, stating that a 0.5 percentage point rise in interest rates could result in an unrealized loss of about $1.34 billion in other comprehensive income.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "KKR",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001404912-26-000007"
+        }
+      ],
+      "time": [
+        600574,
+        645665
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "A potential loss of over $1.3 billion sounds like a significant risk factor. So should we view today's surge as an irrational rally where the market is just ignoring this structural vulnerability?",
+      "sources": [],
+      "time": [
+        646165,
+        659376
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's partly right, but also partly wrong. While the risk is real, KKR isn't just sitting on it. If you look closely at the same 10-K filing, you'll see that KKR operates a sophisticated derivatives hedging program worth tens of billions of dollars. Crucially, their interest rate sensitivity analysis shows that while a 0.5 percentage point rate hike would decrease other comprehensive income, their net income would actually increase by over $300 million thanks to the effect of these hedges. This is evidence that while there's an accounting impact from bond valuation losses, the actual economic impact on cash flow and net income is largely controlled through hedging. So, this double exposure isn't an untended time bomb, but rather a managed, calculated risk.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "KKR",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001404912-26-000007"
+        }
+      ],
+      "time": [
+        659876,
+        702487
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So it's a situation where growth potential and new risks coexist. With today's surge, the valuation has become a bit richer. How would you sum up KKR's appeal at this point?",
+      "sources": [],
+      "time": [
+        702987,
+        715398
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Looking at the big picture, it's clear that KKR has evolved into a much higher-quality company than it was in the past. It has a stable, fee-based earnings structure, and the growth potential from leveraging permanent capital is still valid. However, it's also true that by incorporating the insurance business, it has taken on a new form of macroeconomic risk that didn't exist before. With the stock jumping over 7% today, it seems a significant portion of these positive changes has now been priced in. Therefore, considering both the growth potential and the inherent risks, the current stock price seems to call for a cautious approach of continuously monitoring the company's fundamental changes and risk management capabilities, rather than an aggressive entry.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "KKR",
+          "start_date": "2026-04-13",
+          "end_date": "2026-04-13"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "KKR",
+          "form": "10-K",
+          "filed_date": "2026-02-27",
+          "accession_number": "0001404912-26-000007"
+        }
+      ],
+      "time": [
+        715898,
+        759989
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Okay, so if you had to sum up today's market in a single phrase, what would it be?",
+      "sources": [],
+      "time": [
+        760989,
+        766280
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "I'd say it was a 'wait-and-see' day. As investors digested the latest Producer Price Index data, they're now keenly focused on what the Fed's next move will be. We ended the day with a mixed session, where indices were split without a clear direction, reflecting the coexistence of optimism about slowing inflation and worries about a recession. The complex psychology of market participants was on full display, with the tech-heavy Nasdaq slipping slightly while the Dow Jones Industrial Average finished little changed.",
+      "sources": [],
+      "time": [
+        766780,
+        796831
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "I see. So what economic indicators should investors be watching next?",
+      "sources": [],
+      "time": [
+        797331,
+        802342
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Well, coming up tomorrow, on the 15th, we have the Fed's Beige Book. The Beige Book compiles economic reports from the Fed's 12 regional banks, and it's one of the best real-time snapshots of the U.S. economy's health. Investors will be looking through it to understand detailed conditions like industrial activity, labor markets, and price pressures in each region, trying to find clues about the Fed's next rate decision. It's particularly important because it gives us a glimpse into how Fed officials are interpreting the economy in light of the recent inflation data.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "418767",
+          "title": "fed beige book",
+          "date": "2026-04-15"
+        }
+      ],
+      "time": [
+        802842,
+        834813
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So checking the Fed's perspective through the Beige Book will be key. Are there any other indicators to keep an eye on?",
+      "sources": [],
+      "time": [
+        835313,
+        842084
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Absolutely. The retail sales report, out next week on the 21st, will get a lot of attention. Retail sales are a key indicator because they directly reflect the health of consumer spending, which accounts for two-thirds of the U.S. economy. If retail sales come in stronger than expected, it could be seen as a sign that consumption is still robust, boosting hopes for a soft landing. But at the same time, it could also raise concerns that the Fed's tightening stance might last longer. All of this data will ultimately serve as important input for the FOMC's interest rate decision at the end of the month, on the 29th.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397925",
+          "title": "retail sales mom",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        }
+      ],
+      "time": [
+        842584,
+        875994
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So it seems all roads lead to the FOMC meeting at the end of the month. Do you have any final thoughts for our investors?",
+      "sources": [],
+      "time": [
+        876494,
+        884145
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Until the market finds a clear direction, we can expect more volatility. With corporate earnings season approaching, it's a time when it's wise to be cautious, carefully checking company fundamentals alongside the macroeconomic data. Rather than making hasty predictions, it's best to calmly analyze the data as it's released and listen to the signals the market is sending.",
+      "sources": [],
+      "time": [
+        884645,
+        906496
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "Right, a time for a cautious approach. Thanks for your insights today.",
+      "sources": [],
+      "time": [
+        906996,
+        911807
+      ]
+    }
+  ]
+}
