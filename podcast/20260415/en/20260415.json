@@ -1,0 +1,942 @@
+{
+  "date": "20260415",
+  "nutshell": "Dow slips while AI tech stocks rally.",
+  "user_tickers": [
+    "NEM"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 29
+    },
+    {
+      "name": "ticker",
+      "start_id": 30,
+      "end_id": 37
+    },
+    {
+      "name": "closing",
+      "start_id": 38,
+      "end_id": 46
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is your April 16th market close briefing. It was a day of divergence, with the tech-heavy Nasdaq posting strong gains while the Dow finished in the red.",
+      "sources": [],
+      "time": [
+        0,
+        9811
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can be summed up as an AI tech rally that left the Dow behind. The S&P 500 gained 0.8% to close at 7022, and the tech-focused Nasdaq surged 1.6% to 24016. In contrast, the Dow Jones Industrial Average slipped a modest 0.15% to finish the session at 48463. Bank of America reported better-than-expected earnings, giving its stock a lift, but it wasn't enough to drive a broader market rally.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-15"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-15"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-15"
+        },
+        {
+          "type": "article",
+          "pk": "id#ae50686e0cb12e0d",
+          "title": "Bank of America joins big bank peers in reporting rising profits, calls US economy 'resilient'"
+        }
+      ],
+      "time": [
+        10311,
+        41362
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "Was there a specific reason for the Nasdaq's particularly strong performance?",
+      "sources": [],
+      "time": [
+        41862,
+        46793
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Yes, the intense excitement around artificial intelligence lifted the entire tech sector. In a remarkable move, shares of Allbirds, known as a sustainable shoe brand, skyrocketed over 600% in a single day after it announced a pivot to become an AI company. This is a stark example of just how sensitive the market is to anything related to the AI theme right now. This speculative fervor was a major driver for the Nasdaq's strong performance.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#db2869a488306f38",
+          "title": "Allbirds stock soars more than 600% as the shoemaker rebrands as an AI company"
+        },
+        {
+          "type": "chart",
+          "ticker": "BIRD",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-15"
+        }
+      ],
+      "time": [
+        47293,
+        73624
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key themes that moved the market today?",
+      "sources": [],
+      "time": [
+        74124,
+        78535
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. Three main currents drove the market today. First, the AI frenzy that swept through the market. Second, what solid bank earnings revealed about the state of the economy. And finally, the market's selective behavior, evidenced by the Dow's decline even amidst these positive signals. Let's take a closer look at each of these themes.",
+      "sources": [],
+      "time": [
+        79035,
+        98006
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the first theme you mentioned, the AI craze. We just touched on it, but we saw the extraordinary event of a shoe company's stock exploding after declaring a move into AI. Just how far has this frenzy gone?",
+      "sources": [],
+      "time": [
+        99006,
+        113937
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Well, it's no exaggeration to say that today we saw two completely different markets revolving around the single keyword of 'artificial intelligence.' The tech-heavy Nasdaq jumped 1.6% in a strong rally, while the Dow, with its higher concentration of traditional industries, fell 0.15%, showing a stark contrast. This phenomenon goes beyond simple index performance; it clearly shows where the money is flowing. The XLK, an ETF representing the tech sector, gained over 1.6%, supporting the Nasdaq's move, while the XLI, the industrial sector ETF, remained nearly flat. Behind this divergence are today's economic indicators. The Philadelphia Fed Manufacturing Index came in below expectations, and industrial production also showed weakness, dampening investor sentiment for cyclical stocks. On the other hand, despite this macroeconomic uncertainty, the tech sector is building its own momentum, with speculative money pouring in on the mere mention of AI, as seen with Allbirds.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "398773",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "398665",
+          "title": "industrial production mom",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#db2869a488306f38",
+          "title": "Allbirds stock soars more than 600% as the shoemaker rebrands as an AI company"
+        }
+      ],
+      "time": [
+        114437,
+        173408
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "As you said, the strength in tech, especially the semiconductor sector, is really standing out. I'm curious, is this move based on the fundamentals of leading companies like Nvidia, or is it more of a speculative frenzy, like the Allbirds case?",
+      "sources": [],
+      "time": [
+        173908,
+        189599
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "The short answer is that the current AI rally is a mix of solid fundamentals and overheated speculative sentiment. Nvidia, the leader in AI chips, continued its steady climb, gaining over 1% again today, and server manufacturer Super Micro Computer also showed strength. This suggests that structural growth trends, like data center expansion and high-performance computing demand, are supporting these stock prices. But on the other side of the market, we're seeing extreme speculation. The case of shoe manufacturer Allbirds, whose stock shot up over 600% in a day after announcing a pivot to AI, is a prime example of the market's blind enthusiasm for the keyword, rather than fundamentals. This blend of healthy growth expectations and irrational exuberance is the defining characteristic of the AI theme right now.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMCI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "BIRD",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#db2869a488306f38",
+          "title": "Allbirds stock soars more than 600% as the shoemaker rebrands as an AI company"
+        }
+      ],
+      "time": [
+        190099,
+        238150
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "Beyond chipmakers like Nvidia, how are the AI strategies of Big Tech companies like Microsoft and Google being reflected in their stock prices?",
+      "sources": [],
+      "time": [
+        238650,
+        247581
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Big Tech firms are a key part of the rally, acting as both the end-users of AI technology and the primary service providers. Both Microsoft and Alphabet have shown solid stock performance because they're leveraging their immense capital to successfully integrate AI into their cloud services and software, creating new revenue streams. For instance, we're seeing more and more cases where AI is connecting directly to real-world consumption, like the Starbucks app being integrated into OpenAI's ChatGPT. These moves not only increase the value of the entire AI ecosystem but are also seen as long-term growth drivers for Big Tech, earning them investor confidence. This ties in with Bank of America's assessment that the U.S. economy is showing resilience, fueling expectations that Big Tech's AI investments will have a positive impact on the real economy.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "MSFT",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "GOOGL",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#49ccddcedc4c87e5",
+          "title": "Starbucks app launches in ChatGPT as OpenAI continues AI shopping push"
+        },
+        {
+          "type": "article",
+          "pk": "id#ae50686e0cb12e0d",
+          "title": "Bank of America joins big bank peers in reporting rising profits, calls US economy 'resilient'"
+        }
+      ],
+      "time": [
+        248081,
+        299372
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "With all this excitement around AI, what risk factors is the other side of the market watching?",
+      "sources": [],
+      "time": [
+        299872,
+        305682
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "The biggest risk factor is definitely market concentration. While the S&P 500 did finish higher, the fact that its gains are overly dependent on a handful of mega-cap tech stocks is a concern. If the optimism around AI fades or an unexpected regulatory issue arises, the entire market could be shaken. Also, the VIX, which measures market volatility, remains at a relatively low level, leading some to believe that investors may have become a bit complacent. While today's weekly initial jobless claims came in line with expectations, showing the labor market is still robust, potential shifts in the outlook for interest rate policy based on comments from Fed officials, like today's speech by New York Fed President John Williams, remain a potential risk. Ultimately, it feels like the powerful AI theme is masking underlying macroeconomic uncertainties, and the market's future direction will likely be determined by the tug-of-war between these two forces.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "395557",
+          "title": "initial jobless claims",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "419811",
+          "title": "fed williams speech",
+          "date": "2026-04-16"
+        }
+      ],
+      "time": [
+        306182,
+        361393
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "And earnings are a key way to gauge that macroeconomic uncertainty. Today, strong bank earnings were in the spotlight. Could you analyze in more detail what Bank of America's results are signaling about the U.S. economy?",
+      "sources": [],
+      "time": [
+        361893,
+        374264
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Right. Bank of America's first-quarter earnings beat market expectations, fueling hopes about the resilience of the U.S. economy. Both revenue and profit topped forecasts, and the CEO cited strong consumer spending and stable asset quality, calling the U.S. economy 'resilient.' On this news, Bank of America's stock closed up over 1.8%, and the broader financial sector ETF, XLF, also reacted positively, rising about 0.7%. However, this optimism didn't spread to the entire market. The S&P 500 rose 0.8%, but the Dow fell 0.15%, showing a mixed picture. The 10-year Treasury yield climbed back to the 4.28% range, revealing the market's complex psychology—that a strong economy could actually push back expectations for rate cuts. It was a day of mixed signals, with the U.S. Dollar Index also showing slight weakness.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#ae50686e0cb12e0d",
+          "title": "Bank of America joins big bank peers in reporting rising profits, calls US economy 'resilient'"
+        },
+        {
+          "type": "article",
+          "pk": "id#7fa452e8b459956f",
+          "title": "Bank of America joins big bank peers in reporting rising profits"
+        },
+        {
+          "type": "chart",
+          "ticker": "BAC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLF",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        }
+      ],
+      "time": [
+        374764,
+        423135
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "The bank earnings look positive, so why did the market react so selectively? How did the other economic data come in?",
+      "sources": [],
+      "time": [
+        423635,
+        431526
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's precisely where the market's dilemma lies today. In contrast to the optimistic view from bank executives, the key economic data released today pointed to a potential slowdown in the manufacturing sector. The Philadelphia Fed Manufacturing Index, for example, came in below expectations, showing continued contraction, and industrial production also missed forecasts, looking sluggish. This supports the analysis that the U.S. is currently experiencing a so-called two-speed economy, where consumption and services are strong, but manufacturing and industrial sectors are weak. Investors are aware of this situation and are wary of unconditional optimism, showing a cautious attitude that this is not a 'close-your-eyes-and-buy-anything' market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398773",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "398665",
+          "title": "industrial production mom",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#8ef149798794b2d5",
+          "title": "The market is bullish again, but it's 'not a close-eyes-and-buy' market"
+        },
+        {
+          "type": "article",
+          "pk": "id#ae50686e0cb12e0d",
+          "title": "Bank of America joins big bank peers in reporting rising profits, calls US economy 'resilient'"
+        }
+      ],
+      "time": [
+        432026,
+        474437
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "You mentioned a two-speed economy with strong consumption and weak manufacturing. What about the job market, which is the source of that consumption?",
+      "sources": [],
+      "time": [
+        474937,
+        483988
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "The job market remains robust, underpinning strong consumption. The weekly initial jobless claims released today came in below expectations, continuing at a low level, which means the labor market is still tight. As the Chicago Fed President recently commented, while AI development might cause short-term disruptions, it's not expected to lead to large-scale unemployment in the long run, so we're not yet seeing signs of a structural collapse in employment. However, the fact that Bank of America increased its provisions for potential future loan losses is a signal that they are managing potential risks beneath the surface of the current consumer boom. Additionally, geopolitical tensions keeping oil prices around $91 a barrel could also weigh on consumer sentiment going forward.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395557",
+          "title": "initial jobless claims",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#d22e044f6de6a8b7",
+          "title": "Why the Chicago Fed president says AI won't send unemployment to 15%"
+        },
+        {
+          "type": "article",
+          "pk": "id#7fa452e8b459956f",
+          "title": "Bank of America joins big bank peers in reporting rising profits"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        }
+      ],
+      "time": [
+        484488,
+        528099
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "With such a complex economic picture, the Fed's monetary policy decisions must not be easy.",
+      "sources": [],
+      "time": [
+        528599,
+        535530
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's right. The Fed is in a very tough spot right now. Solid bank earnings and employment data raise concerns that a premature rate cut could reignite inflation. We had a speech from New York Fed President John Williams today, and Fed officials continue to emphasize a cautious, data-driven approach. Former Treasury Secretary Janet Yellen also recently offered a cautious outlook, suggesting that perhaps one rate cut might be possible this year. Ultimately, amid conflicting data of strong consumption and weak manufacturing, the view that the Fed will keep rates higher for longer is gaining traction. That's the key reason why the market failed to stage a broad rally today, despite the positive bank earnings.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "419811",
+          "title": "fed williams speech",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#17fc065466b61ae1",
+          "title": "Former US Treasury Secretary Yellen says one Fed rate cut possible this year"
+        },
+        {
+          "type": "article",
+          "pk": "id#ae50686e0cb12e0d",
+          "title": "Bank of America joins big bank peers in reporting rising profits, calls US economy 'resilient'"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        }
+      ],
+      "time": [
+        536030,
+        576321
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Right, so it didn't lead to a broad rally, and we saw a mixed session where tech stocks and the Dow moved in opposite directions. What's the specific background behind this phenomenon?",
+      "sources": [],
+      "time": [
+        576821,
+        587992
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, the divided market today clearly shows how meticulously investors are scrutinizing both macroeconomic conditions and individual company fundamentals. The Nasdaq surged over 1.6% and the S&P 500 gained about 0.8%, but the Dow Jones Industrial Average fell 0.15%, creating a stark contrast. Several factors contributed to this divergence. First, the 10-year Treasury yield stabilized around 4.28%, providing a favorable environment for tech stocks. At the same time, the VIX, or volatility index, remained around the 15 level, still reflecting underlying market anxiety. On top of that, with geopolitical tensions persisting as WTI crude oil hovered around $91 a barrel, healthcare stocks like UnitedHealth and industrial names, which have a large weighting in the Dow, performed poorly, weighing on the index. In the end, it was a very selective market, with capital concentrating on the powerful growth theme of AI, while sentiment for economically sensitive sectors remained relatively subdued.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "UNH",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        }
+      ],
+      "time": [
+        588492,
+        635343
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Were there any particular stocks or sectors that had an especially large impact on the Dow's decline?",
+      "sources": [],
+      "time": [
+        635843,
+        641734
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Yes, the weakness in large-cap traditional industrial and healthcare stocks that make up the Dow was noticeable. For example, UnitedHealth Group, the nation's largest health insurer, fell over 0.6% after its earnings report, weighing on the index. Also, Caterpillar, a classic cyclical stock, dropped nearly 3.5%, and pharmaceutical giant Johnson & Johnson also slipped more than 0.5%. These large-cap components couldn't escape the weakness. These companies tend to be more sensitive to interest rates and the economic cycle, which suggests that investors are remaining cautious about areas that lack a clear growth story like artificial intelligence. This is exactly why we're hearing analysis that this isn't a market where you can just close your eyes and buy anything.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "UNH",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "CAT",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "JNJ",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "article",
+          "pk": "id#8ef149798794b2d5",
+          "title": "The market is bullish again, but it's 'not a close-eyes-and-buy' market"
+        }
+      ],
+      "time": [
+        642234,
+        686405
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "I see. And how did today's economic data releases affect this market mood?",
+      "sources": [],
+      "time": [
+        686905,
+        692596
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The economic data released today sent mixed signals about the real economy, reinforcing investors' cautious stance. First, weekly initial jobless claims came in slightly higher than expected, suggesting the labor market might be cooling off a bit. In addition, the Philadelphia Fed Manufacturing Index missed estimates, fueling concerns about a slowdown in manufacturing activity. On the other hand, industrial production for March showed a slight month-over-month increase, indicating some recovery, but it wasn't enough to completely erase market worries. With economic indicators failing to show a clear direction and instead presenting a mixed picture, investors chose to concentrate their capital in AI-related tech stocks where a clear growth driver is visible, while taking a wait-and-see approach in other areas.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395557",
+          "title": "initial jobless claims",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "398773",
+          "title": "philadelphia fed manufacturing index",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "398665",
+          "title": "industrial production mom",
+          "date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-16"
+        }
+      ],
+      "time": [
+        693096,
+        745027
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So, to sum it up, rather than a broad-based warmth spreading across the market, the heat is concentrated on a specific theme.",
+      "sources": [],
+      "time": [
+        745527,
+        754258
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "That's exactly right. The current market is clearly showing characteristics of a differentiated market led by specific leaders, rather than a general bull market. Tech stocks riding the massive wave of AI continue to hit new highs, but traditional value stocks and cyclicals are struggling amid uncertainty over macroeconomic indicators and the direction of interest rates. Therefore, it's highly likely that this capital rotation and selective investment flow will continue for the time being. Upcoming earnings reports from major companies and comments from the Fed on monetary policy will be crucial variables in determining the market's direction.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#8ef149798794b2d5",
+          "title": "The market is bullish again, but it's 'not a close-eyes-and-buy' market"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-03-16",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-03-16",
+          "end_date": "2026-04-16"
+        },
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        }
+      ],
+      "time": [
+        754758,
+        794249
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "Right, as you said, the market was carefully sorting the winners from the losers. Among individual stocks today, the drop in Newmont, the world's largest gold mining company, was particularly noticeable. It showed weakness from the start of trading and ended up falling over 5%. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NEM",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-15"
+        }
+      ],
+      "time": [
+        795249,
+        812980
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, Newmont's sharp decline today seems to be the result of underlying structural risks, which had been simmering below the surface, finally starting to impact investor sentiment in a big way, rather than a specific news event. For a while, there have been two competing views on Newmont: one seeing it as an innovative company adopting AI and autonomous technology, and the other seeing it as a traditional mining company facing uncontrollable geopolitical risks and cost issues. Today's stock movement can be interpreted as a sign that the latter concerns are beginning to dominate the market, and it appears that specific figures in the recently filed annual report have amplified these worries.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ],
+      "time": [
+        813480,
+        858771
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "The idea of viewing a mining company as an innovator is interesting. What aspects of Newmont were the more optimistic investors focused on?",
+      "sources": [],
+      "time": [
+        859271,
+        868482
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Those who rated its growth potential highly argued that Newmont should be seen not as a simple gold mining company, but as a 'tech-based resource platform.' They point to the use of AI-powered geological modeling to increase exploration success rates and the implementation of autonomous mining systems at sites like the Boddington mine to maximize operational efficiency. Another positive factor is the strategic expansion of its copper production, a metal in high demand in the era of energy transition. They interpret the recent surge in costs as a transitional investment for technology adoption, expecting that once this investment is complete, the company will achieve overwhelming long-term cost competitiveness.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ],
+      "time": [
+        868982,
+        908633
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So there was optimism about future technology. But today's stock price moved in the complete opposite direction of that optimism. What were the specific risk factors that fueled the market's concerns?",
+      "sources": [],
+      "time": [
+        909133,
+        923304
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "There are two core problems. First is the failure to control costs. According to the annual report, contrary to the narrative of tech investment, actual operating costs are soaring. The all-in sustaining costs at the Tanami mine in Australia surged by 34% year-over-year, and the cost per ounce at the Cadia mine also shot up by 29%. The fact that profits are being eroded by rising costs, even with gold prices at all-time highs, raises concerns about fundamental management issues. The second is the critical jurisdictional risk that the company cannot control. A staggering 44.3% of Newmont's total gold production comes from countries with very high political volatility, such as Papua New Guinea, Ghana, Peru, and Mexico.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ],
+      "time": [
+        923804,
+        976174
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "So you're saying nearly half of its production is in politically unstable countries. What specific risks are being raised?",
+      "sources": [],
+      "time": [
+        976674,
+        985005
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Yes, and that's the most serious part. For example, the annual report explicitly states that the Mexican government is pursuing constitutional reforms that include a 'ban on open-pit mining,' which is an existential threat to the Peñasquito mine itself. Beyond that, if sudden tax hikes or resource nationalization were to occur in these countries, the technological advantages touted as growth drivers would offer no protection. In the end, it seems the market has started to weigh the immediate problems of costs damaging the financial statements and the geopolitical risks that could shake the company's very foundation more heavily than the unproven value of future technology.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NEM",
+          "form": "10-K",
+          "filed_date": "2026-02-19",
+          "accession_number": "0001164727-26-000010"
+        }
+      ],
+      "time": [
+        985505,
+        1024796
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "It was a really tough day in the market. The disappointment after Chair Powell's remarks was palpable. Could you summarize today's trading session for us?",
+      "sources": [],
+      "time": [
+        1025796,
+        1035087
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "해설자",
+      "text": "Yes, Fed Chair Jerome Powell's hawkish comments hit the market hard. He noted that there's been a lack of further progress on inflation and suggested that the current restrictive policy needs to be maintained for longer. This statement caused rate cut expectations to retreat significantly, and the bond market reacted, with the 2-year Treasury yield briefly crossing back above 5%. As a result, all three major indexes—the Dow, S&P 500, and Nasdaq—closed lower, reflecting a sharp downturn in investor sentiment.",
+      "sources": [],
+      "time": [
+        1035587,
+        1066878
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "진행자",
+      "text": "So the timeline for a rate cut is now being pushed back to September, or perhaps even later. In that case, what are the key events to watch that could give us a sense of the market's direction in the near term?",
+      "sources": [],
+      "time": [
+        1067378,
+        1080469
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "해설자",
+      "text": "With Powell having sent such a strong message, the market's focus will now shift to comments from other Fed officials. This Friday, April 17th, we have scheduled speeches from Richmond Fed President Thomas Barkin and Fed Governor Christopher Waller. The market will be listening closely to their remarks to see how widely Powell's views are shared within the Fed, or if there are dissenting opinions. Gauging the consensus within the Fed has become critically important in the short term.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "419812",
+          "title": "fed barkin speech",
+          "date": "2026-04-17"
+        },
+        {
+          "type": "event",
+          "id": "419826",
+          "title": "fed waller speech",
+          "date": "2026-04-17"
+        }
+      ],
+      "time": [
+        1080969,
+        1107020
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "진행자",
+      "text": "Besides the comments from Fed officials, are there any economic indicators we should be paying attention to?",
+      "sources": [],
+      "time": [
+        1107520,
+        1113971
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "해설자",
+      "text": "Absolutely. The most important one will be the retail sales data set to be released next Tuesday, April 21st. Retail sales are a key indicator that directly shows the health of consumption, which accounts for two-thirds of the U.S. economy. If retail sales come in stronger than expected, it will be interpreted as a sign that the economy is still running hot, which could further delay a Fed rate cut. Conversely, if the numbers fall short of expectations, it could heighten concerns about a slowdown in consumption, which has been propping up the market, giving investors another thing to worry about.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397925",
+          "title": "retail sales mom",
+          "date": "2026-04-21"
+        }
+      ],
+      "time": [
+        1114471,
+        1152402
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "진행자",
+      "text": "I see. Finally, with this heightened uncertainty, do you have any closing thoughts for our listeners?",
+      "sources": [],
+      "time": [
+        1152902,
+        1159713
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "해설자",
+      "text": "The market paradigm is shifting from 'When will the Fed cut?' to 'Will they even cut this year?' This means that the market, which was moving on expectations of a liquidity boost from rate cuts, must now focus more on the intrinsic value of companies—their fundamentals and earnings. With the possibility of a higher-for-longer interest rate environment growing, the need to pick and choose companies with low debt and steady cash flow has become more critical than ever. It would be prudent to maintain a more conservative stance and prepare for a period of volatility.",
+      "sources": [],
+      "time": [
+        1160213,
+        1195144
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "진행자",
+      "text": "That concludes our market close briefing for April 16th. Thank you.",
+      "sources": [],
+      "time": [
+        1195644,
+        1200655
+      ]
+    }
+  ]
+}
