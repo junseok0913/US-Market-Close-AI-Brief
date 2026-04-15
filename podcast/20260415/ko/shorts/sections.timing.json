@@ -1,0 +1,58 @@
+{
+  "date": "20260415",
+  "lang": "ko",
+  "audioFile": "shorts20260415.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 79.924,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.931,
+      "endSec": 4.931,
+      "speechDurationSec": 4.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 38,
+      "text": "신발 회사가 AI 기업 선언만으로 600% 폭등했다면 믿으시겠습니까."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.931,
+      "speechEndSec": 19.782,
+      "endSec": 19.782,
+      "speechDurationSec": 14.851,
+      "pauseAfterSec": 0.0,
+      "charCount": 112,
+      "text": "4월 16일 미국 증시는 AI 기술주 랠리 속 다우 지수가 홀로 하락하는 혼조세를 보였습니다. S&P 500은 0.8%, 기술주 중심의 나스닥은 1.6% 급등했지만, 다우존스는 0.15% 하락했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 19.782,
+      "speechEndSec": 78.033,
+      "endSec": 78.033,
+      "speechDurationSec": 58.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 501,
+      "text": "시장을 가른 건 바로 AI 열풍이었습니다. 신발 브랜드 올버즈가 AI 회사로 변신을 선언하자 주가가 하루 만에 600% 이상 폭등하며, 시장이 AI 키워드에 얼마나 맹목적으로 반응하는지 보여줬습니다. 물론 엔비디아가 1% 넘게 오르는 등 펀더멘털에 기반한 랠리도 있었지만, 투기적 열기가 나스닥 지수를 1.6%나 밀어 올린 겁니다. 반면 다우 지수는 부진한 경제 지표에 발목이 잡혔습니다. 필라델피아 연은 제조업 지수와 산업생산이 예상치를 밑돌자 경기 민감주에 대한 투자 심리가 위축됐습니다. 이 여파로 캐터필러는 3.5% 가까이 하락했고, 유나이티드헬스도 0.6% 넘게 내리며 지수를 끌어내렸습니다. 뱅크오브아메리카가 예상보다 좋은 실적으로 1.8% 상승하며 견조한 소비를 보여줬지만, 약한 제조업 지표와 엇갈리며 시장 전체를 이끌진 못했습니다. 결국 소비는 강하고 제조업은 약한 이중 속도 경제 속에서, 시장은 AI라는 확실한 성장 스토리에만 자금을 집중하는 극심한 차별화 장세를 보였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 78.033,
+      "speechEndSec": 79.924,
+      "endSec": 79.924,
+      "speechDurationSec": 1.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

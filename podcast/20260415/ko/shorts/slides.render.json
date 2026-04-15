@@ -1,0 +1,228 @@
+{
+  "date": "20260416",
+  "lang": "ko",
+  "title": "신발 회사가 AI 선언하자 600% 폭등? 나스닥만 오른 이유",
+  "hook": "신발 회사가 AI 기업 선언만으로 600% 폭등했다면 믿으시겠습니까.",
+  "durationSeconds": 79.924,
+  "audioFile": "shorts20260415.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.931,
+      "eyebrow": "4월 16일 미국 증시",
+      "headline": "신발 회사가 AI 선언?",
+      "subheadline": "하루 만에 600% 폭등",
+      "body": "신발 회사가 AI 기업 선언만으로 600% 폭등했다면 믿으시겠습니까.",
+      "bullets": [
+        "신발 회사가 AI 기업 선언만으로 600% 폭등했다면 믿으시겠습니까."
+      ],
+      "tickers": [
+        "BIRD",
+        "NVDA",
+        "CAT",
+        "UNH"
+      ],
+      "highlights": [
+        "+600%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 4.931,
+      "endSec": 19.782,
+      "eyebrow": "시장 지표",
+      "headline": "나스닥만 웃었다",
+      "subheadline": "나스닥 +1.6% | S&P500 +0.8% | 다우 -0.15%",
+      "body": "AI 기술주 랠리 속 혼조세 마감",
+      "bullets": [
+        "나스닥: +1.6%",
+        "S&P 500: +0.8%"
+      ],
+      "tickers": [
+        "^IXIC",
+        "^GSPC",
+        "^DJI",
+        "BIRD"
+      ],
+      "highlights": [
+        "나스닥 +1.6%",
+        "다우 -0.15%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 19.782,
+      "endSec": 78.033,
+      "eyebrow": "시장 차별화",
+      "headline": "AI 열풍 vs 경기 침체",
+      "subheadline": "시장을 가른 두 가지 키워드",
+      "body": "시장을 가른 건 바로 AI 열풍이었습니다. 신발 브랜드 올버즈가 AI 회사로 변신을 선언하자 주가가 하루 만에 600% 이상 폭등하며, 시장이 AI 키워드에 얼마나 맹목적으로 반응하는지 보여줬습니다. 물론 엔비디아가 1% 넘게 오르는 등 펀더멘털에 기반한 랠리도 있었지만, 투기적 열기가 나스닥 지수를 1.6%나 밀어 올린 겁니다. 반면 다우 지수는 부진한 경제 지표에 발목이 잡혔습니다. 필라델피아 연은 제조업 지수와 산업생산…",
+      "bullets": [
+        "AI 테마 투기적 열기로 나스닥 급등 (BIRD +600%)",
+        "부진한 제조업 지표에 경기 민감주 하락 (CAT -3.5%)"
+      ],
+      "tickers": [
+        "BIRD",
+        "NVDA",
+        "CAT",
+        "UNH"
+      ],
+      "highlights": [
+        "AI 쏠림 현상",
+        "제조업 지표 부진"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 78.033,
+      "endSec": 79.924,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "BIRD",
+        "NVDA",
+        "CAT",
+        "UNH"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.931,
+      "text": "신발 회사가 AI 기업 선언만으로 600% 폭등했다면 믿으시겠습니까."
+    },
+    {
+      "id": 1,
+      "startSec": 4.931,
+      "endSec": 19.782,
+      "text": "4월 16일 미국 증시는 AI 기술주 랠리 속 다우 지수가 홀로 하락하는 혼조세를 보였습니다. S&P 500은 0.8%, 기술주 중심의 나스닥은 1.6% 급등했지만, 다우존스는 0.15% 하락했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 19.782,
+      "endSec": 78.033,
+      "text": "시장을 가른 건 바로 AI 열풍이었습니다. 신발 브랜드 올버즈가 AI 회사로 변신을 선언하자 주가가 하루 만에 600% 이상 폭등하며, 시장이 AI 키워드에 얼마나 맹목적으로 반응하는지 보여줬습니다. 물론 엔비디아가 1% 넘게 오르는 등 펀더멘털에 기반한 랠리도 있었지만, 투기적 열기…"
+    },
+    {
+      "id": 3,
+      "startSec": 78.033,
+      "endSec": 79.924,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-15"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-15"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-15"
+    },
+    {
+      "type": "article",
+      "label": "Allbirds stock soars more than 600% as the shoemaker re…",
+      "detail": "id#db2869a488306f38"
+    },
+    {
+      "type": "chart",
+      "label": "BIRD",
+      "detail": "2026-04-15"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "event",
+      "label": "philadelphia fed manufacturing index",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "event",
+      "label": "industrial production mom",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "chart",
+      "label": "CAT",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "chart",
+      "label": "UNH",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "article",
+      "label": "Bank of America joins big bank peers in reporting risin…",
+      "detail": "id#ae50686e0cb12e0d"
+    },
+    {
+      "type": "chart",
+      "label": "BAC",
+      "detail": "2026-04-16"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "나스닥 1.6% 급등, 다우 0.15% 하락 혼조세",
+      "올버즈(BIRD), AI 전환 선언 후 600% 이상 폭등",
+      "제조업 지표 부진으로 캐터필러 등 경기민감주 하락",
+      "AI 테마 쏠림 현상으로 인한 극심한 차별화 장세"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "BIRD",
+        "label": "올버즈",
+        "tag": "AI 전환 선언 후 폭등"
+      },
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "AI 랠리 주도"
+      },
+      {
+        "ticker": "CAT",
+        "label": "캐터필러",
+        "tag": "제조업 부진에 하락"
+      },
+      {
+        "ticker": "UNH",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "BAC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
