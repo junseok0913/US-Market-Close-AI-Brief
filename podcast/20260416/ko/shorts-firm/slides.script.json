@@ -1,0 +1,180 @@
+{
+  "date": "20260417",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, TSMC, 델",
+  "hook": "AI 훈풍의 진원지 TSMC는 왜 내렸을까요?",
+  "durationSeconds": 103.244,
+  "audioFile": "shortsfirm20260416.mp3",
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "AI 훈풍의 진원지 TSMC는 왜 내렸을까요?"
+    },
+    {
+      "id": 1,
+      "name": "company_1",
+      "startSec": 3.0,
+      "endSec": 38.091,
+      "text": "먼저 TSMC입니다. 오늘 반도체 섹터를 뒤흔든 AI 랠리의 진원지였죠. 1분기 순이익이 전년 대비 58%나 급증했고, 클라우드 기업들의 AI 칩 수요가 폭발적이라며 연간 매출 성장률 전망치도 30% 이상으로 대폭 상향했습니다. 이 강력한 자신감에 엔비디아를 비롯한 AI 생태계 전반이 환호했는데요. 아이러니하게도 정작 TSMC 주가는 3% 넘게 하락 마감했습니다. 시장을 움직일 강력한 호재를 내놓고도 주가가 내린 것은, 그간의 기대감이 선반영된 데 따른 차익실현 물량이 쏟아진 '뉴스에 파는' 움직임으로 풀이됩니다."
+    },
+    {
+      "id": 2,
+      "name": "company_2",
+      "startSec": 38.091,
+      "endSec": 80.542,
+      "text": "다음은 델 테크놀로지스입니다. 오늘 9% 가까이 폭등하며 시장의 스포트라이트를 한 몸에 받았습니다. 더 이상 단순 PC 제조사가 아닌 AI 인프라의 핵심 공급자로 완전히 재평가받고 있는데요. 최근 연차보고서에서 공개된 AI 최적화 서버 매출이 전년 대비 무려 166%나 폭증했다는 점이 투자 심리를 자극했습니다. 하지만 화려한 성장 이면의 재무상태는 우려스럽습니다. 저마진 서버 판매가 늘며 전체 이익률은 오히려 하락했고, 총부채가 318억 달러에 달하는 반면 주주자본은 마이너스 25억 달러로 사실상 자본잠식 상태입니다. 시장은 AI 성장 서사에 열광하고 있지만, 수익성 악화와 취약한 재무구조라는 리스크는 반드시 짚고 넘어가야 합니다."
+    },
+    {
+      "id": 3,
+      "name": "company_3",
+      "startSec": 80.542,
+      "endSec": 92.713,
+      "text": "Phillips 66(PSX)가 소폭 상승 마감했습니다. 일부 투자은행들이 현재 유가 선물 시장이 실제 공급 리스크보다 긴장 완화 가능성을 과도하게 반영하고 있다고 분석한 점이 영향을 미쳤습니다."
+    },
+    {
+      "id": 4,
+      "name": "company_4",
+      "startSec": 92.713,
+      "endSec": 100.244,
+      "text": "엔비디아(NVDA)는 시장 전반의 조용한 흐름과 달리 뜨거운 관심이 쏠린 반도체 섹터 내에서 소폭 하락하며 숨을 고르는 모습을 보였습니다."
+    },
+    {
+      "id": 5,
+      "name": "closing",
+      "startSec": 100.244,
+      "endSec": 103.244,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "TSMC: 1분기 순이익 58% 급증 및 AI 수요 전망 상향으로 반도체 랠리 촉발",
+      "TSMC: 강력한 호재에도 불구, 차익실현 매물에 주가는 3%대 하락",
+      "델: AI 서버 매출 166% 폭증 소식에 9% 가까이 급등하며 AI 수혜주로 부각",
+      "델: 매출 성장 이면의 수익성 악화와 자본잠식 상태 등 재무 리스크 상존"
+    ],
+    "featuredTickers": [
+      "TSM",
+      "DELL",
+      "PSX",
+      "NVDA"
+    ],
+    "companyMoves": [
+      {
+        "ticker": "TSM",
+        "name": "Taiwan Semiconductor Manufactur",
+        "as_of": "2026-04-16",
+        "day_change_pct": -3.1324979495621186,
+        "day_change_display": "-3.13%",
+        "month_change_pct": 7.002973839380311,
+        "month_change_display": "+7.00%",
+        "market_cap": 1884516515840.0,
+        "market_cap_display": "$1.88T",
+        "pe_ratio": 34.703915,
+        "pe_ratio_display": "34.70",
+        "pbr": 55.580597,
+        "pbr_display": "55.58",
+        "roe": 35.064,
+        "roe_display": "35.06%",
+        "reason": "실제로 TSMC는 1분기 순이익이 전년 대비 58퍼센트 이상 급증한 181억 달러를 기록했고.",
+        "spoken_text": "먼저 TSMC입니다. 오늘 반도체 섹터를 뒤흔든 AI 랠리의 진원지였죠. 1분기 순이익이 전년 대비 58%나 급증했고, 클라우드 기업들의 AI 칩 수요가 폭발적이라며 연간 매출 성장률 전망치도 30% 이상으로 대폭 상향했습니다. 이 강력한 자신감에 엔비디아를 비롯한 AI 생태계 전반이 환호했는데요. 아이러니하게도 정작 TSMC 주가는 3% 넘게 하락 마감했습니다. 시장을 움직일 강력한 호재를 내놓고도 주가가 내린 것은, 그간의 기대감이 선반영된 데 따른 차익실현 물량이 쏟아진 '뉴스에 파는' 움직임으로 풀이됩니다.",
+        "slide_points": [
+          "1D: -3.13% / 1M: +7.00%",
+          "1분기 순이익 58% 급증, 연간 가이던스 상향",
+          "강력한 AI 수요 전망으로 반도체 섹터 랠리를 촉발했으나 차익실현에 하락"
+        ],
+        "valuation_note": "시총 $1.88T, PER 34.70, PBR 55.58, ROE 35.06%",
+        "move_summary": "TSMC, AI 랠리 촉발 후 차익실현에 하락"
+      },
+      {
+        "ticker": "DELL",
+        "name": "Dell Technologies Inc.",
+        "as_of": "2026-04-16",
+        "day_change_pct": 8.918094352130645,
+        "day_change_display": "+8.92%",
+        "month_change_pct": 29.40820833026967,
+        "month_change_display": "+29.41%",
+        "market_cap": 127958728704.0,
+        "market_cap_display": "$127.96B",
+        "pe_ratio": 22.219793,
+        "pe_ratio_display": "22.22",
+        "pbr": -50.974125,
+        "pbr_display": "-50.97",
+        "roe": null,
+        "roe_display": "N/A",
+        "reason": "네, 시장은 델을 단순한 PC 제조사가 아닌 AI 인프라의 핵심 공급자로 완전히 재평가하고 있는 것으로 보입니다. 최근 공시된 연차보고서에서 AI 최적화 서버 매출이 전년 대비 166%나 폭증한 247억 달러를 기록했다는 점이 투자 심리를 강력하게 자극하고 있습니다. 바로 그 지점이 이번 분석의 핵심입니다. 화려한 매출 성장에도 불구하고 수익성은 오히려 악화되고 있습니다.",
+        "spoken_text": "다음은 델 테크놀로지스입니다. 오늘 9% 가까이 폭등하며 시장의 스포트라이트를 한 몸에 받았습니다. 더 이상 단순 PC 제조사가 아닌 AI 인프라의 핵심 공급자로 완전히 재평가받고 있는데요. 최근 연차보고서에서 공개된 AI 최적화 서버 매출이 전년 대비 무려 166%나 폭증했다는 점이 투자 심리를 자극했습니다. 하지만 화려한 성장 이면의 재무상태는 우려스럽습니다. 저마진 서버 판매가 늘며 전체 이익률은 오히려 하락했고, 총부채가 318억 달러에 달하는 반면 주주자본은 마이너스 25억 달러로 사실상 자본잠식 상태입니다. 시장은 AI 성장 서사에 열광하고 있지만, 수익성 악화와 취약한 재무구조라는 리스크는 반드시 짚고 넘어가야 합니다.",
+        "slide_points": [
+          "1D: +8.92% / 1M: +29.41%",
+          "AI 최적화 서버 매출 166% 폭증",
+          "매출 성장 이면의 수익성 악화 및 마이너스 주주자본 등 재무 리스크 부각"
+        ],
+        "valuation_note": "시총 $127.96B, PER 22.22, PBR -50.97, ROE N/A",
+        "move_summary": "델, AI 서버 매출 166% 폭증에 급등...재무 리스크는 '경고등'"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "as_of": "2026-04-16",
+        "day_change_pct": 1.170713182028349,
+        "day_change_display": "+1.17%",
+        "month_change_pct": -5.447495289376825,
+        "month_change_display": "-5.45%",
+        "market_cap": 65492488192.0,
+        "market_cap_display": "$65.49B",
+        "pe_ratio": 15.151206,
+        "pe_ratio_display": "15.15",
+        "pbr": 2.25202,
+        "pbr_display": "2.25",
+        "roe": 15.427,
+        "roe_display": "15.43%",
+        "reason": "네, 정확한 지적입니다. ING 그룹과 같은 투자은행의 원자재 전략가들은 현재의 유가 선물 시장이 물리적 시장의 현실보다는 긴장 완화 가능성을 과도하게 가격에 반영하고 있다고 경고합니다.",
+        "spoken_text": "Phillips 66(PSX)가 소폭 상승 마감했습니다. 일부 투자은행들이 현재 유가 선물 시장이 실제 공급 리스크보다 긴장 완화 가능성을 과도하게 반영하고 있다고 분석한 점이 영향을 미쳤습니다.",
+        "slide_points": [
+          "1일 +1.17% / 1개월 -5.45%",
+          "시총 $65.49B, PER 15.15, PBR 2.25, ROE 15.43%",
+          "유가 선물 시장의 지정학적 리스크 과소평가 분석"
+        ],
+        "valuation_note": "시총 $65.49B, PER 15.15, PBR 2.25, ROE 15.43%",
+        "move_summary": "Phillips 66, 유가 리스크 과소평가 분석 속 상승"
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA Corporation",
+        "as_of": "2026-04-16",
+        "day_change_pct": -0.26147182905368327,
+        "day_change_display": "-0.26%",
+        "month_change_pct": 9.950117968036732,
+        "month_change_display": "+9.95%",
+        "market_cap": 4820896841728.0,
+        "market_cap_display": "$4.82T",
+        "pe_ratio": 40.562374,
+        "pe_ratio_display": "40.56",
+        "pbr": 30.647404,
+        "pbr_display": "30.65",
+        "roe": 101.485,
+        "roe_display": "101.48%",
+        "reason": "네, 그렇습니다. 시장 전체가 조용한 상승세를 보인 것과는 전혀 다른 온도의 열기가 반도체 섹터에서 나타났습니다.",
+        "spoken_text": "엔비디아(NVDA)는 시장 전반의 조용한 흐름과 달리 뜨거운 관심이 쏠린 반도체 섹터 내에서 소폭 하락하며 숨을 고르는 모습을 보였습니다.",
+        "slide_points": [
+          "1일 -0.26% / 1개월 +9.95%",
+          "시총 $4.82T, PER 40.56, PBR 30.65, ROE 101.48%",
+          "섹터 전반의 열기 속 단기 조정"
+        ],
+        "valuation_note": "시총 $4.82T, PER 40.56, PBR 30.65, ROE 101.48%",
+        "move_summary": "반도체 섹터 열기 속 숨 고르기 보인 엔비디아"
+      }
+    ]
+  },
+  "notes": {
+    "description": "Replace slides.render.json with your custom slide design payload when ready.",
+    "requiredSchema": [
+      "slides[]: phase/theme/startSec/endSec/eyebrow/headline/subheadline/body/bullets/tickers/highlights",
+      "captions[]: id/startSec/endSec/text",
+      "meta.keyPoints/meta.featuredTickers/meta.sceneCount"
+    ]
+  }
+}

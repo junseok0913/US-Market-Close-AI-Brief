@@ -1,0 +1,238 @@
+{
+  "date": "20260417",
+  "lang": "ko",
+  "title": "시장은 0.2% 상승, 반도체는 폭등? TSMC가 쏘아올린 AI 랠리",
+  "hook": "시장은 0.2% 오르며 잠잠했는데, 반도체만 폭등한 이유는 무엇일까요.",
+  "durationSeconds": 75.284,
+  "audioFile": "shorts20260416.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "flash",
+      "startSec": 0.0,
+      "endSec": 4.811,
+      "eyebrow": "4월 17일 마감",
+      "headline": "시장은 잠잠, 반도체는 폭등?",
+      "subheadline": "0.2% 오른 시장 속 숨은 진짜 이유는?",
+      "body": "시장은 0.2% 오르며 잠잠했는데, 반도체만 폭등한 이유는 무엇일까요.",
+      "bullets": [
+        "시장은 0.2% 오르며 잠잠했는데, 반도체만 폭등한 이유는 무엇일까요."
+      ],
+      "tickers": [
+        "TSM",
+        "NVDA",
+        "AMD",
+        "MU"
+      ],
+      "highlights": [
+        "반도체만 폭등"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bull",
+      "startSec": 4.811,
+      "endSec": 16.542,
+      "eyebrow": "시장 지표",
+      "headline": "3대 지수 소폭 상승",
+      "subheadline": "S&P 500 +0.26% | 나스닥 +0.36%",
+      "body": "미국 증시는 지정학적 리스크 완화와 기술주 선별 강세로 마감했습니다.",
+      "bullets": [
+        "S&P 500 +0.26%",
+        "다우 +0.24%"
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "TSM"
+      ],
+      "highlights": [
+        "S&P 500 +0.26%",
+        "나스닥 +0.36%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 16.542,
+      "endSec": 73.513,
+      "eyebrow": "핵심 동력",
+      "headline": "TSMC가 쏘아올린 AI 랠리",
+      "subheadline": "TSMC의 폭발적 실적이 반도체주 급등을 이끌었습니다.",
+      "body": "시장은 거시적 불확실성 속에서 가장 확실한 성장 테마인 AI를 선택했습니다.",
+      "bullets": [
+        "TSMC: 1분기 순이익 58% 급증",
+        "엔비디아, AMD 등 관련주 일제히 강세"
+      ],
+      "tickers": [
+        "TSM",
+        "NVDA",
+        "AMD",
+        "DELL"
+      ],
+      "highlights": [
+        "TSMC 순이익 +58%",
+        "DELL +7.5%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 73.513,
+      "endSec": 75.284,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요",
+      "subheadline": "매일 찾아오는 미국 증시 마감",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "TSM",
+        "NVDA",
+        "AMD",
+        "MU"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 4.811,
+      "text": "시장은 0.2% 오르며 잠잠했는데, 반도체만 폭등한 이유는 무엇일까요."
+    },
+    {
+      "id": 1,
+      "startSec": 4.811,
+      "endSec": 16.542,
+      "text": "4월 17일 미국 증시는 지정학적 리스크 완화 속 기술주 선별 강세로 마감했습니다. S&P 500은 0.26%, 다우는 0.24% 올랐고, 기술주 중심의 나스닥은 0.36% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 16.542,
+      "endSec": 73.513,
+      "text": "먼저 중동 긴장 완화 기대감에 국제 유가가 1.5% 가까이 하락하며 WTI는 배럴당 90달러 선, 브렌트유는 95달러 아래로 내려왔습니다. 미국과 이란의 협상 재개 가능성이 부상한 영향입니다. 하지만 미국의 원유 재고는 예상과 달리 91만 배럴 넘게 감소해, 공급망 차질에 대한 우려는…"
+    },
+    {
+      "id": 3,
+      "startSec": 73.513,
+      "endSec": 75.284,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-16"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "BZ=F",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices fall as hopes for US-Iran deal outweigh supp…",
+      "detail": "id#a64f3b1dc4816ebd"
+    },
+    {
+      "type": "event",
+      "label": "eia crude oil stocks change",
+      "detail": "2026-04-15"
+    },
+    {
+      "type": "article",
+      "label": "Taiwan Semiconductor CEO just dropped a hint about the…",
+      "detail": "id#2365eb21a8d46c83"
+    },
+    {
+      "type": "chart",
+      "label": "^SOX",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "TSM",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "NVDA",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "AMD",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "MU",
+      "detail": "2026-04-17"
+    },
+    {
+      "type": "chart",
+      "label": "DELL",
+      "detail": "2026-04-16"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 소폭 상승 마감",
+      "중동 긴장 완화 기대감에 국제 유가 1.5% 하락",
+      "TSMC, AI 칩 수요 폭발적 전망에 반도체주 랠리 주도",
+      "델 테크놀로지스, AI 서버 매출 166% 폭증에 7.5% 급등"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "TSM",
+        "label": "TSMC",
+        "tag": "AI 랠리 주도"
+      },
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "반도체주 동반 강세"
+      },
+      {
+        "ticker": "DELL",
+        "label": "델 테크놀로지스",
+        "tag": "AI 서버 매출 폭증"
+      },
+      {
+        "ticker": "AMD",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "MU",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}

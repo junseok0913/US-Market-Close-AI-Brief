@@ -1,0 +1,67 @@
+{
+  "date": "20260416",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260416.mp3",
+  "sectionOrder": [
+    "tsm",
+    "dell",
+    "psx",
+    "nvda"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 103.244,
+  "sections": [
+    {
+      "id": 0,
+      "name": "tsm",
+      "ticker": "TSM",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 38.091,
+      "endSec": 38.091,
+      "speechDurationSec": 38.091,
+      "pauseAfterSec": 0.0,
+      "charCount": 316,
+      "text": "AI 훈풍의 진원지 TSMC는 왜 내렸을까요? 먼저 TSMC입니다. 오늘 반도체 섹터를 뒤흔든 AI 랠리의 진원지였죠. 1분기 순이익이 전년 대비 58%나 급증했고, 클라우드 기업들의 AI 칩 수요가 폭발적이라며 연간 매출 성장률 전망치도 30% 이상으로 대폭 상향했습니다. 이 강력한 자신감에 엔비디아를 비롯한 AI 생태계 전반이 환호했는데요. 아이러니하게도 정작 TSMC 주가는 3% 넘게 하락 마감했습니다. 시장을 움직일 강력한 호재를 내놓고도 주가가 내린 것은, 그간의 기대감이 선반영된 데 따른 차익실현 물량이 쏟아진 '뉴스에 파는' 움직임으로 풀이됩니다."
+    },
+    {
+      "id": 1,
+      "name": "dell",
+      "ticker": "DELL",
+      "kind": "company",
+      "startSec": 38.091,
+      "speechEndSec": 80.542,
+      "endSec": 80.542,
+      "speechDurationSec": 42.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 357,
+      "text": "다음은 델 테크놀로지스입니다. 오늘 9% 가까이 폭등하며 시장의 스포트라이트를 한 몸에 받았습니다. 더 이상 단순 PC 제조사가 아닌 AI 인프라의 핵심 공급자로 완전히 재평가받고 있는데요. 최근 연차보고서에서 공개된 AI 최적화 서버 매출이 전년 대비 무려 166%나 폭증했다는 점이 투자 심리를 자극했습니다. 하지만 화려한 성장 이면의 재무상태는 우려스럽습니다. 저마진 서버 판매가 늘며 전체 이익률은 오히려 하락했고, 총부채가 318억 달러에 달하는 반면 주주자본은 마이너스 25억 달러로 사실상 자본잠식 상태입니다. 시장은 AI 성장 서사에 열광하고 있지만, 수익성 악화와 취약한 재무구조라는 리스크는 반드시 짚고 넘어가야 합니다."
+    },
+    {
+      "id": 2,
+      "name": "psx",
+      "ticker": "PSX",
+      "kind": "company",
+      "startSec": 80.542,
+      "speechEndSec": 92.713,
+      "endSec": 92.713,
+      "speechDurationSec": 12.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 109,
+      "text": "Phillips 66(PSX)가 소폭 상승 마감했습니다. 일부 투자은행들이 현재 유가 선물 시장이 실제 공급 리스크보다 긴장 완화 가능성을 과도하게 반영하고 있다고 분석한 점이 영향을 미쳤습니다."
+    },
+    {
+      "id": 3,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 92.713,
+      "speechEndSec": 103.244,
+      "endSec": 103.244,
+      "speechDurationSec": 10.531,
+      "pauseAfterSec": 0.0,
+      "charCount": 93,
+      "text": "엔비디아(NVDA)는 시장 전반의 조용한 흐름과 달리 뜨거운 관심이 쏠린 반도체 섹터 내에서 소폭 하락하며 숨을 고르는 모습을 보였습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

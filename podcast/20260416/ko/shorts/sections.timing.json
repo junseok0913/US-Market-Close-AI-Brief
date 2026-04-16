@@ -1,0 +1,58 @@
+{
+  "date": "20260416",
+  "lang": "ko",
+  "audioFile": "shorts20260416.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 75.284,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.811,
+      "endSec": 4.811,
+      "speechDurationSec": 4.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 39,
+      "text": "시장은 0.2% 오르며 잠잠했는데, 반도체만 폭등한 이유는 무엇일까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.811,
+      "speechEndSec": 16.542,
+      "endSec": 16.542,
+      "speechDurationSec": 11.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 104,
+      "text": "4월 17일 미국 증시는 지정학적 리스크 완화 속 기술주 선별 강세로 마감했습니다. S&P 500은 0.26%, 다우는 0.24% 올랐고, 기술주 중심의 나스닥은 0.36% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 16.542,
+      "speechEndSec": 73.513,
+      "endSec": 73.513,
+      "speechDurationSec": 56.971,
+      "pauseAfterSec": 0.0,
+      "charCount": 480,
+      "text": "먼저 중동 긴장 완화 기대감에 국제 유가가 1.5% 가까이 하락하며 WTI는 배럴당 90달러 선, 브렌트유는 95달러 아래로 내려왔습니다. 미국과 이란의 협상 재개 가능성이 부상한 영향입니다. 하지만 미국의 원유 재고는 예상과 달리 91만 배럴 넘게 감소해, 공급망 차질에 대한 우려는 여전합니다. 시장을 이끈 진짜 동력은 AI였습니다. 세계 최대 파운드리 TSMC가 1분기 순이익이 전년 대비 58% 급증한 181억 달러를 기록했다고 발표하며, AI 칩 수요가 폭발적이라고 밝혔습니다. 연간 매출 성장률 전망치도 30% 이상으로 상향 조정했습니다. 이 소식에 필라델피아 반도체 지수가 급등했고, 엔비디아, AMD, 마이크론 등 관련주가 일제히 강세를 보였습니다. AI 서버 기업 델 테크놀로지스 역시 관련 매출이 166% 폭증했다는 소식에 7.5% 넘게 급등했습니다. 결국 시장은 거시적 불확실성 속에서 가장 확실한 성장 테마인 AI를 선택한 하루였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 73.513,
+      "speechEndSec": 75.284,
+      "endSec": 75.284,
+      "speechDurationSec": 1.771,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
