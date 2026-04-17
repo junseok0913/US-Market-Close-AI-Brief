@@ -1,0 +1,543 @@
+{
+  "date": "20260417",
+  "nutshell": "Risk-on sentiment returns as geopolitical tensions ease.",
+  "user_tickers": [
+    "NFLX"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 12
+    },
+    {
+      "name": "ticker",
+      "start_id": 13,
+      "end_id": 20
+    },
+    {
+      "name": "closing",
+      "start_id": 21,
+      "end_id": 29
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 18th market close briefing. We saw a strong rebound today with all the major indexes jumping over 1%. Was there a specific catalyst that shifted the market's mood?",
+      "sources": [],
+      "time": [
+        0,
+        11451
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "Today was all about the return of risk appetite, driven by easing geopolitical tensions. News that Iran is reopening the Strait of Hormuz sent global oil prices plunging by 12%, which significantly eased inflation fears. As a result, the market staged a relief rally. The Dow Jones Industrial Average gained 1.79%, and the S&P 500 was also up 1.2%. The tech-heavy Nasdaq Composite showed strength as well, climbing 1.52%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9191db45aef87a3e",
+          "title": "Oil prices plunge after Iran foreign minister says Strait of Hormuz is 'completely open'"
+        },
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-17"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-17"
+        }
+      ],
+      "time": [
+        11951,
+        45242
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "So the drop in oil prices really provided a tailwind for the entire market. The rally in tech stocks was particularly noticeable. Is there anything different about this rally compared to previous ones?",
+      "sources": [],
+      "time": [
+        45742,
+        57833
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Yes, that's right. What's significant about this rally is that it has broadened out. It wasn't just the semiconductor stocks that have been leading the charge; software-related stocks also joined in. This broad-based strength in tech, not just concentrated in a few names, can be seen as a sign of a healthier market. Considering the market was facing significant correction fears just late last month, this V-shaped recovery to hit a new all-time high shows just how quickly investor sentiment is bouncing back.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#527cb1d2a4d3b325",
+          "title": "The rally in tech stocks is widening beyond semiconductors and into software"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-03-30",
+          "end_date": "2026-04-17"
+        }
+      ],
+      "time": [
+        58333,
+        88184
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you break down the key factors that moved the market today?",
+      "sources": [],
+      "time": [
+        88684,
+        93935
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. There were two main drivers for the market today. First, as we mentioned, the plunge in oil prices due to easing geopolitical risk. And second, the tech rally broadening into the software sector, which helped restore market confidence. Let's take a closer look at each of these themes.",
+      "sources": [],
+      "time": [
+        94435,
+        111806
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first factor you mentioned: the easing geopolitical risk. Just how significant was the impact of Iran's move to fully reopen the Strait of Hormuz?",
+      "sources": [],
+      "time": [
+        112806,
+        123817
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Well, this move has implications far beyond just a simple drop in oil prices. The news that the Strait of Hormuz, which handles a significant portion of the world's seaborne oil transport, was reopening instantly wiped out the war premium. Right after the announcement from Iran's foreign minister, West Texas Intermediate crude futures plunged over 10% at one point, falling below $82 a barrel. Brent crude, the international benchmark, also tumbled about 10%, breaking below the $90 level. With oil prices stabilizing, the biggest source of inflation anxiety was removed, and risk-on sentiment spread across the market. As a result, the S&P 500 rose 1.2%, the Nasdaq gained 1.52%, and the VIX, the market's fear gauge, also dropped sharply, signaling stability. In the bond market, we saw the 10-year Treasury yield fall as inflation expectations cooled, so both stocks and bonds rallied in relief.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9191db45aef87a3e",
+          "title": "Oil prices plunge after Iran foreign minister says Strait of Hormuz is 'completely open'"
+        },
+        {
+          "type": "article",
+          "pk": "id#be71ff0cae6ec768",
+          "title": "Iran Says Hormuz Strait Now Completely Open for Commercial Ships"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        }
+      ],
+      "time": [
+        124317,
+        180528
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So the plunge in oil brought a relief rally across the board. I'm curious, how did this dramatic shift affect the flows between different sectors within the market?",
+      "sources": [],
+      "time": [
+        181028,
+        190679
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "It was a day of sharp contrasts between sectors. The energy sector, hit directly by the drop in oil, couldn't escape the pressure despite the broader market rally. Shares of major energy companies like ExxonMobil and Chevron were down. On the other hand, lower oil prices are a huge tailwind for the airline industry, as it means lower costs. The U.S. Global JETS ETF, which tracks airline stocks, showed a strong upward trend across the board. So this single variable, the price of oil, completely shifted the flow of money within the market, clearly showing a rotation out of energy stocks and into beneficiaries like airlines and transportation.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#9191db45aef87a3e",
+          "title": "Oil prices plunge after Iran foreign minister says Strait of Hormuz is 'completely open'"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "JETS",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        }
+      ],
+      "time": [
+        191179,
+        230110
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "So the key takeaway is that inflation fears have eased. What implications could this have for the Federal Reserve's future policy direction?",
+      "sources": [],
+      "time": [
+        230610,
+        239221
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "That's a very important point. The Fed has made fighting inflation its top priority and has been closely watching oil price volatility. This sharp drop in oil will likely reduce upward pressure on key inflation indicators like the upcoming CPI and PCE price index reports. Of course, the Fed won't change its policy based on a single day's move, but with a clear signal that inflation could be cooling, it gives them more breathing room to adjust the pace of tightening. That's the fundamental reason the market cheered this news. It reinforces the hope that the Fed's aggressive rate-hiking cycle is nearing its end.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#d5c27c97599aa36a",
+          "title": "Oil prices plunge after Iran foreign minister says Strait of Hormuz is 'completely open,' Trump claims US blockade still in place"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-18"
+        },
+        {
+          "type": "event",
+          "id": "397977",
+          "title": "core inflation rate mom",
+          "date": "2026-05-12"
+        },
+        {
+          "type": "event",
+          "id": "398702",
+          "title": "core pce price index mom",
+          "date": "2026-05-28"
+        }
+      ],
+      "time": [
+        239721,
+        273852
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "Okay, so we've covered the two major themes: easing geopolitical risk and the broadening tech rally. Now, let's dive deeper into some individual company moves within this context that investors are watching.",
+      "sources": [],
+      "time": [
+        274352,
+        287722
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "진행자",
+      "text": "First up is Netflix. The stock has been volatile since its earnings report, but it managed to close with a slight gain today. What was the key takeaway for investors?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NFLX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-17"
+        }
+      ],
+      "time": [
+        288722,
+        299173
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "해설자",
+      "text": "Right, Netflix did end the day higher after some volatility, but the shock from its earnings report still seems to be lingering. If you just look at the headline number—a stunning 83% year-over-year jump in first-quarter net income—it looks like a great report. But when you dig into the details, it becomes clear why the market was disappointed. That net income figure includes a one-time $2.8 billion fee from the terminated Warner Bros. Discovery merger. If you strip out that one-time item and look at the company's core cost structure, you see some red flags. Selling, General & Administrative expenses, for example, surged by a whopping 43%, signaling that profitability in the core business is slowing. It seems the market saw right through the inflated profit to the underlying cost issues.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NFLX",
+          "form": "10-Q",
+          "filed_date": "2026-04-17",
+          "accession_number": "0001065280-26-000138"
+        }
+      ],
+      "time": [
+        299673,
+        350044
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "진행자",
+      "text": "So you're saying there was an accounting illusion at play. But still, a massive $2.8 billion cash infusion is a fact. Why didn't the market see that as a positive?",
+      "sources": [],
+      "time": [
+        350544,
+        361675
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "해설자",
+      "text": "And that gets to the most critical point of this earnings release. The market was focused on how Netflix would use that cash. Investors were naturally hoping for an increase in share buybacks to boost shareholder value, but Netflix did the exact opposite. First-quarter buybacks were only $1.3 billion, a significant drop from the previous quarterly average of $2.3 billion. The market interpreted this as a strong signal that management itself doesn't believe the current stock price is attractive. Ultimately, this perceived lack of confidence from management is what really spooked investors and became the decisive factor driving the stock down.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#f644f0fac0541da2",
+          "title": "Netflix just let investors down on this metric too"
+        },
+        {
+          "type": "sec_filing",
+          "ticker": "NFLX",
+          "form": "10-Q",
+          "filed_date": "2026-04-17",
+          "accession_number": "0001065280-26-000138"
+        }
+      ],
+      "time": [
+        362175,
+        397786
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "진행자",
+      "text": "So the analysis is that management's capital allocation decision failed to win the market's confidence. Some might argue it was a strategic choice to invest that cash in new ventures like advertising or live sports.",
+      "sources": [],
+      "time": [
+        398286,
+        412337
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "해설자",
+      "text": "That's certainly a possible interpretation—investing for long-term growth. However, according to the current 10-Q filing, new businesses like advertising are not yet making a financially significant contribution. In fact, a more pressing issue is concern over the company's financial health. The filing shows that Netflix has about $12.3 billion in cash and short-term investments, but its content-related contractual obligations due within the next year amount to $14 billion. In other words, its short-term liabilities exceed its available cash, which is a tight spot to be in. From that perspective, reducing share buybacks looks less like a strategic move for aggressive investment and more like a defensive measure to prepare for potential liquidity pressure.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NFLX",
+          "form": "10-Q",
+          "filed_date": "2026-04-17",
+          "accession_number": "0001065280-26-000138"
+        }
+      ],
+      "time": [
+        412837,
+        458608
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "진행자",
+      "text": "To sum up, you're saying that behind the apparent profit growth, there are hidden risks of rising costs and financial instability.",
+      "sources": [],
+      "time": [
+        459108,
+        467319
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "해설자",
+      "text": "Exactly. The future growth potential from advertising and live events certainly exists, but that's still in the realm of expectation, not yet proven by the numbers. On the other hand, the deteriorating core cost structure (excluding the one-time gain), the financial vulnerability of short-term debt exceeding cash, and, most importantly, the erosion of market confidence triggered by management's actions—these are all part of the current, tangible reality. Therefore, it seems we're at a point where managing these immediate short-term risks has become more critical than the potential long-term growth opportunities.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NFLX",
+          "form": "10-Q",
+          "filed_date": "2026-04-17",
+          "accession_number": "0001065280-26-000138"
+        },
+        {
+          "type": "article",
+          "pk": "id#f644f0fac0541da2",
+          "title": "Netflix just let investors down on this metric too"
+        }
+      ],
+      "time": [
+        467819,
+        504030
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "진행자",
+      "text": "So, if you had to sum up today's market action in one sentence, what would it be?",
+      "sources": [],
+      "time": [
+        505030,
+        510921
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "해설자",
+      "text": "It was a day of growing uncertainty as hopes for rate cuts faded. Persistent concerns about a strong economy and sticky inflation are leading to a growing consensus that the Fed may keep rates higher for longer. As a result, the major indexes continued their decline for a fifth straight day, with sentiment turning particularly sour for tech stocks.",
+      "sources": [],
+      "time": [
+        511421,
+        532152
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "진행자",
+      "text": "As you mentioned, all eyes are on the Fed's next move. So, what are the key economic indicators we should be watching for next week?",
+      "sources": [],
+      "time": [
+        532652,
+        540903
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "해설자",
+      "text": "Yes, next week brings several important data points that could set the market's direction. First, we should pay attention to the S&P Global Composite PMI flash reading, which comes out on the 23rd. This report is an early look at activity in both the manufacturing and services sectors, so it provides a crucial, timely clue about the current strength of the U.S. economy.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399104",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-04-23"
+        }
+      ],
+      "time": [
+        541403,
+        562734
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "진행자",
+      "text": "So we'll get an early read on the economy from the PMI data. What should we be looking for after that?",
+      "sources": [],
+      "time": [
+        563234,
+        569685
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "해설자",
+      "text": "The most critical events are clustered at the end of the month. On the 30th, we'll get the advance estimate for first-quarter U.S. GDP growth, along with the Fed's preferred inflation gauge: the core Personal Consumption Expenditures, or PCE, price index. These two reports together will give us a snapshot of both economic growth and price pressures, making them decisive for predicting the Fed's next move on interest rates.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398995",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-04-30"
+        },
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "core pce price index mom",
+          "date": "2026-04-30"
+        }
+      ],
+      "time": [
+        570185,
+        592716
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "진행자",
+      "text": "So it all comes down to the economic data and how the Fed interprets it. Finally, what's the key takeaway for investors?",
+      "sources": [],
+      "time": [
+        593216,
+        601227
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "해설자",
+      "text": "That's right. For the time being, the market is likely to be driven more by macro data than by company-specific news. Therefore, rather than trying to call a bottom, a more prudent strategy would be to wait for next week's key economic reports to get a clearer sense of direction. It's worth keeping in mind that volatility could increase significantly, especially if the PCE inflation data comes in hotter than expected.",
+      "sources": [],
+      "time": [
+        601727,
+        626298
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "진행자",
+      "text": "A cautious approach is needed. Thank you for that insight. That wraps up our April 18th market close briefing. Thank you.",
+      "sources": [],
+      "time": [
+        626798,
+        635089
+      ]
+    }
+  ]
+}
