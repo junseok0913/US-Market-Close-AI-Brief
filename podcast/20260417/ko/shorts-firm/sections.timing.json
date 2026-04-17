@@ -1,0 +1,53 @@
+{
+  "date": "20260417",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260417.mp3",
+  "sectionOrder": [
+    "xom",
+    "cvx",
+    "nflx"
+  ],
+  "ttsCallCount": 3,
+  "totalDurationSeconds": 56.873,
+  "sections": [
+    {
+      "id": 0,
+      "name": "xom",
+      "ticker": "XOM",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 21.891,
+      "endSec": 21.891,
+      "speechDurationSec": 21.891,
+      "pauseAfterSec": 0.0,
+      "charCount": 189,
+      "text": "이란의 한마디에 국제 유가가 12% 폭락했습니다. 먼저 엑손모빌입니다. 오늘 3.65% 하락했습니다. 이란이 호르무즈 해협 통행을 전면 재개한다는 소식이 전해지자, 지정학적 리스크가 사라지며 국제 유가가 폭락한 것이 직격탄이 됐습니다. 유가 하락은 에너지 기업의 수익성 악화 우려로 곧바로 이어지며 주가에 강한 하방 압력으로 작용했습니다."
+    },
+    {
+      "id": 1,
+      "name": "cvx",
+      "ticker": "CVX",
+      "kind": "company",
+      "startSec": 21.891,
+      "speechEndSec": 32.942,
+      "endSec": 32.942,
+      "speechDurationSec": 11.051,
+      "pauseAfterSec": 0.0,
+      "charCount": 92,
+      "text": "대표적인 에너지 기업 셰브론 역시 2.21% 내렸습니다. 엑손모빌과 마찬가지로, 지정학적 리스크 완화에 따른 유가 급락의 영향을 직접적으로 받으며 동반 하락했습니다."
+    },
+    {
+      "id": 2,
+      "name": "nflx",
+      "ticker": "NFLX",
+      "kind": "company",
+      "startSec": 32.942,
+      "speechEndSec": 56.873,
+      "endSec": 56.873,
+      "speechDurationSec": 23.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 231,
+      "text": "넷플릭스는 실적 발표 충격 속에서 장을 마쳤습니다. 1분기 순이익이 83% 급증했지만, 여기엔 28억 달러의 일회성 수수료가 포함된 착시 효과가 있었습니다. 시장이 주목한 것은 판매관리비가 43%나 급증한 비용 문제와, 현금이 늘었음에도 자사주 매입을 오히려 줄인 경영진의 자신감 부재였습니다. 보유 현금보다 단기 계약 의무가 더 많은 재무 상황까지 알려지며 투자 심리가 위축됐습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

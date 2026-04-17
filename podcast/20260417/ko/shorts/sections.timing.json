@@ -1,0 +1,58 @@
+{
+  "date": "20260417",
+  "lang": "ko",
+  "audioFile": "shorts20260417.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 66.244,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 5.251,
+      "endSec": 5.251,
+      "speechDurationSec": 5.251,
+      "pauseAfterSec": 0.0,
+      "charCount": 43,
+      "text": "국제 유가가 하루 만에 10% 넘게 폭락하며 시장이 V자 반등에 성공했습니다."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 5.251,
+      "speechEndSec": 25.262,
+      "endSec": 25.262,
+      "speechDurationSec": 20.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 171,
+      "text": "4월 18일 미국 증시는 지정학적 긴장 완화에 힘입어 다우 1.79%, S&P 500 1.2%, 나스닥 1.52% 급등했습니다. 시장 한마디는 ‘지정학적 긴장 완화에 따른 위험자산 선호 심리 회복’입니다. 이번 상승은 반도체뿐 아니라 소프트웨어주까지 확산되며 시장의 저변이 넓어졌다는 점에서 의미가 큽니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 25.262,
+      "speechEndSec": 63.673,
+      "endSec": 63.673,
+      "speechDurationSec": 38.411,
+      "pauseAfterSec": 0.0,
+      "charCount": 351,
+      "text": "랠리의 기폭제는 이란이 호르무즈 해협 통행을 전면 재개한다는 소식이었습니다. 이 발표로 전쟁 프리미엄이 사라지며 서부 텍사스산 원유는 10% 넘게 폭락해 배럴당 82달러 아래로 밀렸고, 브렌트유도 90달러 선이 무너졌습니다. 유가 급락은 인플레이션 우려를 단숨에 잠재웠고, 10년물 국채금리까지 하락하며 주식과 채권 시장이 동시에 안도했습니다. 업종별 희비는 극명하게 엇갈렸습니다. 엑슨모빌, 셰브론 등 에너지주는 직격탄을 맞았지만, 비용 절감 기대감이 커진 항공주 ETF, JETS는 강하게 상승했습니다. 결국 시장은 유가 안정이 연준의 공격적인 금리 인상 사이클이 막바지에 이르렀다는 기대감을 키우며 강한 랠리를 보였습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 63.673,
+      "speechEndSec": 66.244,
+      "endSec": 66.244,
+      "speechDurationSec": 2.571,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}
