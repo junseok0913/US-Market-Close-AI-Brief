@@ -1,0 +1,58 @@
+{
+  "date": "20260420",
+  "lang": "ko",
+  "audioFile": "shorts20260420.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 64.404,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 3.731,
+      "endSec": 3.731,
+      "speechDurationSec": 3.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 29,
+      "text": "나스닥은 하락했는데, 왜 중소형주 지수는 올랐을까요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 3.731,
+      "speechEndSec": 18.862,
+      "endSec": 18.862,
+      "speechDurationSec": 15.131,
+      "pauseAfterSec": 0.0,
+      "charCount": 126,
+      "text": "4월 21일 미국 증시는 지정학적 리스크 부각에 따른 유가 급등으로 혼조세를 보였습니다. 다우는 보합, S&P 500은 0.24%, 나스닥은 0.26% 하락했지만, 중소형주 중심의 러셀 2000 지수는 0.58% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 18.862,
+      "speechEndSec": 62.673,
+      "endSec": 62.673,
+      "speechDurationSec": 43.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 404,
+      "text": "이 모든 혼란의 중심에는 유가가 있었습니다. 미 해군이 이란 선박을 나포하자, 이란이 세계 원유 수송량의 20%를 차지하는 호르무즈 해협 통제를 위협하면서 공급 차질 우려가 커졌습니다. 이 소식에 서부 텍사스산 원유는 장중 6% 넘게 폭등해 배럴당 89달러를 넘었고, 최종적으로 3.5% 급등 마감했습니다. 공포지수 VIX는 19선 후반까지 올랐습니다. 유가 급등은 인플레이션 우려를 다시 자극하며 기술주 중심의 나스닥과 금리에 민감한 유틸리티 섹터에 직격탄을 날렸습니다. 반면 에너지 섹터 ETF인 XLE는 1% 가까이 상승했고, 엑손모빌과 셰브론 같은 기업들의 주가가 오르면서 이들이 많이 포함된 러셀 2000 지수는 상승할 수 있었습니다. 여기에 3월 소매판매 지표마저 견조하게 나오면서 인플레이션 압력을 더했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 62.673,
+      "speechEndSec": 64.404,
+      "endSec": 64.404,
+      "speechDurationSec": 1.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

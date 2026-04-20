@@ -1,0 +1,223 @@
+{
+  "date": "20260421",
+  "lang": "ko",
+  "title": "유가 6% 폭등, 나스닥 하락 vs 중소형주 상승, 왜?",
+  "hook": "나스닥은 하락했는데, 왜 중소형주 지수는 올랐을까요.",
+  "durationSeconds": 64.404,
+  "audioFile": "shorts20260420.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.731,
+      "eyebrow": "4월 21일 마감",
+      "headline": "나스닥 하락 vs 중소형주 상승",
+      "subheadline": "엇갈린 시장, 그 이유는?",
+      "body": "나스닥은 하락했는데, 왜 중소형주 지수는 올랐을까요.",
+      "bullets": [
+        "나스닥은 하락했는데, 왜 중소형주 지수는 올랐을까요."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "^GSPC",
+        "^IXIC"
+      ],
+      "highlights": [
+        "64초"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "neutral",
+      "startSec": 3.731,
+      "endSec": 18.862,
+      "eyebrow": "주요 지수 현황",
+      "headline": "유가 급등 속 혼조세",
+      "subheadline": "나스닥 -0.26% | 러셀 2000 +0.58%",
+      "body": "미국 증시는 지정학적 리스크 부각에 따른 유가 급등으로 혼조세를 보였습니다.",
+      "bullets": [
+        "S&P 500: -0.24%",
+        "나스닥: -0.26%"
+      ],
+      "tickers": [
+        "^IXIC",
+        "^RUT",
+        "^GSPC",
+        "XOM"
+      ],
+      "highlights": [
+        "나스닥 -0.26%",
+        "러셀 2000 +0.58%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "macro",
+      "startSec": 18.862,
+      "endSec": 62.673,
+      "eyebrow": "시장 분석",
+      "headline": "유가 6% 폭등이 가른 희비",
+      "subheadline": "지정학적 리스크가 인플레이션 우려를 자극했습니다.",
+      "body": "이란의 호르무즈 해협 통제 위협으로 공급 차질 우려가 커지며 WTI 유가가 급등했습니다.",
+      "bullets": [
+        "유가 급등 → 기술주 하락",
+        "에너지 섹터 강세 → 중소형주 상승"
+      ],
+      "tickers": [
+        "CLF",
+        "XLE",
+        "XOM",
+        "CVX"
+      ],
+      "highlights": [
+        "WTI 유가 장중 6%↑",
+        "VIX 19 후반"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 62.673,
+      "endSec": 64.404,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "다음 마감 시황도 유익한 정보로 찾아오겠습니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "XOM",
+        "CVX",
+        "^GSPC",
+        "^IXIC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.731,
+      "text": "나스닥은 하락했는데, 왜 중소형주 지수는 올랐을까요."
+    },
+    {
+      "id": 1,
+      "startSec": 3.731,
+      "endSec": 18.862,
+      "text": "4월 21일 미국 증시는 지정학적 리스크 부각에 따른 유가 급등으로 혼조세를 보였습니다. 다우는 보합, S&P 500은 0.24%, 나스닥은 0.26% 하락했지만, 중소형주 중심의 러셀 2000 지수는 0.58% 상승했습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 18.862,
+      "endSec": 62.673,
+      "text": "이 모든 혼란의 중심에는 유가가 있었습니다. 미 해군이 이란 선박을 나포하자, 이란이 세계 원유 수송량의 20%를 차지하는 호르무즈 해협 통제를 위협하면서 공급 차질 우려가 커졌습니다. 이 소식에 서부 텍사스산 원유는 장중 6% 넘게 폭등해 배럴당 89달러를 넘었고, 최종적으로 3.5…"
+    },
+    {
+      "id": 3,
+      "startSec": 62.673,
+      "endSec": 64.404,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-20"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-20"
+    },
+    {
+      "type": "chart",
+      "label": "^RUT",
+      "detail": "2026-04-20"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-20"
+    },
+    {
+      "type": "article",
+      "label": "Oil surges back up as Iran says Strait of Hormuz is clo…",
+      "detail": "id#46cfb068cc00fb53"
+    },
+    {
+      "type": "article",
+      "label": "Oil prices rise 6% on fears of US-Iran ceasefire collap…",
+      "detail": "id#da593c64843286a4"
+    },
+    {
+      "type": "chart",
+      "label": "^VIX",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "chart",
+      "label": "XOM",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "chart",
+      "label": "CVX",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "event",
+      "label": "Retail Sales MoM",
+      "detail": "2026-04-21"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "지정학적 리스크로 유가 3.5% 급등",
+      "S&P 500, 나스닥 하락 속 러셀 2000 상승",
+      "에너지 섹터 강세, 기술주 약세 등 섹터별 차별화",
+      "견조한 소매판매 지표가 인플레이션 우려 가중"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "XOM",
+        "label": "엑손모빌",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "CVX",
+        "label": "셰브론",
+        "tag": "유가 급등 수혜"
+      },
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "섹터 강세"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
