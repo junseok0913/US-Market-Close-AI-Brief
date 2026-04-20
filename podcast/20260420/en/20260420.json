@@ -1,0 +1,692 @@
+{
+  "date": "20260420",
+  "nutshell": "Oil prices surge on geopolitical risks, leading to a mixed market.",
+  "user_tickers": [
+    "BSX"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 21st closing bell briefing. It was a tough day to find direction in the market, with the major indices ending mixed.",
+      "sources": [],
+      "time": [
+        0,
+        8771
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right, today's session can be summed up by a surge in oil prices due to geopolitical risks, which led to a mixed market. The Dow Jones Industrial Average was nearly flat, while the S&P 500 and the Nasdaq Composite slipped slightly, down 0.24% and 0.26% respectively. On the other hand, the small-cap focused Russell 2000 showed a different picture, gaining 0.58%. But the biggest move of the day was definitely in the oil market, where West Texas Intermediate crude jumped nearly 3.5% to close in the high $86-a-barrel range.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        }
+      ],
+      "time": [
+        9271,
+        44362
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "It seems that surge in oil really impacted the market. So why did large-cap and tech stocks fall while small-caps managed to rise?",
+      "sources": [],
+      "time": [
+        44862,
+        53913
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Yes, that oil spike is exactly what drove the divergence between the indices. News over the weekend that the U.S. seized an Iranian vessel reignited tensions around the Strait of Hormuz, and that's what pushed oil prices higher. The rise in oil stoked inflation fears again, which put pressure on growth stocks like tech. However, energy companies, which have a relatively heavy weighting in the Russell 2000, benefited from the higher oil prices, and their stock gains helped lift that index. Ultimately, a single event was interpreted differently across sectors, creating this mixed market environment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46cfb068cc00fb53",
+          "title": "Oil surges back up as Iran says Strait of Hormuz is closed, US Navy seizes Iranian vessel"
+        }
+      ],
+      "time": [
+        54413,
+        86464
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. Could you break down the key factors that moved the market today in more detail?",
+      "sources": [],
+      "time": [
+        86964,
+        92015
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. We can really break it down into two main themes today. First, the impact of renewed geopolitical risk in the Middle East on oil and the broader market. And second, the clear sector rotation we saw amid that oil price surge. We'll analyze today's market through the lens of these two points.",
+      "sources": [],
+      "time": [
+        92515,
+        110606
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with that first point: the geopolitical risk in the Middle East. Tensions between Iran and the U.S. are escalating again, causing oil to spike. Can you give us more background on that?",
+      "sources": [],
+      "time": [
+        111606,
+        123497
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "The direct trigger was the news over the weekend that the U.S. Navy had seized an Iranian vessel. Iran immediately responded by threatening to control the Strait of Hormuz, a critical chokepoint for global oil transport, and fears of a supply disruption instantly swept through the market. On that news, WTI crude shot up over 6% at one point during the session, topping $89 a barrel, while Brent crude also surged, threatening the $97 level. The market's anxiety was clearly reflected in the VIX, the so-called 'fear index,' which climbed into the high 19s. We also saw a flight to safety, with the Dollar Index showing modest strength. Meanwhile, the oil spike fueled inflation worries, putting downward pressure on the S&P 500 and Nasdaq. The 10-year Treasury yield also fluctuated around the 4.25% level, reflecting the market's complex sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46cfb068cc00fb53",
+          "title": "Oil surges back up as Iran says Strait of Hormuz is closed, US Navy seizes Iranian vessel"
+        },
+        {
+          "type": "article",
+          "pk": "id#da593c64843286a4",
+          "title": "Oil prices rise 6% on fears of US-Iran ceasefire collapse"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        }
+      ],
+      "time": [
+        123997,
+        177928
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So tensions in one specific area, the Strait of Hormuz, really shook the entire global market. Why is this strait so important?",
+      "sources": [],
+      "time": [
+        178428,
+        188439
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "It's because the Strait of Hormuz is a strategic chokepoint where about 20% of the world's seaborne oil and a third of its liquefied natural gas, or LNG, passes through. If that strait were to be blockaded, it would cause massive disruptions to oil supply, and prices could skyrocket to uncontrollable levels. Those concerns were the driving force behind the rally in the energy sector today. The energy sector ETF, XLE, gained nearly 1% today, and shares of major energy companies like ExxonMobil and Chevron also saw strong gains, which helped limit the S&P 500's losses. Ultimately, the market is viewing this geopolitical risk not just as a simple oil price hike, but as a very serious variable that could reignite inflation across the global economy.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46cfb068cc00fb53",
+          "title": "Oil surges back up as Iran says Strait of Hormuz is closed, US Navy seizes Iranian vessel"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "XOM",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        },
+        {
+          "type": "chart",
+          "ticker": "CVX",
+          "start_date": "2026-04-21",
+          "end_date": "2026-04-21"
+        }
+      ],
+      "time": [
+        188939,
+        234270
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "With inflation concerns growing due to the oil spike, were there any economic data releases today?",
+      "sources": [],
+      "time": [
+        234770,
+        240661
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, as it happens, several retail sales indicators were released today, which added to the market's concerns. The March retail sales report released today showed a month-over-month increase, suggesting that consumer spending remains robust. While this can be seen as a positive sign of strong economic fundamentals, it also raised concerns that, combined with rising oil prices, it could further increase inflationary pressures. From the Fed's perspective, they're now facing two inflationary factors at once: strong consumption and an oil price shock from a supply-side disruption. The market was watching for any related comments in a scheduled speech by Fed Governor Christopher Waller today, but he refrained from making any direct remarks on monetary policy.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397925",
+          "title": "Retail Sales MoM",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "event",
+          "id": "398445",
+          "title": "Retail Sales Ex Autos MoM",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "event",
+          "id": "419883",
+          "title": "Fed Waller Speech",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "article",
+          "pk": "id#da593c64843286a4",
+          "title": "Oil prices rise 6% on fears of US-Iran ceasefire collapse"
+        }
+      ],
+      "time": [
+        241161,
+        281812
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "I see. So, what will the market be watching most closely going forward?",
+      "sources": [],
+      "time": [
+        282312,
+        287842
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "In the short term, the market will react sensitively to every single military action or diplomatic statement from the U.S. and Iran. Whether an actual oil supply disruption occurs will be the most critical variable determining the direction of oil prices. In this environment, investors will be looking to gauge the actual supply situation from the American Petroleum Institute's weekly crude inventory data tomorrow, and the official EIA data on Wednesday. Additionally, they'll be watching economic indicators later this week, like the S&P Global PMI flash readings, to see how rising oil prices are affecting business activity and consumer sentiment, searching for clues about the Fed's future policy path.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395589",
+          "title": "API Crude Oil Stock Change",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "event",
+          "id": "395602",
+          "title": "EIA Crude Oil Stocks Change",
+          "date": "2026-04-22"
+        },
+        {
+          "type": "event",
+          "id": "399104",
+          "title": "S&P Global Composite PMI Flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#46cfb068cc00fb53",
+          "title": "Oil surges back up as Iran says Strait of Hormuz is closed, US Navy seizes Iranian vessel"
+        }
+      ],
+      "time": [
+        288342,
+        325553
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right, we'll have to keep a close eye on the situation in the Middle East. Let's move on to our second topic. The oil spike wasn't bad news for all stocks; some sectors actually benefited. Let's dig into that.",
+      "sources": [],
+      "time": [
+        326053,
+        338184
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Yes, it was a classic case of market divergence. The energy sector, which is expected to be a direct beneficiary of the oil price surge, managed to close slightly higher despite the broader market decline. This was the key driver that allowed the Russell 2000, with its lower weighting in large-cap tech, to rally on its own. On the flip side, the tech sector took a direct hit from renewed inflation fears. That's because rising oil prices fuel concerns that the Fed will keep rates higher for longer, which weighs on the valuations of tech stocks that rely on future growth. The utilities sector, another classic interest-rate-sensitive group, also reflected these concerns, falling more than 0.8%. So, in response to a single variable—the oil shock from the Middle East—the market clearly picked winners and losers among the sectors.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#46cfb068cc00fb53",
+          "title": "Oil surges back up as Iran says Strait of Hormuz is closed, US Navy seizes Iranian vessel"
+        },
+        {
+          "type": "article",
+          "pk": "id#da593c64843286a4",
+          "title": "Oil prices rise 6% on fears of US-Iran ceasefire collapse"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        }
+      ],
+      "time": [
+        338684,
+        379335
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "So one event moved the market in such different ways. The contrast between tech and energy stocks was particularly stark.",
+      "sources": [],
+      "time": [
+        379835,
+        388086
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "That's exactly right. The rise in oil stoked inflation fears, pressuring rate-sensitive tech stocks, while translating directly into profits for energy companies.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^RUT",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLK",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLU",
+          "start_date": "2026-04-17",
+          "end_date": "2026-04-20"
+        }
+      ],
+      "time": [
+        388586,
+        397877
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "I see. So what should the market be paying attention to going forward?",
+      "sources": [],
+      "time": [
+        398377,
+        402948
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "In the short term, all eyes will inevitably turn back to the Middle East. The ceasefire deadline, which expires on Tuesday local time, is expected to be a major turning point. The direction of oil prices and the market will be determined by whether the second round of peace talks, expected to be held in Pakistan, actually happens and what the outcome is. If negotiations fail and the blockade of the Strait of Hormuz becomes prolonged, oil prices could face further upward pressure, weighing on the entire market. Beyond that, the market's focus will shift back to economic data. For instance, the retail sales figures released today will help us gauge how resilient U.S. consumption is amid high oil prices and inflationary pressures, which will also provide important clues for the Fed's future policy decisions.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#02474d26ec21f6aa",
+          "title": "Oil and Gas Jump After US Seizure of Iranian Ship Imperils Talks"
+        },
+        {
+          "type": "article",
+          "pk": "id#da593c64843286a4",
+          "title": "Oil prices rise 6% on fears of US-Iran ceasefire collapse"
+        },
+        {
+          "type": "event",
+          "id": "397925",
+          "title": "US Retail Sales MoM",
+          "date": "2026-04-21"
+        },
+        {
+          "type": "event",
+          "id": "398445",
+          "title": "US Retail Sales Ex Autos MoM",
+          "date": "2026-04-21"
+        }
+      ],
+      "time": [
+        403448,
+        447099
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the broad market trends. Now let's zoom in on some individual companies that made notable moves in this environment. First up is Boston Scientific. The stock fell more than 3% today to close around the $60 mark. It couldn't hold onto its early gains and slid throughout the day.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BSX",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        }
+      ],
+      "time": [
+        448099,
+        466590
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, it was a pretty significant drop. Right now, Boston Scientific is a company where two opposing forces are clashing: its growth potential and its financial risks. On one hand, it's showing powerful innovation, with its FARAPULSE system in the electrophysiology division recording explosive year-over-year revenue growth of 74.6%. So there's clearly a lot of optimism around the value and growth potential of this innovative technology.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BSX",
+          "form": "10-K",
+          "filed_date": "2026-02-17",
+          "accession_number": "0000885725-26-000010"
+        }
+      ],
+      "time": [
+        467090,
+        494861
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "With such strong growth drivers, a sharp drop like today's is hard to understand. What are the specific risks the market is worried about?",
+      "sources": [],
+      "time": [
+        495361,
+        504132
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "The market's concerns are focused on the financial burden from the company's aggressive M&A strategy. The key issue is the $14.5 billion acquisition of Penumbra. Once this acquisition is complete, its debt is estimated to surge from around $11.4 billion to roughly $22.4 billion. Additionally, the goodwill on its books will approach $30 billion, which means more than half of its total assets will be intangible assets based on future expectations. If it fails to generate synergies after the acquisition, it faces the potential risk of a massive goodwill write-down, which would directly erode shareholder value.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BSX",
+          "form": "10-K",
+          "filed_date": "2026-02-17",
+          "accession_number": "0000885725-26-000010"
+        }
+      ],
+      "time": [
+        504632,
+        543163
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "So the debt increase from the M&A is acting as a significant headwind. Are there any other risk factors besides the financial issues?",
+      "sources": [],
+      "time": [
+        543663,
+        552834
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "There's another structural vulnerability that's being pointed out, which is even more serious. It's the company's 'fully self-insured' policy for intellectual property, or IP, litigation, as stated in its own filings. This means that if they lose a related lawsuit, they have to pay massive damages directly from the company's cash, without any protection from an insurer. In fact, a recent case where a jury awarded $42 million to the University of Texas shows that this risk can become a reality. The concern that a single, unpredictable, large-scale loss could deliver a fatal blow to the company's cash flow seems to have dampened investor sentiment.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BSX",
+          "form": "10-K",
+          "filed_date": "2026-02-17",
+          "accession_number": "0000885725-26-000010"
+        }
+      ],
+      "time": [
+        553334,
+        591505
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "To sum up, it's a situation where explosive growth potential coexists with excessive debt and unpredictable legal risks.",
+      "sources": [],
+      "time": [
+        592005,
+        601016
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "That's right. Today's stock plunge is being interpreted as a signal that the market's perspective has shifted abruptly from 'optimism about growth' to 'fear of debt and litigation risk'. While the value of its innovative technology is clear, analysis suggests that the financial leverage and legal risks it's taking on to realize that value have crossed a dangerous threshold. There's a growing perception that the current stock price doesn't fully reflect these complex risks, and that the focus needs to be on managing visible risks rather than on potential growth.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BSX",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-20"
+        }
+      ],
+      "time": [
+        601516,
+        634127
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "It was a disappointing day for the market in many ways. Could you give us a quick wrap-up of today's trading?",
+      "sources": [],
+      "time": [
+        635127,
+        641298
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, the market couldn't hold onto its early gains today, with all three major indices closing lower. The selling pressure intensified into the close, with the Nasdaq dropping over 1%, and the S&P 500 and Dow couldn't escape the decline either. With investor sentiment weakening, the market seems to be grappling for direction, caught between corporate earnings season and hopes that the Fed's rate-hiking cycle is over. Ultimately, the market closed with a strong wait-and-see attitude, failing to establish a clear direction.",
+      "sources": [],
+      "time": [
+        641798,
+        671289
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "I see. With the market's direction so uncertain, upcoming economic data releases seem even more important. What should we be watching on the calendar?",
+      "sources": [],
+      "time": [
+        671789,
+        681680
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Exactly. The immediate focus should be on the S&P Global Purchasing Managers' Index, or PMI, flash readings, which are due out this Thursday, the 23rd local time. This index is based on surveys of purchasing managers, so it's considered a key leading indicator that gives us the earliest look at business conditions in the manufacturing and services sectors. The market is expecting the manufacturing PMI to come in at 52.5, slightly higher than the previous reading of 52.3. If that number comes in higher than expected, it could be interpreted as a positive sign that the economic expansion is continuing. But at the same time, it could also act as an inflationary pressure, potentially reinforcing the Fed's hawkish stance and increasing market volatility.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398123",
+          "title": "s&p global manufacturing pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "397888",
+          "title": "s&p global services pmi flash",
+          "date": "2026-04-23"
+        }
+      ],
+      "time": [
+        682180,
+        727911
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "This week's PMI data is important, but there are even bigger events waiting for us next week, right?",
+      "sources": [],
+      "time": [
+        728411,
+        734662
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "Yes, next week is shaping up to be the highlight of April. First, on the 29th, we have the Federal Open Market Committee, or FOMC, interest rate decision. The market has already priced in a rate hold, but all attention will be on the accompanying statement and the subsequent press conference for any hints about future rate policy. And then, on the very next day, the 30th, we get the Personal Consumption Expenditures, or PCE, price index, which is the Fed's preferred inflation gauge. These two events will be the most critical variables determining the market's direction going forward, so investors should pay close attention.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        },
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "core pce price index mom",
+          "date": "2026-04-30"
+        }
+      ],
+      "time": [
+        735162,
+        770693
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "It's going to be a really important week. Finally, do you have any closing thoughts for our listeners?",
+      "sources": [],
+      "time": [
+        771193,
+        778004
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "The market is in a tight tug-of-war between hopes that we're near the peak of the rate-hiking cycle and fears of a recession. In times like these, it's wise to avoid making hasty predictions and instead carefully check each upcoming economic data point and calmly observe the market's reaction. It's worth keeping in mind that volatility could increase, especially ahead of next week's FOMC meeting and PCE data release. A more conservative approach to the market may be prudent, rather than chasing rallies or panic selling.",
+      "sources": [],
+      "time": [
+        778504,
+        808514
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Thank you for your insights. That's all for our April 21st closing bell briefing. Thanks for listening.",
+      "sources": [],
+      "time": [
+        809014,
+        815945
+      ]
+    }
+  ]
+}
