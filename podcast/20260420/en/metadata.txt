@@ -1,0 +1,24 @@
+Title:
+2026.4.21 US Market Close | Oil surge on geopolitical risks drives mixed session
+
+Description:
+On April 21, the New York stock market closed mixed as a surge in oil prices, driven by heightened geopolitical risks in the Middle East, led to divergent performance across the major indices. The rise in oil reignited inflation concerns, weighing on technology stocks, while energy-related stocks rallied, highlighting a clear divergence among sectors.
+
+- Dow Jones: Nearly flat in a mixed session amid geopolitical risks and the oil price surge.
+- S&P 500: Down 0.24% on inflation fears fueled by rising oil prices.
+- Nasdaq: Dropped 0.26% as tech stocks weakened under the pressure of higher oil.
+- Russell 2000: Gained 0.58%, lifted by strong performance in energy companies.
+
+- Surging Oil Prices on Middle East Tensions: West Texas Intermediate (WTI) crude oil prices jumped nearly 3.5%, weighing on the market as escalating US-Iran tensions raised concerns about potential supply disruptions in the Strait of Hormuz.
+
+- Clear Sector Divergence: The energy sector benefited from the oil surge, posting strong gains. In contrast, technology stocks and interest-rate-sensitive sectors like utilities declined due to heightened inflation concerns, creating a mixed performance across industries.
+
+- Potential Risks for Boston Scientific: The company's stock fell as potential risks came into focus, including financial strain from aggressive M&A activity (with debt soaring to around $22.4 billion) and its 'fully self-insured' policy regarding intellectual property litigation.
+
+- Upcoming Economic Indicators: Market attention is now turning to key upcoming economic data, including the preliminary S&P Global PMI, the FOMC interest rate decision on April 29, and the Personal Consumption Expenditures (PCE) price index on April 30.
+
+- ExxonMobil (XOM), Chevron (CVX): Rallied, benefiting from the surge in oil prices.
+- Boston Scientific (BSX): Tumbled over 3% as concerns over financial burdens from M&A and litigation risks came to light.
+
+Keywords:
+미국주식,주식,재테크,시황,유가,인플레이션,지정학적리스크,나스닥,S&P500,에너지,기술주,보스턴사이언티픽,BSX
