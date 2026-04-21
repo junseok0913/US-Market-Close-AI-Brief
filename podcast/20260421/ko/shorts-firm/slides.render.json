@@ -1,0 +1,299 @@
+{
+  "date": "20260422",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 애플, 유나이티드헬스",
+  "hook": "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스.",
+  "durationSeconds": 79.684,
+  "audioFile": "shortsfirm20260421.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.04.22 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, 애플, 유나이티드헬스",
+      "subheadline": "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스.",
+      "body": "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스.",
+      "bullets": [
+        "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스."
+      ],
+      "tickers": [
+        "AAPL",
+        "UNH"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 3.0,
+      "endSec": 31.171,
+      "eyebrow": "PICK 1",
+      "headline": "AAPL",
+      "subheadline": "팀 쿡 CEO 사임 소식에 AI 전략 불확실성이 부각되며 하락",
+      "body": "하드웨어 전문가가 새 CEO로 선임되면서, AI 시대 성장 동력에 대한 우려가 커졌습니다.",
+      "bullets": [
+        "팀 쿡 CEO 사임 및 후임자 발표",
+        "하드웨어 전문가 CEO 선임",
+        "AI 전략 불확실성 부각"
+      ],
+      "tickers": [
+        "AAPL"
+      ],
+      "highlights": [
+        "-2.52%",
+        "+5.84%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 31.171,
+      "endSec": 59.102,
+      "eyebrow": "PICK 2",
+      "headline": "UNH",
+      "subheadline": "1분기 호실적에도 반독점 규제 리스크에 상승분 반납",
+      "body": "장 초반 급등했으나, 미 법무부의 반독점 조사 리스크가 부각되며 장기 불확실성이 커졌습니다.",
+      "bullets": [
+        "1분기 호실적 발표 및 가이던스 상향",
+        "반독점 조사 리스크 부각",
+        "장중 상승폭 대부분 반납"
+      ],
+      "tickers": [
+        "UNH"
+      ],
+      "highlights": [
+        "+6.96%",
+        "+28.37%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 59.102,
+      "endSec": 68.753,
+      "eyebrow": "PICK 3",
+      "headline": "MSFT",
+      "subheadline": "마찬가지로 규제 리스크에 직면한 빅테크",
+      "body": "빅테크 전반에 걸친 반독점 우려가 투자 심리에 영향을 미치는 모습입니다.",
+      "bullets": [
+        "빅테크 전반으로 확산되는 반독점 우려",
+        "규제 당국의 감시 강화"
+      ],
+      "tickers": [
+        "MSFT"
+      ],
+      "highlights": [
+        "+1.46%",
+        "+10.75%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 68.753,
+      "endSec": 76.684,
+      "eyebrow": "PICK 1",
+      "headline": "GOOGL",
+      "subheadline": "알파벳 역시 짓누르는 반독점 규제 우려",
+      "body": "빅테크를 향한 반독점 규제 압박이 투자 심리에 부담으로 작용하고 있습니다.",
+      "bullets": [
+        "빅테크 전반에 걸친 규제 리스크 확산",
+        "투자 심리에 부담으로 작용"
+      ],
+      "tickers": [
+        "GOOGL"
+      ],
+      "highlights": [
+        "-1.52%",
+        "+10.01%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 76.684,
+      "endSec": 79.684,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스."
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 31.171,
+      "text": "팀 쿡 CEO 사임 소식에 AI 전략 불확실성이 부각되며 하락"
+    },
+    {
+      "id": 2,
+      "startSec": 31.171,
+      "endSec": 59.102,
+      "text": "1분기 호실적에도 반독점 규제 리스크에 상승분 반납"
+    },
+    {
+      "id": 3,
+      "startSec": 59.102,
+      "endSec": 68.753,
+      "text": "마찬가지로 규제 리스크에 직면한 빅테크"
+    },
+    {
+      "id": 4,
+      "startSec": 68.753,
+      "endSec": 76.684,
+      "text": "알파벳 역시 짓누르는 반독점 규제 우려"
+    },
+    {
+      "id": 5,
+      "startSec": 76.684,
+      "endSec": 79.684,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "애플, 팀 쿡 CEO 사임 소식에 2.5% 이상 하락",
+      "차기 CEO가 하드웨어 전문가라는 점에 AI 전략 불확실성 부각",
+      "유나이티드헬스, 1분기 호실적에 장 초반 급등",
+      "미 법무부 반독점 조사 리스크 부각되며 상승분 대부분 반납"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "AAPL",
+        "label": "애플",
+        "tag": "약세"
+      },
+      {
+        "ticker": "UNH",
+        "label": "유나이티드헬스",
+        "tag": "상승"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "AAPL",
+        "name": "Apple Inc.",
+        "as_of": "2026-04-21",
+        "day_change_pct": -2.5196757637106715,
+        "day_change_display": "-2.52%",
+        "month_change_pct": 5.837213254571805,
+        "month_change_display": "+5.84%",
+        "market_cap": 3912147140608.0,
+        "market_cap_display": "$3.91T",
+        "pe_ratio": 33.73511,
+        "pe_ratio_display": "33.74",
+        "pbr": 44.37646,
+        "pbr_display": "44.38",
+        "roe": 152.02099,
+        "roe_display": "152.02%",
+        "reason": "팀 쿡 CEO의 사임 및 하드웨어 전문가인 존 터너스의 후임 지명 소식에, AI 시대에 대한 회사의 성장 전략 불확실성이 부각되며 주가가 하락했습니다.",
+        "spoken_text": "애플은 오늘 2.5% 넘게 하락했습니다. 장 마감 후 팀 쿡 CEO가 사임하고 하드웨어 엔지니어링 수석 부사장인 존 터너스가 뒤를 잇는다는 소식이 결정적이었습니다. 시장은 애플이 인공지능 전략의 중대한 기로에 선 상황에서, 하드웨어 전문가가 지휘봉을 잡게 된 점에 우려를 표했습니다. 마이크로소프트나 구글 같은 경쟁사들이 AI와 소프트웨어에 사활을 거는 반면, 애플의 미래 성장 동력에 대한 불확실성이 커졌다는 평가가 나오며 매도세가 집중됐습니다.",
+        "slide_points": [
+          "1일 -2.52% / 1개월 +5.84%",
+          "팀 쿡 CEO 사임 및 후임자 발표",
+          "하드웨어 전문가 CEO 선임에 AI 전략 불확실성 부각"
+        ],
+        "valuation_note": "시총 $3.91T, PER 33.74, PBR 44.38, ROE 152.02%",
+        "move_summary": "팀 쿡 CEO 사임 소식에 AI 전략 불확실성이 부각되며 하락"
+      },
+      {
+        "ticker": "UNH",
+        "name": "UnitedHealth Group Incorporated",
+        "as_of": "2026-04-21",
+        "day_change_pct": 6.9648812953234,
+        "day_change_display": "+6.96%",
+        "month_change_pct": 28.37055679916198,
+        "month_change_display": "+28.37%",
+        "market_cap": 314064928768.0,
+        "market_cap_display": "$314.06B",
+        "pe_ratio": 26.15344,
+        "pe_ratio_display": "26.15",
+        "pbr": 3.331055,
+        "pbr_display": "3.33",
+        "roe": 12.537999999999998,
+        "roe_display": "12.54%",
+        "reason": "1분기 실적이 예상을 상회하고 연간 가이던스를 상향 조정하며 장 초반 급등했으나, 미 법무부의 반독점 조사 리스크가 부각되면서 장기 불확실성 우려로 상승분을 대부분 반납했습니다.",
+        "spoken_text": "유나이티드헬스는 오늘 롤러코스터를 탔습니다. 장 초반에는 시장 예상을 뛰어넘는 1분기 실적과 연간 전망 상향에 7% 가까이 급등했습니다. 특히 헬스케어 서비스 부문인 '옵텀'의 성장이 돋보였죠. 하지만 주가는 상승분을 대부분 반납하며 마감했는데, 이는 미 법무부의 반독점 조사 리스크 때문입니다. 회사의 핵심 경쟁력인 보험과 서비스를 결합한 수직 통합 모델이 오히려 규제의 표적이 되면서, 장기적인 불확실성이 단기 호재를 압도한 모습입니다.",
+        "slide_points": [
+          "1일 +6.96% / 1개월 +28.37%",
+          "1분기 호실적 발표 및 가이던스 상향",
+          "반독점 조사 리스크 부각되며 장중 상승폭 반납"
+        ],
+        "valuation_note": "시총 $314.06B, PER 26.15, PBR 3.33, ROE 12.54%",
+        "move_summary": "1분기 호실적에도 반독점 규제 리스크에 상승분 반납"
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft Corporation",
+        "as_of": "2026-04-21",
+        "day_change_pct": 1.4566929536200313,
+        "day_change_display": "+1.46%",
+        "month_change_pct": 10.74673724859252,
+        "month_change_display": "+10.75%",
+        "market_cap": 3152517529600.0,
+        "market_cap_display": "$3.15T",
+        "pe_ratio": 26.5598,
+        "pe_ratio_display": "26.56",
+        "pbr": 8.061579,
+        "pbr_display": "8.06",
+        "roe": 34.390998,
+        "roe_display": "34.39%",
+        "reason": "맞습니다. 바로 그 점이 시장의 우려를 자아내는 핵심입니다.",
+        "spoken_text": "같은 맥락에서 마이크로소프트 역시 규제 당국의 감시를 받고 있습니다. 빅테크 전반에 걸친 반독점 우려가 투자 심리에 영향을 미치는 모습입니다.",
+        "slide_points": [
+          "1일 +1.46% / 1개월 +10.75%",
+          "시총 $3.15T, PER 26.56, PBR 8.06, ROE 34.39%",
+          "빅테크 전반으로 확산되는 반독점 우려"
+        ],
+        "valuation_note": "시총 $3.15T, PER 26.56, PBR 8.06, ROE 34.39%",
+        "move_summary": "마찬가지로 규제 리스크에 직면한 빅테크"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc.",
+        "as_of": "2026-04-21",
+        "day_change_pct": -1.5203617683191117,
+        "day_change_display": "-1.52%",
+        "month_change_pct": 10.007949159326902,
+        "month_change_display": "+10.01%",
+        "market_cap": 4019712425984.0,
+        "market_cap_display": "$4.02T",
+        "pe_ratio": 30.767593,
+        "pe_ratio_display": "30.77",
+        "pbr": 9.672809,
+        "pbr_display": "9.67",
+        "roe": 35.705003000000005,
+        "roe_display": "35.71%",
+        "reason": "맞습니다. 바로 그 점이 시장의 우려를 자아내는 핵심입니다.",
+        "spoken_text": "마찬가지로 알파벳도 빅테크를 향한 반독점 규제 압박에서 자유롭지 못한 모습입니다. 이러한 규제 리스크가 투자 심리에 부담으로 작용하고 있습니다.",
+        "slide_points": [
+          "1일 -1.52% / 1개월 +10.01%",
+          "시총 $4.02T, PER 30.77, PBR 9.67, ROE 35.71%",
+          "빅테크 전반에 걸친 규제 리스크 확산"
+        ],
+        "valuation_note": "시총 $4.02T, PER 30.77, PBR 9.67, ROE 35.71%",
+        "move_summary": "알파벳 역시 짓누르는 반독점 규제 우려"
+      }
+    ]
+  }
+}

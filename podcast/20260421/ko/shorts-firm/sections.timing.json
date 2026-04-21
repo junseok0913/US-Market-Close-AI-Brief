@@ -1,0 +1,67 @@
+{
+  "date": "20260421",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260421.mp3",
+  "sectionOrder": [
+    "aapl",
+    "unh",
+    "msft",
+    "googl"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 79.684,
+  "sections": [
+    {
+      "id": 0,
+      "name": "aapl",
+      "ticker": "AAPL",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 31.171,
+      "endSec": 31.171,
+      "speechDurationSec": 31.171,
+      "pauseAfterSec": 0.0,
+      "charCount": 294,
+      "text": "CEO 교체 소식에 급락한 애플, 그리고 호실적에도 웃지 못한 유나이티드헬스. 애플은 오늘 2.5% 넘게 하락했습니다. 장 마감 후 팀 쿡 CEO가 사임하고 하드웨어 엔지니어링 수석 부사장인 존 터너스가 뒤를 잇는다는 소식이 결정적이었습니다. 시장은 애플이 인공지능 전략의 중대한 기로에 선 상황에서, 하드웨어 전문가가 지휘봉을 잡게 된 점에 우려를 표했습니다. 마이크로소프트나 구글 같은 경쟁사들이 AI와 소프트웨어에 사활을 거는 반면, 애플의 미래 성장 동력에 대한 불확실성이 커졌다는 평가가 나오며 매도세가 집중됐습니다."
+    },
+    {
+      "id": 1,
+      "name": "unh",
+      "ticker": "UNH",
+      "kind": "company",
+      "startSec": 31.171,
+      "speechEndSec": 59.102,
+      "endSec": 59.102,
+      "speechDurationSec": 27.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 246,
+      "text": "유나이티드헬스는 오늘 롤러코스터를 탔습니다. 장 초반에는 시장 예상을 뛰어넘는 1분기 실적과 연간 전망 상향에 7% 가까이 급등했습니다. 특히 헬스케어 서비스 부문인 '옵텀'의 성장이 돋보였죠. 하지만 주가는 상승분을 대부분 반납하며 마감했는데, 이는 미 법무부의 반독점 조사 리스크 때문입니다. 회사의 핵심 경쟁력인 보험과 서비스를 결합한 수직 통합 모델이 오히려 규제의 표적이 되면서, 장기적인 불확실성이 단기 호재를 압도한 모습입니다."
+    },
+    {
+      "id": 2,
+      "name": "msft",
+      "ticker": "MSFT",
+      "kind": "company",
+      "startSec": 59.102,
+      "speechEndSec": 68.753,
+      "endSec": 68.753,
+      "speechDurationSec": 9.651,
+      "pauseAfterSec": 0.0,
+      "charCount": 79,
+      "text": "같은 맥락에서 마이크로소프트 역시 규제 당국의 감시를 받고 있습니다. 빅테크 전반에 걸친 반독점 우려가 투자 심리에 영향을 미치는 모습입니다."
+    },
+    {
+      "id": 3,
+      "name": "googl",
+      "ticker": "GOOGL",
+      "kind": "company",
+      "startSec": 68.753,
+      "speechEndSec": 79.684,
+      "endSec": 79.684,
+      "speechDurationSec": 10.931,
+      "pauseAfterSec": 0.0,
+      "charCount": 96,
+      "text": "마찬가지로 알파벳도 빅테크를 향한 반독점 규제 압박에서 자유롭지 못한 모습입니다. 이러한 규제 리스크가 투자 심리에 부담으로 작용하고 있습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "date": "20260422",
+  "lang": "ko",
+  "title": "애플 CEO 사임 쇼크, 유가 급등까지... 증시 하락의 두 가지 이유",
+  "hook": "애플 팀 쿡 CEO가 전격 사임하면서 주가가 2.5% 넘게 급락했습니다.",
+  "durationSeconds": 64.364,
+  "audioFile": "shorts20260421.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "alert",
+      "startSec": 0.0,
+      "endSec": 5.131,
+      "eyebrow": "시장 쇼크",
+      "headline": "애플 CEO 전격 사임",
+      "subheadline": "AAPL 주가 2.5% 넘게 급락",
+      "body": "애플 팀 쿡 CEO가 전격 사임하면서 주가가 2.5% 넘게 급락했습니다.",
+      "bullets": [
+        "애플 팀 쿡 CEO가 전격 사임하면서 주가가 2.5% 넘게 급락했습니다."
+      ],
+      "tickers": [
+        "AAPL",
+        "XLE",
+        "JETS",
+        "^GSPC"
+      ],
+      "highlights": [
+        "AAPL -2.5%"
+      ]
+    },
+    {
+      "id": 1,
+      "phase": "market",
+      "theme": "bear",
+      "startSec": 5.131,
+      "endSec": 18.302,
+      "eyebrow": "4월 22일 마감",
+      "headline": "3대 지수 동반 하락",
+      "subheadline": "S&P 500 -0.63% | NASDAQ -0.59%",
+      "body": "애플 충격과 지정학적 리스크에 투자 심리가 위축되며 증시가 일제히 하락했습니다.",
+      "bullets": [
+        "4월 22일 미국 증시는 애플 충격과 지정학적 리스크에 투자심리가 위축되며 일제히 하락했습니다.",
+        "S&P 500은 0.63%, 나스닥은 0.59%, 다우존스 역시 0.59% 내렸습니다."
+      ],
+      "tickers": [
+        "^GSPC",
+        "^IXIC",
+        "^DJI",
+        "AAPL"
+      ],
+      "highlights": [
+        "S&P 500 -0.63%",
+        "NASDAQ -0.59%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 18.302,
+      "endSec": 62.473,
+      "eyebrow": "시장 분석",
+      "headline": "증시 하락의 두 가지 이유",
+      "subheadline": "애플 리더십 교체와 유가 급등",
+      "body": "시장을 뒤흔든 가장 큰 요인은 애플의 리더십 교체였습니다. 팀 쿡 CEO의 갑작스러운 사임 소식에 애플 주가는 2.5% 넘게 하락하며 기술주 전반을 끌어내렸습니다. 특히 후임자가 하드웨어 전문가로 알려지면서, 인공지능 시대에 애플의 미래 성장 동력에 대한 불확실성이 커졌습니다. 여기에 지정학적 리스크가 유가를 끌어올리며 시장에 부담을 더했습니다. 러시아의 원유 생산 감축 소식에 서부 텍사스산 원유 가격은 1.3% 넘게 급등해…",
+      "bullets": [
+        "애플 CEO 사임, 기술주 불확실성 증폭",
+        "유가 급등, 인플레이션 우려 자극"
+      ],
+      "tickers": [
+        "AAPL",
+        "CLF",
+        "XLE",
+        "JETS"
+      ],
+      "highlights": []
+    },
+    {
+      "id": 3,
+      "phase": "finale",
+      "theme": "neutral",
+      "startSec": 62.473,
+      "endSec": 64.364,
+      "eyebrow": "마무리",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "매일 시장 마감 정보를 받아보세요.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [
+        "구독과 좋아요 부탁드립니다."
+      ],
+      "tickers": [
+        "AAPL",
+        "XLE",
+        "JETS",
+        "^GSPC"
+      ],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 5.131,
+      "text": "애플 팀 쿡 CEO가 전격 사임하면서 주가가 2.5% 넘게 급락했습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 5.131,
+      "endSec": 18.302,
+      "text": "4월 22일 미국 증시는 애플 충격과 지정학적 리스크에 투자심리가 위축되며 일제히 하락했습니다. S&P 500은 0.63%, 나스닥은 0.59%, 다우존스 역시 0.59% 내렸습니다."
+    },
+    {
+      "id": 2,
+      "startSec": 18.302,
+      "endSec": 62.473,
+      "text": "시장을 뒤흔든 가장 큰 요인은 애플의 리더십 교체였습니다. 팀 쿡 CEO의 갑작스러운 사임 소식에 애플 주가는 2.5% 넘게 하락하며 기술주 전반을 끌어내렸습니다. 특히 후임자가 하드웨어 전문가로 알려지면서, 인공지능 시대에 애플의 미래 성장 동력에 대한 불확실성이 커졌습니다. 여기에…"
+    },
+    {
+      "id": 3,
+      "startSec": 62.473,
+      "endSec": 64.364,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [
+    {
+      "type": "chart",
+      "label": "^GSPC",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "chart",
+      "label": "^IXIC",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "chart",
+      "label": "^DJI",
+      "detail": "2026-04-21"
+    },
+    {
+      "type": "article",
+      "label": "Tim Cook will step down as Apple CEO and hand reins ove…",
+      "detail": "id#fa0b97668e1efaa1"
+    },
+    {
+      "type": "chart",
+      "label": "AAPL",
+      "detail": "2026-04-22"
+    },
+    {
+      "type": "article",
+      "label": "Exclusive-Russia cuts oil output in April, sources say",
+      "detail": "id#8ab600b56dd4395a"
+    },
+    {
+      "type": "chart",
+      "label": "CL=F",
+      "detail": "2026-04-22"
+    },
+    {
+      "type": "chart",
+      "label": "^TNX",
+      "detail": "2026-04-22"
+    },
+    {
+      "type": "chart",
+      "label": "XLE",
+      "detail": "2026-04-22"
+    },
+    {
+      "type": "chart",
+      "label": "JETS",
+      "detail": "2026-04-22"
+    }
+  ],
+  "meta": {
+    "keyPoints": [
+      "3대 지수 동반 하락",
+      "애플 CEO 교체 소식에 주가 2.5% 이상 하락",
+      "지정학적 리스크로 유가 1.3% 이상 급등",
+      "에너지 섹터 강세, 항공주 약세"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "AAPL",
+        "label": "애플",
+        "tag": "CEO 사임 쇼크"
+      },
+      {
+        "ticker": "XLE",
+        "label": "에너지 섹터 ETF",
+        "tag": "유가 급등에 유일 강세"
+      },
+      {
+        "ticker": "JETS",
+        "label": "항공주 ETF",
+        "tag": "비용 압박 우려에 급락"
+      },
+      {
+        "ticker": "^GSPC",
+        "label": "",
+        "tag": ""
+      },
+      {
+        "ticker": "^IXIC",
+        "label": "",
+        "tag": ""
+      }
+    ],
+    "sceneCount": 4
+  }
+}
