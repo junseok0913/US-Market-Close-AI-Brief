@@ -1,0 +1,681 @@
+{
+  "date": "20260422",
+  "nutshell": "Tech stocks rally on easing geopolitical concerns and AI optimism.",
+  "user_tickers": [
+    "BKNG"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 19
+    },
+    {
+      "name": "ticker",
+      "start_id": 20,
+      "end_id": 27
+    },
+    {
+      "name": "closing",
+      "start_id": 28,
+      "end_id": 36
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "Here's your April 23rd market close briefing. After a two-day pullback, all three major indices finished with a strong rebound today.",
+      "sources": [],
+      "time": [
+        0,
+        8371
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. Today's market can really be summed up by a tech rally fueled by easing geopolitical concerns and renewed AI optimism. The Dow Jones Industrial Average gained 0.69%, and the S&P 500 rose 1.05%. The tech-heavy Nasdaq Composite led the charge, surging 1.64%. News that tensions with Iran might be de-escalating sent oil prices lower and broadly improved investor sentiment, while high hopes for strong AI demand once again drove buying in tech stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "article",
+          "pk": "id#eb68286ae7c55bb6",
+          "title": "Oil Falls After Iran Says It Received Sign US Will End Blockade"
+        }
+      ],
+      "time": [
+        8871,
+        41442
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "You mentioned tech led the way, but haven't there been some concerns recently about earnings from some of the big tech companies?",
+      "sources": [],
+      "time": [
+        41942,
+        49033
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "That's true. On an individual company level, earnings concerns definitely exist. But the market is focusing more on the massive paradigm shift of AI rather than the short-term performance of any single company. Following TSMC's positive earnings report last week, comments from Nvidia's CEO that the AI infrastructure build-out is just getting started are boosting confidence in long-term demand. This optimism is overshadowing some individual company weaknesses and has been the key driver lifting sentiment across the board for tech, including semiconductor stocks.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#5682b8f055f79e89",
+          "title": "One new clue that Nvidia's Jensen Huang and TSMC are right about AI demand strength"
+        }
+      ],
+      "time": [
+        49533,
+        83024
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "I see. So, could you summarize the key drivers that moved the market today?",
+      "sources": [],
+      "time": [
+        83524,
+        88455
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Yes, two main factors drove today's strong rebound: a recovery in investor sentiment due to easing geopolitical risk, and a rally in tech stocks as strong growth expectations for the AI industry came back into focus.",
+      "sources": [],
+      "time": [
+        88955,
+        102206
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with the easing geopolitical risk. You mentioned that lower oil prices and improved sentiment were tied to de-escalating tensions with Iran.",
+      "sources": [],
+      "time": [
+        103206,
+        113697
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Exactly. The key factor was the significant easing of fears of a full-blown conflict in the Middle East, which had been weighing on the market for weeks. When Iran announced it had received a signal from the U.S. about ending the blockade, it opened the door for renewed negotiations, immediately reversing the market's risk-off sentiment. Oil prices reacted instantly, turning lower, which in turn led to hopes of easing inflationary pressures. As a result, we saw a strong tech-led rebound, with the S&P 500 and Nasdaq climbing over 1% and 1.6%, respectively. The VIX, the market's fear gauge, also dropped sharply, and the appeal of safe-haven assets like the U.S. dollar and gold weakened. It was a classic risk-on day, with investors returning to riskier assets out of relief that a worst-case scenario had been avoided.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#eb68286ae7c55bb6",
+          "title": "Oil Falls After Iran Says It Received Sign US Will End Blockade"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^VIX",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "399104",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-04-23"
+        }
+      ],
+      "time": [
+        114197,
+        165488
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "So the drop in oil prices had a crucial impact on market sentiment. What was the specific backdrop for that decline?",
+      "sources": [],
+      "time": [
+        165988,
+        173919
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "Well, until recently, oil prices had a significant geopolitical risk premium baked in, specifically the possibility of a blockade of the Strait of Hormuz. The fear that this chokepoint, which handles about 20% of the world's oil transport, could be closed was a factor threatening to push oil towards $100 a barrel. But with Iran signaling a willingness to talk, the market concluded that the probability of a worst-case supply chain scenario has decreased. This shift in sentiment stripped away the geopolitical froth from oil prices, leading to the drop. Of course, some are still cautious, pointing out that a full resolution is a long way off and that the resulting cost increases will still be a burden for many industries.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#eb68286ae7c55bb6",
+          "title": "Oil Falls After Iran Says It Received Sign US Will End Blockade"
+        },
+        {
+          "type": "article",
+          "pk": "id#fdfa6e7cdbc6c119",
+          "title": "Explainer-How the Iran war oil and gas supply shock compares with past disruptions"
+        },
+        {
+          "type": "article",
+          "pk": "id#05219d7744da2cb2",
+          "title": "From paint to planes, Iran war lifts costs, darkens outlooks"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        }
+      ],
+      "time": [
+        174419,
+        219030
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "Besides the geopolitical factors, did today's economic data have any impact?",
+      "sources": [],
+      "time": [
+        219530,
+        224901
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "We did get the flash PMI, or Purchasing Managers' Index, from S&P Global today. It's an important indicator for gauging activity in the manufacturing and services sectors. Ultimately, though, it wasn't enough to derail the overall risk-on mood. Instead, investors seemed to focus on the bigger story of easing Middle East tensions rather than the immediate economic numbers. This shows that the market's attention is fixed on the resolution of the biggest uncertainty that had been suppressing stocks, rather than on minor shifts in macro data. The reduction in war risk, which could have directly hit inflation and supply chains, was seen as such a positive that it overshadowed everything else.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "399104",
+          "title": "s&p global composite pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "398123",
+          "title": "s&p global manufacturing pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "397888",
+          "title": "s&p global services pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        }
+      ],
+      "time": [
+        225401,
+        265652
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, do you think this relief rally can continue?",
+      "sources": [],
+      "time": [
+        266152,
+        269682
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "It's too early to say for sure. While the market clearly bounced back strongly today on relief that the worst was avoided, the geopolitical uncertainty in the Middle East hasn't completely disappeared. Plus, the market's focus will quickly shift back to its usual concerns: the Fed's monetary policy and corporate earnings. With the FOMC meeting and major big tech earnings reports scheduled for next week, investors will likely be looking for more direction from those events. Today's rebound has the feel of a technical bounce as excessive fears normalize, so for it to become a sustained uptrend, it will ultimately need to be backed by fundamentals.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#05219d7744da2cb2",
+          "title": "From paint to planes, Iran war lifts costs, darkens outlooks"
+        },
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        },
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "core pce price index mom",
+          "date": "2026-04-30"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        }
+      ],
+      "time": [
+        270182,
+        308353
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Speaking of fundamentals, the other key driver you mentioned was the optimism around AI growth. Despite some concerns about big tech earnings, why is the market refocusing on the AI growth story?",
+      "sources": [],
+      "time": [
+        308853,
+        321384
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "Right, it seems the market's focus has shifted back from short-term earnings volatility to the fundamental nature of the massive AI paradigm shift. While the Nasdaq gained 1.64% and the S&P 500 rose 1.05% today, the strength in the semiconductor sector was particularly notable. The semiconductor ETF, SMH, jumped over 2.6%, significantly outperforming the broader market. This was driven by TSMC's positive outlook on AI demand last week, and powerfully reinforced by Nvidia CEO Jensen Huang, who recently declared in a blog post that the current AI infrastructure build-out, valued in the hundreds of billions, is just the beginning of what will be the largest infrastructure build in human history, eventually reaching trillions of dollars. Investment banks like Barclays are also adding to this narrative, analyzing that the opportunities created by AI investment—spanning computing, software, data, infrastructure, and even energy—outweigh the risks, expanding the entire market pie.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMH",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "article",
+          "pk": "id#5682b8f055f79e89",
+          "title": "One new clue that Nvidia's Jensen Huang and TSMC are right about AI demand strength"
+        },
+        {
+          "type": "chart",
+          "ticker": "TSM",
+          "start_date": "2026-04-15",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        }
+      ],
+      "time": [
+        321884,
+        382855
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "The largest infrastructure build in human history—that's a pretty powerful statement. Are there any other signs of this massive shift, beyond just chips and servers?",
+      "sources": [],
+      "time": [
+        383355,
+        393846
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Interestingly, a strong signal is coming from a completely unexpected place: the elevator manufacturer Otis. Otis recently reported very strong demand for new elevators specifically designed for AI data centers and semiconductor plants. These elevators are specially engineered to handle loads of up to 20,000 pounds to move heavy, expensive equipment like server racks, and they naturally come at a much higher price point. This is clear evidence that AI infrastructure investment is extending beyond big tech companies like Nvidia and Amazon and is actually changing product demand for traditional industrial companies. As these ripple effects of the AI revolution become more visible across the economy, investors are gaining more confidence in the overarching trend itself, rather than getting bogged down by any single company's quarterly earnings.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#5682b8f055f79e89",
+          "title": "One new clue that Nvidia's Jensen Huang and TSMC are right about AI demand strength"
+        },
+        {
+          "type": "chart",
+          "ticker": "OTIS",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "NVDA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "AMZN",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        }
+      ],
+      "time": [
+        394346,
+        445317
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "The link between elevators and AI is a really fascinating insight. So, do you expect this sentiment to continue?",
+      "sources": [],
+      "time": [
+        445817,
+        452508
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "The market is viewing this AI investment not as a simple tech fad, but as a multi-year infrastructure investment cycle comparable to the advent of the internet or cloud computing. The prevailing view, as echoed by Barclays' analysis, is that the scale of the opportunity created by AI will overwhelm any short-term risk factors. Of course, this week's big tech earnings reports could increase short-term stock volatility, but as long as companies' massive capital expenditure plans for building out AI infrastructure remain intact, the market's positive view on tech stocks is unlikely to falter. Today's strong rebound in the Nasdaq and the semiconductor sector is proof that the market's faith in this long-term growth story remains solid.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#5682b8f055f79e89",
+          "title": "One new clue that Nvidia's Jensen Huang and TSMC are right about AI demand strength"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "chart",
+          "ticker": "SMH",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        },
+        {
+          "type": "event",
+          "id": "418453",
+          "title": "CB Consumer Confidence",
+          "date": "2026-04-28"
+        }
+      ],
+      "time": [
+        453008,
+        492219
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "Okay, so while the overall market mood was positive, some stocks moved against the trend. Booking Holdings stood out today with a sharp drop of nearly 6%. Was there any specific bad news?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BKNG",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        }
+      ],
+      "time": [
+        493219,
+        505510
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "Yes, today's drop in Booking Holdings was accompanied by trading volume nearly double the average, which suggests it's more than just market noise. While there was no new negative headline, the analysis points to the market's focus shifting towards regulatory risk, specifically the EU's Digital Markets Act, or DMA. The company has already been hit with a 485 million euro fine from Spanish competition authorities, and this is being seen not just as a one-time cost, but as a signal that Booking's core business model is facing a structural challenge across Europe. It appears investors are starting to weigh the uncertainty of regulation more heavily than the company's strong fundamentals.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ],
+      "time": [
+        506010,
+        547301
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Regulatory risk is definitely a concern, but Booking Holdings generates a massive $9.4 billion in annual operating cash flow. Wouldn't that kind of cash generation be more than enough to cover the fines?",
+      "sources": [],
+      "time": [
+        547801,
+        562492
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "That's the core of the debate right there. As you said, $9.4 billion in cash flow is certainly enough to handle short-term fines. But what the market is worried about isn't the one-time penalty; it's the possibility that the DMA regulation could act like a permanent 'tax' on the business going forward. The goal of this regulation is to dismantle the dominant position of large platforms, or 'gatekeepers,' like Booking, and to promote competition. This could lead to long-term pressure on commission fees and a decline in profit margins, which is seen as a structural change that could permanently impair the company's intrinsic value. So, the recent stock decline can be interpreted as the market starting to price in this potential for long-term erosion of profitability.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ],
+      "time": [
+        562992,
+        604963
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "I see. So what about the company's 'Connected Trip' strategy, which it's touting as a future growth driver? Can that still be effective in this regulatory environment?",
+      "sources": [],
+      "time": [
+        605463,
+        616994
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "Actually, the risk is deepening because that 'Connected Trip' vision could become a prime target of the regulation. The strategy, which uses AI to bundle and recommend flights, accommodations, and activities, inevitably has the potential to favor its own services or use data exclusively—actions that are strictly prohibited by the DMA. In other words, its most important engine for future growth is on a collision course with a regulatory wall. On top of that, it's worth noting that the company recently disclosed a $457 million impairment charge related to the goodwill of its subsidiary, Kayak. This suggests deteriorating marketing efficiency due to intensified competition and could also be interpreted as a sign that its past successful growth strategy through acquisitions is reaching its limits.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "BKNG",
+          "form": "10-K",
+          "filed_date": "2026-02-18",
+          "accession_number": "0001075531-26-000009"
+        }
+      ],
+      "time": [
+        617494,
+        665225
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "So to sum up, despite strong cash flow, the concern is that regulatory risk could suppress future growth, and that's being reflected in the stock price.",
+      "sources": [],
+      "time": [
+        665725,
+        676056
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "Yes, that's exactly right. It seems we're in the early stages of a shift in the market's dominant perception of the company—from a 'disruptive innovator powered by AI' to a 'mature company constrained by regulation.' In the past, its overwhelming market dominance and cash generation were attractive investment points, but now there's a growing awareness that this very dominance could become a regulatory liability. Therefore, today's stock drop is being seen less as a simple overreaction and more as the potential start of a rational process where Booking's long-term growth rate and profitability are being re-evaluated under a new regulatory regime. It appears to be a time when managing this clear and growing risk is becoming necessary.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "BKNG",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-22"
+        }
+      ],
+      "time": [
+        676556,
+        721287
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "To wrap up today's market, we saw a mixed close as optimism for big tech earnings was offset by weak manufacturing data. Looking ahead, what are the key economic events we should be watching?",
+      "sources": [],
+      "time": [
+        722287,
+        734458
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Yes, this week is packed with very important data releases that will give us a sense of the economy's direction. Investors' attention will be focused on the Fed's interest rate decision on the 29th, the first-quarter GDP growth rate on the 30th, and, most importantly, the Fed's preferred inflation gauge, the Personal Consumption Expenditures, or PCE, price index. Since today's PMI data signaled a slowdown, the GDP numbers will help confirm the actual strength of the economy, while the PCE inflation data will provide crucial clues about the Fed's future policy path.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398995",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-04-30"
+        }
+      ],
+      "time": [
+        734958,
+        773489
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "The PCE price index is known as the most important indicator for the timing of the Fed's rate cuts. What will the market be watching most closely in this report?",
+      "sources": [],
+      "time": [
+        773989,
+        783640
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "The market will be focused on the month-over-month increase in the core PCE price index, which excludes volatile food and energy prices. This is because recent CPI reports have consistently come in hotter than expected, raising concerns that inflation is becoming sticky again. If the core PCE number released on the 30th also comes in high, it will strengthen the case for the Fed to delay rate cuts until the second half of the year, or possibly even into next year. That could put renewed pressure on Treasury yields and weigh on growth stocks, potentially having a major impact on the entire market.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "core pce price index mom",
+          "date": "2026-04-30"
+        }
+      ],
+      "time": [
+        784140,
+        817311
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "And before the PCE release, we also have the Fed's policy meeting, right?",
+      "sources": [],
+      "time": [
+        817811,
+        823062
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's right, the FOMC's rate decision is on the 29th. While it's a foregone conclusion that they'll hold rates steady at this meeting, all eyes will be on Chairman Jerome Powell's press conference afterward. The key will be his diagnosis of the economy, caught between the recent sticky inflation data and today's signs of a slowdown. The market could move significantly depending on whether he maintains his previous stance on the path of future rate cuts or adopts a more cautious tone, so investors will need to pay close attention.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        }
+      ],
+      "time": [
+        823562,
+        853093
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "So, it seems the economic data and the Fed's message later this week will determine the market's short-term direction. Thanks for the detailed explanation today.",
+      "sources": [],
+      "time": [
+        853593,
+        862764
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Exactly. With these major economic events ahead, it's a time for prudence, calmly assessing the data as it's released and reacting to the market's response, rather than making bold directional bets. It's also important to remember that we're now entering the heart of big tech earnings season, starting with Tesla. If corporate earnings fail to meet the market's high expectations, the impact of these macroeconomic indicators could be amplified across the market.",
+      "sources": [],
+      "time": [
+        863264,
+        889274
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Alright, that's our market close briefing for April 23rd. Thank you.",
+      "sources": [],
+      "time": [
+        889774,
+        894625
+      ]
+    }
+  ]
+}
