@@ -1,0 +1,58 @@
+{
+  "date": "20260422",
+  "lang": "ko",
+  "audioFile": "shorts20260422.mp3",
+  "sectionOrder": [
+    "hook",
+    "data",
+    "story",
+    "closing"
+  ],
+  "totalDurationSeconds": 81.244,
+  "sections": [
+    {
+      "id": 0,
+      "name": "hook",
+      "startSec": 0.0,
+      "speechEndSec": 4.691,
+      "endSec": 4.691,
+      "speechDurationSec": 4.691,
+      "pauseAfterSec": 0.0,
+      "charCount": 41,
+      "text": "AI 때문에 엘리베이터 회사가 특수를 누리고 있다는 사실, 알고 계셨나요."
+    },
+    {
+      "id": 1,
+      "name": "data",
+      "startSec": 4.691,
+      "speechEndSec": 22.422,
+      "endSec": 22.422,
+      "speechDurationSec": 17.731,
+      "pauseAfterSec": 0.0,
+      "charCount": 146,
+      "text": "4월 23일 미국 증시는 이틀간의 조정을 끝내고 강하게 반등했습니다. 지정학적 우려 완화와 AI 기대감 속 기술주 랠리가 펼쳐졌는데요. 다우는 0.69%, S&P 500은 1.05% 상승했고, 특히 기술주 중심의 나스닥은 1.64% 급등하며 시장을 이끌었습니다."
+    },
+    {
+      "id": 2,
+      "name": "story",
+      "startSec": 22.422,
+      "speechEndSec": 79.233,
+      "endSec": 79.233,
+      "speechDurationSec": 56.811,
+      "pauseAfterSec": 0.0,
+      "charCount": 479,
+      "text": "시장을 짓누르던 중동의 전면전 우려가 크게 완화된 것이 결정적이었습니다. 이란이 미국으로부터 봉쇄 해제 신호를 받았다고 밝히면서 협상 가능성이 열렸고, 이에 국제 유가는 즉각 하락하며 인플레이션 우려를 덜어줬습니다. 투자자들은 최악의 시나리오를 피했다는 안도감에 위험자산으로 복귀하는 전형적인 리스크 온 장세가 펼쳐졌습니다. 시장의 또 다른 핵심 동력은 AI 성장 기대감이었습니다. 엔비디아의 젠슨 황 CEO는 AI 인프라 구축이 이제 시작이며, 앞으로 수조 달러 규모의 인류 역사상 가장 큰 인프라 구축이 될 것이라고 선언했습니다. 이 영향으로 반도체 ETF인 SMH는 2.6% 넘게 상승하며 시장 수익률을 크게 웃돌았습니다. 이 거대한 변화는 예상치 못한 곳에서도 확인됩니다. 엘리베이터 업체 오티스는 최대 2만 파운드의 서버 랙을 옮기는 데이터센터용 특수 엘리베이터 수요가 매우 강력하다고 밝히며 AI 혁명이 경제 전반에 미치는 파급력을 증명했습니다."
+    },
+    {
+      "id": 3,
+      "name": "closing",
+      "startSec": 79.233,
+      "speechEndSec": 81.244,
+      "endSec": 81.244,
+      "speechDurationSec": 2.011,
+      "pauseAfterSec": 0.0,
+      "charCount": 15,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

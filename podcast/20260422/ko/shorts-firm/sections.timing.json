@@ -1,0 +1,67 @@
+{
+  "date": "20260422",
+  "lang": "ko",
+  "audioFile": "shortsfirm20260422.mp3",
+  "sectionOrder": [
+    "nvda",
+    "otis",
+    "bkng",
+    "tsm"
+  ],
+  "ttsCallCount": 4,
+  "totalDurationSeconds": 88.084,
+  "sections": [
+    {
+      "id": 0,
+      "name": "nvda",
+      "ticker": "NVDA",
+      "kind": "company",
+      "startSec": 0.0,
+      "speechEndSec": 27.491,
+      "endSec": 27.491,
+      "speechDurationSec": 27.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 226,
+      "text": "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다. 엔비디아는 1.31% 상승했습니다. 젠슨 황 CEO가 AI 인프라 구축은 이제 시작이며, 인류 역사상 가장 큰 규모가 될 것이라고 선언한 점이 투자 심리를 강력하게 자극했습니다. 일부 기업의 단기 실적 우려를 잠재우고, AI라는 거대한 패러다임 변화에 대한 시장의 확신을 다시 한번 확인시켜주며 관련주 전반의 랠리를 이끌었습니다."
+    },
+    {
+      "id": 1,
+      "name": "otis",
+      "ticker": "OTIS",
+      "kind": "company",
+      "startSec": 27.491,
+      "speechEndSec": 51.142,
+      "endSec": 51.142,
+      "speechDurationSec": 23.651,
+      "pauseAfterSec": 0.0,
+      "charCount": 207,
+      "text": "AI 랠리의 파급력이 전통 산업까지 미치고 있습니다. 엘리베이터 제조사 오티스는 오늘 주가는 1.26% 내렸지만, AI 데이터센터와 반도체 공장에 들어갈 특수 엘리베이터 수요가 강력하다고 밝히며 AI 인프라 투자의 수혜주로 주목받았습니다. 무거운 서버 랙을 옮기기 위한 고가의 특수 제품 수요는 AI 투자가 전통 산업재 기업의 실적까지 바꿔놓고 있다는 명백한 증거입니다."
+    },
+    {
+      "id": 2,
+      "name": "bkng",
+      "ticker": "BKNG",
+      "kind": "company",
+      "startSec": 51.142,
+      "speechEndSec": 73.593,
+      "endSec": 73.593,
+      "speechDurationSec": 22.451,
+      "pauseAfterSec": 0.0,
+      "charCount": 197,
+      "text": "반면 부킹 홀딩스는 6% 급락했습니다. 유럽연합의 디지털 시장법, 즉 DMA 규제 리스크가 본격적으로 부각됐기 때문입니다. 시장은 이를 일회성 벌금이 아닌, 장기적으로 수수료 인하와 이익률 하락을 유발할 구조적 위협으로 보고 있습니다. 강력한 현금 창출 능력에도 불구하고, 미래 성장 동력마저 규제에 막힐 수 있다는 우려가 커지며 주가를 끌어내렸습니다."
+    },
+    {
+      "id": 3,
+      "name": "tsm",
+      "ticker": "TSM",
+      "kind": "company",
+      "startSec": 73.593,
+      "speechEndSec": 88.084,
+      "endSec": 88.084,
+      "speechDurationSec": 14.491,
+      "pauseAfterSec": 0.0,
+      "charCount": 119,
+      "text": "TSM은 AI 패러다임 전환의 핵심 수혜주로 다시 주목받으며 5% 넘게 상승했습니다. 시장이 단기 변동성보다 거대한 AI 성장성에 초점을 맞추면서 반도체 섹터 전반에 훈풍이 불었습니다. 구독과 좋아요 부탁드립니다."
+    }
+  ]
+}

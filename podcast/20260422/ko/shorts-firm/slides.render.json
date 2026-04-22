@@ -1,0 +1,304 @@
+{
+  "date": "20260423",
+  "lang": "ko",
+  "title": "미국장 핵심 기업 브리핑, 엔비디아, 오티스, 부킹 홀딩스",
+  "hook": "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다.",
+  "durationSeconds": 88.084,
+  "audioFile": "shortsfirm20260422.mp3",
+  "slides": [
+    {
+      "id": 0,
+      "phase": "hook",
+      "theme": "neutral",
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "eyebrow": "2026.04.23 Stock Picks",
+      "headline": "미국장 핵심 기업 브리핑, 엔비디아, 오티스, 부킹 홀딩스",
+      "subheadline": "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다.",
+      "body": "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다.",
+      "bullets": [
+        "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다."
+      ],
+      "tickers": [],
+      "highlights": []
+    },
+    {
+      "id": 1,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 3.0,
+      "endSec": 27.491,
+      "eyebrow": "PICK 1",
+      "headline": "NVDA",
+      "subheadline": "CEO의 강력한 AI 비전에 장기 성장 기대감 부각",
+      "body": "젠슨 황 CEO의 AI 인프라 구축 선언이 투자 심리를 자극하며 관련주 랠리를 이끌었습니다.",
+      "bullets": [
+        "CEO의 '인류 역사상 가장 큰 인프라 구축' 발언",
+        "AI 장기 성장 기대감에 기술주 랠리 주도"
+      ],
+      "tickers": [
+        "NVDA"
+      ],
+      "highlights": [
+        "+1.31%",
+        "+15.58%"
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "insight",
+      "theme": "neutral",
+      "startSec": 27.491,
+      "endSec": 51.142,
+      "eyebrow": "PICK 2",
+      "headline": "OTIS",
+      "subheadline": "AI 데이터센터용 특수 엘리베이터 수요 증가로 주목",
+      "body": "AI 데이터센터용 특수 엘리베이터 수요가 강력해 AI 인프라 투자의 숨은 수혜주로 부각되었습니다.",
+      "bullets": [
+        "AI 데이터센터용 특수 엘리베이터 수요 급증",
+        "AI 인프라 투자의 숨은 수혜주로 부각"
+      ],
+      "tickers": [
+        "OTIS"
+      ],
+      "highlights": [
+        "-1.26%",
+        "-0.14%"
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "insight",
+      "theme": "bear",
+      "startSec": 51.142,
+      "endSec": 73.593,
+      "eyebrow": "PICK 3",
+      "headline": "BKNG",
+      "subheadline": "EU 규제 리스크 부각에 장기 성장성 우려로 급락",
+      "body": "EU의 디지털 시장법(DMA) 규제가 장기 수익성 훼손 우려로 번지며 주가를 끌어내렸습니다.",
+      "bullets": [
+        "EU 디지털시장법(DMA) 규제 리스크 부각",
+        "장기 수익성 및 성장성 훼손 우려 확산"
+      ],
+      "tickers": [
+        "BKNG"
+      ],
+      "highlights": [
+        "-6.00%",
+        "+4.53%"
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "insight",
+      "theme": "bull",
+      "startSec": 73.593,
+      "endSec": 85.084,
+      "eyebrow": "PICK 1",
+      "headline": "TSM",
+      "subheadline": "AI 패러다임 전환 기대감에 반도체주 동반 강세",
+      "body": "시장이 단기 변동성보다 거대한 AI 성장성에 초점을 맞추면서 반도체 섹터 전반에 훈풍이 불었습니다.",
+      "bullets": [
+        "AI 성장성에 다시 집중하는 시장",
+        "반도체 섹터 전반에 훈풍"
+      ],
+      "tickers": [
+        "TSM"
+      ],
+      "highlights": [
+        "+5.26%",
+        "+12.87%"
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "finale",
+      "theme": "flash",
+      "startSec": 85.084,
+      "endSec": 88.084,
+      "eyebrow": "Wrap Up",
+      "headline": "구독과 좋아요 부탁드립니다.",
+      "subheadline": "구독과 좋아요 부탁드립니다.",
+      "body": "구독과 좋아요 부탁드립니다.",
+      "bullets": [],
+      "tickers": [],
+      "highlights": []
+    }
+  ],
+  "captions": [
+    {
+      "id": 0,
+      "startSec": 0.0,
+      "endSec": 3.0,
+      "text": "AI는 엘리베이터까지 끌어올렸지만, 규제는 여행 공룡의 발목을 잡았습니다."
+    },
+    {
+      "id": 1,
+      "startSec": 3.0,
+      "endSec": 27.491,
+      "text": "CEO의 강력한 AI 비전에 장기 성장 기대감 부각"
+    },
+    {
+      "id": 2,
+      "startSec": 27.491,
+      "endSec": 51.142,
+      "text": "AI 데이터센터용 특수 엘리베이터 수요 증가로 주목"
+    },
+    {
+      "id": 3,
+      "startSec": 51.142,
+      "endSec": 73.593,
+      "text": "EU 규제 리스크 부각에 장기 성장성 우려로 급락"
+    },
+    {
+      "id": 4,
+      "startSec": 73.593,
+      "endSec": 85.084,
+      "text": "AI 패러다임 전환 기대감에 반도체주 동반 강세"
+    },
+    {
+      "id": 5,
+      "startSec": 85.084,
+      "endSec": 88.084,
+      "text": "구독과 좋아요 부탁드립니다."
+    }
+  ],
+  "sourceDigest": [],
+  "meta": {
+    "keyPoints": [
+      "엔비디아: CEO의 강력한 AI 비전 제시로 장기 성장 기대감 부각되며 상승",
+      "오티스: AI 데이터센터용 특수 엘리베이터 수요 증가 소식으로 AI 인프라 투자의 숨은 수혜주로 주목",
+      "부킹 홀딩스: EU의 디지털 시장법(DMA) 규제 리스크가 장기 수익성 훼손 우려로 번지며 급락",
+      "TSM: AI 패러다임 전환 기대감에 반도체주 동반 강세"
+    ],
+    "featuredTickers": [
+      {
+        "ticker": "NVDA",
+        "label": "엔비디아",
+        "tag": "상승"
+      },
+      {
+        "ticker": "OTIS",
+        "label": "오티스",
+        "tag": "하락"
+      },
+      {
+        "ticker": "BKNG",
+        "label": "부킹 홀딩스",
+        "tag": "급락"
+      },
+      {
+        "ticker": "TSM",
+        "label": "TSM",
+        "tag": "상승"
+      }
+    ],
+    "sceneCount": 6,
+    "companyMoves": [
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA Corporation",
+        "as_of": "2026-04-22",
+        "day_change_pct": 1.3107839969903834,
+        "day_change_display": "+1.31%",
+        "month_change_pct": 15.582193794114518,
+        "month_change_display": "+15.58%",
+        "market_cap": 4921762512896.0,
+        "market_cap_display": "$4.92T",
+        "pe_ratio": 41.32653,
+        "pe_ratio_display": "41.33",
+        "pbr": 31.288628,
+        "pbr_display": "31.29",
+        "roe": 101.485,
+        "roe_display": "101.48%",
+        "reason": "엔비디아 최고경영자가 AI 인프라 구축이 이제 시작 단계에 불과하며 인류 역사상 가장 큰 인프라 구축이 될 것이라고 언급하며 장기적인 수요에 대한 확신을 키웠습니다. 이는 기술주 전반의 투자 심리를 끌어올리는 핵심 동력으로 작용했습니다.",
+        "spoken_text": "엔비디아는 1.31% 상승했습니다. 젠슨 황 CEO가 AI 인프라 구축은 이제 시작이며, 인류 역사상 가장 큰 규모가 될 것이라고 선언한 점이 투자 심리를 강력하게 자극했습니다. 일부 기업의 단기 실적 우려를 잠재우고, AI라는 거대한 패러다임 변화에 대한 시장의 확신을 다시 한번 확인시켜주며 관련주 전반의 랠리를 이끌었습니다.",
+        "slide_points": [
+          "1D: +1.31% / 1M: +15.58%",
+          "CEO의 '인류 역사상 가장 큰 인프라 구축' 발언",
+          "AI 장기 성장 기대감에 기술주 랠리 주도"
+        ],
+        "valuation_note": "시총 $4.92T, PER 41.33, PBR 31.29, ROE 101.48%",
+        "move_summary": "CEO의 강력한 AI 비전에 장기 성장 기대감 부각"
+      },
+      {
+        "ticker": "OTIS",
+        "name": "Otis Worldwide Corporation",
+        "as_of": "2026-04-22",
+        "day_change_pct": -1.2552370466437757,
+        "day_change_display": "-1.26%",
+        "month_change_pct": -0.1410445100200053,
+        "month_change_display": "-0.14%",
+        "market_cap": 30273572864.0,
+        "market_cap_display": "$30.27B",
+        "pe_ratio": 22.251429,
+        "pe_ratio_display": "22.25",
+        "pbr": -5.630015,
+        "pbr_display": "-5.63",
+        "roe": null,
+        "roe_display": "N/A",
+        "reason": "오티스는 최근 AI 데이터센터와 반도체 공장에 특화된 새로운 엘리베이터에 대한 수요가 매우 강력하다고 밝혔습니다. 이는 AI 인프라 투자가 전통적인 산업재 기업의 제품 수요까지 바꿔놓고 있다는 명백한 증거로 해석되었습니다.",
+        "spoken_text": "AI 랠리의 파급력이 전통 산업까지 미치고 있습니다. 엘리베이터 제조사 오티스는 오늘 주가는 1.26% 내렸지만, AI 데이터센터와 반도체 공장에 들어갈 특수 엘리베이터 수요가 강력하다고 밝히며 AI 인프라 투자의 수혜주로 주목받았습니다. 무거운 서버 랙을 옮기기 위한 고가의 특수 제품 수요는 AI 투자가 전통 산업재 기업의 실적까지 바꿔놓고 있다는 명백한 증거입니다.",
+        "slide_points": [
+          "1D: -1.26% / 1M: -0.14%",
+          "AI 데이터센터용 특수 엘리베이터 수요 급증",
+          "AI 인프라 투자의 숨은 수혜주로 부각"
+        ],
+        "valuation_note": "시총 $30.27B, PER 22.25, PBR -5.63, ROE N/A",
+        "move_summary": "AI 데이터센터용 특수 엘리베이터 수요 증가로 주목"
+      },
+      {
+        "ticker": "BKNG",
+        "name": "Booking Holdings Inc. Common St",
+        "as_of": "2026-04-22",
+        "day_change_pct": -6.004404630210214,
+        "day_change_display": "-6.00%",
+        "month_change_pct": 4.529608856295897,
+        "month_change_display": "+4.53%",
+        "market_cap": 142054948864.0,
+        "market_cap_display": "$142.05B",
+        "pe_ratio": 27.099697,
+        "pe_ratio_display": "27.10",
+        "pbr": -25.643225,
+        "pbr_display": "-25.64",
+        "roe": null,
+        "roe_display": "N/A",
+        "reason": "유럽연합의 디지털 시장법(DMA)으로 대표되는 규제 리스크가 부각되었습니다. 시장은 이를 일회성 비용을 넘어 부킹 홀딩스의 핵심 비즈니스 모델이 구조적인 도전에 직면했음을 시사하는 신호로 받아들이며, 장기적인 수익성 훼손 가능성을 우려했습니다.",
+        "spoken_text": "반면 부킹 홀딩스는 6% 급락했습니다. 유럽연합의 디지털 시장법, 즉 DMA 규제 리스크가 본격적으로 부각됐기 때문입니다. 시장은 이를 일회성 벌금이 아닌, 장기적으로 수수료 인하와 이익률 하락을 유발할 구조적 위협으로 보고 있습니다. 강력한 현금 창출 능력에도 불구하고, 미래 성장 동력마저 규제에 막힐 수 있다는 우려가 커지며 주가를 끌어내렸습니다.",
+        "slide_points": [
+          "1D: -6.00% / 1M: +4.53%",
+          "EU 디지털시장법(DMA) 규제 리스크 부각",
+          "장기 수익성 및 성장성 훼손 우려 확산"
+        ],
+        "valuation_note": "시총 $142.05B, PER 27.10, PBR -25.64, ROE N/A",
+        "move_summary": "EU 규제 리스크 부각에 장기 성장성 우려로 급락"
+      },
+      {
+        "ticker": "TSM",
+        "name": "Taiwan Semiconductor Manufactur",
+        "as_of": "2026-04-22",
+        "day_change_pct": 5.259730649696603,
+        "day_change_display": "+5.26%",
+        "month_change_pct": 12.873999254597601,
+        "month_change_display": "+12.87%",
+        "market_cap": 2009418956800.0,
+        "market_cap_display": "$2.01T",
+        "pe_ratio": 33.199657,
+        "pe_ratio_display": "33.20",
+        "pbr": 59.26557,
+        "pbr_display": "59.27",
+        "roe": 36.21,
+        "roe_display": "36.21%",
+        "reason": "네, 시장의 시선이 단기적인 실적 변동성을 넘어 인공지능이라는 거대한 패러다임 전환의 본질로 되돌아왔다고 볼 수 있습니다. 오늘 나스닥 지수가 1.64퍼센트, S&P 500 지수가 1.05퍼센트 오르는 동안 반도체 섹터 전반의 강세가 두드러졌는데, 반도체 ETF인 SMH는 2.6퍼센트 넘게 상승하며 시장 수익률을 크게 웃돌았습니다.",
+        "spoken_text": "TSM은 AI 패러다임 전환의 핵심 수혜주로 다시 주목받으며 5% 넘게 상승했습니다. 시장이 단기 변동성보다 거대한 AI 성장성에 초점을 맞추면서 반도체 섹터 전반에 훈풍이 불었습니다.",
+        "slide_points": [
+          "1일 +5.26% / 1개월 +12.87%",
+          "시총 $2.01T, PER 33.20, PBR 59.27, ROE 36.21%",
+          "AI 성장성에 다시 집중하는 시장"
+        ],
+        "valuation_note": "시총 $2.01T, PER 33.20, PBR 59.27, ROE 36.21%",
+        "move_summary": "AI 패러다임 전환 기대감에 반도체주 동반 강세"
+      }
+    ]
+  }
+}
