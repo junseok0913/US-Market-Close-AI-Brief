@@ -7,7 +7,7 @@ import {
 } from "remotion";
 import type { MarketChartData } from "@/types/market-chart";
 import { normalizeMarketChartSymbol } from "@/lib/market-chart";
-import { COLORS, getTickerDisplayName } from "./styles";
+import { COLORS, getTickerDisplayParts } from "./styles";
 
 export type ChartDataMap = Record<string, MarketChartData>;
 
@@ -41,17 +41,18 @@ export const ComparisonBarChart: FC<{
     .map((ticker) => {
       const data = lookupChart(chartDataMap, ticker);
       if (!data) return null;
-      const displayTicker = ticker.replace("^", "").replace("=F", "");
-      const krName = getTickerDisplayName(ticker);
+      const { symbol, name } = getTickerDisplayParts(ticker);
       return {
-        ticker: displayTicker,
-        label: krName || displayTicker,
+        ticker: symbol,
+        symbol,
+        name,
         change: data.changePercent,
       };
     })
     .filter(Boolean) as Array<{
     ticker: string;
-    label: string;
+    symbol: string;
+    name: string;
     change: number;
   }>;
 
@@ -112,17 +113,41 @@ export const ComparisonBarChart: FC<{
             <div key={bar.ticker} style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <div
                 style={{
-                  width: 110,
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: COLORS.textSecondary,
+                  width: 132,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  gap: 2,
                   textAlign: "right",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  flexShrink: 0,
                 }}
               >
-                {bar.label}
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 800,
+                    color: COLORS.text,
+                    fontFamily: "'Space Grotesk', monospace",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {bar.symbol}
+                </span>
+                {bar.name && (
+                  <span
+                    style={{
+                      maxWidth: "100%",
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: COLORS.textMuted,
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {bar.name}
+                  </span>
+                )}
               </div>
 
               <div
@@ -716,6 +741,10 @@ export const SecFilingCards: FC<{
       }}
     >
       {filings.map((filing, i) => {
+        const tickerParts = filing.ticker
+          ? getTickerDisplayParts(filing.ticker)
+          : null;
+
         const cardSpring = spring({
           frame,
           fps,
@@ -795,8 +824,23 @@ export const SecFilingCards: FC<{
                   letterSpacing: "0.02em",
                 }}
               >
-                {filing.ticker}
+                {tickerParts?.symbol || ""}
               </span>
+              {tickerParts?.name && (
+                <span
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: COLORS.textMuted,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: 160,
+                  }}
+                >
+                  {tickerParts.name}
+                </span>
+              )}
               {filing.filed_date && (
                 <span
                   style={{
@@ -859,7 +903,7 @@ export const SectorHeatmap: FC<{
   const entries = Object.entries(chartDataMap)
     .map(([key, data]) => ({
       key,
-      krName: getTickerDisplayName(key) || key.replace(/^\^/, "").replace(/=F$/, ""),
+      ...getTickerDisplayParts(key),
       change: data.changePercent,
       group: TICKER_GROUP_MAP[key] || "종목/ETF",
     }))
@@ -996,21 +1040,44 @@ export const SectorHeatmap: FC<{
                         border: `1px solid ${color}18`,
                       }}
                     >
-                      {/* 종목명 */}
-                      <span
+                      {/* 티커 + 종목명 */}
+                      <div
                         style={{
-                          width: 110,
-                          fontSize: 15,
-                          fontWeight: 800,
-                          color: COLORS.text,
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
+                          width: 136,
                           flexShrink: 0,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 2,
                         }}
                       >
-                        {item.krName}
-                      </span>
+                        <span
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 800,
+                            color: COLORS.text,
+                            fontFamily: "'Space Grotesk', monospace",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {item.symbol}
+                        </span>
+                        {item.name && (
+                          <span
+                            style={{
+                              fontSize: 11,
+                              fontWeight: 600,
+                              color: COLORS.textMuted,
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
+                            {item.name}
+                          </span>
+                        )}
+                      </div>
 
                       {/* 수평 바 */}
                       <div

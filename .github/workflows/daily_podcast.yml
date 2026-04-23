@@ -1,9 +1,6 @@
 name: Daily Stock Podcast Automation
 
 on:
-  schedule:
-    # Vancouver 13:00 on March 12, 2026 (PDT, UTC-7).
-    - cron: "0 20 * * 1-5"
   workflow_dispatch:
     inputs:
       date:

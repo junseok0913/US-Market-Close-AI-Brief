@@ -8,7 +8,7 @@ import {
 } from "remotion";
 import type { MarketChartData } from "@/types/market-chart";
 import { normalizeMarketChartSymbol } from "@/lib/market-chart";
-import { COLORS, SPEAKER_META, seededRandom } from "./styles";
+import { COLORS, SPEAKER_META, seededRandom, getTickerDisplayParts } from "./styles";
 import { MiniChart } from "./MiniChart";
 import { TickerCard, NumberExtractor, type ChartDataMap } from "./DataPanels";
 import {
@@ -270,7 +270,8 @@ const SourceBadge: FC<{
 
   if (source.type === "chart" && source.ticker) {
     icon = "📈";
-    label = source.ticker.replace("^", "").replace("=F", "");
+    const { symbol, name } = getTickerDisplayParts(source.ticker);
+    label = name ? `${symbol} · ${name}` : symbol;
     badgeColor = chapterColor;
   } else if (source.type === "event") {
     icon = "📅";
@@ -278,7 +279,13 @@ const SourceBadge: FC<{
     badgeColor = COLORS.accent;
   } else if (source.type === "sec_filing") {
     icon = "📋";
-    label = `${source.ticker || ""} ${source.form || ""}`.trim();
+    if (source.ticker) {
+      const { symbol, name } = getTickerDisplayParts(source.ticker);
+      const baseLabel = name ? `${symbol} · ${name}` : symbol;
+      label = `${baseLabel} ${source.form || ""}`.trim();
+    } else {
+      label = `${source.form || "Filing"}`.trim();
+    }
     badgeColor = "#8b5cf6";
   } else if (source.type === "article" && source.title) {
     label =

@@ -102,6 +102,43 @@ export function getTickerDisplayName(ticker: string): string {
   return TICKER_KR_NAMES[ticker] || "";
 }
 
+const TICKER_SHORT_LABELS: Record<string, string> = {
+  "^GSPC": "GSPC",
+  "^IXIC": "IXIC",
+  "^DJI": "DJI",
+  "^VIX": "VIX",
+  "^TNX": "US10Y",
+  "SP:SPX": "SPX",
+  "NASDAQ:IXIC": "IXIC",
+  "DJ:DJI": "DJI",
+  "TVC:VIX": "VIX",
+  "TVC:US10Y": "US10Y",
+  "TVC:DXY": "DXY",
+  "DX-Y.NYB": "DXY",
+  "CL=F": "WTI",
+  "BZ=F": "BZ",
+  "GC=F": "GOLD",
+  "COMEX:GC1!": "GOLD",
+};
+
+export function getTickerShortLabel(ticker: string): string {
+  if (TICKER_SHORT_LABELS[ticker]) return TICKER_SHORT_LABELS[ticker];
+  const base = ticker.includes(":") ? ticker.split(":").pop() || ticker : ticker;
+  return base.replace(/^\^/, "").replace(/=F$/, "");
+}
+
+export function getTickerDisplayParts(ticker: string): {
+  symbol: string;
+  name: string;
+} {
+  const symbol = getTickerShortLabel(ticker);
+  const name = getTickerDisplayName(ticker);
+  return {
+    symbol,
+    name: name && name !== symbol ? name : "",
+  };
+}
+
 export function seededRandom(seed: number): number {
   const x = Math.sin(seed * 12.9898 + seed * 78.233) * 43758.5453;
   return x - Math.floor(x);
