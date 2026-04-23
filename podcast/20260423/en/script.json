@@ -1,0 +1,612 @@
+{
+  "date": "20260423",
+  "nutshell": "Stocks fall on Tesla earnings shock and surging oil prices.",
+  "user_tickers": [
+    "NOW"
+  ],
+  "chapter": [
+    {
+      "name": "opening",
+      "start_id": 0,
+      "end_id": 5
+    },
+    {
+      "name": "theme",
+      "start_id": 6,
+      "end_id": 21
+    },
+    {
+      "name": "ticker",
+      "start_id": 22,
+      "end_id": 29
+    },
+    {
+      "name": "closing",
+      "start_id": 30,
+      "end_id": 38
+    }
+  ],
+  "scripts": [
+    {
+      "id": 0,
+      "speaker": "진행자",
+      "text": "This is the April 24th market close briefing. It looks like all the major indices in New York finished lower overnight.",
+      "sources": []
+    },
+    {
+      "id": 1,
+      "speaker": "해설자",
+      "text": "That's right. The market fell today, hit by a double whammy of Tesla's earnings shock and a surge in oil prices. The Dow Jones Industrial Average dropped 0.36%, and the S&P 500 was also down 0.41%. The tech-heavy Nasdaq saw the biggest drop, falling 0.89%. Meanwhile, geopolitical risks came into focus, with West Texas Intermediate crude oil jumping over 4%, adding to market anxiety.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "^DJI",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "진행자",
+      "text": "The Nasdaq saw the steepest decline. Is it safe to say Tesla was the main driver behind that?",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "speaker": "해설자",
+      "text": "Yes, it was a key factor. Tesla reported first-quarter revenue that missed market expectations, and a significant gap between production and deliveries raised concerns about inventory buildup. The stock ended up falling over 3.5%, which really chilled investor sentiment across the tech sector. However, there was a bright spot amid the overall market weakness. Semiconductor company Texas Instruments posted a strong earnings forecast that beat expectations, sending its stock soaring more than 19%.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#4c8316c8bfbdb0fd",
+          "title": "Tesla Q1 2026 earnings: profit up, deliveries miss"
+        },
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#c0532e99d38b3f3c",
+          "title": "Texas Instruments Climbs the Most Since 2001 on Upbeat Forecast"
+        },
+        {
+          "type": "chart",
+          "ticker": "TXN",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "진행자",
+      "text": "So it seems the broader macro headwinds outweighed the positive news from individual companies. Could you summarize the key drivers that moved the market today?",
+      "sources": []
+    },
+    {
+      "id": 5,
+      "speaker": "해설자",
+      "text": "Certainly. Two main factors really held the market back today: Tesla's earnings report, which dampened sentiment for tech stocks, and the surge in international oil prices driven by tensions between the U.S. and Iran.",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "speaker": "진행자",
+      "text": "Alright, let's start with Tesla, which was clearly the biggest story. The stock took a major hit after its earnings report. What were the specific details that came out?",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "speaker": "해설자",
+      "text": "Right, Tesla's earnings were the main reason the tech-focused Nasdaq was dragged down nearly 0.9% today. The stock closed down more than 3.5%, a much steeper drop than the S&P 500's decline. A combination of factors fueled the market's disappointment. First, Q1 revenue came in at $22.39 billion, missing Wall Street's estimate of $22.6 billion. On top of that, the gap between vehicles produced and those actually delivered to customers widened to over 50,000 units, amplifying concerns about slowing demand and inventory buildup. This anxiety spread across the entire EV sector, with Rivian falling 4.4% and Lucid plunging over 9%. And adding to the pressure, the 4% surge in WTI crude due to geopolitical risk also soured sentiment for growth stocks.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#4c8316c8bfbdb0fd",
+          "title": "Tesla Q1 2026 earnings: profit up, deliveries miss"
+        },
+        {
+          "type": "chart",
+          "ticker": "RIVN",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "LCID",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "진행자",
+      "text": "And it wasn't just that the numbers missed expectations, right? I hear CEO Elon Musk's comments also added to the market's anxiety.",
+      "sources": []
+    },
+    {
+      "id": 9,
+      "speaker": "해설자",
+      "text": "That's right. Investors were hoping to get some clarity on the future growth path from the post-earnings conference call, but it only created more uncertainty. As William Blair analyst Jed Dorsheimer pointed out, Elon Musk seemed unusually cautious and reserved about future projects like the Robotaxi and Optimus robot, a departure from his usual confident tone. A key point of concern was the significant increase in the capital expenditure guidance for next year, raised from $20 billion to $25 billion, which was seen as a strain on cash flow. This, combined with the confirmation that Q1 inventory had grown to 27 days' worth—fueling fears that this is a demand issue, not just a production hiccup—and weakness in the energy business, all added to the downward pressure on the stock.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#a27fb6fcc5d38db5",
+          "title": "Why Tesla investors should love this version of CEO Elon Musk"
+        },
+        {
+          "type": "article",
+          "pk": "id#4c8316c8bfbdb0fd",
+          "title": "Tesla Q1 2026 earnings: profit up, deliveries miss"
+        },
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "진행자",
+      "text": "It seems Tesla's weakness is spilling over into concerns about the entire EV market. How did its competitors fare?",
+      "sources": []
+    },
+    {
+      "id": 11,
+      "speaker": "해설자",
+      "text": "Yes, the signs of slowing demand from Tesla, the EV market leader, were interpreted as a warning for the whole industry. Rivian and Lucid took a direct hit, with their stocks plunging 4.4% and over 9.2%, respectively. Even Ford and General Motors, which are aggressively expanding their EV lineups, couldn't escape the negative sentiment, falling 1.2% and 0.6%. This is because the market saw this not just as a Tesla-specific problem, but as a signal that consumers are cutting back on big-ticket durable goods like cars amid a high-interest-rate environment and worries about an economic slowdown. In fact, the final University of Michigan Consumer Sentiment index released today came in lower than expected, reinforcing these market concerns.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "RIVN",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "LCID",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "GM",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "395617",
+          "title": "michigan consumer sentiment final",
+          "date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "진행자",
+      "text": "So, in the end, the shock from Tesla really put a damper on sentiment for the entire tech sector.",
+      "sources": []
+    },
+    {
+      "id": 13,
+      "speaker": "해설자",
+      "text": "Exactly. Because Tesla is more than just a car company—it's a symbol of tech growth stocks—the ripple effect was much larger. Its stock drop not only directly weighed on the Nasdaq but also threw cold water on investor sentiment for other Big Tech companies that have future growth priced into their stocks. What's interesting is that the S&P Global Manufacturing and Services PMI data released yesterday both beat expectations, showing the economy itself remains robust. But the market reacted more sensitively to Tesla's individual bad news and the narrative of slowing demand than to the positive macro signals, showing a heightened sense of caution toward risk assets.",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "TSLA",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^IXIC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "398123",
+          "title": "s&p global manufacturing pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "event",
+          "id": "397888",
+          "title": "s&p global services pmi flash",
+          "date": "2026-04-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#a27fb6fcc5d38db5",
+          "title": "Why Tesla investors should love this version of CEO Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "진행자",
+      "text": "Right. And besides Tesla, you mentioned another factor that held the market back: geopolitical risk and the surge in oil prices. It seems the conflict between the U.S. and Iran has resurfaced.",
+      "sources": []
+    },
+    {
+      "id": 15,
+      "speaker": "해설자",
+      "text": "That's correct. This was the biggest factor adding to the downward pressure on the market today. News that peace negotiations between the U.S. and Iran had stalled sent West Texas Intermediate, or WTI, futures soaring over 4.2% in a single day, closing in the high $96 per barrel range. Brent crude also jumped more than 4%, crossing the $106 mark. While the oil surge lifted energy sector stocks, with the XLE ETF gaining over 0.7%, it was a negative for the broader market. The S&P 500 fell over 0.4%, and the U.S. 10-year Treasury yield rose to around 4.32% as inflation fears were stoked. On top of that, the Dollar Index also strengthened, clearly indicating a risk-off sentiment.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1d72d03d57f70d1f",
+          "title": "Oil Extends Gain as Peace Negotiations Between US and Iran Stall"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "XLE",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "DX-Y.NYB",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "진행자",
+      "text": "How did the stalled negotiations translate so directly into concerns about oil supply? I'm curious about the specific background.",
+      "sources": []
+    },
+    {
+      "id": 17,
+      "speaker": "해설자",
+      "text": "Well, the core issue is the potential disruption of passage through the Strait of Hormuz, through which about 20% of the world's oil supply passes. Tensions have peaked with both the U.S. and Iran restricting ship traffic in the strait. The U.S. is maintaining a naval blockade against Iran, and Iran is retaliating by seizing international commercial vessels, posing a real threat. With peace talks now suspended, the market has started pricing in a worst-case scenario where supply disruptions could become prolonged. An expert at BOK Financial Securities noted that oil prices will likely remain under upward pressure until the stalemate between the two sides is resolved.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#e95367e6a5558349",
+          "title": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted"
+        },
+        {
+          "type": "article",
+          "pk": "id#1d72d03d57f70d1f",
+          "title": "Oil Extends Gain as Peace Negotiations Between US and Iran Stall"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "BZ=F",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "진행자",
+      "text": "With supply fears growing, what did yesterday's crude inventory data show? I imagine that also had an impact on prices.",
+      "sources": []
+    },
+    {
+      "id": 19,
+      "speaker": "해설자",
+      "text": "It did. Yesterday's weekly inventory report from the U.S. Energy Information Administration added fuel to the fire. While crude inventories surprisingly increased by about 1.9 million barrels, gasoline stockpiles fell by a much larger-than-expected 4.6 million barrels, and distillate stocks also dropped by 3.4 million barrels. This was interpreted as a sign of very strong demand, with U.S. petroleum product exports hitting a record high to make up for supply disruptions from the Middle East. So, the perception that supply is at risk due to geopolitics while demand remains robust has really strengthened the upward momentum for oil prices.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "395602",
+          "title": "eia crude oil stocks change",
+          "date": "2026-04-22"
+        },
+        {
+          "type": "article",
+          "pk": "id#e95367e6a5558349",
+          "title": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted"
+        },
+        {
+          "type": "article",
+          "pk": "id#1d72d03d57f70d1f",
+          "title": "Oil Extends Gain as Peace Negotiations Between US and Iran Stall"
+        },
+        {
+          "type": "chart",
+          "ticker": "CL=F",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "진행자",
+      "text": "So, to sum it up, the spike in oil prices brought back the nightmare of inflation, which in turn dampened investor sentiment across the entire market.",
+      "sources": []
+    },
+    {
+      "id": 21,
+      "speaker": "해설자",
+      "text": "That's a perfect analysis. Higher oil prices are a direct factor that increases inflationary pressure through higher transportation and production costs. This inevitably puts pressure on the Fed's monetary policy decisions. The head of commodity strategy at ING Group commented that if there's no progress in peace talks, the market will price in the reality of supply disruptions even more. The prevailing view is that until the geopolitical risks related to Iran are resolved, oil prices will continue to be a key variable driving market volatility.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#1d72d03d57f70d1f",
+          "title": "Oil Extends Gain as Peace Negotiations Between US and Iran Stall"
+        },
+        {
+          "type": "chart",
+          "ticker": "^TNX",
+          "start_date": "2026-04-20",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "chart",
+          "ticker": "^GSPC",
+          "start_date": "2026-04-22",
+          "end_date": "2026-04-23"
+        },
+        {
+          "type": "article",
+          "pk": "id#e95367e6a5558349",
+          "title": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "진행자",
+      "text": "Alright, we've covered the macro factors that affected the broader market. Now let's take a closer look at some of the individual companies that caught investors' attention. One of the biggest shocks today was ServiceNow. It actually saw a surge at the open but couldn't avoid a massive drop by the close. What on earth happened there?",
+      "sources": [
+        {
+          "type": "chart",
+          "ticker": "NOW",
+          "start_date": "2026-04-23",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "해설자",
+      "text": "Yes, ServiceNow experienced a record-breaking stock plunge of over 17% in a single day. On the surface, the reason was news that a large government contract was delayed due to geopolitical conflict in the Middle East. The company stated this had a negative impact of about 75 basis points on its Q1 subscription revenue growth. But what confused the market even more was that despite this bad news, the company actually raised its full-year 2026 subscription revenue guidance. So we had this unusual situation where the stock plummeted despite a positive outlook.",
+      "sources": [
+        {
+          "type": "article",
+          "pk": "id#681dbc5ebe1b8140",
+          "title": "ServiceNow flags Middle East deal delays, shares crash"
+        },
+        {
+          "type": "chart",
+          "ticker": "NOW",
+          "start_date": "2026-03-24",
+          "end_date": "2026-04-23"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "진행자",
+      "text": "Raising the revenue forecast while the stock craters to a historic low... that's hard to wrap your head around. Does this mean the market is pricing in a much bigger, hidden risk beyond this contract delay?",
+      "sources": []
+    },
+    {
+      "id": 25,
+      "speaker": "해설자",
+      "text": "That's right. It seems investors found more fundamental problems by digging into the company's quarterly report, the 10-Q filing. The first thing that stands out is the deterioration of core profitability. The gross margin for the subscription segment fell by 300 basis points, from 81% in the same quarter last year to 78%. What's more concerning is that the company itself stated this isn't a one-off, expecting margins to decline further for the rest of 2026. It's a warning sign that even if revenue is growing, the quality of earnings is worsening—a structural problem.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NOW",
+          "form": "10-Q",
+          "filed_date": "2026-04-23",
+          "accession_number": "0001373715-26-000056"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "진행자",
+      "text": "A declining profit trend is definitely a concern. But that alone doesn't seem to explain a drop of over 17%. What was the final nail in the coffin that sparked this level of fear in the market?",
+      "sources": []
+    },
+    {
+      "id": 27,
+      "speaker": "해설자",
+      "text": "The decisive factor was the details of the massive debt taken on for the recent Armis acquisition. According to the 10-Q, ServiceNow took on a total of $6.1 billion in new debt, and it was discovered that a $4 billion term loan is due in just six months, on October 16th, 2026. This is a highly unusual and risky financing method—funding a long-term growth investment with very short-term debt. It sparked fears that the company could face a serious liquidity crisis if it fails to refinance within six months. It appears the market immediately priced in the risk of this potential time bomb.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NOW",
+          "form": "10-Q",
+          "filed_date": "2026-04-23",
+          "accession_number": "0001373715-26-000056"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "진행자",
+      "text": "So to recap: on top of the bad news about the Middle East contract delay, profitability is worsening, and at the same time, this massive short-term debt with a six-month fuse was discovered, amplifying the risk.",
+      "sources": []
+    },
+    {
+      "id": 29,
+      "speaker": "해설자",
+      "text": "Exactly. And to top it all off, an issue of management credibility also emerged. It was pointed out that the key piece of information blamed for the stock crash—the 'Middle East contract delay'—wasn't clearly mentioned in the management discussion section of the official 10-Q report filed with the SEC. This discrepancy between the official filing and communication with the market raised doubts among investors about management's transparency. So in the end, despite the positive full-year guidance hike, the market viewed the triple threat of short-term liquidity risk, deteriorating profitability, and a loss of credibility as far more serious.",
+      "sources": [
+        {
+          "type": "sec_filing",
+          "ticker": "NOW",
+          "form": "10-Q",
+          "filed_date": "2026-04-23",
+          "accession_number": "0001373715-26-000056"
+        },
+        {
+          "type": "article",
+          "pk": "id#681dbc5ebe1b8140",
+          "title": "ServiceNow flags Middle East deal delays, shares crash"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "진행자",
+      "text": "The market managed a rebound today, but it seems investors' concerns are still lingering. How would you summarize today's session?",
+      "sources": []
+    },
+    {
+      "id": 31,
+      "speaker": "해설자",
+      "text": "Yes, today had the feel of a technical rebound. Better-than-expected earnings from a few Big Tech companies provided a temporary boost to investor sentiment, which led the Nasdaq-centric rally. However, the positive sentiment didn't really spread to the broader market. This is evidence that investors are weighing macroeconomic uncertainties—especially the upcoming key economic data releases and the Fed's policy decision—more heavily than good news from individual companies. In other words, the prevailing mood in the market is one of caution, suggesting it's too early to feel relieved.",
+      "sources": []
+    },
+    {
+      "id": 32,
+      "speaker": "진행자",
+      "text": "As you mentioned, all eyes now seem to be on the big events scheduled for next week. What dates should we be watching?",
+      "sources": []
+    },
+    {
+      "id": 33,
+      "speaker": "해설자",
+      "text": "That's right. Next week will be the most critical week in determining the direction for the entire quarter. The main event is the Federal Open Market Committee, or FOMC, interest rate decision on the 29th. The market is already pricing in a rate hold, so the decision itself is less important than Chairman Jerome Powell's press conference that follows. The market will be hanging on his every word for clues about the Fed's assessment of the recent higher-than-expected inflation data, and whether it will stick to its previous stance on the path of future rate cuts or pivot to a more hawkish tone.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "390601",
+          "title": "fed interest rate decision",
+          "date": "2026-04-29"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "진행자",
+      "text": "The FOMC meeting is crucial, but there's also key economic data that will inform the Fed's decision, scheduled for the very next day, right?",
+      "sources": []
+    },
+    {
+      "id": 35,
+      "speaker": "해설자",
+      "text": "Yes, and that's what makes this week even more tense. On the 30th, we'll get the advance estimate for the U.S. first-quarter GDP growth rate, along with the Fed's most-watched inflation gauge: the March Core Personal Consumption Expenditures, or Core PCE, price index. While checking the economy's growth momentum with GDP is important, the market's focus will undoubtedly be on PCE. If Core PCE also comes in hotter than expected and proves once again that inflation is sticky, expectations for rate cuts could retreat further, which could deliver a major shock to the market. On the other hand, if we see it slowing down, we could see a relief rally.",
+      "sources": [
+        {
+          "type": "event",
+          "id": "398995",
+          "title": "gdp growth rate qoq adv",
+          "date": "2026-04-30"
+        },
+        {
+          "type": "event",
+          "id": "397959",
+          "title": "core pce price index mom",
+          "date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "진행자",
+      "text": "Some really critical economic data is on the way. Finally, what advice do you have for investors on what they should be mindful of?",
+      "sources": []
+    },
+    {
+      "id": 37,
+      "speaker": "해설자",
+      "text": "Right now, the market is more 'data-dependent' than ever. Strong earnings from individual companies aren't enough to lead the entire market higher when macroeconomic uncertainty is this great. Therefore, it's crucial to keep in mind that market volatility could become extreme before and after next week's major data releases. This is a time when it's wise to manage risk from a conservative standpoint, confirming the direction of macro indicators and carefully weighing the possibility of a shift in the Fed's policy stance, rather than chasing rallies.",
+      "sources": []
+    },
+    {
+      "id": 38,
+      "speaker": "진행자",
+      "text": "So, a cautious approach is needed ahead of these major events. That was the April 24th market close briefing. Thank you.",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+Title:
+2026.4.24 US Market Close | Markets fall on Tesla's earnings shock and surging oil prices
+
+Description:
+On April 24, the New York stock market closed lower across all major indices, hit by the dual headwinds of Tesla's earnings shock and a surge in oil prices due to geopolitical risks. The tech-heavy Nasdaq saw the steepest decline as risk-off sentiment spread throughout the market.
+
+Major Indices
+- Dow Jones: Down 0.36% - Impacted by Tesla's earnings shock and rising oil prices.
+- S&P 500: Down 0.41% - Weighed down by weakness in tech stocks and heightened geopolitical risks.
+- Nasdaq: Down 0.89% - Directly pressured by the drop in Tesla's stock price.
+
+Key Issues
+- Tesla's Earnings Shock: Concerns over slowing demand intensified after the company reported Q1 revenue that missed market expectations and vehicle deliveries that lagged production. This dampened investor sentiment across the tech sector.
+- Surge in International Oil Prices: West Texas Intermediate (WTI) crude jumped over 4.2% on news of stalled peace negotiations between the U.S. and Iran, reigniting inflation fears.
+- ServiceNow Plummets: The stock plunged over 17% following news of contract delays in the Middle East. A company filing also confirmed worsening profitability and a $4 billion short-term debt risk with a six-month maturity.
+- Upcoming Key Economic Data: Market focus is now shifting to next week's FOMC interest rate decision and the March Core Personal Consumption Expenditures (Core PCE) Price Index. Volatility could increase depending on the results.
+
+Key Stocks
+- Tesla (TSLA): Down over 3.5% - On Q1 revenue that missed estimates and concerns over slowing demand.
+- Texas Instruments (TXN): Surged over 19% - After providing a strong earnings forecast that beat expectations.
+- ServiceNow (NOW): Plunged over 17% - Highlighted risks include contract delays, deteriorating profitability, and short-term liquidity issues.
+- Rivian (RIVN): Down 4.4% - Dragged down by negative sentiment in the EV sector following Tesla's news.
+- Lucid (LCID): Tumbled over 9.2% - Amid weakening investor sentiment for the entire electric vehicle industry.
+
+Keywords:
+미국주식,주식,재테크,시황,테슬라,TSLA,서비스나우,NOW,유가,금리,인플레이션,전기차,실적,FOMC
