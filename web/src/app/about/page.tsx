@@ -70,7 +70,7 @@ export default function AboutPage() {
           aria-hidden="true"
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/90 via-black/75 to-black/45" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
 
         {/* Nav */}
         <nav className="flex items-center justify-between px-6 md:px-10 py-5">
