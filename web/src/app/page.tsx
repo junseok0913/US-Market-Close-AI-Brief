@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getEpisodeList } from '@/lib/data';
 import EpisodeCard from '@/components/EpisodeCard';
 
@@ -8,6 +9,14 @@ export default async function HomePage() {
     <div className="min-h-screen bg-bg-primary">
       {/* Header Section */}
       <header className="px-10 pt-[67px] pb-0">
+        <div className="mb-4">
+          <Link
+            href="/about"
+            className="text-[14px] font-medium text-text-muted hover:text-text-primary hover:underline"
+          >
+            About JSKcorp
+          </Link>
+        </div>
         <h1 className="font-title text-[64px] leading-[64px] tracking-[-3.2px] text-text-primary text-left">
           Yesterday&apos;s close, Today&apos;s edge
         </h1>
