@@ -4,7 +4,7 @@ http://43.201.213.158/
 <br>
 Team: `지피티야 팀명 추천해줘`
 
-이 레포는 “장마감 브리핑 스크립트 생성 → TTS로 오디오 생성”까지의 파이프라인과, 그 입력이 되는 뉴스 데이터 수집용 AWS Lambda를 포함합니다.  
+이 레포는 “장마감 브리핑 스크립트 생성 → TTS 오디오 생성 → S3/RSS/CloudFront 기반 팟캐스트 배포 → YouTube 영상 렌더/업로드”까지의 파이프라인과, 그 입력이 되는 뉴스 데이터 수집용 AWS Lambda를 포함합니다.
 또한, 생성된 산출물을 재생/탐색하기 위한 Next.js 웹 플레이어(`web/`)를 포함합니다.
 
 ## 아키텍처 한눈에 보기
@@ -182,7 +182,7 @@ flowchart TD
     direction LR
     TEMP_OPEN["temp/opening.json"] --> TEMP_THEME["temp/theme.json"] --> TEMP_TICKER["temp/ticker_pipeline.json"] --> TEMP_CLOSE["temp/closing.json"]
     TEMP_DEB["temp/debate/{date}/{TICKER}_debate.json<br/>(ticker별 Debate 산출물)"]
-    POD["podcast/{date}/script.json<br/>(date/nutshell/user_tickers/chapter/scripts)"]
+    POD["podcast/{date}/{ko,en}/script.json<br/>(date/nutshell/user_tickers/chapter/scripts)"]
     DB1["podcast/podcast.db 업데이트<br/>upsert_script_row(...)"]
   end
 
@@ -197,11 +197,11 @@ flowchart TD
 
   subgraph TTS["TTS (script.json 생성 후 실행)"]
     direction LR
-    POD --> TT0["python -m tts.src.tts<br/>(LangGraph)"]
+    POD --> TT0["python -m tts.src.tts --lang ko|en<br/>(LangGraph)"]
 
     subgraph TTG["TTS Graph (turn-level)"]
       direction LR
-      TT_CFG["load_config<br/>gemini_tts.yaml 로드/검증"] --> TT_V["validate_paths<br/>script.json 존재 확인"] --> TT_LS["load_script<br/>podcast/{date}/script.json 로드"]
+      TT_CFG["load_config<br/>gemini_tts*.yaml 로드/검증"] --> TT_V["validate_paths<br/>script.json 존재 확인"] --> TT_LS["load_script<br/>podcast/{date}/{lang}/script.json 로드"]
       TT_LS --> TT_MAP["map_turns_with_chapter<br/>speaker→label + chapter 범위 적용"] --> TT_REQ["build_turn_requests<br/>instructions + text → prompt"]
       TT_REQ --> TF["generate_turn_audio_parallel<br/>turn별 TTS 병렬 생성(배치)"]
 
@@ -227,7 +227,7 @@ flowchart TD
     end
 
     TT0 --> TT_CFG
-    TT_YAML["tts/config/gemini_tts.yaml"] --> TT_CFG
+    TT_YAML["tts/config/gemini_tts*.yaml"] --> TT_CFG
 
     GEM["Gemini TTS API<br/>GEMINI_API_KEY"]
     T0 -.-> GEM
@@ -238,14 +238,16 @@ flowchart TD
 
   subgraph TTS_OUT["TTS Outputs"]
     direction LR
-    WAV["podcast/{date}/{date}.wav"]
-    TURNS["podcast/{date}/tts/<turn>.wav"]
-    TL["podcast/{date}/tts/timeline.json"]
-    DATEJSON["podcast/{date}/{date}.json<br/>scripts[].time 주입"]
+    WAV["podcast/{date}/{lang}/{date}.wav"]
+    MP3["podcast/{date}/{lang}/{date}.mp3"]
+    TURNS["podcast/{date}/{lang}/tts/<turn>.wav"]
+    TL["podcast/{date}/{lang}/tts/timeline.json"]
+    DATEJSON["podcast/{date}/{lang}/{date}.json<br/>scripts[].time 주입"]
     DB2["podcast/podcast.db 업데이트<br/>update_tts_row(tts_done=true)"]
   end
 
   TT_OUT --> WAV
+  TT_OUT --> MP3
   TT_OUT --> TURNS
   TT_OUT --> TL
   TT_OUT --> DATEJSON
@@ -256,8 +258,19 @@ flowchart TD
     WEB_BUILD["npm run build:data<br/>(web/scripts/build-data.ts)"] --> WEB_PUB["web/public/{data,audio}"] --> WEB_APP["Next.js app (web/)"]
   end
   DB1 --> WEB_BUILD
-  WAV --> WEB_BUILD
+  MP3 --> WEB_BUILD
   DATEJSON --> WEB_BUILD
+
+  subgraph DIST["Distribution"]
+    direction LR
+    S3UP["run_daily.sh Step 4<br/>S3 upload: podcast-daily-stock/{date}/{lang}/..."]
+    RSS["AWS/scripts/update_podcast_feed.py<br/>podcast.xml / podcast_en.xml"]
+    CF["CloudFront<br/>RSS + episode media delivery"]
+    YT["youtube_pipeline.yml<br/>Remotion MP4 + YouTube upload"]
+  end
+  MP3 --> S3UP
+  DATEJSON --> YT
+  S3UP --> RSS --> CF
 
   %% Data dependencies
   AWS_DDB -. "prefetch_all/news" .-> PF
@@ -304,7 +317,10 @@ sequenceDiagram
     CA->>FS: write temp/closing.json
   end
 
-  CLI->>FS: write podcast/{date}/script.json
+  CLI->>FS: write podcast/{date}/ko/script.json
+  CLI->>FS: translate/write podcast/{date}/en/script.json
+  CLI->>FS: write podcast/{date}/{ko,en}/metadata.{json,txt}
+  CLI->>FS: write web/src/landing/{date}/slides.ts
   CLI->>FS: update podcast/podcast.db
   CLI->>FS: cleanup cache/{date} (graph + finalizer)
 ```
@@ -354,36 +370,46 @@ sequenceDiagram
 ### 1) 장마감 브리핑 스크립트 생성 (Opening → Theme → Ticker → Closing)
 
 ```bash
-python orchestrator.py 20251222 -t GOOG AAPL
+uv run orchestrator.py 20251222 -t GOOG AAPL
 ```
 
-- 결과: `podcast/20251222/script.json`
+- 결과:
+  - `podcast/20251222/ko/script.json`
+  - `podcast/20251222/en/script.json`
+  - `podcast/20251222/{ko,en}/metadata.json`
+  - `web/src/landing/20251222/slides.ts`
 - 참고: orchestrator는 실행 중 `cache/20251222/`를 만들고 종료 시 정리합니다(디버깅용 산출물은 `temp/`와 `podcast/`에 남음).
 
 ### 2) TTS 실행 (turn 단위 오디오 생성 + 합본 + MP3 변환)
 
 ```bash
-python -m tts.src.tts 20251222
+uv run python -m tts.src.tts 20251222 --lang ko
+uv run python -m tts.src.tts 20251222 --lang en
 ```
 
-- 입력: `podcast/20251222/script.json`
+- 입력: `podcast/20251222/{ko,en}/script.json`
 - 출력:
-  - `podcast/20251222/tts/*.wav` (turn별)
-  - `podcast/20251222/tts/timeline.json`
-  - `podcast/20251222/20251222.wav` (합본 WAV, 원본)
-  - `podcast/20251222/20251222.mp3` (합본 MP3, 배포용)
-  - `podcast/20251222/20251222.json` (time 주입된 최종 스크립트)
+  - `podcast/20251222/{ko,en}/tts/*.wav` (turn별)
+  - `podcast/20251222/{ko,en}/tts/timeline.json`
+  - `podcast/20251222/{ko,en}/20251222.wav` (합본 WAV, 원본)
+  - `podcast/20251222/{ko,en}/20251222.mp3` (합본 MP3, 배포용)
+  - `podcast/20251222/{ko,en}/20251222.json` (time 주입된 최종 스크립트)
 
 ### 2.5) 메타데이터 생성 (Spotify/팟캐스트 플랫폼용)
 
 ```bash
-uv run python web/scripts/generate-podcast-metadata.py 20251222
+uv run python web/scripts/generate-podcast-metadata.py 20251222 ko
+uv run python AWS/translation/translate_metadata.py 20251222
 ```
 
-- 입력: `podcast/20251222/script.json`
+- 입력:
+  - `podcast/20251222/ko/script.json`
+  - `podcast/20251222/ko/metadata.json` (영어 메타데이터 번역 시)
 - 출력:
-  - `podcast/20251222/metadata.json` (title, description, keywords)
-  - `podcast/20251222/metadata.txt` (복사-붙여넣기용)
+  - `podcast/20251222/ko/metadata.json` (title, description, keywords)
+  - `podcast/20251222/ko/metadata.txt` (복사-붙여넣기용)
+  - `podcast/20251222/en/metadata.json`
+  - `podcast/20251222/en/metadata.txt`
 - 특징:
   - title은 nutshell에서 자동 생성
   - description은 LLM으로 생성 (YAML 프롬프트 기반)
@@ -401,6 +427,154 @@ npm run dev:fresh
 
 - 접속: `http://localhost:3000`
 - 참고: `podcast/podcast.db`가 갱신된 뒤에는 `npm run build:data`가 필요합니다.
+
+## GitHub Actions 자동화
+
+워크플로 정의: `.github/workflows/daily_podcast.yml`, `.github/workflows/youtube_pipeline.yml`
+
+두 워크플로 모두 `workflow_dispatch`로 수동 실행합니다. `date`를 비워두면 GitHub Actions 러너에서 `America/New_York` 기준 오늘 날짜(`YYYYMMDD`)로 변환하고, 실행 중 필요한 민감 정보는 GitHub Secrets/Variables에서만 주입합니다(키 값이나 OAuth 파일 원문은 저장소와 README에 기록하지 않음).
+
+### Daily Stock Podcast Automation
+
+기준 스크립트: `run_daily.sh` (Actions에서는 Step 1/2를 분리 실행한 뒤 남은 단계를 이 스크립트로 재개)
+
+입력:
+- `date`: 실행 날짜(`YYYYMMDD`, 비우면 뉴욕 기준 오늘)
+- `tickers`: 선택 티커(공백/쉼표 구분, 비우면 Theme 이후 자동 선택)
+- `start_from`: 일일 파이프라인 재시작 단계(`1`~`6`)
+
+실행 흐름:
+1. Checkout 후 `uv`, Python 3.13, `ffmpeg`, AWS CLI를 준비합니다.
+2. 뉴스 수집용 AWS 프로필과 S3 업로드용 `.env`를 Actions 런타임에서만 구성합니다.
+3. `start_from=1`이면 Step 1을 워크플로에서 직접 실행합니다.
+   - `uv run orchestrator.py "$TARGET_DATE" [-t TICKER ...]`
+   - 수동 티커가 없으면 Theme 생성 후 theme-distinct large-cap mover를 자동 선택합니다.
+4. Step 1 산출물을 현재 브랜치에 커밋/푸시합니다.
+   - 주요 경로: `podcast/`, `web/public/audio/`, `web/src/landing/{date}/`, `web/src/generated/shorts-firm/`
+5. `start_from=1` 또는 `2`이면 Step 2(Korean TTS + Shorts + Shorts-Firm)를 워크플로에서 재시도 루프로 실행하고, 배포에 필요한 파일만 남긴 뒤 커밋/푸시합니다.
+6. 남은 단계는 `run_daily.sh`로 이어서 실행합니다.
+   - `start_from=1` 또는 `2`로 시작한 경우 `./run_daily.sh "$TARGET_DATE" ... --start-from 3`
+   - `start_from=3`~`6`으로 시작한 경우 해당 단계부터 재개
+7. `run_daily.sh`의 Step 3~6에서 English TTS, S3 업로드, RSS 갱신, 중간 파일 정리를 수행합니다.
+8. 최종 `podcast/{date}`를 GitHub Actions artifact로 업로드하고, 생성/갱신된 산출물을 현재 브랜치에 커밋/푸시합니다.
+
+### YouTube Automation
+
+엔트리포인트: `run_youtube.sh` + `run_youtube_episode_remotion.sh`
+
+입력:
+- `date`: 실행 날짜(`YYYYMMDD`, 비우면 뉴욕 기준 오늘)
+- `lang`: `ko` 또는 `en`
+- `start_from`: YouTube 쇼츠 워크플로 재시작 단계(`1`=assets, `2`=render, `3`=upload)
+- `overwrite`: 기존 렌더 산출물 덮어쓰기 여부
+- `upload`: YouTube 업로드 여부
+- `privacy`: `public`, `unlisted`, `private`
+- `preview_seconds`: 일부 구간만 빠르게 렌더링
+- `remotion_only`: 쇼츠 파이프라인을 건너뛰고 풀 에피소드 Remotion 렌더만 실행
+
+실행 흐름:
+1. Checkout 후 `uv`, Python 3.13, Node.js 20, `ffmpeg`, Playwright Chromium, web 의존성을 준비합니다.
+2. `upload=true`이면 Actions 런타임에서만 YouTube OAuth 파일을 복원합니다.
+3. 쇼츠 파이프라인은 `run_youtube.sh`를 렌더 중심으로 호출합니다.
+   - `start_from=1` → `./run_youtube.sh "$TARGET_DATE" --lang "$LANG" --start-from 1 --stop-after 2 --no-upload`
+   - `start_from=2` → `./run_youtube.sh "$TARGET_DATE" --lang "$LANG" --start-from 2 --stop-after 2 --no-upload`
+   - `start_from=3` → 기존 MP4를 사용해 워크플로의 별도 업로드 단계부터 진행
+4. 워크플로가 쇼츠 3종(`shorts`, `shorts-firm`, `shorts-theme-firm`)을 각각 업로드합니다.
+   - `privacy=public`일 때 `shorts-firm`, `shorts-theme-firm`은 지연 공개 예약으로 업로드합니다.
+5. `podcast-video-llm`은 `run_youtube.sh --start-from 4 --stop-after 4 --no-upload`으로 렌더한 뒤 별도 단계에서 업로드합니다.
+6. 쇼츠/`podcast-video-llm` 산출물을 GitHub Actions artifact로 업로드하고, 필요한 MP4/썸네일/웹 public 데이터/렌더 메타데이터를 현재 브랜치에 커밋/푸시합니다.
+7. `upload=true` 또는 `remotion_only=true`이면 `run_youtube_episode_remotion.sh`로 풀 에피소드 영상을 렌더합니다.
+8. `upload=true`이면 에피소드 썸네일을 생성하고 풀 에피소드 영상을 YouTube에 업로드합니다.
+
+## 자동화 산출물과 배포 흐름
+
+### 1) 스크립트/번역/메타데이터
+
+`orchestrator.py`는 한국어 스크립트를 만든 뒤 영어 스크립트와 플랫폼용 메타데이터까지 이어서 생성합니다.
+
+```text
+podcast/{date}/ko/script.json
+        ↓ AWS/translation/translate.py
+podcast/{date}/en/script.json
+
+podcast/{date}/ko/metadata.json
+podcast/{date}/ko/metadata.txt
+        ↓ AWS/translation/translate_metadata.py
+podcast/{date}/en/metadata.json
+podcast/{date}/en/metadata.txt
+```
+
+- 한국어 스크립트 저장 후 `podcast/podcast.db`에 `script_saved_at`, `nutshell`, `user_tickers`가 갱신됩니다.
+- 웹 랜딩 슬라이드는 `web/scripts/slide_generator.py`가 `web/src/landing/{date}/slides.ts`를 만들고 `web/src/landing/index.ts`를 갱신합니다.
+- 메타데이터 JSON은 S3/RSS/YouTube 업로드 제목·설명·키워드의 기준 데이터로 사용됩니다.
+
+### 2) TTS 오디오 생성
+
+`tts/src/tts.py`는 언어별 `script.json`을 읽고 turn 단위 WAV를 병렬 생성한 뒤 합본 WAV/MP3와 타임라인 JSON을 저장합니다.
+
+```text
+podcast/{date}/{lang}/script.json
+        ↓ python -m tts.src.tts {date} --lang ko|en
+podcast/{date}/{lang}/tts/*.wav
+podcast/{date}/{lang}/tts/timeline.json
+podcast/{date}/{lang}/{date}.wav
+podcast/{date}/{lang}/{date}.mp3
+podcast/{date}/{lang}/{date}.json
+```
+
+- `{date}.json`은 원본 스크립트에 `scripts[*].time=[start_ms,end_ms]`를 주입한 파일입니다.
+- 완료 시 `podcast/podcast.db`의 `tts_done=true`, `final_saved_at`이 갱신됩니다.
+- `run_daily.sh`는 Step 2에서 한국어 TTS와 쇼츠용 오디오/슬라이드를 만들고, Step 3에서 영어 TTS를 만듭니다.
+
+### 3) AWS/S3 팟캐스트 배포
+
+`run_daily.sh` Step 4는 배포용 MP3, 메타데이터, 썸네일을 S3 버킷의 날짜/언어별 경로로 업로드합니다.
+
+```text
+podcast-daily-stock/
+  {date}/
+    ko/
+      {date}.mp3
+      metadata.json
+      thumbnail.png
+      shorts/shorts{date}.mp3          # 있으면 업로드
+      shorts-firm/shorts{date}.mp3     # Step 4 조건에 맞는 파일이 있으면 업로드
+    en/
+      {date}.mp3
+      metadata.json
+      thumbnail.png
+```
+
+- 썸네일은 `shared/ops/scripts/youtube/generate_episode_thumbnail.sh`가 Next.js 썸네일 라우트를 띄워 캡처합니다.
+- S3 업로드 단계는 뉴스 수집용 AWS 프로필과 분리해, Actions 런타임 또는 로컬 `.env`의 S3 배포용 AWS 설정을 사용합니다.
+- `run_daily.sh` Step 5는 `AWS/scripts/update_podcast_feed.py --lang ko`와 `--lang en`을 실행합니다.
+- RSS 생성 스크립트는 S3의 날짜 폴더를 스캔하고, 각 언어의 `metadata.json`, MP3 크기/길이, 썸네일 존재 여부를 읽어 `AWS/podcast.xml`, `AWS/podcast_en.xml`을 만든 뒤 S3 루트에 업로드합니다.
+- `rss_index_ko.json`, `rss_index_en.json`은 S3 객체 변경 여부와 길이 계산 결과를 캐시해 RSS 갱신 비용을 줄입니다.
+
+팟캐스트 플랫폼 배포는 플랫폼 API에 MP3를 직접 올리는 방식이 아니라, S3에 올라간 RSS XML을 CloudFront URL로 노출하는 방식입니다. Spotify/Apple Podcasts 같은 클라이언트는 RSS의 `<enclosure>` URL을 통해 `https://{CLOUDFRONT_DOMAIN}/{date}/{lang}/{date}.mp3` 형식의 오디오를 가져갑니다.
+
+### 4) YouTube 영상 생성/업로드
+
+YouTube 자동화는 `.github/workflows/youtube_pipeline.yml`에서 실행되며, 로컬 기준 핵심 스크립트는 `run_youtube.sh`와 `run_youtube_episode_remotion.sh`입니다.
+
+```text
+podcast/{date}/{lang}/{date}.json
+podcast/{date}/{lang}/{date}.mp3
+podcast/{date}/{lang}/metadata.json
+        ↓
+podcast/{date}/{lang}/shorts/youtube/{date}_{lang}_shorts.mp4
+podcast/{date}/{lang}/shorts-firm/youtube/{date}_{lang}_shorts.mp4
+podcast/{date}/{lang}/shorts-theme-firm/youtube/{date}_{lang}_shorts.mp4
+podcast/{date}/{lang}/podcast-video-llm/youtube/{date}_{lang}_podcast_video_llm.mp4
+podcast/{date}/{lang}/youtube-remotion/{date}_{lang}_episode_remotion.mp4
+```
+
+- `run_youtube.sh` Step 1은 쇼츠 3종의 스크립트/오디오/슬라이드 렌더 JSON을 준비합니다.
+- Step 2는 Remotion으로 쇼츠 3종 MP4를 만들고 첫 프레임 썸네일을 생성합니다.
+- Step 4는 `podcast-video-llm/run_podcast_video_llm.sh`를 호출해 별도 긴 영상 MP4와 썸네일을 만듭니다.
+- 풀 에피소드 영상은 `run_youtube_episode_remotion.sh`가 episode JSON/MP3를 `web/public`에 동기화하고, 차트 데이터를 미리 받아 Remotion MP4를 렌더합니다.
+- 업로드는 `shared/ops/scripts/youtube/upload_youtube_video.py`가 담당합니다. 이 스크립트는 `metadata.json`과 episode JSON의 챕터 타임라인으로 제목/설명/태그/챕터를 구성하고, OAuth 토큰 파일은 런타임 경로에서만 읽습니다.
+- GitHub Actions에서는 쇼츠 3종, `podcast-video-llm`, 풀 에피소드를 각각 검증 후 업로드하며, 생성된 MP4/썸네일/웹 public 데이터/렌더 메타데이터를 artifact와 브랜치 커밋으로 남깁니다.
 
 ## 스크립트 파이프라인 상세
 
@@ -421,7 +595,7 @@ npm run dev:fresh
 - **ClosingAgent** (`agents/closing/graph.py`)
   - 누적 대본 입력으로 마무리 파트 생성 → `temp/closing.json`
 
-### 최종 산출물(`podcast/{date}/script.json`) 구조(요약)
+### 최종 산출물(`podcast/{date}/{lang}/script.json`) 구조(요약)
 
 ```json
 {
@@ -444,8 +618,11 @@ npm run dev:fresh
 
 엔트리포인트: `tts/src/tts.py` (문서: `tts/ARCHITECTURE.md`)
 
-- 입력: `podcast/{date}/script.json`
-- 설정: `tts/config/gemini_tts.yaml` (speaker별 instruction/voice/timeout/병렬도 등)
+- 입력: `podcast/{date}/{lang}/script.json`
+- 설정:
+  - `tts/config/gemini_tts.yaml` (Korean)
+  - `tts/config/gemini_tts_en.yaml` (English)
+  - speaker별 instruction/voice/timeout/병렬도 등
 - 필수 환경변수: `GEMINI_API_KEY`
 
 ## AWS Lambda (뉴스 수집 파이프라인)
@@ -496,15 +673,15 @@ npm run dev
 ### 데이터 흐름
 
 ```
-../podcast/podcast.db          # SQLite DB (에피소드 메타데이터)
-../podcast/{date}/{date}.json  # 에피소드 스크립트 데이터
-../podcast/{date}/{date}.wav   # 에피소드 오디오 파일
+../podcast/podcast.db             # SQLite DB (에피소드 메타데이터)
+../podcast/{date}/ko/{date}.json  # 웹 기본 에피소드 스크립트/타임라인
+../podcast/{date}/ko/{date}.mp3   # 웹 기본 에피소드 오디오
         ↓
   npm run build:data (scripts/build-data.ts)
         ↓
-public/data/episodes.json      # 에피소드 목록
-public/data/{date}.json        # 에피소드 상세 데이터
-public/audio/{date}.wav        # 오디오 파일
+public/data/episodes.json         # 에피소드 목록
+public/data/{date}.json           # 에피소드 상세 데이터
+public/audio/{date}.mp3           # 오디오 파일
 ```
 
 ## 주요 디렉토리
@@ -516,15 +693,23 @@ shared/            # tools/fetchers/config/utils (공용)
 config/            # app.yaml (비밀 아닌 런타임 설정)
 podcast/           # 최종 산출물 + DB
   ├── {date}/
-  │   ├── script.json         # TTS 입력용 스크립트
-  │   ├── {date}.wav          # 최종 병합 오디오 (WAV)
-  │   ├── {date}.mp3          # 최종 병합 오디오 (MP3, 배포용)
-  │   ├── metadata.json       # 팟캐스트 메타데이터 (JSON)
-  │   ├── metadata.txt        # 팟캐스트 메타데이터 (Spotify 업로드용)
-  │   └── tts/                # 턴별 오디오 파일
+  │   ├── ko/
+  │   │   ├── script.json       # TTS 입력용 한국어 스크립트
+  │   │   ├── {date}.json       # time 주입 최종 스크립트
+  │   │   ├── {date}.wav        # 최종 병합 오디오 (WAV)
+  │   │   ├── {date}.mp3        # 최종 병합 오디오 (MP3, 배포용)
+  │   │   ├── metadata.json     # 팟캐스트/YouTube 메타데이터
+  │   │   ├── metadata.txt
+  │   │   ├── tts/              # 턴별 오디오 파일 + timeline.json
+  │   │   ├── shorts*/          # 쇼츠 스크립트/오디오/렌더 산출물
+  │   │   ├── podcast-video-llm/
+  │   │   ├── youtube/          # 썸네일/브라우저 캡처형 영상
+  │   │   └── youtube-remotion/ # 풀 에피소드 Remotion 영상
+  │   └── en/                   # 영어 스크립트/TTS/메타데이터/영상 산출물
   └── podcast.db              # 에피소드 인덱스
 tts/               # TTS 파이프라인
 Lambda/            # 뉴스 수집 AWS Lambda
+AWS/               # S3/RSS/번역 스크립트 + podcast.xml
 web/               # Next.js 웹 플레이어
   ├── src/landing/{date}/
   │   └── slides.ts           # 웹 슬라이드 (자동 생성)
